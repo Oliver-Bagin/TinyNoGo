@@ -5,8 +5,8 @@ package cgo
 // Code specifically for Go 1.22.
 
 import (
-	"go/ast"
-	"go/token"
+	"github.com/tinygo-org/tinygo/alt_go/ast"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 )
 
 func init() {

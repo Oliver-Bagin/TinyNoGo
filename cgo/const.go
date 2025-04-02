@@ -5,9 +5,9 @@ package cgo
 
 import (
 	"fmt"
-	"go/ast"
-	"go/scanner"
-	"go/token"
+	"github.com/tinygo-org/tinygo/alt_go/ast"
+	"github.com/tinygo-org/tinygo/alt_go/scanner"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 	"strings"
 )
 

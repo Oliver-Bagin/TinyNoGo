@@ -1,7 +1,7 @@
 package compiler
 
 import (
-	"go/types"
+	"github.com/tinygo-org/tinygo/alt_go/types"
 )
 
 // The code in this file has been copied from

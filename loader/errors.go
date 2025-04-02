@@ -1,6 +1,6 @@
 package loader
 
-import "go/scanner"
+import "github.com/tinygo-org/tinygo/alt_go/scanner"
 
 // Errors contains a list of parser errors or a list of typechecker errors for
 // the given package.

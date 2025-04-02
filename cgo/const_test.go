@@ -2,8 +2,8 @@ package cgo
 
 import (
 	"bytes"
-	"go/format"
-	"go/token"
+	"github.com/tinygo-org/tinygo/alt_go/format"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 	"strings"
 	"testing"
 )

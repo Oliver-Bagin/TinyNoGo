@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"strings"
 
-	"golang.org/x/tools/go/ssa"
+	"github.com/tinygo-org/tinygo/x-tools/go/ssa"
 	"tinygo.org/x/go-llvm"
 )
 

@@ -2,7 +2,7 @@ package compiler
 
 import (
 	"flag"
-	"go/types"
+	"github.com/tinygo-org/tinygo/alt_go/types"
 	"os"
 	"strconv"
 	"strings"

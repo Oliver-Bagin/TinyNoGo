@@ -13,17 +13,17 @@ package cgo
 
 import (
 	"fmt"
-	"go/ast"
-	"go/parser"
-	"go/scanner"
-	"go/token"
+	"github.com/tinygo-org/tinygo/alt_go/ast"
+	"github.com/tinygo-org/tinygo/alt_go/parser"
+	"github.com/tinygo-org/tinygo/alt_go/scanner"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 	"path/filepath"
 	"sort"
 	"strconv"
 	"strings"
 
 	"github.com/google/shlex"
-	"golang.org/x/tools/go/ast/astutil"
+	"github.com/tinygo-org/tinygo/x-tools/go/ast/astutil"
 )
 
 // Function that's only defined in Go 1.22.

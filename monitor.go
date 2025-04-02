@@ -8,7 +8,7 @@ import (
 	"debug/pe"
 	"errors"
 	"fmt"
-	"go/token"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 	"io"
 	"net"
 	"os"

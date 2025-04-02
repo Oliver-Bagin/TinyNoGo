@@ -31,7 +31,7 @@ import (
 	"github.com/tinygo-org/tinygo/diagnostics"
 	"github.com/tinygo-org/tinygo/goenv"
 	"github.com/tinygo-org/tinygo/loader"
-	"golang.org/x/tools/go/buildutil"
+	"github.com/tinygo-org/tinygo/x-tools/go/buildutil"
 	"tinygo.org/x/go-llvm"
 
 	"go.bug.st/serial"

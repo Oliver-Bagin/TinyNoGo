@@ -3,8 +3,8 @@ package builder
 import (
 	"bytes"
 	"fmt"
-	"go/scanner"
-	"go/token"
+	"github.com/tinygo-org/tinygo/alt_go/scanner"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 	"os"
 	"os/exec"
 	"regexp"

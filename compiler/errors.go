@@ -3,8 +3,8 @@ package compiler
 // This file contains some utility functions related to error handling.
 
 import (
-	"go/token"
-	"go/types"
+	"github.com/tinygo-org/tinygo/alt_go/token"
+	"github.com/tinygo-org/tinygo/alt_go/types"
 	"path/filepath"
 
 	"tinygo.org/x/go-llvm"

@@ -5,11 +5,11 @@ package compiler
 
 import (
 	"fmt"
-	"go/types"
+	"github.com/tinygo-org/tinygo/alt_go/types"
 	"math"
 
 	"github.com/tinygo-org/tinygo/compiler/llvmutil"
-	"golang.org/x/tools/go/ssa"
+	"github.com/tinygo-org/tinygo/x-tools/go/ssa"
 	"tinygo.org/x/go-llvm"
 )
 

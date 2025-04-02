@@ -1,6 +1,6 @@
 package compiler
 
-import "go/types"
+import "github.com/tinygo-org/tinygo/alt_go/types"
 
 // This file implements volatile loads/stores in runtime/volatile.LoadT and
 // runtime/volatile.StoreT as compiler builtins.

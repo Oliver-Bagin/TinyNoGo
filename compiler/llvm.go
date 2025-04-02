@@ -2,8 +2,8 @@ package compiler
 
 import (
 	"fmt"
-	"go/token"
-	"go/types"
+	"github.com/tinygo-org/tinygo/alt_go/token"
+	"github.com/tinygo-org/tinygo/alt_go/types"
 	"math/big"
 	"strings"
 

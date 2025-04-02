@@ -5,9 +5,9 @@ package diagnostics
 import (
 	"bytes"
 	"fmt"
-	"go/scanner"
-	"go/token"
-	"go/types"
+	"github.com/tinygo-org/tinygo/alt_go/scanner"
+	"github.com/tinygo-org/tinygo/alt_go/token"
+	"github.com/tinygo-org/tinygo/alt_go/types"
 	"io"
 	"path/filepath"
 	"sort"

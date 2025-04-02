@@ -3,7 +3,7 @@ package transform
 import (
 	"errors"
 	"fmt"
-	"go/token"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 	"os"
 
 	"github.com/tinygo-org/tinygo/compileopts"

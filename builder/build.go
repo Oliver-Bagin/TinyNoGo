@@ -12,7 +12,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"go/types"
+	"github.com/tinygo-org/tinygo/alt_go/types"
 	"hash/crc32"
 	"io/fs"
 	"math/bits"

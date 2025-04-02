@@ -3,7 +3,7 @@ package compiler
 // This file contains helper functions to create calls to LLVM intrinsics.
 
 import (
-	"go/token"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 	"strconv"
 	"strings"
 

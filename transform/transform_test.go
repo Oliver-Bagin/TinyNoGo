@@ -4,8 +4,8 @@ package transform_test
 
 import (
 	"flag"
-	"go/token"
-	"go/types"
+	"github.com/tinygo-org/tinygo/alt_go/token"
+	"github.com/tinygo-org/tinygo/alt_go/types"
 	"os"
 	"path/filepath"
 	"strings"

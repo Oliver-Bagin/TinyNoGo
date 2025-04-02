@@ -4,9 +4,9 @@ package compiler
 // garbage collectors.
 
 import (
-	"go/token"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 
-	"golang.org/x/tools/go/ssa"
+	"github.com/tinygo-org/tinygo/x-tools/go/ssa"
 	"tinygo.org/x/go-llvm"
 )
 

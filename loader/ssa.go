@@ -1,7 +1,7 @@
 package loader
 
 import (
-	"golang.org/x/tools/go/ssa"
+	"github.com/tinygo-org/tinygo/x-tools/go/ssa"
 )
 
 // LoadSSA constructs the SSA form of the loaded packages.

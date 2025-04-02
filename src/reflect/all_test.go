@@ -9,7 +9,7 @@ import (
 	"encoding/base64"
 	"flag"
 	"fmt"
-	"go/token"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 	"io"
 	"math"
 	"math/rand"

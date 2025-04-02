@@ -6,8 +6,8 @@
 package loader
 
 import (
-	"go/ast"
-	"go/types"
+	"github.com/tinygo-org/tinygo/alt_go/ast"
+	"github.com/tinygo-org/tinygo/alt_go/types"
 )
 
 func init() {

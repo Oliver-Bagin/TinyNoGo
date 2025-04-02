@@ -8,7 +8,7 @@ import (
 	"sync"
 	"testing"
 
-	"golang.org/x/tools/go/buildutil"
+	"github.com/tinygo-org/tinygo/x-tools/go/buildutil"
 	yaml "gopkg.in/yaml.v2"
 )
 

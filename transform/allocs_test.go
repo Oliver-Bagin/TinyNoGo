@@ -1,7 +1,7 @@
 package transform_test
 
 import (
-	"go/token"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 	"os"
 	"path/filepath"
 	"regexp"

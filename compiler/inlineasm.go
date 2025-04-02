@@ -4,13 +4,13 @@ package compiler
 
 import (
 	"fmt"
-	"go/constant"
-	"go/token"
+	"github.com/tinygo-org/tinygo/alt_go/constant"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 	"regexp"
 	"strconv"
 	"strings"
 
-	"golang.org/x/tools/go/ssa"
+	"github.com/tinygo-org/tinygo/x-tools/go/ssa"
 	"tinygo.org/x/go-llvm"
 )
 

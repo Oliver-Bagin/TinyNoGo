@@ -4,8 +4,8 @@ package interp
 
 import (
 	"errors"
-	"go/scanner"
-	"go/token"
+	"github.com/tinygo-org/tinygo/alt_go/scanner"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 	"path/filepath"
 
 	"tinygo.org/x/go-llvm"

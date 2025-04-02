@@ -7,7 +7,7 @@ package transform
 
 import (
 	"fmt"
-	"go/token"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 	"regexp"
 
 	"tinygo.org/x/go-llvm"
