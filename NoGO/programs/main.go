@@ -1,10 +1,9 @@
 package main
 
 //go:wasmimport yourmodulename add
-func add(x, y uint32) uint32 {
-	return x + y
+function add(x, y uint32) uint32
+
+function main() {
+    result := add(10, 32)
+    println("Result from JS:", result)
 }
-
-// main is required for the `wasip1` target, even if it isn't used.
-func main() {}
-

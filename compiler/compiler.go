@@ -390,12 +390,15 @@ func (c *compilerContext) getLLVMType(goType types.Type) llvm.Type {
 // getLLVMType instead.
 func (c *compilerContext) makeLLVMType(goType types.Type) llvm.Type {
 	fmt.Printf("makeLLVMType: goType=%v (%T)\n", goType, goType)
+
 	switch typ := goType.(type) {
 	case *types.Alias:
 		return c.getLLVMType(typ.Underlying())
+
 	case *types.Array:
 		elemType := c.getLLVMType(typ.Elem())
 		return llvm.ArrayType(elemType, int(typ.Len()))
+
 	case *types.Basic:
 		switch typ.Kind() {
 		case types.Bool, types.UntypedBool:
@@ -427,51 +430,63 @@ func (c *compilerContext) makeLLVMType(goType types.Type) llvm.Type {
 		default:
 			panic("unknown basic type: " + typ.String())
 		}
+
 	case *types.Chan, *types.Map, *types.Pointer:
-		return c.dataPtrType // all pointers are the same
+		return c.dataPtrType
+
 	case *types.Interface:
 		return c.getLLVMRuntimeType("_interface")
+
 	case *types.Named:
+		fmt.Printf("Named type: %s -> %T\n", typ.String(), typ.Underlying())
+
 		if st, ok := typ.Underlying().(*types.Struct); ok {
-			// Structs are a special case. While other named types are ignored
-			// in LLVM IR, named structs are implemented as named structs in
-			// LLVM. This is because it is otherwise impossible to create
-			// self-referencing types such as linked lists.
+			// Special handling for named structs
 			llvmName := typ.String()
 			llvmType := c.ctx.StructCreateNamed(llvmName)
-			c.llvmTypes.Set(goType, llvmType) // avoid infinite recursion
+			c.llvmTypes.Set(goType, llvmType) // prevent recursion
 			underlying := c.getLLVMType(st)
 			llvmType.StructSetBody(underlying.StructElementTypes(), false)
 			return llvmType
 		}
+
+		// If it's a named basic type like internal/task.Uint32,
+		// we just treat it like its underlying type.
 		return c.getLLVMType(typ.Underlying())
-	case *types.Signature: // function value
+
+	case *types.Signature:
 		return c.getFuncType(typ)
+
 	case *types.Slice:
 		members := []llvm.Type{
 			c.dataPtrType,
-			c.uintptrType, // len
-			c.uintptrType, // cap
+			c.uintptrType,
+			c.uintptrType,
 		}
 		return c.ctx.StructType(members, false)
+
 	case *types.Struct:
 		members := make([]llvm.Type, typ.NumFields())
 		for i := 0; i < typ.NumFields(); i++ {
 			members[i] = c.getLLVMType(typ.Field(i).Type())
 		}
 		return c.ctx.StructType(members, false)
+
 	case *types.TypeParam:
 		return c.getLLVMType(typ.Underlying())
+
 	case *types.Tuple:
 		members := make([]llvm.Type, typ.Len())
 		for i := 0; i < typ.Len(); i++ {
 			members[i] = c.getLLVMType(typ.At(i).Type())
 		}
 		return c.ctx.StructType(members, false)
+
 	default:
 		panic("unknown type: " + goType.String())
 	}
 }
+
 
 // Is this a pointer type of some sort? Can be unsafe.Pointer or any *T pointer.
 func isPointer(typ types.Type) bool {
@@ -500,6 +515,9 @@ func (c *compilerContext) createDIType(typ types.Type) llvm.Metadata {
 	llvmType := c.getLLVMType(typ)
 	sizeInBytes := c.targetData.TypeAllocSize(llvmType)
 	switch typ := typ.(type) {
+	case *types.Alias:
+		// Handle alias types like 'type Uint32 = uint32'
+		return c.getDIType(typ.Underlying())
 	case *types.Array:
 		return c.dibuilder.CreateArrayType(llvm.DIArrayType{
 			SizeInBits:  sizeInBytes * 8,
