@@ -67,6 +67,7 @@ func init() {
 		token.SUB: allNumeric,
 		token.XOR: allInteger,
 		token.NOT: allBoolean,
+		token.DOLLAR: allInteger,
 	}
 }
 
@@ -165,6 +166,16 @@ func (check *Checker) unary(x *operand, e *ast.UnaryExpr) {
 		}
 		check.error(e, UndefinedOp, "cannot use ~ outside of interface or type constraint (use ^ for bitwise complement)")
 		op = token.XOR
+	
+	// case token.DOLLAR:
+	// 	// Provide a better error position and message than what check.op below would do.
+	// 	if !allInteger(x.typ) {
+	// 		check.error(e, UndefinedOp, "cannot use ~ outside of interface or type constraint")
+	// 		x.mode = invalid
+	// 		return
+	// 	}
+	// 	check.error(e, UndefinedOp, "cannot use ~ outside of interface or type constraint (use ^ for bitwise complement)")
+	// 	op = token.DOLLAR
 	}
 
 	if !check.op(unaryOpPredicates, x, op) {

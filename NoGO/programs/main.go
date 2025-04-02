@@ -8,7 +8,7 @@ function test() {
 }
 
 func main() {
-    result := add(10, 32)
+    result := add($10, 32)
     test()
     println("Result from JS:", result)
 }

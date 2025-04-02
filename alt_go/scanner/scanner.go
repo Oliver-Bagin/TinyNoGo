@@ -950,6 +950,8 @@ scanAgain:
 			tok = s.switch3(token.OR, token.OR_ASSIGN, '|', token.LOR)
 		case '~':
 			tok = token.TILDE
+		case '$':
+			tok = token.DOLLAR
 		default:
 			// next reports unexpected BOMs - don't repeat
 			if ch != bom {
@@ -958,7 +960,7 @@ scanAgain:
 				if ch == '“' || ch == '”' {
 					s.errorf(s.file.Offset(pos), "curly quotation mark %q (use neutral %q)", ch, '"')
 				} else {
-					s.errorf(s.file.Offset(pos), "illegal character %#U", ch)
+					s.errorf(s.file.Offset(pos), "illegal character :) %#U", ch)
 				}
 			}
 			insertSemi = s.insertSemi // preserve insertSemi info

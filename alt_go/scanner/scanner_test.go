@@ -843,7 +843,7 @@ func TestUTF16(t *testing.T) {
 		// one from the decoder, one from the scanner.
 		want := []string{
 			"#0: illegal UTF-8 encoding (got UTF-16)",
-			"#0: illegal character U+FFFD '�'",
+			"#0: illegal character U+FFFD '�' :)",
 		}
 		if !slices.Equal(got, want) {
 			t.Errorf("Scan(%q) returned errors %q, want %q", src, got, want)

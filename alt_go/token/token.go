@@ -72,6 +72,7 @@ const (
 	GTR    // >
 	ASSIGN // =
 	NOT    // !
+	DOLLAR 
 
 	NEQ      // !=
 	LEQ      // <=
@@ -182,6 +183,7 @@ var tokens = [...]string{
 	GTR:    ">",
 	ASSIGN: "=",
 	NOT:    "!",
+	DOLLAR: "$",
 
 	NEQ:      "!=",
 	LEQ:      "<=",

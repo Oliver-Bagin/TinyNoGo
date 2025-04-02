@@ -1004,6 +1004,12 @@ func UnaryOp(op token.Token, y Value, prec uint) Value {
 		}
 		return makeInt(z)
 
+	case token.DOLLAR:
+		switch y := y.(type) {
+		case unknownVal, int64Val, intVal, ratVal, floatVal, complexVal:
+			return y
+		}
+
 	case token.NOT:
 		switch y := y.(type) {
 		case unknownVal:
@@ -1012,7 +1018,7 @@ func UnaryOp(op token.Token, y Value, prec uint) Value {
 			return !y
 		}
 	}
-
+	
 Error:
 	panic(fmt.Sprintf("invalid unary operation %s%v", op, y))
 }

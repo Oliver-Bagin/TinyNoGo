@@ -3276,6 +3276,8 @@ func (b *builder) createUnOp(unop *ssa.UnOp) (llvm.Value, error) {
 	switch unop.Op {
 	case token.NOT: // !x
 		return b.CreateNot(x, ""), nil
+	case token.DOLLAR: // !x
+		return b.CreateXor(x, llvm.ConstInt(x.Type(), ^uint64(0), false), ""), nil
 	case token.SUB: // -x
 		if typ, ok := unop.X.Type().Underlying().(*types.Basic); ok {
 			if typ.Info()&types.IsInteger != 0 {
