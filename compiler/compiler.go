@@ -381,7 +381,6 @@ func (c *compilerContext) getLLVMType(goType types.Type) llvm.Type {
 	}
 	// Not already created, so adding this type to the cache.
 	llvmType := c.makeLLVMType(goType)
-	print("Made type!\n")
 	c.llvmTypes.Set(goType, llvmType)
 	return llvmType
 }
@@ -389,8 +388,6 @@ func (c *compilerContext) getLLVMType(goType types.Type) llvm.Type {
 // makeLLVMType creates a LLVM type for a Go type. Don't call this, use
 // getLLVMType instead.
 func (c *compilerContext) makeLLVMType(goType types.Type) llvm.Type {
-	fmt.Printf("makeLLVMType: goType=%v (%T)\n", goType, goType)
-
 	switch typ := goType.(type) {
 	case *types.Alias:
 		return c.getLLVMType(typ.Underlying())
@@ -438,8 +435,6 @@ func (c *compilerContext) makeLLVMType(goType types.Type) llvm.Type {
 		return c.getLLVMRuntimeType("_interface")
 
 	case *types.Named:
-		fmt.Printf("Named type: %s -> %T\n", typ.String(), typ.Underlying())
-
 		if st, ok := typ.Underlying().(*types.Struct); ok {
 			// Special handling for named structs
 			llvmName := typ.String()

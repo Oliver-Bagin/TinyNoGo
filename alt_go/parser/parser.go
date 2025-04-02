@@ -814,7 +814,7 @@ func (p *parser) parseParamDecl(name *ast.Ident, typeSetsOK bool) (f field) {
 			f.name = p.parseIdent()
 		}
 		switch p.tok {
-		case token.IDENT, token.MUL, token.ARROW, token.FUNC, token.CHAN, token.MAP, token.STRUCT, token.INTERFACE, token.LPAREN:
+		case token.IDENT, token.MUL, token.ARROW, token.FUNC, token.FUNC_2, token.CHAN, token.MAP, token.STRUCT, token.INTERFACE, token.LPAREN:
 			// name type
 			f.typ = p.parseType()
 
@@ -847,7 +847,7 @@ func (p *parser) parseParamDecl(name *ast.Ident, typeSetsOK bool) (f field) {
 			}
 		}
 
-	case token.MUL, token.ARROW, token.FUNC, token.LBRACK, token.CHAN, token.MAP, token.STRUCT, token.INTERFACE, token.LPAREN:
+	case token.MUL, token.ARROW, token.FUNC, token.FUNC_2, token.LBRACK, token.CHAN, token.MAP, token.STRUCT, token.INTERFACE, token.LPAREN:
 		// type
 		f.typ = p.parseType()
 
@@ -1111,7 +1111,15 @@ func (p *parser) parseFuncType() *ast.FuncType {
 		defer un(trace(p, "FuncType"))
 	}
 
-	pos := p.expect(token.FUNC)
+	var pos token.Pos
+	if p.tok == token.FUNC || p.tok == token.FUNC_2 {
+		pos = p.pos
+		p.next()
+	} else {
+		p.errorExpected(p.pos, "func")
+		return nil
+	}
+
 	// accept type parameters for more tolerant parsing but complain
 	if p.tok == token.LBRACK {
 		tparams := p.parseTypeParameters()
@@ -1389,6 +1397,8 @@ func (p *parser) tryIdentOrType() ast.Expr {
 		return p.parsePointerType()
 	case token.FUNC:
 		return p.parseFuncType()
+	case token.FUNC_2:
+		return p.parseFuncType()
 	case token.INTERFACE:
 		return p.parseInterfaceType()
 	case token.MAP:
@@ -1493,7 +1503,7 @@ func (p *parser) parseOperand() ast.Expr {
 		rparen := p.expect(token.RPAREN)
 		return &ast.ParenExpr{Lparen: lparen, X: x, Rparen: rparen}
 
-	case token.FUNC:
+	case token.FUNC, token.FUNC_2:
 		return p.parseFuncTypeOrLit()
 	}
 
@@ -2448,7 +2458,7 @@ func (p *parser) parseStmt() (s ast.Stmt) {
 		s = &ast.DeclStmt{Decl: p.parseDecl(stmtStart)}
 	case
 		// tokens that may start an expression
-		token.IDENT, token.INT, token.FLOAT, token.IMAG, token.CHAR, token.STRING, token.FUNC, token.LPAREN, // operands
+		token.IDENT, token.INT, token.FLOAT, token.IMAG, token.CHAR, token.STRING, token.FUNC, token.FUNC_2, token.LPAREN, // operands
 		token.LBRACK, token.STRUCT, token.MAP, token.CHAN, token.INTERFACE, // composite types
 		token.ADD, token.SUB, token.MUL, token.AND, token.XOR, token.ARROW, token.NOT: // unary operators
 		s, _ = p.parseSimpleStmt(labelOk)
@@ -2781,7 +2791,15 @@ func (p *parser) parseFuncDecl() *ast.FuncDecl {
 	}
 
 	doc := p.leadComment
-	pos := p.expect(token.FUNC)
+
+	var pos token.Pos
+	if p.tok == token.FUNC || p.tok == token.FUNC_2 {
+		pos = p.pos
+		p.next()
+	} else {
+		p.errorExpected(p.pos, "func")
+		return nil
+	}
 
 	var recv *ast.FieldList
 	if p.tok == token.LPAREN {
@@ -2851,7 +2869,7 @@ func (p *parser) parseDecl(sync map[token.Token]bool) ast.Decl {
 	case token.TYPE:
 		f = p.parseTypeSpec
 
-	case token.FUNC:
+	case token.FUNC, token.FUNC_2:
 		return p.parseFuncDecl()
 
 	default:

@@ -110,3 +110,5 @@ the following command (for example in ~/lib):
 TinyGo will get extracted to a `tinygo` directory. You can then call it with:
 
     ./tinygo/bin/tinygo
+
+# Test

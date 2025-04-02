@@ -1,9 +1,14 @@
 package main
 
 //go:wasmimport yourmodulename add
-function add(x, y uint32) uint32
+func add(x, y uint32) uint32
 
-function main() {
+function test() {
+    println("Calling a 'function'")
+}
+
+func main() {
     result := add(10, 32)
+    test()
     println("Result from JS:", result)
 }

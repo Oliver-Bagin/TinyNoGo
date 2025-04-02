@@ -107,6 +107,7 @@ const (
 	FOR
 
 	FUNC
+	FUNC_2
 	GO
 	GOTO
 	IF
@@ -213,6 +214,7 @@ var tokens = [...]string{
 	FOR:         "for",
 
 	FUNC:   "func",
+	FUNC_2:   "function",
 	GO:     "go",
 	GOTO:   "goto",
 	IF:     "if",

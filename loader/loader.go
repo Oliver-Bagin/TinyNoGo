@@ -503,6 +503,13 @@ func (p *Package) parseFiles() ([]*ast.File, error) {
 	if len(fileErrs) != 0 {
 		return nil, Errors{p, fileErrs}
 	}
+	
+	for _, file := range files {
+		if file.Name != nil && file.Name.Name == "main" {
+			fmt.Printf("%+v\n", file)
+			ast.Print(p.program.fset, file)
+		}
+	}
 
 	return files, nil
 }
