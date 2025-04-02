@@ -13,7 +13,7 @@ import (
 	"crypto/sha256"
 	"errors"
 	"fmt"
-	"github.com/tinygo-org/tinygo/alt_go/internal/godebug"
+	"internal/godebug"
 	"io"
 	"math/bits"
 	"os"

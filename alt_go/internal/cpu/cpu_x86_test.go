@@ -8,7 +8,7 @@ package cpu_test
 
 import (
 	. "github.com/tinygo-org/tinygo/alt_go/internal/cpu"
-	"github.com/tinygo-org/tinygo/alt_go/internal/godebug"
+	"internal/godebug"
 	"testing"
 )
 

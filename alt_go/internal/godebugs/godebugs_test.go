@@ -60,7 +60,7 @@ var incNonDefaultRE = regexp.MustCompile(`([\pL\p{Nd}_]+)\.IncNonDefault\(\)`)
 func incNonDefaults(t *testing.T) map[string]bool {
 	// Build list of all files importing internal/godebug.
 	// Tried a more sophisticated search in go list looking for
-	// imports containing "github.com/tinygo-org/tinygo/alt_go/internal/godebug", but that turned
+	// imports containing "internal/godebug", but that turned
 	// up a bug in go list instead. #66218
 	out, err := exec.Command("go", "list", "-f={{.Dir}}", "std", "cmd").CombinedOutput()
 	if err != nil {

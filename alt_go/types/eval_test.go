@@ -12,7 +12,7 @@ import (
 	"github.com/tinygo-org/tinygo/alt_go/parser"
 	"github.com/tinygo-org/tinygo/alt_go/token"
 	"github.com/tinygo-org/tinygo/alt_go/types"
-	"github.com/tinygo-org/tinygo/alt_go/internal/godebug"
+	"internal/godebug"
 	"github.com/tinygo-org/tinygo/alt_go/internal/testenv"
 	"strings"
 	"testing"

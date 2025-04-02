@@ -6,7 +6,7 @@ package godebug_test
 
 import (
 	"fmt"
-	. "github.com/tinygo-org/tinygo/alt_go/internal/godebug"
+	. "internal/godebug"
 	"github.com/tinygo-org/tinygo/alt_go/internal/race"
 	"github.com/tinygo-org/tinygo/alt_go/internal/testenv"
 	"os"
