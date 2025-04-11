@@ -42,3 +42,6 @@
 [submodule "lib/bdwgc"]
 	path = lib/bdwgc
 	url = https://github.com/ivmai/bdwgc.git
+[submodule "x-tools"]
+	path = x-tools
+	url = git@github.com:Oliver-Bagin/NoGOTools.git
