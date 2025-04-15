@@ -8,9 +8,10 @@ import (
 )
 
 var (
-	validBuildModeOptions     = []string{"default", "c-shared", "wasi-legacy"}
-	validGCOptions            = []string{"none", "leaking", "conservative", "custom", "precise", "boehm"}
-	validSchedulerOptions     = []string{"none", "tasks", "asyncify"}
+	validBuildModeOptions = []string{"default", "c-shared", "wasi-legacy"}
+	validGCOptions        = []string{"none", "leaking", "conservative", "custom", "precise", "boehm"}
+	// NC = Non-cooperative NCP = NC + deterministic
+	validSchedulerOptions     = []string{"none", "tasks", "asyncify", "nc", "ncd"}
 	validSerialOptions        = []string{"none", "uart", "usb", "rtt"}
 	validPrintSizeOptions     = []string{"none", "short", "full", "html"}
 	validPanicStrategyOptions = []string{"print", "trap"}

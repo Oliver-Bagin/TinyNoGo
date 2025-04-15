@@ -1,4 +1,4 @@
-//go:build scheduler.tasks || scheduler.asyncify
+//go:build scheduler.tasks || scheduler.asyncify || scheduler.nc || scheduler.ncd
 
 package runtime
 
@@ -54,6 +54,9 @@ func scheduleTask(t *task.Task) {
 }
 
 func Gosched() {
+	// TODO : Determinism
+	// Add a check to disable determinism
+	// println("Called Schedular")
 	runqueue.Push(task.Current())
 	task.Pause()
 }
@@ -246,6 +249,7 @@ func sleep(duration int64) {
 // run is called by the program entry point to execute the go program.
 // With a scheduler, init and the main function are invoked in a goroutine before starting the scheduler.
 func run() {
+	println("Running Round Robbin")
 	initHeap()
 	initRand()
 	go func() {

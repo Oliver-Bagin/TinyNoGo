@@ -136,7 +136,7 @@ func (c *Config) NeedsStackObjects() bool {
 }
 
 // Scheduler returns the scheduler implementation. Valid values are "none",
-// "asyncify" and "tasks".
+// "asyncify", "tasks", "nc", "ncd".
 func (c *Config) Scheduler() string {
 	if c.Options.Scheduler != "" {
 		return c.Options.Scheduler

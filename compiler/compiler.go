@@ -1291,13 +1291,39 @@ func (b *builder) createFunctionStart(intrinsic bool) {
 	}
 }
 
+func findLoopHeaders(fn *ssa.Function) map[*ssa.BasicBlock]bool {
+	loopHeaders := make(map[*ssa.BasicBlock]bool)
+
+	// Build preorder index map
+	domPreorder := fn.DomPreorder()
+	blockIndex := make(map[*ssa.BasicBlock]int)
+	for i, b := range domPreorder {
+		blockIndex[b] = i
+	}
+
+	// Look for backedges
+	for _, b := range fn.Blocks {
+		for _, succ := range b.Succs {
+			if blockIndex[succ] <= blockIndex[b] {
+				// Backward jump in dominator order ⇒ likely a loop
+				loopHeaders[succ] = true
+			}
+		}
+	}
+
+	return loopHeaders
+}
+
 // createFunction builds the LLVM IR implementation for this function. The
 // function must not yet be defined, otherwise this function will create a
 // diagnostic.
 func (b *builder) createFunction() {
 	b.createFunctionStart(false)
-
+	// b.createRuntimeCall("GoschedAlt", nil, "")
 	// Fill blocks with instructions.
+
+	// loopHeaders := findLoopHeaders(fn)
+
 	for _, block := range b.fn.DomPreorder() {
 		if b.DumpSSA {
 			fmt.Printf("%d: %s:\n", block.Index, block.Comment)
@@ -1337,6 +1363,22 @@ func (b *builder) createFunction() {
 				}
 			}
 			b.createInstruction(instr)
+
+			// Need to be selective with which instructions we add this to as we dont wan't to break
+			// go's runtime tooling
+			// Case one function calls
+			if b.Config.Scheduler == "nc" || b.Config.Scheduler == "ncd" {
+				if b.fn.Pkg != nil && b.fn.Pkg.Pkg.Name() == "main" {
+					switch instr := instr.(type) {
+					case *ssa.Call:
+						print(instr.String())
+						b.createRuntimeCall("Gosched", nil, "")
+					case *ssa.Go:
+						print(instr.String())
+						b.createRuntimeCall("Gosched", nil, "")
+					}
+				}
+			}
 		}
 		if b.fn.Name() == "init" && len(block.Instrs) == 0 {
 			b.CreateRetVoid()
