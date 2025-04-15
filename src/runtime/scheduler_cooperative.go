@@ -53,12 +53,16 @@ func scheduleTask(t *task.Task) {
 	runqueue.Push(t)
 }
 
+var goSchedCounter uint64 = 0
+
 func Gosched() {
-	// TODO : Determinism
-	// Add a check to disable determinism
-	// println("Called Schedular")
-	runqueue.Push(task.Current())
-	task.Pause()
+	// Crazy to think that even if a single threaded cpu's primary objective was to
+	// overflow a uin64 at a clock speed of 5ghz it would still take
+	goSchedCounter++
+	if goSchedCounter%100 == 0 {
+		runqueue.Push(task.Current())
+		task.Pause()
+	}
 }
 
 // Add this task to the sleep queue, assuming its state is set to sleeping.

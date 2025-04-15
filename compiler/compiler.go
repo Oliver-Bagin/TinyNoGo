@@ -1319,10 +1319,30 @@ func findLoopHeaders(fn *ssa.Function) map[*ssa.BasicBlock]bool {
 // diagnostic.
 func (b *builder) createFunction() {
 	b.createFunctionStart(false)
-	// b.createRuntimeCall("GoschedAlt", nil, "")
 	// Fill blocks with instructions.
 
-	// loopHeaders := findLoopHeaders(fn)
+	// Step 1: Find loop headers using backedges
+	loopHeaders := func(fn *ssa.Function) map[*ssa.BasicBlock]bool {
+		loopHeaders := make(map[*ssa.BasicBlock]bool)
+
+		// Build preorder index map
+		domPreorder := fn.DomPreorder()
+		blockIndex := make(map[*ssa.BasicBlock]int)
+		for i, b := range domPreorder {
+			blockIndex[b] = i
+		}
+
+		// Look for backedges
+		for _, b := range fn.Blocks {
+			for _, succ := range b.Succs {
+				if blockIndex[succ] <= blockIndex[b] {
+					loopHeaders[succ] = true
+				}
+			}
+		}
+
+		return loopHeaders
+	}(b.fn)
 
 	for _, block := range b.fn.DomPreorder() {
 		if b.DumpSSA {
@@ -1330,6 +1350,8 @@ func (b *builder) createFunction() {
 		}
 		b.SetInsertPointAtEnd(b.blockEntries[block])
 		b.currentBlock = block
+
+		insertNext := false
 		for _, instr := range block.Instrs {
 			if instr, ok := instr.(*ssa.DebugRef); ok {
 				if !b.Debug {
@@ -1362,19 +1384,61 @@ func (b *builder) createFunction() {
 					fmt.Printf("\t%s\n", instr.String())
 				}
 			}
+
+			// Last node was a backlink
+			if insertNext {
+				switch instr := instr.(type) {
+				case *ssa.Phi:
+					println("Skip")
+				default:
+					println("Inserting  at next")
+					println(instr.String())
+					b.createRuntimeCall("Gosched", nil, "")
+					insertNext = false
+				}
+			}
+
+			// Inject Gosched at loop headers
+			if loopHeaders[block] && b.Config.Scheduler == "nc" || b.Config.Scheduler == "ncd" {
+				if b.fn.Pkg != nil && b.fn.Pkg.Pkg.Name() == "main" {
+					switch instr := instr.(type) {
+					case *ssa.Phi:
+						if b.Config.Debug {
+							println("Phi node - Backlink")
+							println(instr.String())
+						}
+						// Don't insert here
+						// Insert at the next instruction allow the compiler to do other work here
+						// Phi nodes are complicated
+						insertNext = true
+					default:
+						// Other jumps include if statments
+						// mayalso be triggered by other
+						if b.Config.Debug {
+							println("Other - Backlink")
+							println(instr.String())
+						}
+						// We don't need the overhead
+						// b.createRuntimeCall("Gosched", nil, "")
+					}
+				}
+			}
+
 			b.createInstruction(instr)
 
 			// Need to be selective with which instructions we add this to as we dont wan't to break
-			// go's runtime tooling
-			// Case one function calls
+			// go's runtime tooling.
+			// Here we focous on calls to functions and go routines
 			if b.Config.Scheduler == "nc" || b.Config.Scheduler == "ncd" {
+				// We run on all packages - usefull for debugging to restrict
 				if b.fn.Pkg != nil && b.fn.Pkg.Pkg.Name() == "main" {
+					println(b.fn.Name())
 					switch instr := instr.(type) {
 					case *ssa.Call:
-						print(instr.String())
+						println(instr.String())
 						b.createRuntimeCall("Gosched", nil, "")
 					case *ssa.Go:
-						print(instr.String())
+						println(instr.String())
 						b.createRuntimeCall("Gosched", nil, "")
 					}
 				}
