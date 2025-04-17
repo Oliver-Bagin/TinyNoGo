@@ -11,8 +11,8 @@ function testOutput(programName, output, truncate = false, test = (x) => [true, 
   const totalLines = lines.length;
 
   if (truncate && totalLines > 10) {
-    const head = lines.slice(0, 25);
-    const tail = lines.slice(-25);
+    const head = lines.slice(0, 5);
+    const tail = lines.slice(-5);
     console.log("\t✂️ Truncated Output:");
     console.log([...head, '...', ...tail].map(x => `\t${x}`).join('\n'));
   } else {

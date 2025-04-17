@@ -1314,6 +1314,8 @@ func findLoopHeaders(fn *ssa.Function) map[*ssa.BasicBlock]bool {
 	return loopHeaders
 }
 
+const CS4215_DEBUG = false
+
 // createFunction builds the LLVM IR implementation for this function. The
 // function must not yet be defined, otherwise this function will create a
 // diagnostic.
@@ -1389,10 +1391,14 @@ func (b *builder) createFunction() {
 			if insertNext {
 				switch instr := instr.(type) {
 				case *ssa.Phi:
-					println("Skip")
+					if b.Config.Debug && CS4215_DEBUG {
+						println("Skipping Phi")
+					}
 				default:
-					println("Inserting  at next")
-					println(instr.String())
+					if b.Config.Debug && CS4215_DEBUG {
+						println("Inserting  at next")
+						println(instr.String())
+					}
 					b.createRuntimeCall("Gosched", nil, "")
 					insertNext = false
 				}
@@ -1403,7 +1409,7 @@ func (b *builder) createFunction() {
 				if b.fn.Pkg != nil && b.fn.Pkg.Pkg.Name() == "main" {
 					switch instr := instr.(type) {
 					case *ssa.Phi:
-						if b.Config.Debug {
+						if b.Config.Debug && CS4215_DEBUG {
 							println("Phi node - Backlink")
 							println(instr.String())
 						}
@@ -1414,7 +1420,7 @@ func (b *builder) createFunction() {
 					default:
 						// Other jumps include if statments
 						// mayalso be triggered by other
-						if b.Config.Debug {
+						if b.Config.Debug && CS4215_DEBUG {
 							println("Other - Backlink")
 							println(instr.String())
 						}
@@ -1432,13 +1438,19 @@ func (b *builder) createFunction() {
 			if b.Config.Scheduler == "nc" || b.Config.Scheduler == "ncd" {
 				// We run on all packages - usefull for debugging to restrict
 				if b.fn.Pkg != nil && b.fn.Pkg.Pkg.Name() == "main" {
-					println(b.fn.Name())
+					if b.Config.Debug && CS4215_DEBUG {
+						println(b.fn.Name())
+					}
 					switch instr := instr.(type) {
 					case *ssa.Call:
-						println(instr.String())
+						if b.Config.Debug && CS4215_DEBUG {
+							println(instr.String())
+						}
 						b.createRuntimeCall("Gosched", nil, "")
 					case *ssa.Go:
-						println(instr.String())
+						if b.Config.Debug && CS4215_DEBUG {
+							println(instr.String())
+						}
 						b.createRuntimeCall("Gosched", nil, "")
 					}
 				}

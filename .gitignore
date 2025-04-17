@@ -43,3 +43,5 @@ wasm.wasm
 
 *.uf2
 *.elf
+
+node_modules

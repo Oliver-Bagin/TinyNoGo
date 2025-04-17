@@ -9,7 +9,7 @@ import (
 
 var (
 	validBuildModeOptions = []string{"default", "c-shared", "wasi-legacy"}
-	validGCOptions        = []string{"none", "leaking", "conservative", "custom", "precise", "boehm"}
+	validGCOptions        = []string{"none", "leaking", "conservative", "custom", "precise", "boehm", "continuous"}
 	// NC = Non-cooperative NCP = NC + deterministic
 	validSchedulerOptions     = []string{"none", "tasks", "asyncify", "nc", "ncd"}
 	validSerialOptions        = []string{"none", "uart", "usb", "rtt"}

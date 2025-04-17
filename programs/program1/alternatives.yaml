@@ -1,0 +1,14 @@
+# Alternatives
+- nointerleaving:
+    description: Program is not forced to share CPU and there may or may not be interleaving
+    flags:
+      target: wasip1
+      gc: leaking
+      schedular: asyncify
+- interleaving:
+    description: Program is forced to share CPU and we will have interleaving
+    flags:
+      target: wasip1
+      gc: leaking
+      schedular: nc
+

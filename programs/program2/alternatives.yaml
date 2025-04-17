@@ -1,0 +1,14 @@
+# Alternatives
+- memfill:
+    description: Program fills memory 
+    flags:
+      target: wasip1
+      gc: conservative
+      schedular: asyncify
+- memclear:
+    description: Program has interleaved GC
+    flags:
+      target: wasip1
+      gc: conservative
+      schedular: nc
+

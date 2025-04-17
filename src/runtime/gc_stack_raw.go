@@ -1,4 +1,4 @@
-//go:build (gc.conservative || gc.precise || gc.boehm) && !tinygo.wasm
+//go:build (gc.conservative || gc.precise || gc.boehm || gc.continuous) && !tinygo.wasm
 
 package runtime
 

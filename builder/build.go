@@ -890,7 +890,6 @@ func Build(pkgName, outpath, tmpdir string, config *compileopts.Config) (BuildRe
 				var args []string
 
 				if config.Scheduler() == "asyncify" || config.Scheduler() == "nc" || config.Scheduler() == "ncd" {
-					println("asyncify")
 					args = append(args, "--asyncify")
 				}
 

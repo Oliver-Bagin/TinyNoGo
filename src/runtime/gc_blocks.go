@@ -1,4 +1,4 @@
-//go:build gc.conservative || gc.precise
+//go:build gc.conservative || gc.precise || gc.continuous
 
 package runtime
 
@@ -334,18 +334,19 @@ func alloc(size uintptr, layout unsafe.Pointer) unsafe.Pointer {
 			if heapScanCount == 0 {
 				heapScanCount = 1
 			} else if heapScanCount == 1 {
-				// The entire heap has been searched for free memory, but none
-				// could be found. Run a garbage collection cycle to reclaim
-				// free memory and try again.
-				heapScanCount = 2
-				freeBytes := runGC()
-				heapSize := uintptr(metadataStart) - heapStart
-				if freeBytes < heapSize/3 {
-					// Ensure there is at least 33% headroom.
-					// This percentage was arbitrarily chosen, and may need to
-					// be tuned in the future.
-					growHeap()
-				}
+				// // The entire heap has been searched for free memory, but none
+				// // could be found. Run a garbage collection cycle to reclaim
+				// // free memory and try again.
+				// heapScanCount = 2
+				// freeBytes := runGC()
+				// heapSize := uintptr(metadataStart) - heapStart
+				// if freeBytes < heapSize/3 {
+				// Ensure there is at least 33% headroom.
+				// This percentage was arbitrarily chosen, and may need to
+				// be tuned in the future.
+				//println("Growing the heap!!!")
+				growHeap()
+				//}
 			} else {
 				// Even after garbage collection, no free memory could be found.
 				// Try to increase heap size.
@@ -452,9 +453,9 @@ func GC() {
 // of the runtime.GC() function. The difference is that it returns the number of
 // free bytes in the heap after the GC is finished.
 func runGC() (freeBytes uintptr) {
-	if gcDebug {
-		println("running collection cycle...")
-	}
+	//if gcDebug {
+	println("running collection cycle...")
+	//}
 
 	// Mark phase: mark all reachable objects, recursively.
 	markStack()
