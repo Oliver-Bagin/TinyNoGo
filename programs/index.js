@@ -7,16 +7,16 @@ const os = require("os");
 function testOutput(programName, output, truncate = false, test = (x) => [true, "Success"]) {
   console.log(`\n\t📦 \x1b[1mOutput from ${programName}\x1b[0m`);
 
-  const lines = output.trim().split('\n');
+  const lines = output.trim().split("\n");
   const totalLines = lines.length;
 
-  if (truncate && totalLines > 10) {
-    const head = lines.slice(0, 5);
-    const tail = lines.slice(-5);
+  if (truncate && totalLines > 30) {
+    const head = lines.slice(0, 15);
+    const tail = lines.slice(-15);
     console.log("\t✂️ Truncated Output:");
-    console.log([...head, '...', ...tail].map(x => `\t${x}`).join('\n'));
+    console.log([...head, '...', ...tail].map(x => `\t${x}`).join("\n"));
   } else {
-    console.log(lines.map(x => `\t${x}`).join('\n'));
+    console.log(lines.map(x => `\t${x}`).join("\n"));
   }
 
   const [passed, message] = test(lines);
@@ -27,10 +27,10 @@ function testOutput(programName, output, truncate = false, test = (x) => [true, 
   }
 }
 
-async function runWasmFile(filePath) {
+async function runWasmFile(filePath, schedFd) {
   const wasmBuffer = fs.readFileSync(filePath);
 
-  // Create a temp file to capture stdout
+  // Temporary capture for stdout/stderr
   const tmpFilePath = path.join(os.tmpdir(), `wasm-out-${Date.now()}.log`);
   const tmpFd = fs.openSync(tmpFilePath, 'w+');
 
@@ -38,52 +38,80 @@ async function runWasmFile(filePath) {
     version: 'preview1',
     args: [],
     env: {},
-    preopens: {
-      '/': './'
-    },
+    preopens: { '/': './' },
     stdout: tmpFd,
     stderr: tmpFd,
   });
 
+  let memory;
   const importObject = {
     wasi_snapshot_preview1: wasi.wasiImport,
+    env: {
+      schedular_log: (ptr, len) => {
+        const bytes = new Uint8Array(memory.buffer, ptr, len);
+        const str = new TextDecoder('utf8').decode(bytes);
+        fs.writeSync(schedFd, str + '\n');
+      }
+    }
   };
 
+  const { instance } = await WebAssembly.instantiate(wasmBuffer, importObject);
+  memory = instance.exports.memory;
+
   try {
-    const { instance } = await WebAssembly.instantiate(wasmBuffer, importObject);
     wasi.start(instance);
   } finally {
     fs.closeSync(tmpFd);
   }
 
-  // Read the captured output
   const captured = fs.readFileSync(tmpFilePath, 'utf8');
-  fs.unlinkSync(tmpFilePath); // Clean up
-
+  fs.unlinkSync(tmpFilePath);
   return captured;
 }
 
-// Run all compiled programs under ./programs/
 async function runAllPrograms() {
   const baseDir = path.resolve(__dirname);
+
   const programDirs = fs.readdirSync(baseDir).filter(name =>
-    fs.statSync(path.join(baseDir, name)).isDirectory() &&
-    /^program\d+$/.test(name)
+    fs.statSync(path.join(baseDir, name)).isDirectory() && /^program\d+$/.test(name)
   );
 
   for (const dir of programDirs) {
     console.log(`\n🟪 \x1b[1mProgram :=: ${dir}\x1b[0m`);
     const dirPath = path.join(baseDir, dir);
-    const wasmFiles = fs.readdirSync(dirPath).filter(name => name.endsWith(".wasm"));
+    const wasmDir = path.join(dirPath, 'wasm');
+    const outDir = path.join(dirPath, 'out');
+
+    if (fs.existsSync(outDir)) {
+      fs.rmSync(outDir, { recursive: true, force: true });
+    }
+    fs.mkdirSync(outDir);
+    console.log(`📂 Created output directory at ${outDir}`);
+
+    const wasmFiles = fs.readdirSync(wasmDir).filter(name => name.endsWith('.wasm'));
 
     for (const wasmFile of wasmFiles) {
-      const fullPath = path.join(dirPath, wasmFile);
+      const wasmPath = path.join(wasmDir, wasmFile);
+      const baseName = path.basename(wasmFile, '.wasm');
+
+      const schedDumpPath = path.join(outDir, `${baseName}.schedular.dump`);
+      const stdOutPath = path.join(outDir, `${baseName}.std.out`);
+
+      const schedFd = fs.openSync(schedDumpPath, 'w+');
+      let output = '';
+
       try {
-        const output = await runWasmFile(fullPath);
-        testOutput(`${dir}/${wasmFile}`, output, true);
+        output = await runWasmFile(wasmPath, schedFd);
+        testOutput(`${dir}/wasm/${wasmFile}`, output, true);
       } catch (err) {
-        console.error(`🚨🚨🚨 Error running ${dir}/${wasmFile}:`, err);
+        console.error(`🚨 Error running ${dir}/wasm/${wasmFile}:`, err);
+        output = `*** Error: ${err.message} ***`;
       }
+
+      fs.closeSync(schedFd);
+      fs.writeFileSync(stdOutPath, output, 'utf8');
+      console.log(`📄 Wrote output to ${stdOutPath}`);
+      console.log(`📄 Wrote scheduler dump to ${schedDumpPath}`);
     }
   }
 

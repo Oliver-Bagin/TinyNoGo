@@ -36,6 +36,7 @@ type functionInfo struct {
 	noescape      bool       // go:noescape
 	variadic      bool       // go:variadic (CGo only)
 	inline        inlineType // go:inline
+	interleave    bool       // wasam:interleave
 }
 
 type inlineType int
@@ -338,6 +339,8 @@ func (c *compilerContext) parsePragmas(info *functionInfo, f *ssa.Function) {
 			info.linkName = parts[1]
 			info.wasmName = info.linkName
 			info.exported = true
+		case "//go:interleave":
+			info.interleave = true
 		case "//go:interrupt":
 			if hasUnsafeImport(f.Pkg.Pkg) {
 				info.interrupt = true

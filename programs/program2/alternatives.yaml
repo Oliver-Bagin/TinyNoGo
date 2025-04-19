@@ -11,4 +11,10 @@
       target: wasip1
       gc: conservative
       schedular: nc
+- memclear-continuous:
+    description: Program has interleaved GC with interleaved GC instructions
+    flags:
+      target: wasip1
+      gc: continuous
+      schedular: nc
 

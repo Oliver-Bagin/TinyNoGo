@@ -1,4 +1,4 @@
-//go:build gc.conservative || gc.precise
+//go:build gc.continuous
 
 package runtime
 
@@ -309,11 +309,6 @@ func alloc(size uintptr, layout unsafe.Pointer) unsafe.Pointer {
 	if size == 0 {
 		return unsafe.Pointer(&zeroSizedAlloc)
 	}
-
-	if preciseHeap {
-		size += align(unsafe.Sizeof(layout))
-	}
-
 	if interrupt.In() {
 		runtimePanicAt(returnAddress(0), "heap alloc in interrupt")
 	}
@@ -334,23 +329,12 @@ func alloc(size uintptr, layout unsafe.Pointer) unsafe.Pointer {
 			if heapScanCount == 0 {
 				heapScanCount = 1
 			} else if heapScanCount == 1 {
-				// The entire heap has been searched for free memory, but none
-				// could be found. Run a garbage collection cycle to reclaim
-				// free memory and try again.
 				heapScanCount = 2
-				freeBytes := runGC()
-				heapSize := uintptr(metadataStart) - heapStart
-				if freeBytes < heapSize/3 {
-					// Ensure there is at least 33% headroom.
-					// This percentage was arbitrarily chosen, and may need to
-					// be tuned in the future.
-					println("Growing the heap!!!")
-					growHeap()
-				}
 			} else {
 				// Even after garbage collection, no free memory could be found.
 				// Try to increase heap size.
 				if growHeap() {
+					println("Growing the heap!!!")
 					// Success, the heap was increased in size. Try again with a
 					// larger heap.
 				} else {
@@ -403,15 +387,6 @@ func alloc(size uintptr, layout unsafe.Pointer) unsafe.Pointer {
 
 			// Return a pointer to this allocation.
 			pointer := thisAlloc.pointer()
-			if preciseHeap {
-				// Store the object layout at the start of the object.
-				// TODO: this wastes a little bit of space on systems with
-				// larger-than-pointer alignment requirements.
-				*(*unsafe.Pointer)(pointer) = layout
-				add := align(unsafe.Sizeof(layout))
-				pointer = unsafe.Add(pointer, add)
-				size -= add
-			}
 			memzero(pointer, size)
 			return pointer
 		}
@@ -452,6 +427,8 @@ func GC() {
 // runGC performs a garbage collection cycle. It is the internal implementation
 // of the runtime.GC() function. The difference is that it returns the number of
 // free bytes in the heap after the GC is finished.
+//
+//go:interleave
 func runGC() (freeBytes uintptr) {
 	println("Start ---->")
 	//if gcDebug {
@@ -511,6 +488,8 @@ func runGC() (freeBytes uintptr) {
 // like a heap pointer and are unmarked, marks them and scans that object as
 // well (recursively). The start and end parameters must be valid pointers and
 // must be aligned.
+//
+//go:interleave
 func markRoots(start, end uintptr) {
 	if gcDebug {
 		println("mark from", start, "to", end, int(end-start))
@@ -548,6 +527,8 @@ func markCurrentGoroutineStack(sp uintptr) {
 var stackOverflow bool
 
 // startMark starts the marking process on a root and all of its children.
+//
+//go:interleave
 func startMark(root gcBlock) {
 	var stack [markStackSize]gcBlock
 	stack[0] = root
@@ -569,11 +550,7 @@ func startMark(root gcBlock) {
 			continue
 		}
 		start, end := block.address(), block.findNext().address()
-		if preciseHeap {
-			// The first word of the object is just the pointer layout value.
-			// Skip it.
-			start += align(unsafe.Sizeof(uintptr(0)))
-		}
+
 		for addr := start; addr != end; addr += unsafe.Alignof(addr) {
 			// Load the word.
 			word := *(*uintptr)(unsafe.Pointer(addr))
@@ -627,6 +604,8 @@ func startMark(root gcBlock) {
 }
 
 // finishMark finishes the marking process by processing all stack overflows.
+//
+//go:interleave
 func finishMark() {
 	for stackOverflow {
 		// Re-mark all blocks.
@@ -644,6 +623,8 @@ func finishMark() {
 }
 
 // mark a GC root at the address addr.
+//
+//go:interleave
 func markRoot(addr, root uintptr) {
 	if isOnHeap(root) {
 		block := blockFromAddr(root)
@@ -665,6 +646,8 @@ func markRoot(addr, root uintptr) {
 
 // Sweep goes through all memory and frees unmarked memory.
 // It returns how many bytes are free in the heap after the sweep.
+//
+//go:interleave
 func sweep() (freeBytes uintptr) {
 	freeCurrentObject := false
 	var freed uint64

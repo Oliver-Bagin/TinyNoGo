@@ -57,8 +57,8 @@ var goSchedCounter uint64 = 0
 
 func Gosched() {
 	// Crazy to think that even if a single threaded cpu's primary objective was to
-	// overflow a uin64 at a clock speed of 5ghz it would still take
-	goSchedCounter++
+	// overflow a uin64 at a clock speed of 5ghz it would still take a century
+	//goSchedCounter++
 	if goSchedCounter%100 == 0 {
 		runqueue.Push(task.Current())
 		task.Pause()
@@ -255,12 +255,15 @@ func sleep(duration int64) {
 func run() {
 	initHeap()
 	initRand()
+	RegisterTask("Scheduler")
 	go func() {
+		RegisterTask("Main")
 		initAll()
 		callMain()
 		mainExited = true
 	}()
 	go func() {
+		RegisterTask("GC")
 		for true {
 			Gosched()
 			GC()

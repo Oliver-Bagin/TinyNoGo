@@ -1,8 +1,6 @@
-// build.js
-
 const fs = require("fs");
 const path = require("path");
-const { execSync, spawnSync } = require("child_process");
+const { execSync } = require("child_process");
 const yaml = require("js-yaml");
 
 function runOrExit(cmd, cwd = ".", label = "") {
@@ -29,6 +27,11 @@ fs.readdirSync(programsDir, { withFileTypes: true }).forEach((entry) => {
     const programPath = path.join(programsDir, entry.name);
     console.log(`📁 Processing ${entry.name}`);
 
+    // Prepare (and clear) the wasm output directory
+    const wasmDir = path.join(programPath, "wasm");
+    fs.rmSync(wasmDir, { recursive: true, force: true });
+    fs.mkdirSync(wasmDir, { recursive: true });
+
     const altFile = path.join(programPath, "alternatives.yaml");
     if (!fs.existsSync(altFile)) {
       console.warn(`⚠️  No alternatives.yaml found in ${entry.name}`);
@@ -40,7 +43,7 @@ fs.readdirSync(programsDir, { withFileTypes: true }).forEach((entry) => {
 
     alternatives.forEach((alt) => {
       const [name, config] = Object.entries(alt)[0];
-      const outWasm = path.join(programPath, `${entry.name}-${name}.wasm`);
+      const outWasm = path.join(wasmDir, `${entry.name}-${name}.wasm`);
       const flags = config.flags;
       const flagStr = `-target=${flags.target} -gc=${flags.gc} -scheduler=${flags.schedular}`;
 

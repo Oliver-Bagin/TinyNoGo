@@ -9,8 +9,8 @@
   (type (;7;) (func (param i32 i32) (result i32)))
   (type (;8;) (func (param i32 i32 i32 i32 i32)))
   (type (;9;) (func (param i32 i32 i32) (result i32)))
-  (type (;10;) (func (result i32)))
-  (type (;11;) (func (param i32 i64)))
+  (type (;10;) (func (param i32 i64)))
+  (type (;11;) (func (result i32)))
   (type (;12;) (func (param i32 i32 i32 i32 i32 i32 i32)))
   (type (;13;) (func (param i32 i32 i32 i32 i32 i32)))
   (type (;14;) (func (param i32 i32 i32) (result i64)))
@@ -45,13 +45,13 @@
   (import "wasi_snapshot_preview1" "args_get" (func $runtime.args_get (type 7)))
   (import "wasi_snapshot_preview1" "random_get" (func $__imported_wasi_snapshot_preview1_random_get (type 7)))
   (func $__wasm_call_ctors (type 3))
-  (func $tinygo_getCurrentStackPointer (type 10) (result i32)
+  (func $tinygo_getCurrentStackPointer (type 11) (result i32)
     global.get $__stack_pointer)
   (func $tinygo_unwind (type 1) (param i32)
     i32.const 88928
     i32.load8_u
     if  ;; label = @1
-      call 220
+      call 218
       i32.const 88928
       i32.const 0
       i32.store8
@@ -60,7 +60,7 @@
       global.get $__stack_pointer
       i32.store offset=4
       local.get 0
-      call 217
+      call 215
     end)
   (func $tinygo_launch (type 1) (param i32)
     (local $scratch i32)
@@ -73,7 +73,7 @@
     local.get 0
     i32.load
     call_indirect (type 1)
-    call 218
+    call 216
     global.set $__stack_pointer)
   (func $tinygo_rewind (type 1) (param i32)
     (local $scratch_2 i32) (local $scratch i32)
@@ -91,9 +91,9 @@
     local.get 0
     i32.const 8
     i32.add
-    call 219
+    call 217
     call_indirect (type 1)
-    call 218
+    call 216
     global.set $__stack_pointer)
   (func $write (type 9) (param i32 i32 i32) (result i32)
     (local i32 i32)
@@ -2158,7 +2158,7 @@
     i32.const 1
     i32.add
     i32.store offset=48)
-  (func $arc4random (type 10) (result i32)
+  (func $arc4random (type 11) (result i32)
     (local i32 i32 i32)
     global.get 1
     i32.const 2
@@ -10322,7 +10322,7 @@
     i32.add
     i32.store)
   (func $runtime.alloc (type 4) (param i32) (result i32)
-    (local i32 i32 i32 i32 i32 i32 i32)
+    (local i32 i32 i32 i32 i32 i32)
     global.get 1
     i32.const 2
     i32.eq
@@ -10330,7 +10330,7 @@
       global.get 2
       global.get 2
       i32.load
-      i32.const 24
+      i32.const 20
       i32.sub
       i32.store
       global.get 2
@@ -10349,9 +10349,6 @@
       local.set 5
       local.get 3
       i32.load offset=16
-      local.set 6
-      local.get 3
-      i32.load offset=20
       local.set 3
     end
     block (result i32)  ;; label = @1
@@ -10368,7 +10365,7 @@
         global.get 2
         i32.load
         i32.load
-        local.set 7
+        local.set 6
       end
       global.get 1
       i32.eqz
@@ -10405,7 +10402,7 @@
         i64.add
         i64.store
         i32.const 0
-        local.set 6
+        local.set 3
         i32.const 0
         local.set 4
         i32.const 89636
@@ -10430,6 +10427,8 @@
                 local.get 1
                 br_if 1 (;@5;)
                 local.get 4
+                i32.const 255
+                i32.and
                 local.set 1
                 i32.const 1
                 local.set 4
@@ -10440,90 +10439,72 @@
                 if  ;; label = @7
                   block  ;; label = @8
                     local.get 1
-                    br_table 3 (;@5;) 0 (;@8;) 2 (;@6;)
+                    br_table 3 (;@5;) 2 (;@6;) 0 (;@8;)
                   end
-                  i32.const 2
+                  memory.size
+                  memory.grow
+                  i32.const -1
+                  i32.eq
+                  br_if 3 (;@4;)
+                  memory.size
+                  local.set 1
+                  i32.const 89492
+                  i32.load
                   local.set 4
+                  i32.const 89492
+                  local.get 1
+                  i32.const 16
+                  i32.shl
+                  i32.store
+                  i32.const 89632
+                  i32.load
+                  local.set 1
+                  call $runtime.calculateHeapAddresses
+                  i32.const 89632
+                  i32.load
+                  local.get 1
+                  local.get 4
+                  local.get 1
+                  i32.sub
+                  memory.copy
                 end
                 global.get 1
                 i32.eqz
-                local.get 7
+                local.get 6
                 i32.eqz
                 i32.or
                 if  ;; label = @7
-                  call $runtime.runGC
+                  i32.const 67144
+                  i32.const 19
+                  call $runtime.printstring
                   i32.const 0
                   global.get 1
                   i32.const 1
                   i32.eq
                   br_if 6 (;@1;)
                   drop
-                  local.set 3
                 end
                 global.get 1
                 i32.eqz
-                if  ;; label = @7
-                  local.get 3
-                  i32.const 89632
-                  i32.load
-                  i32.const 90352
-                  i32.sub
-                  i32.const 3
-                  i32.div_u
-                  i32.ge_u
-                  br_if 2 (;@5;)
-                end
-                global.get 1
-                i32.eqz
-                local.get 7
+                local.get 6
                 i32.const 1
-                i32.eq
-                i32.or
-                if  ;; label = @7
-                  i32.const 67144
-                  i32.const 19
-                  call $runtime.printstring
-                  i32.const 1
-                  global.get 1
-                  i32.const 1
-                  i32.eq
-                  br_if 6 (;@1;)
-                  drop
-                end
-                global.get 1
-                i32.eqz
-                local.get 7
-                i32.const 2
                 i32.eq
                 i32.or
                 if  ;; label = @7
                   call $runtime.printnl
-                  i32.const 2
+                  i32.const 1
                   global.get 1
                   i32.const 1
                   i32.eq
                   br_if 6 (;@1;)
                   drop
                 end
-                global.get 1
-                i32.eqz
-                if  ;; label = @7
-                  call $runtime.growHeap
-                  drop
-                  br 2 (;@5;)
-                end
               end
+              local.get 4
+              i32.const 2
               global.get 1
-              i32.eqz
-              if  ;; label = @6
-                call $runtime.growHeap
-                i32.const 1
-                i32.and
-                i32.eqz
-                br_if 2 (;@4;)
-                i32.const 2
-                local.set 4
-              end
+              select
+              local.set 4
             end
             global.get 1
             i32.eqz
@@ -10548,21 +10529,19 @@
                 end
                 local.set 2
                 i32.const 0
-                local.set 6
+                local.set 3
                 br 3 (;@3;)
               end
               local.get 2
               i32.const 1
               i32.add
               local.set 1
-              local.get 6
+              local.get 5
+              local.get 3
               i32.const 1
               i32.add
-              local.tee 6
-              local.get 5
-              i32.eq
               local.tee 3
-              i32.eqz
+              i32.ne
               if  ;; label = @6
                 local.get 1
                 local.set 2
@@ -10614,15 +10593,15 @@
           end
           global.get 1
           i32.eqz
-          local.get 7
-          i32.const 3
+          local.get 6
+          i32.const 2
           i32.eq
           i32.or
           if  ;; label = @4
             i32.const 67163
             i32.const 13
             call $runtime.runtimePanicAt
-            i32.const 3
+            i32.const 2
             global.get 1
             i32.const 1
             i32.eq
@@ -10672,15 +10651,12 @@
     local.get 5
     i32.store offset=12
     local.get 1
-    local.get 6
-    i32.store offset=16
-    local.get 1
     local.get 3
-    i32.store offset=20
+    i32.store offset=16
     global.get 2
     global.get 2
     i32.load
-    i32.const 24
+    i32.const 20
     i32.add
     i32.store
     i32.const 0)
@@ -18052,7 +18028,7 @@
             local.get 2
             br_if 1 (;@3;)
             local.get 0
-            i32.load offset=36
+            i32.load offset=32
             local.tee 2
             i32.eqz
             br_if 1 (;@3;)
@@ -18062,7 +18038,7 @@
             i32.ne
             br_if 2 (;@2;)
             local.get 0
-            i32.const 28
+            i32.const 24
             i32.add
             local.set 0
           end
@@ -18639,7 +18615,7 @@
       i32.eqz
       i32.or
       if  ;; label = @2
-        i32.const 56
+        i32.const 48
         call $runtime.alloc
         i32.const 0
         global.get 1
@@ -18654,10 +18630,10 @@
       if  ;; label = @2
         local.get 3
         i32.const 0
-        i32.store offset=24
+        i32.store offset=20
         local.get 3
         local.get 0
-        i32.store offset=20
+        i32.store offset=16
         local.get 2
         local.get 3
         i32.store offset=16
@@ -18687,7 +18663,7 @@
         i32.store
         local.get 3
         local.get 0
-        i32.store offset=36
+        i32.store offset=32
         local.get 0
         i32.const -1204030091
         i32.store
@@ -18695,12 +18671,12 @@
         local.get 0
         i32.const 65536
         i32.add
-        i32.store offset=32
+        i32.store offset=28
         local.get 3
         local.get 0
         i32.const 4
         i32.add
-        i32.store offset=28
+        i32.store offset=24
         local.get 2
         local.get 0
         i32.store offset=24
@@ -20946,28 +20922,28 @@
       i32.store
       global.get 2
       i32.load
-      local.tee 3
+      local.tee 2
       i32.load
       local.set 0
-      local.get 3
+      local.get 2
       i32.load offset=8
-      local.set 2
-      local.get 3
+      local.set 3
+      local.get 2
       i32.load offset=12
-      local.set 4
-      local.get 3
+      local.set 5
+      local.get 2
       i32.load offset=16
       local.set 6
-      local.get 3
+      local.get 2
       i32.load offset=20
       local.set 7
-      local.get 3
+      local.get 2
       i32.load offset=24
       local.set 8
-      local.get 3
+      local.get 2
       i32.load offset=28
       local.set 9
-      local.get 3
+      local.get 2
       i32.load offset=4
       local.set 1
     end
@@ -20985,7 +20961,7 @@
         global.get 2
         i32.load
         i32.load
-        local.set 5
+        local.set 4
       end
       global.get 1
       i32.eqz
@@ -21024,22 +21000,22 @@
         local.get 0
         i32.const 89632
         i32.load
-        local.tee 2
+        local.tee 3
         i32.store offset=84
         local.get 0
-        local.get 2
+        local.get 3
         i32.store offset=80
-        local.get 2
+        local.get 3
         i32.const 0
         local.get 1
-        local.get 2
+        local.get 3
         i32.sub
         local.tee 1
         memory.fill
       end
       global.get 1
       i32.eqz
-      local.get 5
+      local.get 4
       i32.eqz
       i32.or
       if  ;; label = @2
@@ -21050,11 +21026,11 @@
         i32.eq
         br_if 1 (;@1;)
         drop
-        local.set 2
+        local.set 3
       end
       global.get 1
       i32.eqz
-      local.get 5
+      local.get 4
       i32.const 1
       i32.eq
       i32.or
@@ -21072,7 +21048,7 @@
       i32.eqz
       if  ;; label = @2
         i32.const 87288
-        local.get 2
+        local.get 3
         i32.const 1
         i32.or
         local.tee 1
@@ -21080,7 +21056,7 @@
       end
       global.get 1
       i32.eqz
-      local.get 5
+      local.get 4
       i32.const 2
       i32.eq
       i32.or
@@ -21096,7 +21072,7 @@
       end
       global.get 1
       i32.eqz
-      local.get 5
+      local.get 4
       i32.const 3
       i32.eq
       i32.or
@@ -21127,7 +21103,7 @@
             if  ;; label = @5
               global.get 1
               i32.eqz
-              local.get 5
+              local.get 4
               i32.const 4
               i32.eq
               i32.or
@@ -21144,7 +21120,7 @@
               end
               global.get 1
               i32.eqz
-              local.get 5
+              local.get 4
               i32.const 5
               i32.eq
               i32.or
@@ -21165,17 +21141,17 @@
                 local.get 0
                 i32.const 89716
                 i32.load
-                local.tee 2
+                local.tee 3
                 i32.store offset=100
                 local.get 0
-                local.get 2
+                local.get 3
                 i32.store offset=88
-                local.get 2
+                local.get 3
                 i32.eqz
                 local.tee 1
                 br_if 2 (;@4;)
                 i32.const 89716
-                local.get 2
+                local.get 3
                 i32.load
                 local.tee 1
                 i32.store
@@ -21188,23 +21164,23 @@
                 local.tee 1
                 i32.store offset=96
                 local.get 1
-                local.get 2
+                local.get 3
                 i32.eq
                 if  ;; label = @7
                   i32.const 89720
                   i32.const 0
                   i32.store
                 end
-                local.get 2
+                local.get 3
                 i32.const 0
                 i32.store
                 local.get 0
-                local.get 2
+                local.get 3
                 i32.store offset=68
                 local.get 0
                 i32.const 56
                 i32.add
-                local.set 4
+                local.set 5
                 local.get 0
                 i32.const 68
                 i32.add
@@ -21212,14 +21188,14 @@
               end
               global.get 1
               i32.eqz
-              local.get 5
+              local.get 4
               i32.const 6
               i32.eq
               i32.or
               if  ;; label = @6
                 i32.const 87340
                 local.get 1
-                local.get 4
+                local.get 5
                 i32.const 8
                 call $runtime.hashmapBinaryGet
                 i32.const 6
@@ -21240,7 +21216,7 @@
                 i32.store offset=104
                 local.get 0
                 i32.load offset=60
-                local.tee 4
+                local.tee 5
                 i32.eqz
                 local.set 6
               end
@@ -21258,7 +21234,7 @@
                   end
                   global.get 1
                   i32.eqz
-                  local.get 5
+                  local.get 4
                   i32.const 7
                   i32.eq
                   i32.or
@@ -21294,7 +21270,7 @@
                   end
                   global.get 1
                   i32.eqz
-                  local.get 5
+                  local.get 4
                   i32.const 8
                   i32.eq
                   i32.or
@@ -21303,7 +21279,7 @@
                     local.get 6
                     local.get 8
                     local.get 1
-                    local.get 4
+                    local.get 5
                     call $runtime.stringConcat
                     i32.const 8
                     global.get 1
@@ -21317,7 +21293,7 @@
                   if  ;; label = @8
                     local.get 0
                     i32.load offset=44
-                    local.set 4
+                    local.set 5
                     local.get 0
                     i32.load offset=40
                     br 2 (;@6;)
@@ -21332,7 +21308,7 @@
                 local.set 1
                 global.get 1
                 i32.eqz
-                local.get 5
+                local.get 4
                 i32.const 9
                 i32.eq
                 i32.or
@@ -21364,16 +21340,16 @@
                   local.get 0
                   i32.const 24
                   i32.add
-                  local.set 4
+                  local.set 5
                 end
                 global.get 1
                 i32.eqz
-                local.get 5
+                local.get 4
                 i32.const 10
                 i32.eq
                 i32.or
                 if  ;; label = @7
-                  local.get 4
+                  local.get 5
                   local.get 1
                   local.get 6
                   i32.const 67433
@@ -21392,7 +21368,7 @@
                 else
                   local.get 0
                   i32.load offset=28
-                  local.set 4
+                  local.set 5
                   local.get 0
                   i32.load offset=24
                 end
@@ -21411,7 +21387,7 @@
               end
               global.get 1
               i32.eqz
-              local.get 5
+              local.get 4
               i32.const 11
               i32.eq
               i32.or
@@ -21443,14 +21419,14 @@
               end
               global.get 1
               i32.eqz
-              local.get 5
+              local.get 4
               i32.const 12
               i32.eq
               i32.or
               if  ;; label = @6
                 local.get 7
                 local.get 1
-                local.get 4
+                local.get 5
                 local.get 6
                 local.get 8
                 call $runtime.stringConcat
@@ -21471,17 +21447,17 @@
                 i32.store offset=124
                 local.get 0
                 i32.load offset=12
-                local.set 4
+                local.set 5
               end
               global.get 1
               i32.eqz
-              local.get 5
+              local.get 4
               i32.const 13
               i32.eq
               i32.or
               if  ;; label = @6
                 local.get 1
-                local.get 4
+                local.get 5
                 call $schedular_log
                 i32.const 13
                 global.get 1
@@ -21497,37 +21473,30 @@
                 i32.load
                 local.set 1
                 i32.const 89488
-                local.get 2
+                local.get 3
                 i32.store
                 local.get 0
                 local.get 1
                 i32.store offset=128
-                local.get 2
-                i32.load offset=16
-                local.set 4
-                local.get 2
-                i32.const 89692
-                i32.load
-                i32.store offset=16
-                i32.const 89692
-                local.get 4
-                i32.store
-                local.get 2
-                i32.const 20
+                local.get 3
+                i32.const 16
                 i32.add
-                local.set 4
-                local.get 2
-                i32.load8_u offset=40
+                local.set 5
+                local.get 3
+                i32.load8_u offset=36
+                i32.eqz
+                local.tee 6
+                i32.eqz
                 if  ;; label = @7
-                  local.get 4
+                  local.get 5
                   call $tinygo_rewind
                   br 4 (;@3;)
                 end
-                local.get 4
+                local.get 5
                 call $tinygo_launch
-                local.get 2
+                local.get 3
                 i32.const 1
-                i32.store8 offset=40
+                i32.store8 offset=36
                 br 3 (;@3;)
               end
             end
@@ -21538,7 +21507,7 @@
             end
             global.get 1
             i32.eqz
-            local.get 5
+            local.get 4
             i32.const 14
             i32.eq
             i32.or
@@ -21567,7 +21536,7 @@
           end
           global.get 1
           i32.eqz
-          local.get 5
+          local.get 4
           i32.const 15
           i32.eq
           i32.or
@@ -21589,32 +21558,21 @@
         global.get 1
         i32.eqz
         if  ;; label = @3
-          local.get 2
-          i32.load offset=16
-          local.set 4
-          local.get 2
-          i32.const 89692
-          i32.load
-          local.tee 6
-          i32.store offset=16
           i32.const 89488
           local.get 1
           i32.store
-          i32.const 89692
-          local.get 4
-          i32.store
           local.get 0
-          local.get 2
-          i32.load offset=28
+          local.get 3
+          i32.load offset=24
           local.tee 1
           i32.store offset=132
           local.get 0
-          local.get 2
-          i32.load offset=32
-          local.tee 2
+          local.get 3
+          i32.load offset=28
+          local.tee 3
           i32.store offset=136
           local.get 1
-          local.get 2
+          local.get 3
           i32.le_u
           local.tee 1
           br_if 1 (;@2;)
@@ -21622,7 +21580,7 @@
       end
       global.get 1
       i32.eqz
-      local.get 5
+      local.get 4
       i32.const 16
       i32.eq
       i32.or
@@ -21644,10 +21602,10 @@
       end
       return
     end
-    local.set 3
+    local.set 2
     global.get 2
     i32.load
-    local.get 3
+    local.get 2
     i32.store
     global.get 2
     global.get 2
@@ -21657,28 +21615,28 @@
     i32.store
     global.get 2
     i32.load
-    local.tee 3
+    local.tee 2
     local.get 0
     i32.store
-    local.get 3
+    local.get 2
     local.get 1
     i32.store offset=4
-    local.get 3
     local.get 2
+    local.get 3
     i32.store offset=8
-    local.get 3
-    local.get 4
+    local.get 2
+    local.get 5
     i32.store offset=12
-    local.get 3
+    local.get 2
     local.get 6
     i32.store offset=16
-    local.get 3
+    local.get 2
     local.get 7
     i32.store offset=20
-    local.get 3
+    local.get 2
     local.get 8
     i32.store offset=24
-    local.get 3
+    local.get 2
     local.get 9
     i32.store offset=28
     global.get 2
@@ -24006,7 +23964,35 @@
     i32.add
     i32.store)
   (func $runtime.run$2 (type 3)
-    (local i32)
+    (local i32 i32 i32 i32 i32 i64)
+    global.get 1
+    i32.const 2
+    i32.eq
+    if  ;; label = @1
+      global.get 2
+      global.get 2
+      i32.load
+      i32.const 24
+      i32.sub
+      i32.store
+      global.get 2
+      i32.load
+      local.tee 3
+      i32.load
+      local.set 1
+      local.get 3
+      i32.load offset=4
+      local.set 2
+      local.get 3
+      i32.load offset=8
+      local.set 4
+      local.get 3
+      i64.load offset=12 align=4
+      local.set 5
+      local.get 3
+      i32.load offset=20
+      local.set 3
+    end
     block (result i32)  ;; label = @1
       global.get 1
       i32.const 2
@@ -24022,6 +24008,30 @@
         i32.load
         i32.load
         local.set 0
+      end
+      global.get 1
+      i32.eqz
+      if  ;; label = @2
+        global.get $__stack_pointer
+        i32.const 16
+        i32.sub
+        local.tee 3
+        global.set $__stack_pointer
+        local.get 3
+        i32.const 0
+        i32.store offset=12
+        local.get 3
+        i64.const 2
+        i64.store offset=4 align=4
+        i32.const 89692
+        i32.load
+        local.set 1
+        i32.const 89692
+        local.get 3
+        i32.store
+        local.get 3
+        local.get 1
+        i32.store
       end
       global.get 1
       i32.eqz
@@ -24062,8 +24072,9 @@
         i32.eq
         i32.or
         if  ;; label = @3
-          call $runtime.runGC
-          drop
+          i32.const 67176
+          i32.const 11
+          call $runtime.printstring
           i32.const 2
           global.get 1
           i32.const 1
@@ -24073,7 +24084,608 @@
         end
         global.get 1
         i32.eqz
-        br_if 0 (;@2;)
+        local.get 0
+        i32.const 3
+        i32.eq
+        i32.or
+        if  ;; label = @3
+          call $runtime.printnl
+          i32.const 3
+          global.get 1
+          i32.const 1
+          i32.eq
+          br_if 2 (;@1;)
+          drop
+        end
+        global.get 1
+        i32.eqz
+        local.get 0
+        i32.const 4
+        i32.eq
+        i32.or
+        if  ;; label = @3
+          call $runtime.Gosched
+          i32.const 4
+          global.get 1
+          i32.const 1
+          i32.eq
+          br_if 2 (;@1;)
+          drop
+        end
+        global.get 1
+        i32.eqz
+        local.get 0
+        i32.const 5
+        i32.eq
+        i32.or
+        if  ;; label = @3
+          i32.const 67187
+          i32.const 27
+          call $runtime.printstring
+          i32.const 5
+          global.get 1
+          i32.const 1
+          i32.eq
+          br_if 2 (;@1;)
+          drop
+        end
+        global.get 1
+        i32.eqz
+        local.get 0
+        i32.const 6
+        i32.eq
+        i32.or
+        if  ;; label = @3
+          call $runtime.printnl
+          i32.const 6
+          global.get 1
+          i32.const 1
+          i32.eq
+          br_if 2 (;@1;)
+          drop
+        end
+        global.get 1
+        i32.eqz
+        local.get 0
+        i32.const 7
+        i32.eq
+        i32.or
+        if  ;; label = @3
+          call $runtime.Gosched
+          i32.const 7
+          global.get 1
+          i32.const 1
+          i32.eq
+          br_if 2 (;@1;)
+          drop
+        end
+        global.get 1
+        i32.eqz
+        if  ;; label = @3
+          i32.const 89692
+          i32.load
+          drop
+          local.get 3
+          i32.const 89488
+          i32.load
+          local.tee 1
+          i32.store offset=8
+        end
+        block  ;; label = @3
+          global.get 1
+          i32.eqz
+          if  ;; label = @4
+            local.get 1
+            br_if 1 (;@3;)
+            call $tinygo_getCurrentStackPointer
+            local.set 1
+          end
+          global.get 1
+          i32.eqz
+          local.get 0
+          i32.const 8
+          i32.eq
+          i32.or
+          if  ;; label = @4
+            local.get 1
+            i32.const 65536
+            call $runtime.markRoots
+            i32.const 8
+            global.get 1
+            i32.const 1
+            i32.eq
+            br_if 3 (;@1;)
+            drop
+          end
+        end
+        global.get 1
+        i32.eqz
+        local.get 0
+        i32.const 9
+        i32.eq
+        i32.or
+        if  ;; label = @3
+          call $runtime.Gosched
+          i32.const 9
+          global.get 1
+          i32.const 1
+          i32.eq
+          br_if 2 (;@1;)
+          drop
+        end
+        global.get 1
+        i32.eqz
+        local.get 0
+        i32.const 10
+        i32.eq
+        i32.or
+        if  ;; label = @3
+          i32.const 65536
+          i32.const 90352
+          call $runtime.markRoots
+          i32.const 10
+          global.get 1
+          i32.const 1
+          i32.eq
+          br_if 2 (;@1;)
+          drop
+        end
+        global.get 1
+        i32.eqz
+        local.get 0
+        i32.const 11
+        i32.eq
+        i32.or
+        if  ;; label = @3
+          call $runtime.Gosched
+          i32.const 11
+          global.get 1
+          i32.const 1
+          i32.eq
+          br_if 2 (;@1;)
+          drop
+        end
+        loop  ;; label = @3
+          block  ;; label = @4
+            global.get 1
+            i32.eqz
+            if  ;; label = @5
+              i32.const 89689
+              i32.load8_u
+              i32.eqz
+              local.tee 1
+              br_if 1 (;@4;)
+              i32.const 89689
+              i32.const 0
+              i32.store8
+              i32.const 0
+              local.set 1
+            end
+            loop  ;; label = @5
+              global.get 1
+              i32.eqz
+              local.get 0
+              i32.const 12
+              i32.eq
+              i32.or
+              if  ;; label = @6
+                call $runtime.Gosched
+                i32.const 12
+                global.get 1
+                i32.const 1
+                i32.eq
+                br_if 5 (;@1;)
+                drop
+              end
+              global.get 1
+              i32.eqz
+              if  ;; label = @6
+                i32.const 89640
+                i32.load
+                local.get 1
+                i32.le_u
+                local.tee 2
+                br_if 3 (;@3;)
+                local.get 1
+                call $_runtime.gcBlock_.state
+                local.set 2
+              end
+              global.get 1
+              i32.eqz
+              local.get 0
+              i32.const 13
+              i32.eq
+              i32.or
+              if  ;; label = @6
+                call $runtime.Gosched
+                i32.const 13
+                global.get 1
+                i32.const 1
+                i32.eq
+                br_if 5 (;@1;)
+                drop
+              end
+              global.get 1
+              i32.const 1
+              local.get 2
+              local.get 2
+              i32.const 255
+              i32.and
+              i32.const 3
+              i32.ne
+              global.get 1
+              select
+              local.tee 2
+              select
+              if  ;; label = @6
+                global.get 1
+                i32.eqz
+                local.get 0
+                i32.const 14
+                i32.eq
+                i32.or
+                if  ;; label = @7
+                  local.get 1
+                  call $runtime.startMark
+                  i32.const 14
+                  global.get 1
+                  i32.const 1
+                  i32.eq
+                  br_if 6 (;@1;)
+                  drop
+                end
+                global.get 1
+                i32.eqz
+                local.get 0
+                i32.const 15
+                i32.eq
+                i32.or
+                if  ;; label = @7
+                  call $runtime.Gosched
+                  i32.const 15
+                  global.get 1
+                  i32.const 1
+                  i32.eq
+                  br_if 6 (;@1;)
+                  drop
+                end
+              end
+              global.get 1
+              i32.eqz
+              if  ;; label = @6
+                local.get 1
+                i32.const 1
+                i32.add
+                local.set 1
+                br 1 (;@5;)
+              end
+            end
+          end
+        end
+        global.get 1
+        i32.eqz
+        local.get 0
+        i32.const 16
+        i32.eq
+        i32.or
+        if  ;; label = @3
+          call $runtime.Gosched
+          i32.const 16
+          global.get 1
+          i32.const 1
+          i32.eq
+          br_if 2 (;@1;)
+          drop
+        end
+        global.get 1
+        i32.eqz
+        if  ;; label = @3
+          i64.const 0
+          local.set 5
+          i32.const 0
+          local.set 4
+          i32.const 0
+          local.set 1
+        end
+        loop  ;; label = @3
+          global.get 1
+          i32.eqz
+          local.get 0
+          i32.const 17
+          i32.eq
+          i32.or
+          if  ;; label = @4
+            call $runtime.Gosched
+            i32.const 17
+            global.get 1
+            i32.const 1
+            i32.eq
+            br_if 3 (;@1;)
+            drop
+          end
+          global.get 1
+          i32.eqz
+          if  ;; label = @4
+            i32.const 89640
+            i32.load
+            local.get 1
+            i32.le_u
+            local.set 2
+          end
+          block  ;; label = @4
+            block  ;; label = @5
+              block  ;; label = @6
+                global.get 1
+                i32.eqz
+                if  ;; label = @7
+                  local.get 2
+                  br_if 1 (;@6;)
+                  local.get 1
+                  call $_runtime.gcBlock_.state
+                  local.set 2
+                end
+                global.get 1
+                i32.eqz
+                local.get 0
+                i32.const 18
+                i32.eq
+                i32.or
+                if  ;; label = @7
+                  call $runtime.Gosched
+                  i32.const 18
+                  global.get 1
+                  i32.const 1
+                  i32.eq
+                  br_if 6 (;@1;)
+                  drop
+                end
+                local.get 2
+                local.get 2
+                i32.const 255
+                i32.and
+                global.get 1
+                select
+                local.set 2
+                block  ;; label = @7
+                  block  ;; label = @8
+                    global.get 1
+                    i32.eqz
+                    if  ;; label = @9
+                      block  ;; label = @10
+                        local.get 2
+                        i32.const 1
+                        i32.sub
+                        br_table 0 (;@10;) 2 (;@8;) 3 (;@7;) 6 (;@4;)
+                      end
+                      local.get 1
+                      call $_runtime.gcBlock_.markFree
+                    end
+                    global.get 1
+                    i32.eqz
+                    local.get 0
+                    i32.const 19
+                    i32.eq
+                    i32.or
+                    if  ;; label = @9
+                      call $runtime.Gosched
+                      i32.const 19
+                      global.get 1
+                      i32.const 1
+                      i32.eq
+                      br_if 8 (;@1;)
+                      drop
+                    end
+                    global.get 1
+                    i32.eqz
+                    if  ;; label = @9
+                      i32.const 89672
+                      i32.const 89672
+                      i64.load
+                      i64.const 1
+                      i64.add
+                      i64.store
+                      local.get 5
+                      i64.const 1
+                      i64.add
+                      local.set 5
+                      br 4 (;@5;)
+                    end
+                  end
+                  global.get 1
+                  i32.eqz
+                  if  ;; label = @8
+                    local.get 4
+                    i32.const 0
+                    local.set 4
+                    i32.eqz
+                    local.tee 2
+                    br_if 4 (;@4;)
+                    local.get 1
+                    call $_runtime.gcBlock_.markFree
+                    local.get 5
+                    i64.const 1
+                    i64.add
+                    local.set 5
+                  end
+                  global.get 1
+                  i32.eqz
+                  local.get 0
+                  i32.const 20
+                  i32.eq
+                  i32.or
+                  if  ;; label = @8
+                    call $runtime.Gosched
+                    i32.const 20
+                    global.get 1
+                    i32.const 1
+                    i32.eq
+                    br_if 7 (;@1;)
+                    drop
+                  end
+                  global.get 1
+                  i32.eqz
+                  br_if 2 (;@5;)
+                end
+                global.get 1
+                i32.eqz
+                if  ;; label = @7
+                  local.get 3
+                  i32.const 89632
+                  i32.load
+                  local.tee 2
+                  i32.store offset=12
+                  local.get 1
+                  i32.const 2
+                  i32.shr_u
+                  local.get 2
+                  i32.add
+                  local.tee 2
+                  i32.load8_u
+                  i32.const 2
+                  local.get 1
+                  i32.const 1
+                  i32.shl
+                  i32.const 6
+                  i32.and
+                  i32.shl
+                  i32.const -1
+                  i32.xor
+                  i32.and
+                  local.set 4
+                  local.get 2
+                  local.get 4
+                  i32.store8
+                  i32.const 0
+                  local.set 4
+                end
+                global.get 1
+                i32.eqz
+                local.get 0
+                i32.const 21
+                i32.eq
+                i32.or
+                if  ;; label = @7
+                  call $runtime.Gosched
+                  i32.const 21
+                  global.get 1
+                  i32.const 1
+                  i32.eq
+                  br_if 6 (;@1;)
+                  drop
+                end
+                global.get 1
+                i32.eqz
+                br_if 2 (;@4;)
+              end
+              global.get 1
+              i32.eqz
+              if  ;; label = @6
+                i32.const 89680
+                i32.const 89680
+                i64.load
+                local.get 5
+                i64.add
+                local.tee 5
+                i64.store
+              end
+              global.get 1
+              i32.eqz
+              local.get 0
+              i32.const 22
+              i32.eq
+              i32.or
+              if  ;; label = @6
+                call $runtime.Gosched
+                i32.const 22
+                global.get 1
+                i32.const 1
+                i32.eq
+                br_if 5 (;@1;)
+                drop
+              end
+              global.get 1
+              i32.eqz
+              local.get 0
+              i32.const 23
+              i32.eq
+              i32.or
+              if  ;; label = @6
+                i32.const 67214
+                i32.const 9
+                call $runtime.printstring
+                i32.const 23
+                global.get 1
+                i32.const 1
+                i32.eq
+                br_if 5 (;@1;)
+                drop
+              end
+              global.get 1
+              i32.eqz
+              local.get 0
+              i32.const 24
+              i32.eq
+              i32.or
+              if  ;; label = @6
+                call $runtime.printnl
+                i32.const 24
+                global.get 1
+                i32.const 1
+                i32.eq
+                br_if 5 (;@1;)
+                drop
+              end
+              global.get 1
+              i32.eqz
+              local.get 0
+              i32.const 25
+              i32.eq
+              i32.or
+              if  ;; label = @6
+                call $runtime.Gosched
+                i32.const 25
+                global.get 1
+                i32.const 1
+                i32.eq
+                br_if 5 (;@1;)
+                drop
+              end
+              global.get 1
+              i32.eqz
+              br_if 3 (;@2;)
+            end
+            local.get 4
+            i32.const 1
+            global.get 1
+            select
+            local.set 4
+          end
+          local.get 1
+          local.get 1
+          i32.const 1
+          i32.add
+          global.get 1
+          select
+          local.set 1
+          global.get 1
+          i32.eqz
+          local.get 0
+          i32.const 26
+          i32.eq
+          i32.or
+          if  ;; label = @4
+            call $runtime.Gosched
+            i32.const 26
+            global.get 1
+            i32.const 1
+            i32.eq
+            br_if 3 (;@1;)
+            drop
+          end
+          global.get 1
+          i32.eqz
+          br_if 0 (;@3;)
+        end
       end
       return
     end
@@ -24086,6 +24698,29 @@
     global.get 2
     i32.load
     i32.const 4
+    i32.add
+    i32.store
+    global.get 2
+    i32.load
+    local.tee 0
+    local.get 1
+    i32.store
+    local.get 0
+    local.get 2
+    i32.store offset=4
+    local.get 0
+    local.get 4
+    i32.store offset=8
+    local.get 0
+    local.get 5
+    i64.store offset=12 align=4
+    local.get 0
+    local.get 3
+    i32.store offset=20
+    global.get 2
+    global.get 2
+    i32.load
+    i32.const 24
     i32.add
     i32.store)
   (func $runtime.ticks (type 21) (result i64)
@@ -24553,7 +25188,7 @@
       end
     end
     local.get 4)
-  (func $runtime.u64ToString (type 11) (param i32 i64)
+  (func $runtime.u64ToString (type 10) (param i32 i64)
     (local i32 i32 i32 i32 i32)
     global.get 1
     i32.const 2
@@ -24810,488 +25445,6 @@
     i32.const 20
     i32.add
     i32.store)
-  (func $runtime.runGC (type 10) (result i32)
-    (local i32 i32 i32 i32 i32 i64 i32)
-    global.get 1
-    i32.const 2
-    i32.eq
-    if  ;; label = @1
-      global.get 2
-      global.get 2
-      i32.load
-      i32.const 24
-      i32.sub
-      i32.store
-      global.get 2
-      i32.load
-      local.tee 4
-      i32.load
-      local.set 0
-      local.get 4
-      i32.load offset=4
-      local.set 2
-      local.get 4
-      i32.load offset=8
-      local.set 3
-      local.get 4
-      i64.load offset=12 align=4
-      local.set 5
-      local.get 4
-      i32.load offset=20
-      local.set 4
-    end
-    block (result i32)  ;; label = @1
-      global.get 1
-      i32.const 2
-      i32.eq
-      if  ;; label = @2
-        global.get 2
-        global.get 2
-        i32.load
-        i32.const 4
-        i32.sub
-        i32.store
-        global.get 2
-        i32.load
-        i32.load
-        local.set 1
-      end
-      global.get 1
-      i32.eqz
-      local.get 1
-      i32.eqz
-      i32.or
-      if  ;; label = @2
-        i32.const 67176
-        i32.const 11
-        call $runtime.printstring
-        i32.const 0
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 1
-      i32.const 1
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.printnl
-        i32.const 1
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 1
-      i32.const 2
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        i32.const 67187
-        i32.const 27
-        call $runtime.printstring
-        i32.const 2
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 1
-      i32.const 3
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.printnl
-        i32.const 3
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      if  ;; label = @2
-        i32.const 89692
-        i32.load
-        drop
-        i32.const 89488
-        i32.load
-        local.set 0
-      end
-      block  ;; label = @2
-        global.get 1
-        i32.eqz
-        if  ;; label = @3
-          local.get 0
-          br_if 1 (;@2;)
-          call $tinygo_getCurrentStackPointer
-          local.set 0
-        end
-        global.get 1
-        i32.eqz
-        local.get 1
-        i32.const 4
-        i32.eq
-        i32.or
-        if  ;; label = @3
-          local.get 0
-          i32.const 65536
-          call $runtime.markRoots
-          i32.const 4
-          global.get 1
-          i32.const 1
-          i32.eq
-          br_if 2 (;@1;)
-          drop
-        end
-      end
-      global.get 1
-      i32.eqz
-      local.get 1
-      i32.const 5
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        i32.const 65536
-        i32.const 90352
-        call $runtime.markRoots
-        i32.const 5
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      loop  ;; label = @2
-        global.get 1
-        i32.eqz
-        if  ;; label = @3
-          i32.const 89689
-          i32.load8_u
-          local.set 0
-        end
-        block  ;; label = @3
-          global.get 1
-          i32.eqz
-          if  ;; label = @4
-            local.get 0
-            br_if 1 (;@3;)
-            i64.const 0
-            local.set 5
-            i32.const 0
-            local.set 4
-            i32.const 0
-            local.set 3
-            i32.const 0
-            local.set 0
-          end
-          loop  ;; label = @4
-            global.get 1
-            i32.eqz
-            if  ;; label = @5
-              i32.const 89640
-              i32.load
-              local.get 0
-              i32.le_u
-              local.set 2
-            end
-            block  ;; label = @5
-              block  ;; label = @6
-                global.get 1
-                i32.eqz
-                if  ;; label = @7
-                  local.get 2
-                  i32.eqz
-                  if  ;; label = @8
-                    block  ;; label = @9
-                      block  ;; label = @10
-                        block  ;; label = @11
-                          block  ;; label = @12
-                            local.get 0
-                            call $_runtime.gcBlock_.state
-                            i32.const 255
-                            i32.and
-                            local.tee 2
-                            i32.const 1
-                            i32.sub
-                            br_table 0 (;@12;) 1 (;@11;) 2 (;@10;) 3 (;@9;)
-                          end
-                          local.get 0
-                          call $_runtime.gcBlock_.markFree
-                          i32.const 89672
-                          i32.const 89672
-                          i64.load
-                          i64.const 1
-                          i64.add
-                          i64.store
-                          br 5 (;@6;)
-                        end
-                        local.get 3
-                        i32.const 1
-                        i32.and
-                        i32.const 0
-                        local.set 3
-                        i32.eqz
-                        local.tee 2
-                        br_if 5 (;@5;)
-                        local.get 0
-                        call $_runtime.gcBlock_.markFree
-                        br 4 (;@6;)
-                      end
-                      i32.const 0
-                      local.set 3
-                      i32.const 89632
-                      i32.load
-                      local.get 0
-                      i32.const 2
-                      i32.shr_u
-                      i32.add
-                      local.tee 2
-                      i32.load8_u
-                      i32.const 2
-                      local.get 0
-                      i32.const 1
-                      i32.shl
-                      i32.const 6
-                      i32.and
-                      i32.shl
-                      i32.const -1
-                      i32.xor
-                      i32.and
-                      local.set 6
-                      local.get 2
-                      local.get 6
-                      i32.store8
-                      br 4 (;@5;)
-                    end
-                    local.get 4
-                    i32.const 16
-                    i32.add
-                    local.set 4
-                    br 3 (;@5;)
-                  end
-                  i32.const 89680
-                  local.get 5
-                  i32.const 89680
-                  i64.load
-                  i64.add
-                  i64.store
-                end
-                global.get 1
-                i32.eqz
-                local.get 1
-                i32.const 6
-                i32.eq
-                i32.or
-                if  ;; label = @7
-                  i32.const 67214
-                  i32.const 9
-                  call $runtime.printstring
-                  i32.const 6
-                  global.get 1
-                  i32.const 1
-                  i32.eq
-                  br_if 6 (;@1;)
-                  drop
-                end
-                global.get 1
-                i32.eqz
-                local.get 1
-                i32.const 7
-                i32.eq
-                i32.or
-                if  ;; label = @7
-                  call $runtime.printnl
-                  i32.const 7
-                  global.get 1
-                  i32.const 1
-                  i32.eq
-                  br_if 6 (;@1;)
-                  drop
-                end
-                global.get 1
-                i32.eqz
-                if  ;; label = @7
-                  local.get 4
-                  local.get 5
-                  i32.wrap_i64
-                  i32.const 4
-                  i32.shl
-                  i32.add
-                  return
-                end
-              end
-              global.get 1
-              i32.eqz
-              if  ;; label = @6
-                local.get 5
-                i64.const 1
-                i64.add
-                local.set 5
-                i32.const 1
-                local.set 3
-              end
-            end
-            global.get 1
-            i32.eqz
-            if  ;; label = @5
-              local.get 0
-              i32.const 1
-              i32.add
-              local.set 0
-              br 1 (;@4;)
-            end
-          end
-        end
-        global.get 1
-        i32.eqz
-        if  ;; label = @3
-          i32.const 89689
-          i32.const 0
-          i32.store8
-          i32.const 89640
-          i32.load
-          local.set 3
-          i32.const 0
-          local.set 0
-        end
-        loop  ;; label = @3
-          global.get 1
-          i32.eqz
-          if  ;; label = @4
-            local.get 0
-            local.get 3
-            i32.ge_u
-            local.tee 2
-            br_if 2 (;@2;)
-            local.get 0
-            call $_runtime.gcBlock_.state
-            i32.const 255
-            i32.and
-            i32.const 3
-            i32.ne
-            local.set 2
-          end
-          global.get 1
-          i32.const 1
-          local.get 2
-          select
-          if  ;; label = @4
-            global.get 1
-            i32.eqz
-            local.get 1
-            i32.const 8
-            i32.eq
-            i32.or
-            if  ;; label = @5
-              local.get 0
-              call $runtime.startMark
-              i32.const 8
-              global.get 1
-              i32.const 1
-              i32.eq
-              br_if 4 (;@1;)
-              drop
-            end
-            global.get 1
-            if (result i32)  ;; label = @5
-              local.get 3
-            else
-              i32.const 89640
-              i32.load
-            end
-            local.set 3
-          end
-          global.get 1
-          i32.eqz
-          if  ;; label = @4
-            local.get 0
-            i32.const 1
-            i32.add
-            local.set 0
-            br 1 (;@3;)
-          end
-        end
-      end
-      unreachable
-    end
-    local.set 1
-    global.get 2
-    i32.load
-    local.get 1
-    i32.store
-    global.get 2
-    global.get 2
-    i32.load
-    i32.const 4
-    i32.add
-    i32.store
-    global.get 2
-    i32.load
-    local.tee 1
-    local.get 0
-    i32.store
-    local.get 1
-    local.get 2
-    i32.store offset=4
-    local.get 1
-    local.get 3
-    i32.store offset=8
-    local.get 1
-    local.get 5
-    i64.store offset=12 align=4
-    local.get 1
-    local.get 4
-    i32.store offset=20
-    global.get 2
-    global.get 2
-    i32.load
-    i32.const 24
-    i32.add
-    i32.store
-    i32.const 0)
-  (func $runtime.growHeap (type 10) (result i32)
-    (local i32 i32 i32)
-    memory.size
-    memory.grow
-    i32.const -1
-    i32.ne
-    local.tee 1
-    if  ;; label = @1
-      memory.size
-      local.set 0
-      i32.const 89492
-      i32.load
-      local.set 2
-      i32.const 89492
-      local.get 0
-      i32.const 16
-      i32.shl
-      i32.store
-      i32.const 89632
-      i32.load
-      local.set 0
-      call $runtime.calculateHeapAddresses
-      i32.const 89632
-      i32.load
-      local.get 0
-      local.get 2
-      local.get 0
-      i32.sub
-      memory.copy
-    end
-    local.get 1)
   (func $_runtime.gcBlock_.state (type 4) (param i32) (result i32)
     i32.const 89632
     i32.load
@@ -25328,426 +25481,6 @@
     i32.shl
     i32.or
     i32.store8)
-  (func $runtime.markRoots (type 0) (param i32 i32)
-    (local i32 i32 i32)
-    global.get 1
-    i32.const 2
-    i32.eq
-    if  ;; label = @1
-      global.get 2
-      global.get 2
-      i32.load
-      i32.const 16
-      i32.sub
-      i32.store
-      global.get 2
-      i32.load
-      local.tee 2
-      i32.load
-      local.set 0
-      local.get 2
-      i32.load offset=4
-      local.set 1
-      local.get 2
-      i32.load offset=8
-      local.set 3
-      local.get 2
-      i32.load offset=12
-      local.set 2
-    end
-    block (result i32)  ;; label = @1
-      global.get 1
-      i32.const 2
-      i32.eq
-      if  ;; label = @2
-        global.get 2
-        global.get 2
-        i32.load
-        i32.const 4
-        i32.sub
-        i32.store
-        global.get 2
-        i32.load
-        i32.load
-        local.set 4
-      end
-      loop  ;; label = @2
-        block  ;; label = @3
-          global.get 1
-          i32.eqz
-          if  ;; label = @4
-            local.get 0
-            local.get 1
-            i32.ge_u
-            br_if 1 (;@3;)
-            local.get 0
-            i32.load
-            local.tee 3
-            i32.const 90352
-            i32.lt_u
-            local.set 2
-          end
-          block  ;; label = @4
-            global.get 1
-            i32.eqz
-            if  ;; label = @5
-              local.get 2
-              br_if 1 (;@4;)
-              local.get 3
-              i32.const 89632
-              i32.load
-              i32.ge_u
-              local.tee 2
-              br_if 1 (;@4;)
-              local.get 3
-              i32.const 90352
-              i32.sub
-              i32.const 4
-              i32.shr_u
-              local.tee 3
-              call $_runtime.gcBlock_.state
-              i32.const 255
-              i32.and
-              i32.eqz
-              local.tee 2
-              br_if 1 (;@4;)
-              local.get 3
-              call $_runtime.gcBlock_.findHead
-              local.tee 3
-              call $_runtime.gcBlock_.state
-              i32.const 255
-              i32.and
-              i32.const 3
-              i32.eq
-              local.tee 2
-              br_if 1 (;@4;)
-            end
-            global.get 1
-            i32.eqz
-            local.get 4
-            i32.eqz
-            i32.or
-            if  ;; label = @5
-              local.get 3
-              call $runtime.startMark
-              i32.const 0
-              global.get 1
-              i32.const 1
-              i32.eq
-              br_if 4 (;@1;)
-              drop
-            end
-          end
-          global.get 1
-          i32.eqz
-          if  ;; label = @4
-            local.get 0
-            i32.const 4
-            i32.add
-            local.set 0
-            br 2 (;@2;)
-          end
-        end
-      end
-      return
-    end
-    local.set 4
-    global.get 2
-    i32.load
-    local.get 4
-    i32.store
-    global.get 2
-    global.get 2
-    i32.load
-    i32.const 4
-    i32.add
-    i32.store
-    global.get 2
-    i32.load
-    local.tee 4
-    local.get 0
-    i32.store
-    local.get 4
-    local.get 1
-    i32.store offset=4
-    local.get 4
-    local.get 3
-    i32.store offset=8
-    local.get 4
-    local.get 2
-    i32.store offset=12
-    global.get 2
-    global.get 2
-    i32.load
-    i32.const 16
-    i32.add
-    i32.store)
-  (func $_runtime.gcBlock_.markFree (type 1) (param i32)
-    (local i32)
-    i32.const 89632
-    i32.load
-    local.get 0
-    i32.const 2
-    i32.shr_u
-    i32.add
-    local.tee 1
-    local.get 1
-    i32.load8_u
-    i32.const 3
-    local.get 0
-    i32.const 1
-    i32.shl
-    i32.const 6
-    i32.and
-    i32.shl
-    i32.const -1
-    i32.xor
-    i32.and
-    i32.store8)
-  (func $runtime.startMark (type 1) (param i32)
-    (local i32 i32 i32 i32 i32 i32 i32 i32 i32)
-    block (result i32)  ;; label = @1
-      global.get 1
-      i32.const 2
-      i32.eq
-      if  ;; label = @2
-        global.get 2
-        global.get 2
-        i32.load
-        i32.const 4
-        i32.sub
-        i32.store
-        global.get 2
-        i32.load
-        i32.load
-        local.set 5
-      end
-      global.get 1
-      i32.eqz
-      if  ;; label = @2
-        global.get $__stack_pointer
-        i32.const 128
-        i32.sub
-        local.tee 4
-        global.set $__stack_pointer
-        local.get 4
-        i32.const 4
-        i32.add
-        i32.const 0
-        i32.const 124
-        memory.fill
-        local.get 4
-        local.get 0
-        i32.store
-        local.get 0
-        i32.const 3
-        call $_runtime.gcBlock_.setState
-        i32.const 1
-        local.set 2
-        block  ;; label = @3
-          loop  ;; label = @4
-            local.get 2
-            i32.const 0
-            i32.gt_s
-            if  ;; label = @5
-              local.get 2
-              i32.const 1
-              i32.sub
-              local.tee 2
-              i32.const 31
-              i32.gt_u
-              br_if 2 (;@3;)
-              local.get 4
-              local.get 2
-              i32.const 2
-              i32.shl
-              i32.add
-              i32.load
-              local.tee 0
-              local.set 3
-              block  ;; label = @6
-                block  ;; label = @7
-                  local.get 0
-                  call $_runtime.gcBlock_.state
-                  i32.const 255
-                  i32.and
-                  i32.const 1
-                  i32.sub
-                  br_table 0 (;@7;) 1 (;@6;) 0 (;@7;) 1 (;@6;)
-                end
-                local.get 0
-                i32.const 1
-                i32.add
-                local.set 3
-              end
-              local.get 3
-              i32.const 4
-              i32.shl
-              local.tee 1
-              local.get 0
-              i32.const 4
-              i32.shl
-              local.tee 7
-              i32.sub
-              local.set 6
-              local.get 1
-              i32.const 90352
-              i32.add
-              local.set 1
-              i32.const 89632
-              i32.load
-              local.set 8
-              loop  ;; label = @6
-                block  ;; label = @7
-                  local.get 6
-                  local.set 0
-                  local.get 1
-                  local.get 8
-                  i32.ge_u
-                  br_if 0 (;@7;)
-                  local.get 0
-                  i32.const 16
-                  i32.add
-                  local.set 6
-                  local.get 1
-                  i32.const 16
-                  i32.add
-                  local.set 1
-                  local.get 3
-                  call $_runtime.gcBlock_.state
-                  local.get 3
-                  i32.const 1
-                  i32.add
-                  local.set 3
-                  i32.const 255
-                  i32.and
-                  i32.const 2
-                  i32.eq
-                  br_if 1 (;@6;)
-                end
-              end
-              local.get 7
-              i32.const 90352
-              i32.add
-              local.set 3
-              loop  ;; label = @6
-                local.get 0
-                i32.eqz
-                br_if 2 (;@4;)
-                block  ;; label = @7
-                  local.get 3
-                  i32.load
-                  local.tee 1
-                  i32.const 90352
-                  i32.lt_u
-                  br_if 0 (;@7;)
-                  local.get 1
-                  i32.const 89632
-                  i32.load
-                  i32.ge_u
-                  br_if 0 (;@7;)
-                  local.get 1
-                  i32.const 90352
-                  i32.sub
-                  i32.const 4
-                  i32.shr_u
-                  local.tee 1
-                  call $_runtime.gcBlock_.state
-                  i32.const 255
-                  i32.and
-                  i32.eqz
-                  br_if 0 (;@7;)
-                  local.get 1
-                  call $_runtime.gcBlock_.findHead
-                  local.tee 1
-                  call $_runtime.gcBlock_.state
-                  i32.const 255
-                  i32.and
-                  i32.const 3
-                  i32.eq
-                  br_if 0 (;@7;)
-                  local.get 1
-                  i32.const 3
-                  call $_runtime.gcBlock_.setState
-                  local.get 2
-                  i32.const 32
-                  i32.eq
-                  if  ;; label = @8
-                    i32.const 89689
-                    i32.const 1
-                    i32.store8
-                    i32.const 32
-                    local.set 2
-                    br 1 (;@7;)
-                  end
-                  local.get 2
-                  i32.const 31
-                  i32.gt_u
-                  br_if 4 (;@3;)
-                  local.get 4
-                  local.get 2
-                  i32.const 2
-                  i32.shl
-                  i32.add
-                  local.get 1
-                  i32.store
-                  local.get 2
-                  i32.const 1
-                  i32.add
-                  local.set 2
-                end
-                local.get 0
-                i32.const 4
-                i32.sub
-                local.set 0
-                local.get 3
-                i32.const 4
-                i32.add
-                local.set 3
-                br 0 (;@6;)
-              end
-              unreachable
-            end
-          end
-          local.get 4
-          i32.const 128
-          i32.add
-          global.set $__stack_pointer
-          return
-        end
-      end
-      global.get 1
-      i32.eqz
-      local.get 5
-      i32.eqz
-      i32.or
-      if  ;; label = @2
-        call $runtime.lookupPanic
-        i32.const 0
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      if  ;; label = @2
-        unreachable
-      end
-      return
-    end
-    local.set 0
-    global.get 2
-    i32.load
-    local.get 0
-    i32.store
-    global.get 2
-    global.get 2
-    i32.load
-    i32.const 4
-    i32.add
-    i32.store)
   (func $runtime.printint32 (type 1) (param i32)
     (local i32)
     global.get 1
@@ -25854,55 +25587,6 @@
     i32.const 4
     i32.add
     i32.store)
-  (func $_runtime.gcBlock_.findHead (type 4) (param i32) (result i32)
-    (local i32 i32 i32)
-    i32.const 89632
-    i32.load
-    local.set 2
-    loop  ;; label = @1
-      block  ;; label = @2
-        local.get 2
-        local.get 0
-        i32.const 2
-        i32.shr_u
-        i32.add
-        i32.load8_u
-        local.tee 3
-        i32.const 170
-        i32.eq
-        if  ;; label = @3
-          local.get 0
-          i32.const -1
-          i32.xor
-          i32.const -4
-          i32.or
-          local.set 1
-          br 1 (;@2;)
-        end
-        i32.const -1
-        local.set 1
-        local.get 3
-        local.get 0
-        i32.const 1
-        i32.shl
-        i32.const 6
-        i32.and
-        i32.shr_u
-        i32.const 3
-        i32.and
-        i32.const 2
-        i32.eq
-        br_if 0 (;@2;)
-        local.get 0
-        return
-      end
-      local.get 0
-      local.get 1
-      i32.add
-      local.set 0
-      br 0 (;@1;)
-    end
-    unreachable)
   (func $runtime.hashmapGet (type 6) (param i32 i32 i32 i32) (result i32)
     (local i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32 i32)
     global.get 1
@@ -26540,6 +26224,943 @@
     i32.const 4
     i32.add
     i32.store)
+  (func $runtime.markRoots (type 0) (param i32 i32)
+    (local i32 i32 i32 i32)
+    global.get 1
+    i32.const 2
+    i32.eq
+    if  ;; label = @1
+      global.get 2
+      global.get 2
+      i32.load
+      i32.const 20
+      i32.sub
+      i32.store
+      global.get 2
+      i32.load
+      local.tee 4
+      i32.load
+      local.set 0
+      local.get 4
+      i32.load offset=4
+      local.set 1
+      local.get 4
+      i32.load offset=8
+      local.set 3
+      local.get 4
+      i32.load offset=12
+      local.set 5
+      local.get 4
+      i32.load offset=16
+      local.set 4
+    end
+    block (result i32)  ;; label = @1
+      global.get 1
+      i32.const 2
+      i32.eq
+      if  ;; label = @2
+        global.get 2
+        global.get 2
+        i32.load
+        i32.const 4
+        i32.sub
+        i32.store
+        global.get 2
+        i32.load
+        i32.load
+        local.set 2
+      end
+      loop  ;; label = @2
+        block  ;; label = @3
+          global.get 1
+          i32.eqz
+          local.get 2
+          i32.eqz
+          i32.or
+          if  ;; label = @4
+            call $runtime.Gosched
+            i32.const 0
+            global.get 1
+            i32.const 1
+            i32.eq
+            br_if 3 (;@1;)
+            drop
+          end
+          global.get 1
+          i32.eqz
+          if  ;; label = @4
+            local.get 0
+            local.get 1
+            i32.ge_u
+            br_if 1 (;@3;)
+            i32.const 89632
+            i32.load
+            local.set 5
+            local.get 0
+            i32.load
+            local.set 3
+          end
+          global.get 1
+          i32.eqz
+          local.get 2
+          i32.const 1
+          i32.eq
+          i32.or
+          if  ;; label = @4
+            call $runtime.Gosched
+            i32.const 1
+            global.get 1
+            i32.const 1
+            i32.eq
+            br_if 3 (;@1;)
+            drop
+          end
+          local.get 4
+          local.get 3
+          i32.const 90352
+          i32.lt_u
+          global.get 1
+          select
+          local.set 4
+          block  ;; label = @4
+            global.get 1
+            i32.eqz
+            if  ;; label = @5
+              local.get 4
+              br_if 1 (;@4;)
+              local.get 3
+              local.get 5
+              i32.ge_u
+              local.tee 5
+              br_if 1 (;@4;)
+            end
+            global.get 1
+            i32.eqz
+            local.get 2
+            i32.const 2
+            i32.eq
+            i32.or
+            if  ;; label = @5
+              call $runtime.Gosched
+              i32.const 2
+              global.get 1
+              i32.const 1
+              i32.eq
+              br_if 4 (;@1;)
+              drop
+            end
+            global.get 1
+            i32.eqz
+            if  ;; label = @5
+              local.get 3
+              i32.const 90352
+              i32.sub
+              i32.const 4
+              i32.shr_u
+              local.tee 5
+              call $_runtime.gcBlock_.state
+              local.set 3
+            end
+            global.get 1
+            i32.eqz
+            local.get 2
+            i32.const 3
+            i32.eq
+            i32.or
+            if  ;; label = @5
+              call $runtime.Gosched
+              i32.const 3
+              global.get 1
+              i32.const 1
+              i32.eq
+              br_if 4 (;@1;)
+              drop
+            end
+            global.get 1
+            i32.eqz
+            if  ;; label = @5
+              local.get 3
+              i32.const 255
+              i32.and
+              i32.eqz
+              local.tee 3
+              br_if 1 (;@4;)
+              local.get 5
+              call $_runtime.gcBlock_.findHead
+              local.set 3
+            end
+            global.get 1
+            i32.eqz
+            local.get 2
+            i32.const 4
+            i32.eq
+            i32.or
+            if  ;; label = @5
+              call $runtime.Gosched
+              i32.const 4
+              global.get 1
+              i32.const 1
+              i32.eq
+              br_if 4 (;@1;)
+              drop
+            end
+            global.get 1
+            i32.eqz
+            if  ;; label = @5
+              local.get 3
+              call $_runtime.gcBlock_.state
+              local.set 5
+            end
+            global.get 1
+            i32.eqz
+            local.get 2
+            i32.const 5
+            i32.eq
+            i32.or
+            if  ;; label = @5
+              call $runtime.Gosched
+              i32.const 5
+              global.get 1
+              i32.const 1
+              i32.eq
+              br_if 4 (;@1;)
+              drop
+            end
+            global.get 1
+            i32.eqz
+            if  ;; label = @5
+              local.get 5
+              i32.const 255
+              i32.and
+              i32.const 3
+              i32.eq
+              local.tee 5
+              br_if 1 (;@4;)
+            end
+            global.get 1
+            i32.eqz
+            local.get 2
+            i32.const 6
+            i32.eq
+            i32.or
+            if  ;; label = @5
+              local.get 3
+              call $runtime.startMark
+              i32.const 6
+              global.get 1
+              i32.const 1
+              i32.eq
+              br_if 4 (;@1;)
+              drop
+            end
+            global.get 1
+            i32.eqz
+            local.get 2
+            i32.const 7
+            i32.eq
+            i32.or
+            if  ;; label = @5
+              call $runtime.Gosched
+              i32.const 7
+              global.get 1
+              i32.const 1
+              i32.eq
+              br_if 4 (;@1;)
+              drop
+            end
+          end
+          local.get 0
+          local.get 0
+          i32.const 4
+          i32.add
+          global.get 1
+          select
+          local.set 0
+          global.get 1
+          i32.eqz
+          local.get 2
+          i32.const 8
+          i32.eq
+          i32.or
+          if  ;; label = @4
+            call $runtime.Gosched
+            i32.const 8
+            global.get 1
+            i32.const 1
+            i32.eq
+            br_if 3 (;@1;)
+            drop
+          end
+          global.get 1
+          i32.eqz
+          br_if 1 (;@2;)
+        end
+      end
+      return
+    end
+    local.set 2
+    global.get 2
+    i32.load
+    local.get 2
+    i32.store
+    global.get 2
+    global.get 2
+    i32.load
+    i32.const 4
+    i32.add
+    i32.store
+    global.get 2
+    i32.load
+    local.tee 2
+    local.get 0
+    i32.store
+    local.get 2
+    local.get 1
+    i32.store offset=4
+    local.get 2
+    local.get 3
+    i32.store offset=8
+    local.get 2
+    local.get 5
+    i32.store offset=12
+    local.get 2
+    local.get 4
+    i32.store offset=16
+    global.get 2
+    global.get 2
+    i32.load
+    i32.const 20
+    i32.add
+    i32.store)
+  (func $runtime.startMark (type 1) (param i32)
+    (local i32 i32 i32 i32 i32 i32 i32 i32 i32)
+    global.get 1
+    i32.const 2
+    i32.eq
+    if  ;; label = @1
+      global.get 2
+      global.get 2
+      i32.load
+      i32.const 28
+      i32.sub
+      i32.store
+      global.get 2
+      i32.load
+      local.tee 6
+      i32.load
+      local.set 0
+      local.get 6
+      i32.load offset=4
+      local.set 2
+      local.get 6
+      i32.load offset=8
+      local.set 3
+      local.get 6
+      i32.load offset=12
+      local.set 4
+      local.get 6
+      i32.load offset=16
+      local.set 5
+      local.get 6
+      i32.load offset=20
+      local.set 7
+      local.get 6
+      i32.load offset=24
+      local.set 6
+    end
+    block (result i32)  ;; label = @1
+      global.get 1
+      i32.const 2
+      i32.eq
+      if  ;; label = @2
+        global.get 2
+        global.get 2
+        i32.load
+        i32.const 4
+        i32.sub
+        i32.store
+        global.get 2
+        i32.load
+        i32.load
+        local.set 1
+      end
+      global.get 1
+      i32.eqz
+      if  ;; label = @2
+        global.get $__stack_pointer
+        i32.const 128
+        i32.sub
+        local.tee 7
+        global.set $__stack_pointer
+        local.get 7
+        i32.const 4
+        i32.add
+        local.tee 3
+        i32.const 0
+        i32.const 124
+        memory.fill
+        local.get 7
+        local.get 0
+        i32.store
+        local.get 0
+        i32.const 3
+        call $_runtime.gcBlock_.setState
+      end
+      global.get 1
+      i32.eqz
+      local.get 1
+      i32.eqz
+      i32.or
+      if  ;; label = @2
+        call $runtime.Gosched
+        i32.const 0
+        global.get 1
+        i32.const 1
+        i32.eq
+        br_if 1 (;@1;)
+        drop
+      end
+      local.get 5
+      i32.const 1
+      global.get 1
+      select
+      local.set 5
+      block  ;; label = @2
+        loop  ;; label = @3
+          block  ;; label = @4
+            global.get 1
+            i32.eqz
+            local.get 1
+            i32.const 1
+            i32.eq
+            i32.or
+            if  ;; label = @5
+              call $runtime.Gosched
+              i32.const 1
+              global.get 1
+              i32.const 1
+              i32.eq
+              br_if 4 (;@1;)
+              drop
+            end
+            global.get 1
+            i32.eqz
+            if  ;; label = @5
+              local.get 5
+              i32.const 0
+              i32.le_s
+              br_if 1 (;@4;)
+              local.get 5
+              i32.const 1
+              i32.sub
+              local.tee 5
+              i32.const 31
+              i32.gt_u
+              br_if 3 (;@2;)
+              local.get 7
+              local.get 5
+              i32.const 2
+              i32.shl
+              i32.add
+              local.tee 0
+              i32.load
+              local.set 2
+            end
+            global.get 1
+            i32.eqz
+            local.get 1
+            i32.const 2
+            i32.eq
+            i32.or
+            if  ;; label = @5
+              call $runtime.Gosched
+              i32.const 2
+              global.get 1
+              i32.const 1
+              i32.eq
+              br_if 4 (;@1;)
+              drop
+            end
+            global.get 1
+            i32.eqz
+            local.get 1
+            i32.const 3
+            i32.eq
+            i32.or
+            if  ;; label = @5
+              call $runtime.Gosched
+              i32.const 3
+              global.get 1
+              i32.const 1
+              i32.eq
+              br_if 4 (;@1;)
+              drop
+            end
+            global.get 1
+            i32.eqz
+            local.get 1
+            i32.const 4
+            i32.eq
+            i32.or
+            if  ;; label = @5
+              call $runtime.Gosched
+              i32.const 4
+              global.get 1
+              i32.const 1
+              i32.eq
+              br_if 4 (;@1;)
+              drop
+            end
+            global.get 1
+            i32.eqz
+            if  ;; label = @5
+              local.get 2
+              i32.const 4
+              i32.shl
+              local.set 0
+              block  ;; label = @6
+                block  ;; label = @7
+                  local.get 2
+                  call $_runtime.gcBlock_.state
+                  i32.const 255
+                  i32.and
+                  i32.const 1
+                  i32.sub
+                  br_table 0 (;@7;) 1 (;@6;) 0 (;@7;) 1 (;@6;)
+                end
+                local.get 2
+                i32.const 1
+                i32.add
+                local.set 2
+              end
+              local.get 0
+              i32.const 90352
+              i32.add
+              local.set 6
+              local.get 2
+              i32.const 4
+              i32.shl
+              local.tee 4
+              local.get 0
+              i32.sub
+              local.set 3
+              local.get 4
+              i32.const 90352
+              i32.add
+              local.set 4
+              i32.const 89632
+              i32.load
+              local.set 8
+              loop  ;; label = @6
+                block  ;; label = @7
+                  local.get 3
+                  local.set 0
+                  local.get 4
+                  local.get 8
+                  i32.ge_u
+                  local.tee 3
+                  br_if 0 (;@7;)
+                  local.get 0
+                  i32.const 16
+                  i32.add
+                  local.set 3
+                  local.get 4
+                  i32.const 16
+                  i32.add
+                  local.set 4
+                  local.get 2
+                  call $_runtime.gcBlock_.state
+                  local.get 2
+                  i32.const 1
+                  i32.add
+                  local.set 2
+                  i32.const 255
+                  i32.and
+                  i32.const 2
+                  i32.eq
+                  br_if 1 (;@6;)
+                end
+              end
+            end
+            global.get 1
+            i32.eqz
+            local.get 1
+            i32.const 5
+            i32.eq
+            i32.or
+            if  ;; label = @5
+              call $runtime.Gosched
+              i32.const 5
+              global.get 1
+              i32.const 1
+              i32.eq
+              br_if 4 (;@1;)
+              drop
+            end
+            global.get 1
+            i32.eqz
+            local.get 1
+            i32.const 6
+            i32.eq
+            i32.or
+            if  ;; label = @5
+              call $runtime.Gosched
+              i32.const 6
+              global.get 1
+              i32.const 1
+              i32.eq
+              br_if 4 (;@1;)
+              drop
+            end
+            loop  ;; label = @5
+              global.get 1
+              i32.eqz
+              local.get 1
+              i32.const 7
+              i32.eq
+              i32.or
+              if  ;; label = @6
+                call $runtime.Gosched
+                i32.const 7
+                global.get 1
+                i32.const 1
+                i32.eq
+                br_if 5 (;@1;)
+                drop
+              end
+              global.get 1
+              i32.eqz
+              if  ;; label = @6
+                local.get 0
+                i32.eqz
+                local.tee 3
+                br_if 3 (;@3;)
+                local.get 6
+                i32.load
+                local.set 2
+              end
+              global.get 1
+              i32.eqz
+              local.get 1
+              i32.const 8
+              i32.eq
+              i32.or
+              if  ;; label = @6
+                call $runtime.Gosched
+                i32.const 8
+                global.get 1
+                i32.const 1
+                i32.eq
+                br_if 5 (;@1;)
+                drop
+              end
+              global.get 1
+              i32.eqz
+              if  ;; label = @6
+                i32.const 89632
+                i32.load
+                local.set 4
+              end
+              global.get 1
+              i32.eqz
+              local.get 1
+              i32.const 9
+              i32.eq
+              i32.or
+              if  ;; label = @6
+                call $runtime.Gosched
+                i32.const 9
+                global.get 1
+                i32.const 1
+                i32.eq
+                br_if 5 (;@1;)
+                drop
+              end
+              local.get 3
+              local.get 2
+              i32.const 90352
+              i32.lt_u
+              global.get 1
+              select
+              local.set 3
+              block  ;; label = @6
+                global.get 1
+                i32.eqz
+                if  ;; label = @7
+                  local.get 3
+                  br_if 1 (;@6;)
+                  local.get 2
+                  local.get 4
+                  i32.ge_u
+                  local.tee 3
+                  br_if 1 (;@6;)
+                end
+                global.get 1
+                i32.eqz
+                local.get 1
+                i32.const 10
+                i32.eq
+                i32.or
+                if  ;; label = @7
+                  call $runtime.Gosched
+                  i32.const 10
+                  global.get 1
+                  i32.const 1
+                  i32.eq
+                  br_if 6 (;@1;)
+                  drop
+                end
+                global.get 1
+                i32.eqz
+                if  ;; label = @7
+                  local.get 2
+                  i32.const 90352
+                  i32.sub
+                  local.tee 3
+                  i32.const 4
+                  i32.shr_u
+                  local.tee 4
+                  call $_runtime.gcBlock_.state
+                  local.set 2
+                end
+                global.get 1
+                i32.eqz
+                local.get 1
+                i32.const 11
+                i32.eq
+                i32.or
+                if  ;; label = @7
+                  call $runtime.Gosched
+                  i32.const 11
+                  global.get 1
+                  i32.const 1
+                  i32.eq
+                  br_if 6 (;@1;)
+                  drop
+                end
+                global.get 1
+                i32.eqz
+                if  ;; label = @7
+                  local.get 2
+                  i32.const 255
+                  i32.and
+                  i32.eqz
+                  local.tee 3
+                  br_if 1 (;@6;)
+                  local.get 4
+                  call $_runtime.gcBlock_.findHead
+                  local.set 2
+                end
+                global.get 1
+                i32.eqz
+                local.get 1
+                i32.const 12
+                i32.eq
+                i32.or
+                if  ;; label = @7
+                  call $runtime.Gosched
+                  i32.const 12
+                  global.get 1
+                  i32.const 1
+                  i32.eq
+                  br_if 6 (;@1;)
+                  drop
+                end
+                global.get 1
+                i32.eqz
+                if  ;; label = @7
+                  local.get 2
+                  call $_runtime.gcBlock_.state
+                  local.set 4
+                end
+                global.get 1
+                i32.eqz
+                local.get 1
+                i32.const 13
+                i32.eq
+                i32.or
+                if  ;; label = @7
+                  call $runtime.Gosched
+                  i32.const 13
+                  global.get 1
+                  i32.const 1
+                  i32.eq
+                  br_if 6 (;@1;)
+                  drop
+                end
+                global.get 1
+                i32.eqz
+                if  ;; label = @7
+                  local.get 4
+                  i32.const 255
+                  i32.and
+                  i32.const 3
+                  i32.eq
+                  local.tee 3
+                  br_if 1 (;@6;)
+                  local.get 2
+                  i32.const 3
+                  call $_runtime.gcBlock_.setState
+                end
+                global.get 1
+                i32.eqz
+                local.get 1
+                i32.const 14
+                i32.eq
+                i32.or
+                if  ;; label = @7
+                  call $runtime.Gosched
+                  i32.const 14
+                  global.get 1
+                  i32.const 1
+                  i32.eq
+                  br_if 6 (;@1;)
+                  drop
+                end
+                global.get 1
+                i32.eqz
+                if  ;; label = @7
+                  local.get 5
+                  i32.const 32
+                  i32.ne
+                  local.tee 3
+                  i32.eqz
+                  if  ;; label = @8
+                    i32.const 89689
+                    i32.const 1
+                    i32.store8
+                    i32.const 32
+                    local.set 5
+                    br 2 (;@6;)
+                  end
+                  local.get 5
+                  i32.const 31
+                  i32.gt_u
+                  br_if 5 (;@2;)
+                  local.get 7
+                  local.get 5
+                  i32.const 2
+                  i32.shl
+                  i32.add
+                  local.tee 3
+                  local.get 2
+                  i32.store
+                  local.get 5
+                  i32.const 1
+                  i32.add
+                  local.set 5
+                end
+              end
+              global.get 1
+              i32.eqz
+              if  ;; label = @6
+                local.get 0
+                i32.const 4
+                i32.sub
+                local.set 0
+                local.get 6
+                i32.const 4
+                i32.add
+                local.set 6
+                br 1 (;@5;)
+              end
+            end
+          end
+        end
+        global.get 1
+        i32.eqz
+        if  ;; label = @3
+          local.get 7
+          i32.const 128
+          i32.add
+          global.set $__stack_pointer
+          return
+        end
+      end
+      global.get 1
+      i32.eqz
+      local.get 1
+      i32.const 15
+      i32.eq
+      i32.or
+      if  ;; label = @2
+        call $runtime.lookupPanic
+        i32.const 15
+        global.get 1
+        i32.const 1
+        i32.eq
+        br_if 1 (;@1;)
+        drop
+      end
+      global.get 1
+      i32.eqz
+      if  ;; label = @2
+        unreachable
+      end
+      return
+    end
+    local.set 1
+    global.get 2
+    i32.load
+    local.get 1
+    i32.store
+    global.get 2
+    global.get 2
+    i32.load
+    i32.const 4
+    i32.add
+    i32.store
+    global.get 2
+    i32.load
+    local.tee 1
+    local.get 0
+    i32.store
+    local.get 1
+    local.get 2
+    i32.store offset=4
+    local.get 1
+    local.get 3
+    i32.store offset=8
+    local.get 1
+    local.get 4
+    i32.store offset=12
+    local.get 1
+    local.get 5
+    i32.store offset=16
+    local.get 1
+    local.get 7
+    i32.store offset=20
+    local.get 1
+    local.get 6
+    i32.store offset=24
+    global.get 2
+    global.get 2
+    i32.load
+    i32.const 28
+    i32.add
+    i32.store)
+  (func $_runtime.gcBlock_.markFree (type 1) (param i32)
+    (local i32)
+    i32.const 89632
+    i32.load
+    local.get 0
+    i32.const 2
+    i32.shr_u
+    i32.add
+    local.tee 1
+    local.get 1
+    i32.load8_u
+    i32.const 3
+    local.get 0
+    i32.const 1
+    i32.shl
+    i32.const 6
+    i32.and
+    i32.shl
+    i32.const -1
+    i32.xor
+    i32.and
+    i32.store8)
   (func $runtime.panicOrGoexit (type 0) (param i32 i32)
     (local i32)
     global.get 1
@@ -34455,6 +35076,55 @@
     i32.const 28
     i32.add
     i32.store)
+  (func $_runtime.gcBlock_.findHead (type 4) (param i32) (result i32)
+    (local i32 i32 i32)
+    i32.const 89632
+    i32.load
+    local.set 2
+    loop  ;; label = @1
+      block  ;; label = @2
+        local.get 2
+        local.get 0
+        i32.const 2
+        i32.shr_u
+        i32.add
+        i32.load8_u
+        local.tee 3
+        i32.const 170
+        i32.eq
+        if  ;; label = @3
+          local.get 0
+          i32.const -1
+          i32.xor
+          i32.const -4
+          i32.or
+          local.set 1
+          br 1 (;@2;)
+        end
+        i32.const -1
+        local.set 1
+        local.get 3
+        local.get 0
+        i32.const 1
+        i32.shl
+        i32.const 6
+        i32.and
+        i32.shr_u
+        i32.const 3
+        i32.and
+        i32.const 2
+        i32.eq
+        br_if 0 (;@2;)
+        local.get 0
+        return
+      end
+      local.get 0
+      local.get 1
+      i32.add
+      local.set 0
+      br 0 (;@1;)
+    end
+    unreachable)
   (func $runtime.nilMapPanic (type 3)
     (local i32)
     block (result i32)  ;; label = @1
@@ -35504,7 +36174,7 @@
     i32.const 68
     i32.add
     i32.store)
-  (func $runtime.fastrand (type 10) (result i32)
+  (func $runtime.fastrand (type 11) (result i32)
     (local i32)
     i32.const 87288
     i32.const 87288
@@ -36093,7 +36763,7 @@
     i32.add
     i32.store
     i32.const 0)
-  (func $fmt.newPrinter (type 10) (result i32)
+  (func $fmt.newPrinter (type 11) (result i32)
     (local i32 i32 i32 i32 i32 i32 i32)
     global.get 1
     i32.const 2
@@ -50662,7 +51332,7 @@
     i32.const 44
     i32.add
     i32.store)
-  (func $_time.absDays_.yearYday (type 11) (param i32 i64)
+  (func $_time.absDays_.yearYday (type 10) (param i32 i64)
     (local i32 i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -51239,7 +51909,7 @@
     i32.const 44
     i32.add
     i32.store)
-  (func $_time.absDays_.split (type 11) (param i32 i64)
+  (func $_time.absDays_.split (type 10) (param i32 i64)
     (local i64)
     local.get 0
     local.get 1
@@ -51272,7 +51942,7 @@
     i32.const 11758980
     i32.div_u
     i32.store offset=12)
-  (func $_time.absDays_.date (type 11) (param i32 i64)
+  (func $_time.absDays_.date (type 10) (param i32 i64)
     (local i32 i32 i32)
     global.get $__stack_pointer
     i32.const 16
@@ -51328,7 +51998,7 @@
     i32.const 16
     i32.add
     global.set $__stack_pointer)
-  (func $_time.absSeconds_.clock (type 11) (param i32 i64)
+  (func $_time.absSeconds_.clock (type 10) (param i32 i64)
     (local i32 i32)
     local.get 0
     local.get 1
@@ -60388,7 +61058,7 @@
     i32.const 44
     i32.add
     i32.store)
-  (func $strconv.divmod1e9 (type 11) (param i32 i64)
+  (func $strconv.divmod1e9 (type 10) (param i32 i64)
     (local i32 i64)
     global.get $__stack_pointer
     i32.const 16
@@ -81484,8 +82154,32 @@
     i32.const 36
     i32.add
     i32.store)
-  (func (;217;) (type 1) (param i32)
+  (func (;215;) (type 1) (param i32)
     i32.const 1
+    global.set 1
+    local.get 0
+    global.set 2
+    global.get 2
+    i32.load
+    global.get 2
+    i32.load offset=4
+    i32.gt_u
+    if  ;; label = @1
+      unreachable
+    end)
+  (func (;216;) (type 3)
+    i32.const 0
+    global.set 1
+    global.get 2
+    i32.load
+    global.get 2
+    i32.load offset=4
+    i32.gt_u
+    if  ;; label = @1
+      unreachable
+    end)
+  (func (;217;) (type 1) (param i32)
+    i32.const 2
     global.set 1
     local.get 0
     global.set 2
@@ -81508,31 +82202,7 @@
     if  ;; label = @1
       unreachable
     end)
-  (func (;219;) (type 1) (param i32)
-    i32.const 2
-    global.set 1
-    local.get 0
-    global.set 2
-    global.get 2
-    i32.load
-    global.get 2
-    i32.load offset=4
-    i32.gt_u
-    if  ;; label = @1
-      unreachable
-    end)
-  (func (;220;) (type 3)
-    i32.const 0
-    global.set 1
-    global.get 2
-    i32.load
-    global.get 2
-    i32.load offset=4
-    i32.gt_u
-    if  ;; label = @1
-      unreachable
-    end)
-  (func (;221;) (type 10) (result i32)
+  (func (;219;) (type 11) (result i32)
     global.get 1)
   (table (;0;) 5 5 funcref)
   (memory (;0;) 2)
@@ -81545,11 +82215,11 @@
   (export "calloc" (func $calloc))
   (export "realloc" (func $realloc))
   (export "_start" (func $_start))
-  (export "asyncify_start_unwind" (func 217))
-  (export "asyncify_stop_unwind" (func 218))
-  (export "asyncify_start_rewind" (func 219))
-  (export "asyncify_stop_rewind" (func 220))
-  (export "asyncify_get_state" (func 221))
+  (export "asyncify_start_unwind" (func 215))
+  (export "asyncify_stop_unwind" (func 216))
+  (export "asyncify_start_rewind" (func 217))
+  (export "asyncify_stop_rewind" (func 218))
+  (export "asyncify_get_state" (func 219))
   (elem (;0;) (i32.const 1) func $runtime.run$1$gowrapper $runtime.run$2$gowrapper $runtime.memequal $runtime.hash32)
   (data $.rodata (i32.const 65536) "expand 32-byte k-\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\02\13\03\03\03\03\03\03\03\03\03\03\03\03#\03\034\04\04\04D\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\80\bf\a0\bf\80\9f\90\bf\80\8f")
   (data $.rodata.1 (i32.const 65841) "KeyNumFieldChanDir\00\00meta\000123456789abcef\00\00\00z\00\00\00\14T\01\00\84\01\01\00\0d\02\01\00reflectlite.ValueError\00\00Z\00\00\00\a8\01\01\00\0d\02\01\00\0c\00\00\00\02\00\00\008R\01\00(\03\01\00HR\01\001\02\01\00\d5\00\00\00\84\01\01\00fmt\00reflect\00errors\00os\00\09\04fmtFlags\00io/fs\00\04\10Err\00\04\10LayoutElem\00\04\18ValueElem\00syscall\00\04\08Path\00\04\08Value\00internal/reflectlite\00time\00\04 Message\00\04\08Kind\00invalidboolintint8int16int32int64uintuint8uint16uint32uint64uintptrfloat32float64complex64complex128stringunsafe.Pointerchaninterfaceptrslicearrayfuncmapstructkind\00z\00\00\00\04T\01\00\04\03\01\00\0d\02\01\00reflectlite.TypeError\00\00\00Z\00\00\00 \03\01\00\0d\02\01\00\08\00\00\00\01\00\00\008R\01\00(\03\01\00\d5\00\00\00\04\03\01\00\04\00Method\00unimplemented: size of type\00\00\00\001\03\01\00\1b\00\00\00chan<- <-chan chan (chan *[][]struct {}; }interface {}struct {reflect: field index out of range\00\96\03\01\00!\00\00\00reflect: cannot make *****T type\c0\03\01\00 \00\00\00reflect: call of reflect.Type. on invalid typeBoolBytesComplexElemFieldFloatreflect: slice index out of range\00\00\004\04\01\00!\00\00\00reflect: string index out of range\00\00\00\00\00\00`\04\01\00\22\00\00\00IndexInt(reflect.Value).Interface: unexported\00\00\00\98\04\01\00%\00\00\00IsNilLen< Value>UintUnsafePointerreflect: value is not addressable\00\00\00\00\00\00\e9\04\01\00!\00\00\00MapRangereflect.MapIter.Value called on invalid iterator \05\01\000\00\00\00 on zero Valuereflect: call of  on  Value\00\00\00z\00\00\00\d4S\01\00\a8\05\01\00\bc\01\01\00errors.errorString\00\00Z\00\00\00\c4\05\01\00\bc\01\01\00\08\00\00\00\01\00\00\008R\01\00\cc\05\01\00\d5\00\00\00\a8\05\01\00\00\00s\00sync: unlock of unlocked Mutex\00\00\d0\05\01\00\1e\00\00\00stack overflowfree: invalid pointer\00\00\00\00\00\06\06\01\00\15\00\00\00realloc: invalid pointer(\06\01\00\18\00\00\00Growing the heap!!!out of memoryStart ---->running collection cycle...<---- Endcomparing un-comparable typetype assert failedpanic: panic: runtime error: nil pointer dereferenceassignment to entry in nil mapindex out of rangeslice out of rangeunsafe.Slice/String: len out of range. s000---Unregisteredunreachableu\07\01\00\0b\00\00\00  schedule  run:MainGCdeadlocked: no event source\0d\00RawType\00\00\c3\00\00\00\cc\07\01\00\d5\00\00\00\c4\07\01\00\c4\00\00\00\dc\07\01\00\d5\00\00\00\d4\07\01\00\c7\00\00\00\ec\07\01\00\d5\00\00\00\e4\07\01\00\c9\00\00\00\fc\07\01\00\d5\00\00\00\f4\07\01\00bad type in compare: file already existsfile does not existfile already closederrno \04\01\00\00\09\01\00\00\0e\04\00\00\10\04\00\00\12\04\00\00\14\01\00\00SundayTuesdayWednesdayThursdayFridaySaturdayFebruaryMarchAprilMayJuneJulyAugustSeptemberOctoberNovemberDecemberJanJanuaryMonMondayMST2006-070000-07:00:00-0700-07:00-07Z070000Z07:00:00Z0700Z07:00Z07: cannot parse  as parsing time \ef\bf\bdz\00\00\00|T\01\00x\09\01\00\22\02\01\00time.ParseError\00Z\00\00\00\b4\09\01\00\22\02\01\00(\00\00\00\05\00\00\008R\01\00\bc\09\01\008R\01\00\05\02\01\008R\01\00\dd\01\01\008R\01\00\ea\01\01\008R\01\00'\02\01\00\d5\00\00\00x\09\01\00\04\00Layout\00\00\00wall\00\00\08ext\00\00\10loc\00\00\08zone\00\00\00name\00\00\08offset\00\00\0cisDST\00\00\14tx\00\00\00when\00\00\08index\00\00\09isstd\00\00\0aisutc\00\00 extend\00\00(cacheStart\00\000cacheEnd\00\008cacheZone\00time.Date(, time.time.UTCtime.Localtime.Location(2006-01-02 15:04:05.999999999 -0700 MST m=PMAMpmam%!Month()UTC,M3.2.0,M11.1.0Local\00p\08\01\00\06\00\00\00\ec\08\01\00\06\00\00\00v\08\01\00\07\00\00\00}\08\01\00\09\00\00\00\86\08\01\00\08\00\00\00\8e\08\01\00\06\00\00\00\94\08\01\00\08\00\00\00\e2\08\01\00\07\00\00\00\9c\08\01\00\08\00\00\00\a4\08\01\00\05\00\00\00\a9\08\01\00\05\00\00\00\ae\08\01\00\03\00\00\00\b1\08\01\00\04\00\00\00\b5\08\01\00\04\00\00\00\b9\08\01\00\06\00\00\00\bf\08\01\00\09\00\00\00\c8\08\01\00\07\00\00\00\cf\08\01\00\08\00\00\00\d7\08\01\00\08\00\00\00dalTLDpSugct?rwxrwxrwx : \04\00Op\00\00\00\da\00\00\00\98\0b\01\007\02\01")

@@ -4227,35 +4227,33 @@ function rawField(a:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:
 }
 
 function runtime_alloc(a:int):int { // func49
-  var b:{ a:int, b:int, c:int, d:int, e:int, f:int }
+  var b:{ a:int, b:int, c:int, d:int, e:int }
   var c:int;
   var e:int;
-  var h:int;
-  var d:{ a:int, b:int, c:int, d:int, e:int, f:int }
   var g:int;
   var f:int;
+  var d:{ a:int, b:int, c:int, d:int, e:int }
   if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 24;
+    g_c[0]:int = g_c[0]:int - 20;
     d = g_c[0]:int;
     a = d.a;
     c = d.b;
     e = d.c;
     f = d.d;
-    g = d.e;
-    d = d.f;
+    d = d.e;
   }
   b = 
     {
       if (g_b == 2) {
         g_c[0]:int = g_c[0]:int - 4;
-        h = (g_c[0]:int)[0]:int;
+        g = (g_c[0]:int)[0]:int;
       }
       if (eqz(g_b)) {
         if (eqz(a)) { return 89688 }
         89648[0]:long = 89648[0]:long + i64_extend_i32_u(a);
         89664[0]:long = 89664[0]:long + 1L;
         89656[0]:long = 89656[0]:long + i64_extend_i32_u(f = a + 15 >> 4);
-        g = 0;
+        d = 0;
         e = 0;
         b = 89636[0]:int;
         c = b;
@@ -4264,55 +4262,45 @@ function runtime_alloc(a:int):int { // func49
         b = select_if(b, b != c, g_b);
         if (eqz(g_b)) {
           if (b) goto B_i;
-          b = e;
+          b = e & 255;
           e = 1;
         }
         if (eqz(g_b)) {
-          br_table[B_i, B_m, ..B_k](b)
+          br_table[B_i, B_k, ..B_m](b)
           label B_m:
-          e = 2;
+          if (memory_grow(memory_size()) == -1) goto B_h;
+          b = memory_size();
+          e = 89492[0]:int;
+          89492[0]:int = b << 16;
+          b = 89632[0]:int;
+          runtime_calculateHeapAddresses();
+          memory_copy(89632[0]:int, b, e - b);
         }
-        if (eqz(g_b) | eqz(h)) {
-          runtime_runGC();
-          let t0 = 0;
-          if (g_b == 1) goto B_b;
-          d = t0;
-        }
-        if (eqz(g_b)) { if (d >= (89632[0]:int - 90352) / 3) goto B_i }
-        if (eqz(g_b) | h == 1) {
+        if (eqz(g_b) | eqz(g)) {
           runtime_printstring(67144, 19);
+          0;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | g == 1) {
+          runtime_printnl();
           1;
           if (g_b == 1) goto B_b;
         }
-        if (eqz(g_b) | h == 2) {
-          runtime_printnl();
-          2;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          runtime_growHeap();
-          goto B_i;
-        }
         label B_k:
-        if (eqz(g_b)) {
-          if (eqz(runtime_growHeap() & 1)) goto B_h;
-          e = 2;
-        }
+        e = select_if(e, 2, g_b);
         label B_i:
         if (eqz(g_b)) {
           c = if (89640[0]:int == c) {
                 0
               } else {
-                if (eqz(state(c) & 255)) goto B_u;
+                if (eqz(state(c) & 255)) goto B_q;
                 c + 1;
               }
-          g = 0;
+          d = 0;
           goto B_g;
-          label B_u:
+          label B_q:
           b = c + 1;
-          g = g + 1;
-          d = g == f;
-          if (eqz(d)) {
+          if (f != (d = d + 1)) {
             c = b;
             goto B_g;
           }
@@ -4320,11 +4308,11 @@ function runtime_alloc(a:int):int { // func49
           b = b - f;
           setState(b, 1);
           c = c - f + 2;
-          loop L_x {
+          loop L_t {
             if (c != 89636[0]:int) {
               setState(c, 2);
               c = c + 1;
-              continue L_x;
+              continue L_t;
             }
           }
           c = (b << 4) + 90352;
@@ -4332,9 +4320,9 @@ function runtime_alloc(a:int):int { // func49
           return c;
         }
         label B_h:
-        if (eqz(g_b) | h == 3) {
+        if (eqz(g_b) | g == 2) {
           runtime_runtimePanicAt(67163, 13);
-          3;
+          2;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { unreachable }
@@ -4354,9 +4342,8 @@ function runtime_alloc(a:int):int { // func49
   b.b = c;
   b.c = e;
   b.d = f;
-  b.e = g;
-  b.f = d;
-  g_c[0]:int = g_c[0]:int + 24;
+  b.e = d;
+  g_c[0]:int = g_c[0]:int + 20;
   return 0;
 }
 
@@ -6971,10 +6958,10 @@ function internal_task_Pause() { // func73
         }
         if (eqz(g_b)) {
           if (c) goto B_f;
-          c = a[9];
+          c = a[8];
           if (eqz(c)) goto B_f;
           if (c[0] != -1204030091) goto B_e;
-          a = a + 28;
+          a = a + 24;
         }
         if (eqz(g_b) | eqz(b)) {
           tinygo_unwind(a);
@@ -7187,14 +7174,14 @@ function internal_task_start(a:int_ptr) { // func77
           c[3]:int = 4;
         }
         if (eqz(g_b) | eqz(f)) {
-          runtime_alloc(56);
+          runtime_alloc(48);
           let t0 = 0;
           if (g_b == 1) goto B_b;
           d = t0;
         }
         if (eqz(g_b)) {
-          d[6] = 0;
-          d[5] = a;
+          d[5] = 0;
+          d[4] = a;
           c[4]:int = d;
         }
         if (eqz(g_b) | f == 1) {
@@ -7205,10 +7192,10 @@ function internal_task_start(a:int_ptr) { // func77
         }
         if (eqz(g_b)) {
           g[0] = a;
-          d[9] = a;
+          d[8] = a;
           a[0] = -1204030091;
-          d[8] = a + 65536;
-          d[7] = a + 4;
+          d[7] = a + 65536;
+          d[6] = a + 4;
           c[6]:int = a;
           c[5]:int = a;
         }
@@ -8020,31 +8007,31 @@ export function realloc(a:int, b:int):int { // func90
 
 export function start() { // func91
   var a:int_ptr;
-  var c:int;
+  var d:int;
   var b:int;
-  var f:int;
   var e:int;
+  var f:int;
   var g:int;
   var h:int;
   var i:int;
   var j:int;
-  var d:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
+  var c:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 32;
-    d = g_c[0]:int;
-    a = d.a;
-    c = d.c;
-    e = d.d;
-    g = d.e;
-    h = d.f;
-    i = d.g;
-    j = d.h;
-    b = d.b;
+    c = g_c[0]:int;
+    a = c.a;
+    d = c.c;
+    f = c.d;
+    g = c.e;
+    h = c.f;
+    i = c.g;
+    j = c.h;
+    b = c.b;
   }
-  d = {
+  c = {
         if (g_b == 2) {
           g_c[0]:int = g_c[0]:int - 4;
-          f = (g_c[0]:int)[0]:int;
+          e = (g_c[0]:int)[0]:int;
         }
         if (eqz(g_b)) {
           a = stack_pointer - 144;
@@ -8055,29 +8042,29 @@ export function start() { // func91
           89692[0]:int = a + 72;
           89492[0]:int = (b = memory_size() << 16);
           runtime_calculateHeapAddresses();
-          a[21] = (c = 89632[0]:int);
-          a[20] = c;
-          memory_fill(c, 0, b = b - c);
+          a[21] = (d = 89632[0]:int);
+          a[20] = d;
+          memory_fill(d, 0, b = b - d);
         }
-        if (eqz(g_b) | eqz(f)) {
+        if (eqz(g_b) | eqz(e)) {
           arc4random();
           let t0 = 0;
           if (g_b == 1) goto B_b;
-          c = t0;
+          d = t0;
         }
-        if (eqz(g_b) | f == 1) {
+        if (eqz(g_b) | e == 1) {
           arc4random();
           let t1 = 1;
           if (g_b == 1) goto B_b;
           b = t1;
         }
-        if (eqz(g_b)) { data[0]:int = (b = c | 1) }
-        if (eqz(g_b) | f == 2) {
+        if (eqz(g_b)) { data[0]:int = (b = d | 1) }
+        if (eqz(g_b) | e == 2) {
           internal_task_start(1);
           2;
           if (g_b == 1) goto B_b;
         }
-        if (eqz(g_b) | f == 3) {
+        if (eqz(g_b) | e == 3) {
           internal_task_start(2);
           3;
           if (g_b == 1) goto B_b;
@@ -8085,47 +8072,47 @@ export function start() { // func91
         loop L_j {
           if (eqz(g_b)) { b = 89712[0]:ubyte }
           if (select_if(g_b, 1, b)) {
-            if (eqz(g_b) | f == 4) {
+            if (eqz(g_b) | e == 4) {
               runtime_scheduleLog(0, 0);
               4;
               if (g_b == 1) goto B_b;
             }
-            if (eqz(g_b) | f == 5) {
+            if (eqz(g_b) | e == 5) {
               runtime_scheduleLog(67464, 10);
               5;
               if (g_b == 1) goto B_b;
             }
             if (eqz(g_b)) {
-              a[25] = (c = 89716[0]:int);
-              a[22] = c;
-              b = eqz(c);
+              a[25] = (d = 89716[0]:int);
+              a[22] = d;
+              b = eqz(d);
               if (b) goto B_m;
-              89716[0]:int = (b = c[0]:int);
+              89716[0]:int = (b = d[0]:int);
               a[23] = b;
               a[24] = (b = 89720[0]:int);
-              if (b == c) { 89720[0]:int = 0 }
-              c[0]:int = 0;
-              a[17] = c;
-              e = a + 56;
+              if (b == d) { 89720[0]:int = 0 }
+              d[0]:int = 0;
+              a[17] = d;
+              f = a + 56;
               b = a + 68;
             }
-            if (eqz(g_b) | f == 6) {
-              runtime_hashmapBinaryGet(87340, b, e, 8);
+            if (eqz(g_b) | e == 6) {
+              runtime_hashmapBinaryGet(87340, b, f, 8);
               let t2 = 6;
               if (g_b == 1) goto B_b;
               b = t2;
             }
             if (eqz(g_b)) {
               a[26] = (b = a[14]);
-              e = a[15];
-              g = eqz(e);
+              f = a[15];
+              g = eqz(f);
             }
             b = {
                   if (eqz(g_b)) {
                     if (g) goto B_v;
                     g = a + 48;
                   }
-                  if (eqz(g_b) | f == 7) {
+                  if (eqz(g_b) | e == 7) {
                     runtime_stringConcat(g, 67430, 3, 67474, 6);
                     7;
                     if (g_b == 1) goto B_b;
@@ -8135,19 +8122,19 @@ export function start() { // func91
                     i = a[13];
                     h = a + 40;
                   }
-                  if (eqz(g_b) | f == 8) {
-                    runtime_stringConcat(h, g, i, b, e);
+                  if (eqz(g_b) | e == 8) {
+                    runtime_stringConcat(h, g, i, b, f);
                     8;
                     if (g_b == 1) goto B_b;
                   }
                   if (eqz(g_b)) {
-                    e = a[11];
+                    f = a[11];
                     a[10];
                     goto B_u;
                   }
                   label B_v:
                   b = select_if(b, a + 32, g_b);
-                  if (eqz(g_b) | f == 9) {
+                  if (eqz(g_b) | e == 9) {
                     runtime_stringConcat(b, 67430, 3, 67474, 6);
                     9;
                     if (g_b == 1) goto B_b;
@@ -8155,17 +8142,17 @@ export function start() { // func91
                   if (eqz(g_b)) {
                     a[28] = (b = a[8]);
                     g = a[9];
-                    e = a + 24;
+                    f = a + 24;
                   }
-                  if (eqz(g_b) | f == 10) {
-                    runtime_stringConcat(e, b, g, 67433, 12);
+                  if (eqz(g_b) | e == 10) {
+                    runtime_stringConcat(f, b, g, 67433, 12);
                     10;
                     if (g_b == 1) goto B_b;
                   }
                   if (g_b) {
                     b
                   } else {
-                    e = a[7];
+                    f = a[7];
                     a[6];
                   }
                   label B_u:
@@ -8174,7 +8161,7 @@ export function start() { // func91
               a[29] = b;
               g = a + 16;
             }
-            if (eqz(g_b) | f == 11) {
+            if (eqz(g_b) | e == 11) {
               runtime_FormatElapsed(g);
               11;
               if (g_b == 1) goto B_b;
@@ -8184,39 +8171,37 @@ export function start() { // func91
               i = a[5];
               h = a + 8;
             }
-            if (eqz(g_b) | f == 12) {
-              runtime_stringConcat(h, b, e, g, i);
+            if (eqz(g_b) | e == 12) {
+              runtime_stringConcat(h, b, f, g, i);
               12;
               if (g_b == 1) goto B_b;
             }
             if (eqz(g_b)) {
               a[31] = (b = a[2]);
-              e = a[3];
+              f = a[3];
             }
-            if (eqz(g_b) | f == 13) {
-              schedular_log(b, e);
+            if (eqz(g_b) | e == 13) {
+              schedular_log(b, f);
               13;
               if (g_b == 1) goto B_b;
             }
             if (eqz(g_b)) {
               b = 89488[0]:int;
-              89488[0]:int = c;
+              89488[0]:int = d;
               a[32] = b;
-              e = c[4]:int;
-              c[4]:int = 89692[0]:int;
-              89692[0]:int = e;
-              e = c + 20;
-              if (c[40]:ubyte) {
-                tinygo_rewind(e);
+              f = d + 16;
+              g = eqz(d[36]:ubyte);
+              if (eqz(g)) {
+                tinygo_rewind(f);
                 goto B_l;
               }
-              tinygo_launch(e);
-              c[40]:byte = 1;
+              tinygo_launch(f);
+              d[36]:byte = 1;
               goto B_l;
             }
           }
           if (eqz(g_b)) { dummy() }
-          if (eqz(g_b) | f == 14) {
+          if (eqz(g_b) | e == 14) {
             runtime_proc_exit(0);
             14;
             if (g_b == 1) goto B_b;
@@ -8227,7 +8212,7 @@ export function start() { // func91
             return ;
           }
           label B_m:
-          if (eqz(g_b) | f == 15) {
+          if (eqz(g_b) | e == 15) {
             runtime_waitForEvents();
             15;
             if (g_b == 1) goto B_b;
@@ -8235,17 +8220,14 @@ export function start() { // func91
           if (eqz(g_b)) { unreachable }
           label B_l:
           if (eqz(g_b)) {
-            e = c[4]:int;
-            c[4]:int = (g = 89692[0]:int);
             89488[0]:int = b;
-            89692[0]:int = e;
-            a[33] = (b = c[7]:int);
-            a[34] = (c = c[8]:int);
-            b = b <= c;
+            a[33] = (b = d[6]:int);
+            a[34] = (d = d[7]:int);
+            b = b <= d;
             if (b) continue L_j;
           }
         }
-        if (eqz(g_b) | f == 16) {
+        if (eqz(g_b) | e == 16) {
           runtime_runtimePanic(67064, 14);
           16;
           if (g_b == 1) goto B_b;
@@ -8254,17 +8236,17 @@ export function start() { // func91
         return ;
         label B_b:
       }
-  (g_c[0]:int)[0]:int = d;
+  (g_c[0]:int)[0]:int = c;
   g_c[0]:int = g_c[0]:int + 4;
-  d = g_c[0]:int;
-  d.a = a;
-  d.b = b;
-  d.c = c;
-  d.d = e;
-  d.e = g;
-  d.f = h;
-  d.g = i;
-  d.h = j;
+  c = g_c[0]:int;
+  c.a = a;
+  c.b = b;
+  c.c = d;
+  c.d = f;
+  c.e = g;
+  c.f = h;
+  c.g = i;
+  c.h = j;
   g_c[0]:int = g_c[0]:int + 32;
 }
 
@@ -8586,7 +8568,7 @@ function runtime_run_1() { // func98
   var a:int;
   var e:int;
   var j:long;
-  var c:int;
+  var d:int;
   var g:int;
   var i:int;
   var f:int;
@@ -8595,23 +8577,23 @@ function runtime_run_1() { // func98
   var l:long;
   var m:long;
   var k:int;
-  var d:int;
+  var c:int;
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 56;
-    d = g_c[0]:int;
-    a = d[0]:int;
-    c = d[1]:int;
-    f = d[3]:int;
-    g = d[4]:int;
-    h = d[5]:int;
-    i = d[6]:int;
-    j = d[7]:long@4;
-    k = d[9]:int;
-    l = d[10]:long@4;
-    m = d[12]:long@4;
-    b = d[2]:int;
+    c = g_c[0]:int;
+    a = c[0]:int;
+    d = c[2]:int;
+    f = c[3]:int;
+    g = c[4]:int;
+    h = c[5]:int;
+    i = c[6]:int;
+    j = c[7]:long@4;
+    k = c[9]:int;
+    l = c[10]:long@4;
+    m = c[12]:long@4;
+    b = c[1]:int;
   }
-  d = {
+  c = {
         if (g_b == 2) {
           g_c[0]:int = g_c[0]:int - 4;
           e = (g_c[0]:int)[0]:int;
@@ -8622,7 +8604,7 @@ function runtime_run_1() { // func98
           a[23]:int = 36;
           memory_fill(a + 104, 0, 136);
           a[22]:int = (k = 89692[0]:int);
-          89692[0]:int = (c = a + 88);
+          89692[0]:int = (d = a + 88);
           b = 0;
         }
         if (eqz(g_b) | eqz(e)) {
@@ -8630,7 +8612,7 @@ function runtime_run_1() { // func98
           0;
           if (g_b == 1) goto B_b;
         }
-        if (eqz(g_b)) { 89492[0]:int = (c = memory_size() << 16) }
+        if (eqz(g_b)) { 89492[0]:int = (d = memory_size() << 16) }
         if (eqz(g_b) | e == 1) {
           runtime_ticks();
           let t0 = 1;
@@ -8640,10 +8622,10 @@ function runtime_run_1() { // func98
         if (eqz(g_b)) {
           89624[0]:long = j;
           wasm_call_ctors();
-          c = a + 48;
+          d = a + 48;
         }
         if (eqz(g_b) | e == 2) {
-          runtime_sliceAppend(c, 0, 87448, 0, 0, 1, 16);
+          runtime_sliceAppend(d, 0, 87448, 0, 0, 1, 16);
           2;
           if (g_b == 1) goto B_b;
         }
@@ -8652,37 +8634,37 @@ function runtime_run_1() { // func98
           90300[0]:int = (g = a[12]:int);
           a[24]:int = g;
           a[25]:int = (i = 89700[0]:int);
-          c = eqz(i);
+          d = eqz(i);
         }
         if (eqz(g_b)) {
-          if (eqz(c)) {
-            c = 89708[0]:int;
+          if (eqz(d)) {
+            d = 89708[0]:int;
             b = 89704[0]:int;
             goto B_l;
           }
           a[18]:int = 0;
           a[20]:int = 0;
           f = a + 80;
-          c = a + 72;
+          d = a + 72;
         }
         if (eqz(g_b) | e == 3) {
-          runtime_args_sizes_get(f, c);
+          runtime_args_sizes_get(f, d);
           let t1 = 3;
           if (g_b == 1) goto B_b;
-          c = t1;
+          d = t1;
         }
         if (eqz(g_b)) {
-          c = a[20]:int;
-          if (eqz(c)) {
+          d = a[20]:int;
+          if (eqz(d)) {
             i = 0;
-            c = 0;
+            d = 0;
             goto B_k;
           }
-          f = c > 1073741823;
+          f = d > 1073741823;
         }
         if (eqz(g_b)) {
           if (f) goto B_s;
-          f = c << 2;
+          f = d << 2;
         }
         if (eqz(g_b) | e == 4) {
           runtime_alloc(f);
@@ -8715,9 +8697,9 @@ function runtime_run_1() { // func98
           f = t4;
         }
         if (eqz(g_b)) {
-          f = c > 536870911;
+          f = d > 536870911;
           if (f) goto B_s;
-          f = c << 3;
+          f = d << 3;
         }
         if (eqz(g_b) | e == 7) {
           runtime_alloc(f);
@@ -8727,11 +8709,11 @@ function runtime_run_1() { // func98
         }
         if (eqz(g_b)) {
           89700[0]:int = i;
-          89704[0]:int = c;
-          89708[0]:int = c;
+          89704[0]:int = d;
+          89708[0]:int = d;
           a[29]:int = i;
           g = i;
-          f = c;
+          f = d;
           loop L_ca {
             if (f) {
               a[33]:int = (b = h.a);
@@ -8745,7 +8727,7 @@ function runtime_run_1() { // func98
               f = f - 1;
               continue L_ca;
             } else {
-              b = c;
+              b = d;
               goto B_l;
             }
             unreachable;
@@ -8772,7 +8754,7 @@ function runtime_run_1() { // func98
         if (eqz(g_b)) {
           90312[0]:int = i;
           90316[0]:int = b;
-          90320[0]:int = c;
+          90320[0]:int = d;
           a[35]:int = i;
           g = 0;
         }
@@ -8794,11 +8776,11 @@ function runtime_run_1() { // func98
         }
         loop L_na {
           if (eqz(g_b)) {
-            c = eqz(b & 1);
-            if (c) goto B_oa;
-            c = eqz(g & 1);
+            d = eqz(b & 1);
+            if (d) goto B_oa;
+            d = eqz(g & 1);
           }
-          if (select_if(select_if(g_b, 1, c), 0, eqz(g_b) | e == 12)) {
+          if (select_if(select_if(g_b, 1, d), 0, eqz(g_b) | e == 12)) {
             writeByte(h, 32);
             12;
             if (g_b == 1) goto B_b;
@@ -8823,10 +8805,10 @@ function runtime_run_1() { // func98
         if (eqz(g_b)) {
           a[37]:int = (b = h.a);
           f = a + 32;
-          c = h.b;
+          d = h.b;
         }
         if (eqz(g_b) | e == 15) {
-          Write(f, 87464, b, c);
+          Write(f, 87464, b, d);
           15;
           if (g_b == 1) goto B_b;
         }
@@ -8843,27 +8825,42 @@ function runtime_run_1() { // func98
           16;
           if (g_b == 1) goto B_b;
         }
+        if (eqz(g_b) | e == 17) {
+          runtime_Gosched();
+          17;
+          if (g_b == 1) goto B_b;
+        }
         b = select_if(b, 0, g_b);
-        loop L_ya {
-          if (eqz(g_b)) {
-            c = b == 501;
-            if (c) goto B_za;
-          }
-          if (eqz(g_b) | e == 17) {
-            runtime_printint32(b);
-            17;
+        loop L_za {
+          if (eqz(g_b) | e == 18) {
+            runtime_Gosched();
+            18;
             if (g_b == 1) goto B_b;
           }
-          if (eqz(g_b) | e == 18) {
+          if (eqz(g_b)) {
+            d = b == 501;
+            if (d) goto B_ab;
+          }
+          if (eqz(g_b) | e == 19) {
+            runtime_printint32(b);
+            19;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b) | e == 20) {
+            runtime_Gosched();
+            20;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b) | e == 21) {
             runtime_alloc(13107);
-            let t8 = 18;
+            let t8 = 21;
             if (g_b == 1) goto B_b;
             h = t8;
           }
           if (eqz(g_b)) { a[44]:int = h }
-          if (eqz(g_b) | e == 19) {
+          if (eqz(g_b) | e == 22) {
             runtime_alloc(12);
-            let t9 = 19;
+            let t9 = 22;
             if (g_b == 1) goto B_b;
             g = t9;
           }
@@ -8874,25 +8871,35 @@ function runtime_run_1() { // func98
             90340[0]:byte = 1;
             a[45]:int = g;
             b = b + 1;
-            continue L_ya;
+            continue L_za;
           }
-          label B_za:
+          label B_ab:
         }
         if (eqz(g_b)) {
-          a[46]:int = (c = 89632[0]:int);
+          a[46]:int = (d = 89632[0]:int);
           l = 89680[0]:long;
           j = 89656[0]:long;
           m = 89648[0]:long;
           g = 89492[0]:int;
         }
-        if (eqz(g_b) | e == 20) {
-          runtime_printnl();
-          20;
+        if (eqz(g_b) | e == 23) {
+          runtime_Gosched();
+          23;
           if (g_b == 1) goto B_b;
         }
-        if (eqz(g_b) | e == 21) {
+        if (eqz(g_b) | e == 24) {
+          runtime_printnl();
+          24;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | e == 25) {
+          runtime_Gosched();
+          25;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | e == 26) {
           runtime_alloc(8);
-          let t10 = 21;
+          let t10 = 26;
           if (g_b == 1) goto B_b;
           b = t10;
         }
@@ -8903,17 +8910,22 @@ function runtime_run_1() { // func98
           a[21]:int = b;
           a[20]:int = 86504;
           f = a + 24;
-          c = a + 80;
+          d = a + 80;
         }
-        if (eqz(g_b) | e == 22) {
-          fmt_Printf(f, 86520, 15, c);
-          22;
+        if (eqz(g_b) | e == 27) {
+          fmt_Printf(f, 86520, 15, d);
+          27;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { a[49]:long@4 = a[3]:long }
-        if (eqz(g_b) | e == 23) {
+        if (eqz(g_b) | e == 28) {
+          runtime_Gosched();
+          28;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | e == 29) {
           runtime_alloc(8);
-          let t11 = 23;
+          let t11 = 29;
           if (g_b == 1) goto B_b;
           b = t11;
         }
@@ -8924,17 +8936,22 @@ function runtime_run_1() { // func98
           a[19]:int = b;
           a[18]:int = 86504;
           f = a + 16;
-          c = a + 72;
+          d = a + 72;
         }
-        if (eqz(g_b) | e == 24) {
-          fmt_Printf(f, 86535, 20, c);
-          24;
+        if (eqz(g_b) | e == 30) {
+          fmt_Printf(f, 86535, 20, d);
+          30;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { a[53]:long@4 = a[2]:long }
-        if (eqz(g_b) | e == 25) {
+        if (eqz(g_b) | e == 31) {
+          runtime_Gosched();
+          31;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | e == 32) {
           runtime_alloc(8);
-          let t12 = 25;
+          let t12 = 32;
           if (g_b == 1) goto B_b;
           b = t12;
         }
@@ -8945,26 +8962,46 @@ function runtime_run_1() { // func98
           a[17]:int = b;
           a[16]:int = 86504;
           f = a + 8;
-          c = a - -64;
+          d = a - -64;
         }
-        if (eqz(g_b) | e == 26) {
-          fmt_Printf(f, 86555, 13, c);
-          26;
+        if (eqz(g_b) | e == 33) {
+          fmt_Printf(f, 86555, 13, d);
+          33;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { a[57]:long@4 = a[1]:long }
+        if (eqz(g_b) | e == 34) {
+          runtime_Gosched();
+          34;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | e == 35) {
+          runtime_Gosched();
+          35;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          a[57]:long@4 = a[1]:long;
           a[59]:int = 90336[0]:int;
-          c = 90340[0]:ubyte;
+          b = 90340[0]:ubyte;
         }
-        if (eqz(g_b) | e == 27) {
-          runtime_printint32(c);
-          27;
+        if (eqz(g_b) | e == 36) {
+          runtime_Gosched();
+          36;
           if (g_b == 1) goto B_b;
         }
-        if (eqz(g_b) | e == 28) {
+        if (eqz(g_b) | e == 37) {
+          runtime_printint32(b);
+          37;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | e == 38) {
           runtime_printnl();
-          28;
+          38;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | e == 39) {
+          runtime_Gosched();
+          39;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
@@ -8975,20 +9012,20 @@ function runtime_run_1() { // func98
         return ;
         label B_b:
       }
-  (g_c[0]:int)[0]:int = d;
+  (g_c[0]:int)[0]:int = c;
   g_c[0]:int = g_c[0]:int + 4;
-  d = g_c[0]:int;
-  d[0]:int = a;
-  d[1]:int = c;
-  d[2]:int = b;
-  d[3]:int = f;
-  d[4]:int = g;
-  d[5]:int = h;
-  d[6]:int = i;
-  d[7]:long@4 = j;
-  d[9]:int = k;
-  d[10]:long@4 = l;
-  d[12]:long@4 = m;
+  c = g_c[0]:int;
+  c[0]:int = a;
+  c[1]:int = b;
+  c[2]:int = d;
+  c[3]:int = f;
+  c[4]:int = g;
+  c[5]:int = h;
+  c[6]:int = i;
+  c[7]:long@4 = j;
+  c[9]:int = k;
+  c[10]:long@4 = l;
+  c[12]:long@4 = m;
   g_c[0]:int = g_c[0]:int + 56;
 }
 
@@ -9018,63 +9055,266 @@ function runtime_deadlock() { // func99
 }
 
 function runtime_run() { // func100
-  var b:{ a:int, b:int, c:int }
-  var a:{ a:int, b:int }
+  var d:int;
+  var b:int;
+  var a:int;
   var c:int;
+  var f:long;
+  var e:int;
   if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 8;
-    a = g_c[0]:int;
-    b = a.a;
-    a = a.b;
+    g_c[0]:int = g_c[0]:int - 24;
+    d = g_c[0]:int;
+    b = d[0]:int;
+    c = d[1]:int;
+    e = d[2]:int;
+    f = d[3]:long@4;
+    d = d[5]:int;
   }
-  var d:{ a:int, b:int } = 
+  a = 
     {
       if (g_b == 2) {
         g_c[0]:int = g_c[0]:int - 4;
-        c = (g_c[0]:int)[0]:int;
+        a = (g_c[0]:int)[0]:int;
       }
       if (eqz(g_b)) {
-        b = stack_pointer - 16;
-        stack_pointer = b;
-        b.b = 1;
-        a = 89692[0]:int;
-        89692[0]:int = b;
-        b.a = a;
+        d = stack_pointer - 16;
+        stack_pointer = d;
+        d[3]:int = 0;
+        d[1]:long@4 = 2L;
+        b = 89692[0]:int;
+        89692[0]:int = d;
+        d[0]:int = b;
       }
-      if (eqz(g_b) | eqz(c)) {
+      if (eqz(g_b) | eqz(a)) {
         runtime_RegisterTask(67484, 2);
         0;
         if (g_b == 1) goto B_b;
       }
       loop L_f {
-        if (eqz(g_b)) { b.c = (a = 89488[0]:int) }
-        if (eqz(g_b) | c == 1) {
-          Push(a);
+        if (eqz(g_b) | a == 1) {
+          runtime_Gosched();
           1;
           if (g_b == 1) goto B_b;
         }
-        if (eqz(g_b) | c == 2) {
-          internal_task_Pause();
+        if (eqz(g_b) | a == 2) {
+          runtime_printstring(67176, 11);
           2;
           if (g_b == 1) goto B_b;
         }
-        if (eqz(g_b) | c == 3) {
-          runtime_runGC();
-          let t0 = 3;
+        if (eqz(g_b) | a == 3) {
+          runtime_printnl();
+          3;
           if (g_b == 1) goto B_b;
-          a = t0;
         }
-        if (eqz(g_b)) continue L_f;
+        if (eqz(g_b) | a == 4) {
+          runtime_Gosched();
+          4;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | a == 5) {
+          runtime_printstring(67187, 27);
+          5;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | a == 6) {
+          runtime_printnl();
+          6;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | a == 7) {
+          runtime_Gosched();
+          7;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          89692[0]:int;
+          d[2]:int = (b = 89488[0]:int);
+        }
+        if (eqz(g_b)) {
+          if (b) goto B_o;
+          b = tinygo_getCurrentStackPointer();
+        }
+        if (eqz(g_b) | a == 8) {
+          runtime_markRoots(b, 65536);
+          8;
+          if (g_b == 1) goto B_b;
+        }
+        label B_o:
+        if (eqz(g_b) | a == 9) {
+          runtime_Gosched();
+          9;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | a == 10) {
+          runtime_markRoots(65536, 90352);
+          10;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | a == 11) {
+          runtime_Gosched();
+          11;
+          if (g_b == 1) goto B_b;
+        }
+        loop L_u {
+          if (eqz(g_b)) {
+            b = eqz(89689[0]:ubyte);
+            if (b) goto B_v;
+            89689[0]:byte = 0;
+            b = 0;
+          }
+          loop L_x {
+            if (eqz(g_b) | a == 12) {
+              runtime_Gosched();
+              12;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              c = 89640[0]:int <= b;
+              if (c) continue L_u;
+              c = state(b);
+            }
+            if (eqz(g_b) | a == 13) {
+              runtime_Gosched();
+              13;
+              if (g_b == 1) goto B_b;
+            }
+            if (select_if(g_b, 1, c = select_if(c, (c & 255) != 3, g_b))) {
+              if (eqz(g_b) | a == 14) {
+                runtime_startMark(b);
+                14;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b) | a == 15) {
+                runtime_Gosched();
+                15;
+                if (g_b == 1) goto B_b;
+              }
+            }
+            if (eqz(g_b)) {
+              b = b + 1;
+              continue L_x;
+            }
+          }
+          label B_v:
+        }
+        if (eqz(g_b) | a == 16) {
+          runtime_Gosched();
+          16;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          f = 0L;
+          e = 0;
+          b = 0;
+        }
+        loop L_ha {
+          if (eqz(g_b) | a == 17) {
+            runtime_Gosched();
+            17;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) { c = 89640[0]:int <= b }
+          if (eqz(g_b)) {
+            if (c) goto B_ma;
+            c = state(b);
+          }
+          if (eqz(g_b) | a == 18) {
+            runtime_Gosched();
+            18;
+            if (g_b == 1) goto B_b;
+          }
+          c = select_if(c, c & 255, g_b);
+          if (eqz(g_b)) {
+            br_table[B_sa, B_qa, B_pa, ..B_ka](c - 1)
+            label B_sa:
+            markFree(b);
+          }
+          if (eqz(g_b) | a == 19) {
+            runtime_Gosched();
+            19;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            89672[0]:long = 89672[0]:long + 1L;
+            f = f + 1L;
+            goto B_la;
+          }
+          label B_qa:
+          if (eqz(g_b)) {
+            let t0 = e;
+            e = 0;
+            c = eqz(t0);
+            if (c) goto B_ka;
+            markFree(b);
+            f = f + 1L;
+          }
+          if (eqz(g_b) | a == 20) {
+            runtime_Gosched();
+            20;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) goto B_la;
+          label B_pa:
+          if (eqz(g_b)) {
+            d[3]:int = (c = 89632[0]:int);
+            c = (b >> 2) + c;
+            e = c[0]:ubyte & (2 << (b << 1 & 6) ^ -1);
+            c[0]:byte = e;
+            e = 0;
+          }
+          if (eqz(g_b) | a == 21) {
+            runtime_Gosched();
+            21;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) goto B_ka;
+          label B_ma:
+          if (eqz(g_b)) { 89680[0]:long = (f = 89680[0]:long + f) }
+          if (eqz(g_b) | a == 22) {
+            runtime_Gosched();
+            22;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b) | a == 23) {
+            runtime_printstring(67214, 9);
+            23;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b) | a == 24) {
+            runtime_printnl();
+            24;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b) | a == 25) {
+            runtime_Gosched();
+            25;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) continue L_f;
+          label B_la:
+          e = select_if(e, 1, g_b);
+          label B_ka:
+          b = select_if(b, b + 1, g_b);
+          if (eqz(g_b) | a == 26) {
+            runtime_Gosched();
+            26;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) continue L_ha;
+        }
       }
       return ;
       label B_b:
     }
-  (g_c[0]:int)[0]:int = d;
+  (g_c[0]:int)[0]:int = a;
   g_c[0]:int = g_c[0]:int + 4;
-  d = g_c[0]:int;
-  d.a = b;
-  d.b = a;
-  g_c[0]:int = g_c[0]:int + 8;
+  a = g_c[0]:int;
+  a[0]:int = b;
+  a[1]:int = c;
+  a[2]:int = e;
+  a[3]:long@4 = f;
+  a[5]:int = d;
+  g_c[0]:int = g_c[0]:int + 24;
 }
 
 function runtime_ticks():long { // func101
@@ -9349,337 +9589,16 @@ function runtime_u64ToString(a:{ a:int, b:int }, b:long) { // func105
   g_c[0]:int = g_c[0]:int + 20;
 }
 
-function runtime_runGC():int { // func106
-  var b:int;
-  var a:int;
-  var c:int;
-  var d:int;
-  var e:int;
-  var f:long;
-  if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 24;
-    e = g_c[0]:int;
-    a = e[0]:int;
-    c = e[1]:int;
-    d = e[2]:int;
-    f = e[3]:long@4;
-    e = e[5]:int;
-  }
-  b = {
-        if (g_b == 2) {
-          g_c[0]:int = g_c[0]:int - 4;
-          b = (g_c[0]:int)[0]:int;
-        }
-        if (eqz(g_b) | eqz(b)) {
-          runtime_printstring(67176, 11);
-          0;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b) | b == 1) {
-          runtime_printnl();
-          1;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b) | b == 2) {
-          runtime_printstring(67187, 27);
-          2;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b) | b == 3) {
-          runtime_printnl();
-          3;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          89692[0]:int;
-          a = 89488[0]:int;
-        }
-        if (eqz(g_b)) {
-          if (a) goto B_i;
-          a = tinygo_getCurrentStackPointer();
-        }
-        if (eqz(g_b) | b == 4) {
-          runtime_markRoots(a, 65536);
-          4;
-          if (g_b == 1) goto B_b;
-        }
-        label B_i:
-        if (eqz(g_b) | b == 5) {
-          runtime_markRoots(65536, 90352);
-          5;
-          if (g_b == 1) goto B_b;
-        }
-        loop L_m {
-          if (eqz(g_b)) { a = 89689[0]:ubyte }
-          if (eqz(g_b)) {
-            if (a) goto B_o;
-            f = 0L;
-            e = 0;
-            d = 0;
-            a = 0;
-          }
-          loop L_q {
-            if (eqz(g_b)) { c = 89640[0]:int <= a }
-            if (eqz(g_b)) {
-              if (eqz(c)) {
-                c = state(a) & 255;
-                br_table[B_z, B_y, B_x, ..B_w](c - 1);
-                label B_z:
-                markFree(a);
-                89672[0]:long = 89672[0]:long + 1L;
-                goto B_t;
-                label B_y:
-                let t0 = d & 1;
-                d = 0;
-                c = eqz(t0);
-                if (c) goto B_s;
-                markFree(a);
-                goto B_t;
-                label B_x:
-                d = 0;
-                c = 89632[0]:int + (a >> 2);
-                var g:int = c[0]:ubyte & (2 << (a << 1 & 6) ^ -1);
-                c[0]:byte = g;
-                goto B_s;
-                label B_w:
-                e = e + 16;
-                goto B_s;
-              }
-              89680[0]:long = f + 89680[0]:long;
-            }
-            if (eqz(g_b) | b == 6) {
-              runtime_printstring(67214, 9);
-              6;
-              if (g_b == 1) goto B_b;
-            }
-            if (eqz(g_b) | b == 7) {
-              runtime_printnl();
-              7;
-              if (g_b == 1) goto B_b;
-            }
-            if (eqz(g_b)) { return e + (i32_wrap_i64(f) << 4) }
-            label B_t:
-            if (eqz(g_b)) {
-              f = f + 1L;
-              d = 1;
-            }
-            label B_s:
-            if (eqz(g_b)) {
-              a = a + 1;
-              continue L_q;
-            }
-          }
-          label B_o:
-          if (eqz(g_b)) {
-            89689[0]:byte = 0;
-            d = 89640[0]:int;
-            a = 0;
-          }
-          loop L_ga {
-            if (eqz(g_b)) {
-              c = a >= d;
-              if (c) continue L_m;
-              c = (state(a) & 255) != 3;
-            }
-            if (select_if(g_b, 1, c)) {
-              if (eqz(g_b) | b == 8) {
-                runtime_startMark(a);
-                8;
-                if (g_b == 1) goto B_b;
-              }
-              d = if (g_b) { d } else { 89640[0]:int }
-            }
-            if (eqz(g_b)) {
-              a = a + 1;
-              continue L_ga;
-            }
-          }
-        }
-        unreachable;
-        label B_b:
-      }
-  (g_c[0]:int)[0]:int = b;
-  g_c[0]:int = g_c[0]:int + 4;
-  b = g_c[0]:int;
-  b[0]:int = a;
-  b[1]:int = c;
-  b[2]:int = d;
-  b[3]:long@4 = f;
-  b[5]:int = e;
-  g_c[0]:int = g_c[0]:int + 24;
-  return 0;
-}
-
-function runtime_growHeap():int { // func107
-  var b:int = memory_grow(memory_size()) != -1;
-  if (b) {
-    var a:int = memory_size();
-    var c:int = 89492[0]:int;
-    89492[0]:int = a << 16;
-    a = 89632[0]:int;
-    runtime_calculateHeapAddresses();
-    memory_copy(89632[0]:int, a, c - a);
-  }
-  return b;
-}
-
-function state(a:int):int { // func108
+function state(a:int):int { // func106
   return (89632[0]:int + (a >> 2))[0]:ubyte >> (a << 1 & 6) & 3
 }
 
-function setState(a:int, b:int) { // func109
+function setState(a:int, b:int) { // func107
   var c:int = 89632[0]:int + (a >> 2);
   c[0]:byte = c[0]:ubyte | b << (a << 1 & 6);
 }
 
-function runtime_markRoots(a:int_ptr, b:int) { // func110
-  var d:int;
-  var c:{ a:int, b:int, c:int, d:int }
-  var e:{ a:int, b:int, c:int, d:int }
-  if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 16;
-    c = g_c[0]:int;
-    a = c.a;
-    b = c.b;
-    d = c.c;
-    c = c.d;
-  }
-  e = {
-        if (g_b == 2) {
-          g_c[0]:int = g_c[0]:int - 4;
-          e = (g_c[0]:int)[0]:int;
-        }
-        loop L_d {
-          if (eqz(g_b)) {
-            if (a >= b) goto B_e;
-            d = a[0];
-            c = d < 90352;
-          }
-          if (eqz(g_b)) {
-            if (c) goto B_g;
-            c = d >= 89632[0]:int;
-            if (c) goto B_g;
-            d = d - 90352 >> 4;
-            c = eqz(state(d) & 255);
-            if (c) goto B_g;
-            d = findHead(d);
-            c = (state(d) & 255) == 3;
-            if (c) goto B_g;
-          }
-          if (eqz(g_b) | eqz(e)) {
-            runtime_startMark(d);
-            0;
-            if (g_b == 1) goto B_b;
-          }
-          label B_g:
-          if (eqz(g_b)) {
-            a = a + 4;
-            continue L_d;
-          }
-          label B_e:
-        }
-        return ;
-        label B_b:
-      }
-  (g_c[0]:int)[0]:int = e;
-  g_c[0]:int = g_c[0]:int + 4;
-  e = g_c[0]:int;
-  e.a = a;
-  e.b = b;
-  e.c = d;
-  e.d = c;
-  g_c[0]:int = g_c[0]:int + 16;
-}
-
-function markFree(a:int) { // func111
-  var b:int = 89632[0]:int + (a >> 2);
-  b[0]:byte = b[0]:ubyte & (3 << (a << 1 & 6) ^ -1);
-}
-
-function runtime_startMark(a:int) { // func112
-  var h:int;
-  var f:int;
-  a = {
-        if (g_b == 2) {
-          g_c[0]:int = g_c[0]:int - 4;
-          f = (g_c[0]:int)[0]:int;
-        }
-        if (eqz(g_b)) {
-          var e:int_ptr = stack_pointer - 128;
-          stack_pointer = e;
-          memory_fill(e + 4, 0, 124);
-          e[0] = a;
-          setState(a, 3);
-          var c:int = 1;
-          loop L_e {
-            if (c > 0) {
-              c = c - 1;
-              if (c > 31) goto B_d;
-              a = e[c]:int;
-              var d:int_ptr = a;
-              br_table[B_h, B_g, B_h, ..B_g]((state(a) & 255) - 1)
-              label B_h:
-              d = a + 1;
-              label B_g:
-              var b:int = d << 4;
-              var g:int = b - (h = a << 4);
-              b = b + 90352;
-              var i:int = 89632[0]:int;
-              loop L_i {
-                a = g;
-                if (b >= i) goto B_j;
-                g = a + 16;
-                b = b + 16;
-                let t0 = state(d);
-                d = d + 1;
-                if ((t0 & 255) == 2) continue L_i;
-                label B_j:
-              }
-              d = h + 90352;
-              loop L_k {
-                if (eqz(a)) continue L_e;
-                b = d[0];
-                if (b < 90352) goto B_l;
-                if (b >= 89632[0]:int) goto B_l;
-                b = b - 90352 >> 4;
-                if (eqz(state(b) & 255)) goto B_l;
-                b = findHead(b);
-                if ((state(b) & 255) == 3) goto B_l;
-                setState(b, 3);
-                if (c == 32) {
-                  89689[0]:byte = 1;
-                  c = 32;
-                  goto B_l;
-                }
-                if (c > 31) goto B_d;
-                e[c]:int = b;
-                c = c + 1;
-                label B_l:
-                a = a - 4;
-                d = d + 4;
-                continue L_k;
-              }
-              unreachable;
-            }
-          }
-          stack_pointer = e + 128;
-          return ;
-          label B_d:
-        }
-        if (eqz(g_b) | eqz(f)) {
-          runtime_lookupPanic();
-          0;
-          if (g_b == 1) goto B_a;
-        }
-        if (eqz(g_b)) { unreachable }
-        return ;
-        label B_a:
-      }
-  (g_c[0]:int)[0]:int = a;
-  g_c[0]:int = g_c[0]:int + 4;
-}
-
-function runtime_printint32(a:int) { // func113
+function runtime_printint32(a:int) { // func108
   var b:int;
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 4;
@@ -9712,26 +9631,7 @@ function runtime_printint32(a:int) { // func113
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function findHead(a:int):int { // func114
-  var b:int;
-  var c:int = 89632[0]:int;
-  loop L_a {
-    var d:int = (c + (a >> 2))[0]:ubyte;
-    if (d == 170) {
-      b = (a ^ -1) | -4;
-      goto B_b;
-    }
-    b = -1;
-    if ((d >> (a << 1 & 6) & 3) == 2) goto B_b;
-    return a;
-    label B_b:
-    a = a + b;
-    continue L_a;
-  }
-  return unreachable;
-}
-
-function runtime_hashmapGet(a:int_ptr, b:int, c:int, d:int):int { // func115
+function runtime_hashmapGet(a:int_ptr, b:int, c:int, d:int):int { // func109
   var f:int;
   var j:int;
   var h:int_ptr;
@@ -9864,13 +9764,13 @@ function runtime_hashmapGet(a:int_ptr, b:int, c:int, d:int):int { // func115
   return 0;
 }
 
-function runtime_hashmapBucketAddrForHash(a:int, b:int):int { // func116
+function runtime_hashmapBucketAddrForHash(a:int, b:int):int { // func110
   return a[0]:int +
          ((a[4]:int + a[3]:int << 3) + 12) *
          (select_if(-1, -1 << (a = a[20]:ubyte) ^ -1, a > 31) & b)
 }
 
-function runtime_RegisterTask(a:int, b:{ a:int, b:int, c:int }) { // func117
+function runtime_RegisterTask(a:int, b:{ a:int, b:int, c:int }) { // func111
   var c:int_ptr;
   var d:{ a:int, b:int, c:int }
   var f:int;
@@ -9921,7 +9821,369 @@ function runtime_RegisterTask(a:int, b:{ a:int, b:int, c:int }) { // func117
   g_c[0]:int = g_c[0]:int + 12;
 }
 
-function runtime_panicOrGoexit(a:int, b:{ a:int, b:int }) { // func118
+function runtime_Gosched() { // func112
+  var b:int;
+  var a:int;
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 4;
+    a = (g_c[0]:int)[0]:int;
+  }
+  b = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          b = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) { a = 89488[0]:int }
+        if (eqz(g_b) | eqz(b)) {
+          Push(a);
+          0;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | b == 1) {
+          internal_task_Pause();
+          1;
+          if (g_b == 1) goto B_b;
+        }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = b;
+  g_c[0]:int = g_c[0]:int + 4;
+  (g_c[0]:int)[0]:int = a;
+  g_c[0]:int = g_c[0]:int + 4;
+}
+
+function runtime_markRoots(a:int_ptr, b:int) { // func113
+  var c:{ a:int, b:int, c:int, d:int, e:int }
+  var e:{ a:int, b:int, c:int, d:int, e:int }
+  var d:int;
+  var f:int;
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 20;
+    e = g_c[0]:int;
+    a = e.a;
+    b = e.b;
+    d = e.c;
+    f = e.d;
+    e = e.e;
+  }
+  c = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          c = (g_c[0]:int)[0]:int;
+        }
+        loop L_d {
+          if (eqz(g_b) | eqz(c)) {
+            runtime_Gosched();
+            0;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            if (a >= b) goto B_e;
+            f = 89632[0]:int;
+            d = a[0];
+          }
+          if (eqz(g_b) | c == 1) {
+            runtime_Gosched();
+            1;
+            if (g_b == 1) goto B_b;
+          }
+          e = select_if(e, d < 90352, g_b);
+          if (eqz(g_b)) {
+            if (e) goto B_i;
+            f = d >= f;
+            if (f) goto B_i;
+          }
+          if (eqz(g_b) | c == 2) {
+            runtime_Gosched();
+            2;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            f = d - 90352 >> 4;
+            d = state(f);
+          }
+          if (eqz(g_b) | c == 3) {
+            runtime_Gosched();
+            3;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            d = eqz(d & 255);
+            if (d) goto B_i;
+            d = findHead(f);
+          }
+          if (eqz(g_b) | c == 4) {
+            runtime_Gosched();
+            4;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) { f = state(d) }
+          if (eqz(g_b) | c == 5) {
+            runtime_Gosched();
+            5;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            f = (f & 255) == 3;
+            if (f) goto B_i;
+          }
+          if (eqz(g_b) | c == 6) {
+            runtime_startMark(d);
+            6;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b) | c == 7) {
+            runtime_Gosched();
+            7;
+            if (g_b == 1) goto B_b;
+          }
+          label B_i:
+          a = select_if(a, a + 4, g_b);
+          if (eqz(g_b) | c == 8) {
+            runtime_Gosched();
+            8;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) continue L_d;
+          label B_e:
+        }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = c;
+  g_c[0]:int = g_c[0]:int + 4;
+  c = g_c[0]:int;
+  c.a = a;
+  c.b = b;
+  c.c = d;
+  c.d = f;
+  c.e = e;
+  g_c[0]:int = g_c[0]:int + 20;
+}
+
+function runtime_startMark(a:int_ptr) { // func114
+  var h:int_ptr;
+  var d:int_ptr;
+  var b:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
+  var f:int;
+  var c:int;
+  var e:int;
+  var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 28;
+    g = g_c[0]:int;
+    a = g.a;
+    c = g.b;
+    d = g.c;
+    e = g.d;
+    f = g.e;
+    h = g.f;
+    g = g.g;
+  }
+  b = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          b = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) {
+          h = stack_pointer - 128;
+          stack_pointer = h;
+          d = h + 4;
+          memory_fill(d, 0, 124);
+          h[0] = a;
+          setState(a, 3);
+        }
+        if (eqz(g_b) | eqz(b)) {
+          runtime_Gosched();
+          0;
+          if (g_b == 1) goto B_b;
+        }
+        f = select_if(f, 1, g_b);
+        loop L_g {
+          if (eqz(g_b) | b == 1) {
+            runtime_Gosched();
+            1;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            if (f <= 0) goto B_h;
+            f = f - 1;
+            if (f > 31) goto B_f;
+            a = h + (f << 2);
+            c = a[0];
+          }
+          if (eqz(g_b) | b == 2) {
+            runtime_Gosched();
+            2;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b) | b == 3) {
+            runtime_Gosched();
+            3;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b) | b == 4) {
+            runtime_Gosched();
+            4;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            a = c << 4;
+            br_table[B_p, B_o, B_p, ..B_o]((state(c) & 255) - 1)
+            label B_p:
+            c = c + 1;
+            label B_o:
+            g = a + 90352;
+            e = c << 4;
+            d = e - a;
+            e = e + 90352;
+            var i:int = 89632[0]:int;
+            loop L_q {
+              a = d;
+              d = e >= i;
+              if (d) goto B_r;
+              d = a + 16;
+              e = e + 16;
+              let t0 = state(c);
+              c = c + 1;
+              if ((t0 & 255) == 2) continue L_q;
+              label B_r:
+            }
+          }
+          if (eqz(g_b) | b == 5) {
+            runtime_Gosched();
+            5;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b) | b == 6) {
+            runtime_Gosched();
+            6;
+            if (g_b == 1) goto B_b;
+          }
+          loop L_u {
+            if (eqz(g_b) | b == 7) {
+              runtime_Gosched();
+              7;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              d = eqz(a);
+              if (d) continue L_g;
+              c = g.a;
+            }
+            if (eqz(g_b) | b == 8) {
+              runtime_Gosched();
+              8;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) { e = 89632[0]:int }
+            if (eqz(g_b) | b == 9) {
+              runtime_Gosched();
+              9;
+              if (g_b == 1) goto B_b;
+            }
+            d = select_if(d, c < 90352, g_b);
+            if (eqz(g_b)) {
+              if (d) goto B_aa;
+              d = c >= e;
+              if (d) goto B_aa;
+            }
+            if (eqz(g_b) | b == 10) {
+              runtime_Gosched();
+              10;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              d = c - 90352;
+              e = d >> 4;
+              c = state(e);
+            }
+            if (eqz(g_b) | b == 11) {
+              runtime_Gosched();
+              11;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              d = eqz(c & 255);
+              if (d) goto B_aa;
+              c = findHead(e);
+            }
+            if (eqz(g_b) | b == 12) {
+              runtime_Gosched();
+              12;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) { e = state(c) }
+            if (eqz(g_b) | b == 13) {
+              runtime_Gosched();
+              13;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              d = (e & 255) == 3;
+              if (d) goto B_aa;
+              setState(c, 3);
+            }
+            if (eqz(g_b) | b == 14) {
+              runtime_Gosched();
+              14;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              d = f != 32;
+              if (eqz(d)) {
+                89689[0]:byte = 1;
+                f = 32;
+                goto B_aa;
+              }
+              if (f > 31) goto B_f;
+              d = h + (f << 2);
+              d[0] = c;
+              f = f + 1;
+            }
+            label B_aa:
+            if (eqz(g_b)) {
+              a = a - 4;
+              g = g + 4;
+              continue L_u;
+            }
+          }
+          label B_h:
+        }
+        if (eqz(g_b)) {
+          stack_pointer = h + 128;
+          return ;
+        }
+        label B_f:
+        if (eqz(g_b) | b == 15) {
+          runtime_lookupPanic();
+          15;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { unreachable }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = b;
+  g_c[0]:int = g_c[0]:int + 4;
+  b = g_c[0]:int;
+  b.a = a;
+  b.b = c;
+  b.c = d;
+  b.d = e;
+  b.e = f;
+  b.f = h;
+  b.g = g;
+  g_c[0]:int = g_c[0]:int + 28;
+}
+
+function markFree(a:int) { // func115
+  var b:int = 89632[0]:int + (a >> 2);
+  b[0]:byte = b[0]:ubyte & (3 << (a << 1 & 6) ^ -1);
+}
+
+function runtime_panicOrGoexit(a:int, b:{ a:int, b:int }) { // func116
   var c:{ a:int, b:int }
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 8;
@@ -9961,7 +10223,7 @@ function runtime_panicOrGoexit(a:int, b:{ a:int, b:int }) { // func118
   g_c[0]:int = g_c[0]:int + 8;
 }
 
-function runtime_printitf(a:int, b:int) { // func119
+function runtime_printitf(a:int, b:int) { // func117
   var e:int;
   var f:int;
   var c:int;
@@ -10253,14 +10515,14 @@ function runtime_printitf(a:int, b:int) { // func119
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function interface_Error_func_string_typeassert(a:int):int { // func120
+function interface_Error_func_string_typeassert(a:int):int { // func118
   return 
     (((((a == 87164 | a == 87148) | a == 87084) | a == 87060) | a == 87044) |
      a == 86996) |
     a == 86936
 }
 
-function interface_String_func_string_typeassert(a:int):int { // func121
+function interface_String_func_string_typeassert(a:int):int { // func119
   return 
     ((((((((((((((a == 87232 | a == 87188) | a == 87180) | a == 87172) | a == 87156) |
               a == 87140) |
@@ -10276,7 +10538,7 @@ function interface_String_func_string_typeassert(a:int):int { // func121
     a == 86600
 }
 
-function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c:{ a:int, b:int }) { // func122
+function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c:{ a:int, b:int }) { // func120
   var d:int_ptr;
   var e:int;
   var g:int;
@@ -10620,7 +10882,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
   g_c[0]:int = g_c[0]:int + 40;
 }
 
-function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func123
+function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func121
   var e:int;
   var n:int;
   var k:int;
@@ -12167,7 +12429,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func123
   g_c[0]:int = g_c[0]:int + 172;
 }
 
-function get(a:{ a:int, b:int, c:int }):int { // func124
+function get(a:{ a:int, b:int, c:int }):int { // func122
   var b:int;
   var e:{ a:int, b:int, c:int, d:int }
   var d:int;
@@ -12301,7 +12563,7 @@ function get(a:{ a:int, b:int, c:int }):int { // func124
   return 0;
 }
 
-function String_4(a:{ a:int, b:int }, b:int) { // func125
+function String_4(a:{ a:int, b:int }, b:int) { // func123
   var e:int_ptr;
   var f:int;
   var c:{ a:int, b:int, c:int, d:int, e:int }
@@ -12365,7 +12627,7 @@ function String_4(a:{ a:int, b:int }, b:int) { // func125
   g_c[0]:int = g_c[0]:int + 20;
 }
 
-function String_5(a:{ a:int, b:int }, b:int) { // func126
+function String_5(a:{ a:int, b:int }, b:int) { // func124
   var c:int;
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
   var f:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
@@ -12515,7 +12777,26 @@ function String_5(a:{ a:int, b:int }, b:int) { // func126
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function runtime_nilMapPanic() { // func127
+function findHead(a:int):int { // func125
+  var b:int;
+  var c:int = 89632[0]:int;
+  loop L_a {
+    var d:int = (c + (a >> 2))[0]:ubyte;
+    if (d == 170) {
+      b = (a ^ -1) | -4;
+      goto B_b;
+    }
+    b = -1;
+    if ((d >> (a << 1 & 6) & 3) == 2) goto B_b;
+    return a;
+    label B_b:
+    a = a + b;
+    continue L_a;
+  }
+  return unreachable;
+}
+
+function runtime_nilMapPanic() { // func126
   var a:int = {
                 if (eqz(g_b) |
                     eqz(if (g_b == 2) {
@@ -12536,7 +12817,7 @@ function runtime_nilMapPanic() { // func127
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function runtime_hashmapSet(a:int, b:int, c:int, d:int) { // func128
+function runtime_hashmapSet(a:int, b:int, c:int, d:int) { // func127
   var e:int;
   var g:int_ptr;
   var h:byte_ptr;
@@ -12859,14 +13140,14 @@ function runtime_hashmapSet(a:int, b:int, c:int, d:int) { // func128
   g_c[0]:int = g_c[0]:int + 68;
 }
 
-function runtime_fastrand():int { // func129
+function runtime_fastrand():int { // func128
   var a:int;
   data[0]:int =
     (a = (a = (a = (a = data[0]:int) << 7 ^ a) >> 1 ^ a) << 9 ^ a);
   return a;
 }
 
-function runtime_hashmapNext(a:int, b:int, c:int, d:int):int { // func130
+function runtime_hashmapNext(a:int, b:int, c:int, d:int):int { // func129
   var h:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int, o:int, p:int, q:int, r:int, s:int, t:int }
   var e:int_ptr;
   var g:int;
@@ -13044,7 +13325,7 @@ function runtime_hashmapNext(a:int, b:int, c:int, d:int):int { // func130
   return 0;
 }
 
-function fmt_newPrinter():int { // func131
+function fmt_newPrinter():int { // func130
   var b:int_ptr;
   var a:int;
   var c:int;
@@ -13155,7 +13436,7 @@ function fmt_newPrinter():int { // func131
   return 0;
 }
 
-function writeByte(a:int, b:int) { // func132
+function writeByte(a:int, b:int) { // func131
   var c:int;
   var g:int;
   var f:int;
@@ -13232,7 +13513,7 @@ function writeByte(a:int, b:int) { // func132
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function printArg(a:int, b:int, c:int, d:int) { // func133
+function printArg(a:int, b:int, c:int, d:int) { // func132
   var i:int_ptr;
   var g:int;
   var e:int;
@@ -13580,7 +13861,7 @@ function printArg(a:int, b:int, c:int, d:int) { // func133
   g_c[0]:int = g_c[0]:int + 40;
 }
 
-function Write(a:{ a:int, b:int, c:int }, b:int_ptr, c:int, d:int) { // func134
+function Write(a:{ a:int, b:int, c:int }, b:int_ptr, c:int, d:int) { // func133
   var e:int_ptr;
   var f:{ a:int, b:int, c:int, d:int, e:int, f:int }
   var g:int;
@@ -13757,7 +14038,7 @@ function Write(a:{ a:int, b:int, c:int }, b:int_ptr, c:int, d:int) { // func134
   g_c[0]:int = g_c[0]:int + 36;
 }
 
-function free_1(a:int) { // func135
+function free_1(a:int) { // func134
   var b:int;
   var h:int;
   var g:int;
@@ -13847,7 +14128,7 @@ function free_1(a:int) { // func135
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function fmt_Printf(a:{ a:int, b:int }, b:byte_ptr, c:int, d:{ a:int, b:int }) { // func136
+function fmt_Printf(a:{ a:int, b:int }, b:byte_ptr, c:int, d:{ a:int, b:int }) { // func135
   var h:int;
   var j:int;
   var g:int;
@@ -14522,7 +14803,7 @@ function fmt_Printf(a:{ a:int, b:int }, b:byte_ptr, c:int, d:{ a:int, b:int }) {
   g_c[0]:int = g_c[0]:int + 84;
 }
 
-function runtime_reflectValueEqual(a:ubyte_ptr, b:int, c:int, d:int, e:int, f:int):int { // func137
+function runtime_reflectValueEqual(a:ubyte_ptr, b:int, c:int, d:int, e:int, f:int):int { // func136
   var h:int;
   var k:int;
   var l:int;
@@ -14893,7 +15174,7 @@ function runtime_reflectValueEqual(a:ubyte_ptr, b:int, c:int, d:int, e:int, f:in
   return 0;
 }
 
-function runtime_interfaceTypeAssert(a:int) { // func138
+function runtime_interfaceTypeAssert(a:int) { // func137
   var b:int;
   a = {
         if (g_b == 2) {
@@ -14914,7 +15195,7 @@ function runtime_interfaceTypeAssert(a:int) { // func138
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function runtime_stringLess(a:ubyte_ptr, b:int, c:ubyte_ptr, d:int):int { // func139
+function runtime_stringLess(a:ubyte_ptr, b:int, c:ubyte_ptr, d:int):int { // func138
   var f:int;
   var g:int;
   var e:int = select_if(d, b, b > d);
@@ -14933,7 +15214,7 @@ function runtime_stringLess(a:ubyte_ptr, b:int, c:ubyte_ptr, d:int):int { // fun
   return b < d;
 }
 
-function runtime_stringFromUnicode(a:{ a:int, b:int }, b:int) { // func140
+function runtime_stringFromUnicode(a:{ a:int, b:int }, b:int) { // func139
   var g:int;
   var c:{ a:int, b:int, c:int, d:int, e:int, f:int }
   var e:{ a:byte, b:byte, c:byte, d:byte }
@@ -15027,7 +15308,7 @@ function runtime_stringFromUnicode(a:{ a:int, b:int }, b:int) { // func140
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_func_CanSeq_func_bool_CanSeq2_fu(a:ubyte_ptr, b:int):int { // func141
+function interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_func_CanSeq_func_bool_CanSeq2_fu(a:ubyte_ptr, b:int):int { // func140
   var c:int;
   a = {
         if (g_b == 2) {
@@ -15052,7 +15333,7 @@ function interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_fun
   return 0;
 }
 
-function reflect_toType(a:{ a:int, b:int }, b:int, c:{ a:int, b:int, c:int }) { // func142
+function reflect_toType(a:{ a:int, b:int }, b:int, c:{ a:int, b:int, c:int }) { // func141
   var d:{ a:int, b:int, c:int }
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 12;
@@ -15104,7 +15385,7 @@ function reflect_toType(a:{ a:int, b:int }, b:int, c:{ a:int, b:int, c:int }) { 
   g_c[0]:int = g_c[0]:int + 12;
 }
 
-function reflect_TypeOf(a:{ a:int, b:int }, b:int) { // func143
+function reflect_TypeOf(a:{ a:int, b:int }, b:int) { // func142
   var e:int_ptr;
   var d:{ a:int, b:int, c:int, d:int, e:int }
   var f:int;
@@ -15154,7 +15435,7 @@ function reflect_TypeOf(a:{ a:int, b:int }, b:int) { // func143
   g_c[0]:int = g_c[0]:int + 20;
 }
 
-function Elem_2(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int) { // func144
+function Elem_2(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int) { // func143
   var f:int;
   var h:int;
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
@@ -15216,7 +15497,7 @@ function Elem_2(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int) { // func144
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function Field_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // func145
+function Field_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // func144
   var g:int;
   var i:int;
   var h:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
@@ -15280,7 +15561,7 @@ function Field_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // fu
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function Index_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // func146
+function Index_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // func145
   var g:int;
   var i:int;
   var h:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
@@ -15344,7 +15625,7 @@ function Index_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // fu
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_func_CanSeq_func_bool_CanSeq2_fu_1(a:{ a:int, b:int }, b:int, c:int) { // func147
+function interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_func_CanSeq_func_bool_CanSeq2_fu_1(a:{ a:int, b:int }, b:int, c:int) { // func146
   var d:{ a:int, b:int, c:int, d:int }
   var e:{ a:int, b:int, c:int, d:int }
   if (g_b == 2) {
@@ -15401,7 +15682,7 @@ function interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_fun
   g_c[0]:int = g_c[0]:int + 16;
 }
 
-function internal_fmtsort_Sort_1(a:int, b:int, c:int, d:int_ptr, e:int, f:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }, g:int, h:int, i:int, j:int, k:int, l:int):int { // func148
+function internal_fmtsort_Sort_1(a:int, b:int, c:int, d:int_ptr, e:int, f:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }, g:int, h:int, i:int, j:int, k:int, l:int):int { // func147
   var m:int;
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 32;
@@ -15461,7 +15742,7 @@ function internal_fmtsort_Sort_1(a:int, b:int, c:int, d:int_ptr, e:int, f:{ a:in
   return 0;
 }
 
-function internal_fmtsort_compare(a:int, b:int, c:int, d:int, e:int, f:int):int { // func149
+function internal_fmtsort_compare(a:int, b:int, c:int, d:int, e:int, f:int):int { // func148
   var g:int;
   var j:int;
   var h:int;
@@ -16031,7 +16312,7 @@ function internal_fmtsort_compare(a:int, b:int, c:int, d:int, e:int, f:int):int 
   return 0;
 }
 
-function slices_insertionSortCmpFunc_internal_fmtsort_KeyValue(a:int, b:int, c:int, d:int) { // func150
+function slices_insertionSortCmpFunc_internal_fmtsort_KeyValue(a:int, b:int, c:int, d:int) { // func149
   var g:int_ptr;
   var i:int;
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int, o:int, p:int, q:int, r:int, s:int, t:int, u:int, v:int, w:int, x:int, y:int, z:int, aa:int, ba:int, ca:int, da:int }
@@ -16239,7 +16520,7 @@ function slices_insertionSortCmpFunc_internal_fmtsort_KeyValue(a:int, b:int, c:i
   g_c[0]:int = g_c[0]:int + 120;
 }
 
-function slices_symMergeCmpFunc_internal_fmtsort_KeyValue(a:int_ptr, b:int, c:int, d:int, e:int) { // func151
+function slices_symMergeCmpFunc_internal_fmtsort_KeyValue(a:int_ptr, b:int, c:int, d:int, e:int) { // func150
   var h:int_ptr;
   var j:int;
   var f:int;
@@ -16624,7 +16905,7 @@ function slices_symMergeCmpFunc_internal_fmtsort_KeyValue(a:int_ptr, b:int, c:in
   g_c[0]:int = g_c[0]:int + 96;
 }
 
-function slices_swapRangeCmpFunc_internal_fmtsort_KeyValue(a:int, b:int, c:long_ptr@4, d:int, e:int) { // func152
+function slices_swapRangeCmpFunc_internal_fmtsort_KeyValue(a:int, b:int, c:long_ptr@4, d:int, e:int) { // func151
   var o:int;
   var i:int;
   a = {
@@ -16690,11 +16971,11 @@ function slices_swapRangeCmpFunc_internal_fmtsort_KeyValue(a:int, b:int, c:long_
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function cmp_isNaN_string(a:int, b:int):int { // func153
+function cmp_isNaN_string(a:int, b:int):int { // func152
   return runtime_stringEqual(a, b, a, b) ^ 1
 }
 
-function internal_fmtsort_nilCompare(a:{ a:int, b:byte }, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }) { // func154
+function internal_fmtsort_nilCompare(a:{ a:int, b:byte }, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }) { // func153
   var i:int;
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 28;
@@ -16745,7 +17026,7 @@ function internal_fmtsort_nilCompare(a:{ a:int, b:byte }, b:int, c:int, d:int, e
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function time_appendInt(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int) { // func155
+function time_appendInt(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int) { // func154
   var g:int;
   var h:int;
   var k:int;
@@ -16977,7 +17258,7 @@ function time_appendInt(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f
   g_c[0]:int = g_c[0]:int + 44;
 }
 
-function lookup(a:{ a:int, b:int, c:int }, b:int, c:long) { // func156
+function lookup(a:{ a:int, b:int, c:int }, b:int, c:long) { // func155
   var d:int;
   var l:int;
   var e:int;
@@ -17432,7 +17713,7 @@ function lookup(a:{ a:int, b:int, c:int }, b:int, c:long) { // func156
   g_c[0]:int = g_c[0]:int + 92;
 }
 
-function time_tzsetName(a:{ a:int, b:int, c:int, d:int, e:byte }, b:ubyte_ptr, c:int) { // func157
+function time_tzsetName(a:{ a:int, b:int, c:int, d:int, e:byte }, b:ubyte_ptr, c:int) { // func156
   var g:int;
   var d:int;
   var h:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
@@ -17590,7 +17871,7 @@ function time_tzsetName(a:{ a:int, b:int, c:int, d:int, e:byte }, b:ubyte_ptr, c
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function time_tzsetOffset(a:{ a:int, b:int, c:int, d:byte }, b:ubyte_ptr, c:ubyte_ptr) { // func158
+function time_tzsetOffset(a:{ a:int, b:int, c:int, d:byte }, b:ubyte_ptr, c:ubyte_ptr) { // func157
   var d:{ a:int, b:int, c:int, d:ubyte, e:int, f:int, g:int, h:ubyte, i:int, j:int, k:int, l:ubyte }
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
   var h:int;
@@ -17737,7 +18018,7 @@ function time_tzsetOffset(a:{ a:int, b:int, c:int, d:byte }, b:ubyte_ptr, c:ubyt
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function time_tzsetRule(a:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:byte }, b:ubyte_ptr, c:ubyte_ptr) { // func159
+function time_tzsetRule(a:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:byte }, b:ubyte_ptr, c:ubyte_ptr) { // func158
   var d:{ a:int, b:int, c:int, d:ubyte, e:int, f:int, g:int, h:ubyte, i:int, j:int, k:int, l:ubyte, m:int, n:int, o:int, p:ubyte, q:int, r:int, s:int, t:ubyte, u:int, v:int, w:int, x:ubyte }
   var f:int;
   var l:int;
@@ -17974,7 +18255,7 @@ function time_tzsetRule(a:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:b
   g_c[0]:int = g_c[0]:int + 44;
 }
 
-function yearYday(a:{ a:int, b:int }, b:long) { // func160
+function yearYday(a:{ a:int, b:int }, b:long) { // func159
   var d:int;
   var f:int;
   var e:int;
@@ -17993,7 +18274,7 @@ function yearYday(a:{ a:int, b:int }, b:long) { // func160
   stack_pointer = c + 16;
 }
 
-function time_tzruleTime(a:int, b:int, c:int, d:int, e:int, f:int, g:int):int { // func161
+function time_tzruleTime(a:int, b:int, c:int, d:int, e:int, f:int, g:int):int { // func160
   var h:int;
   var i:int;
   br_table[B_d, B_c, B_b, ..B_a](b)
@@ -18039,7 +18320,7 @@ function time_tzruleTime(a:int, b:int, c:int, d:int, e:int, f:int, g:int):int { 
   return f - g + h;
 }
 
-function time_tzsetNum(a:{ a:int, b:int, c:int, d:byte }, b:int, c:int, d:int, e:int) { // func162
+function time_tzsetNum(a:{ a:int, b:int, c:int, d:byte }, b:int, c:int, d:int, e:int) { // func161
   var j:int;
   var i:int;
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int }
@@ -18172,14 +18453,14 @@ function time_tzsetNum(a:{ a:int, b:int, c:int, d:byte }, b:int, c:int, d:int, e
   g_c[0]:int = g_c[0]:int + 44;
 }
 
-function split(a:{ a:long, b:int, c:int }, b:long) { // func163
+function split(a:{ a:long, b:int, c:int }, b:long) { // func162
   var c:long;
   a.a = (c = (b = b << 2L | 3L) / 146097L);
   a.b = (b = (b - c * 146097L | 3L) * 2939745L) >> 32L;
   a.c = i32_wrap_i64(b) / 11758980;
 }
 
-function date(a:{ a:int, b:int, c:int }, b:long) { // func164
+function date(a:{ a:int, b:int, c:int }, b:long) { // func163
   var d:int;
   var e:int;
   var c:int_ptr = stack_pointer - 16;
@@ -18191,7 +18472,7 @@ function date(a:{ a:int, b:int, c:int }, b:long) { // func164
   stack_pointer = c + 16;
 }
 
-function clock(a:{ a:int, b:int, c:int }, b:long) { // func165
+function clock(a:{ a:int, b:int, c:int }, b:long) { // func164
   var c:int;
   var d:int;
   a.a = (d = (c = i32_wrap_i64(b % 86400L)) / 3600);
@@ -18199,7 +18480,7 @@ function clock(a:{ a:int, b:int, c:int }, b:long) { // func165
   a.c = d * -60 + c;
 }
 
-function String_6(a:{ a:int, b:int }, b:int) { // func166
+function String_6(a:{ a:int, b:int }, b:int) { // func165
   var c:int;
   var f:{ a:int, b:int, c:int, d:int, e:int, f:int }
   var d:int;
@@ -18336,7 +18617,7 @@ function String_6(a:{ a:int, b:int }, b:int) { // func166
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // func167
+function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // func166
   var e:int;
   var g:int;
   var f:int_ptr;
@@ -18786,7 +19067,7 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
   g_c[0]:int = g_c[0]:int + 72;
 }
 
-function Write_1(a:{ a:int, b:int, c:int }, b:int, c:int, d:int) { // func168
+function Write_1(a:{ a:int, b:int, c:int }, b:int, c:int, d:int) { // func167
   var h:int;
   var f:int;
   var g:int;
@@ -18860,7 +19141,7 @@ function Write_1(a:{ a:int, b:int, c:int }, b:int, c:int, d:int) { // func168
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function strconv_appendQuotedWith(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int) { // func169
+function strconv_appendQuotedWith(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int) { // func168
   var f:int;
   var h:int;
   var i:int;
@@ -19072,7 +19353,7 @@ function strconv_appendQuotedWith(a:{ a:int, b:int, c:int }, b:int, c:int, d:int
   g_c[0]:int = g_c[0]:int + 48;
 }
 
-function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int, g:int) { // func170
+function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int, g:int) { // func169
   var h:int;
   var k:int;
   var j:int;
@@ -19443,7 +19724,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
   g_c[0]:int = g_c[0]:int + 40;
 }
 
-function strconv_IsPrint(a:int):int { // func171
+function strconv_IsPrint(a:int):int { // func170
   var c:int;
   var b:int;
   var d:int;
@@ -19563,7 +19844,7 @@ function strconv_IsPrint(a:int):int { // func171
   return 0;
 }
 
-function strconv_bsearch_uint16_uint16(a:{ a:int, b:byte }, b:int, c:int, d:int) { // func172
+function strconv_bsearch_uint16_uint16(a:{ a:int, b:byte }, b:int, c:int, d:int) { // func171
   var e:int;
   var j:int;
   var h:int;
@@ -19609,7 +19890,7 @@ function strconv_bsearch_uint16_uint16(a:{ a:int, b:byte }, b:int, c:int, d:int)
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function strconv_leftShift(a:int, b:int) { // func173
+function strconv_leftShift(a:int, b:int) { // func172
   var d:int;
   var c:int;
   var f:ubyte_ptr;
@@ -19742,7 +20023,7 @@ function strconv_leftShift(a:int, b:int) { // func173
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function strconv_trim(a:int_ptr) { // func174
+function strconv_trim(a:int_ptr) { // func173
   var c:int;
   a = {
         if (g_b == 2) {
@@ -19781,7 +20062,7 @@ function strconv_trim(a:int_ptr) { // func174
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function strconv_rightShift(a:int, b:int) { // func175
+function strconv_rightShift(a:int, b:int) { // func174
   var d:int;
   var c:int;
   var i:int;
@@ -19905,7 +20186,7 @@ function strconv_rightShift(a:int, b:int) { // func175
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function strconv_formatBits(a:{ a:int, b:int, c:int, d:int, e:int }, b:int, c:int, d:int, e:long, f:int) { // func176
+function strconv_formatBits(a:{ a:int, b:int, c:int, d:int, e:int }, b:int, c:int, d:int, e:long, f:int) { // func175
   var i:int;
   var m:int;
   var h:int;
@@ -20048,7 +20329,7 @@ function strconv_formatBits(a:{ a:int, b:int, c:int, d:int, e:int }, b:int, c:in
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function strconv_formatDigits(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int) { // func177
+function strconv_formatDigits(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int) { // func176
   var l:int;
   var n:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int, o:int }
   var p:int;
@@ -20212,7 +20493,7 @@ function strconv_formatDigits(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:
   g_c[0]:int = g_c[0]:int + 60;
 }
 
-function strconv_fmtE(a:{ a:int, b:int, c:int }, b:int, c:int, d:ubyte_ptr, e:int, f:int, g:int, h:int, i:int, j:int) { // func178
+function strconv_fmtE(a:{ a:int, b:int, c:int }, b:int, c:int, d:ubyte_ptr, e:int, f:int, g:int, h:int, i:int, j:int) { // func177
   var k:int;
   var m:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int }
   var l:int;
@@ -20481,7 +20762,7 @@ function strconv_fmtE(a:{ a:int, b:int, c:int }, b:int, c:int, d:ubyte_ptr, e:in
   g_c[0]:int = g_c[0]:int + 56;
 }
 
-function strconv_fmtF(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int) { // func179
+function strconv_fmtF(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int) { // func178
   var j:int;
   var k:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int }
   var m:int;
@@ -20677,7 +20958,7 @@ function strconv_fmtF(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:i
   g_c[0]:int = g_c[0]:int + 56;
 }
 
-function strconv_mult128bitPow10(a:{ a:long, b:int, c:byte }, b:long, c:int, d:int) { // func180
+function strconv_mult128bitPow10(a:{ a:long, b:int, c:byte }, b:long, c:int, d:int) { // func179
   var f:int;
   var g:long;
   var h:long;
@@ -20730,7 +21011,7 @@ function strconv_mult128bitPow10(a:{ a:long, b:int, c:byte }, b:long, c:int, d:i
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function strconv_divisibleByPower5(a:long, b:int):int { // func181
+function strconv_divisibleByPower5(a:long, b:int):int { // func180
   var d:long;
   var c:int;
   if (eqz(a)) {
@@ -20750,7 +21031,7 @@ function strconv_divisibleByPower5(a:long, b:int):int { // func181
   return c;
 }
 
-function strconv_formatDecimal(a:int_ptr, b:long, c:int, d:int, e:int) { // func182
+function strconv_formatDecimal(a:int_ptr, b:long, c:int, d:int, e:int) { // func181
   var g:int;
   var k:int;
   var i:long;
@@ -20890,7 +21171,7 @@ function strconv_formatDecimal(a:int_ptr, b:long, c:int, d:int, e:int) { // func
   g_c[0]:int = g_c[0]:int + 44;
 }
 
-function strconv_mult64bitPow10(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int) { // func183
+function strconv_mult64bitPow10(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int) { // func182
   var g:long;
   var f:int;
   a = 
@@ -20939,7 +21220,7 @@ function strconv_mult64bitPow10(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int)
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function strconv_ryuDigits(a:{ a:int, b:int, c:int, d:int, e:int }, b:long, c:long, d:long, e:int, f:int) { // func184
+function strconv_ryuDigits(a:{ a:int, b:int, c:int, d:int, e:int }, b:long, c:long, d:long, e:int, f:int) { // func183
   var k:int_ptr;
   var j:int;
   var n:int;
@@ -21119,7 +21400,7 @@ function strconv_ryuDigits(a:{ a:int, b:int, c:int, d:int, e:int }, b:long, c:lo
   g_c[0]:int = g_c[0]:int + 44;
 }
 
-function strconv_divmod1e9(a:{ a:int, b:int }, b:long) { // func185
+function strconv_divmod1e9(a:{ a:int, b:int }, b:long) { // func184
   var d:long;
   var c:long_ptr = stack_pointer - 16;
   stack_pointer = c;
@@ -21129,7 +21410,7 @@ function strconv_divmod1e9(a:{ a:int, b:int }, b:long) { // func185
   stack_pointer = c + 16;
 }
 
-function strconv_ryuDigits32(a:int_ptr, b:{ a:int, b:int }, c:int, d:int, e:int, f:int, g:{ a:int, b:int }) { // func186
+function strconv_ryuDigits32(a:int_ptr, b:{ a:int, b:int }, c:int, d:int, e:int, f:int, g:{ a:int, b:int }) { // func185
   var i:int;
   var h:int;
   var j:int;
@@ -21223,7 +21504,7 @@ function strconv_ryuDigits32(a:int_ptr, b:{ a:int, b:int }, c:int, d:int, e:int,
   g_c[0]:int = g_c[0]:int + 8;
 }
 
-function strconv_appendQuotedRuneWith(a:{ a:int, b:int, c:int }, b:byte_ptr, c:int, d:int) { // func187
+function strconv_appendQuotedRuneWith(a:{ a:int, b:int, c:int }, b:byte_ptr, c:int, d:int) { // func186
   var e:int;
   var i:int;
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
@@ -21305,7 +21586,7 @@ function strconv_appendQuotedRuneWith(a:{ a:int, b:int, c:int }, b:byte_ptr, c:i
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function write_1(a:int, b:int, c:int) { // func188
+function write_1(a:int, b:int, c:int) { // func187
   var f:int;
   var g:int;
   var h:int;
@@ -21382,7 +21663,7 @@ function write_1(a:int, b:int, c:int) { // func188
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function writeRune(a:int, b:int) { // func189
+function writeRune(a:int, b:int) { // func188
   var d:int;
   var f:int;
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
@@ -21445,7 +21726,7 @@ function writeRune(a:int, b:int) { // func189
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function writeString(a:int, b:int, c:int) { // func190
+function writeString(a:int, b:int, c:int) { // func189
   var f:int;
   var g:int;
   var h:int;
@@ -21522,7 +21803,7 @@ function writeString(a:int, b:int, c:int) { // func190
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function fmtBx(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func191
+function fmtBx(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func190
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 16;
     d = g_c[0]:int;
@@ -21557,7 +21838,7 @@ function fmtBx(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func1
   g_c[0]:int = g_c[0]:int + 16;
 }
 
-function fmtSbx(a:int, b:int, c:int, d:int, e:int, f:ubyte_ptr) { // func192
+function fmtSbx(a:int, b:int, c:int, d:int, e:int, f:ubyte_ptr) { // func191
   var g:int;
   var i:int;
   var h:{ a:int, b:int, c:int }
@@ -21819,7 +22100,7 @@ function fmtSbx(a:int, b:int, c:int, d:int, e:int, f:ubyte_ptr) { // func192
   g_c[0]:int = g_c[0]:int - -64;
 }
 
-function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func193
+function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func192
   var f:int;
   var j:ubyte_ptr;
   var m:int;
@@ -23275,7 +23556,7 @@ function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func193
   g_c[0]:int = g_c[0]:int + 128;
 }
 
-function pad(a:int, b:int, c:int, d:int) { // func194
+function pad(a:int, b:int, c:int, d:int) { // func193
   var g:int;
   var k:int;
   var e:int;
@@ -23442,7 +23723,7 @@ function pad(a:int, b:int, c:int, d:int) { // func194
   g_c[0]:int = g_c[0]:int + 40;
 }
 
-function writePadding(a:int, b:{ a:int, b:int, c:int }) { // func195
+function writePadding(a:int, b:{ a:int, b:int, c:int }) { // func194
   var d:int;
   var j:int;
   var c:int;
@@ -23565,7 +23846,7 @@ function writePadding(a:int, b:{ a:int, b:int, c:int }) { // func195
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function fmtInteger(a:int, b:long, c:int, d:int, e:int, f:ubyte_ptr) { // func196
+function fmtInteger(a:int, b:long, c:int, d:int, e:int, f:ubyte_ptr) { // func195
   var l:int;
   var p:int;
   var h:int;
@@ -23881,7 +24162,7 @@ function fmtInteger(a:int, b:long, c:int, d:int, e:int, f:ubyte_ptr) { // func19
   g_c[0]:int = g_c[0]:int - -64;
 }
 
-function fmtQ(a:ubyte_ptr, b:int, c:int) { // func197
+function fmtQ(a:ubyte_ptr, b:int, c:int) { // func196
   var d:int;
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
@@ -24070,7 +24351,7 @@ function fmtQ(a:ubyte_ptr, b:int, c:int) { // func197
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function truncateString(a:{ a:int, b:int }, b:int, c:int, d:int) { // func198
+function truncateString(a:{ a:int, b:int }, b:int, c:int, d:int) { // func197
   var h:int;
   var g:int;
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
@@ -24163,7 +24444,7 @@ function truncateString(a:{ a:int, b:int }, b:int, c:int, d:int) { // func198
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function padString(a:int, b:int, c:int) { // func199
+function padString(a:int, b:int, c:int) { // func198
   var f:int;
   var i:int;
   var e:int;
@@ -24280,7 +24561,7 @@ function padString(a:int, b:int, c:int) { // func199
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function fmtS(a:int, b:int, c:int) { // func200
+function fmtS(a:int, b:int, c:int) { // func199
   var f:int_ptr;
   var g:int;
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int }
@@ -24342,7 +24623,7 @@ function fmtS(a:int, b:int, c:int) { // func200
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function fmtSx(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func201
+function fmtSx(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func200
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 16;
     d = g_c[0]:int;
@@ -24377,7 +24658,7 @@ function fmtSx(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func2
   g_c[0]:int = g_c[0]:int + 16;
 }
 
-function argNumber(a:{ a:int, b:int, c:byte }, b:byte_ptr, c:int, d:ubyte_ptr, e:int, f:int) { // func202
+function argNumber(a:{ a:int, b:int, c:byte }, b:byte_ptr, c:int, d:ubyte_ptr, e:int, f:int) { // func201
   var j:{ a:int, b:ubyte, c:int }
   var g:int;
   var h:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int }
@@ -24512,7 +24793,7 @@ function argNumber(a:{ a:int, b:int, c:byte }, b:byte_ptr, c:int, d:ubyte_ptr, e
   g_c[0]:int = g_c[0]:int + 44;
 }
 
-function fmt_parsenum(a:{ a:int, b:byte, c:int }, b:{ a:int, b:int, c:int, d:int }, c:int, d:int, e:int) { // func203
+function fmt_parsenum(a:{ a:int, b:byte, c:int }, b:{ a:int, b:int, c:int, d:int }, c:int, d:int, e:int) { // func202
   var g:int;
   var f:{ a:int, b:int, c:int, d:int }
   var h:int;
@@ -24585,7 +24866,7 @@ function fmt_parsenum(a:{ a:int, b:byte, c:int }, b:{ a:int, b:int, c:int, d:int
   g_c[0]:int = g_c[0]:int + 16;
 }
 
-function badVerb(a:int, b:int) { // func204
+function badVerb(a:int, b:int) { // func203
   var c:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int, o:int, p:int, q:int, r:int, s:int, t:int, u:int, v:int, w:int, x:int, y:int, z:int, aa:int, ba:int }
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int }
   var f:int;
@@ -24770,7 +25051,7 @@ function badVerb(a:int, b:int) { // func204
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int) { // func205
+function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int) { // func204
   var g:int;
   var h:ubyte_ptr;
   var i:int;
@@ -26448,7 +26729,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
   g_c[0]:int = g_c[0]:int + 96;
 }
 
-function fmt0x64(a:int, b:long, c:int) { // func206
+function fmt0x64(a:int, b:long, c:int) { // func205
   var e:int;
   var d:int;
   if (g_b == 2) {
@@ -26488,7 +26769,7 @@ function fmt0x64(a:int, b:long, c:int) { // func206
   g_c[0]:int = g_c[0]:int + 20;
 }
 
-function fmtBool(a:int, b:{ a:int, b:int }, c:{ a:int, b:int }) { // func207
+function fmtBool(a:int, b:{ a:int, b:int }, c:{ a:int, b:int }) { // func206
   var d:int;
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 8;
@@ -26539,7 +26820,7 @@ function fmtBool(a:int, b:{ a:int, b:int }, c:{ a:int, b:int }) { // func207
   g_c[0]:int = g_c[0]:int + 8;
 }
 
-function fmtBytes(a:int, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:int }) { // func208
+function fmtBytes(a:int, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:int }) { // func207
   var j:int;
   var m:int;
   var k:int;
@@ -26836,7 +27117,7 @@ function fmtBytes(a:int, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:
   g_c[0]:int = g_c[0]:int + 48;
 }
 
-function fmtComplex(a:int, b:double, c:double, d:int, e:int) { // func209
+function fmtComplex(a:int, b:double, c:double, d:int, e:int) { // func208
   var g:int;
   var h:int;
   var f:int;
@@ -26913,7 +27194,7 @@ function fmtComplex(a:int, b:double, c:double, d:int, e:int) { // func209
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function fmtFloat_1(a:int, b:double, c:int, d:int) { // func210
+function fmtFloat_1(a:int, b:double, c:int, d:int) { // func209
   var e:int;
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 20;
@@ -26989,7 +27270,7 @@ function fmtFloat_1(a:int, b:double, c:int, d:int) { // func210
   g_c[0]:int = g_c[0]:int + 20;
 }
 
-function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func211
+function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func210
   var g:int;
   var m:int;
   var f:int;
@@ -27334,7 +27615,7 @@ function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func211
   g_c[0]:int = g_c[0]:int + 52;
 }
 
-function fmtPointer(a:ubyte_ptr, b:ubyte_ptr, c:int, d:int, e:int) { // func212
+function fmtPointer(a:ubyte_ptr, b:ubyte_ptr, c:int, d:int, e:int) { // func211
   var f:int;
   var i:int;
   var g:int;
@@ -27525,7 +27806,7 @@ function fmtPointer(a:ubyte_ptr, b:ubyte_ptr, c:int, d:int, e:int) { // func212
   g_c[0]:int = g_c[0]:int + 36;
 }
 
-function fmtString(a:ubyte_ptr, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func213
+function fmtString(a:ubyte_ptr, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func212
   var e:{ a:int, b:int, c:int, d:int }
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 16;
@@ -27614,7 +27895,7 @@ function fmtString(a:ubyte_ptr, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) 
   g_c[0]:int = g_c[0]:int + 16;
 }
 
-function handleMethods(a:int, b:int):int { // func214
+function handleMethods(a:int, b:int):int { // func213
   var c:int;
   var e:int;
   var d:int;
@@ -27887,7 +28168,7 @@ function handleMethods(a:int, b:int):int { // func214
   return 0;
 }
 
-function fmt_intFromArg(a:{ a:int, b:byte }, b:{ a:int, b:int }, c:int) { // func215
+function fmt_intFromArg(a:{ a:int, b:byte }, b:{ a:int, b:int }, c:int) { // func214
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
   var d:int;
   var e:ubyte_ptr;
@@ -28001,29 +28282,29 @@ function fmt_intFromArg(a:{ a:int, b:byte }, b:{ a:int, b:int }, c:int) { // fun
   g_c[0]:int = g_c[0]:int + 36;
 }
 
-export function asyncify_start_unwind(a:int) { // func216
+export function asyncify_start_unwind(a:int) { // func215
   g_b = 1;
   g_c = a;
   if (g_c[0]:int > g_c[1]:int) { unreachable }
 }
 
-export function asyncify_stop_unwind() { // func217
+export function asyncify_stop_unwind() { // func216
   g_b = 0;
   if (g_c[0]:int > g_c[1]:int) { unreachable }
 }
 
-export function asyncify_start_rewind(a:int) { // func218
+export function asyncify_start_rewind(a:int) { // func217
   g_b = 2;
   g_c = a;
   if (g_c[0]:int > g_c[1]:int) { unreachable }
 }
 
-export function asyncify_stop_rewind() { // func219
+export function asyncify_stop_rewind() { // func218
   g_b = 0;
   if (g_c[0]:int > g_c[1]:int) { unreachable }
 }
 
-export function asyncify_get_state():int { // func220
+export function asyncify_get_state():int { // func219
   return g_b
 }
 

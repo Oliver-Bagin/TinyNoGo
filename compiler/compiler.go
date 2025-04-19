@@ -1404,55 +1404,64 @@ func (b *builder) createFunction() {
 				}
 			}
 
+			// Need to be selective with which instructions we add this to as we dont wan't to break
+			// go's runtime tooling.
+			// The big issue we have is not creating cycles in the schedular
+			// To solve this we only target the user files and create a special compiler directive
+			// that we can use in the runtime to add interleaving
+			var interleavingProgram = b.Config.Scheduler == "nc" || b.Config.Scheduler == "ncd"
+			var fromUserPackage = b.fn.Pkg != nil && b.fn.Pkg.Pkg.Name() == "main"
+			var shouldInterleave = (interleavingProgram && fromUserPackage) || b.info.interleave
+
 			// Inject Gosched at loop headers
-			if loopHeaders[block] && b.Config.Scheduler == "nc" || b.Config.Scheduler == "ncd" {
-				if b.fn.Pkg != nil && b.fn.Pkg.Pkg.Name() == "main" {
-					switch instr := instr.(type) {
-					case *ssa.Phi:
-						if b.Config.Debug && CS4215_DEBUG {
-							println("Phi node - Backlink")
-							println(instr.String())
-						}
-						// Don't insert here
-						// Insert at the next instruction allow the compiler to do other work here
-						// Phi nodes are complicated
-						insertNext = true
-					default:
-						// Other jumps include if statments
-						// mayalso be triggered by other
-						if b.Config.Debug && CS4215_DEBUG {
-							println("Other - Backlink")
-							println(instr.String())
-						}
-						// We don't need the overhead
-						// b.createRuntimeCall("Gosched", nil, "")
+			if loopHeaders[block] && shouldInterleave {
+				switch instr := instr.(type) {
+				case *ssa.Phi:
+					if b.Config.Debug && CS4215_DEBUG {
+						println("Phi node - Backlink")
+						println(instr.String())
 					}
+					// Don't insert here
+					// Insert at the next instruction allow the compiler to do other work here
+					// Phi nodes are complicated
+					insertNext = true
+				default:
+					// Other jumps include if statments
+					// may also be triggered by other statments
+					if b.Config.Debug && CS4215_DEBUG {
+						println("Other - Backlink")
+						println(instr.String())
+					}
+					// We don't need the overhead dont give up control here
+					// b.createRuntimeCall("Gosched", nil, "")
 				}
 			}
 
 			b.createInstruction(instr)
 
-			// Need to be selective with which instructions we add this to as we dont wan't to break
-			// go's runtime tooling.
+			// if b.info.interleave {
+			// 	println(b.fn.Name())
+			// 	println(b.info.interleave)
+			// 	println(b.fn.Signature.String())
+			// }
+
 			// Here we focous on calls to functions and go routines
-			if b.Config.Scheduler == "nc" || b.Config.Scheduler == "ncd" {
-				// We run on all packages - usefull for debugging to restrict
-				if b.fn.Pkg != nil && b.fn.Pkg.Pkg.Name() == "main" {
+			if shouldInterleave {
+				// println(b.fn.Name())
+				// if b.Config.Debug && CS4215_DEBUG {
+				// 	println(b.fn.Name())
+				// }
+				switch instr := instr.(type) {
+				case *ssa.Call:
 					if b.Config.Debug && CS4215_DEBUG {
-						println(b.fn.Name())
+						println(instr.String())
 					}
-					switch instr := instr.(type) {
-					case *ssa.Call:
-						if b.Config.Debug && CS4215_DEBUG {
-							println(instr.String())
-						}
-						b.createRuntimeCall("Gosched", nil, "")
-					case *ssa.Go:
-						if b.Config.Debug && CS4215_DEBUG {
-							println(instr.String())
-						}
-						b.createRuntimeCall("Gosched", nil, "")
+					b.createRuntimeCall("Gosched", nil, "")
+				case *ssa.Go:
+					if b.Config.Debug && CS4215_DEBUG {
+						println(instr.String())
 					}
+					b.createRuntimeCall("Gosched", nil, "")
 				}
 			}
 		}
