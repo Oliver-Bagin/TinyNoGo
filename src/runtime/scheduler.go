@@ -76,8 +76,9 @@ func FormatElapsed() string {
 
 // Simple logging, for debugging.
 func scheduleLog(msg string) {
+	schedular_log("---" + msg + FormatElapsed())
 	if schedulerDebug {
-		schedular_log("---" + msg + FormatElapsed())
+		println("---" + msg + FormatElapsed())
 	}
 }
 
