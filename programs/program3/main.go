@@ -14,6 +14,9 @@ func AllocBytes(size uintptr) unsafe.Pointer
 //go:linkname McOnPointer runtime.McOnPointer
 func McOnPointer(region unsafe.Pointer, f func(ptr unsafe.Pointer))
 
+//go:linkname RegisterTask runtime.RegisterTask
+func RegisterTask(name string)
+
 func incrementRawPointerValue(rawPtr unsafe.Pointer) {
 	x := (*uint32)(rawPtr)
 	for i := 0; i < 200; i++ {
@@ -59,11 +62,13 @@ func main() {
 	wg.Add(2)
 
 	go func() {
+		RegisterTask("Unsafe1")
 		defer wg.Done()
 		incrementRawPointerValue(ptr)
 	}()
 
 	go func() {
+		RegisterTask("Unsafe2")
 		defer wg.Done()
 		incrementRawPointerValue(ptr)
 	}()
@@ -79,11 +84,13 @@ func main() {
 	wg2.Add(2)
 
 	go func() {
+		RegisterTask("Safe1")
 		defer wg2.Done()
 		incrementRawPointerValueSafe(ptr)
 	}()
 
 	go func() {
+		RegisterTask("Safe2")
 		defer wg2.Done()
 		incrementRawPointerValueSafe(ptr)
 	}()

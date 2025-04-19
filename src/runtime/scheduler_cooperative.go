@@ -58,8 +58,9 @@ var goSchedCounter uint64 = 0
 func Gosched() {
 	// Crazy to think that even if a single threaded cpu's primary objective was to
 	// overflow a uin64 at a clock speed of 5ghz it would still take a century
-	//goSchedCounter++
-	if goSchedCounter%100 == 0 {
+	goSchedCounter++
+	if goSchedCounter%1000 == 0 {
+		scheduleLogTask("  pause:", task.Current())
 		runqueue.Push(task.Current())
 		task.Pause()
 	}
@@ -156,8 +157,8 @@ func scheduler(returnAtDeadlock bool) {
 	// Main scheduler loop.
 	var now timeUnit
 	for !mainExited {
-		scheduleLog("")
-		scheduleLog("  schedule")
+		// scheduleLog("")
+		// scheduleLog("  schedule")
 		if sleepQueue != nil || timerQueue != nil {
 			now = ticks()
 		}
