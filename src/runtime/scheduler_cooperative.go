@@ -66,6 +66,12 @@ func Gosched() {
 	}
 }
 
+func forceGosched() {
+	scheduleLogTask("  pause:", task.Current())
+	runqueue.Push(task.Current())
+	task.Pause()
+}
+
 // Add this task to the sleep queue, assuming its state is set to sleeping.
 func addSleepTask(t *task.Task, duration timeUnit) {
 	if schedulerDebug {
@@ -263,12 +269,8 @@ func run() {
 		callMain()
 		mainExited = true
 	}()
-	go func() {
-		RegisterTask("GC")
-		for true {
-			Gosched()
-			GC()
-		}
-	}()
+	// This lets the GC decide if it wants to add a GC loop to the runtime
+	// The GC can also choose to run at allocation time when the heap is full
+	registerGC()
 	scheduler(false)
 }

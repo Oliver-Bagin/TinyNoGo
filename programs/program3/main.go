@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"runtime"
 	"sync"
-	"time"
 	"unsafe"
 )
 
@@ -62,14 +61,14 @@ func main() {
 	wg.Add(2)
 
 	go func() {
-		RegisterTask("Unsafe1")
 		defer wg.Done()
+		RegisterTask("Unsafe1")
 		incrementRawPointerValue(ptr)
 	}()
 
 	go func() {
-		RegisterTask("Unsafe2")
 		defer wg.Done()
+		RegisterTask("Unsafe2")
 		incrementRawPointerValue(ptr)
 	}()
 
@@ -84,22 +83,20 @@ func main() {
 	wg2.Add(2)
 
 	go func() {
-		RegisterTask("Safe1")
 		defer wg2.Done()
+		RegisterTask("Safe1")
 		incrementRawPointerValueSafe(ptr)
 	}()
 
 	go func() {
-		RegisterTask("Safe2")
 		defer wg2.Done()
+		RegisterTask("Safe2")
 		incrementRawPointerValueSafe(ptr)
 	}()
 
 	wg2.Wait() // Wait for both goroutines to finish
 	print("Synced : ")
 	printMemoryTable(ptr, 4, 4)
-
-	time.Sleep(50 * time.Millisecond)
 }
 
 func printMemoryTable(ptr unsafe.Pointer, numWords int, cols int) {

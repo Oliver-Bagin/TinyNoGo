@@ -28,6 +28,12 @@ var gcLock task.PMutex
 // Total number of objected freed; for leaking collector this stays 0
 const gcFrees = 0
 
+// Do we want to register a GC Loop?
+// In this case we will just run when we need more memory
+func registerGC() {
+	// NOOP
+}
+
 // Inlining alloc() speeds things up slightly but bloats the executable by 50%,
 // see https://github.com/tinygo-org/tinygo/issues/2674.  So don't.
 //

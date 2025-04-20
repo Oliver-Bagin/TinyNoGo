@@ -12,6 +12,7 @@ function runOrExit(cmd, cwd = ".", label = "") {
     execSync(cmd, { cwd, stdio: "inherit" });
   } catch (e) {
     console.error(`❌ ${label || displayedCmd} failed`);
+    console.error(e)
     process.exit(1);
   }
 }

@@ -1,8 +1,0 @@
-*  run: Scheduler 1745117795.5432380000 s
-*  run: Unregistered 1745117795.5434760000 s
-*  run: Main 1745117795.5435630000 s
-*  pause: Main 0.0134920000 s
-*  run: Unregistered 0.0135420000 s
-*  run: GC 0.0135620000 s
-*  pause: GC 0.2609770000 s
-*  run: Main 0.2610200000 s

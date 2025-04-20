@@ -36,7 +36,16 @@ import (
 	"unsafe"
 )
 
-const gcDebug = false
+var gcDebug = false
+
+// SetGCDebug allows user programs to enable/disable GC debug mode.
+//
+//go:export RegisterTask  //
+//go:used               //
+func SetGCDebug(val bool) {
+	gcDebug = val
+}
+
 const needsStaticHeap = true
 
 // Some globals + constants for the entire GC.
@@ -99,6 +108,12 @@ func (s blockState) String() string {
 		// must never happen
 		return "!err"
 	}
+}
+
+// Do we want to register a GC Loop?
+// In this case we will just run when we need more memory
+func registerGC() {
+	// NOOP
 }
 
 // The block number in the pool.
@@ -453,10 +468,10 @@ func GC() {
 // of the runtime.GC() function. The difference is that it returns the number of
 // free bytes in the heap after the GC is finished.
 func runGC() (freeBytes uintptr) {
-	//println("Start ---->")
-	//if gcDebug {
-	//println("running collection cycle...")
-	//}
+	if gcDebug {
+		println("Start ---->")
+		println("running collection cycle...")
+	}
 
 	// Mark phase: mark all reachable objects, recursively.
 	markStack()
@@ -503,7 +518,9 @@ func runGC() (freeBytes uintptr) {
 		dumpHeap()
 	}
 
-	//println("<---- End")
+	if gcDebug {
+		println("<---- End")
+	}
 	return
 }
 

@@ -31,12 +31,20 @@ package runtime
 // Moss.
 
 import (
-	"internal/task"
 	"runtime/interrupt"
 	"unsafe"
 )
 
-const gcDebug = false
+var gcDebug = false
+
+// SetGCDebug allows user programs to enable/disable GC debug mode.
+//
+//go:export RegisterTask  //
+//go:used               //
+func SetGCDebug(val bool) {
+	gcDebug = val
+}
+
 const needsStaticHeap = true
 
 // Some globals + constants for the entire GC.
@@ -99,6 +107,53 @@ func (s blockState) String() string {
 		// must never happen
 		return "!err"
 	}
+}
+
+// Do we want to register a GC Loop?
+// Hell yeah this is continuous GC
+var gcRound = 0
+
+func itoa(n int) string {
+	if n == 0 {
+		return "0"
+	}
+
+	neg := false
+	if n < 0 {
+		neg = true
+		n = -n
+	}
+
+	// Store digits in reverse order
+	digits := []byte{}
+	for n > 0 {
+		d := n % 10
+		digits = append(digits, byte('0'+d))
+		n /= 10
+	}
+
+	// If negative, add minus sign
+	if neg {
+		digits = append(digits, '-')
+	}
+
+	// Reverse the digits to correct order
+	for i, j := 0, len(digits)-1; i < j; i, j = i+1, j-1 {
+		digits[i], digits[j] = digits[j], digits[i]
+	}
+
+	return string(digits)
+}
+
+func registerGC() {
+	go func() {
+		for true {
+			gcRound++
+			RegisterTask("GC" + itoa(gcRound))
+			GC()
+			forceGosched()
+		}
+	}()
 }
 
 // The block number in the pool.
@@ -301,11 +356,22 @@ func calculateHeapAddresses() {
 	}
 }
 
+// We dont want to allow alloc to run at the same time as GC
+//
+//go:noinline
+func alloc(size uintptr, layout unsafe.Pointer) unsafe.Pointer {
+	var x unsafe.Pointer
+	RuntimeMC(func() {
+		x = _alloc(size, layout)
+	})
+	return x
+}
+
 // alloc tries to find some free space on the heap, possibly doing a garbage
 // collection cycle if needed. If no space is free, it panics.
 //
 //go:noinline
-func alloc(size uintptr, layout unsafe.Pointer) unsafe.Pointer {
+func _alloc(size uintptr, layout unsafe.Pointer) unsafe.Pointer {
 	if size == 0 {
 		return unsafe.Pointer(&zeroSizedAlloc)
 	}
@@ -376,7 +442,7 @@ func alloc(size uintptr, layout unsafe.Pointer) unsafe.Pointer {
 			nextAlloc = index
 			thisAlloc := index - gcBlock(neededBlocks)
 			if gcDebug {
-				println("found memory:", thisAlloc.pointer(), int(size))
+				println("found memory::", thisAlloc.pointer(), int(size))
 			}
 
 			// Set the following blocks as being allocated.
@@ -428,48 +494,28 @@ func GC() {
 // of the runtime.GC() function. The difference is that it returns the number of
 // free bytes in the heap after the GC is finished.
 //
-//go:interleave
+// The big change here is the interleave command which lets this GC interleave with a program
 func runGC() (freeBytes uintptr) {
-	//println("Start ---->")
-	//if gcDebug {
-	//println("running collection cycle...")
-	//}
+	RuntimeMC(func() {
+		freeBytes = _runGC()
+	})
+	return
+}
+
+//go:interleave
+func _runGC() (freeBytes uintptr) {
+
+	if gcDebug {
+		println("Start ---->")
+		println("running collection cycle...")
+	}
 
 	// Mark phase: mark all reachable objects, recursively.
+	// STOP THE WORLD
 	markStack()
 	findGlobals(markRoots)
 
-	if baremetal && hasScheduler {
-		// Channel operations in interrupts may move task pointers around while we are marking.
-		// Therefore we need to scan the runqueue separately.
-		var markedTaskQueue task.Queue
-	runqueueScan:
-		runqueue := schedulerRunQueue()
-		for !runqueue.Empty() {
-			// Pop the next task off of the runqueue.
-			t := runqueue.Pop()
-
-			// Mark the task if it has not already been marked.
-			markRoot(uintptr(unsafe.Pointer(runqueue)), uintptr(unsafe.Pointer(t)))
-
-			// Push the task onto our temporary queue.
-			markedTaskQueue.Push(t)
-		}
-
-		finishMark()
-
-		// Restore the runqueue.
-		i := interrupt.Disable()
-		if !runqueue.Empty() {
-			// Something new came in while finishing the mark.
-			interrupt.Restore(i)
-			goto runqueueScan
-		}
-		*runqueue = markedTaskQueue
-		interrupt.Restore(i)
-	} else {
-		finishMark()
-	}
+	finishMark()
 
 	// Sweep phase: free all non-marked objects and unmark marked objects for
 	// the next collection cycle.
@@ -477,10 +523,12 @@ func runGC() (freeBytes uintptr) {
 
 	// Show how much has been sweeped, for debugging.
 	if gcDebug {
-		dumpHeap()
+		//dumpHeap()
 	}
 
-	//println("<---- End")
+	if gcDebug {
+		println("<---- End")
+	}
 	return
 }
 
@@ -489,7 +537,7 @@ func runGC() (freeBytes uintptr) {
 // well (recursively). The start and end parameters must be valid pointers and
 // must be aligned.
 //
-//go:interleave
+// STOP THE WORLD
 func markRoots(start, end uintptr) {
 	if gcDebug {
 		println("mark from", start, "to", end, int(end-start))
@@ -605,7 +653,7 @@ func startMark(root gcBlock) {
 
 // finishMark finishes the marking process by processing all stack overflows.
 //
-//go:interleave
+// STOP THE WORLD
 func finishMark() {
 	for stackOverflow {
 		// Re-mark all blocks.
@@ -624,7 +672,7 @@ func finishMark() {
 
 // mark a GC root at the address addr.
 //
-//go:interleave
+// STOP THE WORLD
 func markRoot(addr, root uintptr) {
 	if isOnHeap(root) {
 		block := blockFromAddr(root)
@@ -647,7 +695,10 @@ func markRoot(addr, root uintptr) {
 // Sweep goes through all memory and frees unmarked memory.
 // It returns how many bytes are free in the heap after the sweep.
 //
-//go:interleave
+// We dont interleave the sweep
+// This could be another extension
+//
+// STOP THE WORLD
 func sweep() (freeBytes uintptr) {
 	freeCurrentObject := false
 	var freed uint64
