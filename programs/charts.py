@@ -19,12 +19,12 @@ def to_intervals(events):
     
     # 4.5) Merge adjacent intervals of the same process
     merged = []
-    for start, end, proc in intervals:
-        if merged and merged[-1][2] == proc:
+    for start, end, process in intervals:
+        if merged and merged[-1][2] == process:
             # extend the previous interval's end
-            merged[-1] = (merged[-1][0], end, proc)
+            merged[-1] = (merged[-1][0], end, process)
         else:
-            merged.append((start, end, proc))
+            merged.append((start, end, process))
     intervals = merged
 
     return intervals
@@ -35,7 +35,7 @@ INTERVAL_WIDTH = 1.0
 def to_virtual_intervals(events):
     """
     Convert events to virtual (evenly spaced) intervals.
-    Each run by a process gets the same width and is shifted to a virtual timeline.
+    We need this when the runtime is really short and its impossible to see anything
     """
     if len(events) < 2:
         return []
@@ -43,7 +43,7 @@ def to_virtual_intervals(events):
     intervals = []
     virtual_time = 0.0
 
-    for (name0, _), (name1, _) in zip(events, events[1:]):
+    for (_, name0), (_, _) in zip(events, events[1:]):
         intervals.append((virtual_time, virtual_time + INTERVAL_WIDTH, name0))
         virtual_time += INTERVAL_WIDTH
 
@@ -63,12 +63,7 @@ def process_dump_file(dump_file):
     import matplotlib.pyplot as plt
     from matplotlib.patches import Patch
 
-    def to_intervals(events):
-        # Dummy placeholder for actual logic
-        # Replace this with your real interval builder
-        return [(events[i][0], events[i+1][0], events[i][1]) for i in range(len(events)-1)]
-
-    # 1) Read and filter only "run" events (drop "Unregistered") and timestamps > 60.0s
+    # Get the files
     event_pattern = re.compile(r"\*\s+run:\s+(\w+)\s+([\d.]+)\s*s")
     events = []
     with open(dump_file) as f:
@@ -84,17 +79,17 @@ def process_dump_file(dump_file):
         print(f"⚠️ Skipping {dump_file} (not enough events)")
         return
 
-    # 2) Sort by time
     events.sort(key=lambda x: x[0])
 
-    # 3) Map each process to a unique ID (1,2,3,…)
     processes = sorted({p for _, p in events})
     proc_to_id = {p: i+1 for i, p in enumerate(processes)}
 
-    # 4) Build simple intervals directly
-    intervals = to_intervals(events)
+    # Create intervals
+    if (len(events) < 100):
+        intervals = to_virtual_intervals(events)
+    else:
+        intervals = to_intervals(events)
 
-    # 5) Build the step data
     times, ys = [], []
     for start, end, proc in intervals:
         pid = proc_to_id[proc]
@@ -114,7 +109,7 @@ def process_dump_file(dump_file):
     ax.grid(True, axis="x", linestyle="--", alpha=0.5)
     ax.set_xlim(0, max_time)
 
-    # 8) Add a "Process Key" legend
+    # Key
     handles = [
         Patch(facecolor="none", edgecolor="none", label=f"{pid}: {proc}")
         for proc, pid in proc_to_id.items()
@@ -122,7 +117,7 @@ def process_dump_file(dump_file):
     ax.legend(handles=handles, title="Process Key", loc="upper right",
               frameon=False, handlelength=0, handletextpad=0.5)
 
-    # 9) Save the figure
+    # Save
     out_path = dump_file.replace(".schedular.dump", ".sched.png")
     plt.tight_layout()
     plt.savefig(out_path, dpi=300)
@@ -132,7 +127,7 @@ def process_dump_file(dump_file):
 
 
 def main():
-    dump_files = glob.glob("./program*/out/*.schedular.dump")
+    dump_files = glob.glob("./programs/program*/out/*.schedular.dump")
     if not dump_files:
         print("❌ No .schedular.dump files found.")
         return

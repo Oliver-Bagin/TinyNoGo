@@ -23319,7 +23319,7 @@
       local.set 0
       local.get 4
       i32.load offset=8
-      local.set 3
+      local.set 2
       local.get 4
       i32.load offset=12
       local.set 5
@@ -23359,7 +23359,7 @@
         global.get 2
         i32.load
         i32.load
-        local.set 2
+        local.set 3
       end
       global.get 1
       i32.eqz
@@ -23394,7 +23394,7 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
+      local.get 3
       i32.eqz
       i32.or
       if  ;; label = @2
@@ -23420,7 +23420,7 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
+      local.get 3
       i32.const 1
       i32.eq
       i32.or
@@ -23448,7 +23448,7 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
+      local.get 3
       i32.const 2
       i32.eq
       i32.or
@@ -23478,10 +23478,10 @@
         i32.const 91220
         local.get 0
         i32.load offset=32
-        local.tee 3
+        local.tee 2
         i32.store
         local.get 0
-        local.get 3
+        local.get 2
         i32.store offset=64
         local.get 0
         i32.const 90572
@@ -23525,7 +23525,7 @@
           end
           global.get 1
           i32.eqz
-          local.get 2
+          local.get 3
           i32.const 3
           i32.eq
           i32.or
@@ -23574,7 +23574,7 @@
               end
               global.get 1
               i32.eqz
-              local.get 2
+              local.get 3
               i32.const 4
               i32.eq
               i32.or
@@ -23597,7 +23597,7 @@
                 i32.store offset=72
                 local.get 0
                 i32.load offset=48
-                local.tee 3
+                local.tee 2
                 i32.const 0
                 i32.lt_s
                 local.tee 1
@@ -23605,12 +23605,12 @@
               end
               global.get 1
               i32.eqz
-              local.get 2
+              local.get 3
               i32.const 5
               i32.eq
               i32.or
               if  ;; label = @6
-                local.get 3
+                local.get 2
                 call $runtime.alloc
                 i32.const 5
                 global.get 1
@@ -23629,14 +23629,14 @@
                 local.get 0
                 local.get 1
                 i32.store offset=80
-                local.get 3
+                local.get 2
                 i32.eqz
                 local.tee 8
                 br_if 2 (;@4;)
               end
               global.get 1
               i32.eqz
-              local.get 2
+              local.get 3
               i32.const 6
               i32.eq
               i32.or
@@ -23667,7 +23667,7 @@
               end
               global.get 1
               i32.eqz
-              local.get 2
+              local.get 3
               i32.const 7
               i32.eq
               i32.or
@@ -23707,22 +23707,22 @@
                     local.get 0
                     local.get 7
                     i32.load
-                    local.tee 3
+                    local.tee 2
                     i32.store offset=100
                     local.get 0
-                    local.get 3
+                    local.get 2
                     i32.store offset=92
                     local.get 0
-                    local.get 3
+                    local.get 2
                     i32.store offset=88
                     local.get 1
                     i32.const 4
                     i32.add
-                    local.get 3
+                    local.get 2
                     call $strlen
                     i32.store
                     local.get 1
-                    local.get 3
+                    local.get 2
                     i32.store
                     local.get 0
                     local.get 8
@@ -23752,7 +23752,7 @@
             end
             global.get 1
             i32.eqz
-            local.get 2
+            local.get 3
             i32.const 8
             i32.eq
             i32.or
@@ -23773,7 +23773,7 @@
           end
           global.get 1
           i32.eqz
-          local.get 2
+          local.get 3
           i32.const 9
           i32.eq
           i32.or
@@ -23816,11 +23816,11 @@
         local.get 8
         i32.store offset=108
         i32.const 0
-        local.set 3
+        local.set 2
       end
       global.get 1
       i32.eqz
-      local.get 2
+      local.get 3
       i32.const 10
       i32.eq
       i32.or
@@ -23836,7 +23836,7 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
+      local.get 3
       i32.const 11
       i32.eq
       i32.or
@@ -23860,7 +23860,7 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
+      local.get 3
       i32.const 12
       i32.eq
       i32.or
@@ -23878,6 +23878,9 @@
       global.get 1
       i32.eqz
       if  ;; label = @2
+        local.get 6
+        local.get 7
+        i32.store
         local.get 0
         local.get 7
         i32.store offset=128
@@ -23896,12 +23899,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
+      local.get 3
       i32.const 13
       i32.eq
       i32.or
       if  ;; label = @2
-        call $runtime.Gosched
+        i32.const 86744
+        i32.const 20
+        call $runtime.printstring
         i32.const 13
         global.get 1
         i32.const 1
@@ -23911,21 +23916,12 @@
       end
       global.get 1
       i32.eqz
-      if  ;; label = @2
-        local.get 6
-        local.get 7
-        i32.store
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
+      local.get 3
       i32.const 14
       i32.eq
       i32.or
       if  ;; label = @2
-        i32.const 86744
-        i32.const 20
-        call $runtime.printstring
+        call $runtime.printspace
         i32.const 14
         global.get 1
         i32.const 1
@@ -23935,12 +23931,13 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
+      local.get 3
       i32.const 15
       i32.eq
       i32.or
       if  ;; label = @2
-        call $runtime.printspace
+        local.get 7
+        call $runtime.printptr
         i32.const 15
         global.get 1
         i32.const 1
@@ -23950,13 +23947,12 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
+      local.get 3
       i32.const 16
       i32.eq
       i32.or
       if  ;; label = @2
-        local.get 7
-        call $runtime.printptr
+        call $runtime.printnl
         i32.const 16
         global.get 1
         i32.const 1
@@ -23966,61 +23962,16 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 17
-      i32.eq
-      i32.or
       if  ;; label = @2
-        call $runtime.printnl
-        i32.const 17
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 18
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 18
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      loop  ;; label = @2
-        block  ;; label = @3
-          global.get 1
-          i32.eqz
+        loop  ;; label = @3
           local.get 2
-          i32.const 19
+          i32.const 64
           i32.eq
-          i32.or
-          if  ;; label = @4
-            call $runtime.Gosched
-            i32.const 19
-            global.get 1
-            i32.const 1
-            i32.eq
-            br_if 3 (;@1;)
-            drop
-          end
-          global.get 1
+          local.tee 5
           i32.eqz
           if  ;; label = @4
-            local.get 3
-            i32.const 64
-            i32.eq
-            local.tee 5
-            br_if 1 (;@3;)
             local.get 0
-            local.get 3
+            local.get 2
             local.get 7
             i32.add
             local.tee 1
@@ -24031,56 +23982,52 @@
             local.get 1
             i32.const -559038737
             i32.store
-            local.get 3
+            local.get 2
             i32.const 4
             i32.add
-            local.set 3
-            br 2 (;@2;)
+            local.set 2
+            br 1 (;@3;)
           end
         end
-      end
-      global.get 1
-      i32.eqz
-      if  ;; label = @2
         local.get 7
         i32.const 0
         i32.store
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 20
+      local.get 3
+      i32.const 17
       i32.eq
       i32.or
       if  ;; label = @2
         i32.const 8
         call $runtime.alloc
-        i32.const 20
+        i32.const 17
         global.get 1
         i32.const 1
         i32.eq
         br_if 1 (;@1;)
         drop
-        local.set 3
+        local.set 2
       end
       global.get 1
       i32.eqz
       if  ;; label = @2
         local.get 0
-        local.get 3
+        local.get 2
         i32.store offset=144
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 21
+      local.get 3
+      i32.const 18
       i32.eq
       i32.or
       if  ;; label = @2
-        local.get 3
+        local.get 2
         i32.const 2
         call $_*sync.WaitGroup_.Add
-        i32.const 21
+        i32.const 18
         global.get 1
         i32.const 1
         i32.eq
@@ -24089,29 +24036,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 22
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 22
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 23
+      local.get 3
+      i32.const 19
       i32.eq
       i32.or
       if  ;; label = @2
         i32.const 8
         call $runtime.alloc
-        i32.const 23
+        i32.const 19
         global.get 1
         i32.const 1
         i32.eq
@@ -24126,7 +24058,7 @@
         local.get 6
         i32.store offset=4
         local.get 1
-        local.get 3
+        local.get 2
         i32.store
         local.get 0
         local.get 1
@@ -24137,14 +24069,97 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 24
+      local.get 3
+      i32.const 20
       i32.eq
       i32.or
       if  ;; label = @2
         i32.const 3
         local.get 1
         call $internal/task.start
+        i32.const 20
+        global.get 1
+        i32.const 1
+        i32.eq
+        br_if 1 (;@1;)
+        drop
+      end
+      global.get 1
+      i32.eqz
+      local.get 3
+      i32.const 21
+      i32.eq
+      i32.or
+      if  ;; label = @2
+        i32.const 8
+        call $runtime.alloc
+        i32.const 21
+        global.get 1
+        i32.const 1
+        i32.eq
+        br_if 1 (;@1;)
+        drop
+        local.set 1
+      end
+      global.get 1
+      i32.eqz
+      if  ;; label = @2
+        local.get 1
+        local.get 6
+        i32.store offset=4
+        local.get 1
+        local.get 2
+        i32.store
+        local.get 0
+        local.get 1
+        i32.store offset=156
+        local.get 0
+        local.get 1
+        i32.store offset=160
+      end
+      global.get 1
+      i32.eqz
+      local.get 3
+      i32.const 22
+      i32.eq
+      i32.or
+      if  ;; label = @2
+        i32.const 4
+        local.get 1
+        call $internal/task.start
+        i32.const 22
+        global.get 1
+        i32.const 1
+        i32.eq
+        br_if 1 (;@1;)
+        drop
+      end
+      global.get 1
+      i32.eqz
+      local.get 3
+      i32.const 23
+      i32.eq
+      i32.or
+      if  ;; label = @2
+        local.get 2
+        call $_*sync.WaitGroup_.Wait
+        i32.const 23
+        global.get 1
+        i32.const 1
+        i32.eq
+        br_if 1 (;@1;)
+        drop
+      end
+      global.get 1
+      i32.eqz
+      local.get 3
+      i32.const 24
+      i32.eq
+      i32.or
+      if  ;; label = @2
+        i32.const 86764
+        i32.const 13
+        call $runtime.printstring
         i32.const 24
         global.get 1
         i32.const 1
@@ -24154,12 +24169,22 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
+      if  ;; label = @2
+        local.get 0
+        local.get 6
+        i32.load
+        local.tee 2
+        i32.store offset=164
+      end
+      global.get 1
+      i32.eqz
+      local.get 3
       i32.const 25
       i32.eq
       i32.or
       if  ;; label = @2
-        call $runtime.Gosched
+        local.get 2
+        call $main.printMemoryTable
         i32.const 25
         global.get 1
         i32.const 1
@@ -24169,7 +24194,22 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
+      if  ;; label = @2
+        local.get 0
+        local.get 6
+        i32.load
+        local.tee 2
+        i32.store offset=172
+        local.get 0
+        local.get 2
+        i32.store offset=168
+        local.get 2
+        i32.const 0
+        i32.store
+      end
+      global.get 1
+      i32.eqz
+      local.get 3
       i32.const 26
       i32.eq
       i32.or
@@ -24182,34 +24222,25 @@
         i32.eq
         br_if 1 (;@1;)
         drop
-        local.set 1
+        local.set 2
       end
       global.get 1
       i32.eqz
       if  ;; label = @2
-        local.get 1
-        local.get 6
-        i32.store offset=4
-        local.get 1
-        local.get 3
-        i32.store
         local.get 0
-        local.get 1
-        i32.store offset=156
-        local.get 0
-        local.get 1
-        i32.store offset=160
+        local.get 2
+        i32.store offset=176
       end
       global.get 1
       i32.eqz
-      local.get 2
+      local.get 3
       i32.const 27
       i32.eq
       i32.or
       if  ;; label = @2
-        i32.const 4
-        local.get 1
-        call $internal/task.start
+        local.get 2
+        i32.const 2
+        call $_*sync.WaitGroup_.Add
         i32.const 27
         global.get 1
         i32.const 1
@@ -24219,203 +24250,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
+      local.get 3
       i32.const 28
       i32.eq
       i32.or
       if  ;; label = @2
-        call $runtime.Gosched
+        i32.const 8
+        call $runtime.alloc
         i32.const 28
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 29
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        local.get 3
-        call $_*sync.WaitGroup_.Wait
-        i32.const 29
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 30
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 30
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 31
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        i32.const 86764
-        i32.const 13
-        call $runtime.printstring
-        i32.const 31
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 32
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 32
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      if  ;; label = @2
-        local.get 0
-        local.get 6
-        i32.load
-        local.tee 3
-        i32.store offset=164
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 33
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        local.get 3
-        call $main.printMemoryTable
-        i32.const 33
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 34
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 34
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      if  ;; label = @2
-        local.get 0
-        local.get 6
-        i32.load
-        local.tee 3
-        i32.store offset=172
-        local.get 0
-        local.get 3
-        i32.store offset=168
-        local.get 3
-        i32.const 0
-        i32.store
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 35
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        i32.const 8
-        call $runtime.alloc
-        i32.const 35
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-        local.set 3
-      end
-      global.get 1
-      i32.eqz
-      if  ;; label = @2
-        local.get 0
-        local.get 3
-        i32.store offset=176
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 36
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        local.get 3
-        i32.const 2
-        call $_*sync.WaitGroup_.Add
-        i32.const 36
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 37
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 37
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 38
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        i32.const 8
-        call $runtime.alloc
-        i32.const 38
         global.get 1
         i32.const 1
         i32.eq
@@ -24430,7 +24272,7 @@
         local.get 6
         i32.store offset=4
         local.get 1
-        local.get 3
+        local.get 2
         i32.store
         local.get 0
         local.get 1
@@ -24441,15 +24283,15 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 39
+      local.get 3
+      i32.const 29
       i32.eq
       i32.or
       if  ;; label = @2
         i32.const 5
         local.get 1
         call $internal/task.start
-        i32.const 39
+        i32.const 29
         global.get 1
         i32.const 1
         i32.eq
@@ -24458,29 +24300,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 40
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 40
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 41
+      local.get 3
+      i32.const 30
       i32.eq
       i32.or
       if  ;; label = @2
         i32.const 8
         call $runtime.alloc
-        i32.const 41
+        i32.const 30
         global.get 1
         i32.const 1
         i32.eq
@@ -24495,7 +24322,7 @@
         local.get 6
         i32.store offset=4
         local.get 1
-        local.get 3
+        local.get 2
         i32.store
         local.get 0
         local.get 1
@@ -24506,15 +24333,15 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 42
+      local.get 3
+      i32.const 31
       i32.eq
       i32.or
       if  ;; label = @2
         i32.const 6
         local.get 1
         call $internal/task.start
-        i32.const 42
+        i32.const 31
         global.get 1
         i32.const 1
         i32.eq
@@ -24523,29 +24350,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 43
+      local.get 3
+      i32.const 32
       i32.eq
       i32.or
       if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 43
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 44
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        local.get 3
+        local.get 2
         call $_*sync.WaitGroup_.Wait
-        i32.const 44
+        i32.const 32
         global.get 1
         i32.const 1
         i32.eq
@@ -24554,45 +24366,15 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 45
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 45
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 46
+      local.get 3
+      i32.const 33
       i32.eq
       i32.or
       if  ;; label = @2
         i32.const 86777
         i32.const 9
         call $runtime.printstring
-        i32.const 46
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 47
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 47
+        i32.const 33
         global.get 1
         i32.const 1
         i32.eq
@@ -24605,34 +24387,19 @@
         local.get 0
         local.get 6
         i32.load
-        local.tee 3
+        local.tee 2
         i32.store offset=196
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 48
+      local.get 3
+      i32.const 34
       i32.eq
       i32.or
       if  ;; label = @2
-        local.get 3
+        local.get 2
         call $main.printMemoryTable
-        i32.const 48
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 2
-      i32.const 49
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 49
+        i32.const 34
         global.get 1
         i32.const 1
         i32.eq
@@ -24650,15 +24417,15 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 50
+      local.get 3
+      i32.const 35
       i32.eq
       i32.or
       if  ;; label = @2
         i32.const 67472
         i32.const 12
         call $runtime.printstring
-        i32.const 50
+        i32.const 35
         global.get 1
         i32.const 1
         i32.eq
@@ -24667,13 +24434,13 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 51
+      local.get 3
+      i32.const 36
       i32.eq
       i32.or
       if  ;; label = @2
         call $runtime.printspace
-        i32.const 51
+        i32.const 36
         global.get 1
         i32.const 1
         i32.eq
@@ -24682,14 +24449,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 52
+      local.get 3
+      i32.const 37
       i32.eq
       i32.or
       if  ;; label = @2
         local.get 6
         call $runtime.printptr
-        i32.const 52
+        i32.const 37
         global.get 1
         i32.const 1
         i32.eq
@@ -24698,13 +24465,13 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 53
+      local.get 3
+      i32.const 38
       i32.eq
       i32.or
       if  ;; label = @2
         call $runtime.printspace
-        i32.const 53
+        i32.const 38
         global.get 1
         i32.const 1
         i32.eq
@@ -24713,14 +24480,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 54
+      local.get 3
+      i32.const 39
       i32.eq
       i32.or
       if  ;; label = @2
         i64.const 50000000
         call $runtime.printuint64
-        i32.const 54
+        i32.const 39
         global.get 1
         i32.const 1
         i32.eq
@@ -24729,13 +24496,13 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 55
+      local.get 3
+      i32.const 40
       i32.eq
       i32.or
       if  ;; label = @2
         call $runtime.printnl
-        i32.const 55
+        i32.const 40
         global.get 1
         i32.const 1
         i32.eq
@@ -24757,14 +24524,14 @@
           local.get 0
           local.get 6
           i32.load
-          local.tee 3
+          local.tee 2
           i32.store offset=204
         end
         block  ;; label = @3
           global.get 1
           i32.eqz
           if  ;; label = @4
-            local.get 3
+            local.get 2
             br_if 1 (;@3;)
             local.get 6
             i64.const 50000000
@@ -24772,13 +24539,13 @@
           end
           global.get 1
           i32.eqz
-          local.get 2
-          i32.const 56
+          local.get 3
+          i32.const 41
           i32.eq
           i32.or
           if  ;; label = @4
             call $runtime.ticks
-            i32.const 56
+            i32.const 41
             global.get 1
             i32.const 1
             i32.eq
@@ -24792,14 +24559,14 @@
             local.get 0
             i32.const 90632
             i32.load
-            local.tee 3
+            local.tee 2
             i32.store offset=208
           end
           block  ;; label = @4
             global.get 1
             i32.eqz
             if  ;; label = @5
-              local.get 3
+              local.get 2
               br_if 1 (;@4;)
               local.get 0
               i32.const 24
@@ -24808,8 +24575,8 @@
             end
             global.get 1
             i32.eqz
-            local.get 2
-            i32.const 57
+            local.get 3
+            i32.const 42
             i32.eq
             i32.or
             if  ;; label = @5
@@ -24819,7 +24586,7 @@
               i32.const 67544
               i32.const 20
               call $runtime.stringConcat
-              i32.const 57
+              i32.const 42
               global.get 1
               i32.const 1
               i32.eq
@@ -24832,7 +24599,7 @@
               local.get 0
               local.get 0
               i32.load offset=24
-              local.tee 3
+              local.tee 2
               i32.store offset=212
               local.get 0
               i32.const 16
@@ -24844,14 +24611,14 @@
             end
             global.get 1
             i32.eqz
-            local.get 2
-            i32.const 58
+            local.get 3
+            i32.const 43
             i32.eq
             i32.or
             if  ;; label = @5
               local.get 5
               call $runtime.FormatElapsed
-              i32.const 58
+              i32.const 43
               global.get 1
               i32.const 1
               i32.eq
@@ -24876,18 +24643,18 @@
             end
             global.get 1
             i32.eqz
-            local.get 2
-            i32.const 59
+            local.get 3
+            i32.const 44
             i32.eq
             i32.or
             if  ;; label = @5
               local.get 8
-              local.get 3
+              local.get 2
               local.get 1
               local.get 7
               local.get 5
               call $runtime.stringConcat
-              i32.const 59
+              i32.const 44
               global.get 1
               i32.const 1
               i32.eq
@@ -24900,7 +24667,7 @@
               local.get 0
               local.get 0
               i32.load offset=8
-              local.tee 3
+              local.tee 2
               i32.store offset=220
               local.get 0
               i32.load offset=12
@@ -24908,15 +24675,15 @@
             end
             global.get 1
             i32.eqz
-            local.get 2
-            i32.const 60
+            local.get 3
+            i32.const 45
             i32.eq
             i32.or
             if  ;; label = @5
-              local.get 3
+              local.get 2
               local.get 5
               call $runtime.printstring
-              i32.const 60
+              i32.const 45
               global.get 1
               i32.const 1
               i32.eq
@@ -24925,13 +24692,13 @@
             end
             global.get 1
             i32.eqz
-            local.get 2
-            i32.const 61
+            local.get 3
+            i32.const 46
             i32.eq
             i32.or
             if  ;; label = @5
               call $runtime.printnl
-              i32.const 61
+              i32.const 46
               global.get 1
               i32.const 1
               i32.eq
@@ -24950,14 +24717,14 @@
           i32.eqz
           if  ;; label = @4
             i32.const 90632
-            local.set 3
+            local.set 2
             block  ;; label = @5
               loop  ;; label = @6
                 local.get 0
-                local.get 3
+                local.get 2
                 i32.store offset=224
                 local.get 0
-                local.get 3
+                local.get 2
                 i32.load
                 local.tee 1
                 i32.store offset=228
@@ -24975,7 +24742,7 @@
                 local.get 0
                 local.get 1
                 i32.store offset=232
-                local.get 3
+                local.get 2
                 i32.load
                 local.set 7
                 local.get 1
@@ -24997,11 +24764,11 @@
                   i64.sub
                   i64.store offset=8
                   local.get 0
-                  local.get 3
+                  local.get 2
                   i32.load
-                  local.tee 3
+                  local.tee 2
                   i32.store offset=240
-                  local.get 3
+                  local.get 2
                   br_if 1 (;@6;)
                   br 5 (;@2;)
                 end
@@ -25013,7 +24780,7 @@
               i32.eqz
               br_if 0 (;@5;)
               local.get 0
-              local.get 3
+              local.get 2
               i32.load
               local.tee 1
               i32.store offset=248
@@ -25029,41 +24796,26 @@
               i64.store offset=8
             end
             local.get 0
-            local.get 3
+            local.get 2
             i32.load
             local.tee 1
             i32.store offset=252
             local.get 6
             local.get 1
             i32.store
-            local.get 3
+            local.get 2
             local.get 6
             i32.store
           end
           global.get 1
           i32.eqz
-          local.get 2
-          i32.const 62
+          local.get 3
+          i32.const 47
           i32.eq
           i32.or
           if  ;; label = @4
             call $internal/task.Pause
-            i32.const 62
-            global.get 1
-            i32.const 1
-            i32.eq
-            br_if 3 (;@1;)
-            drop
-          end
-          global.get 1
-          i32.eqz
-          local.get 2
-          i32.const 63
-          i32.eq
-          i32.or
-          if  ;; label = @4
-            call $runtime.Gosched
-            i32.const 63
+            i32.const 47
             global.get 1
             i32.const 1
             i32.eq
@@ -25088,15 +24840,15 @@
         end
         global.get 1
         i32.eqz
-        local.get 2
-        i32.const 64
+        local.get 3
+        i32.const 48
         i32.eq
         i32.or
         if  ;; label = @3
           i32.const 86240
           i32.const 67536
           call $runtime._panic
-          i32.const 64
+          i32.const 48
           global.get 1
           i32.const 1
           i32.eq
@@ -25111,13 +24863,13 @@
       end
       global.get 1
       i32.eqz
-      local.get 2
-      i32.const 65
+      local.get 3
+      i32.const 49
       i32.eq
       i32.or
       if  ;; label = @2
         call $runtime.nilPanic
-        i32.const 65
+        i32.const 49
         global.get 1
         i32.const 1
         i32.eq
@@ -25151,7 +24903,7 @@
     local.get 1
     i32.store offset=4
     local.get 4
-    local.get 3
+    local.get 2
     i32.store offset=8
     local.get 4
     local.get 5
@@ -36380,10 +36132,10 @@
         i32.const 30
         i32.store offset=212
         local.get 2
-        i32.const 216
+        i32.const 224
         i32.add
         i32.const 0
-        i32.const 120
+        i32.const 112
         memory.fill
         local.get 2
         i32.const 89988
@@ -36400,20 +36152,6 @@
         local.set 12
       end
       loop  ;; label = @2
-        global.get 1
-        i32.eqz
-        local.get 7
-        i32.eqz
-        i32.or
-        if  ;; label = @3
-          call $runtime.Gosched
-          i32.const 0
-          global.get 1
-          i32.const 1
-          i32.eq
-          br_if 2 (;@1;)
-          drop
-        end
         local.get 1
         local.get 12
         i32.const 4
@@ -36463,12 +36201,11 @@
                 global.get 1
                 i32.eqz
                 local.get 7
-                i32.const 1
-                i32.eq
+                i32.eqz
                 i32.or
                 if  ;; label = @7
                   call $fmt.newPrinter
-                  i32.const 1
+                  i32.const 0
                   global.get 1
                   i32.const 1
                   i32.eq
@@ -36603,7 +36340,7 @@
                     global.get 1
                     i32.eqz
                     local.get 7
-                    i32.const 2
+                    i32.const 1
                     i32.eq
                     i32.or
                     if  ;; label = @9
@@ -36611,7 +36348,7 @@
                       local.get 8
                       local.get 1
                       call $_*fmt.buffer_.writeString
-                      i32.const 2
+                      i32.const 1
                       global.get 1
                       i32.const 1
                       i32.eq
@@ -36774,7 +36511,7 @@
                               global.get 1
                               i32.eqz
                               local.get 7
-                              i32.const 3
+                              i32.const 2
                               i32.eq
                               i32.or
                               if  ;; label = @14
@@ -36786,7 +36523,7 @@
                                 i32.const 1
                                 i32.const 4
                                 call $runtime.sliceAppend
-                                i32.const 3
+                                i32.const 2
                                 global.get 1
                                 i32.const 1
                                 i32.eq
@@ -36840,7 +36577,7 @@
                           global.get 1
                           i32.eqz
                           local.get 7
-                          i32.const 4
+                          i32.const 3
                           i32.eq
                           i32.or
                           if  ;; label = @12
@@ -36849,7 +36586,7 @@
                             local.get 13
                             local.get 8
                             call $_*fmt.pp_.printArg
-                            i32.const 4
+                            i32.const 3
                             global.get 1
                             i32.const 1
                             i32.eq
@@ -36884,7 +36621,7 @@
                       global.get 1
                       i32.eqz
                       local.get 7
-                      i32.const 5
+                      i32.const 4
                       i32.eq
                       i32.or
                       if  ;; label = @10
@@ -36893,7 +36630,7 @@
                         local.get 10
                         local.get 9
                         call $_*fmt.pp_.argNumber
-                        i32.const 5
+                        i32.const 4
                         global.get 1
                         i32.const 1
                         i32.eq
@@ -36949,7 +36686,7 @@
                             global.get 1
                             i32.eqz
                             local.get 7
-                            i32.const 6
+                            i32.const 5
                             i32.eq
                             i32.or
                             if  ;; label = @13
@@ -36957,7 +36694,7 @@
                               local.get 4
                               local.get 10
                               call $fmt.intFromArg
-                              i32.const 6
+                              i32.const 5
                               global.get 1
                               i32.const 1
                               i32.eq
@@ -36987,7 +36724,7 @@
                               global.get 1
                               i32.eqz
                               local.get 7
-                              i32.const 7
+                              i32.const 6
                               i32.eq
                               i32.or
                               if  ;; label = @14
@@ -36995,7 +36732,7 @@
                                 i32.const 86363
                                 i32.const 12
                                 call $_*fmt.buffer_.writeString
-                                i32.const 7
+                                i32.const 6
                                 global.get 1
                                 i32.const 1
                                 i32.eq
@@ -37058,7 +36795,7 @@
                           global.get 1
                           i32.eqz
                           local.get 7
-                          i32.const 8
+                          i32.const 7
                           i32.eq
                           i32.or
                           if  ;; label = @12
@@ -37068,7 +36805,7 @@
                             local.get 5
                             i32.const 8
                             call $fmt.parsenum
-                            i32.const 8
+                            i32.const 7
                             global.get 1
                             i32.const 1
                             i32.eq
@@ -37165,7 +36902,7 @@
                             global.get 1
                             i32.eqz
                             local.get 7
-                            i32.const 9
+                            i32.const 8
                             i32.eq
                             i32.or
                             if  ;; label = @13
@@ -37174,7 +36911,7 @@
                               local.get 10
                               local.get 8
                               call $_*fmt.pp_.argNumber
-                              i32.const 9
+                              i32.const 8
                               global.get 1
                               i32.const 1
                               i32.eq
@@ -37228,7 +36965,7 @@
                               global.get 1
                               i32.eqz
                               local.get 7
-                              i32.const 10
+                              i32.const 9
                               i32.eq
                               i32.or
                               if  ;; label = @14
@@ -37236,7 +36973,7 @@
                                 local.get 4
                                 local.get 10
                                 call $fmt.intFromArg
-                                i32.const 10
+                                i32.const 9
                                 global.get 1
                                 i32.const 1
                                 i32.eq
@@ -37290,7 +37027,7 @@
                               global.get 1
                               i32.eqz
                               local.get 7
-                              i32.const 11
+                              i32.const 10
                               i32.eq
                               i32.or
                               if  ;; label = @14
@@ -37298,7 +37035,7 @@
                                 i32.const 86375
                                 i32.const 11
                                 call $_*fmt.buffer_.writeString
-                                i32.const 11
+                                i32.const 10
                                 global.get 1
                                 i32.const 1
                                 i32.eq
@@ -37323,7 +37060,7 @@
                             global.get 1
                             i32.eqz
                             local.get 7
-                            i32.const 12
+                            i32.const 11
                             i32.eq
                             i32.or
                             if  ;; label = @13
@@ -37333,7 +37070,7 @@
                               local.get 5
                               i32.const 8
                               call $fmt.parsenum
-                              i32.const 12
+                              i32.const 11
                               global.get 1
                               i32.const 1
                               i32.eq
@@ -37393,7 +37130,7 @@
                         global.get 1
                         i32.eqz
                         local.get 7
-                        i32.const 13
+                        i32.const 12
                         i32.eq
                         i32.or
                         if  ;; label = @11
@@ -37402,7 +37139,7 @@
                           local.get 10
                           local.get 5
                           call $_*fmt.pp_.argNumber
-                          i32.const 13
+                          i32.const 12
                           global.get 1
                           i32.const 1
                           i32.eq
@@ -37434,7 +37171,7 @@
                         global.get 1
                         i32.eqz
                         local.get 7
-                        i32.const 14
+                        i32.const 13
                         i32.eq
                         i32.or
                         if  ;; label = @11
@@ -37442,7 +37179,7 @@
                           i32.const 86386
                           i32.const 10
                           call $_*fmt.buffer_.writeString
-                          i32.const 14
+                          i32.const 13
                           global.get 1
                           i32.const 1
                           i32.eq
@@ -37491,7 +37228,7 @@
                         global.get 1
                         i32.eqz
                         local.get 7
-                        i32.const 15
+                        i32.const 14
                         i32.eq
                         i32.or
                         if  ;; label = @11
@@ -37499,7 +37236,7 @@
                           local.get 9
                           local.get 4
                           call $unicode/utf8.DecodeRuneInString
-                          i32.const 15
+                          i32.const 14
                           global.get 1
                           i32.const 1
                           i32.eq
@@ -37537,14 +37274,14 @@
                         global.get 1
                         i32.eqz
                         local.get 7
-                        i32.const 16
+                        i32.const 15
                         i32.eq
                         i32.or
                         if  ;; label = @11
                           local.get 3
                           i32.const 37
                           call $_*fmt.buffer_.writeByte
-                          i32.const 16
+                          i32.const 15
                           global.get 1
                           i32.const 1
                           i32.eq
@@ -37570,7 +37307,7 @@
                         global.get 1
                         i32.eqz
                         local.get 7
-                        i32.const 17
+                        i32.const 16
                         i32.eq
                         i32.or
                         if  ;; label = @11
@@ -37578,6 +37315,23 @@
                           i32.const 86465
                           i32.const 2
                           call $_*fmt.buffer_.writeString
+                          i32.const 16
+                          global.get 1
+                          i32.const 1
+                          i32.eq
+                          br_if 10 (;@1;)
+                          drop
+                        end
+                        global.get 1
+                        i32.eqz
+                        local.get 7
+                        i32.const 17
+                        i32.eq
+                        i32.or
+                        if  ;; label = @11
+                          local.get 3
+                          local.get 1
+                          call $_*fmt.buffer_.writeRune
                           i32.const 17
                           global.get 1
                           i32.const 1
@@ -37593,27 +37347,10 @@
                         i32.or
                         if  ;; label = @11
                           local.get 3
-                          local.get 1
-                          call $_*fmt.buffer_.writeRune
-                          i32.const 18
-                          global.get 1
-                          i32.const 1
-                          i32.eq
-                          br_if 10 (;@1;)
-                          drop
-                        end
-                        global.get 1
-                        i32.eqz
-                        local.get 7
-                        i32.const 19
-                        i32.eq
-                        i32.or
-                        if  ;; label = @11
-                          local.get 3
                           i32.const 86353
                           i32.const 10
                           call $_*fmt.buffer_.writeString
-                          i32.const 19
+                          i32.const 18
                           global.get 1
                           i32.const 1
                           i32.eq
@@ -37638,7 +37375,7 @@
                         global.get 1
                         i32.eqz
                         local.get 7
-                        i32.const 20
+                        i32.const 19
                         i32.eq
                         i32.or
                         if  ;; label = @11
@@ -37646,6 +37383,23 @@
                           i32.const 86465
                           i32.const 2
                           call $_*fmt.buffer_.writeString
+                          i32.const 19
+                          global.get 1
+                          i32.const 1
+                          i32.eq
+                          br_if 10 (;@1;)
+                          drop
+                        end
+                        global.get 1
+                        i32.eqz
+                        local.get 7
+                        i32.const 20
+                        i32.eq
+                        i32.or
+                        if  ;; label = @11
+                          local.get 3
+                          local.get 1
+                          call $_*fmt.buffer_.writeRune
                           i32.const 20
                           global.get 1
                           i32.const 1
@@ -37661,27 +37415,10 @@
                         i32.or
                         if  ;; label = @11
                           local.get 3
-                          local.get 1
-                          call $_*fmt.buffer_.writeRune
-                          i32.const 21
-                          global.get 1
-                          i32.const 1
-                          i32.eq
-                          br_if 10 (;@1;)
-                          drop
-                        end
-                        global.get 1
-                        i32.eqz
-                        local.get 7
-                        i32.const 22
-                        i32.eq
-                        i32.or
-                        if  ;; label = @11
-                          local.get 3
                           i32.const 86467
                           i32.const 9
                           call $_*fmt.buffer_.writeString
-                          i32.const 22
+                          i32.const 21
                           global.get 1
                           i32.const 1
                           i32.eq
@@ -37738,7 +37475,7 @@
                           global.get 1
                           i32.eqz
                           local.get 7
-                          i32.const 23
+                          i32.const 22
                           i32.eq
                           i32.or
                           if  ;; label = @12
@@ -37750,7 +37487,7 @@
                             i32.const 1
                             i32.const 4
                             call $runtime.sliceAppend
-                            i32.const 23
+                            i32.const 22
                             global.get 1
                             i32.const 1
                             i32.eq
@@ -37803,7 +37540,7 @@
                       global.get 1
                       i32.eqz
                       local.get 7
-                      i32.const 24
+                      i32.const 23
                       i32.eq
                       i32.or
                       if  ;; label = @10
@@ -37812,7 +37549,7 @@
                         local.get 13
                         local.get 1
                         call $_*fmt.pp_.printArg
-                        i32.const 24
+                        i32.const 23
                         global.get 1
                         i32.const 1
                         i32.eq
@@ -37858,12 +37595,12 @@
             global.get 1
             i32.eqz
             local.get 7
-            i32.const 25
+            i32.const 24
             i32.eq
             i32.or
             if  ;; label = @5
               call $runtime.lookupPanic
-              i32.const 25
+              i32.const 24
               global.get 1
               i32.const 1
               i32.eq
@@ -37879,12 +37616,12 @@
           global.get 1
           i32.eqz
           local.get 7
-          i32.const 26
+          i32.const 25
           i32.eq
           i32.or
           if  ;; label = @4
             call $runtime.slicePanic
-            i32.const 26
+            i32.const 25
             global.get 1
             i32.const 1
             i32.eq
@@ -37933,7 +37670,7 @@
           global.get 1
           i32.eqz
           local.get 7
-          i32.const 27
+          i32.const 26
           i32.eq
           i32.or
           if  ;; label = @4
@@ -37941,7 +37678,7 @@
             i32.const 86396
             i32.const 9
             call $_*fmt.buffer_.writeString
-            i32.const 27
+            i32.const 26
             global.get 1
             i32.const 1
             i32.eq
@@ -37993,7 +37730,7 @@
                 global.get 1
                 i32.eqz
                 local.get 7
-                i32.const 28
+                i32.const 27
                 i32.eq
                 i32.or
                 select
@@ -38002,7 +37739,7 @@
                   i32.const 86519
                   i32.const 2
                   call $_*fmt.buffer_.writeString
-                  i32.const 28
+                  i32.const 27
                   global.get 1
                   i32.const 1
                   i32.eq
@@ -38017,7 +37754,7 @@
                   global.get 1
                   i32.eqz
                   local.get 7
-                  i32.const 29
+                  i32.const 28
                   i32.eq
                   i32.or
                   if  ;; label = @8
@@ -38025,7 +37762,7 @@
                     i32.const 86509
                     i32.const 5
                     call $_*fmt.buffer_.writeString
-                    i32.const 29
+                    i32.const 28
                     global.get 1
                     i32.const 1
                     i32.eq
@@ -38046,7 +37783,7 @@
                 global.get 1
                 i32.eqz
                 local.get 7
-                i32.const 30
+                i32.const 29
                 i32.eq
                 i32.or
                 if  ;; label = @7
@@ -38054,7 +37791,7 @@
                   i32.const 87272
                   local.get 5
                   call $reflect.toType
-                  i32.const 30
+                  i32.const 29
                   global.get 1
                   i32.const 1
                   i32.eq
@@ -38082,7 +37819,7 @@
                 global.get 1
                 i32.eqz
                 local.get 7
-                i32.const 31
+                i32.const 30
                 i32.eq
                 i32.or
                 if  ;; label = @7
@@ -38090,7 +37827,7 @@
                   local.get 1
                   local.get 9
                   call $interface:_Align:func:___basic:int__AssignableTo:func:_named:reflect.Type__basic:bool__Bits:func:___basic:int__CanSeq:func:___basic:bool__CanSeq2:func:___basic:bool__ChanDir:func:___named:internal/reflectlite.ChanDir__Comparable:func:___basic:bool__ConvertibleTo:func:_named:reflect.Type__basic:bool__Elem:func:___named:reflect.Type__Field:func:_basic:int__named:reflect.StructField__FieldAlign:func:___basic:int__FieldByIndex:func:_slice:basic:int__named:reflect.StructField__FieldByName:func:_basic:string__named:reflect.StructField_basic:bool__FieldByNameFunc:func:_func:_basic:string__basic:bool___named:reflect.StructField_basic:bool__Implements:func:_named:reflect.Type__basic:bool__In:func:_basic:int__named:reflect.Type__IsVariadic:func:___basic:bool__Key:func:___named:reflect.Type__Kind:func:___named:internal/reflectlite.Kind__Len:func:___basic:int__Method:func:_basic:int__named:reflect.Method__MethodByName:func:_basic:string__named:reflect.Method_basic:bool__Name:func:___basic:string__NumField:func:___basic:int__NumIn:func:___basic:int__NumMethod:func:___basic:int__NumOut:func:___basic:int__Out:func:_basic:int__named:reflect.Type__OverflowComplex:func:_basic:complex128__basic:bool__OverflowFloat:func:_basic:float64__basic:bool__OverflowInt:func:_basic:int64__basic:bool__OverflowUint:func:_basic:uint64__basic:bool__PkgPath:func:___basic:string__Size:func:___basic:uintptr__String:func:___basic:string__.String$invoke
-                  i32.const 31
+                  i32.const 30
                   global.get 1
                   i32.const 1
                   i32.eq
@@ -38112,7 +37849,7 @@
                 global.get 1
                 i32.eqz
                 local.get 7
-                i32.const 32
+                i32.const 31
                 i32.eq
                 i32.or
                 if  ;; label = @7
@@ -38120,6 +37857,23 @@
                   local.get 1
                   local.get 4
                   call $_*fmt.buffer_.writeString
+                  i32.const 31
+                  global.get 1
+                  i32.const 1
+                  i32.eq
+                  br_if 6 (;@1;)
+                  drop
+                end
+                global.get 1
+                i32.eqz
+                local.get 7
+                i32.const 32
+                i32.eq
+                i32.or
+                if  ;; label = @7
+                  local.get 3
+                  i32.const 61
+                  call $_*fmt.buffer_.writeByte
                   i32.const 32
                   global.get 1
                   i32.const 1
@@ -38135,28 +37889,11 @@
                 i32.or
                 if  ;; label = @7
                   local.get 3
-                  i32.const 61
-                  call $_*fmt.buffer_.writeByte
-                  i32.const 33
-                  global.get 1
-                  i32.const 1
-                  i32.eq
-                  br_if 6 (;@1;)
-                  drop
-                end
-                global.get 1
-                i32.eqz
-                local.get 7
-                i32.const 34
-                i32.eq
-                i32.or
-                if  ;; label = @7
-                  local.get 3
                   local.get 5
                   local.get 8
                   i32.const 118
                   call $_*fmt.pp_.printArg
-                  i32.const 34
+                  i32.const 33
                   global.get 1
                   i32.const 1
                   i32.eq
@@ -38170,14 +37907,14 @@
               global.get 1
               i32.eqz
               local.get 7
-              i32.const 35
+              i32.const 34
               i32.eq
               i32.or
               if  ;; label = @6
                 local.get 3
                 i32.const 41
                 call $_*fmt.buffer_.writeByte
-                i32.const 35
+                i32.const 34
                 global.get 1
                 i32.const 1
                 i32.eq
@@ -38218,7 +37955,7 @@
         global.get 1
         i32.eqz
         local.get 7
-        i32.const 36
+        i32.const 35
         i32.eq
         i32.or
         if  ;; label = @3
@@ -38227,7 +37964,7 @@
           local.get 5
           local.get 4
           call $_*os.File_.Write
-          i32.const 36
+          i32.const 35
           global.get 1
           i32.const 1
           i32.eq
@@ -38263,28 +38000,13 @@
         global.get 1
         i32.eqz
         local.get 7
-        i32.const 37
+        i32.const 36
         i32.eq
         i32.or
         if  ;; label = @3
           local.get 3
           call $_*fmt.pp_.free
-          i32.const 37
-          global.get 1
-          i32.const 1
-          i32.eq
-          br_if 2 (;@1;)
-          drop
-        end
-        global.get 1
-        i32.eqz
-        local.get 7
-        i32.const 38
-        i32.eq
-        i32.or
-        if  ;; label = @3
-          call $runtime.Gosched
-          i32.const 38
+          i32.const 36
           global.get 1
           i32.const 1
           i32.eq
@@ -38306,12 +38028,12 @@
         global.get 1
         i32.eqz
         local.get 7
-        i32.const 39
+        i32.const 37
         i32.eq
         i32.or
         if  ;; label = @3
           call $fmt.newPrinter
-          i32.const 39
+          i32.const 37
           global.get 1
           i32.const 1
           i32.eq
@@ -38329,14 +38051,14 @@
         global.get 1
         i32.eqz
         local.get 7
-        i32.const 40
+        i32.const 38
         i32.eq
         i32.or
         if  ;; label = @3
           local.get 5
           i32.const 10
           call $_*fmt.buffer_.writeByte
-          i32.const 40
+          i32.const 38
           global.get 1
           i32.const 1
           i32.eq
@@ -38362,7 +38084,7 @@
         global.get 1
         i32.eqz
         local.get 7
-        i32.const 41
+        i32.const 39
         i32.eq
         i32.or
         if  ;; label = @3
@@ -38371,7 +38093,7 @@
           local.get 1
           local.get 9
           call $_*os.File_.Write
-          i32.const 41
+          i32.const 39
           global.get 1
           i32.const 1
           i32.eq
@@ -38407,28 +38129,13 @@
         global.get 1
         i32.eqz
         local.get 7
-        i32.const 42
+        i32.const 40
         i32.eq
         i32.or
         if  ;; label = @3
           local.get 5
           call $_*fmt.pp_.free
-          i32.const 42
-          global.get 1
-          i32.const 1
-          i32.eq
-          br_if 2 (;@1;)
-          drop
-        end
-        global.get 1
-        i32.eqz
-        local.get 7
-        i32.const 43
-        i32.eq
-        i32.or
-        if  ;; label = @3
-          call $runtime.Gosched
-          i32.const 43
+          i32.const 40
           global.get 1
           i32.const 1
           i32.eq
@@ -83842,20 +83549,6 @@
         block  ;; label = @3
           global.get 1
           i32.eqz
-          local.get 2
-          i32.eqz
-          i32.or
-          if  ;; label = @4
-            call $runtime.Gosched
-            i32.const 0
-            global.get 1
-            i32.const 1
-            i32.eq
-            br_if 3 (;@1;)
-            drop
-          end
-          global.get 1
-          i32.eqz
           if  ;; label = @4
             local.get 3
             i32.eqz
@@ -83867,27 +83560,11 @@
           global.get 1
           i32.eqz
           local.get 2
-          i32.const 1
-          i32.eq
-          i32.or
-          if  ;; label = @4
-            call $runtime.Gosched
-            i32.const 1
-            global.get 1
-            i32.const 1
-            i32.eq
-            br_if 3 (;@1;)
-            drop
-          end
-          global.get 1
           i32.eqz
-          local.get 2
-          i32.const 2
-          i32.eq
           i32.or
           if  ;; label = @4
             call $runtime.Gosched
-            i32.const 2
+            i32.const 0
             global.get 1
             i32.const 1
             i32.eq
@@ -83955,24 +83632,24 @@
       i32.store
       global.get 2
       i32.load
-      local.tee 4
+      local.tee 3
       i32.load
       local.set 0
-      local.get 4
+      local.get 3
       i32.load offset=4
-      local.set 1
-      local.get 4
-      i32.load offset=8
       local.set 2
-      local.get 4
+      local.get 3
       i32.load offset=12
-      local.set 5
-      local.get 4
-      i32.load offset=16
-      local.set 6
-      local.get 4
-      i32.load offset=20
       local.set 4
+      local.get 3
+      i32.load offset=16
+      local.set 5
+      local.get 3
+      i32.load offset=20
+      local.set 6
+      local.get 3
+      i32.load offset=8
+      local.set 1
     end
     block (result i32)  ;; label = @1
       global.get 1
@@ -83988,113 +83665,124 @@
         global.get 2
         i32.load
         i32.load
-        local.set 3
+        local.set 7
       end
       global.get 1
       i32.eqz
       if  ;; label = @2
         i32.const 0
-        local.set 5
+        local.set 4
         i32.const 90312
-        local.set 1
+        local.set 2
       end
       loop  ;; label = @2
-        local.get 2
-        local.get 5
+        local.get 1
+        local.get 4
         i32.const 64
         i32.ne
         global.get 1
         select
-        local.set 2
+        local.set 1
         block  ;; label = @3
           global.get 1
           i32.eqz
           if  ;; label = @4
             block  ;; label = @5
-              local.get 2
+              local.get 1
               i32.eqz
               if  ;; label = @6
                 i32.const 0
-                local.set 5
+                local.set 4
                 br 1 (;@5;)
               end
-              local.get 1
+              local.get 2
               i32.load
-              local.tee 2
+              local.tee 1
               br_if 2 (;@3;)
-              local.get 1
+              local.get 2
               i32.const 1
               i32.store
             end
             i32.const 0
-            local.set 2
-            i32.const -256
             local.set 1
+            i32.const -256
+            local.set 2
             loop  ;; label = @5
-              local.get 1
+              local.get 2
               if  ;; label = @6
-                local.get 1
+                local.get 2
                 i32.const 90312
                 i32.add
                 i32.load
-                local.tee 7
-                local.get 2
-                i32.gt_u
-                local.set 6
-                local.get 7
-                local.get 2
-                local.get 6
-                select
-                local.set 2
+                local.tee 3
                 local.get 1
+                i32.gt_u
+                local.set 5
+                local.get 3
+                local.get 1
+                local.get 5
+                select
+                local.set 1
+                local.get 2
                 i32.const 4
                 i32.add
-                local.set 1
+                local.set 2
                 br 1 (;@5;)
               end
             end
-            local.get 5
+            local.get 4
             i32.const 89992
             i32.add
             i32.const 0
             i32.store8
-            local.get 5
+            local.get 4
             i32.const 2
             i32.shl
             i32.const 90056
             i32.add
-            local.tee 6
-            local.get 2
+            local.tee 5
+            local.get 1
             i32.const 1
             i32.add
-            local.tee 2
+            local.tee 1
             i32.store
             i32.const 0
-            local.set 1
+            local.set 2
           end
           loop  ;; label = @4
-            local.get 2
             local.get 1
+            local.get 2
             i32.const 64
             i32.ne
             global.get 1
             select
-            local.set 2
+            local.set 1
             block  ;; label = @5
               block  ;; label = @6
                 block  ;; label = @7
                   global.get 1
                   i32.eqz
                   if  ;; label = @8
-                    local.get 2
+                    local.get 1
                     br_if 1 (;@7;)
                     i32.const 2000
-                    local.set 1
+                    local.set 2
                   end
                   loop  ;; label = @8
                     global.get 1
                     i32.eqz
-                    local.get 3
+                    if  ;; label = @9
+                      local.get 2
+                      i32.eqz
+                      local.tee 1
+                      br_if 3 (;@6;)
+                      local.get 0
+                      i32.load
+                      local.set 1
+                    end
+                    global.get 1
+                    i32.eqz
+                    local.get 7
                     i32.eqz
                     i32.or
                     if  ;; label = @9
@@ -84109,57 +83797,16 @@
                     global.get 1
                     i32.eqz
                     if  ;; label = @9
+                      local.get 0
                       local.get 1
-                      i32.eqz
-                      local.tee 2
-                      br_if 3 (;@6;)
-                      local.get 0
-                      i32.load
-                      local.set 2
-                    end
-                    global.get 1
-                    i32.eqz
-                    local.get 3
-                    i32.const 1
-                    i32.eq
-                    i32.or
-                    if  ;; label = @9
-                      call $runtime.Gosched
-                      i32.const 1
-                      global.get 1
-                      i32.const 1
-                      i32.eq
-                      br_if 8 (;@1;)
-                      drop
-                    end
-                    global.get 1
-                    i32.eqz
-                    local.get 3
-                    i32.const 2
-                    i32.eq
-                    i32.or
-                    if  ;; label = @9
-                      call $runtime.Gosched
-                      i32.const 2
-                      global.get 1
-                      i32.const 1
-                      i32.eq
-                      br_if 8 (;@1;)
-                      drop
-                    end
-                    global.get 1
-                    i32.eqz
-                    if  ;; label = @9
-                      local.get 0
-                      local.get 2
                       i32.const 1
                       i32.add
-                      local.tee 2
+                      local.tee 1
                       i32.store
-                      local.get 1
+                      local.get 2
                       i32.const 1
                       i32.sub
-                      local.set 1
+                      local.set 2
                       br 1 (;@8;)
                     end
                   end
@@ -84167,10 +83814,10 @@
                 global.get 1
                 i32.eqz
                 if  ;; label = @7
-                  local.get 1
-                  local.get 5
+                  local.get 2
+                  local.get 4
                   i32.eq
-                  local.tee 2
+                  local.tee 1
                   br_if 2 (;@5;)
                 end
                 loop  ;; label = @7
@@ -84178,23 +83825,23 @@
                     global.get 1
                     i32.eqz
                     if  ;; label = @9
-                      local.get 1
+                      local.get 2
                       i32.const 89992
                       i32.add
                       i32.load8_u
                       i32.eqz
-                      local.tee 2
+                      local.tee 1
                       br_if 1 (;@8;)
                     end
                     global.get 1
                     i32.eqz
-                    local.get 3
-                    i32.const 3
+                    local.get 7
+                    i32.const 1
                     i32.eq
                     i32.or
                     if  ;; label = @9
                       call $runtime.Gosched
-                      i32.const 3
+                      i32.const 1
                       global.get 1
                       i32.const 1
                       i32.eq
@@ -84209,48 +83856,48 @@
                 global.get 1
                 i32.eqz
                 if  ;; label = @7
-                  local.get 1
+                  local.get 2
                   i32.const 2
                   i32.shl
-                  local.tee 2
+                  local.tee 1
                   i32.const 90056
                   i32.add
-                  local.set 4
+                  local.set 6
                 end
                 loop  ;; label = @7
                   global.get 1
                   i32.eqz
                   if  ;; label = @8
-                    local.get 4
-                    i32.load
-                    local.tee 2
-                    i32.eqz
-                    br_if 3 (;@5;)
                     local.get 6
                     i32.load
-                    local.tee 7
-                    local.get 2
+                    local.tee 1
+                    i32.eqz
+                    br_if 3 (;@5;)
+                    local.get 5
+                    i32.load
+                    local.tee 3
+                    local.get 1
                     i32.lt_u
                     br_if 3 (;@5;)
-                    local.get 2
-                    local.get 7
-                    i32.eq
                     local.get 1
-                    local.get 5
+                    local.get 3
+                    i32.eq
+                    local.get 2
+                    local.get 4
                     i32.gt_u
                     i32.and
-                    local.tee 2
+                    local.tee 1
                     br_if 3 (;@5;)
                   end
                   global.get 1
                   i32.eqz
-                  local.get 3
-                  i32.const 4
+                  local.get 7
+                  i32.const 2
                   i32.eq
                   i32.or
                   if  ;; label = @8
                     call $runtime.Gosched
-                    i32.const 4
+                    i32.const 2
                     global.get 1
                     i32.const 1
                     i32.eq
@@ -84265,38 +83912,19 @@
               global.get 1
               i32.eqz
               if  ;; label = @6
-                local.get 6
+                local.get 5
                 i32.const 0
                 i32.store
-              end
-              global.get 1
-              i32.eqz
-              local.get 3
-              i32.const 5
-              i32.eq
-              i32.or
-              if  ;; label = @6
-                call $runtime.Gosched
-                i32.const 5
-                global.get 1
-                i32.const 1
-                i32.eq
-                br_if 5 (;@1;)
-                drop
-              end
-              global.get 1
-              i32.eqz
-              if  ;; label = @6
                 return
               end
             end
             global.get 1
             i32.eqz
             if  ;; label = @5
-              local.get 1
+              local.get 2
               i32.const 1
               i32.add
-              local.set 1
+              local.set 2
               br 1 (;@4;)
             end
           end
@@ -84304,14 +83932,14 @@
         global.get 1
         i32.eqz
         if  ;; label = @3
-          local.get 1
+          local.get 2
           i32.const 4
           i32.add
-          local.set 1
-          local.get 5
+          local.set 2
+          local.get 4
           i32.const 1
           i32.add
-          local.set 5
+          local.set 4
           br 1 (;@2;)
         end
       end
@@ -84334,19 +83962,19 @@
     local.get 0
     i32.store
     local.get 3
-    local.get 1
+    local.get 2
     i32.store offset=4
     local.get 3
-    local.get 2
+    local.get 1
     i32.store offset=8
     local.get 3
-    local.get 5
+    local.get 4
     i32.store offset=12
     local.get 3
-    local.get 6
+    local.get 5
     i32.store offset=16
     local.get 3
-    local.get 4
+    local.get 6
     i32.store offset=20
     global.get 2
     global.get 2
@@ -84373,7 +84001,7 @@
       local.set 0
       local.get 3
       i32.load offset=4
-      local.set 2
+      local.set 1
       local.get 3
       i32.load offset=8
       local.set 4
@@ -84395,7 +84023,7 @@
         global.get 2
         i32.load
         i32.load
-        local.set 1
+        local.set 2
       end
       global.get 1
       i32.eqz
@@ -84403,20 +84031,20 @@
         global.get $__stack_pointer
         i32.const 32
         i32.sub
-        local.tee 2
+        local.tee 1
         global.set $__stack_pointer
         i32.const 89988
         i32.load
         local.set 3
         i32.const 89988
-        local.get 2
+        local.get 1
         i32.const 16
         i32.add
         i32.store
-        local.get 2
+        local.get 1
         i64.const 1
         i64.store offset=20 align=4
-        local.get 2
+        local.get 1
         local.get 3
         i32.store offset=16
         local.get 0
@@ -84428,7 +84056,7 @@
       end
       global.get 1
       i32.eqz
-      local.get 1
+      local.get 2
       i32.eqz
       i32.or
       if  ;; label = @2
@@ -84444,29 +84072,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 1
-      i32.const 1
-      i32.eq
-      i32.or
       if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 1
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      if  ;; label = @2
-        local.get 2
+        local.get 1
         local.get 0
         i32.store offset=8
-        local.get 2
+        local.get 1
         i64.const 0
         i64.store
-        local.get 2
+        local.get 1
         local.get 4
         i32.load
         local.tee 0
@@ -84474,29 +84087,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 1
-      i32.const 2
+      local.get 2
+      i32.const 1
       i32.eq
       i32.or
       if  ;; label = @2
         local.get 0
         call $main.incrementRawPointerValue
-        i32.const 2
-        global.get 1
         i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 1
-      i32.const 3
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 3
         global.get 1
         i32.const 1
         i32.eq
@@ -84504,7 +84102,7 @@
         drop
       end
       local.get 0
-      local.get 2
+      local.get 1
       global.get 1
       select
       local.set 0
@@ -84525,14 +84123,14 @@
           end
           global.get 1
           i32.eqz
-          local.get 1
-          i32.const 4
+          local.get 2
+          i32.const 2
           i32.eq
           i32.or
           if  ;; label = @4
             local.get 0
             call $_*sync.WaitGroup_.Done
-            i32.const 4
+            i32.const 2
             global.get 1
             i32.const 1
             i32.eq
@@ -84554,17 +84152,17 @@
         i32.const 89988
         local.get 3
         i32.store
-        local.get 2
+        local.get 1
         i32.const 32
         i32.add
         global.set $__stack_pointer
       end
       return
     end
-    local.set 1
+    local.set 2
     global.get 2
     i32.load
-    local.get 1
+    local.get 2
     i32.store
     global.get 2
     global.get 2
@@ -84574,16 +84172,16 @@
     i32.store
     global.get 2
     i32.load
-    local.tee 1
+    local.tee 2
     local.get 0
     i32.store
-    local.get 1
     local.get 2
-    i32.store offset=4
     local.get 1
+    i32.store offset=4
+    local.get 2
     local.get 4
     i32.store offset=8
-    local.get 1
+    local.get 2
     local.get 3
     i32.store offset=12
     global.get 2
@@ -84611,7 +84209,7 @@
       local.set 0
       local.get 3
       i32.load offset=4
-      local.set 2
+      local.set 1
       local.get 3
       i32.load offset=8
       local.set 4
@@ -84633,7 +84231,7 @@
         global.get 2
         i32.load
         i32.load
-        local.set 1
+        local.set 2
       end
       global.get 1
       i32.eqz
@@ -84641,20 +84239,20 @@
         global.get $__stack_pointer
         i32.const 32
         i32.sub
-        local.tee 2
+        local.tee 1
         global.set $__stack_pointer
         i32.const 89988
         i32.load
         local.set 3
         i32.const 89988
-        local.get 2
+        local.get 1
         i32.const 16
         i32.add
         i32.store
-        local.get 2
+        local.get 1
         i64.const 1
         i64.store offset=20 align=4
-        local.get 2
+        local.get 1
         local.get 3
         i32.store offset=16
         local.get 0
@@ -84666,7 +84264,7 @@
       end
       global.get 1
       i32.eqz
-      local.get 1
+      local.get 2
       i32.eqz
       i32.or
       if  ;; label = @2
@@ -84682,29 +84280,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 1
-      i32.const 1
-      i32.eq
-      i32.or
       if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 1
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      if  ;; label = @2
-        local.get 2
+        local.get 1
         local.get 0
         i32.store offset=8
-        local.get 2
+        local.get 1
         i64.const 0
         i64.store
-        local.get 2
+        local.get 1
         local.get 4
         i32.load
         local.tee 0
@@ -84712,29 +84295,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 1
-      i32.const 2
+      local.get 2
+      i32.const 1
       i32.eq
       i32.or
       if  ;; label = @2
         local.get 0
         call $main.incrementRawPointerValue
-        i32.const 2
-        global.get 1
         i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 1
-      i32.const 3
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 3
         global.get 1
         i32.const 1
         i32.eq
@@ -84742,7 +84310,7 @@
         drop
       end
       local.get 0
-      local.get 2
+      local.get 1
       global.get 1
       select
       local.set 0
@@ -84763,14 +84331,14 @@
           end
           global.get 1
           i32.eqz
-          local.get 1
-          i32.const 4
+          local.get 2
+          i32.const 2
           i32.eq
           i32.or
           if  ;; label = @4
             local.get 0
             call $_*sync.WaitGroup_.Done
-            i32.const 4
+            i32.const 2
             global.get 1
             i32.const 1
             i32.eq
@@ -84792,17 +84360,17 @@
         i32.const 89988
         local.get 3
         i32.store
-        local.get 2
+        local.get 1
         i32.const 32
         i32.add
         global.set $__stack_pointer
       end
       return
     end
-    local.set 1
+    local.set 2
     global.get 2
     i32.load
-    local.get 1
+    local.get 2
     i32.store
     global.get 2
     global.get 2
@@ -84812,16 +84380,16 @@
     i32.store
     global.get 2
     i32.load
-    local.tee 1
+    local.tee 2
     local.get 0
     i32.store
-    local.get 1
     local.get 2
-    i32.store offset=4
     local.get 1
+    i32.store offset=4
+    local.get 2
     local.get 4
     i32.store offset=8
-    local.get 1
+    local.get 2
     local.get 3
     i32.store offset=12
     global.get 2
@@ -84849,7 +84417,7 @@
       local.set 0
       local.get 3
       i32.load offset=4
-      local.set 2
+      local.set 1
       local.get 3
       i32.load offset=8
       local.set 4
@@ -84871,7 +84439,7 @@
         global.get 2
         i32.load
         i32.load
-        local.set 1
+        local.set 2
       end
       global.get 1
       i32.eqz
@@ -84879,20 +84447,20 @@
         global.get $__stack_pointer
         i32.const 32
         i32.sub
-        local.tee 2
+        local.tee 1
         global.set $__stack_pointer
         i32.const 89988
         i32.load
         local.set 3
         i32.const 89988
-        local.get 2
+        local.get 1
         i32.const 16
         i32.add
         i32.store
-        local.get 2
+        local.get 1
         i64.const 1
         i64.store offset=20 align=4
-        local.get 2
+        local.get 1
         local.get 3
         i32.store offset=16
         local.get 0
@@ -84904,7 +84472,7 @@
       end
       global.get 1
       i32.eqz
-      local.get 1
+      local.get 2
       i32.eqz
       i32.or
       if  ;; label = @2
@@ -84920,29 +84488,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 1
-      i32.const 1
-      i32.eq
-      i32.or
       if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 1
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      if  ;; label = @2
-        local.get 2
+        local.get 1
         local.get 0
         i32.store offset=8
-        local.get 2
+        local.get 1
         i64.const 0
         i64.store
-        local.get 2
+        local.get 1
         local.get 4
         i32.load
         local.tee 0
@@ -84950,29 +84503,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 1
-      i32.const 2
+      local.get 2
+      i32.const 1
       i32.eq
       i32.or
       if  ;; label = @2
         local.get 0
         call $main.incrementRawPointerValueSafe
-        i32.const 2
-        global.get 1
         i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 1
-      i32.const 3
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 3
         global.get 1
         i32.const 1
         i32.eq
@@ -84980,7 +84518,7 @@
         drop
       end
       local.get 0
-      local.get 2
+      local.get 1
       global.get 1
       select
       local.set 0
@@ -85001,14 +84539,14 @@
           end
           global.get 1
           i32.eqz
-          local.get 1
-          i32.const 4
+          local.get 2
+          i32.const 2
           i32.eq
           i32.or
           if  ;; label = @4
             local.get 0
             call $_*sync.WaitGroup_.Done
-            i32.const 4
+            i32.const 2
             global.get 1
             i32.const 1
             i32.eq
@@ -85030,17 +84568,17 @@
         i32.const 89988
         local.get 3
         i32.store
-        local.get 2
+        local.get 1
         i32.const 32
         i32.add
         global.set $__stack_pointer
       end
       return
     end
-    local.set 1
+    local.set 2
     global.get 2
     i32.load
-    local.get 1
+    local.get 2
     i32.store
     global.get 2
     global.get 2
@@ -85050,16 +84588,16 @@
     i32.store
     global.get 2
     i32.load
-    local.tee 1
+    local.tee 2
     local.get 0
     i32.store
-    local.get 1
     local.get 2
-    i32.store offset=4
     local.get 1
+    i32.store offset=4
+    local.get 2
     local.get 4
     i32.store offset=8
-    local.get 1
+    local.get 2
     local.get 3
     i32.store offset=12
     global.get 2
@@ -85087,7 +84625,7 @@
       local.set 0
       local.get 3
       i32.load offset=4
-      local.set 2
+      local.set 1
       local.get 3
       i32.load offset=8
       local.set 4
@@ -85109,7 +84647,7 @@
         global.get 2
         i32.load
         i32.load
-        local.set 1
+        local.set 2
       end
       global.get 1
       i32.eqz
@@ -85117,20 +84655,20 @@
         global.get $__stack_pointer
         i32.const 32
         i32.sub
-        local.tee 2
+        local.tee 1
         global.set $__stack_pointer
         i32.const 89988
         i32.load
         local.set 3
         i32.const 89988
-        local.get 2
+        local.get 1
         i32.const 16
         i32.add
         i32.store
-        local.get 2
+        local.get 1
         i64.const 1
         i64.store offset=20 align=4
-        local.get 2
+        local.get 1
         local.get 3
         i32.store offset=16
         local.get 0
@@ -85142,7 +84680,7 @@
       end
       global.get 1
       i32.eqz
-      local.get 1
+      local.get 2
       i32.eqz
       i32.or
       if  ;; label = @2
@@ -85158,29 +84696,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 1
-      i32.const 1
-      i32.eq
-      i32.or
       if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 1
-        global.get 1
-        i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      if  ;; label = @2
-        local.get 2
+        local.get 1
         local.get 0
         i32.store offset=8
-        local.get 2
+        local.get 1
         i64.const 0
         i64.store
-        local.get 2
+        local.get 1
         local.get 4
         i32.load
         local.tee 0
@@ -85188,29 +84711,14 @@
       end
       global.get 1
       i32.eqz
-      local.get 1
-      i32.const 2
+      local.get 2
+      i32.const 1
       i32.eq
       i32.or
       if  ;; label = @2
         local.get 0
         call $main.incrementRawPointerValueSafe
-        i32.const 2
-        global.get 1
         i32.const 1
-        i32.eq
-        br_if 1 (;@1;)
-        drop
-      end
-      global.get 1
-      i32.eqz
-      local.get 1
-      i32.const 3
-      i32.eq
-      i32.or
-      if  ;; label = @2
-        call $runtime.Gosched
-        i32.const 3
         global.get 1
         i32.const 1
         i32.eq
@@ -85218,7 +84726,7 @@
         drop
       end
       local.get 0
-      local.get 2
+      local.get 1
       global.get 1
       select
       local.set 0
@@ -85239,14 +84747,14 @@
           end
           global.get 1
           i32.eqz
-          local.get 1
-          i32.const 4
+          local.get 2
+          i32.const 2
           i32.eq
           i32.or
           if  ;; label = @4
             local.get 0
             call $_*sync.WaitGroup_.Done
-            i32.const 4
+            i32.const 2
             global.get 1
             i32.const 1
             i32.eq
@@ -85268,17 +84776,17 @@
         i32.const 89988
         local.get 3
         i32.store
-        local.get 2
+        local.get 1
         i32.const 32
         i32.add
         global.set $__stack_pointer
       end
       return
     end
-    local.set 1
+    local.set 2
     global.get 2
     i32.load
-    local.get 1
+    local.get 2
     i32.store
     global.get 2
     global.get 2
@@ -85288,16 +84796,16 @@
     i32.store
     global.get 2
     i32.load
-    local.tee 1
+    local.tee 2
     local.get 0
     i32.store
-    local.get 1
     local.get 2
-    i32.store offset=4
     local.get 1
+    i32.store offset=4
+    local.get 2
     local.get 4
     i32.store offset=8
-    local.get 1
+    local.get 2
     local.get 3
     i32.store offset=12
     global.get 2

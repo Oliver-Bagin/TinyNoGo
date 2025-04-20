@@ -118,19 +118,24 @@ async function runAllPrograms() {
   console.log("\n✅ All programs executed.");
 }
 
-runAllPrograms().catch(console.error).then(
- () => {
-  const { exec } = require('child_process');
-  exec('python3 ./charts.py', (err, stdout, stderr) => {
-    if (err) {
-      // node couldn't execute the command
-      return;
-    }
-
-    // the *entire* stdout and stderr (buffered)
-    console.log(`stdout: ${stdout}`);
-    console.log(`stderr: ${stderr}`);
-  });
-  console.log(`\t 📈 \x1b[32mCharts Created\x1b}\n`)
- }
-);
+runAllPrograms()
+.then(
+  () => {
+   const { exec } = require('child_process');
+   exec('python3 ./programs/charts.py', (err, stdout, stderr) => {
+     if (err) {
+       // node couldn't execute the command
+       console.log(err)
+       return;
+     }
+ 
+     console.log(`stdout: ${stdout}`);
+     if (stderr == "") {
+      console.log(`\t 📈 \x1b[32mCharts Created\x1b}\n`)
+     } else {
+      console.log(`stderr: ${stderr}`);
+     }
+   });
+  }
+ )
+.catch(console.error);

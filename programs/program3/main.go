@@ -19,7 +19,7 @@ func RegisterTask(name string)
 
 func incrementRawPointerValue(rawPtr unsafe.Pointer) {
 	x := (*uint32)(rawPtr)
-	for i := 0; i < 200; i++ {
+	for i := 0; i < 2000; i++ {
 		var y = *x + 1
 		runtime.Gosched()
 		*x = y
@@ -29,7 +29,7 @@ func incrementRawPointerValue(rawPtr unsafe.Pointer) {
 func incrementRawPointerValueSafe(rawPtr unsafe.Pointer) {
 	McOnPointer(rawPtr, func(ptr unsafe.Pointer) {
 		x := (*uint32)(ptr)
-		for i := 0; i < 200; i++ {
+		for i := 0; i < 2000; i++ {
 			var y = *x + 1
 			runtime.Gosched()
 			*x = y

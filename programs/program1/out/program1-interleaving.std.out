@@ -1,5 +1,5 @@
   set sleep: 0x000161d0 50000000
----  -> sleep new queue0.0000890000 s
+---  -> sleep new queue0.0000820000 s
 R1 0
 R1 1
 R1 2

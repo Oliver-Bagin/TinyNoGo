@@ -453,9 +453,9 @@ func GC() {
 // of the runtime.GC() function. The difference is that it returns the number of
 // free bytes in the heap after the GC is finished.
 func runGC() (freeBytes uintptr) {
-	println("Start ---->")
+	//println("Start ---->")
 	//if gcDebug {
-	println("running collection cycle...")
+	//println("running collection cycle...")
 	//}
 
 	// Mark phase: mark all reachable objects, recursively.
@@ -503,7 +503,7 @@ func runGC() (freeBytes uintptr) {
 		dumpHeap()
 	}
 
-	println("<---- End")
+	//println("<---- End")
 	return
 }
 

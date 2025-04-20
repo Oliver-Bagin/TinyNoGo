@@ -6,3 +6,10 @@
       target: wasip1
       gc: conservative
       schedular: nc
+- raw-mem-access-noconcurrency:
+    description: Raw memory access 
+    test: raw-mem-access.js
+    flags:
+      target: wasip1
+      gc: conservative
+      schedular: asyncify

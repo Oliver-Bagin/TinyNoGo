@@ -4,7 +4,7 @@ global stack_pointer:int = 65536;
 global g_b:int = 0;
 global g_c:int = 0;
 
-table T_a:funcref(min: 5, max: 5);
+table T_a:funcref(min: 9, max: 9);
 
 data rodata(offset: 65536) =
   "expand 32-byte k-\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0\f0"
@@ -20,313 +20,317 @@ data rodata(offset: 65536) =
   "\03\03\03#\03\034\04\04\04D\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\f1\80\bf\a0\bf"
   "\80\9f\90\bf\80\8f";
 data rodata_1(offset: 65841) =
-  "KeyNumFieldChanDir\00\00meta\000123456789abcef\00\00\00z\00\00\00\1cT\01"
+  "KeyNumFieldChanDir\00\00meta\000123456789abcef\00\00\00z\00\00\00\00U\01"
   "\00\84\01\01\00\0d\02\01\00reflectlite.ValueError\00\00Z\00\00\00\a8\01"
-  "\01\00\0d\02\01\00\0c\00\00\00\02\00\00\00@R\01\00(\03\01\00PR\01\001\02"
-  "\01\00\d5\00\00\00\84\01\01\00fmt\00reflect\00errors\00os\00\09\04fmtF"
-  "lags\00io/fs\00\04\10Err\00\04\10LayoutElem\00\04\18ValueElem\00syscal"
-  "l\00\04\08Path\00\04\08Value\00internal/reflectlite\00time\00\04 Messa"
-  "ge\00\04\08Kind\00invalidboolintint8int16int32int64uintuint8uint16uint"
-  "32uint64uintptrfloat32float64complex64complex128stringunsafe.Pointerch"
-  "aninterfaceptrslicearrayfuncmapstructkind\00z\00\00\00\0cT\01\00\04\03"
-  "\01\00\0d\02\01\00reflectlite.TypeError\00\00\00Z\00\00\00 \03\01\00\0d"
-  "\02\01\00\08\00\00\00\01\00\00\00@R\01\00(\03\01\00\d5\00\00\00\04\03\01"
-  "\00\04\00Method\00unimplemented: size of type\00\00\00\001\03\01\00\1b"
-  "\00\00\00chan<- <-chan chan (chan [][]struct {}; }interface {}struct {"
-  "reflect: field index out of range\00\00\95\03\01\00!\00\00\00reflect: "
-  "cannot make *****T type\c0\03\01\00 \00\00\00reflect: call of reflect."
-  "Type. on invalid typeBoolBytesComplexElemFieldFloatreflect: slice inde"
-  "x out of range\00\00\004\04\01\00!\00\00\00reflect: string index out o"
-  "f range\00\00\00\00\00\00`\04\01\00\22\00\00\00IndexInt(reflect.Value)"
-  ".Interface: unexported\00\00\00\98\04\01\00%\00\00\00IsNilLen< Value>U"
-  "intUnsafePointerreflect: value is not addressable\00\00\00\00\00\00\e9"
-  "\04\01\00!\00\00\00MapRangereflect.MapIter.Value called on invalid ite"
-  "rator \05\01\000\00\00\00 on zero Valuereflect: call of  on  Value\00\00"
-  "\00z\00\00\00\dcS\01\00\a8\05\01\00\bc\01\01\00errors.errorString\00\00"
-  "Z\00\00\00\c4\05\01\00\bc\01\01\00\08\00\00\00\01\00\00\00@R\01\00\cc\05"
-  "\01\00\d5\00\00\00\a8\05\01\00\00\00s\00sync: unlock of unlocked Mutex"
-  "\00\00\d0\05\01\00\1e\00\00\00stack overflowfree: invalid pointer\00\00"
-  "\00\00\00\06\06\01\00\15\00\00\00realloc: invalid pointer(\06\01\00\18"
-  "\00\00\00Growing the heap!!!out of memorycomparing un-comparable typet"
-  "ype assert failedpanic: panic: runtime error: nil pointer dereferencea"
-  "ssignment to entry in nil mapindex out of rangeslice out of rangeunsaf"
-  "e.Slice/String: len out of range. s00000000000000000000000000000000000"
-  "0000000000*Unregistered unreachable\00\00\00\00\00\00o\07\01\00\0b\00\00"
-  "\00  pause:  run:SchedulerMainGCdeadlocked: no event source\0d\00RawTy"
-  "pe\00\00\00\c3\00\00\00\d4\07\01\00\d5\00\00\00\cc\07\01\00\c4\00\00\00"
-  "\e4\07\01\00\d5\00\00\00\dc\07\01\00\c7\00\00\00\f4\07\01\00\d5\00\00\00"
-  "\ec\07\01\00\c9\00\00\00\04\08\01\00\d5\00\00\00\fc\07\01\00bad type i"
-  "n compare: file already existsfile does not existfile already closeder"
-  "rno \04\01\00\00\09\01\00\00\0e\04\00\00\10\04\00\00\12\04\00\00\14\01"
-  "\00\00SundayTuesdayWednesdayThursdayFridaySaturdayFebruaryMarchAprilMa"
-  "yJuneJulyAugustSeptemberOctoberNovemberDecemberJanJanuaryMonMondayMST2"
-  "006-070000-07:00:00-0700-07:00-07Z070000Z07:00:00Z0700Z07:00Z07: canno"
-  "t parse  as parsing time \ef\bf\bdz\00\00\00\84T\01\00\80\09\01\00\22\02"
-  "\01\00time.ParseError\00Z\00\00\00\bc\09\01\00\22\02\01\00(\00\00\00\05"
-  "\00\00\00@R\01\00\c4\09\01\00@R\01\00\05\02\01\00@R\01\00\dd\01\01\00@"
-  "R\01\00\ea\01\01\00@R\01\00'\02\01\00\d5\00\00\00\80\09\01\00\04\00Lay"
-  "out\00\00\00wall\00\00\08ext\00\00\10loc\00\00\08zone\00\00\00name\00\00"
-  "\08offset\00\00\0cisDST\00\00\14tx\00\00\00when\00\00\08index\00\00\09"
-  "isstd\00\00\0aisutc\00\00 extend\00\00(cacheStart\00\000cacheEnd\00\00"
-  "8cacheZone\00time.Date(, time.time.UTCtime.Localtime.Location(2006-01-"
-  "02 15:04:05.999999999 -0700 MST m=PMAMpmam%!Month()UTC,M3.2.0,M11.1.0L"
-  "ocal\00x\08\01\00\06\00\00\00\f4\08\01\00\06\00\00\00~\08\01\00\07\00\00"
-  "\00\85\08\01\00\09\00\00\00\8e\08\01\00\08\00\00\00\96\08\01\00\06\00\00"
-  "\00\9c\08\01\00\08\00\00\00\ea\08\01\00\07\00\00\00\a4\08\01\00\08\00\00"
-  "\00\ac\08\01\00\05\00\00\00\b1\08\01\00\05\00\00\00\b6\08\01\00\03\00\00"
-  "\00\b9\08\01\00\04\00\00\00\bd\08\01\00\04\00\00\00\c1\08\01\00\06\00\00"
-  "\00\c7\08\01\00\09\00\00\00\d0\08\01\00\07\00\00\00\d7\08\01\00\08\00\00"
-  "\00\df\08\01\00\08\00\00\00dalTLDpSugct?rwxrwxrwx : \04\00Op\00\00\00\da"
-  "\00\00\00\a0\0b\01\007\02\01";
-data rodata_2(offset: 68512) =
-  "\d5\00\00\00\8c\0b\01\00/dev/stdout\00\cc\00\00\00\bc\0b\01\00\d5\00\00"
-  "\00\b4\0b\01\00z\00\00\004T\01\00\e4\0b\01\00\d1\01\01\00fs.PathError\00"
-  "\00\00\00Z\00\00\00\10\0c\01\00\d1\01\01\00\18\00\00\00\03\00\00\00@R\01"
-  "\00\85\0b\01\00@R\01\00\fe\01\01\00\08P\01\00\d7\01\01\00\d5\00\00\00\e4"
-  "\0b\01\00\09\00file\00\00\00handle\00\00\08name\00\00\10dirinfo\00\00\00"
-  "_\00\00\14appendMode\00/\00\ca\00\00\00T\0c\01\00\d5\00\00\00L\0c\01\00"
-  "\c6\00\00\00d\0c\01\00\d5\00\00\00\5c\0c\01\00\da\00\00\00\98\0c\01\00"
-  "\22\02\01\00\18\00\00\00\03\00\00\00\f0Q\01\00\cd\09\01\00\5c\0c\01\00"
-  "\d4\09\01\00|T\01\00\da\09\01\00\d5\00\00\00l\0c\01\00:\00\00\00|T\01\00"
-  "\c0\0c\01\00\22\02\01\00time.Location\00\00\00\1a\00\00\00\0c\0d\01\00"
-  "\22\02\01\00@\00\00\00\07\00\00\00@R\01\00\e7\09\01\00\14\0d\01\00\e0\09"
-  "\01\00\80\0d\01\00\ff\09\01\00@R\01\00#\0a\01\00\5c\0c\01\00,\0a\01\00"
-  "\5c\0c\01\009\0a\01\00D\0d\01\00D\0a\01\00\d5\00\00\00\c0\0c\01\00\16\00"
-  "\00\00 \0d\01\00(\0d\01\00\d5\00\00\00\14\0d\01\00z\00\00\00D\0d\01\00"
-  "L\0d\01\00\22\02\01\00time.zone\00\00\00\d5\00\00\00(\0d\01\00Z\00\00\00"
-  "x\0d\01\00\22\02\01\00\10\00\00\00\03\00\00\00@R\01\00\e7\09\01\00lO\01"
-  "\00\ee\09\01\00\10O\01\00\f7\09\01\00\d5\00\00\00L\0d\01\00\16\00\00\00"
-  "\8c\0d\01\00\94\0d\01\00\d5\00\00\00\80\0d\01\00\fa\00\00\00\b4\0d\01\00"
-  "\bc\0d\01\00\22\02\01\00time.zoneTrans\00\00\d5\00\00\00\94\0d\01\00\da"
-  "\00\00\00\f0\0d\01\00\22\02\01\00\10\00\00\00\04\00\00\00\5c\0c\01\00\04"
-  "\0a\01\00LM\01\00\0b\0a\01\00\10O\01\00\13\0a\01\00\10O\01\00\1b\0a\01"
-  "\00\d5\00\00\00\bc\0d\01\00write52512562531251562578125390625195312597"
-  "6562548828125244140625122070312561035156253051757812515258789062576293"
-  "9453125381469726562519073486328125953674316406254768371582031252384185"
-  "7910156251192092895507812559604644775390625298023223876953125149011611"
-  "9384765625745058059692382812537252902984619140625186264514923095703125"
-  "9313225746154785156254656612873077392578125232830643653869628906251164"
-  "1532182693481445312558207660913467407226562529103830456733703613281251"
-  "4551915228366851806640625727595761418342590332031253637978807091712951"
-  "6601562518189894035458564758300781259094947017729282379150390625454747"
-  "3508864641189575195312522737367544323205947875976562511368683772161602"
-  "9739379882812556843418860808014869689941406252842170943040400743484497"
-  "0703125142108547152020037174224853515625710542735760100185871124267578"
-  "1253552713678800500929355621337890625177635683940025046467781066894531"
-  "2588817841970012523233890533447265625444089209850062616169452667236328"
-  "1252220446049250313080847263336181640625111022302462515654042363166809"
-  "0820312555511151231257827021181583404541015625277555756156289135105907"
-  "9170227050781251387778780781445675529539585113525390625693889390390722"
-  "8377647697925567626953125346944695195361418882384896278381347656251734"
-  "7234759768070944119244813919067382812586736173798840354720596224069595"
-  "3369140625\00\00\00\00\00\00\00S\e4`\cdi\c82\17\88\02\1c\08\a0\d5\8f\fa"
-  "\b4\8e\5c B\bd\7f\0e\95\81\11\05\84\e5\99\9ca\b2s\a8\92\ac\1fR\fa\e1U\06"
-  "\e5^\c0\c3\f9\9e\90R\b7\97\a7\e6xZ\ebG\9ev\b0\f4\5cc\9a\93\d2\be(\90\8b"
-  "\18\f3\ec\22J\ee\983\fc\808\87\ee2t\ae\de/\a8\ab\dc)\bf?;\a1\06)\aa?\11"
-  "Z\d6;\92\d6S\f4\ee\07\c5$\a4Y\ca\c7J\f8ee\1bf\b4X\95I\f6-\0d\f0\bcy]v\bf"
-  ">\a2\7f\e1\ae\ba\dcsy\10,,\d8\f4So\ce\8a\df\99Z\e9i\e8K\8a\9b\1b\07y\94"
-  "\05\c1\b6+\a0\d8\91\84\e2\del\82\e2H\97\f9Fq\a46\c8N\b6%\9b\16\08#\1b\1b"
-  "\fd\b7\98\8dMDz\e2\e3\f7 \0e\e5\f5\f00\fer\7fx\b0j\8cm\8e5\a9Q^3-\bd\bd"
-  "O\9f\96\5c\85\ef\08\b2\82\13\e65\80x,\ad#G\bc\b3f+\8b\de1\cc\af!P\cb;L"
-  "v\acU0 \fb\16\8b=\bf\1b*$\beJ\df\93\17k<\e8\b9\dc\ad\0d\af\a24\adm\1d\d7"
-  "x\dd\85Kb\e8S\d9h\ad\e5@\8cdr\86k\aa3o=q\d4\87\c2\18\1fQ\af\fd\0eh\06\95"
-  "\00\cb\8c\8d\c9\a9\f2\def%\1b\bd\12\02H\ba\c0\fd\ef\f0;\d4WK`\f70\b6K\01"
-  "mt\98\fe\95v\a5\84-^85\bd\a3\9eA\88\91>~;\d4\ce\a5\b9u\86\82\acL\06R\ea"
-  "5\ce]J\89B\cf\93\09\94\d1\eb\efCs\b2\e1\a0z\ce\95\89\81\f8\0b\f9\c5\e6"
-  "\eb\14\10\1f\1aI\19B\fb\eb\a1\f6Nww\e0&\1a\d4\a6`\9b\9f\12\faf\ca\b4\22"
-  "U\95\98\b0 \89\d08\82G\97\b8\00\fd\b05U]_n\b4U\82c\b1\8c^s \9e\1d\83\aa"
-  "4\f7\89!\ebb\bc\dd/6\90\a8\c5\e4#\d5\01u\ec\e9\a5{+\d5\bbC\b4\12\f7n6%"
-  "!\c93\b2G-;eU\aa\b0k\9a\0a\84ni\bb\c0\9e\99\f8\89\be\ea\d4\9c\06\c1\0d"
-  "%\caC\eap\06\c0v,n%\0aDH\f1(W^j\92\06\048\ca\dbdW\86*\cd\96\f2\ec\f5\04"
-  "7\08\05\c6\bc\12>\ed'u\80\bc.h3\c6DJ\86\f7k\97\8d\e8q\92\a0\eb\1d!\e0\fb"
-  "j\ee\b3z\a3~X1\87[D\93d)\d8\ba\05\ea`YL\9e\ae\fdhr\15\b8\bd3\8e)\87$\b9"
-  "o\dfE\1a=\03\cf\1a\e6V\e0\f8y\d4\b6\d3\a5\abk0\06b\c1\d0\8fl\18w\98\89"
-  "\a4H\8f\96\86\bc\87\ba\f1\c4\b3\87\de\94\fe\ab\cd\1a3<\a8\ab)).\b6\e0\14"
-  "\0b\1d\7f\8b\c0\f0\9f%I\0b\ba\d9\dcq\8c\d9M\e4^\ae\f0\ec\07o\1b\8e(\10"
-  "T\8e\afPa\9d\f6\d9,\e8\c9J\a2\b12\14\e9q\db\d2\5c\22:\08\1c1\ben\05\af"
-  "\9f\ac1'\89\06\f4\aaH\0ac\bdm\ca\c6\9a\c7\17\fep\ab\08\b1\d5\da\cc\bb,"
-  "\09}x\81\b9\9d=M\d6\a5\8e\c5\08`\f5\bb%N\eb\f0\93\82F\f0\85N\f2\f6\0a\b8"
-  "\f2*\af!&\ed8#Xl\a7\e1\ae\b4\0df\af\f5\1a\aao(\07,nG\d1M\ed\90\c8\9f\8d"
-  "\d9P\caEy\84\db\a4\cc\82\a0(\b5\ba\07\f1\0f\e5<\97\97e\12\ce\7f\a3\c8r"
-  "b\a9I\edS\1e\0c}\fd\fe\96\c1_\ccz\0f\bb\13\9c\e8\e8%O\dc\bc\be\fc\b1w\ff"
-  "\ac\e9T\8ca\91\b1w\b1\096\f7=\cf\aa\9f\17$j\ef\b9\f5\9d\d5\1d\8c\03u\0d"
-  "\83\95\c7\1d\adDk(s\05K%oD\d2\d0\e3z\f92\ec\0aC\f9g\e3Nw\c5j\83b\ce\ec"
-  "\9b?\a7\cd\93\f7A\9c\22\d5vE$\fb\01\e8\c2\0f\11\c1xuRCk\8a\d4V\edy\02\a2"
-  "\f3\a9\aaxk\89\13\0a\83\d6DV4\8cAE\98S\d5V\c6k\98\cc#\0c\d6kA\ef\91V\be"
-  "\a8\8a\ec\b7\86\be\bf,\8f\cb\c6\11k6\ec\ed\a9\d6\f32\14\d7\f7{9?\1c\eb"
-  "\02\a2\b3\94S\cc\b0?\d9\cc\f5\da\07O\e3\a5\83\8a\e0\b9h\ff\9c\8f\0f@\b3"
-  "\d1\c9\22\5c\8f$\adX\e8\a1\1f\c2\b9\09\08\10#\be\95\99\d96l7\91\8a\a72"
-  "(\0c\0a\d4\ab-\fb\ff\8fDG\85\b5lQ?2\8f\0c\c9\16\f9\f9\ff\b3\15\99\e6\e2"
-  "\e3\92g\7f\d9\a7=\ae;\fc\7f\90\ad\1f\d0\8d\9cwA\df\cf\11\cd\99J\fb\9f\f4"
-  "\98'D\b1\83\d5\11\d7CV@@\1d\fa\c71\7f1\95\ddr%kf\ea5(HR\fc\1c\7f\ef>}\8a"
-  "\cf\ee\05\00eC2\daf;\e4^\ab\8e\1c\ad\82j\07@>\d4\be\90@J\9d6V\b2c\d8\91"
-  "\a2\04\e8\a6DwZhN\22\e2uO>\876\cb\05\a2\d0\15\15q\02\e2\aaZS\e3\0d\a9\03"
-  ">\87\caD[Z\0d\83\9aU1(\5cQ\d3\c2\86\94\fe\0ayX\e8\91\80\d5\1e\99\d9\12"
-  "\84r\a89\beM\97nb\b6\e0\8af\ff\8f\17\a5\8f\12\c8-!=\0a\fb\e3\98-@\ffs]"
-  "\ce\99\0b\9d\bc4f\e6|\8e\7f\1c\88\7fh\fa\80\80N\c4\eb\c1\ff\1f\1cr\9f#"
-  "j\9f\029\a1 b\b5f\b2\ff'\a3N\87\acDGC\87\c9\a8\bab\00\9f\ff\f1K\22\a9\d7"
-  "\15\19\14\e9\fb\a9\b4=`\c3?wo\b5\c9\a6\ad\8f\acq\9d\d3!M8\b4\0fU\cb\22"
-  "|\10\99\b3\17\ce\c4Hj`F\a1S*~+\9bT\7f\a0\9d\01\f6mB\fc\cbDt\da.\fb\e0\94"
-  "O\84\02\c1\99\08S\fb\feU\11\91\fa9\19zc%C1\c0\ca'\ba~\abU5y\88\9fX\bc\ee"
-  "\93=\f0\deX4/\8bU\c1K\b5c\b75u|&\96\16o\01\fb\ed\aa\b1\9e\a2<%\83\92\1b"
-  "\b0\bb\dc\ca\c1y\a9\15^F\cb\8b\ee#w\22\9c\ea\c9\1e\19\ec\89\cd\fa\0b_\17"
-  "uv\8a\95\a1\92{f\1fg\ec\80\f9\ce6]\12\14\ed\faI\b7\1a@\e7\80'\e1\b7\82"
-  "\84\f4\16Y\a8y\1c\e5\10\88\90\b0\b8\ec\b2\d1\d2X\ae7\09\cc1\8f\15\aa\b4"
-  "\dc\e6\a7\1f\86\07\ef\99\85\0b?\fe\b2\9a\d4\e1\93\e0\91\a7g\c9j\00g\ce"
-  "\ce\bd\df\e0$m\5c,\bb\c8\e0\bdB`\00A\a1\d6\8b\18n\88s\f7\e9\faXmSx@\91"
-  "I\cc\ae\9e\89jPu\a49\afHh\96\90\f5[\7f\da\03\96BR\c9\06\84m-\01^zy\99\8f"
-  "\88\83;\d3\a6{\08\e5\c8x\81\f5\d8\d7\7f\b3\aad\0a\88\90\9aJ\1e\fb\d6\e1"
-  "2\cf\cd_`\d5\7f\06U\9a\a0\ee\f2\5c&\cd\7f\a1\e0;\5c\85\1eH\ea\c0H\aa/\f4"
-  "o\c0\df\c9\d8J\b3\a6&\da$\f1\da\94;\f1\8b\b0W\fc\8e\1d`\d0X\08\b7\d6\08"
-  "=\c5vW\ce\b6]y\12<\82n\cad\0cK\8cvT\ed\81$\b5\17\17\cb\a2\09\fd}\cf]/\94"
-  "\a9h\a2m\a2\dd\dc}\cbL|]C5;\f9\d3\02\0b\09\0b\15T]\fe\afm\1aJ\01\c5{\c4"
-  "\e1\a6\e5&\8dT\fa\9e\1b\09\a1\9cA\b6\9a5\9a\10\9fp\b0\e9\b8\c6bK\c9\03"
-  "\d2c\01\c3\c0\d4\c6\8c\1c$g\f8\1d\cf]Bc\de\e0y\f8D\fc\d7\91v@\9b\e4B\f5"
-  "\12\fc\15Y\986V\fbM6\94\10\c2\9d\93\b2\17{[o>\c4+z\e1C\b9\94\f2B\9c\cf"
-  "\ee,\99\05\a7Z[\ecl\ca\f3\9c\97S\83\83*x\ff\c6P1r'\08\bd0\84\bd(d$5V\bf"
-  "\f8\a4\bdN1J\ec<\e5\ec\99\be6\e1\95w\1b\876\d1^\ae\13F\0f\94?n\84Y{U\e2"
-  "(\84\85\f6\99\98\17\13\b9\cf\89\e5/\da\ea\1a3\e5&t\c0~\ddW\e7!v\ef]\c8"
-  "\d2\f0?O\98H8o\ea\96\90\a9Skuz\07\ed\0fc\beZ\06\0b\a5\bc\b4\94(\c6\12Y"
-  "I\e8\d3\fbm\f1\c7M\ce\eb\e1\5c\d9\bb\ab\d7-qd\bd\e4\f6\9c\f0`3\8d\b3\cf"
-  "\aa\96My\8d\bd\ec\9d4\c4,9\80\b0\a0\83U\fc\a0\d7\f0\ecg\c5A\f5wG\a0\dc"
-  "Dr\b5\9d\c4\86\16\f4`\1bI\f9\aa,\e4\89\d5\ce\22\c5u(\1c19b\9b\b7\d57]\ac"
-  "\8b\82k6\932c}\c7:\82%\cb\85t\d7\971\03\02\9c\ff]\ae\bcdq\f7\9e\d3\a8\86"
-  "\fc\fd\83\02\83\7f\f5\d9\eb\bdM\b5\86\08S\a8{\fd$\c3c\dfr\d0f-\a1b\a8\ca"
-  "g\d2m\1e\f7Y\9e\cbGB`\bc\a4=\a9\de\80\83\08\e6t\f0\85\be\d9Rx\eb\0d\8d"
-  "S\16a\a4\8b\1f\92l'.\90gVfQp\e8[y\cd\b6S\db\a3\d8\1c\ba\00\f6\df2Fq\d9"
-  "k\80\a4(\d2\cc\0e\a4\e8\80\f3\97\bf\97\cd\cf\86\a0\cd\b2\06\80\12\cd\22"
-  "a\f0}\af\fd\c0\83\a8\c8\81_\08 W\80kyl]\1b=\b1\a4\d2\fa\b0;\05t60\e3\cb"
-  "c\1a1\c6\ee\a6\c3\9c\9c\8a\06\11D\fc\db\be\fc`\bdw\aa\90\f4\c3D-H\15U\fb"
-  "\92\ee;\b9\ac\15\d5\b4\f1\f4J\1cM-\15\dd\1bu\c5\f3\8b-\05\11\17\99]c\a0"
-  "xZ\d4b\d2\b6\f0\eexF\d5\5c\bf4|\c8\16q\89\fb\86\e4\ac*\17\98\0a4\ef\a0"
-  "M=\ae\e65]\d4\0e\acz\0e\9f\86\80\95\09\a1\ccY`\83t\89\12W\19\d2F\a8\e0"
-  "\baK\c9?p8\a4\d1+\d7\ac\9f\86X\d2\98\e9\cf\dd'F\a3\06c{\06\cc#Tw\83\ff"
-  "\91B\d5\b1\17L\c8;\1a\08\bf,)Ud\7f\b6\93J\9e\1d_\ba\ca \ca\eewsj=\1f\e4"
-  "\9c\ee\82r{\b4~T>\f5*\88b\86\93\8eC\aa#O\9aa\9e\e9\8d\b25*\fbg8\b2\d4\94"
-  "\ec\e2\00\fa\05d1\1f\c3\f4\f9\81\c6\de\04\dd\d3\8d@\bc\83\de~\f3\f98<\11"
-  "<\8bE\d4H\b1P\ab$\96^p8G\8b\15\0b\aeW\09\9b\dd$\d6\ad;v\8c\06\19\ee\da"
-  "\8d\d9\d6\e5\80\0a\d7\a5L\e5\c9\17\a4\cf\d4\a8\f8\87L\1f!\cdL\cf\9f^\bc"
-  "\1d\8d\03\0a\d3\f6\a9\1fgi\00 \c3Gv+ep\84\cc\87t\d4s\e0A\00\f4\d9\ec);"
-  "?\c6\d2\df\d4\c8\84\90XR\00q\10h\f4\09\cfw\c7\17\0a\fb\a5\b4\eef@\8d\14"
-  "\82q\cc\c2U\b9\9d\ccy\cf0U@H\d8L\f1\c6\bf\99\d5\93\e2\1f\ac\81|jPZ\0e\a0"
-  "\ad\b8/\00\cb8\db'\17\a2\1c\85\e4\f0\11\08\d9\a6;\c0\fd\06\d2\f1\9c\ca"
-  "c\a6\1dm\16J\8f\90J0\bd\88F.D\fd\fe\872\04N\8eY\9a.>v\15\ec\9cJ\9e\fd)"
-  "?\85\e1\f1\ef@\ba\cd\d3\1a'D\dd\c5|\f4\8e\e6Y\ee+\d1(\c1\88\e10\95T\f7"
-  "\ceX\190\f8t\bb\82\b9x\f5\8c>\dd\94\9a\01\af\1f<6Rj\e3\e7\d620\8e\14:\c1"
-  "\c1\9a'\cb\c3\e6D\dc\a1\8c?\bc\b1\99\88\f1\b9\c0\f8^:\10\ab)\e5\b7\a7\15"
-  "\0f`\f5\96\e7\f0\b6\f6H\d4\15t\de\a5\11\db\12\b8\b2\bc!\add4[I\1b\11V\0f"
-  "\d6\91\17f\df\eb4\ec\be\00\d9\0d\b1\ca\95\c9%\bb\ce\9fk\93B\a7\ee@OQ]="
-  "\fb;\efi\c2\87F\b8\12Q*\11\a3\a5\b4\0c\fa\0ak\04\b3)X\e6\abr\ba\ea\85\e7"
-  "\f0G\dc\e6\c2\e2\0f\1a\f7\8fV\0fieg!\edY\93\a0s\db\93\e0\f4\b3,S\c3>\c1"
-  "ih0\b8\88P\d2\b8\18\f2\e0\fb\13:\c7\18BA\1esUr\83sO\97\8c\fa\98\08\f9\9e"
-  "\92\d1\e5\cf\eaNdP#\bd\af9\bfJ\b7F\f7E\df\83\a5b}$l\ac\db\83\b7\8e2\8c"
-  "\ba\8bkr\a7]\ce\96\c3K\89de2?/\a9n\06O\11\f5\81|\b4\9e\ab\bd\fe\fe\0e{"
-  "S\0a\c8\a2Ur\a2\9ba\86\d66__\e9,t\06\bd\85u\87E\01\fd\13\86\047\b7#8\11"
-  "H,\e7R\e9\96A\fc\98\a7\c5\04\a5,\86\15Z\f7\a0\a7\a3\fcQ;\7f\d1\fb\22\e7"
-  "\dbsM\98\9a\c4H\e6=\13\85\ef\82\ba\eb\e0\d2\d0`>\c1\f5\da_\0dXf\ab\a3\a8"
-  "&\99\07\05\f9\8d1\b3\d1\b7\10\ee?\96\ccRp\7fIFw\f1\fd\1f\c6\e5\94\e9\cf"
-  "\bb\ff3\a6\ef\ed\8b\ea\b6\fe\d3\9b\0f\fd\f1a\d5\9f\c0\8fk\e9.\a5d\fe\c8"
-  "\82S|n\ba\ca\c7\b0s\c6\a3z\ce\fd={ch\1b\0ai\bd\f9N\08\5c\a6\0c\a1\be\06"
-  "->!Q\a6a\16\9cb\0a\f3\cfOInH\b8\8di\e5\0f\fa\1b\c3\fa\cc\ef\c3\a3\db\89"
-  "Z&\f1\c3\de\93\f8\e2\f3\1c\e0uZF)\96\f8\b7v:k\5c\dbm\98#X\13\f1\97\b3\bb"
-  "\f6e\14\09\863R\89\be,.X\ed}\a0jt\7fY\8bg\c0\a6+\ee\dc\1cW\b4N\a4\c2\a8"
-  "\ef\17\b7@8H\db\94\13\e4labM\f3\92\eb\dd\e4PF\1a\12\ba\17\1d\c8\f9\ba "
-  "\b0wf\15\1e\e5\d7\a0\96\e8.\12\1d\dct\14\ce\0a`\cd2\ef\86$^\91\baV$\13"
-  "\92\99\81\0d\b8\80\ff\aa\a8\ad\b5\b5il\ed\97\f6\ff\e1\10\e6`\bf\d5\12\19"
-  "#\e3\c1c\f4\1e\fa?\8d\ca\8f\9c\97\c5\ab\ef\f5\8d\b2|\b1\a6\f8\8f0\bd\b3"
-  "\83\fd\b6\96ks\b1\de\db]\d0\f6\b3|\ac\a0\e4\bcd|F\d0\ddk\a9:Bz\f0\cdk\e4"
-  "\0e\f6\be\0d,\a2\8a\c6S\c9\d2\98l\c1\86\9d\92\b3.\11\b7J\ad\b7\a8{\07\bf"
-  "\c7q\e8Dw`z\d5d\9d\d8rI\add\d7\1cG\11\8bJ|l\05_b\87\cf\9b\d8=\0d\e4\98"
-  "\d5-]\9b\c7\c6\f6:\a9\c3\c2N\8d\10\1d\ffJy4\82yx\b4\89\d3\ba9QX*r\df\ce"
-  "\cb`\f1K\cb\106\84(\88e\ee\b4N\97\c2\fe\b8\ed\1e\fe\94C\a52\ea\fe)b\22"
-  "=s>'\a9\a6=z\94\ce_R?Z}5\06\08\87\b8)\88f\cc\1c\81\f7&\cf\b0\dc\c2\07\ca"
-  "\a8&4*\80\ffc\a1\b5\f0\02\dd\93\b3\89\fcR0\c14`\ff\bc\c9\e2\acC\d4x \ac"
-  "\bbg|\f1A8?,\fc\0dL\aa\84K\94K\d5\c0\ed6)\83\a7\9b\9d\11\df\d4e^y\9e\0a"
-  "1\a9\84\f3c\91\02\c5\d5\16J\ff\b5\17FM}\d3e\f0\bc5C\f6EN\8e\bf\d1\ceKP"
-  ".\a4?\16\96\01\ea\99\d6\e1q/\86\c2^\e49\8d\cf\9b\fb\81d\c0LZN\bb'sv]\88"
-  "p\c3\82z\a2}\f0o\f8\10\d5\f8\07j:U&\ba\91\8c\85N\96\8b6U\0a\f7\89\04\89"
-  "\ea\af(\b6\ef&\e2\bb.\84\ea\cct\acE+\e5\db\b2\a3\ab\b0\da\ea\9d\92\12\00"
-  "\c9\8b\0b;o\c9OFk\ae\c8\92D7\17@\bbn\ce\09\cb\bb\e3\17\06\daz\b7\15\05"
-  "\1d\10j\0aB\cc\bd\aa\dc\9d\87\90Y\e5-#\12J\82F\a9\9f\b6\ea\a9\c2T\faW\8f"
-  "\f9\ab\96\dc\22\98\93GdeT\f3\e9\f8-\b3\f7V\bc\93+~xY\bd~)p$w\f9\dfZ\b6"
-  "U<\dbN\ebW6\ef\19\c6v\ea\fb\8b\f1#k\0b\92\22\e6\ed\03k\a0w\14\e5\fa\ae"
-  "\ed\ecE\8e6\ab_\e9\c4\85\88\95Y\9e\b9\da\14\b4\eb\18\02\cb\db\11\9bSu\fd"
-  "\f7\02\b4\88\19\a1&\9f\c2\bdR\d6\81\a8\d2\fc\b5\03\e1\aa_I\f0F3m\e7K\a2"
-  "R\07|\a3D\99\d5\db-V\0c@\a4po\a5\93\84-\e6\ca\7f\85R\b9k\0fP\cdL\cb\8e"
-  "\b8\e5\b8\9f\bd\df\a6\a7\a7F\13\a4\00 ~\b2&\1f\a7\07\ad\97\d0\c8(\0c\8c"
-  "f\00\d4\8e/xs\c8$\cc^\82\fa2\0f/\80\00\89r;V\90\fa-\7f\f6\a2\b9\ff\d2:"
-  "\a0@+O\cak4y\f9\1e\b4\cb\a8\bf\87I\c8\10\f6\e2\bc\86\81\d7\b7&\a1\fe\c9"
-  "\d7\f4-}\ca\d9\0d6\f4\b0\e62\b8$\9f\bb\0dry\1c=P\91C1]\a0?\e6\ed\c6*\91"
-  "\ce\97cL\a4u\94}t\88\cf_\a9\f8\ba\1a\e1>\be\af\86\c9|\ceH\b5\e1\dbi\9b"
-  "ha\99\ce\ad[\e8\fb\1b\02\9b\22\daRD\c2\c3\b9?B\99r\e2\fa\a2\c2A\ab\90g"
-  "\d5\f2\1a\d4g\c9\9f\87\cd\dc\a5\19\09k\ba`\c5\97 \c9\c1\bb\87\e9\00T\0f"
-  "`\cb\05\e9\b8\b6\bdh;\b2\aa\e9#\01)\138>G#g$\ed!e\af\0ar\b6\a0\f9\0b\e3"
-  "\86\0cv\c06\94i>[\8d\0e\e4\08\f8\ce\9b\a8\8f\93pD\b9\04\0e\b20\12\1d\0b"
-  "\b6\c2\c2\92s\b8\8c\95\e7\c2Ho^+\f2\c6\b1\b9\b9;H\f3w\bd\90\f3\1a\0b6\b6"
-  "\ae8\1e(\a8J\1a\f0\d5\ec\b4\b0\e1\8d\c3c\da\c6%2R\dd l\0b(\e2\0e\ad8Z~"
-  "H\9cW_S\8a\94#\07Y\8dQ\d8\c6\f0\9dZ\83-7\e8\acy\ecH\af\b0e\8e\f8lE1\e4"
-  "\f8D\22\18\98'\1b\db\dc\ffX\1bd\cb\9e\8e\1bk\15\0f\bf\f8\f0\08\8a?/\22"
-  "=~Fr\e2\c5\da\d2\ee6-\8b\ac\0f\bbj\cc\1d\d8\0e[w\91\87\aa\84\f8\ad\d7\e9"
-  "\b4\c2\9f\12G\e9\98\ea\ba\94\eaR\bb\cc\86$b\b3G\d7\98#?\a5\e99\a5'\ea\7f"
-  "\a8\ad:\a0\19\0d\7f\ec\8e\0ed\88\8e\b1\e4\9f\d2\ac$\040h\cfS\19\89>\15"
-  "\f9\ee\ee\a3\83\d7-\05<B\c3\a8_+\8eZ\b7\aa\ea\8c\a4My\06\cb\12\f4\927\b6"
-  "11eU%\b0\cd\d0\0b\e4\be\8b\d8\bb\e2\11\bf>_U\17\8e\80\c4\0e\9d\ae\ae\ce"
-  "j[\d6n\0e\b7*\9d\b1\a0uRDZZ\82E\f2\8b\0a\d2du\04\de\c8\12g\d5\f0\f0\e2"
-  "\d6\ee.\8d\06\be\92\85\15\fbk`\85\96\d6MFU=\18\c4\b6{s\ed\9c\86\b8&<L\e1"
-  "\97\aaL\1eu\a4Z\d0(\c4\a8f0K\9f\d9=\d5\dfe\92Mq\043\f5)@\fe\8e\03\a8F\e5"
-  "\ab\7f{\d0\c6\e2?\993\d0\bdr\04R\98\de\96_\9a\84x\db\8f\bf@Dm\8f\85f>\96"
-  "|\f7\c0\a5V\d2s\ef\a8J\a4y\13\00\e7\dd\ad\9a\98'vc\a8\95R]\0dX\18\c0`U"
-  "Y\c1~\b1S|\12\bb\a6\b4\10n\1e\f0\b8\aa\afq\de\9dh\1b\d7\e9\e8p\ca\04\13"
-  "\96\b3\ca\0d\07\abb!q&\92\22\0d\fd\c5\97{`=\d1\c8U\bbi\0d\b0\b6jP|\b7}"
-  "\9a\b8\8c\05;+*\c4\10\5c\e4B\b2\ad\92\8e`\f3w\e3\04[\9az\8a\b9\8e\d3\1e"
-  "Y7\b28\f0U\1c\c6\f1@\19\edg\b2\88f/\c5\deFlk\a37.\91_\e8\01\df\15\a0=;"
-  "K\ac##\c6\e2\bc\ba;1a\8b\1a\08\0d\0a^\97\ec\abw\1bl\a9\8a}9\ae!J\90\8c"
-  "5\bd\e7\96U\22\c7S\ed\dc\c7\d9T.\dawA\d6P~uu\5cT\14\ea\1c\88\e9\b9\d0\d5"
-  "\d1\0b\e5\dd\d2\92si\99$$\aad\e8DK\c6N^\95\87w\d0\c3\bf-\ad\d4>\11\0b\ef"
-  ";\f1Z\bd\b4Jb\da\97<\ec\84\8e\d5\cd\ea\8a\ad\b1\eca\dd\fa\d0\bdK'\a6\f2"
-  "J\81\a5\ed\18\deg\ba\949E\ad\1e\b1\cf\d7\cep\87\94\cf\ea\80\f4\fcCK,\b3"
-  "\ce\81\8d\02M\a9y\83%\a11\fc\14^\f7_B\a20C\a0\13X\e4n\09>;\9a5\f5\f7\d2"
-  "\ca\fcS\88\18n\9d\ca\8b\0d\ca\00\83\f2\b5\87\fd}4U\cfd\a2^wH~\e0\91\b7"
-  "\d1t\9e\9d\81*\03\feJ6\95\da\9dXv%\06\12\c6\04\22\f5\83\bd\dd\83:Q\c5\ee"
-  "\d3\ae\87\96\f7B5yr\96j\92\c4R;uD\cd\14\be\9a\93\82\17\0f<\05\b7u'\8a\92"
-  "\95\00\9am\c18c\dd\12\8b\c6$S\b1,\f7\ba\80\00\c9\f1\03^\ca\eb\16\fc\f6"
-  "\d3\ee{\datP\a0\1d\97\84\f5\bc\a6\1c\bb\f4\88\ea\1a\11\92d\08\e5\bc\e5"
-  "2l\d0\e3\e91+\a5a\95\b6}J\1e\ec\cf\9fCb.2\ff:\07]\1d\92\8e\ee\92\93\c2"
-  "\87\d4\fa\b9\fe\be\09I\b4\a462\aaw\b8\b3\a9\89yh\be.L[\e1M\c4\be\94\95"
-  "\e6\10\0a\f6K\017\9d\0f\d9\ac\b0:\f7|\1d\90\94\8c\f3\9e\c1\84\84S\0f\d8"
-  "\5c\095\dc$\b4\b9o\b0\06\f2\a5e(\13\0e\b4KB\13.\e1\d3E.D\b7\87?\f9\cb\88"
-  "Po\09\cc\bc\8cH\d79\15\a5i\8f\f7\fe\aa$\cb\0b\ff\eb\af\1bM\88Z\0eDs\b5"
-  "\be\d5\ed\bd\ce\fe\e6\db00\95\f8\88\0ah1\97\a5\b46A_p\89=|\ba6+\0d\c2\fd"
-  "\fc\cea\84\11w\cc\abL\1bi\04v\902=\bcBz\e5\d5\94\bf\d6\0f\b1\c1\c2I\9a"
-  "?\a6\b5il\af\05\bd7\86S\1dr3\dc\80\cf\0f#\84G\1bG\ac\c5\a7\a8\a4N@\13a"
-  "\c3\d3+e\19\e2X\17\b7\d1\e9&1\08\ac\1cZd;\dfO\8d\97n\12\83\a3p=\0a\d7\a3"
-  "p=\0a\d7\a3p=\0a\d7\a3\cc\cc\cc\cc\cc\cc\cc\cc\cc\cc\cc\cc\cc\cc\cc\cc"
-  "";
-data rodata_3(offset: 76015) = "\80";
-data rodata_4(offset: 76031) = "\a0";
-data rodata_5(offset: 76047) = "\c8";
-data rodata_6(offset: 76063) = "\fa";
-data rodata_7(offset: 76078) = "@\9c";
-data rodata_8(offset: 76094) = "P\c3";
-data rodata_9(offset: 76110) = "$\f4";
-data rodata_10(offset: 76125) = "\80\96\98";
-data rodata_11(offset: 76141) = " \bc\be";
-data rodata_12(offset: 76157) = "(k\ee";
-data rodata_13(offset: 76173) = "\f9\02\95";
-data rodata_14(offset: 76188) = "@\b7C\ba";
-data rodata_15(offset: 76204) = "\10\a5\d4\e8";
-data rodata_16(offset: 76220) = "*\e7\84\91";
-data rodata_17(offset: 76235) = "\80\f4 \e6\b5";
-data rodata_18(offset: 76251) = "\a01\a9_\e3";
-data rodata_19(offset: 76267) = "\04\bf\c9\1b\8e";
-data rodata_20(offset: 76283) = "\c5.\bc\a2\b1";
-data rodata_21(offset: 76298) = "@v:k\0b\de";
-data rodata_22(offset: 76314) = "\e8\89\04#\c7\8a";
-data rodata_23(offset: 76330) = "b\ac\c5\ebx\ad";
-data rodata_24(offset: 76345) = "\80z\17\b7&\d7\d8";
-data rodata_25(offset: 76361) = "\90\acn2x\86\87";
-data rodata_26(offset: 76377) = "\b4W\0a?\16h\a9";
-data rodata_27(offset: 76393) =
+  "\01\00\0d\02\01\00\0c\00\00\00\02\00\00\00\e0P\01\00(\03\01\004S\01\00"
+  "1\02\01\00\d5\00\00\00\84\01\01\00fmt\00reflect\00errors\00os\00\09\04"
+  "fmtFlags\00io/fs\00\04\10Err\00\04\10LayoutElem\00\04\18ValueElem\00sy"
+  "scall\00\04\08Path\00\04\08Value\00internal/reflectlite\00time\00\04 M"
+  "essage\00\04\08Kind\00invalidboolintint8int16int32int64uintuint8uint16"
+  "uint32uint64uintptrfloat32float64complex64complex128stringunsafe.Point"
+  "erchaninterfaceptrslicearrayfuncmapstructkind\00z\00\00\00\f0T\01\00\04"
+  "\03\01\00\0d\02\01\00reflectlite.TypeError\00\00\00Z\00\00\00 \03\01\00"
+  "\0d\02\01\00\08\00\00\00\01\00\00\00\e0P\01\00(\03\01\00\d5\00\00\00\04"
+  "\03\01\00\04\00Method\00unimplemented: size of type\00\00\00\001\03\01"
+  "\00\1b\00\00\00chan<- <-chan chan (chan [][]struct {}; }interface {}st"
+  "ruct {reflect: field index out of range\00\00\95\03\01\00!\00\00\00ref"
+  "lect: cannot make *****T type\c0\03\01\00 \00\00\00reflect: call of re"
+  "flect.Type. on invalid typeBoolBytesComplexElemFieldFloatreflect: slic"
+  "e index out of range\00\00\004\04\01\00!\00\00\00reflect: string index"
+  " out of range\00\00\00\00\00\00`\04\01\00\22\00\00\00IndexInt(reflect."
+  "Value).Interface: unexported\00\00\00\98\04\01\00%\00\00\00IsNilLen< V"
+  "alue>UintUnsafePointerreflect: value is not addressable\00\00\00\00\00"
+  "\00\e9\04\01\00!\00\00\00MapRangereflect.MapIter.Value called on inval"
+  "id iterator \05\01\000\00\00\00 on zero Valuereflect: call of  on  Val"
+  "ue\00\00\00z\00\00\00\c0T\01\00\a8\05\01\00\bc\01\01\00errors.errorStr"
+  "ing\00\00Z\00\00\00\c4\05\01\00\bc\01\01\00\08\00\00\00\01\00\00\00\e0"
+  "P\01\00\cc\05\01\00\d5\00\00\00\a8\05\01\00\00\00s\00sync: unlock of u"
+  "nlocked Mutex\00\00\d0\05\01\00\1e\00\00\00stack overflowfree: invalid"
+  " pointer\00\00\00\00\00\06\06\01\00\15\00\00\00realloc: invalid pointe"
+  "r(\06\01\00\18\00\00\00Growing the heap!!!out of memorycomparing un-co"
+  "mparable typetype assert failedpanic: panic: runtime error: nil pointe"
+  "r dereferenceassignment to entry in nil mapindex out of rangeslice out"
+  " of rangeunsafe.Slice/String: len out of range. s000000000000000000000"
+  "000000000000000000000000---*Unregistered unreachable\00\00\00r\07\01\00"
+  "\0b\00\00\00  pause:  set sleep:runtime: addSleepTask: expected next t"
+  "ask to be nil\00\9c\07\01\003\00\00\00  -> sleep new queue  awake:  sl"
+  "eeping...    task sleeping:  run:SchedulerMainGCdeadlocked: no event s"
+  "ource\0d\00RawType\00\00\00\00\c3\00\00\00X\08\01\00\d5\00\00\00P\08\01"
+  "\00\c4\00\00\00h\08\01\00\d5\00\00\00`\08\01\00\c7\00\00\00x\08\01\00\d5"
+  "\00\00\00p\08\01\00\c9\00\00\00\88\08\01\00\d5\00\00\00\80\08\01\00bad"
+  " type in compare: sync: WaitGroup counter overflowed\00\a5\08\01\00\22"
+  "\00\00\00sync: negative WaitGroup counter\d0\08\01\00 \00\00\00file al"
+  "ready existsfile does not existfile already closederrno \00\04\01\00\00"
+  "\09\01\00\00\0e\04\00\00\10\04\00\00\12\04\00\00\14\01\00\00SundayTues"
+  "dayWednesdayThursdayFridaySaturdayFebruaryMarchAprilMayJuneJulyAugustS"
+  "eptemberOctoberNovemberDecemberJanJanuaryMonMondayMST2006-070000-07:00"
+  ":00-0700-07:00-07Z070000Z07:00:00Z0700Z07:00Z07: cannot parse  as pars"
+  "ing time \ef\bf\bdz\00\00\00hU\01\00X\0a\01\00\22\02\01\00time.ParseEr"
+  "ror\00Z\00\00\00\94\0a\01\00\22\02\01\00(\00\00\00\05\00\00\00\e0P\01\00"
+  "\9c\0a\01\00\e0P\01\00\05\02\01\00\e0P\01\00\dd\01\01\00\e0P\01\00\ea\01"
+  "\01\00\e0P\01\00'\02\01\00\d5\00\00\00X\0a\01\00\04\00Layout\00\00\00w"
+  "all\00\00\08ext\00\00\10loc\00\00\08zone\00\00\00name\00\00\08offset\00"
+  "\00\0cisDST\00\00\14tx\00\00\00when\00\00\08index\00\00\09isstd\00\00\0a"
+  "isutc\00\00 extend\00\00(cacheStart\00\000cacheEnd\00\008cacheZone\00t"
+  "ime.Date(, time.time.UTCtime.Localtime.Location(2006-01-02 15:04:05.99"
+  "9999999 -0700 MST m=PMAMpmam%!Month()UTC,M3.2.0,M11.1.0Local\00P\09\01"
+  "\00\06\00\00\00\cc\09\01\00\06\00\00\00V\09\01\00\07\00\00\00]\09\01\00"
+  "\09\00\00\00f\09\01\00\08\00\00\00n\09\01\00\06\00\00\00t\09\01\00\08\00"
+  "\00\00\c2\09\01\00\07\00\00\00|\09\01\00\08\00\00\00\84\09\01\00\05\00"
+  "\00\00\89\09\01\00\05\00\00\00\8e\09\01\00\03\00\00\00\91\09\01\00\04\00"
+  "\00\00\95\09\01\00\04\00\00\00\99\09\01\00\06\00\00\00\9f\09\01\00\09\00"
+  "\00\00\a8\09\01\00\07\00\00\00\af\09\01\00\08\00\00\00\b7\09\01\00\08\00"
+  "\00\00dalTLDpSugct?rwxrwxrwx : \04\00Op\00\00\00\da\00\00\00x\0c\01\00"
+  "7\02\01";
+data rodata_2(offset: 68728) =
+  "\d5\00\00\00d\0c\01\00/dev/stdout\00\cc\00\00\00\94\0c\01\00\d5\00\00\00"
+  "\8c\0c\01\00z\00\00\00\18U\01\00\bc\0c\01\00\d1\01\01\00fs.PathError\00"
+  "\00\00\00Z\00\00\00\e8\0c\01\00\d1\01\01\00\18\00\00\00\03\00\00\00\e0"
+  "P\01\00]\0c\01\00\e0P\01\00\fe\01\01\00\f0P\01\00\d7\01\01\00\d5\00\00"
+  "\00\bc\0c\01\00\09\00file\00\00\00handle\00\00\08name\00\00\10dirinfo\00"
+  "\00\00_\00\00\14appendMode\00/\00\c6\00\00\00,\0d\01\00\d5\00\00\00$\0d"
+  "\01\00\da\00\00\00`\0d\01\00\22\02\01\00\18\00\00\00\03\00\00\00h\0d\01"
+  "\00\a5\0a\01\00$\0d\01\00\ac\0a\01\00`U\01\00\b2\0a\01\00\d5\00\00\004"
+  "\0d\01\00\cb\00\00\00p\0d\01\00\d5\00\00\00h\0d\01\00:\00\00\00`U\01\00"
+  "\98\0d\01\00\22\02\01\00time.Location\00\00\00\1a\00\00\00\e4\0d\01\00"
+  "\22\02\01\00@\00\00\00\07\00\00\00\e0P\01\00\bf\0a\01\00\ec\0d\01\00\b8"
+  "\0a\01\00X\0e\01\00\d7\0a\01\00\e0P\01\00\fb\0a\01\00$\0d\01\00\04\0b\01"
+  "\00$\0d\01\00\11\0b\01\00\1c\0e\01\00\1c\0b\01\00\d5\00\00\00\98\0d\01"
+  "\00\16\00\00\00\f8\0d\01\00\00\0e\01\00\d5\00\00\00\ec\0d\01\00z\00\00"
+  "\00\1c\0e\01\00$\0e\01\00\22\02\01\00time.zone\00\00\00\d5\00\00\00\00"
+  "\0e\01\00Z\00\00\00P\0e\01\00\22\02\01\00\10\00\00\00\03\00\00\00\e0P\01"
+  "\00\bf\0a\01\00DP\01\00\c6\0a\01\00\e8O\01\00\cf\0a\01\00\d5\00\00\00$"
+  "\0e\01\00\16\00\00\00d\0e\01\00l\0e\01\00\d5\00\00\00X\0e\01\00\fa\00\00"
+  "\00\8c\0e\01\00\94\0e\01\00\22\02\01\00time.zoneTrans\00\00\d5\00\00\00"
+  "l\0e\01\00\da\00\00\00\c8\0e\01\00\22\02\01\00\10\00\00\00\04\00\00\00"
+  "$\0d\01\00\dc\0a\01\00$N\01\00\e3\0a\01\00\e8O\01\00\eb\0a\01\00\e8O\01"
+  "\00\f3\0a\01\00\d5\00\00\00\94\0e\01\00write52512562531251562578125390"
+  "6251953125976562548828125244140625122070312561035156253051757812515258"
+  "7890625762939453125381469726562519073486328125953674316406254768371582"
+  "0312523841857910156251192092895507812559604644775390625298023223876953"
+  "1251490116119384765625745058059692382812537252902984619140625186264514"
+  "9230957031259313225746154785156254656612873077392578125232830643653869"
+  "6289062511641532182693481445312558207660913467407226562529103830456733"
+  "7036132812514551915228366851806640625727595761418342590332031253637978"
+  "8070917129516601562518189894035458564758300781259094947017729282379150"
+  "3906254547473508864641189575195312522737367544323205947875976562511368"
+  "6837721616029739379882812556843418860808014869689941406252842170943040"
+  "4007434844970703125142108547152020037174224853515625710542735760100185"
+  "8711242675781253552713678800500929355621337890625177635683940025046467"
+  "7810668945312588817841970012523233890533447265625444089209850062616169"
+  "4526672363281252220446049250313080847263336181640625111022302462515654"
+  "0423631668090820312555511151231257827021181583404541015625277555756156"
+  "2891351059079170227050781251387778780781445675529539585113525390625693"
+  "8893903907228377647697925567626953125346944695195361418882384896278381"
+  "3476562517347234759768070944119244813919067382812586736173798840354720"
+  "5962240695953369140625\00\00\00\00\00\00\00S\e4`\cdi\c82\17\88\02\1c\08"
+  "\a0\d5\8f\fa\b4\8e\5c B\bd\7f\0e\95\81\11\05\84\e5\99\9ca\b2s\a8\92\ac"
+  "\1fR\fa\e1U\06\e5^\c0\c3\f9\9e\90R\b7\97\a7\e6xZ\ebG\9ev\b0\f4\5cc\9a\93"
+  "\d2\be(\90\8b\18\f3\ec\22J\ee\983\fc\808\87\ee2t\ae\de/\a8\ab\dc)\bf?;"
+  "\a1\06)\aa?\11Z\d6;\92\d6S\f4\ee\07\c5$\a4Y\ca\c7J\f8ee\1bf\b4X\95I\f6"
+  "-\0d\f0\bcy]v\bf>\a2\7f\e1\ae\ba\dcsy\10,,\d8\f4So\ce\8a\df\99Z\e9i\e8"
+  "K\8a\9b\1b\07y\94\05\c1\b6+\a0\d8\91\84\e2\del\82\e2H\97\f9Fq\a46\c8N\b6"
+  "%\9b\16\08#\1b\1b\fd\b7\98\8dMDz\e2\e3\f7 \0e\e5\f5\f00\fer\7fx\b0j\8c"
+  "m\8e5\a9Q^3-\bd\bdO\9f\96\5c\85\ef\08\b2\82\13\e65\80x,\ad#G\bc\b3f+\8b"
+  "\de1\cc\af!P\cb;Lv\acU0 \fb\16\8b=\bf\1b*$\beJ\df\93\17k<\e8\b9\dc\ad\0d"
+  "\af\a24\adm\1d\d7x\dd\85Kb\e8S\d9h\ad\e5@\8cdr\86k\aa3o=q\d4\87\c2\18\1f"
+  "Q\af\fd\0eh\06\95\00\cb\8c\8d\c9\a9\f2\def%\1b\bd\12\02H\ba\c0\fd\ef\f0"
+  ";\d4WK`\f70\b6K\01mt\98\fe\95v\a5\84-^85\bd\a3\9eA\88\91>~;\d4\ce\a5\b9"
+  "u\86\82\acL\06R\ea5\ce]J\89B\cf\93\09\94\d1\eb\efCs\b2\e1\a0z\ce\95\89"
+  "\81\f8\0b\f9\c5\e6\eb\14\10\1f\1aI\19B\fb\eb\a1\f6Nww\e0&\1a\d4\a6`\9b"
+  "\9f\12\faf\ca\b4\22U\95\98\b0 \89\d08\82G\97\b8\00\fd\b05U]_n\b4U\82c\b1"
+  "\8c^s \9e\1d\83\aa4\f7\89!\ebb\bc\dd/6\90\a8\c5\e4#\d5\01u\ec\e9\a5{+\d5"
+  "\bbC\b4\12\f7n6%!\c93\b2G-;eU\aa\b0k\9a\0a\84ni\bb\c0\9e\99\f8\89\be\ea"
+  "\d4\9c\06\c1\0d%\caC\eap\06\c0v,n%\0aDH\f1(W^j\92\06\048\ca\dbdW\86*\cd"
+  "\96\f2\ec\f5\047\08\05\c6\bc\12>\ed'u\80\bc.h3\c6DJ\86\f7k\97\8d\e8q\92"
+  "\a0\eb\1d!\e0\fbj\ee\b3z\a3~X1\87[D\93d)\d8\ba\05\ea`YL\9e\ae\fdhr\15\b8"
+  "\bd3\8e)\87$\b9o\dfE\1a=\03\cf\1a\e6V\e0\f8y\d4\b6\d3\a5\abk0\06b\c1\d0"
+  "\8fl\18w\98\89\a4H\8f\96\86\bc\87\ba\f1\c4\b3\87\de\94\fe\ab\cd\1a3<\a8"
+  "\ab)).\b6\e0\14\0b\1d\7f\8b\c0\f0\9f%I\0b\ba\d9\dcq\8c\d9M\e4^\ae\f0\ec"
+  "\07o\1b\8e(\10T\8e\afPa\9d\f6\d9,\e8\c9J\a2\b12\14\e9q\db\d2\5c\22:\08"
+  "\1c1\ben\05\af\9f\ac1'\89\06\f4\aaH\0ac\bdm\ca\c6\9a\c7\17\fep\ab\08\b1"
+  "\d5\da\cc\bb,\09}x\81\b9\9d=M\d6\a5\8e\c5\08`\f5\bb%N\eb\f0\93\82F\f0\85"
+  "N\f2\f6\0a\b8\f2*\af!&\ed8#Xl\a7\e1\ae\b4\0df\af\f5\1a\aao(\07,nG\d1M\ed"
+  "\90\c8\9f\8d\d9P\caEy\84\db\a4\cc\82\a0(\b5\ba\07\f1\0f\e5<\97\97e\12\ce"
+  "\7f\a3\c8rb\a9I\edS\1e\0c}\fd\fe\96\c1_\ccz\0f\bb\13\9c\e8\e8%O\dc\bc\be"
+  "\fc\b1w\ff\ac\e9T\8ca\91\b1w\b1\096\f7=\cf\aa\9f\17$j\ef\b9\f5\9d\d5\1d"
+  "\8c\03u\0d\83\95\c7\1d\adDk(s\05K%oD\d2\d0\e3z\f92\ec\0aC\f9g\e3Nw\c5j"
+  "\83b\ce\ec\9b?\a7\cd\93\f7A\9c\22\d5vE$\fb\01\e8\c2\0f\11\c1xuRCk\8a\d4"
+  "V\edy\02\a2\f3\a9\aaxk\89\13\0a\83\d6DV4\8cAE\98S\d5V\c6k\98\cc#\0c\d6"
+  "kA\ef\91V\be\a8\8a\ec\b7\86\be\bf,\8f\cb\c6\11k6\ec\ed\a9\d6\f32\14\d7"
+  "\f7{9?\1c\eb\02\a2\b3\94S\cc\b0?\d9\cc\f5\da\07O\e3\a5\83\8a\e0\b9h\ff"
+  "\9c\8f\0f@\b3\d1\c9\22\5c\8f$\adX\e8\a1\1f\c2\b9\09\08\10#\be\95\99\d9"
+  "6l7\91\8a\a72(\0c\0a\d4\ab-\fb\ff\8fDG\85\b5lQ?2\8f\0c\c9\16\f9\f9\ff\b3"
+  "\15\99\e6\e2\e3\92g\7f\d9\a7=\ae;\fc\7f\90\ad\1f\d0\8d\9cwA\df\cf\11\cd"
+  "\99J\fb\9f\f4\98'D\b1\83\d5\11\d7CV@@\1d\fa\c71\7f1\95\ddr%kf\ea5(HR\fc"
+  "\1c\7f\ef>}\8a\cf\ee\05\00eC2\daf;\e4^\ab\8e\1c\ad\82j\07@>\d4\be\90@J"
+  "\9d6V\b2c\d8\91\a2\04\e8\a6DwZhN\22\e2uO>\876\cb\05\a2\d0\15\15q\02\e2"
+  "\aaZS\e3\0d\a9\03>\87\caD[Z\0d\83\9aU1(\5cQ\d3\c2\86\94\fe\0ayX\e8\91\80"
+  "\d5\1e\99\d9\12\84r\a89\beM\97nb\b6\e0\8af\ff\8f\17\a5\8f\12\c8-!=\0a\fb"
+  "\e3\98-@\ffs]\ce\99\0b\9d\bc4f\e6|\8e\7f\1c\88\7fh\fa\80\80N\c4\eb\c1\ff"
+  "\1f\1cr\9f#j\9f\029\a1 b\b5f\b2\ff'\a3N\87\acDGC\87\c9\a8\bab\00\9f\ff"
+  "\f1K\22\a9\d7\15\19\14\e9\fb\a9\b4=`\c3?wo\b5\c9\a6\ad\8f\acq\9d\d3!M8"
+  "\b4\0fU\cb\22|\10\99\b3\17\ce\c4Hj`F\a1S*~+\9bT\7f\a0\9d\01\f6mB\fc\cb"
+  "Dt\da.\fb\e0\94O\84\02\c1\99\08S\fb\feU\11\91\fa9\19zc%C1\c0\ca'\ba~\ab"
+  "U5y\88\9fX\bc\ee\93=\f0\deX4/\8bU\c1K\b5c\b75u|&\96\16o\01\fb\ed\aa\b1"
+  "\9e\a2<%\83\92\1b\b0\bb\dc\ca\c1y\a9\15^F\cb\8b\ee#w\22\9c\ea\c9\1e\19"
+  "\ec\89\cd\fa\0b_\17uv\8a\95\a1\92{f\1fg\ec\80\f9\ce6]\12\14\ed\faI\b7\1a"
+  "@\e7\80'\e1\b7\82\84\f4\16Y\a8y\1c\e5\10\88\90\b0\b8\ec\b2\d1\d2X\ae7\09"
+  "\cc1\8f\15\aa\b4\dc\e6\a7\1f\86\07\ef\99\85\0b?\fe\b2\9a\d4\e1\93\e0\91"
+  "\a7g\c9j\00g\ce\ce\bd\df\e0$m\5c,\bb\c8\e0\bdB`\00A\a1\d6\8b\18n\88s\f7"
+  "\e9\faXmSx@\91I\cc\ae\9e\89jPu\a49\afHh\96\90\f5[\7f\da\03\96BR\c9\06\84"
+  "m-\01^zy\99\8f\88\83;\d3\a6{\08\e5\c8x\81\f5\d8\d7\7f\b3\aad\0a\88\90\9a"
+  "J\1e\fb\d6\e12\cf\cd_`\d5\7f\06U\9a\a0\ee\f2\5c&\cd\7f\a1\e0;\5c\85\1e"
+  "H\ea\c0H\aa/\f4o\c0\df\c9\d8J\b3\a6&\da$\f1\da\94;\f1\8b\b0W\fc\8e\1d`"
+  "\d0X\08\b7\d6\08=\c5vW\ce\b6]y\12<\82n\cad\0cK\8cvT\ed\81$\b5\17\17\cb"
+  "\a2\09\fd}\cf]/\94\a9h\a2m\a2\dd\dc}\cbL|]C5;\f9\d3\02\0b\09\0b\15T]\fe"
+  "\afm\1aJ\01\c5{\c4\e1\a6\e5&\8dT\fa\9e\1b\09\a1\9cA\b6\9a5\9a\10\9fp\b0"
+  "\e9\b8\c6bK\c9\03\d2c\01\c3\c0\d4\c6\8c\1c$g\f8\1d\cf]Bc\de\e0y\f8D\fc"
+  "\d7\91v@\9b\e4B\f5\12\fc\15Y\986V\fbM6\94\10\c2\9d\93\b2\17{[o>\c4+z\e1"
+  "C\b9\94\f2B\9c\cf\ee,\99\05\a7Z[\ecl\ca\f3\9c\97S\83\83*x\ff\c6P1r'\08"
+  "\bd0\84\bd(d$5V\bf\f8\a4\bdN1J\ec<\e5\ec\99\be6\e1\95w\1b\876\d1^\ae\13"
+  "F\0f\94?n\84Y{U\e2(\84\85\f6\99\98\17\13\b9\cf\89\e5/\da\ea\1a3\e5&t\c0"
+  "~\ddW\e7!v\ef]\c8\d2\f0?O\98H8o\ea\96\90\a9Skuz\07\ed\0fc\beZ\06\0b\a5"
+  "\bc\b4\94(\c6\12YI\e8\d3\fbm\f1\c7M\ce\eb\e1\5c\d9\bb\ab\d7-qd\bd\e4\f6"
+  "\9c\f0`3\8d\b3\cf\aa\96My\8d\bd\ec\9d4\c4,9\80\b0\a0\83U\fc\a0\d7\f0\ec"
+  "g\c5A\f5wG\a0\dcDr\b5\9d\c4\86\16\f4`\1bI\f9\aa,\e4\89\d5\ce\22\c5u(\1c"
+  "19b\9b\b7\d57]\ac\8b\82k6\932c}\c7:\82%\cb\85t\d7\971\03\02\9c\ff]\ae\bc"
+  "dq\f7\9e\d3\a8\86\fc\fd\83\02\83\7f\f5\d9\eb\bdM\b5\86\08S\a8{\fd$\c3c"
+  "\dfr\d0f-\a1b\a8\cag\d2m\1e\f7Y\9e\cbGB`\bc\a4=\a9\de\80\83\08\e6t\f0\85"
+  "\be\d9Rx\eb\0d\8dS\16a\a4\8b\1f\92l'.\90gVfQp\e8[y\cd\b6S\db\a3\d8\1c\ba"
+  "\00\f6\df2Fq\d9k\80\a4(\d2\cc\0e\a4\e8\80\f3\97\bf\97\cd\cf\86\a0\cd\b2"
+  "\06\80\12\cd\22a\f0}\af\fd\c0\83\a8\c8\81_\08 W\80kyl]\1b=\b1\a4\d2\fa"
+  "\b0;\05t60\e3\cbc\1a1\c6\ee\a6\c3\9c\9c\8a\06\11D\fc\db\be\fc`\bdw\aa\90"
+  "\f4\c3D-H\15U\fb\92\ee;\b9\ac\15\d5\b4\f1\f4J\1cM-\15\dd\1bu\c5\f3\8b-"
+  "\05\11\17\99]c\a0xZ\d4b\d2\b6\f0\eexF\d5\5c\bf4|\c8\16q\89\fb\86\e4\ac"
+  "*\17\98\0a4\ef\a0M=\ae\e65]\d4\0e\acz\0e\9f\86\80\95\09\a1\ccY`\83t\89"
+  "\12W\19\d2F\a8\e0\baK\c9?p8\a4\d1+\d7\ac\9f\86X\d2\98\e9\cf\dd'F\a3\06"
+  "c{\06\cc#Tw\83\ff\91B\d5\b1\17L\c8;\1a\08\bf,)Ud\7f\b6\93J\9e\1d_\ba\ca"
+  " \ca\eewsj=\1f\e4\9c\ee\82r{\b4~T>\f5*\88b\86\93\8eC\aa#O\9aa\9e\e9\8d"
+  "\b25*\fbg8\b2\d4\94\ec\e2\00\fa\05d1\1f\c3\f4\f9\81\c6\de\04\dd\d3\8d@"
+  "\bc\83\de~\f3\f98<\11<\8bE\d4H\b1P\ab$\96^p8G\8b\15\0b\aeW\09\9b\dd$\d6"
+  "\ad;v\8c\06\19\ee\da\8d\d9\d6\e5\80\0a\d7\a5L\e5\c9\17\a4\cf\d4\a8\f8\87"
+  "L\1f!\cdL\cf\9f^\bc\1d\8d\03\0a\d3\f6\a9\1fgi\00 \c3Gv+ep\84\cc\87t\d4"
+  "s\e0A\00\f4\d9\ec);?\c6\d2\df\d4\c8\84\90XR\00q\10h\f4\09\cfw\c7\17\0a"
+  "\fb\a5\b4\eef@\8d\14\82q\cc\c2U\b9\9d\ccy\cf0U@H\d8L\f1\c6\bf\99\d5\93"
+  "\e2\1f\ac\81|jPZ\0e\a0\ad\b8/\00\cb8\db'\17\a2\1c\85\e4\f0\11\08\d9\a6"
+  ";\c0\fd\06\d2\f1\9c\cac\a6\1dm\16J\8f\90J0\bd\88F.D\fd\fe\872\04N\8eY\9a"
+  ".>v\15\ec\9cJ\9e\fd)?\85\e1\f1\ef@\ba\cd\d3\1a'D\dd\c5|\f4\8e\e6Y\ee+\d1"
+  "(\c1\88\e10\95T\f7\ceX\190\f8t\bb\82\b9x\f5\8c>\dd\94\9a\01\af\1f<6Rj\e3"
+  "\e7\d620\8e\14:\c1\c1\9a'\cb\c3\e6D\dc\a1\8c?\bc\b1\99\88\f1\b9\c0\f8^"
+  ":\10\ab)\e5\b7\a7\15\0f`\f5\96\e7\f0\b6\f6H\d4\15t\de\a5\11\db\12\b8\b2"
+  "\bc!\add4[I\1b\11V\0f\d6\91\17f\df\eb4\ec\be\00\d9\0d\b1\ca\95\c9%\bb\ce"
+  "\9fk\93B\a7\ee@OQ]=\fb;\efi\c2\87F\b8\12Q*\11\a3\a5\b4\0c\fa\0ak\04\b3"
+  ")X\e6\abr\ba\ea\85\e7\f0G\dc\e6\c2\e2\0f\1a\f7\8fV\0fieg!\edY\93\a0s\db"
+  "\93\e0\f4\b3,S\c3>\c1ih0\b8\88P\d2\b8\18\f2\e0\fb\13:\c7\18BA\1esUr\83"
+  "sO\97\8c\fa\98\08\f9\9e\92\d1\e5\cf\eaNdP#\bd\af9\bfJ\b7F\f7E\df\83\a5"
+  "b}$l\ac\db\83\b7\8e2\8c\ba\8bkr\a7]\ce\96\c3K\89de2?/\a9n\06O\11\f5\81"
+  "|\b4\9e\ab\bd\fe\fe\0e{S\0a\c8\a2Ur\a2\9ba\86\d66__\e9,t\06\bd\85u\87E"
+  "\01\fd\13\86\047\b7#8\11H,\e7R\e9\96A\fc\98\a7\c5\04\a5,\86\15Z\f7\a0\a7"
+  "\a3\fcQ;\7f\d1\fb\22\e7\dbsM\98\9a\c4H\e6=\13\85\ef\82\ba\eb\e0\d2\d0`"
+  ">\c1\f5\da_\0dXf\ab\a3\a8&\99\07\05\f9\8d1\b3\d1\b7\10\ee?\96\ccRp\7fI"
+  "Fw\f1\fd\1f\c6\e5\94\e9\cf\bb\ff3\a6\ef\ed\8b\ea\b6\fe\d3\9b\0f\fd\f1a"
+  "\d5\9f\c0\8fk\e9.\a5d\fe\c8\82S|n\ba\ca\c7\b0s\c6\a3z\ce\fd={ch\1b\0ai"
+  "\bd\f9N\08\5c\a6\0c\a1\be\06->!Q\a6a\16\9cb\0a\f3\cfOInH\b8\8di\e5\0f\fa"
+  "\1b\c3\fa\cc\ef\c3\a3\db\89Z&\f1\c3\de\93\f8\e2\f3\1c\e0uZF)\96\f8\b7v"
+  ":k\5c\dbm\98#X\13\f1\97\b3\bb\f6e\14\09\863R\89\be,.X\ed}\a0jt\7fY\8bg"
+  "\c0\a6+\ee\dc\1cW\b4N\a4\c2\a8\ef\17\b7@8H\db\94\13\e4labM\f3\92\eb\dd"
+  "\e4PF\1a\12\ba\17\1d\c8\f9\ba \b0wf\15\1e\e5\d7\a0\96\e8.\12\1d\dct\14"
+  "\ce\0a`\cd2\ef\86$^\91\baV$\13\92\99\81\0d\b8\80\ff\aa\a8\ad\b5\b5il\ed"
+  "\97\f6\ff\e1\10\e6`\bf\d5\12\19#\e3\c1c\f4\1e\fa?\8d\ca\8f\9c\97\c5\ab"
+  "\ef\f5\8d\b2|\b1\a6\f8\8f0\bd\b3\83\fd\b6\96ks\b1\de\db]\d0\f6\b3|\ac\a0"
+  "\e4\bcd|F\d0\ddk\a9:Bz\f0\cdk\e4\0e\f6\be\0d,\a2\8a\c6S\c9\d2\98l\c1\86"
+  "\9d\92\b3.\11\b7J\ad\b7\a8{\07\bf\c7q\e8Dw`z\d5d\9d\d8rI\add\d7\1cG\11"
+  "\8bJ|l\05_b\87\cf\9b\d8=\0d\e4\98\d5-]\9b\c7\c6\f6:\a9\c3\c2N\8d\10\1d"
+  "\ffJy4\82yx\b4\89\d3\ba9QX*r\df\ce\cb`\f1K\cb\106\84(\88e\ee\b4N\97\c2"
+  "\fe\b8\ed\1e\fe\94C\a52\ea\fe)b\22=s>'\a9\a6=z\94\ce_R?Z}5\06\08\87\b8"
+  ")\88f\cc\1c\81\f7&\cf\b0\dc\c2\07\ca\a8&4*\80\ffc\a1\b5\f0\02\dd\93\b3"
+  "\89\fcR0\c14`\ff\bc\c9\e2\acC\d4x \ac\bbg|\f1A8?,\fc\0dL\aa\84K\94K\d5"
+  "\c0\ed6)\83\a7\9b\9d\11\df\d4e^y\9e\0a1\a9\84\f3c\91\02\c5\d5\16J\ff\b5"
+  "\17FM}\d3e\f0\bc5C\f6EN\8e\bf\d1\ceKP.\a4?\16\96\01\ea\99\d6\e1q/\86\c2"
+  "^\e49\8d\cf\9b\fb\81d\c0LZN\bb'sv]\88p\c3\82z\a2}\f0o\f8\10\d5\f8\07j:"
+  "U&\ba\91\8c\85N\96\8b6U\0a\f7\89\04\89\ea\af(\b6\ef&\e2\bb.\84\ea\cct\ac"
+  "E+\e5\db\b2\a3\ab\b0\da\ea\9d\92\12\00\c9\8b\0b;o\c9OFk\ae\c8\92D7\17@"
+  "\bbn\ce\09\cb\bb\e3\17\06\daz\b7\15\05\1d\10j\0aB\cc\bd\aa\dc\9d\87\90"
+  "Y\e5-#\12J\82F\a9\9f\b6\ea\a9\c2T\faW\8f\f9\ab\96\dc\22\98\93GdeT\f3\e9"
+  "\f8-\b3\f7V\bc\93+~xY\bd~)p$w\f9\dfZ\b6U<\dbN\ebW6\ef\19\c6v\ea\fb\8b\f1"
+  "#k\0b\92\22\e6\ed\03k\a0w\14\e5\fa\ae\ed\ecE\8e6\ab_\e9\c4\85\88\95Y\9e"
+  "\b9\da\14\b4\eb\18\02\cb\db\11\9bSu\fd\f7\02\b4\88\19\a1&\9f\c2\bdR\d6"
+  "\81\a8\d2\fc\b5\03\e1\aa_I\f0F3m\e7K\a2R\07|\a3D\99\d5\db-V\0c@\a4po\a5"
+  "\93\84-\e6\ca\7f\85R\b9k\0fP\cdL\cb\8e\b8\e5\b8\9f\bd\df\a6\a7\a7F\13\a4"
+  "\00 ~\b2&\1f\a7\07\ad\97\d0\c8(\0c\8cf\00\d4\8e/xs\c8$\cc^\82\fa2\0f/\80"
+  "\00\89r;V\90\fa-\7f\f6\a2\b9\ff\d2:\a0@+O\cak4y\f9\1e\b4\cb\a8\bf\87I\c8"
+  "\10\f6\e2\bc\86\81\d7\b7&\a1\fe\c9\d7\f4-}\ca\d9\0d6\f4\b0\e62\b8$\9f\bb"
+  "\0dry\1c=P\91C1]\a0?\e6\ed\c6*\91\ce\97cL\a4u\94}t\88\cf_\a9\f8\ba\1a\e1"
+  ">\be\af\86\c9|\ceH\b5\e1\dbi\9bha\99\ce\ad[\e8\fb\1b\02\9b\22\daRD\c2\c3"
+  "\b9?B\99r\e2\fa\a2\c2A\ab\90g\d5\f2\1a\d4g\c9\9f\87\cd\dc\a5\19\09k\ba"
+  "`\c5\97 \c9\c1\bb\87\e9\00T\0f`\cb\05\e9\b8\b6\bdh;\b2\aa\e9#\01)\138>"
+  "G#g$\ed!e\af\0ar\b6\a0\f9\0b\e3\86\0cv\c06\94i>[\8d\0e\e4\08\f8\ce\9b\a8"
+  "\8f\93pD\b9\04\0e\b20\12\1d\0b\b6\c2\c2\92s\b8\8c\95\e7\c2Ho^+\f2\c6\b1"
+  "\b9\b9;H\f3w\bd\90\f3\1a\0b6\b6\ae8\1e(\a8J\1a\f0\d5\ec\b4\b0\e1\8d\c3"
+  "c\da\c6%2R\dd l\0b(\e2\0e\ad8Z~H\9cW_S\8a\94#\07Y\8dQ\d8\c6\f0\9dZ\83-"
+  "7\e8\acy\ecH\af\b0e\8e\f8lE1\e4\f8D\22\18\98'\1b\db\dc\ffX\1bd\cb\9e\8e"
+  "\1bk\15\0f\bf\f8\f0\08\8a?/\22=~Fr\e2\c5\da\d2\ee6-\8b\ac\0f\bbj\cc\1d"
+  "\d8\0e[w\91\87\aa\84\f8\ad\d7\e9\b4\c2\9f\12G\e9\98\ea\ba\94\eaR\bb\cc"
+  "\86$b\b3G\d7\98#?\a5\e99\a5'\ea\7f\a8\ad:\a0\19\0d\7f\ec\8e\0ed\88\8e\b1"
+  "\e4\9f\d2\ac$\040h\cfS\19\89>\15\f9\ee\ee\a3\83\d7-\05<B\c3\a8_+\8eZ\b7"
+  "\aa\ea\8c\a4My\06\cb\12\f4\927\b611eU%\b0\cd\d0\0b\e4\be\8b\d8\bb\e2\11"
+  "\bf>_U\17\8e\80\c4\0e\9d\ae\ae\cej[\d6n\0e\b7*\9d\b1\a0uRDZZ\82E\f2\8b"
+  "\0a\d2du\04\de\c8\12g\d5\f0\f0\e2\d6\ee.\8d\06\be\92\85\15\fbk`\85\96\d6"
+  "MFU=\18\c4\b6{s\ed\9c\86\b8&<L\e1\97\aaL\1eu\a4Z\d0(\c4\a8f0K\9f\d9=\d5"
+  "\dfe\92Mq\043\f5)@\fe\8e\03\a8F\e5\ab\7f{\d0\c6\e2?\993\d0\bdr\04R\98\de"
+  "\96_\9a\84x\db\8f\bf@Dm\8f\85f>\96|\f7\c0\a5V\d2s\ef\a8J\a4y\13\00\e7\dd"
+  "\ad\9a\98'vc\a8\95R]\0dX\18\c0`UY\c1~\b1S|\12\bb\a6\b4\10n\1e\f0\b8\aa"
+  "\afq\de\9dh\1b\d7\e9\e8p\ca\04\13\96\b3\ca\0d\07\abb!q&\92\22\0d\fd\c5"
+  "\97{`=\d1\c8U\bbi\0d\b0\b6jP|\b7}\9a\b8\8c\05;+*\c4\10\5c\e4B\b2\ad\92"
+  "\8e`\f3w\e3\04[\9az\8a\b9\8e\d3\1eY7\b28\f0U\1c\c6\f1@\19\edg\b2\88f/\c5"
+  "\deFlk\a37.\91_\e8\01\df\15\a0=;K\ac##\c6\e2\bc\ba;1a\8b\1a\08\0d\0a^\97"
+  "\ec\abw\1bl\a9\8a}9\ae!J\90\8c5\bd\e7\96U\22\c7S\ed\dc\c7\d9T.\dawA\d6"
+  "P~uu\5cT\14\ea\1c\88\e9\b9\d0\d5\d1\0b\e5\dd\d2\92si\99$$\aad\e8DK\c6N"
+  "^\95\87w\d0\c3\bf-\ad\d4>\11\0b\ef;\f1Z\bd\b4Jb\da\97<\ec\84\8e\d5\cd\ea"
+  "\8a\ad\b1\eca\dd\fa\d0\bdK'\a6\f2J\81\a5\ed\18\deg\ba\949E\ad\1e\b1\cf"
+  "\d7\cep\87\94\cf\ea\80\f4\fcCK,\b3\ce\81\8d\02M\a9y\83%\a11\fc\14^\f7_"
+  "B\a20C\a0\13X\e4n\09>;\9a5\f5\f7\d2\ca\fcS\88\18n\9d\ca\8b\0d\ca\00\83"
+  "\f2\b5\87\fd}4U\cfd\a2^wH~\e0\91\b7\d1t\9e\9d\81*\03\feJ6\95\da\9dXv%\06"
+  "\12\c6\04\22\f5\83\bd\dd\83:Q\c5\ee\d3\ae\87\96\f7B5yr\96j\92\c4R;uD\cd"
+  "\14\be\9a\93\82\17\0f<\05\b7u'\8a\92\95\00\9am\c18c\dd\12\8b\c6$S\b1,\f7"
+  "\ba\80\00\c9\f1\03^\ca\eb\16\fc\f6\d3\ee{\datP\a0\1d\97\84\f5\bc\a6\1c"
+  "\bb\f4\88\ea\1a\11\92d\08\e5\bc\e52l\d0\e3\e91+\a5a\95\b6}J\1e\ec\cf\9f"
+  "Cb.2\ff:\07]\1d\92\8e\ee\92\93\c2\87\d4\fa\b9\fe\be\09I\b4\a462\aaw\b8"
+  "\b3\a9\89yh\be.L[\e1M\c4\be\94\95\e6\10\0a\f6K\017\9d\0f\d9\ac\b0:\f7|"
+  "\1d\90\94\8c\f3\9e\c1\84\84S\0f\d8\5c\095\dc$\b4\b9o\b0\06\f2\a5e(\13\0e"
+  "\b4KB\13.\e1\d3E.D\b7\87?\f9\cb\88Po\09\cc\bc\8cH\d79\15\a5i\8f\f7\fe\aa"
+  "$\cb\0b\ff\eb\af\1bM\88Z\0eDs\b5\be\d5\ed\bd\ce\fe\e6\db00\95\f8\88\0a"
+  "h1\97\a5\b46A_p\89=|\ba6+\0d\c2\fd\fc\cea\84\11w\cc\abL\1bi\04v\902=\bc"
+  "Bz\e5\d5\94\bf\d6\0f\b1\c1\c2I\9a?\a6\b5il\af\05\bd7\86S\1dr3\dc\80\cf"
+  "\0f#\84G\1bG\ac\c5\a7\a8\a4N@\13a\c3\d3+e\19\e2X\17\b7\d1\e9&1\08\ac\1c"
+  "Zd;\dfO\8d\97n\12\83\a3p=\0a\d7\a3p=\0a\d7\a3p=\0a\d7\a3\cc\cc\cc\cc\cc"
+  "\cc\cc\cc\cc\cc\cc\cc\cc\cc\cc\cc";
+data rodata_3(offset: 76231) = "\80";
+data rodata_4(offset: 76247) = "\a0";
+data rodata_5(offset: 76263) = "\c8";
+data rodata_6(offset: 76279) = "\fa";
+data rodata_7(offset: 76294) = "@\9c";
+data rodata_8(offset: 76310) = "P\c3";
+data rodata_9(offset: 76326) = "$\f4";
+data rodata_10(offset: 76341) = "\80\96\98";
+data rodata_11(offset: 76357) = " \bc\be";
+data rodata_12(offset: 76373) = "(k\ee";
+data rodata_13(offset: 76389) = "\f9\02\95";
+data rodata_14(offset: 76404) = "@\b7C\ba";
+data rodata_15(offset: 76420) = "\10\a5\d4\e8";
+data rodata_16(offset: 76436) = "*\e7\84\91";
+data rodata_17(offset: 76451) = "\80\f4 \e6\b5";
+data rodata_18(offset: 76467) = "\a01\a9_\e3";
+data rodata_19(offset: 76483) = "\04\bf\c9\1b\8e";
+data rodata_20(offset: 76499) = "\c5.\bc\a2\b1";
+data rodata_21(offset: 76514) = "@v:k\0b\de";
+data rodata_22(offset: 76530) = "\e8\89\04#\c7\8a";
+data rodata_23(offset: 76546) = "b\ac\c5\ebx\ad";
+data rodata_24(offset: 76561) = "\80z\17\b7&\d7\d8";
+data rodata_25(offset: 76577) = "\90\acn2x\86\87";
+data rodata_26(offset: 76593) = "\b4W\0a?\16h\a9";
+data rodata_27(offset: 76609) =
   "\a1\ed\cc\ce\1b\c2\d3\00\00\00\00\00\00\00\00\a0\84\14@aQY\84\00\00\00"
   "\00\00\00\00\00\c8\a5\19\90\b9\a5o\a5\00\00\00\00\00\00\00\00:\0f \f4'"
   "\8f\cb\ce\00\00\00\00\00\00\00@\84\09\94\f8x9?\81\00\00\00\00\00\00\00"
@@ -504,202 +508,203 @@ data rodata_27(offset: 76393) =
   "\00\00\00\00\e8vH\17\00\00\00\00\10\a5\d4\e8\00\00\00\00\a0rN\18\09\00"
   "\00\00@z\10\f3Z\00\00\00\80\c6\a4~\8d\03\00\00\00\c1o\f2\86#\00\00\00\8a"
   "]xEc\01\00\00d\a7\b3\b6\e0\0d\00\00\e8\89\04#\c7\8astrconv: illegal Ap"
-  "pendFloat/FormatFloat bitSize@?\01\000\00\00\00NaN-Inf+Inf0123456789AB"
-  "CDEFryuFtoaFixed32 called with negative prec\00\00\00\00\00\93?\01\00("
-  "\00\00\00ryuFtoaFixed32 called with prec > 9\00\00\00\00\00\c8?\01\00#"
-  "\00\00\00not enough significant bits after mult64bitPow10\f8?\01\000\00"
+  "pendFloat/FormatFloat bitSize\18@\01\000\00\00\00NaN-Inf+Inf0123456789"
+  "ABCDEFryuFtoaFixed32 called with negative prec\00\00\00\00\00k@\01\00("
+  "\00\00\00ryuFtoaFixed32 called with prec > 9\00\00\00\00\00\a0@\01\00#"
+  "\00\00\00not enough significant bits after mult64bitPow10\d0@\01\000\00"
   "\00\00not enough significant bits after mult128bitPow10\00\00\00\00\00"
-  "\00\000@\01\001\00\00\00mult64bitPow10: power of 10 is out of range\00"
-  "\00\00\00\00p@\01\00+\00\00\00mult128bitPow10: power of 10 is out of r"
-  "ange\00\00\00\00\a8@\01\00,\00\00\000001020304050607080910111213141516"
+  "\00\00\08A\01\001\00\00\00mult64bitPow10: power of 10 is out of range\00"
+  "\00\00\00\00HA\01\00+\00\00\00mult128bitPow10: power of 10 is out of r"
+  "ange\00\00\00\00\80A\01\00,\00\00\000001020304050607080910111213141516"
   "1718192021222324252627282930313233343536373839404142434445464748495051"
   "5253545556575859606162636465666768697071727374757677787980818283848586"
   "87888990919293949596979899\5ca\5cb\5cf\5cn\5cr\5ct\5cv\5cx\5cu\5cU0123"
   "456789abcdef";
-data rodata_28(offset: 82392) =
-  "\01\00\00\00\fd\0d\01\00\01\00\00\00\01\00\00\00\fe\0d\01\00\02\00\00\00"
-  "\01\00\00\00\00\0e\01\00\03\00\00\00\02\00\00\00\03\0e\01\00\03\00\00\00"
-  "\02\00\00\00\06\0e\01\00\04\00\00\00\02\00\00\00\0a\0e\01\00\05\00\00\00"
-  "\03\00\00\00\0f\0e\01\00\05\00\00\00\03\00\00\00\14\0e\01\00\06\00\00\00"
-  "\03\00\00\00\1a\0e\01\00\07\00\00\00\04\00\00\00!\0e\01\00\07\00\00\00"
-  "\04\00\00\00(\0e\01\00\08\00\00\00\04\00\00\000\0e\01\00\09\00\00\00\04"
-  "\00\00\009\0e\01\00\0a\00\00\00\05\00\00\00C\0e\01\00\0a\00\00\00\05\00"
-  "\00\00M\0e\01\00\0b\00\00\00\05\00\00\00X\0e\01\00\0c\00\00\00\06\00\00"
-  "\00d\0e\01\00\0c\00\00\00\06\00\00\00p\0e\01\00\0d\00\00\00\06\00\00\00"
-  "}\0e\01\00\0e\00\00\00\07\00\00\00\8b\0e\01\00\0e\00\00\00\07\00\00\00"
-  "\99\0e\01\00\0f\00\00\00\07\00\00\00\a8\0e\01\00\10\00\00\00\07\00\00\00"
-  "\b8\0e\01\00\11\00\00\00\08\00\00\00\c9\0e\01\00\11\00\00\00\08\00\00\00"
-  "\da\0e\01\00\12\00\00\00\08\00\00\00\ec\0e\01\00\13\00\00\00\09\00\00\00"
-  "\ff\0e\01\00\13\00\00\00\09\00\00\00\12\0f\01\00\14\00\00\00\09\00\00\00"
-  "&\0f\01\00\15\00\00\00\0a\00\00\00;\0f\01\00\15\00\00\00\0a\00\00\00P\0f"
-  "\01\00\16\00\00\00\0a\00\00\00f\0f\01\00\17\00\00\00\0a\00\00\00}\0f\01"
-  "\00\18\00\00\00\0b\00\00\00\95\0f\01\00\18\00\00\00\0b\00\00\00\ad\0f\01"
-  "\00\19\00\00\00\0b\00\00\00\c6\0f\01\00\1a\00\00\00\0c\00\00\00\e0\0f\01"
-  "\00\1a\00\00\00\0c\00\00\00\fa\0f\01\00\1b\00\00\00\0c\00\00\00\15\10\01"
-  "\00\1c\00\00\00\0d\00\00\001\10\01\00\1c\00\00\00\0d\00\00\00M\10\01\00"
-  "\1d\00\00\00\0d\00\00\00j\10\01\00\1e\00\00\00\0d\00\00\00\88\10\01\00"
-  "\1f\00\00\00\0e\00\00\00\a7\10\01\00\1f\00\00\00\0e\00\00\00\c6\10\01\00"
-  " \00\00\00\0e\00\00\00\e6\10\01\00!\00\00\00\0f\00\00\00\07\11\01\00!\00"
-  "\00\00\0f\00\00\00(\11\01\00\22\00\00\00\0f\00\00\00J\11\01\00#\00\00\00"
-  "\10\00\00\00m\11\01\00#\00\00\00\10\00\00\00\90\11\01\00$\00\00\00\10\00"
-  "\00\00\b4\11\01\00%\00\00\00\10\00\00\00\d9\11\01\00&\00\00\00\11\00\00"
-  "\00\ff\11\01\00&\00\00\00\11\00\00\00%\12\01\00'\00\00\00\11\00\00\00L"
-  "\12\01\00(\00\00\00\12\00\00\00t\12\01\00(\00\00\00\12\00\00\00\9c\12\01"
-  "\00)\00\00\00\12\00\00\00\c5\12\01\00*\00\00\00\13\00\00\00\ef\12\01\00"
-  "*\00\00\00\00\00\01\00M\00\01\00P\00\01\00]\00\01\00\80\00\01\00\fa\00"
-  "\01\00\00\01\01\00\02\01\01\00\07\01\01\003\01\01\007\01\01\00\9c\01\01"
-  "\00\a0\01\01\00\a0\01\01\00\d0\01\01\00\fd\01\01\00\80\02\01\00\9c\02\01"
-  "\00\a0\02\01\00\d0\02\01\00\e0\02\01\00\fb\02\01\00\00\03\01\00#\03\01"
-  "\00-\03\01\00J\03\01\00P\03\01\00z\03\01\00\80\03\01\00\c3\03\01\00\c8"
-  "\03\01\00\d5\03\01\00\00\04\01\00\9d\04\01\00\a0\04\01\00\a9\04\01\00\b0"
-  "\04\01\00\d3\04\01\00\d8\04\01\00\fb\04\01\00\00\05\01\00'\05\01\000\05"
-  "\01\00c\05\01\00o\05\01\00\bc\05\01\00\00\06\01\006\07\01\00@\07\01\00"
-  "U\07\01\00`\07\01\00g\07\01\00\80\07\01\00\ba\07\01\00\00\08\01\00\05\08"
-  "\01\00\08\08\01\008\08\01\00<\08\01\00<\08\01\00?\08\01\00\9e\08\01\00"
-  "\a7\08\01\00\af\08\01\00\e0\08\01\00\f5\08\01\00\fb\08\01\00\1b\09\01\00"
-  "\1f\09\01\009\09\01\00?\09\01\00?\09\01\00\80\09\01\00\b7\09\01\00\bc\09"
-  "\01\00\cf\09\01\00\d2\09\01\00\06\0a\01\00\0c\0a\01\005\0a\01\008\0a\01"
-  "\00:\0a\01\00?\0a\01\00H\0a\01\00P\0a\01\00X\0a\01\00`\0a\01\00\9f\0a\01"
-  "\00\c0\0a\01\00\e6\0a\01\00\eb\0a\01\00\f6\0a\01\00\00\0b\01\005\0b\01"
-  "\009\0b\01\00U\0b\01\00X\0b\01\00r\0b\01\00x\0b\01\00\91\0b\01\00\99\0b"
-  "\01\00\9c\0b\01\00\a9\0b\01\00\af\0b\01\00\00\0c\01\00H\0c\01\00\80\0c"
-  "\01\00\b2\0c\01\00\c0\0c\01\00\f2\0c\01\00\fa\0c\01\00'\0d\01\000\0d\01"
-  "\009\0d\01\00`\0e\01\00\ad\0e\01\00\b0\0e\01\00\b1\0e\01\00\fd\0e\01\00"
-  "'\0f\01\000\0f\01\00Y\0f\01\00p\0f\01\00\89\0f\01\00\b0\0f\01\00\cb\0f"
-  "\01\00\e0\0f\01\00\f6\0f\01\00\00\10\01\00M\10\01\00R\10\01\00u\10\01\00"
-  "\7f\10\01\00\c2\10\01\00\d0\10\01\00\e8\10\01\00\f0\10\01\00\f9\10\01\00"
-  "\00\11\01\00G\11\01\00P\11\01\00v\11\01\00\80\11\01\00\f4\11\01\00\00\12"
-  "\01\00A\12\01\00\80\12\01\00\a9\12\01\00\b0\12\01\00\ea\12\01\00\f0\12"
-  "\01\00\f9\12\01\00\00\13\01\00\0c\13\01\00\0f\13\01\00\10\13\01\00\13\13"
-  "\01\00D\13\01\00G\13\01\00H\13\01\00K\13\01\00M\13\01\00P\13\01\00P\13"
-  "\01\00W\13\01\00W\13\01\00]\13\01\00c\13\01\00f\13\01\00l\13\01\00p\13"
-  "\01\00t\13\01\00\00\14\01\00a\14\01\00\80\14\01\00\c7\14\01\00\d0\14\01"
-  "\00\d9\14\01\00\80\15\01\00\b5\15\01\00\b8\15\01\00\dd\15\01\00\00\16\01"
-  "\00D\16\01\00P\16\01\00Y\16\01\00`\16\01\00l\16\01\00\80\16\01\00\b9\16"
-  "\01\00\c0\16\01\00\c9\16\01\00\00\17\01\00\1a\17\01\00\1d\17\01\00+\17"
-  "\01\000\17\01\00F\17\01\00\00\18\01\00;\18\01\00\a0\18\01\00\f2\18\01\00"
-  "\ff\18\01\00\06\19\01\00\09\19\01\00\09\19\01\00\0c\19\01\008\19\01\00"
-  ";\19\01\00F\19\01\00P\19\01\00Y\19\01\00\a0\19\01\00\a7\19\01\00\aa\19"
-  "\01\00\d7\19\01\00\da\19\01\00\e4\19\01\00\00\1a\01\00G\1a\01\00P\1a\01"
-  "\00\a2\1a\01\00\b0\1a\01\00\f8\1a\01\00\00\1b\01\00\09\1b\01\00\00\1c\01"
-  "\00E\1c\01\00P\1c\01\00l\1c\01\00p\1c\01\00\8f\1c\01\00\92\1c\01\00\b6"
-  "\1c\01\00\00\1d\01\006\1d\01\00:\1d\01\00G\1d\01\00P\1d\01\00Y\1d\01\00"
-  "`\1d\01\00\98\1d\01\00\a0\1d\01\00\a9\1d\01\00\e0\1e\01\00\f8\1e\01\00"
-  "\00\1f\01\00:\1f\01\00>\1f\01\00Y\1f\01\00\b0\1f\01\00\b0\1f\01\00\c0\1f"
-  "\01\00\f1\1f\01\00\ff\1f\01\00\99#\01\00\00$\01\00t$\01\00\80$\01\00C%"
-  "\01\00\90/\01\00\f2/\01\00\000\01\00/4\01\00@4\01\00U4\01\00\00D\01\00"
-  "FF\01\00\00h\01\008j\01\00@j\01\00ij\01\00nj\01\00\c9j\01\00\d0j\01\00"
-  "\edj\01\00\f0j\01\00\f5j\01\00\00k\01\00Ek\01\00Pk\01\00wk\01\00}k\01\00"
-  "\8fk\01\00@n\01\00\9an\01\00\00o\01\00Jo\01\00Oo\01\00\87o\01\00\8fo\01"
-  "\00\9fo\01\00\e0o\01\00\e4o\01\00\f0o\01\00\f1o\01\00\00p\01\00\f7\87\01"
-  "\00\00\88\01\00\d5\8c\01\00\00\8d\01\00\08\8d\01\00\f0\af\01\00\22\b1\01"
-  "\002\b1\01\002\b1\01\00P\b1\01\00R\b1\01\00U\b1\01\00U\b1\01\00d\b1\01"
-  "\00g\b1\01\00p\b1\01\00\fb\b2\01\00\00\bc\01\00j\bc\01\00p\bc\01\00|\bc"
-  "\01\00\80\bc\01\00\88\bc\01\00\90\bc\01\00\99\bc\01\00\9c\bc\01\00\9f\bc"
-  "\01\00\00\cf\01\00-\cf\01\000\cf\01\00F\cf\01\00P\cf\01\00\c3\cf\01\00"
-  "\00\d0\01\00\f5\d0\01\00\00\d1\01\00&\d1\01\00)\d1\01\00r\d1\01\00{\d1"
-  "\01\00\ea\d1\01\00\00\d2\01\00E\d2\01\00\c0\d2\01\00\d3\d2\01\00\e0\d2"
-  "\01\00\f3\d2\01\00\00\d3\01\00V\d3\01\00`\d3\01\00x\d3\01\00\00\d4\01\00"
-  "\9f\d4\01\00\a2\d4\01\00\a2\d4\01\00\a5\d4\01\00\a6\d4\01\00\a9\d4\01\00"
-  "\0a\d5\01\00\0d\d5\01\00F\d5\01\00J\d5\01\00\a5\d6\01\00\a8\d6\01\00\cb"
-  "\d7\01\00\ce\d7\01\00\8b\da\01\00\9b\da\01\00\af\da\01\00\00\df\01\00\1e"
-  "\df\01\00%\df\01\00*\df\01\00\00\e0\01\00\18\e0\01\00\1b\e0\01\00*\e0\01"
-  "\000\e0\01\00m\e0\01\00\8f\e0\01\00\8f\e0\01\00\00\e1\01\00,\e1\01\000"
-  "\e1\01\00=\e1\01\00@\e1\01\00I\e1\01\00N\e1\01\00O\e1\01\00\90\e2\01\00"
-  "\ae\e2\01\00\c0\e2\01\00\f9\e2\01\00\ff\e2\01\00\ff\e2\01\00\d0\e4\01\00"
-  "\f9\e4\01\00\e0\e7\01\00\c4\e8\01\00\c7\e8\01\00\d6\e8\01\00\00\e9\01\00"
-  "K\e9\01\00P\e9\01\00Y\e9\01\00^\e9\01\00_\e9\01\00q\ec\01\00\b4\ec\01\00"
-  "\01\ed\01\00=\ed\01\00\00\ee\01\00$\ee\01\00'\ee\01\00;\ee\01\00B\ee\01"
-  "\00B\ee\01\00G\ee\01\00T\ee\01\00W\ee\01\00d\ee\01\00g\ee\01\00\9b\ee\01"
-  "\00\a1\ee\01\00\bb\ee\01\00\f0\ee\01\00\f1\ee\01\00\00\f0\01\00+\f0\01"
-  "\000\f0\01\00\93\f0\01\00\a0\f0\01\00\ae\f0\01\00\b1\f0\01\00\f5\f0\01"
-  "\00\00\f1\01\00\ad\f1\01\00\e6\f1\01\00\02\f2\01\00\10\f2\01\00;\f2\01"
-  "\00@\f2\01\00H\f2\01\00P\f2\01\00Q\f2\01\00`\f2\01\00e\f2\01\00\00\f3\01"
-  "\00\d7\f6\01\00\dc\f6\01\00\ec\f6\01\00\f0\f6\01\00\fc\f6\01\00\00\f7\01"
-  "\00v\f7\01\00{\f7\01\00\d9\f7\01\00\e0\f7\01\00\eb\f7\01\00\f0\f7\01\00"
-  "\f0\f7\01\00\00\f8\01\00\0b\f8\01\00\10\f8\01\00G\f8\01\00P\f8\01\00Y\f8"
-  "\01\00`\f8\01\00\87\f8\01\00\90\f8\01\00\ad\f8\01\00\b0\f8\01\00\b1\f8"
-  "\01\00\00\f9\01\00S\fa\01\00`\fa\01\00m\fa\01\00p\fa\01\00|\fa\01\00\80"
-  "\fa\01\00\88\fa\01\00\90\fa\01\00\c5\fa\01\00\ce\fa\01\00\db\fa\01\00\e0"
-  "\fa\01\00\e8\fa\01\00\f0\fa\01\00\f8\fa\01\00\00\fb\01\00\ca\fb\01\00\f0"
-  "\fb\01\00\f9\fb\01\00\00\00\02\00\df\a6\02\00\00\a7\02\009\b7\02\00@\b7"
-  "\02\00\1d\b8\02\00 \b8\02\00\a1\ce\02\00\b0\ce\02\00\e0\eb\02\00\00\f8"
-  "\02\00\1d\fa\02\00\00\00\03\00J\13\03\00P\13\03\00\af#\03\00\00\01\0e\00"
-  "\ef\01\0e\00:\00\00\00\f4S\01\00\b0L\01\00\b0\01\01\00fmt.pp\00\00\1a\00"
-  "\00\00\14M\01\00\b0\01\01\00\90\00\00\00\0a\00\00\00\1cM\01\00lN\01\00"
-  "dM\01\00\5cM\01\00`S\01\00tM\01\00\10N\01\00\08N\01\00\10O\01\00\a8O\01"
-  "\00\10O\01\00\b4O\01\00\10O\01\00\c1O\01\00\10O\01\00\cdO\01\00\10O\01"
-  "\00\d8O\01\00\f4O\01\00\e4O\01\00\d5\00\00\00\b0L\01\006\00\00\00\e4S\01"
-  "\008M\01\00\b0\01\01\00fmt.buffer\00\00\16\00\00\00DM\01\00LM\01\00\d5"
-  "\00\00\008M\01\00\c8\00\00\00TM\01\00\d5\00\00\00LM\01\00\00\0carg\00\00"
-  "\00T\00\00\00lM\01\00\d5\00\00\00dM\01\00\00\14value\00\0d\00Value\00Z"
-  "\00\00\00\b0M\01\00\0d\02\01\00\0c\00\00\00\03\00\00\00\04T\01\00\b8M\01"
-  "\00\f0M\01\00\e8M\01\00\bcR\01\00\00N\01\00\d5\00\00\00\84M\01\00\00\00"
-  "typecode\00\00\da\00\00\00\e0M\01\00\0d\02\01\00\01\00\00\00\01\00\00\00"
-  "LM\01\00C\01\01\00\d5\00\00\00\c4M\01\00\00\04value\00R\00\00\00\f8M\01"
-  "\00\d5\00\00\00\f0M\01\00\00\08flags\00\00 fmt\00\00\00\fa\00\00\00\ec"
-  "S\01\00(N\01\00\b0\01\01\00fmt.fmt\00\da\00\00\00dN\01\00\b0\01\01\00\5c"
-  "\00\00\00\05\00\00\00\e4S\01\00lN\01\00tN\01\00\c6\01\01\00lO\01\00eO\01"
-  "\00lO\01\00|O\01\00\8cO\01\00\83O\01\00\d5\00\00\00(N\01\00\00\00buf\00"
-  "\00\00\fa\00\00\00\94N\01\00\9cN\01\00\b0\01\01\00fmt.fmtFlags\00\00\00"
-  "\00\d5\00\00\00tN\01\00\da\00\00\00\f8N\01\00\b0\01\01\00\09\00\00\00\09"
-  "\00\00\00\10O\01\00\00O\01\00\10O\01\00 O\01\00\10O\01\00.O\01\00\10O\01"
-  "\006O\01\00\10O\01\00=O\01\00\10O\01\00EO\01\00\10O\01\00MO\01\00\10O\01"
-  "\00TO\01\00\10O\01\00\5cO\01\00\d5\00\00\00\9cN\01\00\00\00widPresent\00"
-  "\00\00\00\c1\00\00\00\18O\01\00\d5\00\00\00\10O\01\00\00\01precPresent"
-  "\00\00\02minus\00\00\03plus\00\00\04sharp\00\00\05space\00\00\06zero\00"
-  "\00\07plusV\00\00\08sharpV\00\00\10wid\00\00\c2\00\00\00tO\01\00\d5\00"
-  "\00\00lO\01\00\00\14prec\00\00\18intbuf\00\d7\00\00\00\a0O\01\00LM\01\00"
-  "D\00\00\008M\01\00\d5\00\00\00\8cO\01\00\00|reordered\00\00}goodArgNum"
-  "\00\00~panicking\00\00\7ferroring\00\00\80\01wrapErrs\00\00\84\01wrapp"
-  "edErrs\00\00\16\00\00\00\00P\01\00lO\01\00\d5\00\00\00\f4O\01\00t\00\01"
-  "\00 P\01\00(P\01\007\02\01\00.error\00\00\d5\00\00\00\08P\01\00T\00\00"
-  "\000P\01\00\d5\00\00\00(P\01\00truefalsefmt: unknown base; can't happe"
-  "nAP\01\00\1f\00\00\00`(BADINDEX)%!(BADWIDTH)%!(BADPREC)%!(NOVERB)%!(EX"
-  "TRA i))(nil0123456789abcdefx0123456789ABCDEFXGoStringErrorString%!(MIS"
-  "SING)[]byte<invalid reflect.Value>map[<nil>(nil), \00\00\00z\00\00\00L"
-  "T\01\00,Q\01\00\c3\01\01\00os.file\00Z\00\00\00`Q\01\00\c3\01\01\00\18"
-  "\00\00\00\04\00\00\00hQ\01\00\1f\0c\01\00@R\01\00(\0c\01\00DT\01\00/\0c"
-  "\01\00\10O\01\00=\0c\01\00\d5\00\00\00,Q\01\00t\00\07\00\88Q\01\00\90Q"
-  "\01\00\c3\01\01\00os.FileHandle\00\00\00\d5\00\00\00hQ\01\00T\00\00\00"
-  "\98Q\01\00\d5\00\00\00\90Q\01\00\fa\00\00\00DT\01\00\bcQ\01\00\c3\01\01"
-  "\00os.dirInfo\00\00\da\00\00\00\d8Q\01\00\c3\01\01\00\04\00\00\00\01\00"
-  "\00\00\e0Q\01\009\0c\01\00\d5\00\00\00\bcQ\01\00\c5\00\00\00\e8Q\01\00"
-  "\d5\00\00\00\e0Q\01\00\cb\00\00\00\f8Q\01\00\d5\00\00\00\f0Q\01\00Allo"
-  "c = %v MiB\0aTotalAlloc = %v MiB\0aSys = %v MiB\0aBegin\00\00\000R\01\00"
-  "\05\00\00\00Q\00\00\00HR\01\00\d5\00\00\00@R\01\00\e8\00\01\00\fcS\01\00"
-  "LM\01\00\0d\02\01\00reflectlite.Kind\00\00\00\00\fa\00\04\00\04T\01\00"
-  "\c4M\01\00\0d\02\01\00reflectlite.RawType\00z\00F\00\14T\01\00\84M\01\00"
-  "\0d\02\01\00reflectlite.Value\00\00\00\e8\00\00\00$T\01\00LM\01\00\0d\02"
-  "\01\00reflectlite.valueFlags\00\00\ea\00\05\00,T\01\00L\0c\01\00\d1\01"
-  "\01\00fs.FileMode\00\fa\00\00\00<T\01\00\e4T\01\00\c3\01\01\00os.File\00"
-  "\ec\00\08\00TT\01\00\b4\0b\01\00\c3\01\01\00os.unixFileHandle\00\00\00"
-  "\fa\00\03\00\5cT\01\00\8c\0b\01\00\c3\01\01\00os.unixFilesystem\00\00\00"
-  "z\00J\00dT\01\00\c8T\01\00\b4\01\01\00reflect.Value\00\00\00\fa\00\04\00"
-  "lT\01\00\acT\01\00\b4\01\01\00reflect.rawType\00\ec\00\04\00tT\01\00\b4"
-  "\0b\01\00\f6\01\01\00syscall.Errno\00\00\00\fa\00+\00\8cT\01\00l\0c\01"
-  "\00\22\02\01\00time.Time\00\00\00\d5\00\01\00\84\05\01\00\d5\00\00\00\1c"
-  "M\01\00\d5\00\00\00\10N\01\00\d5\00\05\00\98L\01\00\d5\00\01\00PR\01\00"
-  "\d5\00\19\00tR\01\00\d5\00\01\00\dc\02\01\00\d5\00F\00\98R\01\00\d5\00"
-  "\01\00\5c\01\01\00\d5\00\00\00\bcR\01\00\d5\00\05\00\e4R\01\00\d5\00\03"
-  "\00\c4\0b\01\00\d5\00\15\00\00S\01\00\d5\00\00\00\a0Q\01\00\d5\00\00\00"
-  "\14Q\01\00\d5\00\08\00\18S\01\00\d5\00\03\00<S\01\00\d5\00J\00`S\01\00"
-  "\d5\00#\00\80S\01\00\d5\00\04\00\a0S\01\00\d5\00\01\00\a0\0c\01\00\d5\00"
-  "\01\00`\09\01\00\d5\00/\00\c0S\01\00\d5\00\19\00\acT\01\00\d5\00F\00\c8"
-  "T\01\00\d5\00\00\00\e4T\01\00\da\00\04\00\94T\01\00\b4\01\01\00\01\00\00"
-  "\00\01\00\00\00tR\01\00\c0\07\01\00Z\00F\00\9cT\01\00\b4\01\01\00\0c\00"
-  "\00\00\01\00\00\00\98R\01\00|M\01\00\da\00\00\00\a4T\01\00\c3\01\01\00"
-  "\04\00\00\00\01\00\00\00LT\01\00\18\0c\01";
-data data(offset: 87296) =
-  "D\f8\5c\ff\a4]\01\00\00\00\00\00\8c^\01\00\c1\82\01\00\00\00\00\00\04\00"
-  "\00\00\0c\00\00\00\01\00\00\00\00\00\00\00\03\00\00\00\00\00\00\00\04\00"
-  "\00\00\a4_\01\00aQ\86A\00\00\00\00\04\00\00\00\08\00\00\00\01\00\00\00"
-  "\00\00\00\00\03\00\00\00\00\00\00\00\04\00\00\00\00\00\00\00\bc\0a\01\00"
-  "\03";
-data data_1(offset: 87456) =
-  "J\0c\01\00\01\00\00\00<S\01\00\00\00\00\00\b4U\01\00\18S\01\00\01\00\00"
-  "\00\a8\0b\01\00\0b";
-data data_2(offset: 87500) =
+data rodata_28(offset: 82608) =
+  "\01\00\00\00\d5\0e\01\00\01\00\00\00\01\00\00\00\d6\0e\01\00\02\00\00\00"
+  "\01\00\00\00\d8\0e\01\00\03\00\00\00\02\00\00\00\db\0e\01\00\03\00\00\00"
+  "\02\00\00\00\de\0e\01\00\04\00\00\00\02\00\00\00\e2\0e\01\00\05\00\00\00"
+  "\03\00\00\00\e7\0e\01\00\05\00\00\00\03\00\00\00\ec\0e\01\00\06\00\00\00"
+  "\03\00\00\00\f2\0e\01\00\07\00\00\00\04\00\00\00\f9\0e\01\00\07\00\00\00"
+  "\04\00\00\00\00\0f\01\00\08\00\00\00\04\00\00\00\08\0f\01\00\09\00\00\00"
+  "\04\00\00\00\11\0f\01\00\0a\00\00\00\05\00\00\00\1b\0f\01\00\0a\00\00\00"
+  "\05\00\00\00%\0f\01\00\0b\00\00\00\05\00\00\000\0f\01\00\0c\00\00\00\06"
+  "\00\00\00<\0f\01\00\0c\00\00\00\06\00\00\00H\0f\01\00\0d\00\00\00\06\00"
+  "\00\00U\0f\01\00\0e\00\00\00\07\00\00\00c\0f\01\00\0e\00\00\00\07\00\00"
+  "\00q\0f\01\00\0f\00\00\00\07\00\00\00\80\0f\01\00\10\00\00\00\07\00\00"
+  "\00\90\0f\01\00\11\00\00\00\08\00\00\00\a1\0f\01\00\11\00\00\00\08\00\00"
+  "\00\b2\0f\01\00\12\00\00\00\08\00\00\00\c4\0f\01\00\13\00\00\00\09\00\00"
+  "\00\d7\0f\01\00\13\00\00\00\09\00\00\00\ea\0f\01\00\14\00\00\00\09\00\00"
+  "\00\fe\0f\01\00\15\00\00\00\0a\00\00\00\13\10\01\00\15\00\00\00\0a\00\00"
+  "\00(\10\01\00\16\00\00\00\0a\00\00\00>\10\01\00\17\00\00\00\0a\00\00\00"
+  "U\10\01\00\18\00\00\00\0b\00\00\00m\10\01\00\18\00\00\00\0b\00\00\00\85"
+  "\10\01\00\19\00\00\00\0b\00\00\00\9e\10\01\00\1a\00\00\00\0c\00\00\00\b8"
+  "\10\01\00\1a\00\00\00\0c\00\00\00\d2\10\01\00\1b\00\00\00\0c\00\00\00\ed"
+  "\10\01\00\1c\00\00\00\0d\00\00\00\09\11\01\00\1c\00\00\00\0d\00\00\00%"
+  "\11\01\00\1d\00\00\00\0d\00\00\00B\11\01\00\1e\00\00\00\0d\00\00\00`\11"
+  "\01\00\1f\00\00\00\0e\00\00\00\7f\11\01\00\1f\00\00\00\0e\00\00\00\9e\11"
+  "\01\00 \00\00\00\0e\00\00\00\be\11\01\00!\00\00\00\0f\00\00\00\df\11\01"
+  "\00!\00\00\00\0f\00\00\00\00\12\01\00\22\00\00\00\0f\00\00\00\22\12\01"
+  "\00#\00\00\00\10\00\00\00E\12\01\00#\00\00\00\10\00\00\00h\12\01\00$\00"
+  "\00\00\10\00\00\00\8c\12\01\00%\00\00\00\10\00\00\00\b1\12\01\00&\00\00"
+  "\00\11\00\00\00\d7\12\01\00&\00\00\00\11\00\00\00\fd\12\01\00'\00\00\00"
+  "\11\00\00\00$\13\01\00(\00\00\00\12\00\00\00L\13\01\00(\00\00\00\12\00"
+  "\00\00t\13\01\00)\00\00\00\12\00\00\00\9d\13\01\00*\00\00\00\13\00\00\00"
+  "\c7\13\01\00*\00\00\00\00\00\01\00M\00\01\00P\00\01\00]\00\01\00\80\00"
+  "\01\00\fa\00\01\00\00\01\01\00\02\01\01\00\07\01\01\003\01\01\007\01\01"
+  "\00\9c\01\01\00\a0\01\01\00\a0\01\01\00\d0\01\01\00\fd\01\01\00\80\02\01"
+  "\00\9c\02\01\00\a0\02\01\00\d0\02\01\00\e0\02\01\00\fb\02\01\00\00\03\01"
+  "\00#\03\01\00-\03\01\00J\03\01\00P\03\01\00z\03\01\00\80\03\01\00\c3\03"
+  "\01\00\c8\03\01\00\d5\03\01\00\00\04\01\00\9d\04\01\00\a0\04\01\00\a9\04"
+  "\01\00\b0\04\01\00\d3\04\01\00\d8\04\01\00\fb\04\01\00\00\05\01\00'\05"
+  "\01\000\05\01\00c\05\01\00o\05\01\00\bc\05\01\00\00\06\01\006\07\01\00"
+  "@\07\01\00U\07\01\00`\07\01\00g\07\01\00\80\07\01\00\ba\07\01\00\00\08"
+  "\01\00\05\08\01\00\08\08\01\008\08\01\00<\08\01\00<\08\01\00?\08\01\00"
+  "\9e\08\01\00\a7\08\01\00\af\08\01\00\e0\08\01\00\f5\08\01\00\fb\08\01\00"
+  "\1b\09\01\00\1f\09\01\009\09\01\00?\09\01\00?\09\01\00\80\09\01\00\b7\09"
+  "\01\00\bc\09\01\00\cf\09\01\00\d2\09\01\00\06\0a\01\00\0c\0a\01\005\0a"
+  "\01\008\0a\01\00:\0a\01\00?\0a\01\00H\0a\01\00P\0a\01\00X\0a\01\00`\0a"
+  "\01\00\9f\0a\01\00\c0\0a\01\00\e6\0a\01\00\eb\0a\01\00\f6\0a\01\00\00\0b"
+  "\01\005\0b\01\009\0b\01\00U\0b\01\00X\0b\01\00r\0b\01\00x\0b\01\00\91\0b"
+  "\01\00\99\0b\01\00\9c\0b\01\00\a9\0b\01\00\af\0b\01\00\00\0c\01\00H\0c"
+  "\01\00\80\0c\01\00\b2\0c\01\00\c0\0c\01\00\f2\0c\01\00\fa\0c\01\00'\0d"
+  "\01\000\0d\01\009\0d\01\00`\0e\01\00\ad\0e\01\00\b0\0e\01\00\b1\0e\01\00"
+  "\fd\0e\01\00'\0f\01\000\0f\01\00Y\0f\01\00p\0f\01\00\89\0f\01\00\b0\0f"
+  "\01\00\cb\0f\01\00\e0\0f\01\00\f6\0f\01\00\00\10\01\00M\10\01\00R\10\01"
+  "\00u\10\01\00\7f\10\01\00\c2\10\01\00\d0\10\01\00\e8\10\01\00\f0\10\01"
+  "\00\f9\10\01\00\00\11\01\00G\11\01\00P\11\01\00v\11\01\00\80\11\01\00\f4"
+  "\11\01\00\00\12\01\00A\12\01\00\80\12\01\00\a9\12\01\00\b0\12\01\00\ea"
+  "\12\01\00\f0\12\01\00\f9\12\01\00\00\13\01\00\0c\13\01\00\0f\13\01\00\10"
+  "\13\01\00\13\13\01\00D\13\01\00G\13\01\00H\13\01\00K\13\01\00M\13\01\00"
+  "P\13\01\00P\13\01\00W\13\01\00W\13\01\00]\13\01\00c\13\01\00f\13\01\00"
+  "l\13\01\00p\13\01\00t\13\01\00\00\14\01\00a\14\01\00\80\14\01\00\c7\14"
+  "\01\00\d0\14\01\00\d9\14\01\00\80\15\01\00\b5\15\01\00\b8\15\01\00\dd\15"
+  "\01\00\00\16\01\00D\16\01\00P\16\01\00Y\16\01\00`\16\01\00l\16\01\00\80"
+  "\16\01\00\b9\16\01\00\c0\16\01\00\c9\16\01\00\00\17\01\00\1a\17\01\00\1d"
+  "\17\01\00+\17\01\000\17\01\00F\17\01\00\00\18\01\00;\18\01\00\a0\18\01"
+  "\00\f2\18\01\00\ff\18\01\00\06\19\01\00\09\19\01\00\09\19\01\00\0c\19\01"
+  "\008\19\01\00;\19\01\00F\19\01\00P\19\01\00Y\19\01\00\a0\19\01\00\a7\19"
+  "\01\00\aa\19\01\00\d7\19\01\00\da\19\01\00\e4\19\01\00\00\1a\01\00G\1a"
+  "\01\00P\1a\01\00\a2\1a\01\00\b0\1a\01\00\f8\1a\01\00\00\1b\01\00\09\1b"
+  "\01\00\00\1c\01\00E\1c\01\00P\1c\01\00l\1c\01\00p\1c\01\00\8f\1c\01\00"
+  "\92\1c\01\00\b6\1c\01\00\00\1d\01\006\1d\01\00:\1d\01\00G\1d\01\00P\1d"
+  "\01\00Y\1d\01\00`\1d\01\00\98\1d\01\00\a0\1d\01\00\a9\1d\01\00\e0\1e\01"
+  "\00\f8\1e\01\00\00\1f\01\00:\1f\01\00>\1f\01\00Y\1f\01\00\b0\1f\01\00\b0"
+  "\1f\01\00\c0\1f\01\00\f1\1f\01\00\ff\1f\01\00\99#\01\00\00$\01\00t$\01"
+  "\00\80$\01\00C%\01\00\90/\01\00\f2/\01\00\000\01\00/4\01\00@4\01\00U4\01"
+  "\00\00D\01\00FF\01\00\00h\01\008j\01\00@j\01\00ij\01\00nj\01\00\c9j\01"
+  "\00\d0j\01\00\edj\01\00\f0j\01\00\f5j\01\00\00k\01\00Ek\01\00Pk\01\00w"
+  "k\01\00}k\01\00\8fk\01\00@n\01\00\9an\01\00\00o\01\00Jo\01\00Oo\01\00\87"
+  "o\01\00\8fo\01\00\9fo\01\00\e0o\01\00\e4o\01\00\f0o\01\00\f1o\01\00\00"
+  "p\01\00\f7\87\01\00\00\88\01\00\d5\8c\01\00\00\8d\01\00\08\8d\01\00\f0"
+  "\af\01\00\22\b1\01\002\b1\01\002\b1\01\00P\b1\01\00R\b1\01\00U\b1\01\00"
+  "U\b1\01\00d\b1\01\00g\b1\01\00p\b1\01\00\fb\b2\01\00\00\bc\01\00j\bc\01"
+  "\00p\bc\01\00|\bc\01\00\80\bc\01\00\88\bc\01\00\90\bc\01\00\99\bc\01\00"
+  "\9c\bc\01\00\9f\bc\01\00\00\cf\01\00-\cf\01\000\cf\01\00F\cf\01\00P\cf"
+  "\01\00\c3\cf\01\00\00\d0\01\00\f5\d0\01\00\00\d1\01\00&\d1\01\00)\d1\01"
+  "\00r\d1\01\00{\d1\01\00\ea\d1\01\00\00\d2\01\00E\d2\01\00\c0\d2\01\00\d3"
+  "\d2\01\00\e0\d2\01\00\f3\d2\01\00\00\d3\01\00V\d3\01\00`\d3\01\00x\d3\01"
+  "\00\00\d4\01\00\9f\d4\01\00\a2\d4\01\00\a2\d4\01\00\a5\d4\01\00\a6\d4\01"
+  "\00\a9\d4\01\00\0a\d5\01\00\0d\d5\01\00F\d5\01\00J\d5\01\00\a5\d6\01\00"
+  "\a8\d6\01\00\cb\d7\01\00\ce\d7\01\00\8b\da\01\00\9b\da\01\00\af\da\01\00"
+  "\00\df\01\00\1e\df\01\00%\df\01\00*\df\01\00\00\e0\01\00\18\e0\01\00\1b"
+  "\e0\01\00*\e0\01\000\e0\01\00m\e0\01\00\8f\e0\01\00\8f\e0\01\00\00\e1\01"
+  "\00,\e1\01\000\e1\01\00=\e1\01\00@\e1\01\00I\e1\01\00N\e1\01\00O\e1\01"
+  "\00\90\e2\01\00\ae\e2\01\00\c0\e2\01\00\f9\e2\01\00\ff\e2\01\00\ff\e2\01"
+  "\00\d0\e4\01\00\f9\e4\01\00\e0\e7\01\00\c4\e8\01\00\c7\e8\01\00\d6\e8\01"
+  "\00\00\e9\01\00K\e9\01\00P\e9\01\00Y\e9\01\00^\e9\01\00_\e9\01\00q\ec\01"
+  "\00\b4\ec\01\00\01\ed\01\00=\ed\01\00\00\ee\01\00$\ee\01\00'\ee\01\00;"
+  "\ee\01\00B\ee\01\00B\ee\01\00G\ee\01\00T\ee\01\00W\ee\01\00d\ee\01\00g"
+  "\ee\01\00\9b\ee\01\00\a1\ee\01\00\bb\ee\01\00\f0\ee\01\00\f1\ee\01\00\00"
+  "\f0\01\00+\f0\01\000\f0\01\00\93\f0\01\00\a0\f0\01\00\ae\f0\01\00\b1\f0"
+  "\01\00\f5\f0\01\00\00\f1\01\00\ad\f1\01\00\e6\f1\01\00\02\f2\01\00\10\f2"
+  "\01\00;\f2\01\00@\f2\01\00H\f2\01\00P\f2\01\00Q\f2\01\00`\f2\01\00e\f2"
+  "\01\00\00\f3\01\00\d7\f6\01\00\dc\f6\01\00\ec\f6\01\00\f0\f6\01\00\fc\f6"
+  "\01\00\00\f7\01\00v\f7\01\00{\f7\01\00\d9\f7\01\00\e0\f7\01\00\eb\f7\01"
+  "\00\f0\f7\01\00\f0\f7\01\00\00\f8\01\00\0b\f8\01\00\10\f8\01\00G\f8\01"
+  "\00P\f8\01\00Y\f8\01\00`\f8\01\00\87\f8\01\00\90\f8\01\00\ad\f8\01\00\b0"
+  "\f8\01\00\b1\f8\01\00\00\f9\01\00S\fa\01\00`\fa\01\00m\fa\01\00p\fa\01"
+  "\00|\fa\01\00\80\fa\01\00\88\fa\01\00\90\fa\01\00\c5\fa\01\00\ce\fa\01"
+  "\00\db\fa\01\00\e0\fa\01\00\e8\fa\01\00\f0\fa\01\00\f8\fa\01\00\00\fb\01"
+  "\00\ca\fb\01\00\f0\fb\01\00\f9\fb\01\00\00\00\02\00\df\a6\02\00\00\a7\02"
+  "\009\b7\02\00@\b7\02\00\1d\b8\02\00 \b8\02\00\a1\ce\02\00\b0\ce\02\00\e0"
+  "\eb\02\00\00\f8\02\00\1d\fa\02\00\00\00\03\00J\13\03\00P\13\03\00\af#\03"
+  "\00\00\01\0e\00\ef\01\0e\00:\00\00\00\d8T\01\00\88M\01\00\b0\01\01\00f"
+  "mt.pp\00\00\1a\00\00\00\ecM\01\00\b0\01\01\00\90\00\00\00\0a\00\00\00\f4"
+  "M\01\00DO\01\00<N\01\004N\01\00DT\01\00LN\01\00\e8N\01\00\e0N\01\00\e8"
+  "O\01\00\80P\01\00\e8O\01\00\8cP\01\00\e8O\01\00\99P\01\00\e8O\01\00\a5"
+  "P\01\00\e8O\01\00\b0P\01\00\ccP\01\00\bcP\01\00\d5\00\00\00\88M\01\006"
+  "\00\00\00\c8T\01\00\10N\01\00\b0\01\01\00fmt.buffer\00\00\16\00\00\00\1c"
+  "N\01\00$N\01\00\d5\00\00\00\10N\01\00\c8\00\00\00,N\01\00\d5\00\00\00$"
+  "N\01\00\00\0carg\00\00\00T\00\00\00DN\01\00\d5\00\00\00<N\01\00\00\14v"
+  "alue\00\0d\00Value\00Z\00\00\00\88N\01\00\0d\02\01\00\0c\00\00\00\03\00"
+  "\00\00\e8T\01\00\90N\01\00\c8N\01\00\c0N\01\00\a0S\01\00\d8N\01\00\d5\00"
+  "\00\00\5cN\01\00\00\00typecode\00\00\da\00\00\00\b8N\01\00\0d\02\01\00"
+  "\01\00\00\00\01\00\00\00$N\01\00C\01\01\00\d5\00\00\00\9cN\01\00\00\04"
+  "value\00R\00\00\00\d0N\01\00\d5\00\00\00\c8N\01\00\00\08flags\00\00 fm"
+  "t\00\00\00\fa\00\00\00\d0T\01\00\00O\01\00\b0\01\01\00fmt.fmt\00\da\00"
+  "\00\00<O\01\00\b0\01\01\00\5c\00\00\00\05\00\00\00\c8T\01\00DO\01\00LO"
+  "\01\00\c6\01\01\00DP\01\00=P\01\00DP\01\00TP\01\00dP\01\00[P\01\00\d5\00"
+  "\00\00\00O\01\00\00\00buf\00\00\00\fa\00\00\00lO\01\00tO\01\00\b0\01\01"
+  "\00fmt.fmtFlags\00\00\00\00\d5\00\00\00LO\01\00\da\00\00\00\d0O\01\00\b0"
+  "\01\01\00\09\00\00\00\09\00\00\00\e8O\01\00\d8O\01\00\e8O\01\00\f8O\01"
+  "\00\e8O\01\00\06P\01\00\e8O\01\00\0eP\01\00\e8O\01\00\15P\01\00\e8O\01"
+  "\00\1dP\01\00\e8O\01\00%P\01\00\e8O\01\00,P\01\00\e8O\01\004P\01\00\d5"
+  "\00\00\00tO\01\00\00\00widPresent\00\00\00\00\c1\00\00\00\f0O\01\00\d5"
+  "\00\00\00\e8O\01\00\00\01precPresent\00\00\02minus\00\00\03plus\00\00\04"
+  "sharp\00\00\05space\00\00\06zero\00\00\07plusV\00\00\08sharpV\00\00\10"
+  "wid\00\00\c2\00\00\00LP\01\00\d5\00\00\00DP\01\00\00\14prec\00\00\18in"
+  "tbuf\00\d7\00\00\00xP\01\00$N\01\00D\00\00\00\10N\01\00\d5\00\00\00dP\01"
+  "\00\00|reordered\00\00}goodArgNum\00\00~panicking\00\00\7ferroring\00\00"
+  "\80\01wrapErrs\00\00\84\01wrappedErrs\00\00\16\00\00\00\d8P\01\00DP\01"
+  "\00\d5\00\00\00\ccP\01\00Q\00\00\00\e8P\01\00\d5\00\00\00\e0P\01\00t\00"
+  "\01\00\08Q\01\00\10Q\01\007\02\01\00.error\00\00\d5\00\00\00\f0P\01\00"
+  "T\00\00\00\18Q\01\00\d5\00\00\00\10Q\01\00truefalsefmt: unknown base; "
+  "can't happen)Q\01\00\1f\00\00\00`(BADINDEX)%!(BADWIDTH)%!(BADPREC)%!(N"
+  "OVERB)%!(EXTRA i))(nil0123456789abcdefx0123456789ABCDEFXGoStringErrorS"
+  "tring%!(MISSING)[]byte<invalid reflect.Value>map[<nil>(nil), \00\00\00"
+  "z\00\00\000U\01\00\14R\01\00\c3\01\01\00os.file\00Z\00\00\00HR\01\00\c3"
+  "\01\01\00\18\00\00\00\04\00\00\00PR\01\00\f7\0c\01\00\e0P\01\00\00\0d\01"
+  "\00(U\01\00\07\0d\01\00\e8O\01\00\15\0d\01\00\d5\00\00\00\14R\01\00t\00"
+  "\07\00pR\01\00xR\01\00\c3\01\01\00os.FileHandle\00\00\00\d5\00\00\00PR"
+  "\01\00T\00\00\00\80R\01\00\d5\00\00\00xR\01\00\fa\00\00\00(U\01\00\a4R"
+  "\01\00\c3\01\01\00os.dirInfo\00\00\da\00\00\00\c0R\01\00\c3\01\01\00\04"
+  "\00\00\00\01\00\00\00\c8R\01\00\11\0d\01\00\d5\00\00\00\a4R\01\00\c5\00"
+  "\00\00\d0R\01\00\d5\00\00\00\c8R\01\00Allocated memory at:Not Synced :"
+  " Synced : Unsafe1Unsafe2Safe1Safe2\00\00\ca\00\00\00$S\01\00\d5\00\00\00"
+  "\1cS\01\000x%08X  \e8\00\01\00\e0T\01\00$N\01\00\0d\02\01\00reflectlit"
+  "e.Kind\00\00\00\00\fa\00\04\00\e8T\01\00\9cN\01\00\0d\02\01\00reflectl"
+  "ite.RawType\00z\00F\00\f8T\01\00\5cN\01\00\0d\02\01\00reflectlite.Valu"
+  "e\00\00\00\e8\00\00\00\08U\01\00$N\01\00\0d\02\01\00reflectlite.valueF"
+  "lags\00\00\ea\00\05\00\10U\01\00\1cS\01\00\d1\01\01\00fs.FileMode\00\fa"
+  "\00\00\00 U\01\00\c8U\01\00\c3\01\01\00os.File\00\ec\00\08\008U\01\00\8c"
+  "\0c\01\00\c3\01\01\00os.unixFileHandle\00\00\00\fa\00\03\00@U\01\00d\0c"
+  "\01\00\c3\01\01\00os.unixFilesystem\00\00\00z\00J\00HU\01\00\acU\01\00"
+  "\b4\01\01\00reflect.Value\00\00\00\fa\00\04\00PU\01\00\90U\01\00\b4\01"
+  "\01\00reflect.rawType\00\ec\00\04\00XU\01\00\8c\0c\01\00\f6\01\01\00sy"
+  "scall.Errno\00\00\00\fa\00+\00pU\01\004\0d\01\00\22\02\01\00time.Time\00"
+  "\00\00\d5\00\01\00\84\05\01\00\d5\00\00\00\f4M\01\00\d5\00\00\00\e8N\01"
+  "\00\d5\00\05\00pM\01\00\d5\00\01\004S\01\00\d5\00\19\00XS\01\00\d5\00\01"
+  "\00\dc\02\01\00\d5\00F\00|S\01\00\d5\00\01\00\5c\01\01\00\d5\00\00\00\a0"
+  "S\01\00\d5\00\05\00\c8S\01\00\d5\00\03\00\9c\0c\01\00\d5\00\15\00\e4S\01"
+  "\00\d5\00\00\00\88R\01\00\d5\00\00\00\fcQ\01\00\d5\00\08\00\fcS\01\00\d5"
+  "\00\03\00 T\01\00\d5\00J\00DT\01\00\d5\00#\00dT\01\00\d5\00\04\00\84T\01"
+  "\00\d5\00\01\00x\0d\01\00\d5\00\01\008\0a\01\00\d5\00/\00\a4T\01\00\d5"
+  "\00\19\00\90U\01\00\d5\00F\00\acU\01\00\d5\00\00\00\c8U\01\00\da\00\04"
+  "\00xU\01\00\b4\01\01\00\01\00\00\00\01\00\00\00XS\01\00C\08\01\00Z\00F"
+  "\00\80U\01\00\b4\01\01\00\0c\00\00\00\01\00\00\00|S\01\00TN\01\00\da\00"
+  "\00\00\88U\01\00\c3\01\01\00\04\00\00\00\01\00\00\000U\01\00\f0\0c\01";
+data data(offset: 87528) = "D\f8\5c\ff\bc^\01";
+data data_1(offset: 87576) = "\e8\03";
+data data_2(offset: 87592) =
+  "\18b\01\00\c1\82\01\00\00\00\00\00\04\00\00\00\0c\00\00\00\01\00\00\00"
+  "\00\00\00\00\07\00\00\00\00\00\00\00\08\00\00\000c\01\00aQ\86A\00\00\00"
+  "\00\04\00\00\00\08\00\00\00\01\00\00\00\00\00\00\00\07\00\00\00\00\00\00"
+  "\00\08\00\00\00\94\0b\01\00\03";
+data data_3(offset: 87736) =
+  "\22\0d\01\00\01\00\00\00 T\01\00\00\00\00\00\ccV\01\00\fcS\01\00\01\00"
+  "\00\00\80\0c\01\00\0b";
+data data_4(offset: 87780) =
   "\17\00\00\00\08\00\00\00\81\ff\ff\ff4\00\00\00\0b\00\00\00\01\fc\ff\ff"
   " \00~\00\a1\00w\03z\03\7f\03\84\03V\05Y\05\8a\05\8d\05\c7\05\d0\05\ea\05"
   "\ef\05\f4\05\06\06\0d\07\10\07J\07M\07\b1\07\c0\07\fa\07\fd\07-\080\08"
@@ -751,40 +756,43 @@ data data_2(offset: 87500) =
   "\5c\ee^\ee`\eec\eek\ees\eex\ee}\ee\7f\ee\8a\ee\a4\ee\aa\ee\c0\f0\d0\f0"
   "\be\fa\93\fb\00\00&\04\01\00\04\00\00\001\01\01\00\03\00\00\00*\04\01\00"
   "\05\00\00\00\cd\04\01\00\03\00\00\004\01\01\00\08\00\00\00<\01\01\00\07"
-  "\00\00\00!\08\01\00\13\00\00\004\08\01\00\13\00\00\00G\08\01\00\13";
+  "\00\00\00\f8\08\01\00\13\00\00\00\0b\09\01\00\13\00\00\00\1e\09\01\00\13"
+  "";
 
 import function runtime_fd_write(a:int, b:int, c:int, d:int):int; // func0
 
 import function runtime_proc_exit(a:int); // func1
 
-import function schedular_log(a:int, b:int); // func2
+import function runtime_poll_oneoff(a:int, b:int, c:int, d:int):int; // func2
 
-import function runtime_clock_time_get(a:int, b:long, c:int):int; // func3
+import function schedular_log(a:int, b:int); // func3
 
-import function runtime_args_sizes_get(a:int, b:int):int; // func4
+import function runtime_clock_time_get(a:int, b:long, c:int):int; // func4
 
-import function runtime_args_get(a:int, b:int):int; // func5
+import function runtime_args_sizes_get(a:int, b:int):int; // func5
 
-import function imported_wasi_snapshot_preview1_random_get(a:int, b:int):int; // func6
+import function runtime_args_get(a:int, b:int):int; // func6
 
-function wasm_call_ctors() { // func7
+import function imported_wasi_snapshot_preview1_random_get(a:int, b:int):int; // func7
+
+function wasm_call_ctors() { // func8
 }
 
-function tinygo_getCurrentStackPointer():int { // func8
+function tinygo_getCurrentStackPointer():int { // func9
   return stack_pointer
 }
 
-function tinygo_unwind(a:int_ptr) { // func9
-  if (88936[0]:ubyte) {
+function tinygo_unwind(a:int_ptr) { // func10
+  if (89216[0]:ubyte) {
     asyncify_stop_rewind();
-    88936[0]:byte = 0;
+    89216[0]:byte = 0;
   } else {
     a[1] = stack_pointer;
     asyncify_start_unwind(a);
   }
 }
 
-function tinygo_launch(a:int_ptr) { // func10
+function tinygo_launch(a:int_ptr) { // func11
   let t0 = stack_pointer;
   stack_pointer = a[3];
   call_indirect(a[1], a[0]);
@@ -792,18 +800,18 @@ function tinygo_launch(a:int_ptr) { // func10
   stack_pointer = t0;
 }
 
-function tinygo_rewind(a:int_ptr) { // func11
+function tinygo_rewind(a:int_ptr) { // func12
   let t0 = stack_pointer;
   stack_pointer = a[3];
   let t1, t2 = a[1], a[0];
-  88936[0]:byte = 1;
+  89216[0]:byte = 1;
   asyncify_start_rewind(a + 8);
   call_indirect(t1, t2);
   asyncify_stop_unwind();
   stack_pointer = t0;
 }
 
-function write(a:int, b:int, c:int):int { // func12
+function write(a:int, b:int, c:int):int { // func13
   var d:{ a:int, b:int, c:int, d:int }
   var e:{ a:int, b:int, c:int, d:int }
   if (g_b == 2) {
@@ -836,7 +844,7 @@ function write(a:int, b:int, c:int):int { // func12
         if (eqz(g_b)) {
           let t1 = {
                      if (c) {
-                       88940[0]:int = select_if(8, c, c == 76);
+                       89220[0]:int = select_if(8, c, c == 76);
                        -1;
                        goto B_g;
                      }
@@ -860,7 +868,7 @@ function write(a:int, b:int, c:int):int { // func12
   return 0;
 }
 
-function wasi_fd_write(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }):int { // func13
+function wasi_fd_write(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }):int { // func14
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 16;
     d = g_c[0]:int;
@@ -898,7 +906,7 @@ function wasi_fd_write(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }):in
   return 0;
 }
 
-function wasi_random_get(a:int, b:{ a:int, b:int }):int { // func14
+function wasi_random_get(a:int, b:{ a:int, b:int }):int { // func15
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 8;
     b = g_c[0]:int;
@@ -932,10 +940,10 @@ function wasi_random_get(a:int, b:{ a:int, b:int }):int { // func14
   return 0;
 }
 
-function dummy() { // func15
+function dummy() { // func16
 }
 
-function strlen(a:int):int { // func16
+function strlen(a:int):int { // func17
   var b:ubyte_ptr;
   var d:int;
   b = a;
@@ -971,7 +979,7 @@ function strlen(a:int):int { // func16
   return b - a;
 }
 
-function getentropy(a:int, b:int):int { // func17
+function getentropy(a:int, b:int):int { // func18
   var e:int;
   var c:{ a:int, b:int, c:int }
   if (g_b == 2) {
@@ -1005,7 +1013,7 @@ function getentropy(a:int, b:int):int { // func17
                                     }
                                     label B_d:
                                     if (eqz(g_b)) {
-                                      88940[0]:int = c;
+                                      89220[0]:int = c;
                                       return -1;
                                     }
                                     unreachable;
@@ -1021,7 +1029,7 @@ function getentropy(a:int, b:int):int { // func17
   return 0;
 }
 
-function memcpy(a:{ a:byte, b:byte, c:byte, d:byte }, b:int, c:int):int { // func18
+function memcpy(a:{ a:byte, b:byte, c:byte, d:byte }, b:int, c:int):int { // func19
   var d:int;
   var f:int;
   var e:int;
@@ -1176,7 +1184,7 @@ function memcpy(a:{ a:byte, b:byte, c:byte, d:byte }, b:int, c:int):int { // fun
   return a;
 }
 
-function memset(a:{ a:byte, b:byte, c:byte, d:byte }, b:int, c:{ a:long, b:long, c:long, d:long }):int { // func19
+function memset(a:{ a:byte, b:byte, c:byte, d:byte }, b:int, c:{ a:long, b:long, c:long, d:long }):int { // func20
   var g:int;
   if (c >= 33) {
     memory_fill(a, b, c);
@@ -1231,7 +1239,7 @@ function memset(a:{ a:byte, b:byte, c:byte, d:byte }, b:int, c:{ a:long, b:long,
   return a;
 }
 
-function arc4random_buf(a:int, b:{ a:int, b:int }) { // func20
+function arc4random_buf(a:int, b:{ a:int, b:int }) { // func21
   var c:int;
   var e:int;
   var d:{ a:int, b:int }
@@ -1246,38 +1254,38 @@ function arc4random_buf(a:int, b:{ a:int, b:int }) { // func20
           g_c[0]:int = g_c[0]:int - 4;
           c = (g_c[0]:int)[0]:int;
         }
-        if (select_if(g_b, 1, if (g_b) { 0 } else { 88944[0]:int })) {
+        if (select_if(g_b, 1, if (g_b) { 0 } else { 89224[0]:int })) {
           if (eqz(g_b) | eqz(c)) {
-            getentropy(88952, 32);
+            getentropy(89232, 32);
             0;
             if (g_b == 1) goto B_b;
           }
-          if (eqz(g_b)) { 88944[0]:long@4 = 2199023255553L }
+          if (eqz(g_b)) { 89224[0]:long@4 = 2199023255553L }
         }
         if (eqz(g_b)) {
           if (eqz(b)) goto B_i;
-          c = 88948[0]:int;
+          c = 89228[0]:int;
           loop L_j {
             if (c == 512) {
               if (b >= 512) {
                 loop L_m {
-                  chacha20_rng(a + e, 88952);
+                  chacha20_rng(a + e, 89232);
                   e = e + 512;
                   b = b - 512;
                   if (b > 511) continue L_m;
                 }
               }
               if (eqz(b)) goto B_i;
-              chacha20_rng(88984, 88952);
-              88948[0]:int = 0;
+              chacha20_rng(89264, 89232);
+              89228[0]:int = 0;
               c = 0;
             }
-            var f:int = c + 88984;
+            var f:int = c + 89264;
             d = 512 - c;
             c = d > b;
             memcpy(a + e, f, d = select_if(b, d, c));
-            memset(88948[0]:int + 88984, 0, d);
-            88948[0]:int = (c = 88948[0]:int + d);
+            memset(89228[0]:int + 89264, 0, d);
+            89228[0]:int = (c = 89228[0]:int + d);
             e = d + e;
             b = b - d;
             if (b) continue L_j;
@@ -1295,7 +1303,7 @@ function arc4random_buf(a:int, b:{ a:int, b:int }) { // func20
   g_c[0]:int = g_c[0]:int + 8;
 }
 
-function chacha20_rng(a:long_ptr@1, b:long_ptr@1) { // func21
+function chacha20_rng(a:long_ptr@1, b:long_ptr@1) { // func22
   var d:long_ptr@1;
   var e:long_ptr@1;
   var f:long_ptr@1;
@@ -1325,7 +1333,7 @@ function chacha20_rng(a:long_ptr@1, b:long_ptr@1) { // func21
   stack_pointer = c - -64;
 }
 
-function chacha20_update(a:int_ptr@1, b:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int, o:int, p:int }) { // func22
+function chacha20_update(a:int_ptr@1, b:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int, o:int, p:int }) { // func23
   var ka:int;
   var la:int;
   var s:int = -2;
@@ -1463,7 +1471,7 @@ function chacha20_update(a:int_ptr@1, b:{ a:int, b:int, c:int, d:int, e:int, f:i
   b.m = b.m + 1;
 }
 
-function arc4random():int { // func23
+function arc4random():int { // func24
   var a:int_ptr;
   var c:{ a:int, b:int }
   var b:int;
@@ -1505,7 +1513,7 @@ function arc4random():int { // func23
   return 0;
 }
 
-function internal_itoa_Itoa(a:{ a:int, b:int }, b:int) { // func24
+function internal_itoa_Itoa(a:{ a:int, b:int }, b:int) { // func25
   var c:int;
   var g:int;
   var d:int;
@@ -1530,8 +1538,8 @@ function internal_itoa_Itoa(a:{ a:int, b:int }, b:int) { // func24
           c = stack_pointer - 48;
           stack_pointer = c;
           c[9]:long@4 = 2L;
-          g = 89708[0]:int;
-          89708[0]:int = c + 32;
+          g = 89988[0]:int;
+          89988[0]:int = c + 32;
           c[8]:int = g;
           d = b >= 0;
         }
@@ -1577,7 +1585,7 @@ function internal_itoa_Itoa(a:{ a:int, b:int }, b:int) { // func24
               label B_e:
             }
         if (eqz(g_b)) {
-          89708[0]:int = g;
+          89988[0]:int = g;
           a.b = b;
           a.a = d;
           stack_pointer = c + 48;
@@ -1597,7 +1605,7 @@ function internal_itoa_Itoa(a:{ a:int, b:int }, b:int) { // func24
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function internal_itoa_Uitoa(a:{ a:int, b:int }, b:int) { // func25
+function internal_itoa_Uitoa(a:{ a:int, b:int }, b:int) { // func26
   var c:int;
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int }
   var f:byte_ptr;
@@ -1623,8 +1631,8 @@ function internal_itoa_Uitoa(a:{ a:int, b:int }, b:int) { // func25
           c = stack_pointer - 48;
           stack_pointer = c;
           c[9]:long@4 = 1L;
-          e = 89708[0]:int;
-          89708[0]:int = (f = c + 32);
+          e = 89988[0]:int;
+          89988[0]:int = (f = c + 32);
           c[8]:int = e;
           d = 0;
         }
@@ -1675,7 +1683,7 @@ function internal_itoa_Uitoa(a:{ a:int, b:int }, b:int) { // func25
         if (eqz(g_b)) { unreachable }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = e;
+          89988[0]:int = e;
           a.b = b;
           a.a = d;
           stack_pointer = c + 48;
@@ -1695,7 +1703,7 @@ function internal_itoa_Uitoa(a:{ a:int, b:int }, b:int) { // func25
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function runtime_stringConcat(a:{ a:int, b:int }, b:int, c:int, d:int, e:int) { // func26
+function runtime_stringConcat(a:{ a:int, b:int }, b:int, c:int, d:int, e:int) { // func27
   var i:int;
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int }
   var f:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int }
@@ -1724,8 +1732,8 @@ function runtime_stringConcat(a:{ a:int, b:int }, b:int, c:int, d:int, e:int) { 
           stack_pointer = i;
           i[5]:long@4 = 0L;
           i[3]:long@4 = 3L;
-          g = 89708[0]:int;
-          89708[0]:int = (h = i + 8);
+          g = 89988[0]:int;
+          89988[0]:int = (h = i + 8);
           i[2]:int = g;
         }
         if (eqz(g_b)) {
@@ -1753,7 +1761,7 @@ function runtime_stringConcat(a:{ a:int, b:int }, b:int, c:int, d:int, e:int) { 
         }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = g;
+          89988[0]:int = g;
           a.b = j;
           a.a = h;
           stack_pointer = i + 32;
@@ -1776,7 +1784,7 @@ function runtime_stringConcat(a:{ a:int, b:int }, b:int, c:int, d:int, e:int) { 
   g_c[0]:int = g_c[0]:int + 36;
 }
 
-function runtime_stringFromBytes(a:{ a:int, b:int }, b:int, c:int) { // func27
+function runtime_stringFromBytes(a:{ a:int, b:int }, b:int, c:int) { // func28
   var f:int;
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int }
   var d:{ a:int, b:int, c:int, d:int, e:int, f:int }
@@ -1801,8 +1809,8 @@ function runtime_stringFromBytes(a:{ a:int, b:int }, b:int, c:int) { // func27
           stack_pointer = f;
           f[5]:long@4 = 0L;
           f[3]:long@4 = 3L;
-          e = 89708[0]:int;
-          89708[0]:int = (g = f + 8);
+          e = 89988[0]:int;
+          89988[0]:int = (g = f + 8);
           f[2]:int = e;
         }
         if (eqz(g_b) | eqz(d)) {
@@ -1813,7 +1821,7 @@ function runtime_stringFromBytes(a:{ a:int, b:int }, b:int, c:int) { // func27
         }
         if (eqz(g_b)) {
           memory_copy(g, b, c);
-          89708[0]:int = e;
+          89988[0]:int = e;
           a.b = c;
           a.a = g;
           stack_pointer = f + 32;
@@ -1833,7 +1841,7 @@ function runtime_stringFromBytes(a:{ a:int, b:int }, b:int, c:int) { // func27
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function runtime_lookupPanic() { // func28
+function runtime_lookupPanic() { // func29
   var a:int = {
                 if (eqz(g_b) |
                     eqz(if (g_b == 2) {
@@ -1854,7 +1862,7 @@ function runtime_lookupPanic() { // func28
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function math_bits_Mul64(a:{ a:long, b:long }, b:long, c:long) { // func29
+function math_bits_Mul64(a:{ a:long, b:long }, b:long, c:long) { // func30
   var d:long;
   var e:long;
   a.b = b * c;
@@ -1866,7 +1874,8 @@ function math_bits_Mul64(a:{ a:long, b:long }, b:long, c:long) { // func29
     (c * e + (d & 4294967295L) >> 32L);
 }
 
-function unicode_utf8_DecodeRuneInString(a:{ a:int, b:int }, b:{ a:ubyte, b:ubyte, c:byte, d:byte }, c:int) { // func30
+function unicode_utf8_DecodeRuneInString(a:{ a:int, b:int }, b:{ a:ubyte, b:ubyte, c:byte, d:byte }, c:int) { // func31
+  var g:int;
   var e:int;
   var i:int;
   a = 
@@ -1876,24 +1885,23 @@ function unicode_utf8_DecodeRuneInString(a:{ a:int, b:int }, b:{ a:ubyte, b:ubyt
         i = (g_c[0]:int)[0]:int;
       }
       if (eqz(g_b)) {
-        var f:int = 65533;
-        if (c <= 0) goto B_e;
-        var g:int = b.a;
-        var d:int = (g + 65553)[0]:ubyte;
-        var j:int = g - 245;
-        if (j <= -52) {
+        var f:int = b.a;
+        var d:int = (f + 65553)[0]:ubyte;
+        var j:int = f - 245;
+        if (j < -51) {
           e = 1;
-          f = (g & (c = d & 1) - 1) | (0 - c & 65533);
+          g = (f & (b = d & 1) - 1) | (0 - b & 65533);
           goto B_e;
         }
         e = 1;
+        g = 65533;
         if ((d & 7) > c) goto B_e;
         if (c == 1) goto B_d;
         var h:int = b.b;
         if (h < ((d = d >> 3 & 30) + 65809)[0]:ubyte) goto B_e;
         if (h > (d + 65810)[0]:ubyte) goto B_e;
         if (j <= -22) {
-          f = (h & 63) | (g & 31) << 6;
+          g = (h & 63) | (f & 31) << 6;
           e = 2;
           goto B_e;
         }
@@ -1901,17 +1909,17 @@ function unicode_utf8_DecodeRuneInString(a:{ a:int, b:int }, b:{ a:ubyte, b:ubyt
         d = b.c;
         if (d > -65) goto B_e;
         if (j <= -6) {
-          f = (d & 63) | ((h & 63) << 6 | (g & 15) << 12);
+          g = (d & 63) | ((h & 63) << 6 | (f & 15) << 12);
           e = 3;
           goto B_e;
         }
         if (c == 3) goto B_d;
-        c = b.d;
-        if (c > -65) goto B_e;
-        f = (c & 63) | (((h & 63) << 12 | (g & 7) << 18) | (d & 63) << 6);
+        b = b.d;
+        if (b > -65) goto B_e;
+        g = (b & 63) | (((h & 63) << 12 | (f & 7) << 18) | (d & 63) << 6);
         e = 4;
         label B_e:
-        a.a = f;
+        a.a = g;
         a.b = e;
         return ;
         label B_d:
@@ -1929,7 +1937,7 @@ function unicode_utf8_DecodeRuneInString(a:{ a:int, b:int }, b:{ a:ubyte, b:ubyt
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function unicode_utf8_EncodeRune(a:int, b:int, c:int):int { // func31
+function unicode_utf8_EncodeRune(a:int, b:int, c:int):int { // func32
   var d:int;
   var e:int;
   a = {
@@ -1999,7 +2007,7 @@ function unicode_utf8_EncodeRune(a:int, b:int, c:int):int { // func31
   return 0;
 }
 
-function unicode_utf8_AppendRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int) { // func32
+function unicode_utf8_AppendRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int) { // func33
   var f:int;
   var i:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
   var g:int;
@@ -2026,8 +2034,8 @@ function unicode_utf8_AppendRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:int,
           stack_pointer = f;
           f[27]:int = 0;
           f[25]:long@4 = 2L;
-          i = 89708[0]:int;
-          89708[0]:int = f + 96;
+          i = 89988[0]:int;
+          89988[0]:int = f + 96;
           f[24]:int = i;
           g = e >= 128;
         }
@@ -2136,7 +2144,7 @@ function unicode_utf8_AppendRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:int,
               label B_e:
             }
         if (eqz(g_b)) {
-          89708[0]:int = i;
+          89988[0]:int = i;
           a.c = e;
           a.b = d;
           a.a = c;
@@ -2159,7 +2167,7 @@ function unicode_utf8_AppendRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:int,
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function runtime_sliceAppend(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int, g:int) { // func33
+function runtime_sliceAppend(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int, g:int) { // func34
   var k:int;
   var i:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int }
   var l:int;
@@ -2191,8 +2199,8 @@ function runtime_sliceAppend(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:i
           (k + 28)[0]:int = 0;
           k[5]:long@4 = 0L;
           k[3]:int = 4;
-          i = 89708[0]:int;
-          89708[0]:int = (j = k + 8);
+          i = 89988[0]:int;
+          89988[0]:int = (j = k + 8);
           k[2]:int = i;
           l = d + f;
         }
@@ -2225,7 +2233,7 @@ function runtime_sliceAppend(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:i
         if (eqz(g_b)) { memory_copy(j + d * g, c, f * g) }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = i;
+          89988[0]:int = i;
           a.c = e;
           a.b = l;
           a.a = j;
@@ -2251,7 +2259,7 @@ function runtime_sliceAppend(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:i
   g_c[0]:int = g_c[0]:int + 44;
 }
 
-function unicode_utf8_RuneCountInString(a:int, b:int):int { // func34
+function unicode_utf8_RuneCountInString(a:int, b:int):int { // func35
   var e:int;
   var d:{ a:int, b:int, c:int, d:int, e:int, f:int }
   var g:int;
@@ -2314,7 +2322,7 @@ function unicode_utf8_RuneCountInString(a:int, b:int):int { // func34
   return 0;
 }
 
-function runtime_stringNext(a:{ a:byte, b:int, c:int }, b:{ a:int, b:int, c:int, d:int, e:int }, c:int, d:int_ptr) { // func35
+function runtime_stringNext(a:{ a:byte, b:int, c:int }, b:{ a:int, b:int, c:int, d:int, e:int }, c:int, d:int_ptr) { // func36
   var h:int;
   var e:{ a:int, b:int, c:int, d:int, e:int }
   var i:int;
@@ -2426,7 +2434,7 @@ function runtime_stringNext(a:{ a:byte, b:int, c:int }, b:{ a:int, b:int, c:int,
   g_c[0]:int = g_c[0]:int + 20;
 }
 
-function Size(a:int):int { // func36
+function Size(a:int):int { // func37
   var d:int;
   var f:int;
   var b:int;
@@ -2452,8 +2460,8 @@ function Size(a:int):int { // func36
         (d + 24)[0]:long = 0L;
         d[2]:long = 0L;
         d[3]:int = 4;
-        f = 89708[0]:int;
-        89708[0]:int = d + 8;
+        f = 89988[0]:int;
+        89988[0]:int = d + 8;
         d[2]:int = f;
         b = eqz(a);
       }
@@ -2521,13 +2529,13 @@ function Size(a:int):int { // func36
       }
       label B_g:
       if (eqz(g_b)) {
-        89708[0]:int = f;
+        89988[0]:int = f;
         stack_pointer = d + 32;
         return b;
       }
       label B_e:
       if (eqz(g_b) | e == 4) {
-        runtime_panic(86592, 66384);
+        runtime_panic(86240, 66384);
         4;
         if (g_b == 1) goto B_b;
       }
@@ -2546,7 +2554,7 @@ function Size(a:int):int { // func36
   return 0;
 }
 
-function elem(a:{ a:ubyte, b:int, c:int }):int { // func37
+function elem(a:{ a:ubyte, b:int, c:int }):int { // func38
   var b:int;
   var d:{ a:int, b:int, c:int }
   var e:int;
@@ -2569,8 +2577,8 @@ function elem(a:{ a:ubyte, b:int, c:int }):int { // func37
                   b = stack_pointer - 32;
                   stack_pointer = b;
                   b[1]:long@4 = 6L;
-                  d = 89708[0]:int;
-                  89708[0]:int = b;
+                  d = 89988[0]:int;
+                  89988[0]:int = b;
                   b[0]:int = d;
                   eqz(a & 3);
                 } |
@@ -2605,14 +2613,14 @@ function elem(a:{ a:ubyte, b:int, c:int }):int { // func37
           label B_i:
         }
         if (eqz(g_b) | e == 1) {
-          runtime_panic(87052, 88864);
+          runtime_panic(87280, 89144);
           1;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { unreachable }
         label B_d:
         if (eqz(g_b)) {
-          89708[0]:int = d;
+          89988[0]:int = d;
           stack_pointer = b + 32;
           return a;
         }
@@ -2629,7 +2637,7 @@ function elem(a:{ a:ubyte, b:int, c:int }):int { // func37
   return 0;
 }
 
-function Len(a:int):int { // func38
+function Len(a:int):int { // func39
   var b:int;
   var c:{ a:int, b:int, c:int }
   var d:{ a:int, b:int, c:int }
@@ -2652,14 +2660,14 @@ function Len(a:int):int { // func38
         stack_pointer = b;
         b[5]:long@4 = 0L;
         b[3]:long@4 = 3L;
-        c = 89708[0]:int;
-        89708[0]:int = b + 8;
+        c = 89988[0]:int;
+        89988[0]:int = b + 8;
         b[2]:int = c;
         d = eqz(a);
       }
       if (eqz(g_b | (d | (a & 3)))) { if ((a[0]:ubyte & 31) == 23) goto B_e }
       if (eqz(g_b) | eqz(e)) {
-        runtime_panic(87052, 88888);
+        runtime_panic(87280, 89168);
         0;
         if (g_b == 1) goto B_b;
       }
@@ -2672,7 +2680,7 @@ function Len(a:int):int { // func38
         a = t0;
       }
       if (eqz(g_b)) {
-        89708[0]:int = c;
+        89988[0]:int = c;
         b[5]:int = a;
         b[6]:int = a;
         let t1 = a[3]:int;
@@ -2692,7 +2700,7 @@ function Len(a:int):int { // func38
   return 0;
 }
 
-function underlying(a:int_ptr):int { // func39
+function underlying(a:int_ptr):int { // func40
   var b:{ a:int, b:int }
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 8;
@@ -2727,7 +2735,7 @@ function underlying(a:int_ptr):int { // func39
   return 0;
 }
 
-function runtime_panic(a:int, b:{ a:int, b:int }) { // func40
+function runtime_panic(a:int, b:{ a:int, b:int }) { // func41
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 8;
     b = g_c[0]:int;
@@ -2758,7 +2766,7 @@ function runtime_panic(a:int, b:{ a:int, b:int }) { // func40
   g_c[0]:int = g_c[0]:int + 8;
 }
 
-function isNamed(a:ubyte_ptr):int { // func41
+function isNamed(a:ubyte_ptr):int { // func42
   var b:int;
   a = {
         if (g_b == 2) {
@@ -2788,7 +2796,7 @@ function isNamed(a:ubyte_ptr):int { // func41
   return 0;
 }
 
-function runtime_nilPanic() { // func42
+function runtime_nilPanic() { // func43
   var a:int = {
                 if (eqz(g_b) |
                     eqz(if (g_b == 2) {
@@ -2809,7 +2817,7 @@ function runtime_nilPanic() { // func42
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function Elem(a:int):int { // func43
+function Elem(a:int):int { // func44
   var d:int;
   var b:{ a:int, b:int, c:int }
   var c:{ a:int, b:int, c:int }
@@ -2828,8 +2836,8 @@ function Elem(a:int):int { // func43
         if (eqz(g_b)) {
           d = stack_pointer - 16;
           stack_pointer = d;
-          c = 89708[0]:int;
-          89708[0]:int = d;
+          c = 89988[0]:int;
+          89988[0]:int = d;
         }
         if (eqz(g_b) | eqz(b)) {
           elem(a);
@@ -2838,7 +2846,7 @@ function Elem(a:int):int { // func43
           a = t0;
         }
         if (eqz(g_b)) {
-          89708[0]:int = c;
+          89988[0]:int = c;
           stack_pointer = d + 16;
           return a;
         }
@@ -2855,7 +2863,7 @@ function Elem(a:int):int { // func43
   return 0;
 }
 
-function NumField(a:int):int { // func44
+function NumField(a:int):int { // func45
   var c:int;
   var b:{ a:int, b:int, c:int }
   var d:{ a:int, b:int, c:int }
@@ -2878,14 +2886,14 @@ function NumField(a:int):int { // func44
         stack_pointer = c;
         c[5]:long@4 = 0L;
         c[3]:long@4 = 3L;
-        b = 89708[0]:int;
-        89708[0]:int = c + 8;
+        b = 89988[0]:int;
+        89988[0]:int = c + 8;
         c[2]:int = b;
         d = eqz(a);
       }
       if (eqz(g_b | (d | (a & 3)))) { if ((a[0]:ubyte & 31) == 26) goto B_e }
       if (eqz(g_b) | eqz(e)) {
-        runtime_panic(87052, 88896);
+        runtime_panic(87280, 89176);
         0;
         if (g_b == 1) goto B_b;
       }
@@ -2898,7 +2906,7 @@ function NumField(a:int):int { // func44
         a = t0;
       }
       if (eqz(g_b)) {
-        89708[0]:int = b;
+        89988[0]:int = b;
         c[6]:int = a;
         let t1 = a[8]:ushort;
         stack_pointer = c + 32;
@@ -2917,7 +2925,7 @@ function NumField(a:int):int { // func44
   return 0;
 }
 
-function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
+function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func46
   var c:int;
   var g:int;
   var d:int;
@@ -2971,8 +2979,8 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
         stack_pointer = c;
         c[167]:int = 72;
         memory_fill(c + 672, 0, 288);
-        c[166]:int = (t = 89708[0]:int);
-        89708[0]:int = (d = c + 664);
+        c[166]:int = (t = 89988[0]:int);
+        89988[0]:int = (d = c + 664);
         j = 0;
       }
       if (eqz(g_b) | eqz(g)) {
@@ -3067,7 +3075,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
         b = c + 32;
       }
       if (eqz(g_b) | g == 5) {
-        runtime_stringConcat(b, e, d, 68283, 1);
+        runtime_stringConcat(b, e, d, 68499, 1);
         5;
         if (g_b == 1) goto B_b;
       }
@@ -3110,7 +3118,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
         b = c - -64;
       }
       if (eqz(g_b) | g == 9) {
-        runtime_stringConcat(b, 67425, 1, e, d);
+        runtime_stringConcat(b, 67428, 1, e, d);
         9;
         if (g_b == 1) goto B_b;
       }
@@ -3239,7 +3247,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
         d = c + 160;
       }
       if (eqz(g_b) | g == 22) {
-        runtime_stringConcat(d, 86273, 4, e, f);
+        runtime_stringConcat(d, 86505, 4, e, f);
         22;
         if (g_b == 1) goto B_b;
       }
@@ -3330,7 +3338,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
           d = c + 608;
         }
         if (eqz(g_b) | g == 29) {
-          runtime_stringConcat(d, 68482, 1, e, f);
+          runtime_stringConcat(d, 68698, 1, e, f);
           29;
           if (g_b == 1) goto B_b;
         }
@@ -3340,7 +3348,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
           d = c + 600;
         }
         if (eqz(g_b) | g == 30) {
-          runtime_stringConcat(d, e, f, 68482, 1);
+          runtime_stringConcat(d, e, f, 68698, 1);
           30;
           if (g_b == 1) goto B_b;
         }
@@ -3442,7 +3450,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
             d = c + 224;
           }
           if (eqz(g_b) | g == 37) {
-            runtime_sliceAppend(d, e, 82358, k, i, 2, 1);
+            runtime_sliceAppend(d, e, 82574, k, i, 2, 1);
             37;
             if (g_b == 1) goto B_b;
           }
@@ -3560,7 +3568,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
             d = c + 368;
           }
           if (eqz(g_b) | g == 44) {
-            runtime_sliceAppend(d, e, 82344, k, i, 2, 1);
+            runtime_sliceAppend(d, e, 82560, k, i, 2, 1);
             44;
             if (g_b == 1) goto B_b;
           }
@@ -3573,7 +3581,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
           label B_ke:
           d = select_if(d, c + 384, g_b);
           if (eqz(g_b) | g == 45) {
-            runtime_sliceAppend(d, e, 82346, k, i, 2, 1);
+            runtime_sliceAppend(d, e, 82562, k, i, 2, 1);
             45;
             if (g_b == 1) goto B_b;
           }
@@ -3586,7 +3594,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
           label B_je:
           d = select_if(d, c + 400, g_b);
           if (eqz(g_b) | g == 46) {
-            runtime_sliceAppend(d, e, 82348, k, i, 2, 1);
+            runtime_sliceAppend(d, e, 82564, k, i, 2, 1);
             46;
             if (g_b == 1) goto B_b;
           }
@@ -3599,7 +3607,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
           label B_ie:
           d = select_if(d, c + 416, g_b);
           if (eqz(g_b) | g == 47) {
-            runtime_sliceAppend(d, e, 82350, k, i, 2, 1);
+            runtime_sliceAppend(d, e, 82566, k, i, 2, 1);
             47;
             if (g_b == 1) goto B_b;
           }
@@ -3612,7 +3620,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
           label B_he:
           d = select_if(d, c + 432, g_b);
           if (eqz(g_b) | g == 48) {
-            runtime_sliceAppend(d, e, 82352, k, i, 2, 1);
+            runtime_sliceAppend(d, e, 82568, k, i, 2, 1);
             48;
             if (g_b == 1) goto B_b;
           }
@@ -3625,7 +3633,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
           label B_ge:
           d = select_if(d, c + 448, g_b);
           if (eqz(g_b) | g == 49) {
-            runtime_sliceAppend(d, e, 82354, k, i, 2, 1);
+            runtime_sliceAppend(d, e, 82570, k, i, 2, 1);
             49;
             if (g_b == 1) goto B_b;
           }
@@ -3638,7 +3646,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
           label B_fe:
           d = select_if(d, c + 464, g_b);
           if (eqz(g_b) | g == 50) {
-            runtime_sliceAppend(d, e, 82356, k, i, 2, 1);
+            runtime_sliceAppend(d, e, 82572, k, i, 2, 1);
             50;
             if (g_b == 1) goto B_b;
           }
@@ -3658,7 +3666,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
             f = c + 288;
           }
           if (eqz(g_b) | g == 51) {
-            runtime_sliceAppend(f, e, 82358, k, i, 2, 1);
+            runtime_sliceAppend(f, e, 82574, k, i, 2, 1);
             51;
             if (g_b == 1) goto B_b;
           }
@@ -3712,7 +3720,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
             f = c + 352;
           }
           if (eqz(g_b) | g == 54) {
-            runtime_sliceAppend(f, e, 82362, k, i, 2, 1);
+            runtime_sliceAppend(f, e, 82578, k, i, 2, 1);
             54;
             if (g_b == 1) goto B_b;
           }
@@ -3774,7 +3782,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
             d = c + 528;
           }
           if (eqz(g_b) | g == 58) {
-            runtime_stringConcat(d, 68482, 1, e, f);
+            runtime_stringConcat(d, 68698, 1, e, f);
             58;
             if (g_b == 1) goto B_b;
           }
@@ -3796,7 +3804,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
           label B_dd:
           d = select_if(d, c + 320, g_b);
           if (eqz(g_b) | g == 60) {
-            runtime_sliceAppend(d, e, 82360, k, i, 2, 1);
+            runtime_sliceAppend(d, e, 82576, k, i, 2, 1);
             60;
             if (g_b == 1) goto B_b;
           }
@@ -3891,7 +3899,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
       }
       label B_l:
       if (eqz(g_b) | g == 65) {
-        runtime_panic(87052, 88904);
+        runtime_panic(87280, 89184);
         65;
         if (g_b == 1) goto B_b;
       }
@@ -3928,7 +3936,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
       }
       label B_f:
       if (eqz(g_b)) {
-        89708[0]:int = t;
+        89988[0]:int = t;
         a.b = l;
         a.a = e;
         stack_pointer = c + 960;
@@ -3961,7 +3969,7 @@ function String(a:{ a:int, b:int }, b:{ a:ubyte, b:ushort }) { // func45
   g_c[0]:int = g_c[0]:int + 76;
 }
 
-function internal_reflectlite_readStringZ(a:{ a:int, b:int }, b:int) { // func46
+function internal_reflectlite_readStringZ(a:{ a:int, b:int }, b:int) { // func47
   var c:int;
   loop L_a {
     if ((b + c)[0]:ubyte) {
@@ -3973,7 +3981,7 @@ function internal_reflectlite_readStringZ(a:{ a:int, b:int }, b:int) { // func46
   a.a = b;
 }
 
-function key(a:int):int { // func47
+function key(a:int):int { // func48
   var c:int_ptr;
   var e:int;
   var f:int;
@@ -3998,8 +4006,8 @@ function key(a:int):int { // func47
         stack_pointer = c;
         c[7] = 0;
         c[3] = 4;
-        e = 89708[0]:int;
-        89708[0]:int = (d = c + 8);
+        e = 89988[0]:int;
+        89988[0]:int = (d = c + 8);
         c[2] = e;
       }
       if (eqz(g_b) | eqz(f)) {
@@ -4016,14 +4024,14 @@ function key(a:int):int { // func47
       }
       if (eqz(g_b | (d | (a & 3)))) { if ((a[0]:ubyte & 31) == 25) goto B_g }
       if (eqz(g_b) | f == 1) {
-        runtime_panic(87052, 88872);
+        runtime_panic(87280, 89152);
         1;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) { unreachable }
       label B_g:
       if (eqz(g_b)) {
-        89708[0]:int = e;
+        89988[0]:int = e;
         let t1 = a[3]:int;
         stack_pointer = c + 32;
         return t1;
@@ -4042,7 +4050,7 @@ function key(a:int):int { // func47
   return 0;
 }
 
-function rawField(a:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:byte }, b:ubyte_ptr, c:int) { // func48
+function rawField(a:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:byte }, b:ubyte_ptr, c:int) { // func49
   var e:int_ptr;
   var f:ubyte_ptr;
   var l:int;
@@ -4082,8 +4090,8 @@ function rawField(a:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:
           stack_pointer = e;
           e[7] = 20;
           memory_fill(e + 32, 0, 80);
-          e[6] = (o = 89708[0]:int);
-          89708[0]:int = e + 24;
+          e[6] = (o = 89988[0]:int);
+          89988[0]:int = e + 24;
           f = eqz(b);
         }
         if (eqz(g_b)) {
@@ -4156,7 +4164,7 @@ function rawField(a:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:
                 k = e[3];
                 f = e[2];
               }
-              89708[0]:int = o;
+              89988[0]:int = o;
               a.i = m & 1;
               a.h = n;
               a.g = h;
@@ -4186,14 +4194,14 @@ function rawField(a:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:
         }
         label B_j:
         if (eqz(g_b) | l == 2) {
-          runtime_panic(86592, 66488);
+          runtime_panic(86240, 66488);
           2;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { unreachable }
         label B_f:
         if (eqz(g_b) | l == 3) {
-          runtime_panic(87052, 88880);
+          runtime_panic(87280, 89160);
           3;
           if (g_b == 1) goto B_b;
         }
@@ -4227,7 +4235,7 @@ function rawField(a:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:
   g_c[0]:int = g_c[0]:int + 52;
 }
 
-function runtime_alloc(a:int):int { // func49
+function runtime_alloc(a:int):int { // func50
   var b:{ a:int, b:int, c:int, d:int, e:int, f:int }
   var c:int;
   var e:int;
@@ -4252,13 +4260,13 @@ function runtime_alloc(a:int):int { // func49
         h = (g_c[0]:int)[0]:int;
       }
       if (eqz(g_b)) {
-        if (eqz(a)) { return 89704 }
-        89664[0]:long = 89664[0]:long + i64_extend_i32_u(a);
-        89680[0]:long = 89680[0]:long + 1L;
-        89672[0]:long = 89672[0]:long + i64_extend_i32_u(f = a + 15 >> 4);
+        if (eqz(a)) { return 89984 }
+        89944[0]:long = 89944[0]:long + i64_extend_i32_u(a);
+        89960[0]:long = 89960[0]:long + 1L;
+        89952[0]:long = 89952[0]:long + i64_extend_i32_u(f = a + 15 >> 4);
         g = 0;
         e = 0;
-        b = 89652[0]:int;
+        b = 89932[0]:int;
         c = b;
       }
       loop L_f {
@@ -4279,7 +4287,7 @@ function runtime_alloc(a:int):int { // func49
           if (g_b == 1) goto B_b;
           d = t0;
         }
-        if (eqz(g_b)) { if (d >= (89648[0]:int - 90368) / 3) goto B_i }
+        if (eqz(g_b)) { if (d >= (89928[0]:int - 91264) / 3) goto B_i }
         if (eqz(g_b) | h == 1) {
           runtime_printstring(67144, 19);
           1;
@@ -4301,7 +4309,7 @@ function runtime_alloc(a:int):int { // func49
         }
         label B_i:
         if (eqz(g_b)) {
-          c = if (89656[0]:int == c) {
+          c = if (89936[0]:int == c) {
                 0
               } else {
                 if (eqz(state(c) & 255)) goto B_u;
@@ -4317,18 +4325,18 @@ function runtime_alloc(a:int):int { // func49
             c = b;
             goto B_g;
           }
-          89652[0]:int = b;
+          89932[0]:int = b;
           b = b - f;
           setState(b, 1);
           c = c - f + 2;
           loop L_x {
-            if (c != 89652[0]:int) {
+            if (c != 89932[0]:int) {
               setState(c, 2);
               c = c + 1;
               continue L_x;
             }
           }
-          c = (b << 4) + 90368;
+          c = (b << 4) + 91264;
           memory_fill(c, 0, a);
           return c;
         }
@@ -4341,7 +4349,7 @@ function runtime_alloc(a:int):int { // func49
         if (eqz(g_b)) { unreachable }
         label B_g:
         if (eqz(g_b)) {
-          b = 89652[0]:int;
+          b = 89932[0]:int;
           continue L_f;
         }
       }
@@ -4361,7 +4369,7 @@ function runtime_alloc(a:int):int { // func49
   return 0;
 }
 
-function runtime_slicePanic() { // func50
+function runtime_slicePanic() { // func51
   var a:int = {
                 if (eqz(g_b) |
                     eqz(if (g_b == 2) {
@@ -4382,7 +4390,7 @@ function runtime_slicePanic() { // func50
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function String_1(a:{ a:int, b:int }, b:int) { // func51
+function String_1(a:{ a:int, b:int }, b:int) { // func52
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
   var f:{ a:int, b:int, c:int, d:int, e:int, f:int }
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int }
@@ -4410,8 +4418,8 @@ function String_1(a:{ a:int, b:int }, b:int) { // func51
         stack_pointer = e;
         e.h = 0;
         e.f = 2;
-        f = 89708[0]:int;
-        89708[0]:int = e + 16;
+        f = 89988[0]:int;
+        89988[0]:int = e + 16;
         e.e = f;
         d = 7;
         g = b & 255;
@@ -4545,7 +4553,7 @@ function String_1(a:{ a:int, b:int }, b:int) { // func51
       }
       label B_e:
       if (eqz(g_b)) {
-        89708[0]:int = f;
+        89988[0]:int = f;
         a.b = d;
         a.a = c;
         stack_pointer = e + 32;
@@ -4565,7 +4573,7 @@ function String_1(a:{ a:int, b:int }, b:int) { // func51
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function runtime_unsafeSlicePanic() { // func52
+function runtime_unsafeSlicePanic() { // func53
   var a:int = {
                 if (eqz(g_b) |
                     eqz(if (g_b == 2) {
@@ -4586,13 +4594,13 @@ function runtime_unsafeSlicePanic() { // func52
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function Kind(a:ubyte_ptr):int { // func53
+function Kind(a:ubyte_ptr):int { // func54
   if (eqz(a)) { return 0 }
   if (a & 3) { return 21 }
   return a[0] & 31;
 }
 
-function Len_1(a:ubyte_ptr, b:{ a:int, b:int, c:int, d:int }, c:int):int { // func54
+function Len_1(a:ubyte_ptr, b:{ a:int, b:int, c:int, d:int }, c:int):int { // func55
   var f:int;
   var d:int;
   var e:{ a:int, b:int, c:int, d:int, e:int }
@@ -4618,8 +4626,8 @@ function Len_1(a:ubyte_ptr, b:{ a:int, b:int, c:int, d:int }, c:int):int { // fu
         (f + 24)[0]:long = 0L;
         f[2]:long = 0L;
         f[3]:int = 4;
-        d = 89708[0]:int;
-        89708[0]:int = f + 8;
+        d = 89988[0]:int;
+        89988[0]:int = f + 8;
         f[2]:int = d;
         e = eqz(a);
       }
@@ -4675,7 +4683,7 @@ function Len_1(a:ubyte_ptr, b:{ a:int, b:int, c:int, d:int }, c:int):int { // fu
         d[0]:int = 66765;
       }
       if (eqz(g_b) | g == 2) {
-        runtime_panic(87068, d);
+        runtime_panic(87296, d);
         2;
         if (g_b == 1) goto B_b;
       }
@@ -4684,7 +4692,7 @@ function Len_1(a:ubyte_ptr, b:{ a:int, b:int, c:int, d:int }, c:int):int { // fu
       a = select_if(a, 0, g_b);
       label B_e:
       if (eqz(g_b)) {
-        89708[0]:int = d;
+        89988[0]:int = d;
         stack_pointer = f + 32;
         return a;
       }
@@ -4703,7 +4711,7 @@ function Len_1(a:ubyte_ptr, b:{ a:int, b:int, c:int, d:int }, c:int):int { // fu
   return 0;
 }
 
-function Index(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:{ a:int, b:int }, d:int, e:int) { // func55
+function Index(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:{ a:int, b:int }, d:int, e:int) { // func56
   var h:int_ptr;
   var g:int;
   var i:int;
@@ -4735,8 +4743,8 @@ function Index(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:{ a:int, b:int }, d:in
           stack_pointer = h;
           h[3] = 23;
           memory_fill(h + 16, 0, 92);
-          h[2] = (l = 89708[0]:int);
-          89708[0]:int = h + 8;
+          h[2] = (l = 89988[0]:int);
+          89988[0]:int = h + 8;
           g = eqz(b);
         }
         if (eqz(g_b)) {
@@ -4782,7 +4790,7 @@ function Index(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:{ a:int, b:int }, d:in
           if (c) goto B_g;
           d = d & 2;
           c = (b + e)[0]:ubyte;
-          b = 85324;
+          b = 85540;
           goto B_e;
         }
         label B_k:
@@ -4864,21 +4872,21 @@ function Index(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:{ a:int, b:int }, d:in
           a.a = 66704;
         }
         if (eqz(g_b) | i == 9) {
-          runtime_panic(87068, a);
+          runtime_panic(87296, a);
           9;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { unreachable }
         label B_h:
         if (eqz(g_b) | i == 10) {
-          runtime_panic(86592, 66648);
+          runtime_panic(86240, 66648);
           10;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { unreachable }
         label B_g:
         if (eqz(g_b) | i == 11) {
-          runtime_panic(86592, 66696);
+          runtime_panic(86240, 66696);
           11;
           if (g_b == 1) goto B_b;
         }
@@ -4893,7 +4901,7 @@ function Index(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:{ a:int, b:int }, d:in
         }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = l;
+          89988[0]:int = l;
           a.c = d;
           a.b = c;
           a.a = b;
@@ -4918,7 +4926,7 @@ function Index(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:{ a:int, b:int }, d:in
   g_c[0]:int = g_c[0]:int + 40;
 }
 
-function internal_reflectlite_loadValue(a:ubyte_ptr, b:int):int { // func56
+function internal_reflectlite_loadValue(a:ubyte_ptr, b:int):int { // func57
   var c:int;
   var d:int;
   loop L_a {
@@ -4933,7 +4941,7 @@ function internal_reflectlite_loadValue(a:ubyte_ptr, b:int):int { // func56
   return d;
 }
 
-function IsNil(a:ubyte_ptr, b:{ a:int, b:int, c:byte }, c:{ a:int, b:int, c:int, d:int }):int { // func57
+function IsNil(a:ubyte_ptr, b:{ a:int, b:int, c:byte }, c:{ a:int, b:int, c:int, d:int }):int { // func58
   var d:int;
   var e:{ a:int, b:int, c:int, d:int }
   var g:int;
@@ -4958,8 +4966,8 @@ function IsNil(a:ubyte_ptr, b:{ a:int, b:int, c:byte }, c:{ a:int, b:int, c:int,
         (d + 24)[0]:long = 0L;
         d[2]:long = 0L;
         d[3]:int = 4;
-        e = 89708[0]:int;
-        89708[0]:int = d + 8;
+        e = 89988[0]:int;
+        89988[0]:int = d + 8;
         d[2]:int = e;
         g = eqz(a);
       }
@@ -4997,7 +5005,7 @@ function IsNil(a:ubyte_ptr, b:{ a:int, b:int, c:byte }, c:{ a:int, b:int, c:int,
               b.a = 66760;
             }
             if (eqz(g_b) | f == 1) {
-              runtime_panic(87068, b);
+              runtime_panic(87296, b);
               1;
               if (g_b == 1) goto B_b;
             }
@@ -5012,7 +5020,7 @@ function IsNil(a:ubyte_ptr, b:{ a:int, b:int, c:byte }, c:{ a:int, b:int, c:int,
             label B_e:
           }
       if (eqz(g_b)) {
-        89708[0]:int = e;
+        89988[0]:int = e;
         stack_pointer = d + 32;
         return a;
       }
@@ -5030,7 +5038,7 @@ function IsNil(a:ubyte_ptr, b:{ a:int, b:int, c:byte }, c:{ a:int, b:int, c:int,
   return 0;
 }
 
-function UnsafePointer(a:ubyte_ptr, b:int_ptr, c:{ a:int, b:int, c:int, d:int }):int { // func58
+function UnsafePointer(a:ubyte_ptr, b:int_ptr, c:{ a:int, b:int, c:int, d:int }):int { // func59
   var d:{ a:int, b:int, c:int, d:int, e:long, f:int, g:int }
   var e:{ a:int, b:int, c:byte }
   var f:int;
@@ -5054,8 +5062,8 @@ function UnsafePointer(a:ubyte_ptr, b:int_ptr, c:{ a:int, b:int, c:int, d:int })
           (d + 24)[0]:long = 0L;
           d.e = 0L;
           d.d = 4;
-          e = 89708[0]:int;
-          89708[0]:int = d + 8;
+          e = 89988[0]:int;
+          89988[0]:int = d + 8;
           d.c = e;
           f = eqz(a);
         }
@@ -5093,7 +5101,7 @@ function UnsafePointer(a:ubyte_ptr, b:int_ptr, c:{ a:int, b:int, c:int, d:int })
           e.a = 66780;
         }
         if (eqz(g_b) | g == 1) {
-          runtime_panic(87068, e);
+          runtime_panic(87296, e);
           1;
           if (g_b == 1) goto B_b;
         }
@@ -5111,7 +5119,7 @@ function UnsafePointer(a:ubyte_ptr, b:int_ptr, c:{ a:int, b:int, c:int, d:int })
         if (eqz(g_b)) { a = b[0] }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = e;
+          89988[0]:int = e;
           stack_pointer = d + 32;
           return a;
         }
@@ -5129,7 +5137,7 @@ function UnsafePointer(a:ubyte_ptr, b:int_ptr, c:{ a:int, b:int, c:int, d:int })
   return 0;
 }
 
-function Elem_1(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:{ a:int, b:int }, d:int) { // func59
+function Elem_1(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:{ a:int, b:int }, d:int) { // func60
   var g:int_ptr;
   var e:{ a:int, b:int, c:byte }
   var h:int;
@@ -5156,8 +5164,8 @@ function Elem_1(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:{ a:int, b:int }, d:i
           stack_pointer = g;
           g[1] = 13;
           memory_fill(g + 8, 0, 52);
-          g[0] = (i = 89708[0]:int);
-          89708[0]:int = g;
+          g[0] = (i = 89988[0]:int);
+          89988[0]:int = g;
           e = eqz(b);
         }
         if (eqz(g_b)) {
@@ -5209,14 +5217,14 @@ function Elem_1(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:{ a:int, b:int }, d:i
           e.a = 66598;
         }
         if (eqz(g_b) | h == 2) {
-          runtime_panic(87068, e);
+          runtime_panic(87296, e);
           2;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { unreachable }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = i;
+          89988[0]:int = i;
           a.c = d;
           a.b = e;
           a.a = b;
@@ -5238,7 +5246,7 @@ function Elem_1(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:{ a:int, b:int }, d:i
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function Field(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:int, d:int, e:{ a:int, b:int, c:byte }) { // func60
+function Field(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:int, d:int, e:{ a:int, b:int, c:byte }) { // func61
   var g:int;
   var h:int;
   var j:int;
@@ -5273,8 +5281,8 @@ function Field(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:int, d:int, e:{ a:int,
         stack_pointer = g;
         g[11]:int = 15;
         memory_fill(g + 48, 0, 60);
-        g[10]:int = (l = 89708[0]:int);
-        89708[0]:int = g + 40;
+        g[10]:int = (l = 89988[0]:int);
+        89988[0]:int = g + 40;
         h = eqz(b);
       }
       if (eqz(g_b)) {
@@ -5347,14 +5355,14 @@ function Field(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:int, d:int, e:{ a:int,
         e.a = 66602;
       }
       if (eqz(g_b) | j == 4) {
-        runtime_panic(87068, e);
+        runtime_panic(87296, e);
         4;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) { unreachable }
       label B_e:
       if (eqz(g_b)) {
-        89708[0]:int = l;
+        89988[0]:int = l;
         a.b = b;
         a.a = e;
         a.c = (d & 249) | select_if(select_if(4, 8, h & 1), 2, m);
@@ -5380,7 +5388,7 @@ function Field(a:{ a:int, b:int, c:byte }, b:ubyte_ptr, c:int, d:int, e:{ a:int,
   g_c[0]:int = g_c[0]:int + 44;
 }
 
-function internal_reflectlite_New(a:{ a:int, b:int }, b:{ a:ubyte, b:int }) { // func61
+function internal_reflectlite_New(a:{ a:int, b:int }, b:{ a:ubyte, b:int }) { // func62
   var e:int;
   var c:int_ptr;
   var g:int;
@@ -5408,8 +5416,8 @@ function internal_reflectlite_New(a:{ a:int, b:int }, b:{ a:ubyte, b:int }) { //
           c[0] = 0;
           e[1]:long = 0L;
           e[1]:int = 5;
-          g = 89708[0]:int;
-          89708[0]:int = e;
+          g = 89988[0]:int;
+          89988[0]:int = e;
           e[0]:int = g;
         }
         if (eqz(g_b) | eqz(f)) {
@@ -5437,7 +5445,7 @@ function internal_reflectlite_New(a:{ a:int, b:int }, b:{ a:ubyte, b:int }) { //
                 label B_i:
               }
               if (eqz(g_b) | f == 1) {
-                runtime_panic(86592, 66528);
+                runtime_panic(86240, 66528);
                 1;
                 if (g_b == 1) goto B_b;
               }
@@ -5464,7 +5472,7 @@ function internal_reflectlite_New(a:{ a:int, b:int }, b:{ a:ubyte, b:int }) { //
           b = t2;
         }
         if (eqz(g_b)) {
-          89708[0]:int = g;
+          89988[0]:int = g;
           a.b = b;
           a.a = c;
           stack_pointer = e + 32;
@@ -5483,7 +5491,7 @@ function internal_reflectlite_New(a:{ a:int, b:int }, b:{ a:ubyte, b:int }) { //
   g_c[0]:int = g_c[0]:int + 20;
 }
 
-function Interface(a:{ a:int, b:int }, b:ubyte_ptr, c:{ a:int, b:int }, d:int) { // func62
+function Interface(a:{ a:int, b:int }, b:ubyte_ptr, c:{ a:int, b:int }, d:int) { // func63
   var g:int;
   var h:int;
   var f:int;
@@ -5513,8 +5521,8 @@ function Interface(a:{ a:int, b:int }, b:ubyte_ptr, c:{ a:int, b:int }, d:int) {
           (g + 40)[0]:int = 0;
           g[2]:long = 0L;
           g[3]:int = 7;
-          h = 89708[0]:int;
-          89708[0]:int = g + 8;
+          h = 89988[0]:int;
+          89988[0]:int = g + 8;
           g[2]:int = h;
           f = eqz(d & 2);
         }
@@ -5562,7 +5570,7 @@ function Interface(a:{ a:int, b:int }, b:ubyte_ptr, c:{ a:int, b:int }, d:int) {
         }
         label B_g:
         if (eqz(g_b) | i == 2) {
-          runtime_panic(86592, 66752);
+          runtime_panic(86240, 66752);
           2;
           if (g_b == 1) goto B_b;
         }
@@ -5571,7 +5579,7 @@ function Interface(a:{ a:int, b:int }, b:ubyte_ptr, c:{ a:int, b:int }, d:int) {
         f = select_if(f, c, g_b);
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = h;
+          89988[0]:int = h;
           a.b = f;
           a.a = b;
           stack_pointer = g + 48;
@@ -5592,7 +5600,7 @@ function Interface(a:{ a:int, b:int }, b:ubyte_ptr, c:{ a:int, b:int }, d:int) {
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function Bool(a:ubyte_ptr, b:int, c:int):int { // func63
+function Bool(a:ubyte_ptr, b:int, c:int):int { // func64
   var d:int;
   var e:{ a:int, b:int, c:byte }
   var g:int;
@@ -5614,8 +5622,8 @@ function Bool(a:ubyte_ptr, b:int, c:int):int { // func63
           stack_pointer = d;
           d[3]:int = 0;
           d[1]:long@4 = 2L;
-          e = 89708[0]:int;
-          89708[0]:int = d;
+          e = 89988[0]:int;
+          89988[0]:int = d;
           d[0]:int = e;
           g = eqz(a);
         }
@@ -5644,14 +5652,14 @@ function Bool(a:ubyte_ptr, b:int, c:int):int { // func63
           e.a = 66582;
         }
         if (eqz(g_b) | f == 1) {
-          runtime_panic(87068, e);
+          runtime_panic(87296, e);
           1;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { unreachable }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = e;
+          89988[0]:int = e;
           stack_pointer = d + 16;
           return a;
         }
@@ -5668,7 +5676,7 @@ function Bool(a:ubyte_ptr, b:int, c:int):int { // func63
   return 0;
 }
 
-function Float(a:ubyte_ptr, b:int, c:int):double { // func64
+function Float(a:ubyte_ptr, b:int, c:int):double { // func65
   var d:int;
   var e:{ a:int, b:int, c:byte }
   var f:int;
@@ -5689,8 +5697,8 @@ function Float(a:ubyte_ptr, b:int, c:int):double { // func64
           stack_pointer = d;
           d[3]:int = 0;
           d[1]:long@4 = 2L;
-          e = 89708[0]:int;
-          89708[0]:int = d;
+          e = 89988[0]:int;
+          89988[0]:int = d;
           d[0]:int = e;
           if (eqz(a) | (a & 3)) goto B_e;
           let t0 = {
@@ -5706,7 +5714,7 @@ function Float(a:ubyte_ptr, b:int, c:int):double { // func64
                      b[0]:double;
                      label B_f:
                    }
-          89708[0]:int = e;
+          89988[0]:int = e;
           stack_pointer = d + 16;
           return t0;
           label B_e:
@@ -5725,7 +5733,7 @@ function Float(a:ubyte_ptr, b:int, c:int):double { // func64
           e.a = 66607;
         }
         if (eqz(g_b) | f == 1) {
-          runtime_panic(87068, e);
+          runtime_panic(87296, e);
           1;
           if (g_b == 1) goto B_b;
         }
@@ -5743,7 +5751,7 @@ function Float(a:ubyte_ptr, b:int, c:int):double { // func64
   return 0.0;
 }
 
-function Uint(a:ubyte_ptr, b:int, c:int):long { // func65
+function Uint(a:ubyte_ptr, b:int, c:int):long { // func66
   var e:int;
   var d:{ a:int, b:int, c:byte }
   var h:int;
@@ -5769,8 +5777,8 @@ function Uint(a:ubyte_ptr, b:int, c:int):long { // func65
         stack_pointer = e;
         e[3]:int = 0;
         e[1]:long@4 = 2L;
-        d = 89708[0]:int;
-        89708[0]:int = e;
+        d = 89988[0]:int;
+        89988[0]:int = e;
         e[0]:int = d;
         h = eqz(a);
       }
@@ -5817,7 +5825,7 @@ function Uint(a:ubyte_ptr, b:int, c:int):long { // func65
             d.a = 66776;
           }
           if (eqz(g_b) | g == 1) {
-            runtime_panic(87068, d);
+            runtime_panic(87296, d);
             1;
             if (g_b == 1) goto B_b;
           }
@@ -5827,7 +5835,7 @@ function Uint(a:ubyte_ptr, b:int, c:int):long { // func65
           label B_e:
         }
       if (eqz(g_b)) {
-        89708[0]:int = d;
+        89988[0]:int = d;
         stack_pointer = e + 16;
         return f;
       }
@@ -5846,7 +5854,7 @@ function Uint(a:ubyte_ptr, b:int, c:int):long { // func65
   return 0L;
 }
 
-function Int(a:ubyte_ptr, b:int, c:int):long { // func66
+function Int(a:ubyte_ptr, b:int, c:int):long { // func67
   var e:int;
   var d:{ a:int, b:int, c:byte }
   var h:int;
@@ -5872,8 +5880,8 @@ function Int(a:ubyte_ptr, b:int, c:int):long { // func66
         stack_pointer = e;
         e[3]:int = 0;
         e[1]:long@4 = 2L;
-        d = 89708[0]:int;
-        89708[0]:int = e;
+        d = 89988[0]:int;
+        89988[0]:int = e;
         e[0]:int = d;
         h = eqz(a);
       }
@@ -5922,7 +5930,7 @@ function Int(a:ubyte_ptr, b:int, c:int):long { // func66
               d.a = 66709;
             }
             if (eqz(g_b) | g == 1) {
-              runtime_panic(87068, d);
+              runtime_panic(87296, d);
               1;
               if (g_b == 1) goto B_b;
             }
@@ -5932,7 +5940,7 @@ function Int(a:ubyte_ptr, b:int, c:int):long { // func66
             label B_e:
           }
       if (eqz(g_b)) {
-        89708[0]:int = d;
+        89988[0]:int = d;
         stack_pointer = e + 16;
         return f;
       }
@@ -5951,7 +5959,7 @@ function Int(a:ubyte_ptr, b:int, c:int):long { // func66
   return 0L;
 }
 
-function Complex(a:{ a:double, b:double }, b:int, c:int) { // func67
+function Complex(a:{ a:double, b:double }, b:int, c:int) { // func68
   var e:int;
   var d:{ a:int, b:int, c:byte }
   var i:int;
@@ -5978,8 +5986,8 @@ function Complex(a:{ a:double, b:double }, b:int, c:int) { // func67
           stack_pointer = e;
           e[3]:int = 0;
           e[1]:long@4 = 2L;
-          d = 89708[0]:int;
-          89708[0]:int = e;
+          d = 89988[0]:int;
+          89988[0]:int = e;
           e[0]:int = d;
           i = eqz(b);
         }
@@ -6010,14 +6018,14 @@ function Complex(a:{ a:double, b:double }, b:int, c:int) { // func67
           d.a = 66591;
         }
         if (eqz(g_b) | h == 1) {
-          runtime_panic(87068, d);
+          runtime_panic(87296, d);
           1;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { unreachable }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = d;
+          89988[0]:int = d;
           a.b = f;
           a.a = g;
           stack_pointer = e + 16;
@@ -6037,7 +6045,7 @@ function Complex(a:{ a:double, b:double }, b:int, c:int) { // func67
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function String_2(a:{ a:int, b:int }, b:ubyte_ptr, c:{ a:int, b:int }) { // func68
+function String_2(a:{ a:int, b:int }, b:ubyte_ptr, c:{ a:int, b:int }) { // func69
   var d:int;
   var f:{ a:int, b:int, c:int, d:int, e:int, f:int }
   var g:int;
@@ -6062,8 +6070,8 @@ function String_2(a:{ a:int, b:int }, b:ubyte_ptr, c:{ a:int, b:int }) { // func
           stack_pointer = d;
           d[9]:long@4 = 0L;
           d[7]:long@4 = 3L;
-          f = 89708[0]:int;
-          89708[0]:int = d + 24;
+          f = 89988[0]:int;
+          89988[0]:int = d + 24;
           d[6]:int = f;
           g = eqz(b);
         }
@@ -6109,7 +6117,7 @@ function String_2(a:{ a:int, b:int }, b:ubyte_ptr, c:{ a:int, b:int }) { // func
         }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = f;
+          89988[0]:int = f;
           a.b = b;
           a.a = c;
           stack_pointer = d + 48;
@@ -6129,7 +6137,7 @@ function String_2(a:{ a:int, b:int }, b:ubyte_ptr, c:{ a:int, b:int }) { // func
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function Pointer(a:int, b:int, c:int):int { // func69
+function Pointer(a:int, b:int, c:int):int { // func70
   var f:int;
   var d:{ a:int, b:int, c:int, d:int, e:int }
   var e:{ a:int, b:int, c:int, d:int, e:int }
@@ -6150,8 +6158,8 @@ function Pointer(a:int, b:int, c:int):int { // func69
         if (eqz(g_b)) {
           f = stack_pointer - 16;
           stack_pointer = f;
-          e = 89708[0]:int;
-          89708[0]:int = f;
+          e = 89988[0]:int;
+          89988[0]:int = f;
         }
         if (eqz(g_b) | eqz(d)) {
           UnsafePointer(a, b, c);
@@ -6160,7 +6168,7 @@ function Pointer(a:int, b:int, c:int):int { // func69
           c = t0;
         }
         if (eqz(g_b)) {
-          89708[0]:int = e;
+          89988[0]:int = e;
           stack_pointer = f + 16;
           return c;
         }
@@ -6179,7 +6187,7 @@ function Pointer(a:int, b:int, c:int):int { // func69
   return 0;
 }
 
-function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:int) { // func70
+function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:int) { // func71
   var d:int_ptr;
   var e:int;
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int }
@@ -6210,9 +6218,9 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
           stack_pointer = d;
           d[59] = 39;
           memory_fill(d + 240, 0, 156);
-          d[58] = (i = 89708[0]:int);
-          89708[0]:int = d + 232;
-          e = c != 87172;
+          d[58] = (i = 89988[0]:int);
+          89988[0]:int = d + 232;
+          e = c != 87400;
         }
         b = {
               if (eqz(g_b)) {
@@ -6238,7 +6246,7 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
                 e = d + 72;
               }
               if (eqz(g_b) | g == 1) {
-                runtime_stringConcat(e, 67920, 13, c, f);
+                runtime_stringConcat(e, 68136, 13, c, f);
                 1;
                 if (g_b == 1) goto B_b;
               }
@@ -6248,7 +6256,7 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
                 e = d - -64;
               }
               if (eqz(g_b) | g == 2) {
-                runtime_stringConcat(e, c, f, 67916, 4);
+                runtime_stringConcat(e, c, f, 68132, 4);
                 2;
                 if (g_b == 1) goto B_b;
               }
@@ -6280,7 +6288,7 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
                 e = d + 40;
               }
               if (eqz(g_b) | g == 5) {
-                runtime_stringConcat(e, c, f, 67901, 15);
+                runtime_stringConcat(e, c, f, 68117, 15);
                 5;
                 if (g_b == 1) goto B_b;
               }
@@ -6312,7 +6320,7 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
                 e = d + 16;
               }
               if (eqz(g_b) | g == 8) {
-                runtime_stringConcat(e, c, f, 67916, 4);
+                runtime_stringConcat(e, c, f, 68132, 4);
                 8;
                 if (g_b == 1) goto B_b;
               }
@@ -6345,7 +6353,7 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
               label B_k:
               e = select_if(e, d + 88, g_b);
               if (eqz(g_b) | g == 11) {
-                runtime_stringConcat(e, 67920, 13, c, f);
+                runtime_stringConcat(e, 68136, 13, c, f);
                 11;
                 if (g_b == 1) goto B_b;
               }
@@ -6367,7 +6375,7 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
                 goto B_f;
               }
               label B_g:
-              e = select_if(e, c != 87156, g_b);
+              e = select_if(e, c != 87384, g_b);
               if (eqz(g_b)) {
                 if (e) goto B_ka;
                 if (eqz(b)) goto B_e;
@@ -6385,7 +6393,7 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
                 goto B_f;
               }
               label B_ka:
-              e = select_if(e, c != 87092, g_b);
+              e = select_if(e, c != 87320, g_b);
               if (eqz(g_b)) {
                 if (e) goto B_oa;
                 if (eqz(b)) goto B_e;
@@ -6394,7 +6402,7 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
                 e = d + 144;
               }
               if (eqz(g_b) | g == 14) {
-                runtime_stringConcat(e, c, f, 68482, 1);
+                runtime_stringConcat(e, c, f, 68698, 1);
                 14;
                 if (g_b == 1) goto B_b;
               }
@@ -6416,7 +6424,7 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
                 e = d + 128;
               }
               if (eqz(g_b) | g == 16) {
-                runtime_stringConcat(e, c, f, 68483, 2);
+                runtime_stringConcat(e, c, f, 68699, 2);
                 16;
                 if (g_b == 1) goto B_b;
               }
@@ -6448,7 +6456,7 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
                 goto B_f;
               }
               label B_oa:
-              e = select_if(e, c != 87068, g_b);
+              e = select_if(e, c != 87296, g_b);
               if (eqz(g_b)) {
                 if (e) goto B_ab;
                 if (eqz(b)) goto B_e;
@@ -6534,7 +6542,7 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
                 goto B_f;
               }
               label B_ab:
-              e = select_if(e, c != 87052, g_b);
+              e = select_if(e, c != 87280, g_b);
               if (eqz(g_b)) {
                 if (e) goto B_sb;
                 if (eqz(b)) goto B_e;
@@ -6564,13 +6572,13 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
               }
               label B_sb:
               if (eqz(g_b)) {
-                if (c == 87004) {
+                if (c == 87232) {
                   if (eqz(b)) goto B_e;
                   c = b[1]:int;
                   b[0]:int;
                   goto B_f;
                 }
-                if (c != 86944) goto B_e;
+                if (c != 87172) goto B_e;
                 c = d + 224;
               }
               if (eqz(g_b) | g == 28) {
@@ -6587,7 +6595,7 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
               label B_f:
             }
         if (eqz(g_b)) {
-          89708[0]:int = i;
+          89988[0]:int = i;
           a.b = c;
           a.a = b;
           stack_pointer = d + 400;
@@ -6618,7 +6626,7 @@ function interface_Error_func_string_Error_invoke(a:{ a:int, b:int }, b:int, c:i
   g_c[0]:int = g_c[0]:int + 36;
 }
 
-function time_quote(a:{ a:int, b:int }, b:int, c:int) { // func71
+function time_quote(a:{ a:int, b:int }, b:int, c:int) { // func72
   var d:int;
   var i:int;
   var f:ubyte_ptr;
@@ -6659,8 +6667,8 @@ function time_quote(a:{ a:int, b:int }, b:int, c:int) { // func71
         stack_pointer = d;
         d[37]:int = 13;
         memory_fill(d + 160, 0, 44);
-        d[36]:int = (n = 89708[0]:int);
-        89708[0]:int = d + 144;
+        d[36]:int = (n = 89988[0]:int);
+        89988[0]:int = d + 144;
         i = c + 2;
         f = i <= 0;
       }
@@ -6702,7 +6710,7 @@ function time_quote(a:{ a:int, b:int }, b:int, c:int) { // func71
             j = e + 2 >= c;
             if (j) goto B_l;
             if (e + 3 > c | e > -4) goto B_e;
-            f = select_if(3, 1, runtime_stringEqual(b + e, 3, 67933, 3) & 1);
+            f = select_if(3, 1, runtime_stringEqual(b + e, 3, 68149, 3) & 1);
             goto B_l;
           }
           j = d + 48;
@@ -6786,7 +6794,7 @@ function time_quote(a:{ a:int, b:int }, b:int, c:int) { // func71
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          89708[0]:int = n;
+          89988[0]:int = n;
           f = d[25]:int;
           a.a = d[24]:int;
           a.b = f;
@@ -6809,7 +6817,7 @@ function time_quote(a:{ a:int, b:int }, b:int, c:int) { // func71
             e = d + 32;
           }
           if (eqz(g_b) | l == 8) {
-            runtime_sliceAppend(e, h, 82358, k, i, 2, 1);
+            runtime_sliceAppend(e, h, 82574, k, i, 2, 1);
             8;
             if (g_b == 1) goto B_b;
           }
@@ -6821,7 +6829,7 @@ function time_quote(a:{ a:int, b:int }, b:int, c:int) { // func71
             if (i) goto B_na;
             i = d[10]:int;
             k = d[9]:int;
-            d[143]:byte = ((f[0] >> 4) + 82364)[0]:ubyte;
+            d[143]:byte = ((f[0] >> 4) + 82580)[0]:ubyte;
             o = d + 143;
             e = d + 16;
           }
@@ -6832,7 +6840,7 @@ function time_quote(a:{ a:int, b:int }, b:int, c:int) { // func71
           }
           if (eqz(g_b)) {
             d[42]:int = (h = d[4]:int);
-            d[142]:byte = ((f[0] & 15) + 82364)[0]:ubyte;
+            d[142]:byte = ((f[0] & 15) + 82580)[0]:ubyte;
             i = d + 142;
             k = d[5]:int;
             e = d[6]:int;
@@ -6889,7 +6897,7 @@ function time_quote(a:{ a:int, b:int }, b:int, c:int) { // func71
   g_c[0]:int = g_c[0]:int + 52;
 }
 
-function Error(a:{ a:int, b:int }, b:int) { // func72
+function Error(a:{ a:int, b:int }, b:int) { // func73
   var c:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
   var d:{ a:int, b:int, c:int, d:int, e:int }
   var e:{ a:int, b:int, c:int, d:int, e:int }
@@ -6913,8 +6921,8 @@ function Error(a:{ a:int, b:int }, b:int) { // func72
           stack_pointer = c;
           c.h = 0;
           c.f = 2;
-          d = 89708[0]:int;
-          89708[0]:int = c + 16;
+          d = 89988[0]:int;
+          89988[0]:int = c + 16;
           c.e = d;
           f = c + 8;
         }
@@ -6928,12 +6936,12 @@ function Error(a:{ a:int, b:int }, b:int) { // func72
           f = c.d;
         }
         if (eqz(g_b) | e == 1) {
-          runtime_stringConcat(c, 67674, 6, b, f);
+          runtime_stringConcat(c, 67889, 6, b, f);
           1;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          89708[0]:int = d;
+          89988[0]:int = d;
           d = c.b;
           a.a = c.a;
           a.b = d;
@@ -6953,7 +6961,36 @@ function Error(a:{ a:int, b:int }, b:int) { // func72
   g_c[0]:int = g_c[0]:int + 20;
 }
 
-function internal_task_Pause() { // func73
+function Push(a:int_ptr, b:int_ptr) { // func74
+  var c:int;
+  a = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          c = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) {
+          if (eqz(a)) goto B_d;
+          var d:int = a[0];
+          a[0] = b;
+          if (eqz(b)) goto B_d;
+          b[0] = d;
+          return ;
+          label B_d:
+        }
+        if (eqz(g_b) | eqz(c)) {
+          runtime_nilPanic();
+          0;
+          if (g_b == 1) goto B_a;
+        }
+        if (eqz(g_b)) { unreachable }
+        return ;
+        label B_a:
+      }
+  (g_c[0]:int)[0]:int = a;
+  g_c[0]:int = g_c[0]:int + 4;
+}
+
+function internal_task_Pause() { // func75
   var a:int_ptr;
   var c:int_ptr;
   var b:int;
@@ -6967,7 +7004,7 @@ function internal_task_Pause() { // func73
           b = (g_c[0]:int)[0]:int;
         }
         if (eqz(g_b)) {
-          a = 89496[0]:int;
+          a = 89776[0]:int;
           c = eqz(a);
         }
         if (eqz(g_b)) {
@@ -7006,7 +7043,7 @@ function internal_task_Pause() { // func73
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function runtime_runtimePanic(a:int, b:{ a:int, b:int }) { // func74
+function runtime_runtimePanic(a:int, b:{ a:int, b:int }) { // func76
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 8;
     b = g_c[0]:int;
@@ -7037,33 +7074,32 @@ function runtime_runtimePanic(a:int, b:{ a:int, b:int }) { // func74
   g_c[0]:int = g_c[0]:int + 8;
 }
 
-function Unlock(a:int) { // func75
-  var c:int;
-  var e:{ a:int, b:int, c:int, d:int }
+function Unlock(a:int) { // func77
+  var e:int;
+  var d:{ a:int, b:int, c:int, d:int }
   var b:int_ptr;
   var f:int;
-  var d:{ a:int, b:int, c:int, d:int }
+  var c:{ a:int, b:int, c:int, d:int }
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 16;
-    e = g_c[0]:int;
-    a = e.a;
-    b = e.b;
-    c = e.c;
-    e = e.d;
+    d = g_c[0]:int;
+    a = d.a;
+    b = d.b;
+    e = d.c;
+    d = d.d;
   }
-  d = {
+  c = {
         if (g_b == 2) {
           g_c[0]:int = g_c[0]:int - 4;
-          d = (g_c[0]:int)[0]:int;
+          c = (g_c[0]:int)[0]:int;
         }
         if (eqz(g_b)) {
-          c = stack_pointer - 32;
-          stack_pointer = c;
-          c[5]:long@4 = 0L;
-          c[3]:long@4 = 3L;
-          e = 89708[0]:int;
-          89708[0]:int = c + 8;
-          c[2]:int = e;
+          e = stack_pointer - 16;
+          stack_pointer = e;
+          e[1]:long@4 = 1L;
+          d = 89988[0]:int;
+          89988[0]:int = e;
+          e[0]:int = d;
           b = eqz(a);
         }
         if (eqz(g_b)) {
@@ -7072,18 +7108,17 @@ function Unlock(a:int) { // func75
         }
         if (eqz(g_b)) {
           if (b) goto B_h;
-          c[6]:int = (b = a[1]:int);
-          c[4]:int = b;
+          b = a[1]:int;
           f = eqz(b);
         }
         if (eqz(g_b)) {
           if (f) goto B_j;
-          a[1]:int = (f = b[0]);
-          c[5]:int = f;
+          a[1]:int = b[0];
           b[0] = 0;
+          e[2]:int = b;
         }
-        if (eqz(g_b) | eqz(d)) {
-          Push(b);
+        if (eqz(g_b) | eqz(c)) {
+          Push_1(b);
           0;
           if (g_b == 1) goto B_b;
         }
@@ -7094,14 +7129,14 @@ function Unlock(a:int) { // func75
           goto B_e;
         }
         label B_h:
-        if (eqz(g_b) | d == 1) {
-          runtime_panic(86592, 67056);
+        if (eqz(g_b) | c == 1) {
+          runtime_panic(86240, 67056);
           1;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { unreachable }
         label B_f:
-        if (eqz(g_b) | d == 2) {
+        if (eqz(g_b) | c == 2) {
           runtime_nilPanic();
           2;
           if (g_b == 1) goto B_b;
@@ -7109,23 +7144,23 @@ function Unlock(a:int) { // func75
         if (eqz(g_b)) { unreachable }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = e;
-          stack_pointer = c + 32;
+          89988[0]:int = d;
+          stack_pointer = e + 16;
         }
         return ;
         label B_b:
       }
-  (g_c[0]:int)[0]:int = d;
+  (g_c[0]:int)[0]:int = c;
   g_c[0]:int = g_c[0]:int + 4;
-  d = g_c[0]:int;
-  d.a = a;
-  d.b = b;
-  d.c = c;
-  d.d = e;
+  c = g_c[0]:int;
+  c.a = a;
+  c.b = b;
+  c.c = e;
+  c.d = d;
   g_c[0]:int = g_c[0]:int + 16;
 }
 
-function Push(a:int_ptr) { // func76
+function Push_1(a:int_ptr) { // func78
   var b:int;
   a = {
         if (g_b == 2) {
@@ -7133,12 +7168,12 @@ function Push(a:int_ptr) { // func76
           b = (g_c[0]:int)[0]:int;
         }
         if (eqz(g_b)) {
-          var c:int_ptr = 89736[0]:int;
+          var c:int_ptr = 90628[0]:int;
           if (c) { c[0] = a }
-          89736[0]:int = a;
+          90628[0]:int = a;
           if (a) {
             a[0] = 0;
-            if (eqz(89732[0]:int)) { 89732[0]:int = a }
+            if (eqz(90624[0]:int)) { 90624[0]:int = a }
             return ;
           }
         }
@@ -7155,88 +7190,90 @@ function Push(a:int_ptr) { // func76
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function internal_task_start(a:int_ptr) { // func77
-  var c:int;
-  var g:int_ptr;
-  var e:int;
+function internal_task_start(a:int, b:int_ptr) { // func79
+  var d:int;
+  var h:int_ptr;
   var f:int;
-  var d:int_ptr;
-  var b:{ a:int, b:int, c:int, d:int, e:int }
+  var g:int;
+  var e:int_ptr;
+  var c:{ a:int, b:int, c:int, d:int, e:int, f:int }
   if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 20;
-    b = g_c[0]:int;
-    a = b.a;
-    e = b.d;
-    g = b.e;
-    d = b.c;
-    c = b.b;
+    g_c[0]:int = g_c[0]:int - 24;
+    c = g_c[0]:int;
+    a = c.a;
+    d = c.c;
+    e = c.d;
+    f = c.e;
+    h = c.f;
+    b = c.b;
   }
-  b = {
+  c = {
         if (g_b == 2) {
           g_c[0]:int = g_c[0]:int - 4;
-          f = (g_c[0]:int)[0]:int;
+          g = (g_c[0]:int)[0]:int;
         }
         if (eqz(g_b)) {
-          c = stack_pointer - 32;
-          stack_pointer = c;
-          g = c + 28;
-          g[0] = 0;
-          c[5]:long@4 = 0L;
-          e = 89708[0]:int;
-          89708[0]:int = (d = c + 8);
-          c[2]:int = e;
-          c[3]:int = 4;
+          d = stack_pointer - 32;
+          stack_pointer = d;
+          h = d + 28;
+          h[0] = 0;
+          d[5]:long@4 = 0L;
+          f = 89988[0]:int;
+          89988[0]:int = (e = d + 8);
+          d[2]:int = f;
+          d[3]:int = 4;
         }
-        if (eqz(g_b) | eqz(f)) {
+        if (eqz(g_b) | eqz(g)) {
           runtime_alloc(56);
           let t0 = 0;
           if (g_b == 1) goto B_b;
-          d = t0;
+          e = t0;
         }
         if (eqz(g_b)) {
-          d[6] = 0;
-          d[5] = a;
-          c[4]:int = d;
+          e[6] = b;
+          e[5] = a;
+          d[4]:int = e;
         }
-        if (eqz(g_b) | f == 1) {
+        if (eqz(g_b) | g == 1) {
           runtime_alloc(65536);
           let t1 = 1;
           if (g_b == 1) goto B_b;
-          a = t1;
+          b = t1;
         }
         if (eqz(g_b)) {
-          g[0] = a;
-          d[9] = a;
-          a[0] = -1204030091;
-          d[8] = a + 65536;
-          d[7] = a + 4;
-          c[6]:int = a;
-          c[5]:int = a;
+          h[0] = b;
+          e[9] = b;
+          b[0] = -1204030091;
+          e[8] = b + 65536;
+          e[7] = b + 4;
+          d[6]:int = b;
+          d[5]:int = b;
         }
-        if (eqz(g_b) | f == 2) {
-          Push(d);
+        if (eqz(g_b) | g == 2) {
+          Push_1(e);
           2;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          89708[0]:int = e;
-          stack_pointer = c + 32;
+          89988[0]:int = f;
+          stack_pointer = d + 32;
         }
         return ;
         label B_b:
       }
-  (g_c[0]:int)[0]:int = b;
+  (g_c[0]:int)[0]:int = c;
   g_c[0]:int = g_c[0]:int + 4;
-  b = g_c[0]:int;
-  b.a = a;
-  b.b = c;
-  b.c = d;
-  b.d = e;
-  b.e = g;
-  g_c[0]:int = g_c[0]:int + 20;
+  c = g_c[0]:int;
+  c.a = a;
+  c.b = b;
+  c.c = d;
+  c.d = e;
+  c.e = f;
+  c.f = h;
+  g_c[0]:int = g_c[0]:int + 24;
 }
 
-function runtime_memequal(a:int, b:int, c:int, d:int):int { // func78
+function runtime_memequal(a:int, b:int, c:int, d:int):int { // func80
   var e:int;
   e = {
         loop L_b {
@@ -7253,7 +7290,7 @@ function runtime_memequal(a:int, b:int, c:int, d:int):int { // func78
   return e >= c;
 }
 
-function runtime_hash32(a:int, b:int, c:{ a:ubyte, b:ubyte, c:ubyte }, d:int_ptr@1):int { // func79
+function runtime_hash32(a:int, b:int, c:{ a:ubyte, b:ubyte, c:ubyte }, d:int_ptr@1):int { // func81
   var e:int;
   a = {
         if (g_b == 2) {
@@ -7301,7 +7338,7 @@ function runtime_hash32(a:int, b:int, c:{ a:ubyte, b:ubyte, c:ubyte }, d:int_ptr
   return 0;
 }
 
-function runtime_runtimePanicAt(a:int, b:{ a:int, b:int }) { // func80
+function runtime_runtimePanicAt(a:int, b:{ a:int, b:int }) { // func82
   var c:{ a:int, b:int }
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 8;
@@ -7341,7 +7378,7 @@ function runtime_runtimePanicAt(a:int, b:{ a:int, b:int }) { // func80
   g_c[0]:int = g_c[0]:int + 8;
 }
 
-function runtime_printstring(a:ubyte_ptr, b:int) { // func81
+function runtime_printstring(a:ubyte_ptr, b:int) { // func83
   var d:{ a:int, b:int, c:int }
   var c:{ a:int, b:int, c:int }
   if (g_b == 2) {
@@ -7386,7 +7423,7 @@ function runtime_printstring(a:ubyte_ptr, b:int) { // func81
   g_c[0]:int = g_c[0]:int + 12;
 }
 
-function runtime_printnl() { // func82
+function runtime_printnl() { // func84
   var a:int = {
                 if (eqz(g_b) |
                     eqz(if (g_b == 2) {
@@ -7406,7 +7443,7 @@ function runtime_printnl() { // func82
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function runtime_putchar(a:int) { // func83
+function runtime_putchar(a:int) { // func85
   var b:int;
   var d:int;
   var c:int;
@@ -7416,25 +7453,25 @@ function runtime_putchar(a:int) { // func83
           c = (g_c[0]:int)[0]:int;
         }
         if (eqz(g_b)) {
-          d = 89504[0]:int;
+          d = 89784[0]:int;
           b = d > 119;
         }
         if (eqz(g_b)) {
           if (b) goto B_d;
-          89504[0]:int = (b = d + 1);
-          (d + 89508)[0]:byte = a;
+          89784[0]:int = (b = d + 1);
+          (d + 89788)[0]:byte = a;
           a = (a & 255) == 10;
         }
         if (eqz(g_b)) {
           if (eqz(a) & d != 119) goto B_f;
-          data[2]:int = b;
+          87536[0]:int = b;
         }
         if (eqz(g_b) | eqz(c)) {
-          runtime_fd_write(1, 87300, 1, 89712);
+          runtime_fd_write(1, 87532, 1, 90568);
           0;
           if (g_b == 1) goto B_a;
         }
-        if (eqz(g_b)) { 89504[0]:int = 0 }
+        if (eqz(g_b)) { 89784[0]:int = 0 }
         label B_f:
         if (eqz(g_b)) { return  }
         label B_d:
@@ -7451,7 +7488,72 @@ function runtime_putchar(a:int) { // func83
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-export function malloc(a:int):int { // func84
+function runtime_printptr(a:int) { // func86
+  var c:{ a:int, b:int, c:int }
+  var d:int;
+  var b:{ a:int, b:int, c:int }
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 12;
+    b = g_c[0]:int;
+    a = b.a;
+    d = b.b;
+    b = b.c;
+  }
+  c = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          c = (g_c[0]:int)[0]:int;
+        }
+        if (select_if(g_b, 1, a)) {
+          if (eqz(g_b) | eqz(c)) {
+            runtime_printstring(86409, 3);
+            0;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) goto B_d;
+        }
+        if (eqz(g_b) | c == 1) {
+          runtime_putchar(48);
+          1;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | c == 2) {
+          runtime_putchar(120);
+          2;
+          if (g_b == 1) goto B_b;
+        }
+        d = select_if(d, 8, g_b);
+        loop L_i {
+          if (eqz(g_b)) {
+            if (eqz(d)) goto B_d;
+            b = a >> 28;
+            b = select_if(b | 48, b + 87, a < -1610612736);
+          }
+          if (eqz(g_b) | c == 3) {
+            runtime_putchar(b);
+            3;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            d = d - 1;
+            a = a << 4;
+            continue L_i;
+          }
+        }
+        label B_d:
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = c;
+  g_c[0]:int = g_c[0]:int + 4;
+  c = g_c[0]:int;
+  c.a = a;
+  c.b = d;
+  c.c = b;
+  g_c[0]:int = g_c[0]:int + 12;
+}
+
+export function malloc(a:int):int { // func87
   var b:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
   var e:int;
   var g:int;
@@ -7475,8 +7577,8 @@ export function malloc(a:int):int { // func84
           b = stack_pointer - 32;
           stack_pointer = b;
           b.f = 2;
-          e = 89708[0]:int;
-          89708[0]:int = b + 16;
+          e = 89988[0]:int;
+          89988[0]:int = b + 16;
           b.e = e;
           g = eqz(a);
           d = 0;
@@ -7502,13 +7604,13 @@ export function malloc(a:int):int { // func84
           a = b + 12;
         }
         if (eqz(g_b) | f == 1) {
-          runtime_hashmapBinarySet(87308, a, b);
+          runtime_hashmapBinarySet(87592, a, b);
           1;
           if (g_b == 1) goto B_b;
         }
         label B_f:
         if (eqz(g_b)) {
-          89708[0]:int = e;
+          89988[0]:int = e;
           stack_pointer = b + 32;
           return d;
         }
@@ -7533,7 +7635,7 @@ export function malloc(a:int):int { // func84
   return 0;
 }
 
-function runtime_hashmapBinarySet(a:int_ptr, b:int, c:int) { // func85
+function runtime_hashmapBinarySet(a:int_ptr, b:int, c:int) { // func88
   var f:int;
   var e:int;
   var g:int;
@@ -7589,7 +7691,7 @@ function runtime_hashmapBinarySet(a:int_ptr, b:int, c:int) { // func85
   g_c[0]:int = g_c[0]:int + 20;
 }
 
-export function free(a:int) { // func86
+export function free(a:int) { // func89
   var d:int_ptr;
   var b:int;
   var e:int;
@@ -7617,7 +7719,7 @@ export function free(a:int) { // func86
           b = d + 12;
         }
         if (eqz(g_b) | eqz(e)) {
-          runtime_hashmapBinaryGet(87308, b, d, 12);
+          runtime_hashmapBinaryGet(87592, b, d, 12);
           let t0 = 0;
           if (g_b == 1) goto B_b;
           b = t0;
@@ -7638,7 +7740,7 @@ export function free(a:int) { // func86
         }
         label B_e:
         if (eqz(g_b) | e == 2) {
-          runtime_panic(86592, 67104);
+          runtime_panic(86240, 67104);
           2;
           if (g_b == 1) goto B_b;
         }
@@ -7655,7 +7757,7 @@ export function free(a:int) { // func86
   g_c[0]:int = g_c[0]:int + 12;
 }
 
-function runtime_hashmapBinaryGet(a:int_ptr, b:int, c:int, d:int):int { // func87
+function runtime_hashmapBinaryGet(a:int_ptr, b:int, c:int, d:int):int { // func90
   var g:int;
   var f:int;
   var e:{ a:int, b:int, c:int, d:int, e:int }
@@ -7709,7 +7811,7 @@ function runtime_hashmapBinaryGet(a:int_ptr, b:int, c:int, d:int):int { // func8
   return 0;
 }
 
-function runtime_hashmapBinaryDelete(a:int) { // func88
+function runtime_hashmapBinaryDelete(a:int) { // func91
   var e:int;
   var h:int;
   var i:int;
@@ -7751,11 +7853,11 @@ function runtime_hashmapBinaryDelete(a:int) { // func88
         (e + 24)[0]:long = 0L;
         e[2]:long = 0L;
         e[1]:int = 6;
-        h = 89708[0]:int;
-        89708[0]:int = e;
+        h = 89988[0]:int;
+        89988[0]:int = e;
         e[0]:int = h;
-        g = data[4]:int;
-        d = data[6]:int;
+        g = data_2[1]:int;
+        d = data_2[3]:int;
       }
       if (eqz(g_b) | eqz(i)) {
         runtime_hash32(a, d, g, c);
@@ -7765,7 +7867,7 @@ function runtime_hashmapBinaryDelete(a:int) { // func88
       }
       if (eqz(g_b)) {
         j = select_if(1, c >> 24, g = c < 16777216);
-        d = runtime_hashmapBucketAddrForHash(87308, c);
+        d = runtime_hashmapBucketAddrForHash(87592, c);
       }
       loop L_h {
         if (eqz(g_b)) {
@@ -7779,13 +7881,13 @@ function runtime_hashmapBinaryDelete(a:int) { // func88
           if (eqz(g_b)) {
             g = c == 8;
             if (g) goto B_l;
-            e[4]:int = (g = k + (l = data[6]:int) * c);
+            e[4]:int = (g = k + (l = data_2[3]:int) * c);
             f = j != (m = c + d)[0]:ubyte;
           }
           if (eqz(g_b)) {
             if (f) goto B_n;
-            e[5]:int = (n = data[9]:int);
-            e[6]:int = (f = data[10]:int);
+            e[5]:int = (n = data_2[6]:int);
+            e[6]:int = (f = data_2[7]:int);
             if (eqz(f)) goto B_j;
           }
           if (eqz(g_b) | i == 1) {
@@ -7798,9 +7900,11 @@ function runtime_hashmapBinaryDelete(a:int) { // func88
             f = eqz(f & 1);
             if (f) goto B_n;
             m[0]:byte = 0;
-            memory_fill(g, 0, data[6]:int);
-            memory_fill(d + (data[6]:int << 3) + (g = data[7]:int) * c + 12, 0, g);
-            data[5]:int = data[5]:int - 1;
+            memory_fill(g, 0, data_2[3]:int);
+            memory_fill(d + (data_2[3]:int << 3) + (g = data_2[4]:int) * c + 12,
+                        0,
+                        g);
+            data_2[2]:int = data_2[2]:int - 1;
             goto B_g;
           }
           label B_n:
@@ -7824,7 +7928,7 @@ function runtime_hashmapBinaryDelete(a:int) { // func88
       if (eqz(g_b)) { unreachable }
       label B_g:
       if (eqz(g_b)) {
-        89708[0]:int = h;
+        89988[0]:int = h;
         stack_pointer = e + 32;
       }
       return ;
@@ -7848,7 +7952,7 @@ function runtime_hashmapBinaryDelete(a:int) { // func88
   g_c[0]:int = g_c[0]:int + 48;
 }
 
-export function calloc(a:int, b:{ a:int, b:int, c:int }):int { // func89
+export function calloc(a:int, b:{ a:int, b:int, c:int }):int { // func92
   var d:int;
   var e:int;
   var c:{ a:int, b:int, c:int }
@@ -7867,8 +7971,8 @@ export function calloc(a:int, b:{ a:int, b:int, c:int }):int { // func89
         if (eqz(g_b)) {
           d = stack_pointer - 16;
           stack_pointer = d;
-          c = 89708[0]:int;
-          89708[0]:int = d;
+          c = 89988[0]:int;
+          89988[0]:int = d;
           a = a * b;
         }
         if (eqz(g_b) | eqz(e)) {
@@ -7878,7 +7982,7 @@ export function calloc(a:int, b:{ a:int, b:int, c:int }):int { // func89
           a = t0;
         }
         if (eqz(g_b)) {
-          89708[0]:int = c;
+          89988[0]:int = c;
           stack_pointer = d + 16;
           return a;
         }
@@ -7895,7 +7999,7 @@ export function calloc(a:int, b:{ a:int, b:int, c:int }):int { // func89
   return 0;
 }
 
-export function realloc(a:int, b:int):int { // func90
+export function realloc(a:int, b:int):int { // func93
   var c:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
   var h:int;
   var g:int;
@@ -7921,8 +8025,8 @@ export function realloc(a:int, b:int):int { // func90
           c = stack_pointer - 32;
           stack_pointer = c;
           c.f = 2;
-          h = 89708[0]:int;
-          89708[0]:int = (e = c + 16);
+          h = 89988[0]:int;
+          89988[0]:int = (e = c + 16);
           c.e = h;
           f = 0;
         }
@@ -7955,7 +8059,7 @@ export function realloc(a:int, b:int):int { // func90
           e = c + 12;
         }
         if (eqz(g_b) | g == 2) {
-          runtime_hashmapBinaryGet(87308, e, c, 12);
+          runtime_hashmapBinaryGet(87592, e, c, 12);
           let t1 = 2;
           if (g_b == 1) goto B_b;
           e = t1;
@@ -7979,13 +8083,13 @@ export function realloc(a:int, b:int):int { // func90
           a = c + 12;
         }
         if (eqz(g_b) | g == 4) {
-          runtime_hashmapBinarySet(87308, a, c);
+          runtime_hashmapBinarySet(87592, a, c);
           4;
           if (g_b == 1) goto B_b;
         }
         label B_g:
         if (eqz(g_b)) {
-          89708[0]:int = h;
+          89988[0]:int = h;
           stack_pointer = c + 32;
           return f;
         }
@@ -7998,7 +8102,7 @@ export function realloc(a:int, b:int):int { // func90
         if (eqz(g_b)) { unreachable }
         label B_e:
         if (eqz(g_b) | g == 6) {
-          runtime_panic(86592, 67136);
+          runtime_panic(86240, 67136);
           6;
           if (g_b == 1) goto B_b;
         }
@@ -8019,160 +8123,312 @@ export function realloc(a:int, b:int):int { // func90
   return 0;
 }
 
-export function start() { // func91
-  var d:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int }
+export function start() { // func94
+  var b:int_ptr;
   var a:int;
   var c:int;
+  var d:int;
+  var i:long;
+  var f:long;
+  var h:int;
+  var g:long;
+  var j:int;
   var e:int;
-  var b:{ a:int, b:int, c:int, d:int }
-  var f:int;
   if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 16;
-    b = g_c[0]:int;
-    a = b.a;
-    f = b.d;
-    c = b.c;
-    d = b.b;
+    g_c[0]:int = g_c[0]:int - 44;
+    e = g_c[0]:int;
+    a = e[0]:int;
+    f = e[3]:long@4;
+    g = e[5]:long@4;
+    h = e[7]:int;
+    i = e[8]:long@4;
+    j = e[10]:int;
+    c = e[2]:int;
+    b = e[1]:int;
   }
-  b = {
+  e = {
         if (g_b == 2) {
           g_c[0]:int = g_c[0]:int - 4;
-          e = (g_c[0]:int)[0]:int;
+          d = (g_c[0]:int)[0]:int;
         }
         if (eqz(g_b)) {
-          d = stack_pointer - 48;
-          stack_pointer = d;
-          d.b = 9;
-          memory_fill(d + 8, 0, 36);
-          d.a = (f = 89708[0]:int);
-          89708[0]:int = d;
-          89500[0]:int = (c = memory_size() << 16);
+          b = stack_pointer - 96;
+          stack_pointer = b;
+          b[3] = 20;
+          memory_fill(b + 16, 0, 80);
+          b[2] = (j = 89988[0]:int);
+          89988[0]:int = b + 8;
+          89780[0]:int = (c = memory_size() << 16);
           runtime_calculateHeapAddresses();
-          d.d = (a = 89648[0]:int);
-          d.c = a;
+          b[5] = (a = 89928[0]:int);
+          b[4] = a;
           memory_fill(a, 0, c = c - a);
         }
-        if (eqz(g_b) | eqz(e)) {
+        if (eqz(g_b) | eqz(d)) {
           arc4random();
           let t0 = 0;
           if (g_b == 1) goto B_b;
           a = t0;
         }
-        if (eqz(g_b) | e == 1) {
+        if (eqz(g_b) | d == 1) {
           arc4random();
           let t1 = 1;
           if (g_b == 1) goto B_b;
           c = t1;
         }
         if (eqz(g_b)) { data[0]:int = (a = a | 1) }
-        if (eqz(g_b) | e == 2) {
-          runtime_RegisterTask(67478, 9);
+        if (eqz(g_b) | d == 2) {
+          runtime_RegisterTask(67609, 9);
           2;
           if (g_b == 1) goto B_b;
         }
-        if (eqz(g_b) | e == 3) {
-          internal_task_start(1);
+        if (eqz(g_b) | d == 3) {
+          internal_task_start(1, 0);
           3;
           if (g_b == 1) goto B_b;
         }
-        if (eqz(g_b) | e == 4) {
-          internal_task_start(2);
+        if (eqz(g_b) | d == 4) {
+          internal_task_start(2, 0);
           4;
           if (g_b == 1) goto B_b;
         }
+        i = select_if(i, 0L, g_b);
         loop L_k {
-          if (eqz(g_b)) { a = 89728[0]:ubyte }
+          if (eqz(g_b)) { a = 90620[0]:ubyte }
           if (eqz(g_b)) {
             if (a) goto B_o;
-            d.h = (a = 89732[0]:int);
-            d.e = a;
-            c = eqz(a);
-            if (c) goto B_n;
-            89732[0]:int = (c = a[0]:int);
-            d.f = c;
-            d.g = (c = 89736[0]:int);
-            c = a != c;
-            if (eqz(c)) { 89736[0]:int = 0 }
-            a[0]:int = 0;
+            b[6] = (a = 90632[0]:int);
           }
-          if (eqz(g_b) | e == 5) {
-            runtime_scheduleLogTask(67472, 6, a);
-            5;
+          if (eqz(g_b | a)) {
+            b[7] = 0;
+            goto B_q;
+          }
+          if (eqz(g_b) | d == 5) {
+            runtime_ticks();
+            let t2 = 5;
+            if (g_b == 1) goto B_b;
+            i = t2;
+          }
+          if (eqz(g_b)) {
+            b[7] = (a = 90632[0]:int);
+            c = eqz(a);
+            if (c) goto B_q;
+            f = 90640[0]:long;
+            b[8] = a;
+            f = i - f;
+            c = f < (g = a[1]:long);
+            if (c) goto B_q;
+            b[9] = a;
+          }
+          if (eqz(g_b) | d == 6) {
+            runtime_scheduleLogTask(67564, 8, a);
+            6;
             if (g_b == 1) goto B_b;
           }
           if (eqz(g_b)) {
-            c = 89496[0]:int;
-            89496[0]:int = a;
-            d.i = c;
-            b = a[4]:int;
-            a[4]:int = 89708[0]:int;
-            89708[0]:int = b;
-            b = a + 20;
-            if (a[40]:ubyte) {
-              tinygo_rewind(b);
-              goto B_m;
+            90640[0]:long = (f = (g = a[1]:long) + 90640[0]:long);
+            90632[0]:int = (c = a[0]:int);
+            b[10] = c;
+            a[0]:int = 0;
+          }
+          if (eqz(g_b) | d == 7) {
+            Push_1(a);
+            7;
+            if (g_b == 1) goto B_b;
+          }
+          label B_q:
+          if (eqz(g_b)) {
+            b[14] = (a = 90624[0]:int);
+            b[11] = a;
+            c = eqz(a);
+          }
+          if (eqz(g_b)) {
+            if (c) goto B_z;
+            90624[0]:int = (c = a[0]:int);
+            b[12] = c;
+            b[13] = (c = 90628[0]:int);
+            c = a != c;
+            if (eqz(c)) { 90628[0]:int = 0 }
+            a[0]:int = 0;
+          }
+          if (eqz(g_b) | d == 8) {
+            runtime_scheduleLogTask(67603, 6, a);
+            8;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            c = 89776[0]:int;
+            89776[0]:int = a;
+            b[15] = c;
+            h = a[4]:int;
+            a[4]:int = 89988[0]:int;
+            89988[0]:int = h;
+            h = a + 20;
+            if (eqz(a[40]:ubyte)) goto B_y;
+            tinygo_rewind(h);
+            goto B_m;
+          }
+          label B_z:
+          if (eqz(g_b)) {
+            b[16] = (a = 90632[0]:int);
+            c = eqz(a);
+            if (c) goto B_n;
+            b[18] = a;
+            b[17] = a;
+            f = a[1]:long;
+            b[19] = a;
+            g = 90640[0]:long;
+          }
+          if (eqz(g_b) | d == 9) {
+            runtime_printstring(67572, 13);
+            9;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b) | d == 10) {
+            runtime_printspace();
+            10;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b) | d == 11) {
+            runtime_printptr(a);
+            11;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b) | d == 12) {
+            runtime_printspace();
+            12;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            g = g + (f = f - i);
+            a = i32_wrap_i64(g);
+          }
+          if (eqz(g_b) | d == 13) {
+            runtime_printuint32(a);
+            13;
+            if (g_b == 1) goto B_b;
+          }
+          a = select_if(a, 90632, g_b);
+          loop L_la {
+            if (eqz(g_b) | d == 14) {
+              runtime_printnl();
+              14;
+              if (g_b == 1) goto B_b;
             }
-            tinygo_launch(b);
+            if (eqz(g_b)) {
+              b[20] = (a = a[0]:int);
+              b[21] = a;
+              c = eqz(a);
+              if (c) goto B_ma;
+              f = a[1]:long;
+            }
+            if (eqz(g_b) | d == 15) {
+              runtime_printstring(67585, 18);
+              15;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b) | d == 16) {
+              runtime_printspace();
+              16;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b) | d == 17) {
+              runtime_printptr(a);
+              17;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b) | d == 18) {
+              runtime_printspace();
+              18;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b) | d == 19) {
+              runtime_printint64(f);
+              19;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) continue L_la;
+            label B_ma:
+          }
+          if (eqz(g_b)) {
+            a = g <= 0L;
+            if (a) continue L_k;
+            87568[0]:long = g;
+          }
+          if (eqz(g_b) | d == 20) {
+            runtime_poll_oneoff(87544, 90584, 1, 90616);
+            let t3 = 20;
+            if (g_b == 1) goto B_b;
+            a = t3;
+          }
+          if (eqz(g_b)) continue L_k;
+          label B_y:
+          if (eqz(g_b)) {
+            tinygo_launch(h);
             a[40]:byte = 1;
             goto B_m;
           }
           label B_o:
           if (eqz(g_b)) { dummy() }
-          if (eqz(g_b) | e == 6) {
+          if (eqz(g_b) | d == 21) {
             runtime_proc_exit(0);
-            6;
+            21;
             if (g_b == 1) goto B_b;
           }
           if (eqz(g_b)) {
-            89708[0]:int = f;
-            stack_pointer = d + 48;
+            89988[0]:int = j;
+            stack_pointer = b + 96;
             return ;
           }
           label B_n:
-          if (eqz(g_b) | e == 7) {
+          if (eqz(g_b) | d == 22) {
             runtime_waitForEvents();
-            7;
+            22;
             if (g_b == 1) goto B_b;
           }
           if (eqz(g_b)) { unreachable }
           label B_m:
           if (eqz(g_b)) {
-            b = a[4]:int;
-            a[4]:int = 89708[0]:int;
-            89496[0]:int = c;
-            89708[0]:int = b;
-            d.j = (c = a[7]:int);
-            d.k = (a = a[8]:int);
+            h = a[4]:int;
+            a[4]:int = 89988[0]:int;
+            89776[0]:int = c;
+            89988[0]:int = h;
+            b[22] = (c = a[7]:int);
+            b[23] = (a = a[8]:int);
             a = a >= c;
             if (a) continue L_k;
           }
         }
-        if (eqz(g_b) | e == 8) {
+        if (eqz(g_b) | d == 23) {
           runtime_runtimePanic(67064, 14);
-          8;
+          23;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { unreachable }
         return ;
         label B_b:
       }
-  (g_c[0]:int)[0]:int = b;
+  (g_c[0]:int)[0]:int = e;
   g_c[0]:int = g_c[0]:int + 4;
-  b = g_c[0]:int;
-  b.a = a;
-  b.b = d;
-  b.c = c;
-  b.d = f;
-  g_c[0]:int = g_c[0]:int + 16;
+  e = g_c[0]:int;
+  e[0]:int = a;
+  e[1]:int = b;
+  e[2]:int = c;
+  e[3]:long@4 = f;
+  e[5]:long@4 = g;
+  e[7]:int = h;
+  e[8]:long@4 = i;
+  e[10]:int = j;
+  g_c[0]:int = g_c[0]:int + 44;
 }
 
-function runtime_calculateHeapAddresses() { // func92
+function runtime_calculateHeapAddresses() { // func95
   var a:int;
-  89648[0]:int = (a = (a = 89500[0]:int) - (a - 90304) / 65);
-  89656[0]:int = a - 90368 >> 4;
+  89928[0]:int = (a = (a = 89780[0]:int) - (a - 91200) / 65);
+  89936[0]:int = a - 91264 >> 4;
 }
 
-function runtime_RegisterTask(a:int, b:{ a:int, b:int, c:int, d:int }) { // func93
+function runtime_RegisterTask(a:int, b:{ a:int, b:int, c:int, d:int }) { // func96
   var c:int_ptr;
   var e:int;
   var d:{ a:int, b:int, c:int, d:int }
@@ -8194,27 +8450,27 @@ function runtime_RegisterTask(a:int, b:{ a:int, b:int, c:int, d:int }) { // func
           c = stack_pointer - 32;
           stack_pointer = c;
           c[5] = 1;
-          e = 89708[0]:int;
-          89708[0]:int = c + 16;
+          e = 89988[0]:int;
+          89988[0]:int = c + 16;
           c[4] = e;
-          c[6] = (d = 89496[0]:int);
+          c[6] = (d = 89776[0]:int);
           c[1] = b;
           c[0] = a;
           c[3] = d;
           a = c + 12;
         }
         if (eqz(g_b) | eqz(f)) {
-          runtime_hashmapBinarySet(87348, a, c);
+          runtime_hashmapBinarySet(87632, a, c);
           0;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b) | f == 1) {
-          runtime_scheduleLogTask(67472, 6, d);
+          runtime_scheduleLogTask(67603, 6, d);
           1;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          89708[0]:int = e;
+          89988[0]:int = e;
           stack_pointer = c + 32;
         }
         return ;
@@ -8230,7 +8486,7 @@ function runtime_RegisterTask(a:int, b:{ a:int, b:int, c:int, d:int }) { // func
   g_c[0]:int = g_c[0]:int + 16;
 }
 
-function runtime_run_1_gowrapper(a:int) { // func94
+function runtime_run_1_gowrapper(a:int) { // func97
   var b:int;
   a = {
         if (g_b == 2) {
@@ -8255,7 +8511,7 @@ function runtime_run_1_gowrapper(a:int) { // func94
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function runtime_run_gowrapper(a:int) { // func95
+function runtime_run_gowrapper(a:int) { // func98
   a = {
         if (eqz(g_b) |
             eqz(if (g_b == 2) {
@@ -8276,847 +8532,7 @@ function runtime_run_gowrapper(a:int) { // func95
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function runtime_scheduleLogTask(a:int, b:int, c:int) { // func96
-  var d:int;
-  var h:int;
-  var f:int;
-  var k:int;
-  var g:long;
-  var j:long;
-  var n:int;
-  var m:int;
-  var i:int;
-  var l:int;
-  var p:int;
-  var o:int;
-  var e:int;
-  if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int + -64;
-    e = g_c[0]:int;
-    a = e[0]:int;
-    c = e[2]:int;
-    d = e[3]:int;
-    f = e[4]:int;
-    g = e[5]:long@4;
-    i = e[7]:int;
-    j = e[8]:long@4;
-    k = e[10]:int;
-    l = e[11]:int;
-    m = e[12]:int;
-    n = e[13]:int;
-    o = e[14]:int;
-    p = e[15]:int;
-    b = e[1]:int;
-  }
-  e = {
-        if (g_b == 2) {
-          g_c[0]:int = g_c[0]:int - 4;
-          h = (g_c[0]:int)[0]:int;
-        }
-        if (eqz(g_b)) {
-          d = stack_pointer - 208;
-          stack_pointer = d;
-          d[31]:int = 9;
-          memory_fill(d + 128, 0, 36);
-          d[30]:int = (o = 89708[0]:int);
-          89708[0]:int = d + 120;
-          d[29]:int = c;
-          f = d + 168;
-          c = d + 116;
-        }
-        if (eqz(g_b) | eqz(h)) {
-          runtime_hashmapBinaryGet(87348, c, f, 8);
-          let t0 = 0;
-          if (g_b == 1) goto B_b;
-          c = t0;
-        }
-        if (eqz(g_b)) {
-          d[32]:int = (c = d[42]:int);
-          k = d[43]:int;
-          f = eqz(k);
-        }
-        c = {
-              if (eqz(g_b)) {
-                if (f) goto B_h;
-                f = d + 104;
-              }
-              if (eqz(g_b) | h == 1) {
-                runtime_stringConcat(f, 67425, 1, a, b);
-                1;
-                if (g_b == 1) goto B_b;
-              }
-              if (eqz(g_b)) {
-                d[33]:int = (b = d[26]:int);
-                f = d[27]:int;
-                a = d + 96;
-              }
-              if (eqz(g_b) | h == 2) {
-                runtime_stringConcat(a, b, f, 68482, 1);
-                2;
-                if (g_b == 1) goto B_b;
-              }
-              if (eqz(g_b)) {
-                d[34]:int = (b = d[24]:int);
-                f = d[25]:int;
-                a = d + 88;
-              }
-              if (eqz(g_b) | h == 3) {
-                runtime_stringConcat(a, b, f, c, k);
-                3;
-                if (g_b == 1) goto B_b;
-              }
-              if (eqz(g_b)) {
-                d[35]:int = (c = d[22]:int);
-                b = d[23]:int;
-                a = d + 80;
-              }
-              if (eqz(g_b) | h == 4) {
-                runtime_stringConcat(a, c, b, 68482, 1);
-                4;
-                if (g_b == 1) goto B_b;
-              }
-              if (eqz(g_b)) {
-                k = d[21]:int;
-                d[20]:int;
-                goto B_g;
-              }
-              label B_h:
-              c = select_if(c, d + 72, g_b);
-              if (eqz(g_b) | h == 5) {
-                runtime_stringConcat(c, 67425, 1, a, b);
-                5;
-                if (g_b == 1) goto B_b;
-              }
-              if (eqz(g_b)) {
-                d[39]:int = (c = d[18]:int);
-                b = d[19]:int;
-                a = d - -64;
-              }
-              if (eqz(g_b) | h == 6) {
-                runtime_stringConcat(a, c, b, 68482, 1);
-                6;
-                if (g_b == 1) goto B_b;
-              }
-              if (eqz(g_b)) {
-                d[40]:int = (c = d[16]:int);
-                b = d[17]:int;
-                a = d + 56;
-              }
-              if (eqz(g_b) | h == 7) {
-                runtime_stringConcat(a, c, b, 67426, 13);
-                7;
-                if (g_b == 1) goto B_b;
-              }
-              if (g_b) {
-                c
-              } else {
-                k = d[15]:int;
-                d[14]:int;
-              }
-              label B_g:
-            }
-        if (eqz(g_b)) {
-          d[36]:int = c;
-          (d + 192)[0]:long = 0L;
-          (d + 200)[0]:int = 0;
-          b = 89708[0]:int;
-          89708[0]:int = d + 168;
-          d[23]:long = 0L;
-          d[43]:int = 7;
-          d[42]:int = b;
-          a = d + 48;
-        }
-        if (eqz(g_b) | h == 8) {
-          runtime_ticks();
-          let t1 = 8;
-          if (g_b == 1) goto B_b;
-          g = t1;
-        }
-        if (eqz(g_b)) {
-          g = g - 89632[0]:long;
-          g = (g ^ (g = g >> 63L)) - g;
-          j = g / 1000000000L;
-        }
-        if (eqz(g_b) | h == 9) {
-          runtime_u64ToString(a, j);
-          9;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          d[44]:int = (i = d[12]:int);
-          l = d[13]:int;
-          d[45]:int =
-            (a = {
-                   if ((g = g - j * 1000000000L) <= 0L) {
-                     f = 9;
-                     67380;
-                     goto B_ca;
-                   }
-                   if (g < 10L) {
-                     f = 8;
-                     67389;
-                     goto B_ca;
-                   }
-                   if (g < 100L) {
-                     f = 7;
-                     67397;
-                     goto B_ca;
-                   }
-                   if (g < 1000L) {
-                     f = 6;
-                     67404;
-                     goto B_ca;
-                   }
-                   if (g < 10000L) {
-                     f = 5;
-                     67410;
-                     goto B_ca;
-                   }
-                   if (g < 100000L) {
-                     f = 4;
-                     67415;
-                     goto B_ca;
-                   }
-                   if (g < 1000000L) {
-                     f = 3;
-                     67419;
-                     goto B_ca;
-                   }
-                   if (g < 10000000L) {
-                     f = 2;
-                     67422;
-                     goto B_ca;
-                   }
-                   select_if(67424, 0, f = g < 100000000L);
-                   label B_ca:
-                 });
-          n = d + 40;
-          g = g * 10L;
-        }
-        if (eqz(g_b) | h == 10) {
-          runtime_u64ToString(n, g);
-          10;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          d[46]:int = (n = d[10]:int);
-          p = d[11]:int;
-          m = d + 32;
-        }
-        if (eqz(g_b) | h == 11) {
-          runtime_stringConcat(m, i, l, 67377, 1);
-          11;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          d[47]:int = (i = d[8]:int);
-          m = d[9]:int;
-          l = d + 24;
-        }
-        if (eqz(g_b) | h == 12) {
-          runtime_stringConcat(l, i, m, a, f);
-          12;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          d[48]:int = (a = d[6]:int);
-          i = d[7]:int;
-          f = d + 16;
-        }
-        if (eqz(g_b) | h == 13) {
-          runtime_stringConcat(f, a, i, n, p);
-          13;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          d[49]:int = (a = d[4]:int);
-          i = d[5]:int;
-          f = d + 8;
-        }
-        if (eqz(g_b) | h == 14) {
-          runtime_stringConcat(f, a, i, 67378, 2);
-          14;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          89708[0]:int = b;
-          d[37]:int = (b = d[2]:int);
-          a = d[3]:int;
-        }
-        if (eqz(g_b) | h == 15) {
-          runtime_stringConcat(d, c, k, b, a);
-          15;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          d[38]:int = (c = d[0]:int);
-          a = d[1]:int;
-        }
-        if (eqz(g_b) | h == 16) {
-          schedular_log(c, a);
-          16;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          89708[0]:int = o;
-          stack_pointer = d + 208;
-        }
-        return ;
-        label B_b:
-      }
-  (g_c[0]:int)[0]:int = e;
-  g_c[0]:int = g_c[0]:int + 4;
-  e = g_c[0]:int;
-  e[0]:int = a;
-  e[1]:int = b;
-  e[2]:int = c;
-  e[3]:int = d;
-  e[4]:int = f;
-  e[5]:long@4 = g;
-  e[7]:int = i;
-  e[8]:long@4 = j;
-  e[10]:int = k;
-  e[11]:int = l;
-  e[12]:int = m;
-  e[13]:int = n;
-  e[14]:int = o;
-  e[15]:int = p;
-  g_c[0]:int = g_c[0]:int - -64;
-}
-
-function runtime_waitForEvents() { // func97
-  var a:int = {
-                if (eqz(g_b) |
-                    eqz(if (g_b == 2) {
-                          g_c[0]:int = g_c[0]:int - 4;
-                          (g_c[0]:int)[0]:int;
-                        } else {
-                          0
-                        })) {
-                  runtime_runtimePanic(67493, 27);
-                  0;
-                  if (g_b == 1) goto B_a;
-                }
-                if (eqz(g_b)) { unreachable }
-                return ;
-                label B_a:
-              }
-  (g_c[0]:int)[0]:int = a;
-  g_c[0]:int = g_c[0]:int + 4;
-}
-
-function runtime_run_1() { // func98
-  var a:int;
-  var e:int;
-  var j:long;
-  var c:int;
-  var g:int;
-  var i:int;
-  var f:int;
-  var h:{ a:int, b:int }
-  var b:long_ptr;
-  var l:long;
-  var m:long;
-  var k:int;
-  var d:int;
-  if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 56;
-    d = g_c[0]:int;
-    a = d[0]:int;
-    c = d[1]:int;
-    f = d[3]:int;
-    g = d[4]:int;
-    h = d[5]:int;
-    i = d[6]:int;
-    j = d[7]:long@4;
-    k = d[9]:int;
-    l = d[10]:long@4;
-    m = d[12]:long@4;
-    b = d[2]:int;
-  }
-  d = {
-        if (g_b == 2) {
-          g_c[0]:int = g_c[0]:int - 4;
-          e = (g_c[0]:int)[0]:int;
-        }
-        if (eqz(g_b)) {
-          a = stack_pointer - 240;
-          stack_pointer = a;
-          a[23]:int = 36;
-          memory_fill(a + 104, 0, 136);
-          a[22]:int = (k = 89708[0]:int);
-          89708[0]:int = (c = a + 88);
-          b = 0;
-        }
-        if (eqz(g_b) | eqz(e)) {
-          runtime_RegisterTask(67487, 4);
-          0;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) { 89500[0]:int = (c = memory_size() << 16) }
-        if (eqz(g_b) | e == 1) {
-          runtime_ticks();
-          let t0 = 1;
-          if (g_b == 1) goto B_b;
-          j = t0;
-        }
-        if (eqz(g_b)) {
-          89632[0]:long = j;
-          wasm_call_ctors();
-          c = a + 48;
-        }
-        if (eqz(g_b) | e == 2) {
-          runtime_sliceAppend(c, 0, 87456, 0, 0, 1, 16);
-          2;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          90320[0]:long@4 = (j = a[13]:long@4);
-          90316[0]:int = (g = a[12]:int);
-          a[24]:int = g;
-          a[25]:int = (i = 89716[0]:int);
-          c = eqz(i);
-        }
-        if (eqz(g_b)) {
-          if (eqz(c)) {
-            c = 89724[0]:int;
-            b = 89720[0]:int;
-            goto B_l;
-          }
-          a[18]:int = 0;
-          a[20]:int = 0;
-          f = a + 80;
-          c = a + 72;
-        }
-        if (eqz(g_b) | e == 3) {
-          runtime_args_sizes_get(f, c);
-          let t1 = 3;
-          if (g_b == 1) goto B_b;
-          c = t1;
-        }
-        if (eqz(g_b)) {
-          c = a[20]:int;
-          if (eqz(c)) {
-            i = 0;
-            c = 0;
-            goto B_k;
-          }
-          f = c > 1073741823;
-        }
-        if (eqz(g_b)) {
-          if (f) goto B_s;
-          f = c << 2;
-        }
-        if (eqz(g_b) | e == 4) {
-          runtime_alloc(f);
-          let t2 = 4;
-          if (g_b == 1) goto B_b;
-          h = t2;
-        }
-        if (eqz(g_b)) {
-          a[26]:int = h;
-          b = a[18]:int;
-          f = b < 0;
-          if (f) goto B_s;
-        }
-        if (eqz(g_b) | e == 5) {
-          runtime_alloc(b);
-          let t3 = 5;
-          if (g_b == 1) goto B_b;
-          g = t3;
-        }
-        if (eqz(g_b)) {
-          a[27]:int = g;
-          a[28]:int = g;
-          f = eqz(b);
-          if (f) goto B_r;
-        }
-        if (eqz(g_b) | e == 6) {
-          runtime_args_get(h, g);
-          let t4 = 6;
-          if (g_b == 1) goto B_b;
-          f = t4;
-        }
-        if (eqz(g_b)) {
-          f = c > 536870911;
-          if (f) goto B_s;
-          f = c << 3;
-        }
-        if (eqz(g_b) | e == 7) {
-          runtime_alloc(f);
-          let t5 = 7;
-          if (g_b == 1) goto B_b;
-          i = t5;
-        }
-        if (eqz(g_b)) {
-          89716[0]:int = i;
-          89720[0]:int = c;
-          89724[0]:int = c;
-          a[29]:int = i;
-          g = i;
-          f = c;
-          loop L_ca {
-            if (f) {
-              a[33]:int = (b = h.a);
-              a[31]:int = b;
-              a[30]:int = b;
-              (g + 4)[0]:int = strlen(b);
-              g[0]:int = b;
-              a[32]:int = i;
-              h = h + 4;
-              g = g + 8;
-              f = f - 1;
-              continue L_ca;
-            } else {
-              b = c;
-              goto B_l;
-            }
-            unreachable;
-          }
-          unreachable;
-        }
-        label B_s:
-        if (eqz(g_b) | e == 8) {
-          runtime_slicePanic();
-          8;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) { unreachable }
-        label B_r:
-        if (eqz(g_b) | e == 9) {
-          runtime_lookupPanic();
-          9;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) { unreachable }
-        label B_l:
-        if (eqz(g_b)) { a[34]:int = i }
-        label B_k:
-        if (eqz(g_b)) {
-          90328[0]:int = i;
-          90332[0]:int = b;
-          90336[0]:int = c;
-          a[35]:int = i;
-          g = 0;
-        }
-        if (eqz(g_b) | e == 10) {
-          runtime_ticks();
-          let t6 = 10;
-          if (g_b == 1) goto B_b;
-          j = t6;
-        }
-        if (eqz(g_b) | e == 11) {
-          fmt_newPrinter();
-          let t7 = 11;
-          if (g_b == 1) goto B_b;
-          h = t7;
-        }
-        if (eqz(g_b)) {
-          a[36]:int = h;
-          b = 1;
-        }
-        loop L_na {
-          if (eqz(g_b)) {
-            c = eqz(b & 1);
-            if (c) goto B_oa;
-            c = eqz(g & 1);
-          }
-          if (select_if(select_if(g_b, 1, c), 0, eqz(g_b) | e == 12)) {
-            writeByte(h, 32);
-            12;
-            if (g_b == 1) goto B_b;
-          }
-          if (eqz(g_b) | e == 13) {
-            printArg(h, 86592, 86584, 118);
-            13;
-            if (g_b == 1) goto B_b;
-          }
-          if (eqz(g_b)) {
-            g = 1;
-            b = 0;
-            continue L_na;
-          }
-          label B_oa:
-        }
-        if (eqz(g_b) | e == 14) {
-          writeByte(h, 10);
-          14;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          a[37]:int = (b = h.a);
-          f = a + 32;
-          c = h.b;
-        }
-        if (eqz(g_b) | e == 15) {
-          Write(f, 87472, b, c);
-          15;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          a[42]:int = (b = a[9]:int);
-          a[40]:int = b;
-          a[43]:int = (g = a[10]:int);
-          a[38]:int = b;
-          a[41]:int = g;
-          a[39]:int = g;
-        }
-        if (eqz(g_b) | e == 16) {
-          free_1(h);
-          16;
-          if (g_b == 1) goto B_b;
-        }
-        b = select_if(b, 0, g_b);
-        loop L_ya {
-          if (eqz(g_b)) {
-            c = b == 501;
-            if (c) goto B_za;
-          }
-          if (eqz(g_b) | e == 17) {
-            runtime_printint32(b);
-            17;
-            if (g_b == 1) goto B_b;
-          }
-          if (eqz(g_b) | e == 18) {
-            runtime_alloc(13107);
-            let t8 = 18;
-            if (g_b == 1) goto B_b;
-            h = t8;
-          }
-          if (eqz(g_b)) { a[44]:int = h }
-          if (eqz(g_b) | e == 19) {
-            runtime_alloc(12);
-            let t9 = 19;
-            if (g_b == 1) goto B_b;
-            g = t9;
-          }
-          if (eqz(g_b)) {
-            g[1]:long@4 = 56294136361779L;
-            g[0]:int = h;
-            90352[0]:int = g;
-            90356[0]:byte = 1;
-            a[45]:int = g;
-            b = b + 1;
-            continue L_ya;
-          }
-          label B_za:
-        }
-        if (eqz(g_b)) {
-          a[46]:int = (c = 89648[0]:int);
-          l = 89696[0]:long;
-          j = 89672[0]:long;
-          m = 89664[0]:long;
-          g = 89500[0]:int;
-        }
-        if (eqz(g_b) | e == 20) {
-          runtime_printnl();
-          20;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b) | e == 21) {
-          runtime_alloc(8);
-          let t10 = 21;
-          if (g_b == 1) goto B_b;
-          b = t10;
-        }
-        if (eqz(g_b)) {
-          b[0] = j - l >> 16L & 17592186044415L;
-          a[47]:int = b;
-          a[48]:int = b;
-          a[21]:int = b;
-          a[20]:int = 86512;
-          f = a + 24;
-          c = a + 80;
-        }
-        if (eqz(g_b) | e == 22) {
-          fmt_Printf(f, 86528, 15, c);
-          22;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) { a[49]:long@4 = a[3]:long }
-        if (eqz(g_b) | e == 23) {
-          runtime_alloc(8);
-          let t11 = 23;
-          if (g_b == 1) goto B_b;
-          b = t11;
-        }
-        if (eqz(g_b)) {
-          b[0] = m >> 20L;
-          a[51]:int = b;
-          a[52]:int = b;
-          a[19]:int = b;
-          a[18]:int = 86512;
-          f = a + 16;
-          c = a + 72;
-        }
-        if (eqz(g_b) | e == 24) {
-          fmt_Printf(f, 86543, 20, c);
-          24;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) { a[53]:long@4 = a[2]:long }
-        if (eqz(g_b) | e == 25) {
-          runtime_alloc(8);
-          let t12 = 25;
-          if (g_b == 1) goto B_b;
-          b = t12;
-        }
-        if (eqz(g_b)) {
-          b[0] = i64_extend_i32_u(g - 90368 >> 20);
-          a[55]:int = b;
-          a[56]:int = b;
-          a[17]:int = b;
-          a[16]:int = 86512;
-          f = a + 8;
-          c = a - -64;
-        }
-        if (eqz(g_b) | e == 26) {
-          fmt_Printf(f, 86563, 13, c);
-          26;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          a[57]:long@4 = a[1]:long;
-          a[59]:int = 90352[0]:int;
-          c = 90356[0]:ubyte;
-        }
-        if (eqz(g_b) | e == 27) {
-          runtime_printint32(c);
-          27;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b) | e == 28) {
-          runtime_printnl();
-          28;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          89708[0]:int = k;
-          89728[0]:byte = 1;
-          stack_pointer = a + 240;
-        }
-        return ;
-        label B_b:
-      }
-  (g_c[0]:int)[0]:int = d;
-  g_c[0]:int = g_c[0]:int + 4;
-  d = g_c[0]:int;
-  d[0]:int = a;
-  d[1]:int = c;
-  d[2]:int = b;
-  d[3]:int = f;
-  d[4]:int = g;
-  d[5]:int = h;
-  d[6]:int = i;
-  d[7]:long@4 = j;
-  d[9]:int = k;
-  d[10]:long@4 = l;
-  d[12]:long@4 = m;
-  g_c[0]:int = g_c[0]:int + 56;
-}
-
-function runtime_deadlock() { // func99
-  var a:int;
-  a = {
-        if (g_b == 2) {
-          g_c[0]:int = g_c[0]:int - 4;
-          a = (g_c[0]:int)[0]:int;
-        }
-        if (eqz(g_b) | eqz(a)) {
-          internal_task_Pause();
-          0;
-          if (g_b == 1) goto B_a;
-        }
-        if (eqz(g_b) | a == 1) {
-          runtime_panic(86592, 67456);
-          1;
-          if (g_b == 1) goto B_a;
-        }
-        if (eqz(g_b)) { unreachable }
-        return ;
-        label B_a:
-      }
-  (g_c[0]:int)[0]:int = a;
-  g_c[0]:int = g_c[0]:int + 4;
-}
-
-function runtime_run() { // func100
-  var b:int;
-  var a:int;
-  var d:int;
-  var e:long;
-  var c:{ a:int, b:int }
-  if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 8;
-    c = g_c[0]:int;
-    a = c.a;
-    b = c.b;
-  }
-  c = {
-        if (g_b == 2) {
-          g_c[0]:int = g_c[0]:int - 4;
-          d = (g_c[0]:int)[0]:int;
-        }
-        if (eqz(g_b)) {
-          b = stack_pointer - 16;
-          stack_pointer = b;
-          b[3]:int = 0;
-          b[1]:long@4 = 2L;
-          a = 89708[0]:int;
-          89708[0]:int = b;
-          b[0]:int = a;
-        }
-        if (eqz(g_b) | eqz(d)) {
-          runtime_RegisterTask(67491, 2);
-          0;
-          if (g_b == 1) goto B_b;
-        }
-        loop L_f {
-          if (eqz(g_b)) {
-            89640[0]:long = (e = 89640[0]:long + 1L);
-            a = e % 1000L != 0L;
-          }
-          if (eqz(g_b)) {
-            if (a) goto B_h;
-            b[2]:int = (a = 89496[0]:int);
-          }
-          if (eqz(g_b) | d == 1) {
-            runtime_scheduleLogTask(67464, 8, a);
-            1;
-            if (g_b == 1) goto B_b;
-          }
-          if (eqz(g_b)) { b[3]:int = (a = 89496[0]:int) }
-          if (eqz(g_b) | d == 2) {
-            Push(a);
-            2;
-            if (g_b == 1) goto B_b;
-          }
-          if (eqz(g_b) | d == 3) {
-            internal_task_Pause();
-            3;
-            if (g_b == 1) goto B_b;
-          }
-          label B_h:
-          if (eqz(g_b) | d == 4) {
-            runtime_runGC();
-            let t0 = 4;
-            if (g_b == 1) goto B_b;
-            a = t0;
-          }
-          if (eqz(g_b)) continue L_f;
-        }
-        return ;
-        label B_b:
-      }
-  (g_c[0]:int)[0]:int = c;
-  g_c[0]:int = g_c[0]:int + 4;
-  c = g_c[0]:int;
-  c.a = a;
-  c.b = b;
-  g_c[0]:int = g_c[0]:int + 8;
-}
-
-function runtime_ticks():long { // func101
+function runtime_ticks():long { // func99
   var b:long_ptr;
   var c:{ a:int, b:int }
   var a:{ a:int, b:int }
@@ -9159,100 +8575,200 @@ function runtime_ticks():long { // func101
   return 0L;
 }
 
-function runtime_u64ToString(a:{ a:int, b:int }, b:long) { // func102
-  var d:int;
-  var e:{ a:int, b:int, c:int, d:int, e:int }
-  var f:long_ptr;
-  var c:int;
-  var g:{ a:int, b:int, c:int, d:int, e:int }
+function runtime_scheduleLogTask(a:int, b:int, c:int) { // func100
+  var d:int_ptr;
+  var g:int;
+  var h:int;
+  var f:int;
+  var i:int;
+  var e:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
   if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 20;
+    g_c[0]:int = g_c[0]:int - 28;
     e = g_c[0]:int;
     a = e.a;
-    d = e.b;
     c = e.c;
-    f = e.d;
-    e = e.e;
+    d = e.d;
+    f = e.e;
+    h = e.f;
+    i = e.g;
+    b = e.b;
   }
-  g = 
-    {
-      if (g_b == 2) {
-        g_c[0]:int = g_c[0]:int - 4;
-        g = (g_c[0]:int)[0]:int;
-      }
-      if (eqz(g_b)) {
-        d = stack_pointer - 48;
-        stack_pointer = d;
-        d[9]:long@4 = 1L;
-        e = 89708[0]:int;
-        89708[0]:int = d + 32;
-        d[8]:int = e;
-        f = b != 0L;
-        c = 0;
-      }
-      if (eqz(g_b)) {
-        if (eqz(f)) {
-          c = 1;
-          f = 67424;
-          goto B_e;
+  e = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          g = (g_c[0]:int)[0]:int;
         }
-        (d + 24)[0]:int = 0;
-        f = d + 16;
-        f[0] = 0L;
-        d[1]:long = 0L;
-      }
-      if (eqz(g_b)) {
-        loop L_j {
-          if (b != 0L) {
-            f = c + 19 > 19;
-            if (f) goto B_h;
-            (c + d + 27)[0]:byte = i32_wrap_i64(b - (b = b / 10L) * 10L) | 48;
-            c = c - 1;
-            continue L_j;
-          }
+        if (eqz(g_b)) {
+          d = stack_pointer - 144;
+          stack_pointer = d;
+          d[25] = 9;
+          memory_fill(d + 104, 0, 36);
+          d[24] = (i = 89988[0]:int);
+          89988[0]:int = d + 96;
+          d[23] = c;
+          h = d + 80;
+          c = d + 92;
         }
-        f = c + d + 28;
-        c = 0 - c;
+        if (eqz(g_b) | eqz(g)) {
+          runtime_hashmapBinaryGet(87632, c, h, 8);
+          let t0 = 0;
+          if (g_b == 1) goto B_b;
+          c = t0;
+        }
+        if (eqz(g_b)) {
+          d[26] = (c = d[20]);
+          h = d[21];
+          f = eqz(h);
+        }
+        b = {
+              if (eqz(g_b)) {
+                if (f) goto B_h;
+                f = d + 72;
+              }
+              if (eqz(g_b) | g == 1) {
+                runtime_stringConcat(f, 67428, 1, a, b);
+                1;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) {
+                d[27] = (b = d[18]);
+                f = d[19];
+                a = d - -64;
+              }
+              if (eqz(g_b) | g == 2) {
+                runtime_stringConcat(a, b, f, 68698, 1);
+                2;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) {
+                d[28] = (b = d[16]);
+                f = d[17];
+                a = d + 56;
+              }
+              if (eqz(g_b) | g == 3) {
+                runtime_stringConcat(a, b, f, c, h);
+                3;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) {
+                d[29] = (c = d[14]);
+                b = d[15];
+                a = d + 48;
+              }
+              if (eqz(g_b) | g == 4) {
+                runtime_stringConcat(a, c, b, 68698, 1);
+                4;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) {
+                c = d[12];
+                d[13];
+                goto B_g;
+              }
+              label B_h:
+              c = select_if(c, d + 40, g_b);
+              if (eqz(g_b) | g == 5) {
+                runtime_stringConcat(c, 67428, 1, a, b);
+                5;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) {
+                d[33] = (c = d[10]);
+                b = d[11];
+                a = d + 32;
+              }
+              if (eqz(g_b) | g == 6) {
+                runtime_stringConcat(a, c, b, 68698, 1);
+                6;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) {
+                d[34] = (c = d[8]);
+                b = d[9];
+                a = d + 24;
+              }
+              if (eqz(g_b) | g == 7) {
+                runtime_stringConcat(a, c, b, 67429, 13);
+                7;
+                if (g_b == 1) goto B_b;
+              }
+              if (g_b) {
+                b
+              } else {
+                c = d[6];
+                d[7];
+              }
+              label B_g:
+            }
+        if (eqz(g_b)) {
+          d[30] = c;
+          a = d + 16;
+        }
+        if (eqz(g_b) | g == 8) {
+          runtime_FormatElapsed(a);
+          8;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          d[31] = (a = d[4]);
+          h = d + 8;
+          f = d[5];
+        }
+        if (eqz(g_b) | g == 9) {
+          runtime_stringConcat(h, c, b, a, f);
+          9;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          d[32] = (c = d[2]);
+          a = d[3];
+        }
+        if (eqz(g_b) | g == 10) {
+          schedular_log(c, a);
+          10;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          89988[0]:int = i;
+          stack_pointer = d + 144;
+        }
+        return ;
+        label B_b:
       }
-      if (eqz(g_b) | eqz(g)) {
-        runtime_stringFromBytes(d, f, c);
-        0;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) {
-        c = d[1]:int;
-        f = d[0]:int;
-        goto B_e;
-      }
-      label B_h:
-      if (eqz(g_b) | g == 1) {
-        runtime_lookupPanic();
-        1;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) { unreachable }
-      label B_e:
-      if (eqz(g_b)) {
-        89708[0]:int = e;
-        a.b = c;
-        a.a = f;
-        stack_pointer = d + 48;
-      }
-      return ;
-      label B_b:
-    }
-  (g_c[0]:int)[0]:int = g;
+  (g_c[0]:int)[0]:int = e;
   g_c[0]:int = g_c[0]:int + 4;
-  g = g_c[0]:int;
-  g.a = a;
-  g.b = d;
-  g.c = c;
-  g.d = f;
-  g.e = e;
-  g_c[0]:int = g_c[0]:int + 20;
+  e = g_c[0]:int;
+  e.a = a;
+  e.b = b;
+  e.c = c;
+  e.d = d;
+  e.e = f;
+  e.f = h;
+  e.g = i;
+  g_c[0]:int = g_c[0]:int + 28;
 }
 
-function runtime_printuint32(a:int) { // func103
+function runtime_printspace() { // func101
+  var a:int = {
+                if (eqz(g_b) |
+                    eqz(if (g_b == 2) {
+                          g_c[0]:int = g_c[0]:int - 4;
+                          (g_c[0]:int)[0]:int;
+                        } else {
+                          0
+                        })) {
+                  runtime_putchar(32);
+                  0;
+                  if (g_b == 1) goto B_a;
+                }
+                return ;
+                label B_a:
+              }
+  (g_c[0]:int)[0]:int = a;
+  g_c[0]:int = g_c[0]:int + 4;
+}
+
+function runtime_printuint32(a:int) { // func102
   var b:int;
   var c:long;
   b = {
@@ -9288,7 +8804,852 @@ function runtime_printuint32(a:int) { // func103
   g_c[0]:int = g_c[0]:int + 12;
 }
 
-function runtime_printuint64(a:long) { // func104
+function runtime_printint64(a:long) { // func103
+  var b:int;
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 8;
+    a = (g_c[0]:int)[0]:long@4;
+  }
+  b = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          b = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(eqz(g_b) & select_if(0, a >= 0L, g_b))) {
+          if (eqz(g_b) | eqz(b)) {
+            runtime_putchar(45);
+            0;
+            if (g_b == 1) goto B_b;
+          }
+          a = select_if(a, 0L - a, g_b);
+        }
+        if (eqz(g_b) | b == 1) {
+          runtime_printuint64(a);
+          1;
+          if (g_b == 1) goto B_b;
+        }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = b;
+  g_c[0]:int = g_c[0]:int + 4;
+  (g_c[0]:int)[0]:long@4 = a;
+  g_c[0]:int = g_c[0]:int + 8;
+}
+
+function runtime_waitForEvents() { // func104
+  var a:int = {
+                if (eqz(g_b) |
+                    eqz(if (g_b == 2) {
+                          g_c[0]:int = g_c[0]:int - 4;
+                          (g_c[0]:int)[0]:int;
+                        } else {
+                          0
+                        })) {
+                  runtime_runtimePanic(67624, 27);
+                  0;
+                  if (g_b == 1) goto B_a;
+                }
+                if (eqz(g_b)) { unreachable }
+                return ;
+                label B_a:
+              }
+  (g_c[0]:int)[0]:int = a;
+  g_c[0]:int = g_c[0]:int + 4;
+}
+
+function runtime_run_1() { // func105
+  var a:int;
+  var d:int;
+  var k:long;
+  var f:int;
+  var c:int_ptr;
+  var i:int;
+  var b:{ a:int, b:int, c:long }
+  var h:{ a:int, b:long }
+  var g:{ a:int, b:long }
+  var j:long;
+  var l:int;
+  var e:int;
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 48;
+    e = g_c[0]:int;
+    a = e[0]:int;
+    c = e[2]:int;
+    f = e[3]:int;
+    g = e[4]:int;
+    h = e[5]:int;
+    i = e[6]:int;
+    j = e[7]:long@4;
+    l = e[9]:int;
+    k = e[10]:long@4;
+    b = e[1]:int;
+  }
+  e = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          d = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) {
+          a = stack_pointer - 256;
+          stack_pointer = a;
+          a[15]:int = 48;
+          memory_fill(a + 72, 0, 184);
+          a[14]:int = (l = 89988[0]:int);
+          89988[0]:int = (f = a + 56);
+          b = 0;
+        }
+        if (eqz(g_b) | eqz(d)) {
+          runtime_RegisterTask(67618, 4);
+          0;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { 89780[0]:int = (f = memory_size() << 16) }
+        if (eqz(g_b) | d == 1) {
+          runtime_ticks();
+          let t0 = 1;
+          if (g_b == 1) goto B_b;
+          k = t0;
+        }
+        if (eqz(g_b)) {
+          89912[0]:long = k;
+          wasm_call_ctors();
+          f = a + 32;
+        }
+        if (eqz(g_b) | d == 2) {
+          runtime_sliceAppend(f, 0, 87736, 0, 0, 1, 16);
+          2;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          91224[0]:long@4 = a[9]:long@4;
+          91220[0]:int = (c = a[8]:int);
+          a[16]:int = c;
+          a[17]:int = (i = 90572[0]:int);
+          f = eqz(i);
+        }
+        if (eqz(g_b)) {
+          if (eqz(f)) {
+            f = 90580[0]:int;
+            b = 90576[0]:int;
+            goto B_l;
+          }
+          a[12]:int = 0;
+          a[13]:int = 0;
+          i = a + 52;
+          f = a + 48;
+        }
+        if (eqz(g_b) | d == 3) {
+          runtime_args_sizes_get(i, f);
+          let t1 = 3;
+          if (g_b == 1) goto B_b;
+          f = t1;
+        }
+        if (eqz(g_b)) {
+          f = a[13]:int;
+          if (eqz(f)) {
+            i = 0;
+            f = 0;
+            goto B_k;
+          }
+          b = f > 1073741823;
+        }
+        if (eqz(g_b)) {
+          if (b) goto B_s;
+          b = f << 2;
+        }
+        if (eqz(g_b) | d == 4) {
+          runtime_alloc(b);
+          let t2 = 4;
+          if (g_b == 1) goto B_b;
+          h = t2;
+        }
+        if (eqz(g_b)) {
+          a[18]:int = h;
+          c = a[12]:int;
+          b = c < 0;
+          if (b) goto B_s;
+        }
+        if (eqz(g_b) | d == 5) {
+          runtime_alloc(c);
+          let t3 = 5;
+          if (g_b == 1) goto B_b;
+          b = t3;
+        }
+        if (eqz(g_b)) {
+          a[19]:int = b;
+          a[20]:int = b;
+          i = eqz(c);
+          if (i) goto B_r;
+        }
+        if (eqz(g_b) | d == 6) {
+          runtime_args_get(h, b);
+          let t4 = 6;
+          if (g_b == 1) goto B_b;
+          b = t4;
+        }
+        if (eqz(g_b)) {
+          b = f > 536870911;
+          if (b) goto B_s;
+          b = f << 3;
+        }
+        if (eqz(g_b) | d == 7) {
+          runtime_alloc(b);
+          let t5 = 7;
+          if (g_b == 1) goto B_b;
+          i = t5;
+        }
+        if (eqz(g_b)) {
+          90572[0]:int = i;
+          90576[0]:int = f;
+          90580[0]:int = f;
+          a[21]:int = i;
+          b = i;
+          g = f;
+          loop L_ca {
+            if (g) {
+              a[25]:int = (c = h.a);
+              a[23]:int = c;
+              a[22]:int = c;
+              (b + 4)[0]:int = strlen(c);
+              b.a = c;
+              a[24]:int = i;
+              h = h + 4;
+              b = b + 8;
+              g = g - 1;
+              continue L_ca;
+            } else {
+              b = f;
+              goto B_l;
+            }
+            unreachable;
+          }
+          unreachable;
+        }
+        label B_s:
+        if (eqz(g_b) | d == 8) {
+          runtime_slicePanic();
+          8;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { unreachable }
+        label B_r:
+        if (eqz(g_b) | d == 9) {
+          runtime_lookupPanic();
+          9;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { unreachable }
+        label B_l:
+        if (eqz(g_b)) { a[26]:int = i }
+        label B_k:
+        if (eqz(g_b)) {
+          91232[0]:int = i;
+          91236[0]:int = b;
+          91240[0]:int = f;
+          a[27]:int = i;
+          c = 0;
+        }
+        if (eqz(g_b) | d == 10) {
+          runtime_ticks();
+          10;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 11) {
+          runtime_alloc(4);
+          let t6 = 11;
+          if (g_b == 1) goto B_b;
+          g = t6;
+        }
+        if (eqz(g_b)) { a[28]:int = g }
+        if (eqz(g_b) | d == 12) {
+          runtime_alloc(64);
+          let t7 = 12;
+          if (g_b == 1) goto B_b;
+          h = t7;
+        }
+        if (eqz(g_b)) {
+          g.a = h;
+          a[32]:int = h;
+          a[35]:int = h;
+          a[31]:int = h;
+          a[30]:int = h;
+          a[29]:int = h;
+        }
+        if (eqz(g_b) | d == 13) {
+          runtime_printstring(86744, 20);
+          13;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 14) {
+          runtime_printspace();
+          14;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 15) {
+          runtime_printptr(h);
+          15;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 16) {
+          runtime_printnl();
+          16;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          loop L_ua {
+            f = c == 64;
+            if (eqz(f)) {
+              a[33]:int = (b = c + h);
+              a[34]:int = b;
+              b.a = -559038737;
+              c = c + 4;
+              continue L_ua;
+            }
+          }
+          h.a = 0;
+        }
+        if (eqz(g_b) | d == 17) {
+          runtime_alloc(8);
+          let t8 = 17;
+          if (g_b == 1) goto B_b;
+          c = t8;
+        }
+        if (eqz(g_b)) { a[36]:int = c }
+        if (eqz(g_b) | d == 18) {
+          Add(c, 2);
+          18;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 19) {
+          runtime_alloc(8);
+          let t9 = 19;
+          if (g_b == 1) goto B_b;
+          b = t9;
+        }
+        if (eqz(g_b)) {
+          b.b = g;
+          b.a = c;
+          a[37]:int = b;
+          a[38]:int = b;
+        }
+        if (eqz(g_b) | d == 20) {
+          internal_task_start(3, b);
+          20;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 21) {
+          runtime_alloc(8);
+          let t10 = 21;
+          if (g_b == 1) goto B_b;
+          b = t10;
+        }
+        if (eqz(g_b)) {
+          b.b = g;
+          b.a = c;
+          a[39]:int = b;
+          a[40]:int = b;
+        }
+        if (eqz(g_b) | d == 22) {
+          internal_task_start(4, b);
+          22;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 23) {
+          Wait(c);
+          23;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 24) {
+          runtime_printstring(86764, 13);
+          24;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { a[41]:int = (c = g.a) }
+        if (eqz(g_b) | d == 25) {
+          main_printMemoryTable(c);
+          25;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          a[43]:int = (c = g.a);
+          a[42]:int = c;
+          c[0] = 0;
+        }
+        if (eqz(g_b) | d == 26) {
+          runtime_alloc(8);
+          let t11 = 26;
+          if (g_b == 1) goto B_b;
+          c = t11;
+        }
+        if (eqz(g_b)) { a[44]:int = c }
+        if (eqz(g_b) | d == 27) {
+          Add(c, 2);
+          27;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 28) {
+          runtime_alloc(8);
+          let t12 = 28;
+          if (g_b == 1) goto B_b;
+          b = t12;
+        }
+        if (eqz(g_b)) {
+          b.b = g;
+          b.a = c;
+          a[45]:int = b;
+          a[46]:int = b;
+        }
+        if (eqz(g_b) | d == 29) {
+          internal_task_start(5, b);
+          29;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 30) {
+          runtime_alloc(8);
+          let t13 = 30;
+          if (g_b == 1) goto B_b;
+          b = t13;
+        }
+        if (eqz(g_b)) {
+          b.b = g;
+          b.a = c;
+          a[47]:int = b;
+          a[48]:int = b;
+        }
+        if (eqz(g_b) | d == 31) {
+          internal_task_start(6, b);
+          31;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 32) {
+          Wait(c);
+          32;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 33) {
+          runtime_printstring(86777, 9);
+          33;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { a[49]:int = (c = g.a) }
+        if (eqz(g_b) | d == 34) {
+          main_printMemoryTable(c);
+          34;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { a[50]:int = (g = 89776[0]:int) }
+        if (eqz(g_b) | d == 35) {
+          runtime_printstring(67472, 12);
+          35;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 36) {
+          runtime_printspace();
+          36;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 37) {
+          runtime_printptr(g);
+          37;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 38) {
+          runtime_printspace();
+          38;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 39) {
+          runtime_printuint64(50000000L);
+          39;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 40) {
+          runtime_printnl();
+          40;
+          if (g_b == 1) goto B_b;
+        }
+        f = select_if(f, eqz(g), g_b);
+        if (eqz(g_b)) {
+          if (f) goto B_ec;
+          a[51]:int = (c = g.a);
+        }
+        if (eqz(g_b)) {
+          if (c) goto B_gc;
+          g.b = 50000000L;
+        }
+        if (eqz(g_b) | d == 41) {
+          runtime_ticks();
+          let t14 = 41;
+          if (g_b == 1) goto B_b;
+          j = t14;
+        }
+        if (eqz(g_b)) { a[52]:int = (c = 90632[0]:int) }
+        if (eqz(g_b)) {
+          if (c) goto B_kc;
+          f = a + 24;
+        }
+        if (eqz(g_b) | d == 42) {
+          runtime_stringConcat(f, 67425, 3, 67544, 20);
+          42;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          a[53]:int = (c = a[6]:int);
+          f = a + 16;
+          b = a[7]:int;
+        }
+        if (eqz(g_b) | d == 43) {
+          runtime_FormatElapsed(f);
+          43;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          a[54]:int = (h = a[4]:int);
+          i = a + 8;
+          f = a[5]:int;
+        }
+        if (eqz(g_b) | d == 44) {
+          runtime_stringConcat(i, c, b, h, f);
+          44;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          a[55]:int = (c = a[2]:int);
+          f = a[3]:int;
+        }
+        if (eqz(g_b) | d == 45) {
+          runtime_printstring(c, f);
+          45;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | d == 46) {
+          runtime_printnl();
+          46;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { 90640[0]:long = j }
+        label B_kc:
+        if (eqz(g_b)) {
+          c = 90632;
+          loop L_xc {
+            a[56]:int = c;
+            a[57]:int = (b = c[0]);
+            if (eqz(b)) {
+              a[61]:int = 0;
+              goto B_wc;
+            }
+            j = g.b;
+            a[58]:int = b;
+            h = c[0];
+            if (b.c <= j) {
+              a[59]:int = h;
+              if (eqz(h)) goto B_ec;
+              g.b = g.b - h.b;
+              a[60]:int = (c = c[0]);
+              if (c) continue L_xc;
+              goto B_ec;
+            }
+          }
+          a[61]:int = h;
+          if (eqz(h)) goto B_wc;
+          a[62]:int = (b = c[0]);
+          if (eqz(b)) goto B_ec;
+          b.c = b.c - g.b;
+          label B_wc:
+          a[63]:int = (b = c[0]);
+          g.a = b;
+          c[0] = g;
+        }
+        if (eqz(g_b) | d == 47) {
+          internal_task_Pause();
+          47;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          89988[0]:int = l;
+          90620[0]:byte = 1;
+          stack_pointer = a + 256;
+          return ;
+        }
+        label B_gc:
+        if (eqz(g_b) | d == 48) {
+          runtime_panic(86240, 67536);
+          48;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { unreachable }
+        label B_ec:
+        if (eqz(g_b) | d == 49) {
+          runtime_nilPanic();
+          49;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { unreachable }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = e;
+  g_c[0]:int = g_c[0]:int + 4;
+  e = g_c[0]:int;
+  e[0]:int = a;
+  e[1]:int = b;
+  e[2]:int = c;
+  e[3]:int = f;
+  e[4]:int = g;
+  e[5]:int = h;
+  e[6]:int = i;
+  e[7]:long@4 = j;
+  e[9]:int = l;
+  e[10]:long@4 = k;
+  g_c[0]:int = g_c[0]:int + 48;
+}
+
+function runtime_deadlock() { // func106
+  var a:int;
+  a = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          a = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b) | eqz(a)) {
+          internal_task_Pause();
+          0;
+          if (g_b == 1) goto B_a;
+        }
+        if (eqz(g_b) | a == 1) {
+          runtime_panic(86240, 67456);
+          1;
+          if (g_b == 1) goto B_a;
+        }
+        if (eqz(g_b)) { unreachable }
+        return ;
+        label B_a:
+      }
+  (g_c[0]:int)[0]:int = a;
+  g_c[0]:int = g_c[0]:int + 4;
+}
+
+function runtime_run() { // func107
+  var a:int;
+  a = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          a = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b) | eqz(a)) {
+          runtime_RegisterTask(67622, 2);
+          0;
+          if (g_b == 1) goto B_a;
+        }
+        loop L_d {
+          if (eqz(g_b) | a == 1) {
+            runtime_Gosched();
+            1;
+            if (g_b == 1) goto B_a;
+          }
+          if (eqz(g_b) | a == 2) {
+            runtime_runGC();
+            2;
+            if (g_b == 1) goto B_a;
+          }
+          if (eqz(g_b)) continue L_d;
+        }
+        return ;
+        label B_a:
+      }
+  (g_c[0]:int)[0]:int = a;
+  g_c[0]:int = g_c[0]:int + 4;
+}
+
+function runtime_FormatElapsed(a:{ a:int, b:int }) { // func108
+  var b:int;
+  var j:int;
+  var h:int;
+  var d:long;
+  var f:int;
+  var i:long;
+  var m:int;
+  var l:int;
+  var g:int;
+  var k:int;
+  var e:int;
+  var n:int;
+  var c:int;
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 56;
+    c = g_c[0]:int;
+    a = c[0]:int;
+    e = c[4]:int;
+    f = c[5]:int;
+    g = c[6]:int;
+    i = c[7]:long@4;
+    j = c[9]:int;
+    k = c[10]:int;
+    l = c[11]:int;
+    m = c[12]:int;
+    n = c[13]:int;
+    d = c[2]:long@4;
+    b = c[1]:int;
+  }
+  c = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          h = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) {
+          b = stack_pointer - 96;
+          stack_pointer = b;
+          (b + 80)[0]:long = 0L;
+          (b + 88)[0]:int = 0;
+          b[9]:long = 0L;
+          b[15]:int = 7;
+          j = 89988[0]:int;
+          89988[0]:int = b + 56;
+          b[14]:int = j;
+          f = b + 48;
+        }
+        if (eqz(g_b) | eqz(h)) {
+          runtime_ticks();
+          let t0 = 0;
+          if (g_b == 1) goto B_b;
+          d = t0;
+        }
+        if (eqz(g_b)) {
+          d = d - 89912[0]:long;
+          d = (d ^ (d = d >> 63L)) - d;
+          i = d / 1000000000L;
+        }
+        if (eqz(g_b) | h == 1) {
+          runtime_u64ToString(f, i);
+          1;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          b[16]:int = (g = b[12]:int);
+          k = b[13]:int;
+          b[17]:int =
+            (f = {
+                   if ((d = d - i * 1000000000L) <= 0L) {
+                     e = 9;
+                     67380;
+                     goto B_i;
+                   }
+                   if (d < 10L) {
+                     e = 8;
+                     67389;
+                     goto B_i;
+                   }
+                   if (d < 100L) {
+                     e = 7;
+                     67397;
+                     goto B_i;
+                   }
+                   if (d < 1000L) {
+                     e = 6;
+                     67404;
+                     goto B_i;
+                   }
+                   if (d < 10000L) {
+                     e = 5;
+                     67410;
+                     goto B_i;
+                   }
+                   if (d < 100000L) {
+                     e = 4;
+                     67415;
+                     goto B_i;
+                   }
+                   if (d < 1000000L) {
+                     e = 3;
+                     67419;
+                     goto B_i;
+                   }
+                   if (d < 10000000L) {
+                     e = 2;
+                     67422;
+                     goto B_i;
+                   }
+                   select_if(67424, 0, e = d < 100000000L);
+                   label B_i:
+                 });
+          m = b + 40;
+          d = d * 10L;
+        }
+        if (eqz(g_b) | h == 2) {
+          runtime_u64ToString(m, d);
+          2;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          b[18]:int = (m = b[10]:int);
+          n = b[11]:int;
+          l = b + 32;
+        }
+        if (eqz(g_b) | h == 3) {
+          runtime_stringConcat(l, g, k, 67377, 1);
+          3;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          b[19]:int = (g = b[8]:int);
+          l = b[9]:int;
+          k = b + 24;
+        }
+        if (eqz(g_b) | h == 4) {
+          runtime_stringConcat(k, g, l, f, e);
+          4;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          b[20]:int = (f = b[6]:int);
+          g = b[7]:int;
+          e = b + 16;
+        }
+        if (eqz(g_b) | h == 5) {
+          runtime_stringConcat(e, f, g, m, n);
+          5;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          b[21]:int = (f = b[4]:int);
+          g = b[5]:int;
+          e = b + 8;
+        }
+        if (eqz(g_b) | h == 6) {
+          runtime_stringConcat(e, f, g, 67378, 2);
+          6;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          89988[0]:int = j;
+          j = b[3]:int;
+          a.a = b[2]:int;
+          a.b = j;
+          stack_pointer = b + 96;
+        }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = c;
+  g_c[0]:int = g_c[0]:int + 4;
+  c = g_c[0]:int;
+  c[0]:int = a;
+  c[1]:int = b;
+  c[2]:long@4 = d;
+  c[4]:int = e;
+  c[5]:int = f;
+  c[6]:int = g;
+  c[7]:long@4 = i;
+  c[9]:int = j;
+  c[10]:int = k;
+  c[11]:int = l;
+  c[12]:int = m;
+  c[13]:int = n;
+  g_c[0]:int = g_c[0]:int + 56;
+}
+
+function runtime_printuint64(a:long) { // func109
   var b:int;
   var e:int;
   var d:int;
@@ -9371,7 +9732,100 @@ function runtime_printuint64(a:long) { // func104
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function runtime_runGC():int { // func105
+function runtime_u64ToString(a:{ a:int, b:int }, b:long) { // func110
+  var d:int;
+  var e:{ a:int, b:int, c:int, d:int, e:int }
+  var f:long_ptr;
+  var c:int;
+  var g:{ a:int, b:int, c:int, d:int, e:int }
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 20;
+    e = g_c[0]:int;
+    a = e.a;
+    d = e.b;
+    c = e.c;
+    f = e.d;
+    e = e.e;
+  }
+  g = 
+    {
+      if (g_b == 2) {
+        g_c[0]:int = g_c[0]:int - 4;
+        g = (g_c[0]:int)[0]:int;
+      }
+      if (eqz(g_b)) {
+        d = stack_pointer - 48;
+        stack_pointer = d;
+        d[9]:long@4 = 1L;
+        e = 89988[0]:int;
+        89988[0]:int = d + 32;
+        d[8]:int = e;
+        f = b != 0L;
+        c = 0;
+      }
+      if (eqz(g_b)) {
+        if (eqz(f)) {
+          c = 1;
+          f = 67424;
+          goto B_e;
+        }
+        (d + 24)[0]:int = 0;
+        f = d + 16;
+        f[0] = 0L;
+        d[1]:long = 0L;
+      }
+      if (eqz(g_b)) {
+        loop L_j {
+          if (b != 0L) {
+            f = c + 19 > 19;
+            if (f) goto B_h;
+            (c + d + 27)[0]:byte = i32_wrap_i64(b - (b = b / 10L) * 10L) | 48;
+            c = c - 1;
+            continue L_j;
+          }
+        }
+        f = c + d + 28;
+        c = 0 - c;
+      }
+      if (eqz(g_b) | eqz(g)) {
+        runtime_stringFromBytes(d, f, c);
+        0;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) {
+        c = d[1]:int;
+        f = d[0]:int;
+        goto B_e;
+      }
+      label B_h:
+      if (eqz(g_b) | g == 1) {
+        runtime_lookupPanic();
+        1;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) { unreachable }
+      label B_e:
+      if (eqz(g_b)) {
+        89988[0]:int = e;
+        a.b = c;
+        a.a = f;
+        stack_pointer = d + 48;
+      }
+      return ;
+      label B_b:
+    }
+  (g_c[0]:int)[0]:int = g;
+  g_c[0]:int = g_c[0]:int + 4;
+  g = g_c[0]:int;
+  g.a = a;
+  g.b = d;
+  g.c = c;
+  g.d = f;
+  g.e = e;
+  g_c[0]:int = g_c[0]:int + 20;
+}
+
+function runtime_runGC():int { // func111
   var a:int;
   var c:{ a:int, b:int, c:int }
   var d:int;
@@ -9390,8 +9844,8 @@ function runtime_runGC():int { // func105
           c = (g_c[0]:int)[0]:int;
         }
         if (eqz(g_b)) {
-          89708[0]:int;
-          a = 89496[0]:int;
+          89988[0]:int;
+          a = 89776[0]:int;
         }
         if (eqz(g_b)) {
           if (a) goto B_e;
@@ -9404,22 +9858,22 @@ function runtime_runGC():int { // func105
         }
         label B_e:
         if (eqz(g_b) | c == 1) {
-          runtime_markRoots(65536, 90368);
+          runtime_markRoots(65536, 91264);
           1;
           if (g_b == 1) goto B_b;
         }
         loop L_i {
           if (eqz(g_b)) {
-            if (eqz(89705[0]:ubyte)) {
+            if (eqz(89985[0]:ubyte)) {
               c = 0;
               d = 0;
               a = 0;
               loop L_l {
-                if (a < 89656[0]:int) {
+                if (a < 89936[0]:int) {
                   br_table[B_s, B_r, B_q, ..B_p]((state(a) & 255) - 1)
                   label B_s:
                   markFree(a);
-                  89688[0]:long = 89688[0]:long + 1L;
+                  89968[0]:long = 89968[0]:long + 1L;
                   goto B_n;
                   label B_r:
                   let t0 = d & 1;
@@ -9429,7 +9883,7 @@ function runtime_runGC():int { // func105
                   goto B_n;
                   label B_q:
                   d = 0;
-                  b = 89648[0]:int + (a >> 2);
+                  b = 89928[0]:int + (a >> 2);
                   var f:int = b[0]:ubyte & (2 << (a << 1 & 6) ^ -1);
                   b[0]:byte = f;
                   goto B_m;
@@ -9437,7 +9891,7 @@ function runtime_runGC():int { // func105
                   c = c + 16;
                   goto B_m;
                 }
-                89696[0]:long = e + 89696[0]:long;
+                89976[0]:long = e + 89976[0]:long;
                 return c + (i32_wrap_i64(e) << 4);
                 label B_n:
                 e = e + 1L;
@@ -9448,8 +9902,8 @@ function runtime_runGC():int { // func105
               }
               unreachable;
             }
-            89705[0]:byte = 0;
-            d = 89656[0]:int;
+            89985[0]:byte = 0;
+            d = 89936[0]:int;
             a = 0;
           }
           loop L_t {
@@ -9464,7 +9918,7 @@ function runtime_runGC():int { // func105
                 2;
                 if (g_b == 1) goto B_b;
               }
-              d = if (g_b) { d } else { 89656[0]:int }
+              d = if (g_b) { d } else { 89936[0]:int }
             }
             if (eqz(g_b)) {
               a = a + 1;
@@ -9485,29 +9939,29 @@ function runtime_runGC():int { // func105
   return 0;
 }
 
-function runtime_growHeap():int { // func106
+function runtime_growHeap():int { // func112
   var b:int = memory_grow(memory_size()) != -1;
   if (b) {
     var a:int = memory_size();
-    var c:int = 89500[0]:int;
-    89500[0]:int = a << 16;
-    a = 89648[0]:int;
+    var c:int = 89780[0]:int;
+    89780[0]:int = a << 16;
+    a = 89928[0]:int;
     runtime_calculateHeapAddresses();
-    memory_copy(89648[0]:int, a, c - a);
+    memory_copy(89928[0]:int, a, c - a);
   }
   return b;
 }
 
-function state(a:int):int { // func107
-  return (89648[0]:int + (a >> 2))[0]:ubyte >> (a << 1 & 6) & 3
+function state(a:int):int { // func113
+  return (89928[0]:int + (a >> 2))[0]:ubyte >> (a << 1 & 6) & 3
 }
 
-function setState(a:int, b:int) { // func108
-  var c:int = 89648[0]:int + (a >> 2);
+function setState(a:int, b:int) { // func114
+  var c:int = 89928[0]:int + (a >> 2);
   c[0]:byte = c[0]:ubyte | b << (a << 1 & 6);
 }
 
-function runtime_markRoots(a:int_ptr, b:int) { // func109
+function runtime_markRoots(a:int_ptr, b:int) { // func115
   var d:int;
   var c:{ a:int, b:int, c:int, d:int }
   var e:{ a:int, b:int, c:int, d:int }
@@ -9528,13 +9982,13 @@ function runtime_markRoots(a:int_ptr, b:int) { // func109
           if (eqz(g_b)) {
             if (a >= b) goto B_e;
             d = a[0];
-            c = d < 90368;
+            c = d < 91264;
           }
           if (eqz(g_b)) {
             if (c) goto B_g;
-            c = d >= 89648[0]:int;
+            c = d >= 89928[0]:int;
             if (c) goto B_g;
-            d = d - 90368 >> 4;
+            d = d - 91264 >> 4;
             c = eqz(state(d) & 255);
             if (c) goto B_g;
             d = findHead(d);
@@ -9566,12 +10020,12 @@ function runtime_markRoots(a:int_ptr, b:int) { // func109
   g_c[0]:int = g_c[0]:int + 16;
 }
 
-function markFree(a:int) { // func110
-  var b:int = 89648[0]:int + (a >> 2);
+function markFree(a:int) { // func116
+  var b:int = 89928[0]:int + (a >> 2);
   b[0]:byte = b[0]:ubyte & (3 << (a << 1 & 6) ^ -1);
 }
 
-function runtime_startMark(a:int) { // func111
+function runtime_startMark(a:int) { // func117
   var h:int;
   var f:int;
   a = {
@@ -9598,8 +10052,8 @@ function runtime_startMark(a:int) { // func111
               label B_g:
               var b:int = d << 4;
               var g:int = b - (h = a << 4);
-              b = b + 90368;
-              var i:int = 89648[0]:int;
+              b = b + 91264;
+              var i:int = 89928[0]:int;
               loop L_i {
                 a = g;
                 if (b >= i) goto B_j;
@@ -9610,19 +10064,19 @@ function runtime_startMark(a:int) { // func111
                 if ((t0 & 255) == 2) continue L_i;
                 label B_j:
               }
-              d = h + 90368;
+              d = h + 91264;
               loop L_k {
                 if (eqz(a)) continue L_e;
                 b = d[0];
-                if (b < 90368) goto B_l;
-                if (b >= 89648[0]:int) goto B_l;
-                b = b - 90368 >> 4;
+                if (b < 91264) goto B_l;
+                if (b >= 89928[0]:int) goto B_l;
+                b = b - 91264 >> 4;
                 if (eqz(state(b) & 255)) goto B_l;
                 b = findHead(b);
                 if ((state(b) & 255) == 3) goto B_l;
                 setState(b, 3);
                 if (c == 32) {
-                  89705[0]:byte = 1;
+                  89985[0]:byte = 1;
                   c = 32;
                   goto B_l;
                 }
@@ -9654,7 +10108,7 @@ function runtime_startMark(a:int) { // func111
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function runtime_printint32(a:int) { // func112
+function runtime_printint32(a:int) { // func118
   var b:int;
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 4;
@@ -9687,9 +10141,9 @@ function runtime_printint32(a:int) { // func112
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function findHead(a:int):int { // func113
+function findHead(a:int):int { // func119
   var b:int;
-  var c:int = 89648[0]:int;
+  var c:int = 89928[0]:int;
   loop L_a {
     var d:int = (c + (a >> 2))[0]:ubyte;
     if (d == 170) {
@@ -9706,7 +10160,7 @@ function findHead(a:int):int { // func113
   return unreachable;
 }
 
-function runtime_stringEqual(a:ubyte_ptr, b:int, c:ubyte_ptr, d:int):int { // func114
+function runtime_stringEqual(a:ubyte_ptr, b:int, c:ubyte_ptr, d:int):int { // func120
   var e:int;
   if (b != d) goto B_a;
   b = select_if(b, 0, b > 0);
@@ -9723,7 +10177,7 @@ function runtime_stringEqual(a:ubyte_ptr, b:int, c:ubyte_ptr, d:int):int { // fu
   return e;
 }
 
-function runtime_hashmapGet(a:int_ptr, b:int, c:int, d:int):int { // func115
+function runtime_hashmapGet(a:int_ptr, b:int, c:int, d:int):int { // func121
   var f:int;
   var j:int;
   var h:int_ptr;
@@ -9766,8 +10220,8 @@ function runtime_hashmapGet(a:int_ptr, b:int, c:int, d:int):int { // func115
           (f + 40)[0]:int = 0;
           f[3]:long = 0L;
           f[3]:int = 7;
-          j = 89708[0]:int;
-          89708[0]:int = f + 8;
+          j = 89988[0]:int;
+          89988[0]:int = f + 8;
           f[2]:int = j;
           f[4]:int = (h = runtime_hashmapBucketAddrForHash(a, d));
           k = select_if(1, g = d >> 24, d = d < 16777216);
@@ -9821,7 +10275,7 @@ function runtime_hashmapGet(a:int_ptr, b:int, c:int, d:int):int { // func115
         if (eqz(g_b)) { memory_fill(c, 0, a[4]) }
         label B_f:
         if (eqz(g_b)) {
-          89708[0]:int = j;
+          89988[0]:int = j;
           stack_pointer = f + 48;
           return h != 0;
         }
@@ -9856,13 +10310,79 @@ function runtime_hashmapGet(a:int_ptr, b:int, c:int, d:int):int { // func115
   return 0;
 }
 
-function runtime_hashmapBucketAddrForHash(a:int, b:int):int { // func116
+function runtime_hashmapBucketAddrForHash(a:int, b:int):int { // func122
   return a[0]:int +
          ((a[4]:int + a[3]:int << 3) + 12) *
          (select_if(-1, -1 << (a = a[20]:ubyte) ^ -1, a > 31) & b)
 }
 
-function runtime_panicOrGoexit(a:int, b:{ a:int, b:int }) { // func117
+function runtime_Gosched() { // func123
+  var a:{ a:int, b:int, c:int, d:int }
+  var e:long;
+  var c:{ a:int, b:int, c:int }
+  var d:int;
+  var b:{ a:int, b:int, c:int }
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 12;
+    c = g_c[0]:int;
+    a = c.a;
+    d = c.b;
+    c = c.c;
+  }
+  b = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          b = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) {
+          a = stack_pointer - 16;
+          stack_pointer = a;
+          89920[0]:long = (e = 89920[0]:long + 1L);
+          a.d = 0;
+          a.b = 2;
+          c = 89988[0]:int;
+          89988[0]:int = a;
+          a.a = c;
+          d = e % 1000L != 0L;
+        }
+        if (eqz(g_b)) {
+          if (d) goto B_e;
+          a.c = (d = 89776[0]:int);
+        }
+        if (eqz(g_b) | eqz(b)) {
+          runtime_scheduleLogTask(67464, 8, d);
+          0;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { a.d = (d = 89776[0]:int) }
+        if (eqz(g_b) | b == 1) {
+          Push_1(d);
+          1;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | b == 2) {
+          internal_task_Pause();
+          2;
+          if (g_b == 1) goto B_b;
+        }
+        label B_e:
+        if (eqz(g_b)) {
+          89988[0]:int = c;
+          stack_pointer = a + 16;
+        }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = b;
+  g_c[0]:int = g_c[0]:int + 4;
+  b = g_c[0]:int;
+  b.a = a;
+  b.b = d;
+  b.c = c;
+  g_c[0]:int = g_c[0]:int + 12;
+}
+
+function runtime_panicOrGoexit(a:int, b:{ a:int, b:int }) { // func124
   var c:{ a:int, b:int }
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 8;
@@ -9902,7 +10422,7 @@ function runtime_panicOrGoexit(a:int, b:{ a:int, b:int }) { // func117
   g_c[0]:int = g_c[0]:int + 8;
 }
 
-function runtime_printitf(a:int, b:int) { // func118
+function runtime_printitf(a:int, b:int) { // func125
   var e:int;
   var f:int;
   var c:int;
@@ -9929,10 +10449,10 @@ function runtime_printitf(a:int, b:int) { // func118
         stack_pointer = e;
         e[7]:int = 0;
         e[5]:long@4 = 2L;
-        f = 89708[0]:int;
-        89708[0]:int = e + 16;
+        f = 89988[0]:int;
+        89988[0]:int = e + 16;
         e[4]:int = f;
-        c = a != 85776;
+        c = a != 85992;
       }
       if (eqz(g_b)) {
         if (c) goto B_f;
@@ -9940,23 +10460,23 @@ function runtime_printitf(a:int, b:int) { // func118
       }
       if (select_if(g_b, 1, a)) {
         if (eqz(g_b) | eqz(d)) {
-          runtime_printstring(86072, 4);
+          runtime_printstring(86304, 4);
           0;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) goto B_e;
       }
       if (eqz(g_b) | d == 1) {
-        runtime_printstring(86076, 5);
+        runtime_printstring(86308, 5);
         1;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) goto B_e;
       label B_f:
-      c = select_if(c, a == 85868, g_b);
+      c = select_if(c, a == 86084, g_b);
       if (eqz(g_b)) {
         if (c) goto B_k;
-        c = a != 67532;
+        c = a != 67664;
       }
       if (eqz(g_b)) {
         if (c) goto B_m;
@@ -9969,7 +10489,7 @@ function runtime_printitf(a:int, b:int) { // func118
       }
       if (eqz(g_b)) goto B_e;
       label B_m:
-      c = select_if(c, a != 67548, g_b);
+      c = select_if(c, a != 67680, g_b);
       if (eqz(g_b)) {
         if (c) goto B_p;
         a = i32_extend16_s(b);
@@ -9982,37 +10502,40 @@ function runtime_printitf(a:int, b:int) { // func118
       if (eqz(g_b)) goto B_e;
       label B_p:
       if (eqz(g_b)) {
-        if (a == 86496) goto B_k;
-        c = a != 68700;
+        if (a == 86728) goto B_k;
+        c = a != 68900;
       }
       if (eqz(g_b)) {
         if (c) goto B_t;
         g = b[0]:long;
-        a = g >= 0L;
       }
-      if (select_if(g_b, 1, a)) {
-        if (eqz(g_b) | d == 4) {
-          runtime_putchar(45);
-          4;
-          if (g_b == 1) goto B_b;
-        }
-        g = select_if(g, 0L - g, g_b);
-      }
-      if (eqz(g_b) | d == 5) {
-        runtime_printuint64(g);
-        5;
+      if (eqz(g_b) | d == 4) {
+        runtime_printint64(g);
+        4;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) goto B_e;
       label B_t:
-      c = select_if(c, a == 67564, g_b);
+      c = select_if(c, a == 67696, g_b);
       if (eqz(g_b)) {
-        if (c) goto B_y;
-        c = a != 85324;
+        if (c) goto B_w;
+        c = a != 85540;
       }
       if (eqz(g_b)) {
-        if (c) goto B_aa;
+        if (c) goto B_y;
         a = b & 255;
+      }
+      if (eqz(g_b) | d == 5) {
+        runtime_printuint32(a);
+        5;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_y:
+      c = select_if(c, a != 67712, g_b);
+      if (eqz(g_b)) {
+        if (c) goto B_ba;
+        a = b & 65535;
       }
       if (eqz(g_b) | d == 6) {
         runtime_printuint32(a);
@@ -10020,163 +10543,119 @@ function runtime_printitf(a:int, b:int) { // func118
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) goto B_e;
-      label B_aa:
-      c = select_if(c, a != 67580, g_b);
+      label B_ba:
       if (eqz(g_b)) {
-        if (c) goto B_da;
-        a = b & 65535;
+        if (a == 86812) goto B_w;
+        c = a != 68968;
+      }
+      if (eqz(g_b)) {
+        if (c) goto B_fa;
+        g = b[0]:long;
       }
       if (eqz(g_b) | d == 7) {
-        runtime_printuint32(a);
+        runtime_printuint64(g);
         7;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) goto B_e;
-      label B_da:
+      label B_fa:
       if (eqz(g_b)) {
-        if (a == 68684) goto B_y;
-        c = a != 86512;
+        if (a == 68748) goto B_w;
+        c = a != 86240;
       }
       if (eqz(g_b)) {
-        if (c) goto B_ha;
-        g = b[0]:long;
+        if (c) goto B_ja;
+        a = b[0]:int;
+        b = b[1]:int;
       }
       if (eqz(g_b) | d == 8) {
-        runtime_printuint64(g);
+        runtime_printstring(a, b);
         8;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) goto B_e;
-      label B_ha:
-      if (eqz(g_b)) {
-        if (a == 68532) goto B_y;
-        c = a != 86592;
-      }
-      if (eqz(g_b)) {
-        if (c) goto B_la;
-        a = b[0]:int;
-        b = b[1]:int;
-      }
-      if (eqz(g_b) | d == 9) {
-        runtime_printstring(a, b);
-        9;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_la:
+      label B_ja:
       if (eqz(g_b)) { c = eqz(interface_Error_func_string_typeassert(a) & 1) }
       if (select_if(g_b, 1, c)) {
-        if (eqz(g_b) | d == 10) {
+        if (eqz(g_b) | d == 9) {
           interface_Error_func_string_Error_invoke(e, b, a);
-          10;
+          9;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
           e[6]:int = (a = e[0]:int);
           b = e[1]:int;
         }
-        if (eqz(g_b) | d == 11) {
+        if (eqz(g_b) | d == 10) {
           runtime_printstring(a, b);
-          11;
+          10;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) goto B_e;
       }
       if (eqz(g_b)) { c = eqz(interface_String_func_string_typeassert(a) & 1) }
       if (eqz(g_b)) {
-        if (c) goto B_ua;
+        if (c) goto B_sa;
         c = e + 8;
       }
-      if (eqz(g_b) | d == 12) {
+      if (eqz(g_b) | d == 11) {
         interface_String_func_string_String_invoke(c, b, a);
-        12;
+        11;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) {
         e[7]:int = (a = e[2]:int);
         b = e[3]:int;
       }
-      if (eqz(g_b) | d == 13) {
+      if (eqz(g_b) | d == 12) {
         runtime_printstring(a, b);
-        13;
+        12;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) goto B_e;
-      label B_ua:
-      if (eqz(g_b) | d == 14) {
+      label B_sa:
+      if (eqz(g_b) | d == 13) {
         runtime_putchar(40);
+        13;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b) | d == 14) {
+        runtime_printuint32(a);
         14;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b) | d == 15) {
-        runtime_printuint32(a);
+        runtime_putchar(58);
         15;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b) | d == 16) {
-        runtime_putchar(58);
+        runtime_printptr(b);
         16;
         if (g_b == 1) goto B_b;
       }
-      if (select_if(g_b, 1, b)) {
-        if (eqz(g_b) | d == 17) {
-          runtime_printstring(86177, 3);
-          17;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) goto B_cb;
-      }
-      if (eqz(g_b) | d == 18) {
-        runtime_putchar(48);
-        18;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b) | d == 19) {
-        runtime_putchar(120);
-        19;
-        if (g_b == 1) goto B_b;
-      }
-      a = select_if(a, 8, g_b);
-      loop L_hb {
-        if (eqz(g_b)) {
-          if (eqz(a)) goto B_cb;
-          c = b >> 28;
-          c = select_if(c | 48, c + 87, b < -1610612736);
-        }
-        if (eqz(g_b) | d == 20) {
-          runtime_putchar(c);
-          20;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          a = a - 1;
-          b = b << 4;
-          continue L_hb;
-        }
-      }
-      label B_cb:
-      if (eqz(g_b) | d == 21) {
+      if (eqz(g_b) | d == 17) {
         runtime_putchar(41);
-        21;
+        17;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) goto B_e;
-      label B_y:
-      if (eqz(g_b) | d == 22) {
+      label B_w:
+      if (eqz(g_b) | d == 18) {
         runtime_printuint32(b);
-        22;
+        18;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) goto B_e;
       label B_k:
-      if (eqz(g_b) | d == 23) {
+      if (eqz(g_b) | d == 19) {
         runtime_printint32(b);
-        23;
+        19;
         if (g_b == 1) goto B_b;
       }
       label B_e:
       if (eqz(g_b)) {
-        89708[0]:int = f;
+        89988[0]:int = f;
         stack_pointer = e + 32;
       }
       return ;
@@ -10194,30 +10673,30 @@ function runtime_printitf(a:int, b:int) { // func118
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function interface_Error_func_string_typeassert(a:int):int { // func119
+function interface_Error_func_string_typeassert(a:int):int { // func126
   return 
-    (((((a == 87172 | a == 87156) | a == 87092) | a == 87068) | a == 87052) |
-     a == 87004) |
-    a == 86944
+    (((((a == 87400 | a == 87384) | a == 87320) | a == 87296) | a == 87280) |
+     a == 87232) |
+    a == 87172
 }
 
-function interface_String_func_string_typeassert(a:int):int { // func120
+function interface_String_func_string_typeassert(a:int):int { // func127
   return 
-    ((((((((((((((a == 87240 | a == 87196) | a == 87188) | a == 87180) | a == 87164) |
-              a == 87148) |
-             a == 87140) |
-            a == 87084) |
-           a == 87060) |
-          a == 87044) |
-         a == 87036) |
-        a == 86976) |
-       a == 86880) |
-      a == 86756) |
-     a == 86680) |
-    a == 86608
+    ((((((((((((((a == 87468 | a == 87424) | a == 87416) | a == 87408) | a == 87392) |
+              a == 87376) |
+             a == 87368) |
+            a == 87312) |
+           a == 87288) |
+          a == 87272) |
+         a == 87264) |
+        a == 87204) |
+       a == 87108) |
+      a == 86984) |
+     a == 86908) |
+    a == 86836
 }
 
-function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c:{ a:int, b:int }) { // func121
+function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c:{ a:int, b:int }) { // func128
   var d:int_ptr;
   var e:int;
   var g:int;
@@ -10247,9 +10726,9 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
           stack_pointer = d;
           d[33] = 22;
           memory_fill(d + 136, 0, 88);
-          d[32] = (j = 89708[0]:int);
-          89708[0]:int = d + 128;
-          e = c != 87240;
+          d[32] = (j = 89988[0]:int);
+          89988[0]:int = d + 128;
+          e = c != 87468;
         }
         if (eqz(g_b)) {
           if (e) goto B_g;
@@ -10268,7 +10747,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
           goto B_f;
         }
         label B_g:
-        e = select_if(e, c != 87196, g_b);
+        e = select_if(e, c != 87424, g_b);
         if (eqz(g_b)) {
           if (e) goto B_k;
           if (eqz(b)) goto B_e;
@@ -10287,7 +10766,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
           goto B_f;
         }
         label B_k:
-        e = select_if(e, c != 87188, g_b);
+        e = select_if(e, c != 87416, g_b);
         if (eqz(g_b)) {
           if (e) goto B_o;
           if (eqz(b)) goto B_e;
@@ -10304,7 +10783,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
           goto B_f;
         }
         label B_o:
-        e = select_if(e, c != 87180, g_b);
+        e = select_if(e, c != 87408, g_b);
         if (eqz(g_b)) {
           if (e) goto B_s;
           if (eqz(b)) goto B_e;
@@ -10324,7 +10803,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
           goto B_f;
         }
         label B_s:
-        if (select_if(g_b, 1, e = select_if(e, c != 87164, g_b))) {
+        if (select_if(g_b, 1, e = select_if(e, c != 87392, g_b))) {
           if (eqz(g_b) | g == 4) {
             get(b);
             let t0 = 4;
@@ -10339,7 +10818,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
             goto B_f;
           }
         }
-        e = select_if(e, c != 87148, g_b);
+        e = select_if(e, c != 87376, g_b);
         if (eqz(g_b)) {
           if (e) goto B_z;
           c = d + 40;
@@ -10355,7 +10834,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
           goto B_f;
         }
         label B_z:
-        e = select_if(e, c != 87140, g_b);
+        e = select_if(e, c != 87368, g_b);
         if (eqz(g_b)) {
           if (e) goto B_da;
           if (eqz(b)) goto B_e;
@@ -10374,7 +10853,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
           goto B_f;
         }
         label B_da:
-        e = select_if(e, c != 87084, g_b);
+        e = select_if(e, c != 87312, g_b);
         if (eqz(g_b)) {
           if (e) goto B_ha;
           if (eqz(b)) goto B_e;
@@ -10392,7 +10871,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
           goto B_f;
         }
         label B_ha:
-        e = select_if(e, c != 87060, g_b);
+        e = select_if(e, c != 87288, g_b);
         if (eqz(g_b)) {
           if (e) goto B_la;
           if (eqz(b)) goto B_e;
@@ -10411,7 +10890,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
           goto B_f;
         }
         label B_la:
-        e = select_if(e, c != 87044, g_b);
+        e = select_if(e, c != 87272, g_b);
         if (eqz(g_b)) {
           if (e) goto B_pa;
           c = d + 72;
@@ -10427,7 +10906,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
           goto B_f;
         }
         label B_pa:
-        e = select_if(e, c != 87036, g_b);
+        e = select_if(e, c != 87264, g_b);
         if (eqz(g_b)) {
           if (e) goto B_ta;
           if (eqz(b)) goto B_e;
@@ -10445,7 +10924,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
           goto B_f;
         }
         label B_ta:
-        e = select_if(e, c != 86976, g_b);
+        e = select_if(e, c != 87204, g_b);
         if (eqz(g_b)) {
           if (e) goto B_xa;
           c = d + 88;
@@ -10464,7 +10943,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
           goto B_f;
         }
         label B_xa:
-        e = select_if(e, c != 86880, g_b);
+        e = select_if(e, c != 87108, g_b);
         if (eqz(g_b)) {
           if (e) goto B_bb;
           d[54] = (c = b[1]:int);
@@ -10482,7 +10961,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
           goto B_f;
         }
         label B_bb:
-        e = select_if(e, c != 86756, g_b);
+        e = select_if(e, c != 86984, g_b);
         if (eqz(g_b)) {
           if (e) goto B_fb;
           c = d + 104;
@@ -10498,7 +10977,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
           goto B_f;
         }
         label B_fb:
-        e = select_if(e, c != 86680, g_b);
+        e = select_if(e, c != 86908, g_b);
         if (eqz(g_b)) {
           if (e) goto B_jb;
           c = d + 112;
@@ -10517,7 +10996,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
         }
         label B_jb:
         if (eqz(g_b)) {
-          if (c != 86608) goto B_e;
+          if (c != 86836) goto B_e;
           c = d + 120;
         }
         if (eqz(g_b) | g == 15) {
@@ -10531,7 +11010,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
         }
         label B_f:
         if (eqz(g_b)) {
-          89708[0]:int = j;
+          89988[0]:int = j;
           a.b = c;
           a.a = b;
           stack_pointer = d + 224;
@@ -10561,7 +11040,7 @@ function interface_String_func_string_String_invoke(a:{ a:int, b:int }, b:int, c
   g_c[0]:int = g_c[0]:int + 40;
 }
 
-function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
+function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func129
   var e:int;
   var n:int;
   var k:int;
@@ -10653,8 +11132,8 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
         stack_pointer = e;
         e[207]:int = 47;
         memory_fill(e + 832, 0, 188);
-        e[206]:int = (la = 89708[0]:int);
-        89708[0]:int = (h = e + 824);
+        e[206]:int = (la = 89988[0]:int);
+        89988[0]:int = (h = e + 824);
         m = 64;
         j = 0;
       }
@@ -10669,12 +11148,12 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
         e[209]:int = k;
         e[257]:int = 9;
         memory_fill(e + 1032, 0, 36);
-        e[256]:int = (f = 89708[0]:int);
-        89708[0]:int = e + 1024;
+        e[256]:int = (f = 89988[0]:int);
+        89988[0]:int = e + 1024;
         h = eqz(d);
       }
       if (eqz(g_b | h)) {
-        h = d != 90240;
+        h = d != 91144;
         if (h) goto B_g;
       }
       if (eqz(g_b) | n == 1) {
@@ -10689,11 +11168,11 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
         s = select_if((b >> 30L & 8589934591L) + 59453308800L, c, b < 0L) -
             62135596800L;
         e[259]:int = d;
-        h = d != 87392;
+        h = d != 87672;
       }
       if (eqz(g_b)) {
         if (eqz(h)) {
-          aa = 68284;
+          aa = 68500;
           ba = 3;
           t = 0;
           goto B_l;
@@ -10740,17 +11219,17 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
       s = select_if(s, i64_extend_i32_s(t) + s, g_b);
       label B_l:
       if (eqz(g_b)) {
-        89708[0]:int = f;
+        89988[0]:int = f;
         e[210]:int = aa;
         ma = 0 - t;
         ha = i32_wrap_i64(b) & 1073741823;
         w = 0 - (ia = t / 60);
         da = s + 9223372028741760000L;
         s = da / 86400L;
-        ca = (i32_wrap_i64((s + 3L) % 7L) << 3) + 68308;
+        ca = (i32_wrap_i64((s + 3L) % 7L) << 3) + 68524;
         d = e + 1024;
         ea = d + 8;
-        o = 68225;
+        o = 68441;
         ja = t > -60;
         x = -1;
         y = 0;
@@ -10810,12 +11289,12 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (f < (i = h + 3)) goto B_qa;
                 g = f < i;
                 if (g) goto B_ga;
-                if (eqz(runtime_stringEqual(d, 3, 67815, 3) & 1)) goto B_qa;
+                if (eqz(runtime_stringEqual(d, 3, 68031, 3) & 1)) goto B_qa;
                 q = f < (g = h + 7);
                 if (q) goto B_jb;
                 q = f < g;
                 if (q) goto B_ga;
-                d = eqz(runtime_stringEqual(d, 7, 67818, 7) & 1);
+                d = eqz(runtime_stringEqual(d, 7, 68034, 7) & 1);
                 if (d) goto B_jb;
                 f = f - g;
                 g = g + o;
@@ -10838,11 +11317,11 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (f < (i = h + 3)) goto B_qa;
                 g = f < i;
                 if (g) goto B_ga;
-                if (eqz(runtime_stringEqual(d, 3, 67825, 3) & 1)) goto B_mb;
+                if (eqz(runtime_stringEqual(d, 3, 68041, 3) & 1)) goto B_mb;
                 if (f < (g = h + 6)) goto B_nb;
                 q = f < g;
                 if (q) goto B_ga;
-                q = eqz(runtime_stringEqual(d, 6, 67828, 6) & 1);
+                q = eqz(runtime_stringEqual(d, 6, 68044, 6) & 1);
                 if (q) goto B_nb;
                 f = f - g;
                 g = g + o;
@@ -10862,7 +11341,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 p = 262;
                 goto B_ja;
                 label B_mb:
-                d = eqz(runtime_stringEqual(d, 3, 67834, 3) & 1);
+                d = eqz(runtime_stringEqual(d, 3, 68050, 3) & 1);
                 if (d) goto B_qa;
                 f = f - i;
                 g = i + o;
@@ -10876,7 +11355,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (i > 5) goto B_qb;
                 f = f - d;
                 g = d + o;
-                d = (i << 2) + 67680;
+                d = (i << 2) + 67896;
                 p = d[0]:int;
                 goto B_ja;
                 label B_qb:
@@ -10911,7 +11390,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (i) goto B_rb;
                 i = f < g;
                 if (i) goto B_ga;
-                d = eqz(runtime_stringEqual(d, 4, 67837, 4) & 1);
+                d = eqz(runtime_stringEqual(d, 4, 68053, 4) & 1);
                 if (d) goto B_rb;
                 f = f - g;
                 g = g + o;
@@ -10934,7 +11413,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (q) goto B_tb;
                 q = f < r;
                 if (q) goto B_ga;
-                if (eqz(runtime_stringEqual(g, 4, 67837, 4) & 1)) goto B_tb;
+                if (eqz(runtime_stringEqual(g, 4, 68053, 4) & 1)) goto B_tb;
                 e[214]:int = (g = o + r);
                 f = f - r;
                 p = 275;
@@ -10990,7 +11469,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (f < (g = h + 7)) goto B_ub;
                 i = f < g;
                 if (i) goto B_ga;
-                i = eqz(runtime_stringEqual(d, 7, 67841, 7) & 1);
+                i = eqz(runtime_stringEqual(d, 7, 68057, 7) & 1);
                 if (i) goto B_ub;
                 f = f - g;
                 g = g + o;
@@ -11000,7 +11479,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (f < (g = h + 9)) goto B_vb;
                 i = f < g;
                 if (i) goto B_ga;
-                i = eqz(runtime_stringEqual(d, 9, 67848, 9) & 1);
+                i = eqz(runtime_stringEqual(d, 9, 68064, 9) & 1);
                 if (i) goto B_vb;
                 f = f - g;
                 g = g + o;
@@ -11010,7 +11489,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (f < (g = h + 5)) goto B_wb;
                 i = f < g;
                 if (i) goto B_ga;
-                i = eqz(runtime_stringEqual(d, 5, 67857, 5) & 1);
+                i = eqz(runtime_stringEqual(d, 5, 68073, 5) & 1);
                 if (i) goto B_wb;
                 f = f - g;
                 g = g + o;
@@ -11020,7 +11499,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (f < (g = h + 6)) goto B_xb;
                 i = f < g;
                 if (i) goto B_ga;
-                i = eqz(runtime_stringEqual(d, 6, 67862, 6) & 1);
+                i = eqz(runtime_stringEqual(d, 6, 68078, 6) & 1);
                 if (i) goto B_xb;
                 f = f - g;
                 g = g + o;
@@ -11031,7 +11510,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (i) goto B_qa;
                 i = f < g;
                 if (i) goto B_ga;
-                d = eqz(runtime_stringEqual(d, 3, 67868, 3) & 1);
+                d = eqz(runtime_stringEqual(d, 3, 68084, 3) & 1);
                 if (d) goto B_qa;
                 f = f - g;
                 g = g + o;
@@ -11041,7 +11520,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (f < (g = h + 7)) goto B_yb;
                 i = f < g;
                 if (i) goto B_ga;
-                i = eqz(runtime_stringEqual(d, 7, 67871, 7) & 1);
+                i = eqz(runtime_stringEqual(d, 7, 68087, 7) & 1);
                 if (i) goto B_yb;
                 f = f - g;
                 g = g + o;
@@ -11051,7 +11530,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (f < (g = h + 9)) goto B_zb;
                 i = f < g;
                 if (i) goto B_ga;
-                i = eqz(runtime_stringEqual(d, 9, 67878, 9) & 1);
+                i = eqz(runtime_stringEqual(d, 9, 68094, 9) & 1);
                 if (i) goto B_zb;
                 f = f - g;
                 g = g + o;
@@ -11061,7 +11540,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (f < (g = h + 5)) goto B_ac;
                 i = f < g;
                 if (i) goto B_ga;
-                i = eqz(runtime_stringEqual(d, 5, 67887, 5) & 1);
+                i = eqz(runtime_stringEqual(d, 5, 68103, 5) & 1);
                 if (i) goto B_ac;
                 f = f - g;
                 g = g + o;
@@ -11071,7 +11550,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (f < (g = h + 6)) goto B_bc;
                 i = f < g;
                 if (i) goto B_ga;
-                i = eqz(runtime_stringEqual(d, 6, 67892, 6) & 1);
+                i = eqz(runtime_stringEqual(d, 6, 68108, 6) & 1);
                 if (i) goto B_bc;
                 f = f - g;
                 g = g + o;
@@ -11082,7 +11561,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
                 if (i) goto B_qa;
                 i = f < g;
                 if (i) goto B_ga;
-                d = eqz(runtime_stringEqual(d, 3, 67898, 3) & 1);
+                d = eqz(runtime_stringEqual(d, 3, 68114, 3) & 1);
                 if (d) goto B_qa;
                 f = f - g;
                 g = g + o;
@@ -11575,7 +12054,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
           d = e + 568;
         }
         if (eqz(g_b) | n == 31) {
-          runtime_sliceAppend(d, k, 68267, j, m, 2, 1);
+          runtime_sliceAppend(d, k, 68483, j, m, 2, 1);
           31;
           if (g_b == 1) goto B_b;
         }
@@ -11588,7 +12067,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
         label B_xf:
         d = select_if(d, e + 584, g_b);
         if (eqz(g_b) | n == 32) {
-          runtime_sliceAppend(d, k, 68269, j, m, 2, 1);
+          runtime_sliceAppend(d, k, 68485, j, m, 2, 1);
           32;
           if (g_b == 1) goto B_b;
         }
@@ -11605,7 +12084,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
           d = e + 600;
         }
         if (eqz(g_b) | n == 33) {
-          runtime_sliceAppend(d, k, 68271, j, m, 2, 1);
+          runtime_sliceAppend(d, k, 68487, j, m, 2, 1);
           33;
           if (g_b == 1) goto B_b;
         }
@@ -11618,7 +12097,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
         label B_dg:
         d = select_if(d, e + 616, g_b);
         if (eqz(g_b) | n == 34) {
-          runtime_sliceAppend(d, k, 68273, j, m, 2, 1);
+          runtime_sliceAppend(d, k, 68489, j, m, 2, 1);
           34;
           if (g_b == 1) goto B_b;
         }
@@ -11705,8 +12184,8 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
           (ea + 8)[0]:long = 0L;
           (ea + 16)[0]:int = 0;
           e[257]:int = 5;
-          g = 89708[0]:int;
-          89708[0]:int = e + 1024;
+          g = 89988[0]:int;
+          89988[0]:int = e + 1024;
           e[256]:int = g;
           h = p >> 16 & 4095;
           r = d != 35;
@@ -11802,9 +12281,9 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
           f = t2;
         }
         if (eqz(g_b)) {
-          f[0]:short@1 = rodata_1[2423]:ushort@1;
+          f[0]:short@1 = rodata_1[2639]:ushort@1;
           j = f + 2;
-          j[0] = rodata_1[2425]:ubyte;
+          j[0] = rodata_1[2641]:ubyte;
           f[3]:byte = select_if(45, 43, c < 0L);
           e[244]:int = f;
           e[245]:int = f;
@@ -11898,7 +12377,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
         }
         label B_lh:
         if (eqz(g_b)) {
-          89708[0]:int = la;
+          89988[0]:int = la;
           a.b = h;
           a.a = d;
           stack_pointer = e + 1072;
@@ -11908,7 +12387,7 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
         j = select_if(j, d, g_b);
         label B_ca:
         if (eqz(g_b)) {
-          89708[0]:int = g;
+          89988[0]:int = g;
           goto B_z;
         }
         label B_ba:
@@ -12108,18 +12587,18 @@ function String_3(a:{ a:int, b:int }, b:long, c:long, d:int) { // func122
   g_c[0]:int = g_c[0]:int + 172;
 }
 
-function get(a:{ a:int, b:int, c:int }):int { // func123
+function get(a:int_ptr):int { // func130
   var b:int;
-  var e:{ a:int, b:int, c:int, d:int }
-  var d:int;
+  var d:{ a:int, b:int, c:int, d:int }
+  var e:int;
   var c:{ a:int, b:int, c:int, d:int }
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 16;
-    e = g_c[0]:int;
-    a = e.a;
-    b = e.b;
-    d = e.c;
-    e = e.d;
+    d = g_c[0]:int;
+    a = d.a;
+    b = d.b;
+    e = d.c;
+    d = d.d;
   }
   c = {
         if (g_b == 2) {
@@ -12129,43 +12608,42 @@ function get(a:{ a:int, b:int, c:int }):int { // func123
         if (eqz(g_b)) {
           b = stack_pointer - 32;
           stack_pointer = b;
-          b[7]:int = 0;
-          b[5]:long@4 = 2L;
-          e = 89708[0]:int;
-          89708[0]:int = (d = b + 16);
-          b[4]:int = e;
+          b[5]:long@4 = 1L;
+          d = 89988[0]:int;
+          89988[0]:int = (e = b + 16);
+          b[4]:int = d;
         }
         if (eqz(g_b)) {
           if (eqz(a)) {
-            a = 87392;
+            a = 87672;
             goto B_e;
           }
-          d = a != 90240;
-          if (d) goto B_e;
-          a = eqz(90308[0]:ubyte);
+          e = a != 91144;
+          if (e) goto B_e;
+          a = eqz(91212[0]:ubyte);
         }
         if (eqz(g_b)) {
-          if (a) goto B_j;
-          d = 90312[0]:int;
-          90312[0]:int = (a = 89496[0]:int);
-          b[6]:int = a;
-          b[7]:int = d;
-          if (eqz(a)) goto B_h;
-          a.a = d;
+          if (a) goto B_i;
+          b[6]:int = (a = 89776[0]:int);
         }
         if (eqz(g_b) | eqz(c)) {
-          internal_task_Pause();
+          Push(91216, a);
           0;
           if (g_b == 1) goto B_b;
         }
-        if (eqz(g_b)) goto B_i;
-        label B_j:
-        if (eqz(g_b)) { 90308[0]:byte = 1 }
+        if (eqz(g_b) | c == 1) {
+          internal_task_Pause();
+          1;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) goto B_h;
         label B_i:
+        if (eqz(g_b)) { 91212[0]:byte = 1 }
+        label B_h:
         if (eqz(g_b)) {
-          b[2]:int = 90308;
+          b[2]:int = 91212;
           b[0]:long = 0L;
-          a = eqz(90304[0]:ubyte);
+          a = eqz(91208[0]:ubyte);
         }
         if (eqz(g_b)) {
           if (a) goto B_p;
@@ -12174,31 +12652,8 @@ function get(a:{ a:int, b:int, c:int }):int { // func123
         loop L_r {
           if (eqz(g_b)) {
             if (eqz(a)) goto B_o;
-            d = a.b;
-            a = a.c;
-          }
-          if (eqz(g_b) | c == 1) {
-            Unlock(a);
-            1;
-            if (g_b == 1) goto B_b;
-          }
-          if (eqz(g_b)) {
-            a = d;
-            continue L_r;
-          }
-        }
-        label B_p:
-        if (eqz(g_b)) {
-          90244[0]:int = 5;
-          90240[0]:int = 68302;
-          90304[0]:byte = 1;
-          a = b;
-        }
-        loop L_w {
-          if (eqz(g_b)) {
-            if (eqz(a)) goto B_o;
-            d = a.b;
-            a = a.c;
+            e = a[1];
+            a = a[2];
           }
           if (eqz(g_b) | c == 2) {
             Unlock(a);
@@ -12206,25 +12661,38 @@ function get(a:{ a:int, b:int, c:int }):int { // func123
             if (g_b == 1) goto B_b;
           }
           if (eqz(g_b)) {
-            a = d;
+            a = e;
+            continue L_r;
+          }
+        }
+        label B_p:
+        if (eqz(g_b)) {
+          91148[0]:int = 5;
+          91144[0]:int = 68518;
+          91208[0]:byte = 1;
+          a = b;
+        }
+        loop L_w {
+          if (eqz(g_b)) {
+            if (eqz(a)) goto B_o;
+            e = a[1];
+            a = a[2];
+          }
+          if (eqz(g_b) | c == 3) {
+            Unlock(a);
+            3;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            a = e;
             continue L_w;
           }
         }
         label B_o:
-        if (eqz(g_b)) {
-          a = 90240;
-          goto B_e;
-        }
-        label B_h:
-        if (eqz(g_b) | c == 3) {
-          runtime_nilPanic();
-          3;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) { unreachable }
+        a = select_if(a, 91144, g_b);
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = e;
+          89988[0]:int = d;
           stack_pointer = b + 32;
           return a;
         }
@@ -12236,13 +12704,13 @@ function get(a:{ a:int, b:int, c:int }):int { // func123
   c = g_c[0]:int;
   c.a = a;
   c.b = b;
-  c.c = d;
-  c.d = e;
+  c.c = e;
+  c.d = d;
   g_c[0]:int = g_c[0]:int + 16;
   return 0;
 }
 
-function String_4(a:{ a:int, b:int }, b:int) { // func124
+function String_4(a:{ a:int, b:int }, b:int) { // func131
   var e:int_ptr;
   var f:int;
   var c:{ a:int, b:int, c:int, d:int, e:int }
@@ -12264,8 +12732,8 @@ function String_4(a:{ a:int, b:int }, b:int) { // func124
         if (eqz(g_b)) {
           e = stack_pointer - 32;
           stack_pointer = e;
-          d = 89708[0]:int;
-          89708[0]:int = e + 16;
+          d = 89988[0]:int;
+          89988[0]:int = e + 16;
           f = eqz(b);
         }
         if (eqz(g_b)) {
@@ -12278,7 +12746,7 @@ function String_4(a:{ a:int, b:int }, b:int) { // func124
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          89708[0]:int = d;
+          89988[0]:int = d;
           b = e[3];
           a.a = e[2];
           a.b = b;
@@ -12306,7 +12774,7 @@ function String_4(a:{ a:int, b:int }, b:int) { // func124
   g_c[0]:int = g_c[0]:int + 20;
 }
 
-function String_5(a:{ a:int, b:int }, b:int) { // func125
+function String_5(a:{ a:int, b:int }, b:int) { // func132
   var c:int;
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
   var f:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
@@ -12338,8 +12806,8 @@ function String_5(a:{ a:int, b:int }, b:int) { // func125
         (c + 88)[0]:long = 0L;
         c[25]:long@4 = 1L;
         c[8]:long = 0L;
-        g = 89708[0]:int;
-        89708[0]:int = c + 96;
+        g = 89988[0]:int;
+        89988[0]:int = c + 96;
         c[24]:int = g;
         c[12]:int = 0;
         e = 0;
@@ -12350,7 +12818,7 @@ function String_5(a:{ a:int, b:int }, b:int) { // func125
           d = c + 32;
         }
         if (eqz(g_b) | eqz(f)) {
-          runtime_stringNext(d, 68460, 13, h);
+          runtime_stringNext(d, 68676, 13, h);
           0;
           if (g_b == 1) goto B_b;
         }
@@ -12381,7 +12849,7 @@ function String_5(a:{ a:int, b:int }, b:int) { // func125
           d = c + 16;
         }
         if (eqz(g_b) | f == 1) {
-          runtime_stringNext(d, 68473, 9, h);
+          runtime_stringNext(d, 68689, 9, h);
           1;
           if (g_b == 1) goto B_b;
         }
@@ -12405,7 +12873,7 @@ function String_5(a:{ a:int, b:int }, b:int) { // func125
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          89708[0]:int = g;
+          89988[0]:int = g;
           e = c[3]:int;
           a.a = c[2]:int;
           a.b = e;
@@ -12456,792 +12924,93 @@ function String_5(a:{ a:int, b:int }, b:int) { // func125
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function fmt_newPrinter():int { // func126
-  var b:int_ptr;
-  var a:int;
-  var c:int;
-  var d:{ a:int, b:int, c:int, d:int, e:int }
+function Add(a:{ a:int, b:int }, b:int_ptr) { // func133
+  var e:int;
+  var d:{ a:int, b:int, c:int, d:int }
+  var c:{ a:int, b:int, c:int, d:int }
   var g:int;
   var f:int;
-  var e:{ a:int, b:int, c:int, d:int, e:int }
   if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 20;
-    e = g_c[0]:int;
-    a = e.a;
-    b = e.b;
-    c = e.c;
-    f = e.d;
-    e = e.e;
-  }
-  d = {
-        if (g_b == 2) {
-          g_c[0]:int = g_c[0]:int - 4;
-          g = (g_c[0]:int)[0]:int;
-        }
-        if (eqz(g_b)) {
-          b = stack_pointer - 80;
-          stack_pointer = b;
-          b[3] = 11;
-          memory_fill(b + 20, 0, 40);
-          b[2] = (e = 89708[0]:int);
-          89708[0]:int = b + 8;
-          b[4] = (c = 90340[0]:int);
-          d = 90344[0]:int;
-          a = d <= 0;
-        }
-        if (eqz(g_b)) {
-          if (a) goto B_f;
-          b[6] = c;
-          b[5] = c;
-          b[7] = (f = ((a = c + (d << 3)) - 8)[0]:int);
-          a = (a - 4)[0]:int;
-          b[9] = c;
-          b[8] = a;
-          b[10] = c;
-          c = d - 1;
-          if (c <= 90348[0]:int) {
-            90344[0]:int = c;
-            goto B_e;
-          }
-        }
-        if (eqz(g_b) | eqz(g)) {
-          runtime_slicePanic();
-          0;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) { unreachable }
-        label B_f:
-        if (eqz(g_b)) { 89708[0]:int = (a = b - -64) }
-        if (eqz(g_b) | g == 1) {
-          runtime_alloc(144);
-          let t0 = 1;
-          if (g_b == 1) goto B_b;
-          a = t0;
-        }
-        if (eqz(g_b)) {
-          89708[0]:int = (c = b + 8);
-          b[12] = a;
-          b[11] = 87028;
-          f = 87028;
-        }
-        label B_e:
-        if (eqz(g_b)) {
-          b[14] = a;
-          b[13] = f;
-          c = f == 87028;
-        }
-        if (eqz(g_b) | g == 2) {
-          runtime_interfaceTypeAssert(c);
-          2;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b | (eqz(a) | f != 87028))) {
-          a[128]:byte = 0;
-          a[126]:short@1 = 0;
-          a[12]:long@4 = 0L;
-          a[36]:long@1 = 0L;
-          89708[0]:int = e;
-          (a + 44)[0]:byte = 0;
-          a[8]:int = a;
-          stack_pointer = b + 80;
-          return a;
-        }
-        if (eqz(g_b) | g == 3) {
-          runtime_nilPanic();
-          3;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) { unreachable }
-        unreachable;
-        label B_b:
-      }
-  (g_c[0]:int)[0]:int = d;
-  g_c[0]:int = g_c[0]:int + 4;
-  d = g_c[0]:int;
-  d.a = a;
-  d.b = b;
-  d.c = c;
-  d.d = f;
-  d.e = e;
-  g_c[0]:int = g_c[0]:int + 20;
-  return 0;
-}
-
-function writeByte(a:int, b:int) { // func127
-  var c:int;
-  var g:int;
-  var f:int;
-  var e:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
-  var h:int;
-  var d:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
-  if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 28;
+    g_c[0]:int = g_c[0]:int - 16;
     d = g_c[0]:int;
     a = d.a;
     b = d.b;
-    c = d.c;
-    f = d.d;
-    g = d.e;
-    h = d.f;
-    d = d.g;
+    e = d.c;
+    d = d.d;
   }
-  e = {
+  c = {
         if (g_b == 2) {
           g_c[0]:int = g_c[0]:int - 4;
-          e = (g_c[0]:int)[0]:int;
+          f = (g_c[0]:int)[0]:int;
         }
         if (eqz(g_b)) {
-          c = stack_pointer - 32;
-          stack_pointer = c;
-          c[7]:int = 0;
-          c[5]:int = 2;
-          g = 89708[0]:int;
-          89708[0]:int = c + 16;
-          c[4]:int = g;
-          f = eqz(a);
+          e = stack_pointer - 16;
+          stack_pointer = e;
+          e[3]:int = 0;
+          e[1]:long@4 = 2L;
+          d = 89988[0]:int;
+          89988[0]:int = e;
+          e[0]:int = d;
+          c = b <= 0;
         }
         if (eqz(g_b)) {
-          if (f) goto B_e;
-          c[15]:byte = b;
-          c[6]:int = (b = a[0]:int);
-          h = a[1]:int;
-          f = c + 15;
-          d = a[2]:int;
+          if (eqz(c)) {
+            if (eqz(a)) goto B_h;
+            c = a.a;
+            if ((c ^ -1) < b) goto B_g;
+            a.a = b + c;
+            goto B_e;
+          }
+          if (eqz(a)) goto B_h;
+          c = a.a;
+          if (c < (g = 0 - b)) goto B_f;
+          a.a = b + c;
+          b = c != g;
+          if (b) goto B_e;
         }
-        if (eqz(g_b) | eqz(e)) {
-          runtime_sliceAppend(c, b, f, h, d, 1, 1);
-          0;
-          if (g_b == 1) goto B_b;
+        loop L_k {
+          if (eqz(g_b)) {
+            b = a.b;
+            if (b) {
+              a.b = b[0];
+              b[0] = 0;
+            }
+            e[2]:int = b;
+            e[3]:int = b;
+            if (eqz(b)) goto B_e;
+          }
+          if (eqz(g_b) | eqz(f)) {
+            Push_1(b);
+            0;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) continue L_k;
         }
-        if (eqz(g_b)) {
-          89708[0]:int = g;
-          g = c[2]:int;
-          a[0]:long@4 = c[0]:long;
-          a[2]:int = g;
-          stack_pointer = c + 32;
-          return ;
-        }
-        label B_e:
-        if (eqz(g_b) | e == 1) {
+        label B_h:
+        if (eqz(g_b) | f == 1) {
           runtime_nilPanic();
           1;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { unreachable }
-        return ;
-        label B_b:
-      }
-  (g_c[0]:int)[0]:int = e;
-  g_c[0]:int = g_c[0]:int + 4;
-  e = g_c[0]:int;
-  e.a = a;
-  e.b = b;
-  e.c = c;
-  e.d = f;
-  e.e = g;
-  e.f = h;
-  e.g = d;
-  g_c[0]:int = g_c[0]:int + 28;
-}
-
-function printArg(a:int, b:int, c:int, d:int) { // func128
-  var i:int_ptr;
-  var g:int;
-  var e:int;
-  var f:long;
-  var j:int;
-  var h:int;
-  var k:int;
-  if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 40;
-    h = g_c[0]:int;
-    a = h[0]:int;
-    c = h[2]:int;
-    d = h[3]:int;
-    e = h[4]:int;
-    f = h[5]:long@4;
-    i = h[7]:int;
-    j = h[8]:int;
-    k = h[9]:int;
-    b = h[1]:int;
-  }
-  h = 
-    {
-      if (g_b == 2) {
-        g_c[0]:int = g_c[0]:int - 4;
-        g = (g_c[0]:int)[0]:int;
-      }
-      if (eqz(g_b)) {
-        i = stack_pointer - 80;
-        stack_pointer = i;
-        i[9] = 9;
-        memory_fill(i + 40, 0, 36);
-        a[5]:long@4 = 0L;
-        a[4]:int = c;
-        a[3]:int = b;
-        (a + 28)[0]:int = 0;
-        i[8] = (k = 89708[0]:int);
-        89708[0]:int = (e = i + 32);
-      }
-      if (eqz(g_b)) {
-        if (b) goto B_f;
-        b = d == 118;
-      }
-      if (eqz(g_b)) {
-        if (eqz(b)) {
-          b = d != 84;
-          if (b) goto B_h;
-        }
-        a = a + 32;
-      }
-      if (eqz(g_b) | eqz(g)) {
-        padString(a, 86277, 5);
-        0;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_h:
-      if (eqz(g_b) | g == 1) {
-        badVerb(a, d);
-        1;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_f:
-      e = select_if(e, d == 112, g_b);
-      if (eqz(g_b)) {
-        if (e) goto B_n;
-        e = d != 84;
-        if (e) goto B_m;
-        c = i + 24;
-      }
-      if (eqz(g_b) | g == 2) {
-        reflect_toType(c, 87044, b);
-        2;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) {
-        i[11] = (b = i[7]);
-        i[10] = (d = i[6]);
-        c = i + 16;
-      }
-      if (eqz(g_b) | g == 3) {
-        interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_func_CanSeq_func_bool_CanSeq2_fu_1(
-          c,
-          b,
-          d);
-        3;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) {
-        i[12] = (b = i[4]);
-        c = i[5];
-        a = a + 32;
-      }
-      if (eqz(g_b) | g == 4) {
-        fmtS(a, b, c);
-        4;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_n:
-      if (eqz(g_b)) {
-        i[14] = c;
-        i[13] = b;
-      }
-      if (eqz(g_b) | g == 5) {
-        fmtPointer(a, b, c, 2, 112);
-        5;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_m:
-      if (select_if(g_b, 1, e = select_if(e, b != 85776, g_b))) {
-        if (eqz(g_b) | g == 6) {
-          fmtBool(a, c, d);
-          6;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) goto B_e;
-      }
-      e = select_if(e, b != 85868, g_b);
-      if (eqz(g_b)) {
-        if (e) goto B_y;
-        f = i64_extend_i32_s(c);
-      }
-      if (eqz(g_b) | g == 7) {
-        fmtInteger_1(a, f, 1, d);
-        7;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_y:
-      if (eqz(g_b)) {
-        f = i64_extend_i32_u(c);
-        e = b != 67532;
-      }
-      if (eqz(g_b)) {
-        if (e) goto B_ca;
-        f = i64_extend8_s(f);
-      }
-      if (eqz(g_b) | g == 8) {
-        fmtInteger_1(a, f, 1, d);
-        8;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_ca:
-      e = select_if(e, b != 67548, g_b);
-      if (eqz(g_b)) {
-        if (e) goto B_fa;
-        f = i64_extend16_s(f);
-      }
-      if (eqz(g_b) | g == 9) {
-        fmtInteger_1(a, f, 1, d);
-        9;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_fa:
-      e = select_if(e, b != 86496, g_b);
-      if (eqz(g_b)) {
-        if (e) goto B_ia;
-        f = i64_extend_i32_s(c);
-      }
-      if (eqz(g_b) | g == 10) {
-        fmtInteger_1(a, f, 1, d);
-        10;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_ia:
-      e = select_if(e, b != 68700, g_b);
-      if (eqz(g_b)) {
-        if (e) goto B_la;
-        f = c[0]:long;
-      }
-      if (eqz(g_b) | g == 11) {
-        fmtInteger_1(a, f, 1, d);
-        11;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_la:
-      if (select_if(g_b, 1, e = select_if(e, b != 67564, g_b))) {
-        if (eqz(g_b) | g == 12) {
-          fmtInteger_1(a, f, 0, d);
-          12;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) goto B_e;
-      }
-      e = select_if(e, b != 85324, g_b);
-      if (eqz(g_b)) {
-        if (e) goto B_qa;
-        f = f & 255L;
-      }
-      if (eqz(g_b) | g == 13) {
-        fmtInteger_1(a, f, 0, d);
-        13;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_qa:
-      e = select_if(e, b != 67580, g_b);
-      if (eqz(g_b)) {
-        if (e) goto B_ta;
-        f = f & 65535L;
-      }
-      if (eqz(g_b) | g == 14) {
-        fmtInteger_1(a, f, 0, d);
-        14;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_ta:
-      if (select_if(g_b, 1, e = select_if(e, b != 68684, g_b))) {
-        if (eqz(g_b) | g == 15) {
-          fmtInteger_1(a, f, 0, d);
-          15;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) goto B_e;
-      }
-      e = select_if(e, b != 86512, g_b);
-      if (eqz(g_b)) {
-        if (e) goto B_ya;
-        f = c[0]:long;
-      }
-      if (eqz(g_b) | g == 16) {
-        fmtInteger_1(a, f, 0, d);
-        16;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_ya:
-      if (select_if(g_b, 1, e = select_if(e, b != 68532, g_b))) {
-        if (eqz(g_b) | g == 17) {
-          fmtInteger_1(a, f, 0, d);
-          17;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) goto B_e;
-      }
-      e = select_if(e, b != 86592, g_b);
-      if (eqz(g_b)) {
-        if (e) goto B_db;
-        b = c[0]:int;
-        c = c[1]:int;
-      }
-      if (eqz(g_b) | g == 18) {
-        fmtString(a, b, c, d);
-        18;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_db:
-      e = select_if(e, b != 85304, g_b);
-      if (eqz(g_b)) {
-        if (e) goto B_gb;
-        b = c[0]:int;
-        e = c[1]:int;
-        c = c[2]:int;
-      }
-      if (eqz(g_b) | g == 19) {
-        fmtBytes(a, b, e, c, d, 86244, 6);
-        19;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_gb:
-      e = select_if(e, b != 86880, g_b);
-      if (eqz(g_b)) {
-        if (e) goto B_jb;
-        b = c[8]:ubyte;
-        e = c[1]:int;
-        c = c[0]:int;
-        j = eqz(c);
-      }
-      if (eqz(g_b)) {
-        if (j | (b & 14) != 2) goto B_lb;
-        j = i + 8;
-      }
-      if (eqz(g_b) | g == 20) {
-        Interface(j, c, e, b);
-        20;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) {
-        j = i[2];
-        a[4]:int = (h = i[3]);
-        a[3]:int = j;
-        i[16] = h;
-        i[15] = j;
-      }
-      if (eqz(g_b) | g == 21) {
-        handleMethods(a, d);
-        let t0 = 21;
-        if (g_b == 1) goto B_b;
-        j = t0;
-      }
-      if (eqz(g_b) & (j & 1)) goto B_e;
-      label B_lb:
-      if (eqz(g_b) | g == 22) {
-        printValue(a, c, e, b, d, 0);
-        22;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) goto B_e;
-      label B_jb:
-      if (eqz(g_b) | g == 23) {
-        handleMethods(a, d);
-        let t1 = 23;
-        if (g_b == 1) goto B_b;
-        e = t1;
-      }
-      if (eqz(g_b)) {
-        if (e & 1) goto B_e;
-        i[18] = c;
-        i[17] = b;
-      }
-      if (eqz(g_b) | g == 24) {
-        printValue(a, b, c, 2, d, 0);
-        24;
-        if (g_b == 1) goto B_b;
-      }
-      label B_e:
-      if (eqz(g_b)) {
-        89708[0]:int = k;
-        stack_pointer = i + 80;
-      }
-      return ;
-      label B_b:
-    }
-  (g_c[0]:int)[0]:int = h;
-  g_c[0]:int = g_c[0]:int + 4;
-  h = g_c[0]:int;
-  h[0]:int = a;
-  h[1]:int = b;
-  h[2]:int = c;
-  h[3]:int = d;
-  h[4]:int = e;
-  h[5]:long@4 = f;
-  h[7]:int = i;
-  h[8]:int = j;
-  h[9]:int = k;
-  g_c[0]:int = g_c[0]:int + 40;
-}
-
-function Write(a:{ a:int, b:int, c:int }, b:int_ptr, c:int, d:int) { // func129
-  var e:int_ptr;
-  var f:{ a:int, b:int, c:int, d:int, e:int, f:int }
-  var g:int;
-  var i:int;
-  var j:int;
-  var k:int;
-  var h:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int }
-  if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 36;
-    h = g_c[0]:int;
-    a = h.a;
-    c = h.c;
-    d = h.d;
-    e = h.e;
-    f = h.f;
-    g = h.g;
-    i = h.h;
-    k = h.i;
-    b = h.b;
-  }
-  h = {
-        if (g_b == 2) {
-          g_c[0]:int = g_c[0]:int - 4;
-          j = (g_c[0]:int)[0]:int;
-        }
-        if (eqz(g_b)) {
-          e = stack_pointer - 144;
-          stack_pointer = e;
-          e[15] = 19;
-          memory_fill(e + 68, 0, 72);
-          e[14] = (k = 89708[0]:int);
-          89708[0]:int = e + 56;
-          f = eqz(b);
-        }
-        if (eqz(g_b)) {
-          if (f) goto B_e;
-          e[16] = (f = b[0]);
-          if (eqz(f)) goto B_e;
-          e[17] = (g = f.a);
-          e[18] = (i = f.b);
-        }
-        if (eqz(g_b)) {
-          if (eqz(g)) {
-            d = 88928;
-            g = 87004;
-            c = 0;
-            goto B_g;
-          }
-          e[27] = f;
-          e[28] = (g = f.a);
-          e[29] = (f = f.b);
-          e[30] = f;
-          i = g != 87124;
-        }
-        c = {
-              if (eqz(g_b)) {
-                if (i) goto B_k;
-                if (eqz(f)) goto B_e;
-                g = e + 8;
-                f = f.a;
-              }
-              if (eqz(g_b) | eqz(j)) {
-                Write_1(g, f, c, d);
-                0;
-                if (g_b == 1) goto B_b;
-              }
-              if (eqz(g_b)) {
-                e[32] = (d = e[4]);
-                e[31] = (g = e[3]);
-                e[2];
-                goto B_j;
-              }
-              label B_k:
-              i = select_if(i, g != 87100, g_b);
-              if (eqz(g_b)) {
-                if (i) goto B_o;
-                g = e + 24;
-              }
-              if (eqz(g_b) | j == 1) {
-                Write(g, f, c, d);
-                1;
-                if (g_b == 1) goto B_b;
-              }
-              if (eqz(g_b)) {
-                d = e[8];
-                g = e[7];
-                e[6];
-                goto B_j;
-              }
-              label B_o:
-              if (eqz(g_b)) {
-                if (g != 86808) goto B_e;
-                g = e + 40;
-              }
-              if (eqz(g_b) | j == 2) {
-                Write_1(g, f, c, d);
-                2;
-                if (g_b == 1) goto B_b;
-              }
-              if (g_b) {
-                c
-              } else {
-                d = e[12];
-                g = e[11];
-                e[10];
-              }
-              label B_j:
-            }
-        if (eqz(g_b)) {
-          e[33] = g;
-          e[34] = d;
-        }
         label B_g:
-        if (eqz(g_b)) {
-          e[19] = g;
-          e[20] = d;
-        }
-        if (eqz(g_b | g)) {
-          f = d;
-          goto B_x;
-        }
-        if (eqz(g_b) | j == 3) {
-          runtime_alloc(24);
-          let t0 = 3;
-          if (g_b == 1) goto B_b;
-          f = t0;
-        }
-        if (eqz(g_b)) {
-          e[21] = f;
-          e[24] = f;
-          e[22] = (b = b[0]);
-          if (eqz(b)) goto B_e;
-          e[23] = (i = b[2]);
-          b = b[3];
-          f.f = d;
-          f.e = g;
-          f.d = b;
-          f.c = i;
-          f.b = 5;
-          f.a = 69112;
-          g = 87092;
-        }
-        label B_x:
-        if (eqz(g_b)) {
-          89708[0]:int = k;
-          a.c = f;
-          a.b = g;
-          a.a = c;
-          stack_pointer = e + 144;
-          return ;
-        }
-        label B_e:
-        if (eqz(g_b) | j == 4) {
-          runtime_nilPanic();
-          4;
+        if (eqz(g_b) | f == 2) {
+          runtime_panic(86240, 67784);
+          2;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { unreachable }
-        return ;
-        label B_b:
-      }
-  (g_c[0]:int)[0]:int = h;
-  g_c[0]:int = g_c[0]:int + 4;
-  h = g_c[0]:int;
-  h.a = a;
-  h.b = b;
-  h.c = c;
-  h.d = d;
-  h.e = e;
-  h.f = f;
-  h.g = g;
-  h.h = i;
-  h.i = k;
-  g_c[0]:int = g_c[0]:int + 36;
-}
-
-function free_1(a:int) { // func130
-  var b:int;
-  var h:int;
-  var g:int;
-  var d:int;
-  var e:int;
-  var f:int;
-  var i:int;
-  var c:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
-  if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 28;
-    c = g_c[0]:int;
-    a = c.a;
-    d = c.d;
-    e = c.e;
-    g = c.f;
-    h = c.g;
-    f = c.c;
-    b = c.b;
-  }
-  c = {
-        if (g_b == 2) {
-          g_c[0]:int = g_c[0]:int - 4;
-          i = (g_c[0]:int)[0]:int;
-        }
-        if (eqz(g_b)) {
-          b = stack_pointer + -64;
-          stack_pointer = b;
-          b[7]:long = 0L;
-          b[9]:int = 6;
-          h = 89708[0]:int;
-          89708[0]:int = b + 32;
-          b[8]:int = h;
-          b[10]:int = (d = a[0]:int);
-          f = 0;
-          e = 0;
-          g = a[2]:int;
-          if (g < 65537) {
-            b[15]:int = d;
-            f = d;
-            e = g;
-          }
-          a[2]:int = e;
-          a[1]:int = 0;
-          a[0]:int = f;
-          a[3]:long@4 = 0L;
-          a[34]:int = 0;
-          (a + 20)[0]:long@4 = 0L;
-          (a + 28)[0]:int = 0;
-          a[33]:int =
-            (g = select_if(0, f = a[33]:int, d = (e = a[35]:int) > 8));
-          a[35]:int = select_if(0, e, d);
-          b[11]:int = f;
-          b[12]:int = g;
-          b[13]:int = (f = 90340[0]:int);
-          b[7]:int = a;
-          b[6]:int = 87028;
-          d = b + 24;
-          e = 90344[0]:int;
-          g = 90348[0]:int;
-          a = b + 8;
-        }
-        if (eqz(g_b) | eqz(i)) {
-          runtime_sliceAppend(a, f, d, e, g, 1, 8);
-          0;
+        label B_f:
+        if (eqz(g_b) | f == 3) {
+          runtime_panic(86240, 67824);
+          3;
           if (g_b == 1) goto B_b;
         }
+        if (eqz(g_b)) { unreachable }
+        label B_e:
         if (eqz(g_b)) {
-          90340[0]:int = b[2]:int;
-          90344[0]:int = b[3]:int;
-          90348[0]:int = b[4]:int;
-          89708[0]:int = h;
-          stack_pointer = b - -64;
+          89988[0]:int = d;
+          stack_pointer = e + 16;
         }
         return ;
         label B_b:
@@ -13251,690 +13020,916 @@ function free_1(a:int) { // func130
   c = g_c[0]:int;
   c.a = a;
   c.b = b;
-  c.c = f;
+  c.c = e;
   c.d = d;
-  c.e = e;
-  c.f = g;
-  c.g = h;
-  g_c[0]:int = g_c[0]:int + 28;
+  g_c[0]:int = g_c[0]:int + 16;
 }
 
-function fmt_Printf(a:{ a:int, b:int }, b:byte_ptr, c:int, d:{ a:int, b:int }) { // func131
-  var h:int;
-  var j:int;
-  var g:int;
-  var e:byte_ptr;
-  var l:int;
-  var q:int;
-  var f:int;
-  var i:byte_ptr;
-  var p:long_ptr@1;
-  var s:int;
-  var u:int;
-  var v:int;
-  var w:int;
-  var m:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int, o:int, p:int, q:int, r:int, s:int, t:int, u:int }
-  var k:int;
-  var r:int;
-  var o:byte_ptr;
-  var t:int;
+function main_main_1_gowrapper(a:int) { // func134
+  var b:int;
   if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 84;
-    m = g_c[0]:int;
-    a = m.a;
-    b = m.b;
-    c = m.c;
-    d = m.d;
-    e = m.e;
-    f = m.f;
-    g = m.g;
-    h = m.h;
-    i = m.i;
-    k = m.j;
-    l = m.k;
-    o = m.l;
-    p = m.m;
-    q = m.n;
-    s = m.o;
-    r = m.p;
-    t = m.q;
-    u = m.r;
-    v = m.s;
-    w = m.t;
-    m = m.u;
+    g_c[0]:int = g_c[0]:int - 4;
+    a = (g_c[0]:int)[0]:int;
   }
-  var n:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int, o:int, p:int, q:int, r:int, s:int, t:int, u:int } = 
-    {
-      if (g_b == 2) {
-        g_c[0]:int = g_c[0]:int - 4;
-        j = (g_c[0]:int)[0]:int;
-      }
-      if (eqz(g_b)) {
-        h = stack_pointer - 272;
-        stack_pointer = h;
-        h[47]:int = 19;
-        memory_fill(h + 192, 0, 76);
-        h[46]:int = (t = 89708[0]:int);
-        89708[0]:int = (e = h + 184);
-      }
-      if (eqz(g_b) | eqz(j)) {
-        fmt_newPrinter();
-        let t0 = 0;
-        if (g_b == 1) goto B_b;
-        g = t0;
-      }
-      if (eqz(g_b)) {
-        h[48]:int = g;
-        g[124]:byte = 0;
-        u = g + 40;
-        v = g + 39;
-        w = g + 38;
-        m = g + 41;
-        p = g + 36;
-        q = g + 125;
-        l = 0;
-        s = g + 42;
-        k = 0;
-      }
-      loop L_g {
-        e = select_if(e, c <= l, g_b);
-        if (eqz(g_b)) {
-          if (e) goto B_j;
-          q[0]:byte = 1;
-          e = select_if(l, c, c < l);
-          f = l;
-          loop L_l {
-            i = c != f;
-            if (eqz(i)) {
-              f = c;
-              goto B_m;
-            }
-            if (e == f) goto B_h;
-            i = (b + f)[0]:ubyte == 37;
-            if (i) goto B_m;
-            f = f + 1;
-            continue L_l;
-            label B_m:
-          }
-          e = f <= l;
+  b = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          b = (g_c[0]:int)[0]:int;
         }
-        if (eqz(g_b)) {
-          if (e) goto B_q;
-          e = f < l;
-          if (e) goto B_p;
-          e = c < f;
-          if (e) goto B_p;
-          i = b + l;
-          e = f - l;
+        if (eqz(g_b) | eqz(b)) {
+          main_main_1(a);
+          0;
+          if (g_b == 1) goto B_b;
         }
-        if (eqz(g_b) | j == 1) {
-          writeString(g, i, e);
+        if (eqz(g_b) | b == 1) {
+          runtime_deadlock();
           1;
           if (g_b == 1) goto B_b;
         }
-        label B_q:
-        if (eqz(g_b)) {
-          e = c <= f;
-          if (e) goto B_j;
-          p[0] = 0L;
-          g[12]:long@4 = 0L;
-          e = p + 8;
-          e[0] = 0;
-          f = f + 1;
+        if (eqz(g_b)) { unreachable }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = b;
+  g_c[0]:int = g_c[0]:int + 4;
+  (g_c[0]:int)[0]:int = a;
+  g_c[0]:int = g_c[0]:int + 4;
+}
+
+function main_main_gowrapper(a:int) { // func135
+  var b:int;
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 4;
+    a = (g_c[0]:int)[0]:int;
+  }
+  b = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          b = (g_c[0]:int)[0]:int;
         }
-        loop L_u {
-          if (eqz(g_b)) {
-            e = c != f;
-            if (eqz(e)) {
-              f = c;
-              goto B_o;
-            }
-            if (c <= f) goto B_h;
-            l = (b + f)[0]:ubyte;
-            i = l - 43;
-            e = s;
-          }
-          if (eqz(g_b)) {
-            br_table[B_ca, B_z, B_ba, B_z, B_z, B_x, ..B_da](i)
-            label B_da:
-            br_table[B_aa, B_z, B_z, B_ea, ..B_z](l - 32)
-            label B_ea:
-            e = u;
-            goto B_x;
-            label B_ca:
-            e = v;
-            goto B_x;
-            label B_ba:
-            e = w;
-            goto B_x;
-            label B_aa:
-            e = m;
-            goto B_x;
-            label B_z:
-            e = (l - 97 & 255) > 25;
-            if (e) goto B_o;
-            e = k > 0;
-            if (e) goto B_o;
-            e = l - 118;
-          }
-          if (eqz(g_b)) {
-            br_table[B_ga, B_ia, ..B_fa](e)
-            label B_ia:
-            h[45]:int = 0;
-            h[49]:int = (e = g[33]:int);
-            r = h + 160;
-            k = h + 180;
-            o = g[34]:int;
-            i = g[35]:int;
-          }
-          if (eqz(g_b) | j == 2) {
-            runtime_sliceAppend(r, e, k, o, i, 1, 4);
-            2;
-            if (g_b == 1) goto B_b;
-          }
-          if (eqz(g_b)) {
-            e = h[40]:int;
-            g[34]:long@4 = h[41]:long@4;
-            g[33]:int = e;
-            h[50]:int = e;
-          }
-          label B_ga:
-          if (eqz(g_b)) {
-            e = g[39]:ubyte;
-            k = g[40]:ubyte;
-            g[39]:short@1 = 0;
-            g[44]:byte = (i = k & 1);
-            g[43]:byte = (e = e & 1);
-          }
-          label B_fa:
-          if (eqz(g_b)) {
-            h[51]:int = (e = d.a);
-            h[52]:int = (k = d.b);
-          }
-          if (eqz(g_b) | j == 3) {
-            printArg(g, e, k, l);
-            3;
-            if (g_b == 1) goto B_b;
-          }
-          if (eqz(g_b)) {
-            k = 1;
-            l = f + 1;
-            continue L_g;
-          }
-          label B_x:
-          if (eqz(g_b)) {
-            e[0] = 1;
-            f = f + 1;
-            continue L_u;
-          }
+        if (eqz(g_b) | eqz(b)) {
+          main_main(a);
+          0;
+          if (g_b == 1) goto B_b;
         }
-        label B_p:
-        if (eqz(g_b) | j == 4) {
-          runtime_slicePanic();
-          4;
+        if (eqz(g_b) | b == 1) {
+          runtime_deadlock();
+          1;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) { unreachable }
-        label B_o:
-        e = select_if(e, h + 144, g_b);
-        if (eqz(g_b) | j == 5) {
-          argNumber(e, g, k, b, c, f);
-          5;
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = b;
+  g_c[0]:int = g_c[0]:int + 4;
+  (g_c[0]:int)[0]:int = a;
+  g_c[0]:int = g_c[0]:int + 4;
+}
+
+function Wait(a:int_ptr) { // func136
+  var b:{ a:int, b:int }
+  var c:{ a:int, b:int }
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 8;
+    b = g_c[0]:int;
+    a = b.a;
+    b = b.b;
+  }
+  c = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          c = (g_c[0]:int)[0]:int;
+        }
+        b = select_if(b, eqz(a), g_b);
+        if (eqz(g_b)) {
+          if (b) goto B_d;
+          b = eqz(a[0]);
+        }
+        if (eqz(g_b)) {
+          if (b) goto B_f;
+          b = 89776[0]:int;
+          a = a + 4;
+        }
+        if (eqz(g_b) | eqz(c)) {
+          Push(a, b);
+          0;
           if (g_b == 1) goto B_b;
         }
-        if (eqz(g_b)) {
-          k = h[36]:int;
-          f = h[37]:int;
-          i = f >= c;
-          e = h[152]:ubyte;
-        }
-        if (eqz(g_b)) {
-          if (i) goto B_wa;
-          if (c <= f) goto B_h;
-          i = (b + f)[0]:ubyte != 42;
-          if (i) goto B_wa;
-          e = h + 120;
-        }
-        if (eqz(g_b) | j == 6) {
-          fmt_intFromArg(e, d, k);
-          6;
+        if (eqz(g_b) | c == 1) {
+          internal_task_Pause();
+          1;
           if (g_b == 1) goto B_b;
         }
-        if (eqz(g_b)) {
-          e = h[30]:int;
-          g[36]:byte = (l = h[124]:ubyte);
-          g[12]:int = e;
-        }
-        if (select_if(g_b, 1, l)) {
-          if (eqz(g_b) | j == 7) {
-            writeString(g, 86131, 12);
-            7;
-            if (g_b == 1) goto B_b;
-          }
-          e = if (g_b) { e } else { g[12]:int }
-        }
-        if (eqz(g_b)) {
-          f = f + 1;
-          i = e < 0;
-          if (eqz(i)) {
-            e = 0;
-            k = 1;
-            goto B_ua;
-          }
-          k = 1;
-          g[38]:byte = 1;
-          o = 0;
-          g[12]:int = (e = 0 - e);
-          i = s;
-          goto B_va;
-        }
-        label B_wa:
-        i = select_if(i, h + 128, g_b);
-        if (eqz(g_b) | j == 8) {
-          fmt_parsenum(i, b, c, f, c);
-          8;
+        label B_f:
+        if (eqz(g_b)) { return  }
+        label B_d:
+        if (eqz(g_b) | c == 2) {
+          runtime_nilPanic();
+          2;
           if (g_b == 1) goto B_b;
         }
+        if (eqz(g_b)) { unreachable }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = c;
+  g_c[0]:int = g_c[0]:int + 4;
+  c = g_c[0]:int;
+  c.a = a;
+  c.b = b;
+  g_c[0]:int = g_c[0]:int + 8;
+}
+
+function main_printMemoryTable(a:int) { // func137
+  var c:int;
+  var b:byte_ptr;
+  var m:int;
+  var f:{ a:int, b:int }
+  var n:int;
+  var h:int;
+  var d:int;
+  var i:int;
+  var p:int;
+  var j:byte_ptr;
+  var l:int;
+  var e:byte_ptr;
+  var o:long_ptr@1;
+  var q:int;
+  var s:int;
+  var t:int;
+  var u:int;
+  var v:int;
+  var k:int;
+  var r:int;
+  var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int, o:int, p:int, q:int, r:int, s:int, t:int }
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 80;
+    g = g_c[0]:int;
+    a = g.a;
+    c = g.c;
+    d = g.d;
+    e = g.e;
+    f = g.f;
+    i = g.g;
+    j = g.h;
+    k = g.i;
+    l = g.j;
+    m = g.k;
+    n = g.l;
+    o = g.m;
+    p = g.n;
+    q = g.o;
+    r = g.p;
+    s = g.q;
+    t = g.r;
+    u = g.s;
+    v = g.t;
+    b = g.b;
+  }
+  g = 
+    {
+      if (g_b == 2) {
+        g_c[0]:int = g_c[0]:int - 4;
+        h = (g_c[0]:int)[0]:int;
+      }
+      if (eqz(g_b)) {
+        c = stack_pointer - 336;
+        stack_pointer = c;
+        c[53]:int = 30;
+        memory_fill(c + 224, 0, 112);
+        c[52]:int = (r = 89988[0]:int);
+        89988[0]:int = (b = c + 208);
+        m = 0;
+      }
+      loop L_e {
+        b = select_if(b, m == 4, g_b);
         if (eqz(g_b)) {
-          f = h[34]:int;
-          l = h[132]:ubyte;
-          g[12]:int = h[32]:int;
-          o = 1;
-          g[36]:byte = l & 1;
-          i = q;
-          l = eqz((e & l) & 1);
-          if (l) goto B_ua;
+          if (b) goto B_i;
+          c[54]:int = (f = (b = m << 2) + a);
+          c[55]:int = f;
+          c[48]:int = 86812;
+          c[60]:int = (n = f.a);
+          c[63]:int = n;
+          c[56]:int = n;
+          c[49]:int = n;
         }
-        label B_va:
-        if (eqz(g_b)) {
-          i[0] = 0;
-          e = o;
-        }
-        label B_ua:
-        if (eqz(g_b)) {
-          l = f + 1;
-          i = l >= c;
-        }
-        if (eqz(g_b)) {
-          if (i) goto B_lb;
-          if (c <= f) goto B_h;
-          i = (b + f)[0]:ubyte != 46;
-          if (i) goto B_lb;
-          if (e & 1) { q[0]:byte = 0 }
-          e = h + 104;
-        }
-        if (eqz(g_b) | j == 9) {
-          argNumber(e, g, k, b, c, l);
-          9;
+        if (eqz(g_b) | eqz(h)) {
+          fmt_newPrinter();
+          let t0 = 0;
           if (g_b == 1) goto B_b;
+          d = t0;
         }
         if (eqz(g_b)) {
-          k = h[26]:int;
-          f = h[27]:int;
-          i = f >= c;
-          e = h[112]:ubyte;
+          c[57]:int = d;
+          k = 0;
+          d[124]:byte = 0;
+          s = d + 40;
+          t = d + 39;
+          u = d + 38;
+          v = d + 41;
+          o = d + 36;
+          p = d + 125;
+          q = d + 42;
+          i = 0;
         }
-        if (eqz(g_b)) {
-          if (i) goto B_qb;
-          if (c <= f) goto B_h;
-          i = (b + f)[0]:ubyte != 42;
-          if (i) goto B_qb;
-          e = h + 80;
-        }
-        if (eqz(g_b) | j == 10) {
-          fmt_intFromArg(e, d, k);
-          10;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          e = h[84]:ubyte;
-          g[13]:int = (l = h[20]:int);
-          g[37]:byte = e & 1;
-          f = f + 1;
-          i = l >= 0;
-          if (eqz(i)) {
-            g[37]:byte = 0;
-            g[13]:int = 0;
-            goto B_ub;
-          }
-          k = 1;
-          e = e & 1;
-          if (e) goto B_kb;
-          label B_ub:
-        }
-        if (eqz(g_b) | j == 11) {
-          writeString(g, 86143, 11);
-          11;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          k = 1;
-          goto B_kb;
-        }
-        label B_qb:
-        i = select_if(i, h + 88, g_b);
-        if (eqz(g_b) | j == 12) {
-          fmt_parsenum(i, b, c, f, c);
-          12;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          f = h[24]:int;
-          l = h[22]:int;
-          g[37]:byte = (o = h[92]:ubyte);
-          g[13]:int = l;
-          if (o) goto B_lb;
-          g[37]:byte = 1;
-          g[13]:int = 0;
-          e = e & 1;
-          if (e) goto B_jb;
-          goto B_kb;
-        }
-        label B_lb:
-        if (eqz(g_b)) {
-          e = e & 1;
-          if (e) goto B_jb;
-        }
-        label B_kb:
-        e = select_if(e, h - -64, g_b);
-        if (eqz(g_b) | j == 13) {
-          argNumber(e, g, k, b, c, f);
-          13;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          k = h[16]:int;
-          f = h[17]:int;
-        }
-        label B_jb:
-        if (eqz(g_b)) {
-          e = c > f;
-          if (e) goto B_i;
-        }
-        if (eqz(g_b) | j == 14) {
-          writeString(g, 86154, 10);
-          14;
-          if (g_b == 1) goto B_b;
-        }
-        label B_j:
-        if (eqz(g_b)) { b = g[124]:ubyte }
-        if (eqz(g_b)) {
-          if (b) goto B_gc;
-          c = 0;
-          b = k > 0;
-          if (b) goto B_gc;
-          p[0] = 0L;
-          g[12]:long@4 = 0L;
-          b = p + 8;
-          b[0] = 0;
-        }
-        if (eqz(g_b) | j == 15) {
-          writeString(g, 86164, 9);
-          15;
-          if (g_b == 1) goto B_b;
-        }
-        f = select_if(f, 1, g_b);
-        loop L_jc {
-          b = select_if(b, eqz(f & 1), g_b);
+        loop L_m {
           if (eqz(g_b)) {
-            if (b) goto B_lc;
-            h[57]:int = (f = d.a);
-            h[58]:int = (e = d.b);
-            b = eqz(c & 1);
+            b = i > 7;
+            if (b) goto B_f;
+            p[0]:byte = 1;
+            f = i + 1;
+            b = 0;
+            e = i;
+            loop L_o {
+              j = b + i;
+              if (j == 8) goto B_p;
+              l = i > 7;
+              if (l) goto B_h;
+              if ((j + 86828)[0]:ubyte == 37) goto B_p;
+              e = e + 1;
+              f = f + 1;
+              b = b + 1;
+              continue L_o;
+              label B_p:
+            }
+            l = i >= j;
           }
-          if (select_if(select_if(g_b, 1, b), 0, eqz(g_b) | j == 16)) {
-            writeString(g, 86287, 2);
-            16;
+          if (eqz(g_b)) {
+            if (l) goto B_q;
+            l = i > j;
+            if (l) goto B_g;
+            l = j > 8;
+            if (l) goto B_g;
+            i = i + 86828;
+          }
+          if (eqz(g_b) | h == 1) {
+            writeString(d, i, b);
+            1;
             if (g_b == 1) goto B_b;
           }
-          if (select_if(g_b, 1, f)) {
-            if (eqz(g_b) | j == 17) {
-              writeString(g, 86277, 5);
-              17;
+          label B_q:
+          if (eqz(g_b)) {
+            b = j > 7;
+            if (b) goto B_f;
+            o[0] = 0L;
+            d[12]:long@4 = 0L;
+            (o + 8)[0]:byte = 0;
+            b = select_if(7, j, j <= 7);
+            j = b + 1;
+            e = 0 - select_if(7, e, e <= 7);
+          }
+          loop L_u {
+            b = select_if(b, e + f == 1, g_b);
+            if (eqz(g_b)) {
+              if (b) goto B_w;
+              b = q;
+              i = (f + 86828)[0]:ubyte;
+              l = i - 43;
+              br_table[B_ba, B_y, B_aa, B_y, B_y, B_v, ..B_ca](l);
+              label B_ca:
+              br_table[B_z, B_y, B_y, B_da, ..B_y](i - 32)
+              label B_da:
+              b = s;
+              goto B_v;
+              label B_ba:
+              b = t;
+              goto B_v;
+              label B_aa:
+              b = u;
+              goto B_v;
+              label B_z:
+              b = v;
+              goto B_v;
+              label B_y:
+              b = (i - 97 & 255) > 25;
+            }
+            if (eqz(g_b)) {
+              if (b) goto B_ea;
+              b = k > 0;
+              if (b) goto B_ea;
+              b = i - 118;
+            }
+            if (eqz(g_b)) {
+              br_table[B_ha, B_ja, ..B_ga](b)
+              label B_ja:
+              c[51]:int = 0;
+              c[58]:int = (b = d[33]:int);
+              j = c + 204;
+              k = d[34]:int;
+              l = d[35]:int;
+              e = c + 176;
+            }
+            if (eqz(g_b) | h == 2) {
+              runtime_sliceAppend(e, b, j, k, l, 1, 4);
+              2;
               if (g_b == 1) goto B_b;
             }
-            if (eqz(g_b)) goto B_kc;
+            if (eqz(g_b)) {
+              b = c[44]:int;
+              d[34]:long@4 = c[45]:long@4;
+              d[33]:int = b;
+              c[59]:int = b;
+            }
+            label B_ha:
+            if (eqz(g_b)) {
+              b = d[39]:ubyte;
+              j = d[40]:ubyte;
+              d[39]:short@1 = 0;
+              d[44]:byte = (e = j & 1);
+              d[43]:byte = (b = b & 1);
+            }
+            label B_ga:
+            if (eqz(g_b) | h == 3) {
+              printArg(d, 86812, n, i);
+              3;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              k = 1;
+              i = f + 1;
+              continue L_m;
+            }
+            label B_ea:
+            j = select_if(j, f, g_b);
+            label B_w:
+            b = select_if(b, c + 160, g_b);
+            if (eqz(g_b) | h == 4) {
+              argNumber(b, d, k, j);
+              4;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              k = c[40]:int;
+              f = c[41]:int;
+              e = f > 7;
+              b = c[168]:ubyte;
+            }
+            if (eqz(g_b)) {
+              if (e) goto B_ta;
+              e = f > 7;
+              if (e) goto B_h;
+              e = (f + 86828)[0]:ubyte != 42;
+              if (e) goto B_ta;
+              e = c + 192;
+              b = c + 136;
+            }
+            if (eqz(g_b) | h == 5) {
+              fmt_intFromArg(b, e, k);
+              5;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              b = c[34]:int;
+              d[36]:byte = (i = c[140]:ubyte);
+              d[12]:int = b;
+            }
+            if (select_if(g_b, 1, i)) {
+              if (eqz(g_b) | h == 6) {
+                writeString(d, 86363, 12);
+                6;
+                if (g_b == 1) goto B_b;
+              }
+              b = if (g_b) { b } else { d[12]:int }
+            }
+            if (eqz(g_b)) {
+              f = f + 1;
+              e = b < 0;
+              if (eqz(e)) {
+                b = 0;
+                k = 1;
+                goto B_ra;
+              }
+              k = 1;
+              d[38]:byte = 1;
+              j = 0;
+              d[12]:int = (b = 0 - b);
+              e = q;
+              goto B_sa;
+            }
+            label B_ta:
+            e = select_if(e, c + 144, g_b);
+            if (eqz(g_b) | h == 7) {
+              fmt_parsenum(e, 86828, 8, f, 8);
+              7;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              f = c[38]:int;
+              i = c[148]:ubyte;
+              d[12]:int = c[36]:int;
+              j = 1;
+              d[36]:byte = i & 1;
+              e = p;
+              i = eqz((b & i) & 1);
+              if (i) goto B_ra;
+            }
+            label B_sa:
+            if (eqz(g_b)) {
+              e[0] = 0;
+              b = j;
+            }
+            label B_ra:
+            if (eqz(g_b)) {
+              i = f + 1;
+              e = i > 7;
+            }
+            if (eqz(g_b)) {
+              if (e) goto B_ib;
+              e = f > 7;
+              if (e) goto B_h;
+              e = (f + 86828)[0]:ubyte != 46;
+              if (e) goto B_ib;
+              if (b & 1) { p[0]:byte = 0 }
+              b = c + 120;
+            }
+            if (eqz(g_b) | h == 8) {
+              argNumber(b, d, k, i);
+              8;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              k = c[30]:int;
+              f = c[31]:int;
+              e = f > 7;
+              b = c[128]:ubyte;
+            }
+            if (eqz(g_b)) {
+              if (e) goto B_nb;
+              e = f > 7;
+              if (e) goto B_h;
+              e = (f + 86828)[0]:ubyte != 42;
+              if (e) goto B_nb;
+              e = c + 192;
+              b = c + 96;
+            }
+            if (eqz(g_b) | h == 9) {
+              fmt_intFromArg(b, e, k);
+              9;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              b = c[100]:ubyte;
+              d[13]:int = (i = c[24]:int);
+              d[37]:byte = b & 1;
+              f = f + 1;
+              e = i >= 0;
+              if (eqz(e)) {
+                d[37]:byte = 0;
+                d[13]:int = 0;
+                goto B_rb;
+              }
+              k = 1;
+              b = b & 1;
+              if (b) goto B_hb;
+              label B_rb:
+            }
+            if (eqz(g_b) | h == 10) {
+              writeString(d, 86375, 11);
+              10;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              k = 1;
+              goto B_hb;
+            }
+            label B_nb:
+            e = select_if(e, c + 104, g_b);
+            if (eqz(g_b) | h == 11) {
+              fmt_parsenum(e, 86828, 8, f, 8);
+              11;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              f = c[28]:int;
+              i = c[26]:int;
+              d[37]:byte = (j = c[108]:ubyte);
+              d[13]:int = i;
+              if (j) goto B_ib;
+              d[37]:byte = 1;
+              d[13]:int = 0;
+              b = b & 1;
+              if (b) goto B_gb;
+              goto B_hb;
+            }
+            label B_ib:
+            if (eqz(g_b)) {
+              b = b & 1;
+              if (b) goto B_gb;
+            }
+            label B_hb:
+            b = select_if(b, c + 80, g_b);
+            if (eqz(g_b) | h == 12) {
+              argNumber(b, d, k, f);
+              12;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              k = c[20]:int;
+              f = c[21]:int;
+            }
+            label B_gb:
+            if (select_if(g_b, 1, b = select_if(b, f < 8, g_b))) {
+              if (eqz(g_b) | h == 13) {
+                writeString(d, 86386, 10);
+                13;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) goto B_f;
+            }
+            if (eqz(g_b)) {
+              b = f > 7;
+              if (b) goto B_h;
+              i = 1;
+              j = f + 86828;
+              b = j[0];
+              e = b >= 0;
+            }
+            if (eqz(g_b)) {
+              if (e) goto B_dc;
+              e = 8 - f;
+              b = c + 24;
+            }
+            if (eqz(g_b) | h == 14) {
+              unicode_utf8_DecodeRuneInString(b, j, e);
+              14;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              i = c[7]:int;
+              b = c[6]:int;
+            }
+            label B_dc:
+            if (eqz(g_b)) {
+              i = f + i;
+              e = b != 37;
+            }
+            if (select_if(g_b, 1, e)) {
+              if (eqz(g_b) | h == 15) {
+                writeByte(d, 37);
+                15;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) continue L_m;
+            }
+            if (eqz(g_b)) { e = p[0]:ubyte }
+            if (select_if(g_b, 1, e)) {
+              if (eqz(g_b) | h == 16) {
+                writeString(d, 86465, 2);
+                16;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b) | h == 17) {
+                writeRune(d, b);
+                17;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b) | h == 18) {
+                writeString(d, 86353, 10);
+                18;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) continue L_m;
+            }
+            if (select_if(g_b, 1, e = select_if(e, k <= 0, g_b))) {
+              if (eqz(g_b) | h == 19) {
+                writeString(d, 86465, 2);
+                19;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b) | h == 20) {
+                writeRune(d, b);
+                20;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b) | h == 21) {
+                writeString(d, 86467, 9);
+                21;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) {
+                k = 1;
+                continue L_m;
+              }
+            }
+            e = select_if(e, b - 118, g_b);
+            if (eqz(g_b)) {
+              br_table[B_vc, B_xc, ..B_uc](e)
+              label B_xc:
+              c[50]:int = 0;
+              c[61]:int = (f = d[33]:int);
+              j = c + 200;
+              k = d[34]:int;
+              l = d[35]:int;
+              e = c + 8;
+            }
+            if (eqz(g_b) | h == 22) {
+              runtime_sliceAppend(e, f, j, k, l, 1, 4);
+              22;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              f = c[2]:int;
+              d[34]:long@4 = c[3]:long@4;
+              d[33]:int = f;
+              c[62]:int = f;
+            }
+            label B_vc:
+            if (eqz(g_b)) {
+              f = d[39]:ubyte;
+              j = d[40]:ubyte;
+              d[39]:short@1 = 0;
+              d[44]:byte = j & 1;
+              d[43]:byte = (e = f & 1);
+            }
+            label B_uc:
+            if (eqz(g_b) | h == 23) {
+              printArg(d, 86812, n, b);
+              23;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) {
+              k = 1;
+              continue L_m;
+            }
+            label B_v:
+            if (eqz(g_b)) {
+              b[0] = 1;
+              f = f + 1;
+              continue L_u;
+            }
           }
-          b = select_if(b, h + 56, g_b);
-          if (eqz(g_b) | j == 18) {
-            reflect_toType(b, 87044, f);
-            18;
-            if (g_b == 1) goto B_b;
-          }
-          if (eqz(g_b)) {
-            h[60]:int = (c = h[15]:int);
-            h[59]:int = (b = h[14]:int);
-            i = h + 48;
-          }
-          if (eqz(g_b) | j == 19) {
-            interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_func_CanSeq_func_bool_CanSeq2_fu_1(
-              i,
-              c,
-              b);
-            19;
-            if (g_b == 1) goto B_b;
-          }
-          if (eqz(g_b)) {
-            h[61]:int = (c = h[12]:int);
-            b = h[13]:int;
-          }
-          if (eqz(g_b) | j == 20) {
-            writeString(g, c, b);
-            20;
-            if (g_b == 1) goto B_b;
-          }
-          if (eqz(g_b) | j == 21) {
-            writeByte(g, 61);
-            21;
-            if (g_b == 1) goto B_b;
-          }
-          if (eqz(g_b) | j == 22) {
-            printArg(g, f, e, 118);
-            22;
-            if (g_b == 1) goto B_b;
-          }
-          if (eqz(g_b)) goto B_kc;
-          label B_lc:
-          if (eqz(g_b) | j == 23) {
-            writeByte(g, 41);
-            23;
-            if (g_b == 1) goto B_b;
-          }
-          if (eqz(g_b)) goto B_gc;
-          label B_kc:
-          if (eqz(g_b)) {
-            c = 1;
-            f = 0;
-            continue L_jc;
-          }
-        }
-        label B_gc:
-        if (eqz(g_b)) {
-          h[62]:int = (f = g[0]:int);
-          c = h + 32;
-          b = g[1]:int;
-        }
-        if (eqz(g_b) | j == 24) {
-          Write(c, 87472, f, b);
-          24;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          h[65]:int = (f = h[9]:int);
-          h[66]:int = (c = h[10]:int);
-          h[63]:int = f;
-          h[64]:int = c;
-        }
-        if (eqz(g_b) | j == 25) {
-          free_1(g);
-          25;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          89708[0]:int = t;
-          a.b = c;
-          a.a = f;
-          stack_pointer = h + 272;
-          return ;
         }
         label B_i:
         if (eqz(g_b)) {
-          if (c <= f) goto B_h;
-          l = 1;
-          o = b + f;
-          e = o[0];
-          i = e >= 0;
+          89988[0]:int = r;
+          stack_pointer = c + 336;
+          return ;
         }
+        label B_h:
+        if (eqz(g_b) | h == 24) {
+          runtime_lookupPanic();
+          24;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { unreachable }
+        label B_g:
+        if (eqz(g_b) | h == 25) {
+          runtime_slicePanic();
+          25;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { unreachable }
+        label B_f:
+        if (eqz(g_b)) { b = d[124]:ubyte }
         if (eqz(g_b)) {
-          if (i) goto B_fd;
-          i = h + 24;
-          e = c - f;
+          if (b) goto B_kd;
+          b = k > 0;
+          if (b) goto B_kd;
+          o[0] = 0L;
+          d[12]:long@4 = 0L;
+          e = o + 8;
+          e[0] = 0;
+          b = 0;
         }
-        if (eqz(g_b) | j == 26) {
-          unicode_utf8_DecodeRuneInString(i, o, e);
+        if (eqz(g_b) | h == 26) {
+          writeString(d, 86396, 9);
           26;
           if (g_b == 1) goto B_b;
         }
-        if (eqz(g_b)) {
-          l = h[7]:int;
-          e = h[6]:int;
-        }
-        label B_fd:
-        if (eqz(g_b)) {
-          l = f + l;
-          f = e != 37;
-        }
-        if (select_if(g_b, 1, f)) {
-          if (eqz(g_b) | j == 27) {
-            writeByte(g, 37);
+        f = select_if(f, 1, g_b);
+        loop L_nd {
+          e = select_if(e, eqz(f & 1), g_b);
+          if (eqz(g_b)) {
+            if (e) goto B_pd;
+            c[64]:int = (f = c[48]:int);
+            c[65]:int = (i = c[49]:int);
+            b = eqz(b & 1);
+          }
+          if (select_if(select_if(g_b, 1, b), 0, eqz(g_b) | h == 27)) {
+            writeString(d, 86519, 2);
             27;
             if (g_b == 1) goto B_b;
           }
-          if (eqz(g_b)) continue L_g;
-        }
-        if (eqz(g_b)) { f = q[0]:ubyte }
-        if (select_if(g_b, 1, f)) {
-          if (eqz(g_b) | j == 28) {
-            writeString(g, 86233, 2);
-            28;
-            if (g_b == 1) goto B_b;
+          if (select_if(g_b, 1, f)) {
+            if (eqz(g_b) | h == 28) {
+              writeString(d, 86509, 5);
+              28;
+              if (g_b == 1) goto B_b;
+            }
+            if (eqz(g_b)) goto B_od;
           }
-          if (eqz(g_b) | j == 29) {
-            writeRune(g, e);
+          b = select_if(b, c + 72, g_b);
+          if (eqz(g_b) | h == 29) {
+            reflect_toType(b, 87272, f);
             29;
             if (g_b == 1) goto B_b;
           }
-          if (eqz(g_b) | j == 30) {
-            writeString(g, 86121, 10);
+          if (eqz(g_b)) {
+            c[67]:int = (b = c[19]:int);
+            c[66]:int = (j = c[18]:int);
+            e = c - -64;
+          }
+          if (eqz(g_b) | h == 30) {
+            interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_func_CanSeq_func_bool_CanSeq2_fu_1(
+              e,
+              b,
+              j);
             30;
             if (g_b == 1) goto B_b;
           }
-          if (eqz(g_b)) continue L_g;
-        }
-        if (select_if(g_b, 1, f = select_if(f, k <= 0, g_b))) {
-          if (eqz(g_b) | j == 31) {
-            writeString(g, 86233, 2);
+          if (eqz(g_b)) {
+            c[68]:int = (b = c[16]:int);
+            e = c[17]:int;
+          }
+          if (eqz(g_b) | h == 31) {
+            writeString(d, b, e);
             31;
             if (g_b == 1) goto B_b;
           }
-          if (eqz(g_b) | j == 32) {
-            writeRune(g, e);
+          if (eqz(g_b) | h == 32) {
+            writeByte(d, 61);
             32;
             if (g_b == 1) goto B_b;
           }
-          if (eqz(g_b) | j == 33) {
-            writeString(g, 86235, 9);
+          if (eqz(g_b) | h == 33) {
+            printArg(d, f, i, 118);
             33;
             if (g_b == 1) goto B_b;
           }
+          if (eqz(g_b)) goto B_od;
+          label B_pd:
+          if (eqz(g_b) | h == 34) {
+            writeByte(d, 41);
+            34;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) goto B_kd;
+          label B_od:
           if (eqz(g_b)) {
-            k = 1;
-            continue L_g;
+            b = 1;
+            f = 0;
+            continue L_nd;
           }
         }
-        f = select_if(f, e - 118, g_b);
+        label B_kd:
         if (eqz(g_b)) {
-          br_table[B_xd, B_zd, ..B_wd](f)
-          label B_zd:
-          h[44]:int = 0;
-          h[53]:int = (f = g[33]:int);
-          r = h + 8;
-          k = h + 176;
-          o = g[34]:int;
-          i = g[35]:int;
+          c[69]:int = (f = d[0]:int);
+          e = d[1]:int;
+          b = c + 48;
         }
-        if (eqz(g_b) | j == 34) {
-          runtime_sliceAppend(r, f, k, o, i, 1, 4);
-          34;
-          if (g_b == 1) goto B_b;
-        }
-        if (eqz(g_b)) {
-          f = h[2]:int;
-          g[34]:long@4 = h[3]:long@4;
-          g[33]:int = f;
-          h[54]:int = f;
-        }
-        label B_xd:
-        if (eqz(g_b)) {
-          f = g[39]:ubyte;
-          k = g[40]:ubyte;
-          g[39]:short@1 = 0;
-          g[44]:byte = (i = k & 1);
-          g[43]:byte = (f = f & 1);
-        }
-        label B_wd:
-        if (eqz(g_b)) {
-          h[55]:int = (f = d.a);
-          h[56]:int = (k = d.b);
-        }
-        if (eqz(g_b) | j == 35) {
-          printArg(g, f, k, e);
+        if (eqz(g_b) | h == 35) {
+          Write_1(b, 87752, f, e);
           35;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          k = 1;
-          continue L_g;
+          c[74]:int = (f = c[13]:int);
+          c[72]:int = f;
+          c[75]:int = (b = c[14]:int);
+          c[70]:int = f;
+          c[73]:int = b;
+          c[71]:int = b;
         }
-        label B_h:
+        if (eqz(g_b) | h == 36) {
+          free_1(d);
+          36;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          m = m + 1;
+          b = m & 3;
+          if (b) continue L_e;
+        }
+        if (eqz(g_b) | h == 37) {
+          fmt_newPrinter();
+          let t1 = 37;
+          if (g_b == 1) goto B_b;
+          f = t1;
+        }
+        if (eqz(g_b)) { c[76]:int = f }
+        if (eqz(g_b) | h == 38) {
+          writeByte(f, 10);
+          38;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          c[77]:int = (b = f.a);
+          j = f.b;
+          e = c + 32;
+        }
+        if (eqz(g_b) | h == 39) {
+          Write_1(e, 87752, b, j);
+          39;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          c[82]:int = (b = c[9]:int);
+          c[80]:int = b;
+          c[83]:int = (i = c[10]:int);
+          c[78]:int = b;
+          c[81]:int = i;
+          c[79]:int = i;
+        }
+        if (eqz(g_b) | h == 40) {
+          free_1(f);
+          40;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) continue L_e;
       }
-      if (eqz(g_b) | j == 36) {
-        runtime_lookupPanic();
-        36;
-        if (g_b == 1) goto B_b;
-      }
-      if (eqz(g_b)) { unreachable }
       return ;
       label B_b:
     }
-  (g_c[0]:int)[0]:int = n;
+  (g_c[0]:int)[0]:int = g;
   g_c[0]:int = g_c[0]:int + 4;
-  n = g_c[0]:int;
-  n.a = a;
-  n.b = b;
-  n.c = c;
-  n.d = d;
-  n.e = e;
-  n.f = f;
-  n.g = g;
-  n.h = h;
-  n.i = i;
-  n.j = k;
-  n.k = l;
-  n.l = o;
-  n.m = p;
-  n.n = q;
-  n.o = s;
-  n.p = r;
-  n.q = t;
-  n.r = u;
-  n.s = v;
-  n.t = w;
-  n.u = m;
-  g_c[0]:int = g_c[0]:int + 84;
+  g = g_c[0]:int;
+  g.a = a;
+  g.b = b;
+  g.c = c;
+  g.d = d;
+  g.e = e;
+  g.f = f;
+  g.g = i;
+  g.h = j;
+  g.i = k;
+  g.j = l;
+  g.k = m;
+  g.l = n;
+  g.m = o;
+  g.n = p;
+  g.o = q;
+  g.p = r;
+  g.q = s;
+  g.r = t;
+  g.s = u;
+  g.t = v;
+  g_c[0]:int = g_c[0]:int + 80;
 }
 
-function runtime_nilMapPanic() { // func132
+function main_main_3_gowrapper(a:int) { // func138
+  var b:int;
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 4;
+    a = (g_c[0]:int)[0]:int;
+  }
+  b = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          b = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b) | eqz(b)) {
+          main_main_3(a);
+          0;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | b == 1) {
+          runtime_deadlock();
+          1;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { unreachable }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = b;
+  g_c[0]:int = g_c[0]:int + 4;
+  (g_c[0]:int)[0]:int = a;
+  g_c[0]:int = g_c[0]:int + 4;
+}
+
+function main_main_4_gowrapper(a:int) { // func139
+  var b:int;
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 4;
+    a = (g_c[0]:int)[0]:int;
+  }
+  b = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          b = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b) | eqz(b)) {
+          main_main_4(a);
+          0;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b) | b == 1) {
+          runtime_deadlock();
+          1;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { unreachable }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = b;
+  g_c[0]:int = g_c[0]:int + 4;
+  (g_c[0]:int)[0]:int = a;
+  g_c[0]:int = g_c[0]:int + 4;
+}
+
+function runtime_nilMapPanic() { // func140
   var a:int = {
                 if (eqz(g_b) |
                     eqz(if (g_b == 2) {
@@ -13955,7 +13950,7 @@ function runtime_nilMapPanic() { // func132
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function runtime_hashmapSet(a:int, b:int, c:int, d:int) { // func133
+function runtime_hashmapSet(a:int, b:int, c:int, d:int) { // func141
   var e:int;
   var g:int_ptr;
   var h:byte_ptr;
@@ -14003,8 +13998,8 @@ function runtime_hashmapSet(a:int, b:int, c:int, d:int) { // func133
         stack_pointer = e;
         e[9]:int = 45;
         memory_fill(e + 40, 0, 180);
-        e[8]:int = (s = 89708[0]:int);
-        89708[0]:int = e + 32;
+        e[8]:int = (s = 89988[0]:int);
+        89988[0]:int = e + 32;
         g = eqz(a);
       }
       if (eqz(g_b)) {
@@ -14249,7 +14244,7 @@ function runtime_hashmapSet(a:int, b:int, c:int, d:int) { // func133
       if (eqz(g_b)) { unreachable }
       label B_e:
       if (eqz(g_b)) {
-        89708[0]:int = s;
+        89988[0]:int = s;
         stack_pointer = e + 224;
       }
       return ;
@@ -14278,14 +14273,14 @@ function runtime_hashmapSet(a:int, b:int, c:int, d:int) { // func133
   g_c[0]:int = g_c[0]:int + 68;
 }
 
-function runtime_fastrand():int { // func134
+function runtime_fastrand():int { // func142
   var a:int;
   data[0]:int =
     (a = (a = (a = (a = data[0]:int) << 7 ^ a) >> 1 ^ a) << 9 ^ a);
   return a;
 }
 
-function runtime_hashmapNext(a:int, b:int, c:int, d:int):int { // func135
+function runtime_hashmapNext(a:int, b:int, c:int, d:int):int { // func143
   var h:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int, o:int, p:int, q:int, r:int, s:int, t:int }
   var e:int_ptr;
   var g:int;
@@ -14321,8 +14316,8 @@ function runtime_hashmapNext(a:int, b:int, c:int, d:int):int { // func135
         stack_pointer = h;
         h.b = 18;
         memory_fill(h + 12, 0, 68);
-        h.a = (l = 89708[0]:int);
-        89708[0]:int = h;
+        h.a = (l = 89988[0]:int);
+        89988[0]:int = h;
         i = 0;
         e = eqz(a);
       }
@@ -14431,7 +14426,7 @@ function runtime_hashmapNext(a:int, b:int, c:int, d:int):int { // func135
       }
       label B_f:
       if (eqz(g_b)) {
-        89708[0]:int = l;
+        89988[0]:int = l;
         stack_pointer = h + 80;
         return i;
       }
@@ -14463,7 +14458,7 @@ function runtime_hashmapNext(a:int, b:int, c:int, d:int):int { // func135
   return 0;
 }
 
-function runtime_reflectValueEqual(a:ubyte_ptr, b:int, c:int, d:int, e:int, f:int):int { // func136
+function runtime_reflectValueEqual(a:ubyte_ptr, b:int, c:int, d:int, e:int, f:int):int { // func144
   var h:int;
   var k:int;
   var l:int;
@@ -14515,8 +14510,8 @@ function runtime_reflectValueEqual(a:ubyte_ptr, b:int, c:int, d:int, e:int, f:in
         stack_pointer = h;
         h[39]:int = 16;
         memory_fill(h + 160, 0, 64);
-        h[38]:int = (w = 89708[0]:int);
-        89708[0]:int = h + 152;
+        h[38]:int = (w = 89988[0]:int);
+        89988[0]:int = h + 152;
         k = eqz(a) | eqz(d);
         i = k & (l = a == d);
       }
@@ -14800,7 +14795,7 @@ function runtime_reflectValueEqual(a:ubyte_ptr, b:int, c:int, d:int, e:int, f:in
                     g_b);
       label B_e:
       if (eqz(g_b)) {
-        89708[0]:int = w;
+        89988[0]:int = w;
         stack_pointer = h + 224;
         return i;
       }
@@ -14834,7 +14829,7 @@ function runtime_reflectValueEqual(a:ubyte_ptr, b:int, c:int, d:int, e:int, f:in
   return 0;
 }
 
-function runtime_interfaceTypeAssert(a:int) { // func137
+function runtime_interfaceTypeAssert(a:int) { // func145
   var b:int;
   a = {
         if (g_b == 2) {
@@ -14855,7 +14850,7 @@ function runtime_interfaceTypeAssert(a:int) { // func137
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function runtime_stringLess(a:ubyte_ptr, b:int, c:ubyte_ptr, d:int):int { // func138
+function runtime_stringLess(a:ubyte_ptr, b:int, c:ubyte_ptr, d:int):int { // func146
   var f:int;
   var g:int;
   var e:int = select_if(d, b, b > d);
@@ -14874,7 +14869,7 @@ function runtime_stringLess(a:ubyte_ptr, b:int, c:ubyte_ptr, d:int):int { // fun
   return b < d;
 }
 
-function runtime_stringFromUnicode(a:{ a:int, b:int }, b:int) { // func139
+function runtime_stringFromUnicode(a:{ a:int, b:int }, b:int) { // func147
   var g:int;
   var c:{ a:int, b:int, c:int, d:int, e:int, f:int }
   var e:{ a:byte, b:byte, c:byte, d:byte }
@@ -14900,8 +14895,8 @@ function runtime_stringFromUnicode(a:{ a:int, b:int }, b:int) { // func139
         if (eqz(g_b)) {
           g = stack_pointer - 32;
           stack_pointer = g;
-          d = 89708[0]:int;
-          89708[0]:int = (e = g + 8);
+          d = 89988[0]:int;
+          89988[0]:int = (e = g + 8);
           f = 0;
         }
         if (eqz(g_b) | eqz(c)) {
@@ -14945,7 +14940,7 @@ function runtime_stringFromUnicode(a:{ a:int, b:int }, b:int) { // func139
           c = 0;
           label B_g:
           e.a = b;
-          89708[0]:int = d;
+          89988[0]:int = d;
           e.b = f;
           e.c = i;
           e.d = c;
@@ -14968,14 +14963,14 @@ function runtime_stringFromUnicode(a:{ a:int, b:int }, b:int) { // func139
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_func_CanSeq_func_bool_CanSeq2_fu(a:ubyte_ptr, b:int):int { // func140
+function interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_func_CanSeq_func_bool_CanSeq2_fu(a:ubyte_ptr, b:int):int { // func148
   var c:int;
   a = {
         if (g_b == 2) {
           g_c[0]:int = g_c[0]:int - 4;
           c = (g_c[0]:int)[0]:int;
         }
-        if (eqz(g_b | (eqz(a) | b != 87148))) {
+        if (eqz(g_b | (eqz(a) | b != 87376))) {
           b = 21;
           return if (a & 3) { 21 } else { a[0] & 31 }
         }
@@ -14993,7 +14988,7 @@ function interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_fun
   return 0;
 }
 
-function reflect_toType(a:{ a:int, b:int }, b:int, c:{ a:int, b:int, c:int }) { // func141
+function reflect_toType(a:{ a:int, b:int }, b:int, c:{ a:int, b:int, c:int }) { // func149
   var d:{ a:int, b:int, c:int }
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 12;
@@ -15014,7 +15009,7 @@ function reflect_toType(a:{ a:int, b:int }, b:int, c:{ a:int, b:int, c:int }) { 
                   0;
                   goto B_d;
                 }
-                b = b == 87044;
+                b = b == 87272;
               }
               if (eqz(g_b) | eqz(d)) {
                 runtime_interfaceTypeAssert(b);
@@ -15025,7 +15020,7 @@ function reflect_toType(a:{ a:int, b:int }, b:int, c:{ a:int, b:int, c:int }) { 
                 b
               } else {
                 c = select_if(c, 0, b);
-                87148;
+                87376;
               }
               label B_d:
             }
@@ -15045,7 +15040,7 @@ function reflect_toType(a:{ a:int, b:int }, b:int, c:{ a:int, b:int, c:int }) { 
   g_c[0]:int = g_c[0]:int + 12;
 }
 
-function reflect_TypeOf(a:{ a:int, b:int }, b:int) { // func142
+function reflect_TypeOf(a:{ a:int, b:int }, b:int) { // func150
   var e:int_ptr;
   var d:{ a:int, b:int, c:int, d:int, e:int }
   var f:int;
@@ -15068,7 +15063,7 @@ function reflect_TypeOf(a:{ a:int, b:int }, b:int) { // func142
           e = stack_pointer - 16;
           stack_pointer = e;
           f = e + 8;
-          c = select_if(87044, 0, b);
+          c = select_if(87272, 0, b);
         }
         if (eqz(g_b) | eqz(d)) {
           reflect_toType(f, c, b);
@@ -15095,7 +15090,7 @@ function reflect_TypeOf(a:{ a:int, b:int }, b:int) { // func142
   g_c[0]:int = g_c[0]:int + 20;
 }
 
-function Elem_2(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int) { // func143
+function Elem_2(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int) { // func151
   var f:int;
   var h:int;
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
@@ -15122,8 +15117,8 @@ function Elem_2(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int) { // func143
           (f + 40)[0]:long = 0L;
           f[4]:long = 0L;
           f[7]:int = 4;
-          h = 89708[0]:int;
-          89708[0]:int = f + 24;
+          h = 89988[0]:int;
+          89988[0]:int = f + 24;
           f[6]:int = h;
           e = f + 8;
         }
@@ -15133,7 +15128,7 @@ function Elem_2(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int) { // func143
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          89708[0]:int = h;
+          89988[0]:int = h;
           h = f[3]:int;
           d = f[16]:ubyte;
           a.a = f[2]:int;
@@ -15157,7 +15152,7 @@ function Elem_2(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int) { // func143
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function Field_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // func144
+function Field_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // func152
   var g:int;
   var i:int;
   var h:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
@@ -15185,8 +15180,8 @@ function Field_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // fu
           (g + 40)[0]:long = 0L;
           g[4]:long = 0L;
           g[7]:int = 4;
-          i = 89708[0]:int;
-          89708[0]:int = g + 24;
+          i = 89988[0]:int;
+          89988[0]:int = g + 24;
           g[6]:int = i;
           f = g + 8;
         }
@@ -15196,7 +15191,7 @@ function Field_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // fu
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          89708[0]:int = i;
+          89988[0]:int = i;
           i = g[3]:int;
           e = g[16]:ubyte;
           a.a = g[2]:int;
@@ -15221,7 +15216,7 @@ function Field_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // fu
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function Index_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // func145
+function Index_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // func153
   var g:int;
   var i:int;
   var h:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
@@ -15249,8 +15244,8 @@ function Index_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // fu
           (g + 40)[0]:long = 0L;
           g[4]:long = 0L;
           g[7]:int = 4;
-          i = 89708[0]:int;
-          89708[0]:int = g + 24;
+          i = 89988[0]:int;
+          89988[0]:int = g + 24;
           g[6]:int = i;
           f = g + 8;
         }
@@ -15260,7 +15255,7 @@ function Index_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // fu
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          89708[0]:int = i;
+          89988[0]:int = i;
           i = g[3]:int;
           e = g[16]:ubyte;
           a.a = g[2]:int;
@@ -15285,7 +15280,7 @@ function Index_1(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int, e:int) { // fu
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_func_CanSeq_func_bool_CanSeq2_fu_1(a:{ a:int, b:int }, b:int, c:int) { // func146
+function interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_func_CanSeq_func_bool_CanSeq2_fu_1(a:{ a:int, b:int }, b:int, c:int) { // func154
   var d:{ a:int, b:int, c:int, d:int }
   var e:{ a:int, b:int, c:int, d:int }
   if (g_b == 2) {
@@ -15304,7 +15299,7 @@ function interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_fun
         if (eqz(g_b)) {
           d = stack_pointer - 16;
           stack_pointer = d;
-          c = c != 87148;
+          c = c != 87376;
         }
         if (eqz(g_b)) {
           if (c) goto B_e;
@@ -15342,7 +15337,7 @@ function interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_fun
   g_c[0]:int = g_c[0]:int + 16;
 }
 
-function internal_fmtsort_Sort_1(a:int, b:int, c:int, d:int_ptr, e:int, f:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }, g:int, h:int, i:int, j:int, k:int, l:int):int { // func147
+function internal_fmtsort_Sort_1(a:int, b:int, c:int, d:int_ptr, e:int, f:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }, g:int, h:int, i:int, j:int, k:int, l:int):int { // func155
   var m:int;
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 32;
@@ -15369,8 +15364,8 @@ function internal_fmtsort_Sort_1(a:int, b:int, c:int, d:int_ptr, e:int, f:{ a:in
           d[6] = g;
           d[5] = b;
           d[4] = a;
-          e = 89708[0]:int;
-          89708[0]:int = d + 8;
+          e = 89988[0]:int;
+          89988[0]:int = d + 8;
           d[2] = e;
         }
         if (eqz(g_b) | eqz(m)) {
@@ -15380,7 +15375,7 @@ function internal_fmtsort_Sort_1(a:int, b:int, c:int, d:int_ptr, e:int, f:{ a:in
           h = t0;
         }
         if (eqz(g_b)) {
-          89708[0]:int = e;
+          89988[0]:int = e;
           stack_pointer = d + 32;
           return h;
         }
@@ -15402,7 +15397,7 @@ function internal_fmtsort_Sort_1(a:int, b:int, c:int, d:int_ptr, e:int, f:{ a:in
   return 0;
 }
 
-function internal_fmtsort_compare(a:int, b:int, c:int, d:int, e:int, f:int):int { // func148
+function internal_fmtsort_compare(a:int, b:int, c:int, d:int, e:int, f:int):int { // func156
   var g:int;
   var j:int;
   var h:int;
@@ -15454,12 +15449,12 @@ function internal_fmtsort_compare(a:int, b:int, c:int, d:int, e:int, f:int):int 
         stack_pointer = g;
         g[61]:int = 38;
         memory_fill(g + 256, 0, 144);
-        g[60]:int = (x = 89708[0]:int);
-        89708[0]:int = g + 240;
+        g[60]:int = (x = 89988[0]:int);
+        89988[0]:int = g + 240;
         h = g + 232;
       }
       if (eqz(g_b) | eqz(j)) {
-        reflect_toType(h, 87044, a);
+        reflect_toType(h, 87272, a);
         0;
         if (g_b == 1) goto B_b;
       }
@@ -15469,7 +15464,7 @@ function internal_fmtsort_compare(a:int, b:int, c:int, d:int, e:int, f:int):int 
         k = g + 224;
       }
       if (eqz(g_b) | j == 1) {
-        reflect_toType(k, 87044, d);
+        reflect_toType(k, 87272, d);
         1;
         if (g_b == 1) goto B_b;
       }
@@ -15813,7 +15808,7 @@ function internal_fmtsort_compare(a:int, b:int, c:int, d:int, e:int, f:int):int 
         l = g + 192;
       }
       if (eqz(g_b) | j == 30) {
-        reflect_toType(l, 87044, h);
+        reflect_toType(l, 87272, h);
         30;
         if (g_b == 1) goto B_b;
       }
@@ -15835,7 +15830,7 @@ function internal_fmtsort_compare(a:int, b:int, c:int, d:int, e:int, f:int):int 
         m = g + 168;
       }
       if (eqz(g_b) | j == 32) {
-        reflect_toType(m, 87044, k);
+        reflect_toType(m, 87272, k);
         32;
         if (g_b == 1) goto B_b;
       }
@@ -15898,7 +15893,7 @@ function internal_fmtsort_compare(a:int, b:int, c:int, d:int, e:int, f:int):int 
         b = g[3]:int;
       }
       if (eqz(g_b) | j == 38) {
-        runtime_stringConcat(g, 67596, 21, a, b);
+        runtime_stringConcat(g, 67728, 21, a, b);
         38;
         if (g_b == 1) goto B_b;
       }
@@ -15919,7 +15914,7 @@ function internal_fmtsort_compare(a:int, b:int, c:int, d:int, e:int, f:int):int 
         g[99]:int = a;
       }
       if (eqz(g_b) | j == 40) {
-        runtime_panic(86592, a);
+        runtime_panic(86240, a);
         40;
         if (g_b == 1) goto B_b;
       }
@@ -15938,7 +15933,7 @@ function internal_fmtsort_compare(a:int, b:int, c:int, d:int, e:int, f:int):int 
       h = select_if(h, -1, g_b);
       label B_j:
       if (eqz(g_b)) {
-        89708[0]:int = x;
+        89988[0]:int = x;
         stack_pointer = g + 400;
         return h;
       }
@@ -15972,7 +15967,7 @@ function internal_fmtsort_compare(a:int, b:int, c:int, d:int, e:int, f:int):int 
   return 0;
 }
 
-function slices_insertionSortCmpFunc_internal_fmtsort_KeyValue(a:int, b:int, c:int, d:int) { // func149
+function slices_insertionSortCmpFunc_internal_fmtsort_KeyValue(a:int, b:int, c:int, d:int) { // func157
   var g:int_ptr;
   var i:int;
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int, o:int, p:int, q:int, r:int, s:int, t:int, u:int, v:int, w:int, x:int, y:int, z:int, aa:int, ba:int, ca:int, da:int }
@@ -16045,8 +16040,8 @@ function slices_insertionSortCmpFunc_internal_fmtsort_KeyValue(a:int, b:int, c:i
         stack_pointer = g;
         g[3] = 16;
         memory_fill(g + 16, 0, 64);
-        g[2] = (ea = 89708[0]:int);
-        89708[0]:int = g + 8;
+        g[2] = (ea = 89988[0]:int);
+        89988[0]:int = g + 8;
         m = c * 24 + a;
         i = c;
       }
@@ -16123,7 +16118,7 @@ function slices_insertionSortCmpFunc_internal_fmtsort_KeyValue(a:int, b:int, c:i
         }
         label B_i:
         if (eqz(g_b)) {
-          89708[0]:int = ea;
+          89988[0]:int = ea;
           stack_pointer = g + 80;
           return ;
         }
@@ -16180,7 +16175,7 @@ function slices_insertionSortCmpFunc_internal_fmtsort_KeyValue(a:int, b:int, c:i
   g_c[0]:int = g_c[0]:int + 120;
 }
 
-function slices_symMergeCmpFunc_internal_fmtsort_KeyValue(a:int_ptr, b:int, c:int, d:int, e:int) { // func150
+function slices_symMergeCmpFunc_internal_fmtsort_KeyValue(a:int_ptr, b:int, c:int, d:int, e:int) { // func158
   var h:int_ptr;
   var j:int;
   var f:int;
@@ -16241,8 +16236,8 @@ function slices_symMergeCmpFunc_internal_fmtsort_KeyValue(a:int_ptr, b:int, c:in
         stack_pointer = h;
         h[3] = 40;
         memory_fill(h + 16, 0, 160);
-        h[2] = (z = 89708[0]:int);
-        89708[0]:int = h + 8;
+        h[2] = (z = 89988[0]:int);
+        89988[0]:int = h + 8;
         j = d - c != 1;
       }
       if (eqz(g_b)) {
@@ -16521,7 +16516,7 @@ function slices_symMergeCmpFunc_internal_fmtsort_KeyValue(a:int_ptr, b:int, c:in
       }
       label B_f:
       if (eqz(g_b)) {
-        89708[0]:int = z;
+        89988[0]:int = z;
         stack_pointer = h + 176;
         return ;
       }
@@ -16565,7 +16560,7 @@ function slices_symMergeCmpFunc_internal_fmtsort_KeyValue(a:int_ptr, b:int, c:in
   g_c[0]:int = g_c[0]:int + 96;
 }
 
-function slices_swapRangeCmpFunc_internal_fmtsort_KeyValue(a:int, b:int, c:long_ptr@4, d:int, e:int) { // func151
+function slices_swapRangeCmpFunc_internal_fmtsort_KeyValue(a:int, b:int, c:long_ptr@4, d:int, e:int) { // func159
   var o:int;
   var i:int;
   a = {
@@ -16631,11 +16626,11 @@ function slices_swapRangeCmpFunc_internal_fmtsort_KeyValue(a:int, b:int, c:long_
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function cmp_isNaN_string(a:int, b:int):int { // func152
+function cmp_isNaN_string(a:int, b:int):int { // func160
   return runtime_stringEqual(a, b, a, b) ^ 1
 }
 
-function internal_fmtsort_nilCompare(a:{ a:int, b:byte }, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }) { // func153
+function internal_fmtsort_nilCompare(a:{ a:int, b:byte }, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }) { // func161
   var i:int;
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 28;
@@ -16686,7 +16681,33 @@ function internal_fmtsort_nilCompare(a:{ a:int, b:byte }, b:int, c:int, d:int, e
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function time_appendInt(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int) { // func154
+function Done(a:int) { // func162
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 4;
+    a = (g_c[0]:int)[0]:int;
+  }
+  var b:int = {
+                if (eqz(g_b) |
+                    eqz(if (g_b == 2) {
+                          g_c[0]:int = g_c[0]:int - 4;
+                          (g_c[0]:int)[0]:int;
+                        } else {
+                          0
+                        })) {
+                  Add(a, -1);
+                  0;
+                  if (g_b == 1) goto B_b;
+                }
+                return ;
+                label B_b:
+              }
+  (g_c[0]:int)[0]:int = b;
+  g_c[0]:int = g_c[0]:int + 4;
+  (g_c[0]:int)[0]:int = a;
+  g_c[0]:int = g_c[0]:int + 4;
+}
+
+function time_appendInt(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int) { // func163
   var g:int;
   var h:int;
   var k:int;
@@ -16719,8 +16740,8 @@ function time_appendInt(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f
           stack_pointer = g;
           g[25]:int = 9;
           memory_fill(g + 104, 0, 36);
-          g[24]:int = (m = 89708[0]:int);
-          89708[0]:int = g + 96;
+          g[24]:int = (m = 89988[0]:int);
+          89988[0]:int = g + 96;
           h = e >= 0;
         }
         if (eqz(g_b)) {
@@ -16884,7 +16905,7 @@ function time_appendInt(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f
         }
         label B_k:
         if (eqz(g_b)) {
-          89708[0]:int = m;
+          89988[0]:int = m;
           a.c = d;
           a.b = f;
           a.a = b;
@@ -16918,7 +16939,7 @@ function time_appendInt(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f
   g_c[0]:int = g_c[0]:int + 44;
 }
 
-function lookup(a:{ a:int, b:int, c:int }, b:int, c:long) { // func155
+function lookup(a:{ a:int, b:int, c:int }, b:int, c:long) { // func164
   var d:int;
   var l:int;
   var e:int;
@@ -16980,8 +17001,8 @@ function lookup(a:{ a:int, b:int, c:int }, b:int, c:long) { // func155
         stack_pointer = d;
         d[41]:int = 37;
         memory_fill(d + 172, 0, 144);
-        d[40]:int = (u = 89708[0]:int);
-        89708[0]:int = (f = d + 160);
+        d[40]:int = (u = 89988[0]:int);
+        89988[0]:int = (f = d + 160);
       }
       if (eqz(g_b) | eqz(l)) {
         get(b);
@@ -16998,7 +17019,7 @@ function lookup(a:{ a:int, b:int, c:int }, b:int, c:long) { // func155
         d[43]:int = e[2]:int;
         if (eqz(e[3]:int)) {
           h = 3;
-          k = 68284;
+          k = 68500;
           j = 0;
           goto B_g;
         }
@@ -17138,7 +17159,7 @@ function lookup(a:{ a:int, b:int, c:int }, b:int, c:long) { // func155
                     label B_da:
                   }
               if (eqz(g_b)) {
-                d[73]:int = (b = select_if(b, 68287, e));
+                d[73]:int = (b = select_if(b, 68503, e));
                 i = b[0]:ubyte;
                 if (i != 59) {
                   f = i != 44;
@@ -17336,7 +17357,7 @@ function lookup(a:{ a:int, b:int, c:int }, b:int, c:long) { // func155
       if (eqz(g_b)) { unreachable }
       label B_g:
       if (eqz(g_b)) {
-        89708[0]:int = u;
+        89988[0]:int = u;
         a.c = j;
         a.b = h;
         a.a = k;
@@ -17373,7 +17394,7 @@ function lookup(a:{ a:int, b:int, c:int }, b:int, c:long) { // func155
   g_c[0]:int = g_c[0]:int + 92;
 }
 
-function time_tzsetName(a:{ a:int, b:int, c:int, d:int, e:byte }, b:ubyte_ptr, c:int) { // func156
+function time_tzsetName(a:{ a:int, b:int, c:int, d:int, e:byte }, b:ubyte_ptr, c:int) { // func165
   var g:int;
   var d:int;
   var h:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
@@ -17531,7 +17552,7 @@ function time_tzsetName(a:{ a:int, b:int, c:int, d:int, e:byte }, b:ubyte_ptr, c
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function time_tzsetOffset(a:{ a:int, b:int, c:int, d:byte }, b:ubyte_ptr, c:ubyte_ptr) { // func157
+function time_tzsetOffset(a:{ a:int, b:int, c:int, d:byte }, b:ubyte_ptr, c:ubyte_ptr) { // func166
   var d:{ a:int, b:int, c:int, d:ubyte, e:int, f:int, g:int, h:ubyte, i:int, j:int, k:int, l:ubyte }
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
   var h:int;
@@ -17678,7 +17699,7 @@ function time_tzsetOffset(a:{ a:int, b:int, c:int, d:byte }, b:ubyte_ptr, c:ubyt
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function time_tzsetRule(a:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:byte }, b:ubyte_ptr, c:ubyte_ptr) { // func158
+function time_tzsetRule(a:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:byte }, b:ubyte_ptr, c:ubyte_ptr) { // func167
   var d:{ a:int, b:int, c:int, d:ubyte, e:int, f:int, g:int, h:ubyte, i:int, j:int, k:int, l:ubyte, m:int, n:int, o:int, p:ubyte, q:int, r:int, s:int, t:ubyte, u:int, v:int, w:int, x:ubyte }
   var f:int;
   var l:int;
@@ -17915,7 +17936,7 @@ function time_tzsetRule(a:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:b
   g_c[0]:int = g_c[0]:int + 44;
 }
 
-function yearYday(a:{ a:int, b:int }, b:long) { // func159
+function yearYday(a:{ a:int, b:int }, b:long) { // func168
   var d:int;
   var f:int;
   var e:int;
@@ -17934,7 +17955,7 @@ function yearYday(a:{ a:int, b:int }, b:long) { // func159
   stack_pointer = c + 16;
 }
 
-function time_tzruleTime(a:int, b:int, c:int, d:int, e:int, f:int, g:int):int { // func160
+function time_tzruleTime(a:int, b:int, c:int, d:int, e:int, f:int, g:int):int { // func169
   var h:int;
   var i:int;
   br_table[B_d, B_c, B_b, ..B_a](b)
@@ -17980,7 +18001,7 @@ function time_tzruleTime(a:int, b:int, c:int, d:int, e:int, f:int, g:int):int { 
   return f - g + h;
 }
 
-function time_tzsetNum(a:{ a:int, b:int, c:int, d:byte }, b:int, c:int, d:int, e:int) { // func161
+function time_tzsetNum(a:{ a:int, b:int, c:int, d:byte }, b:int, c:int, d:int, e:int) { // func170
   var j:int;
   var i:int;
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int }
@@ -18113,14 +18134,14 @@ function time_tzsetNum(a:{ a:int, b:int, c:int, d:byte }, b:int, c:int, d:int, e
   g_c[0]:int = g_c[0]:int + 44;
 }
 
-function split(a:{ a:long, b:int, c:int }, b:long) { // func162
+function split(a:{ a:long, b:int, c:int }, b:long) { // func171
   var c:long;
   a.a = (c = (b = b << 2L | 3L) / 146097L);
   a.b = (b = (b - c * 146097L | 3L) * 2939745L) >> 32L;
   a.c = i32_wrap_i64(b) / 11758980;
 }
 
-function date(a:{ a:int, b:int, c:int }, b:long) { // func163
+function date(a:{ a:int, b:int, c:int }, b:long) { // func172
   var d:int;
   var e:int;
   var c:int_ptr = stack_pointer - 16;
@@ -18132,7 +18153,7 @@ function date(a:{ a:int, b:int, c:int }, b:long) { // func163
   stack_pointer = c + 16;
 }
 
-function clock(a:{ a:int, b:int, c:int }, b:long) { // func164
+function clock(a:{ a:int, b:int, c:int }, b:long) { // func173
   var c:int;
   var d:int;
   a.a = (d = (c = i32_wrap_i64(b % 86400L)) / 3600);
@@ -18140,7 +18161,7 @@ function clock(a:{ a:int, b:int, c:int }, b:long) { // func164
   a.c = d * -60 + c;
 }
 
-function String_6(a:{ a:int, b:int }, b:int) { // func165
+function String_6(a:{ a:int, b:int }, b:int) { // func174
   var c:int;
   var f:{ a:int, b:int, c:int, d:int, e:int, f:int }
   var d:int;
@@ -18167,16 +18188,16 @@ function String_6(a:{ a:int, b:int }, b:int) { // func165
           stack_pointer = c;
           c[17]:long@4 = 0L;
           c[15]:long@4 = 3L;
-          f = 89708[0]:int;
-          89708[0]:int = c + 56;
+          f = 89988[0]:int;
+          89988[0]:int = c + 56;
           c[14]:int = f;
           d = b - 1 > 11;
         }
         if (eqz(g_b)) {
           if (eqz(d)) {
             d = b << 3;
-            b = (d + 68360)[0]:int;
-            d = (d + 68356)[0]:int;
+            b = (d + 68576)[0]:int;
+            d = (d + 68572)[0]:int;
             goto B_e;
           }
           (c + 48)[0]:int = 0;
@@ -18237,7 +18258,7 @@ function String_6(a:{ a:int, b:int }, b:int) { // func165
           d = c + 16;
         }
         if (eqz(g_b) | e == 2) {
-          runtime_stringConcat(d, 68275, 8, b, g);
+          runtime_stringConcat(d, 68491, 8, b, g);
           2;
           if (g_b == 1) goto B_b;
         }
@@ -18247,7 +18268,7 @@ function String_6(a:{ a:int, b:int }, b:int) { // func165
           d = c + 8;
         }
         if (eqz(g_b) | e == 3) {
-          runtime_stringConcat(d, b, g, 68283, 1);
+          runtime_stringConcat(d, b, g, 68499, 1);
           3;
           if (g_b == 1) goto B_b;
         }
@@ -18257,7 +18278,7 @@ function String_6(a:{ a:int, b:int }, b:int) { // func165
         }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = f;
+          89988[0]:int = f;
           a.b = b;
           a.a = d;
           stack_pointer = c + 80;
@@ -18277,7 +18298,7 @@ function String_6(a:{ a:int, b:int }, b:int) { // func165
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // func166
+function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // func175
   var e:int;
   var g:int;
   var f:int_ptr;
@@ -18323,13 +18344,13 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
         stack_pointer = e;
         e[101]:int = 33;
         memory_fill(e + 408, 0, 132);
-        e[100]:int = (o = 89708[0]:int);
-        89708[0]:int = e + 400;
+        e[100]:int = (o = 89988[0]:int);
+        89988[0]:int = e + 400;
         g = eqz(d);
       }
       if (eqz(g_b | g)) {
         g = d;
-        f = g != 90240;
+        f = g != 91144;
         if (f) goto B_e;
       }
       if (eqz(g_b) | eqz(k)) {
@@ -18342,7 +18363,7 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
       label B_e:
       if (eqz(g_b)) {
         e[103]:int = g;
-        f = g == 87392;
+        f = g == 87672;
         c = select_if((b >> 30L & 8589934591L) + 59453308800L, c, b < 0L) -
             62135596800L;
       }
@@ -18398,8 +18419,8 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
         g = t1;
       }
       if (eqz(g_b)) {
-        g[0]:long@1 = rodata_1[2335]:long@1;
-        (g + 8)[0]:short@1 = (m = rodata_1[2343]:ushort@1);
+        g[0]:long@1 = rodata_1[2551]:long@1;
+        (g + 8)[0]:short@1 = (m = rodata_1[2559]:ushort@1);
         e[107]:int = g;
         e[108]:int = g;
         l = e + 336;
@@ -18421,17 +18442,17 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
               m = e + 304;
             }
             if (eqz(g_b) | k == 5) {
-              runtime_sliceAppend(m, g, 68186, l, h, 7, 1);
+              runtime_sliceAppend(m, g, 68402, l, h, 7, 1);
               5;
               if (g_b == 1) goto B_b;
             }
             if (eqz(g_b)) {
               e[110]:int = (g = e[76]:int);
-              e[111]:int = (h = ((f = f << 3) + 68356)[0]:int);
+              e[111]:int = (h = ((f = f << 3) + 68572)[0]:int);
               l = e + 288;
               m = e[77]:int;
               r = e[78]:int;
-              f = (f + 68360)[0]:int;
+              f = (f + 68576)[0]:int;
             }
             if (eqz(g_b) | k == 6) {
               runtime_sliceAppend(l, g, h, m, r, f, 1);
@@ -18466,7 +18487,7 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
         l = e + 272;
       }
       if (eqz(g_b) | k == 8) {
-        runtime_sliceAppend(l, g, 86287, h, f, 2, 1);
+        runtime_sliceAppend(l, g, 86519, h, f, 2, 1);
         8;
         if (g_b == 1) goto B_b;
       }
@@ -18488,7 +18509,7 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
         f = e + 240;
       }
       if (eqz(g_b) | k == 10) {
-        runtime_sliceAppend(f, g, 86287, h, j, 2, 1);
+        runtime_sliceAppend(f, g, 86519, h, j, 2, 1);
         10;
         if (g_b == 1) goto B_b;
       }
@@ -18510,7 +18531,7 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
         f = e + 208;
       }
       if (eqz(g_b) | k == 12) {
-        runtime_sliceAppend(f, g, 86287, h, j, 2, 1);
+        runtime_sliceAppend(f, g, 86519, h, j, 2, 1);
         12;
         if (g_b == 1) goto B_b;
       }
@@ -18532,7 +18553,7 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
         f = e + 176;
       }
       if (eqz(g_b) | k == 14) {
-        runtime_sliceAppend(f, g, 86287, h, j, 2, 1);
+        runtime_sliceAppend(f, g, 86519, h, j, 2, 1);
         14;
         if (g_b == 1) goto B_b;
       }
@@ -18554,7 +18575,7 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
         f = e + 144;
       }
       if (eqz(g_b) | k == 16) {
-        runtime_sliceAppend(f, g, 86287, h, j, 2, 1);
+        runtime_sliceAppend(f, g, 86519, h, j, 2, 1);
         16;
         if (g_b == 1) goto B_b;
       }
@@ -18577,16 +18598,16 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
         f = e + 112;
       }
       if (eqz(g_b) | k == 18) {
-        runtime_sliceAppend(f, g, 86287, h, j, 2, 1);
+        runtime_sliceAppend(f, g, 86519, h, j, 2, 1);
         18;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) {
-        e[126]:int = (d = select_if(d, 87392, d));
+        e[126]:int = (d = select_if(d, 87672, d));
         e[125]:int = d;
         e[124]:int = (g = e[28]:int);
         j = e[29]:int;
-        h = d != 87392;
+        h = d != 87672;
         f = e[30]:int;
       }
       d = {
@@ -18595,7 +18616,7 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
               d = e + 24;
             }
             if (eqz(g_b) | k == 19) {
-              runtime_sliceAppend(d, g, 68193, j, f, 8, 1);
+              runtime_sliceAppend(d, g, 68409, j, f, 8, 1);
               19;
               if (g_b == 1) goto B_b;
             }
@@ -18606,13 +18627,13 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
               goto B_cb;
             }
             label B_db:
-            h = select_if(h, d != 90240, g_b);
+            h = select_if(h, d != 91144, g_b);
             if (eqz(g_b)) {
               if (h) goto B_hb;
               d = e + 40;
             }
             if (eqz(g_b) | k == 20) {
-              runtime_sliceAppend(d, g, 68201, j, f, 10, 1);
+              runtime_sliceAppend(d, g, 68417, j, f, 10, 1);
               20;
               if (g_b == 1) goto B_b;
             }
@@ -18625,7 +18646,7 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
             label B_hb:
             h = select_if(h, e + 96, g_b);
             if (eqz(g_b) | k == 21) {
-              runtime_sliceAppend(h, g, 68211, j, f, 14, 1);
+              runtime_sliceAppend(h, g, 68427, j, f, 14, 1);
               21;
               if (g_b == 1) goto B_b;
             }
@@ -18696,7 +18717,7 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) {
-        89708[0]:int = o;
+        89988[0]:int = o;
         d = e[1]:int;
         a.a = e[0]:int;
         a.b = d;
@@ -18727,7 +18748,7 @@ function GoString(a:{ a:int, b:int }, b:long, c:long, d:{ a:int, b:int }) { // f
   g_c[0]:int = g_c[0]:int + 72;
 }
 
-function Write_1(a:{ a:int, b:int, c:int }, b:int, c:int, d:int) { // func167
+function Write(a:{ a:int, b:int, c:int }, b:int, c:int, d:int) { // func176
   var h:int;
   var f:int;
   var g:int;
@@ -18760,7 +18781,7 @@ function Write_1(a:{ a:int, b:int, c:int }, b:int, c:int, d:int) { // func167
         b = select_if(b, d >= 0, g_b);
         if (eqz(g_b)) {
           if (b) goto B_f;
-          f = 88940[0]:int;
+          f = 89220[0]:int;
         }
         if (eqz(g_b) | h == 1) {
           runtime_interfaceTypeAssert(1);
@@ -18770,15 +18791,15 @@ function Write_1(a:{ a:int, b:int, c:int }, b:int, c:int, d:int) { // func167
         if (eqz(g_b)) {
           f = {
                 if (f != 20) {
-                  g = 86944;
+                  g = 87172;
                   if (f != 44) goto B_f;
-                  88920;
+                  89200;
                   goto B_j;
                 }
-                88912;
+                89192;
                 label B_j:
               }
-          g = 87004;
+          g = 87232;
         }
         label B_f:
         if (eqz(g_b)) {
@@ -18801,7 +18822,184 @@ function Write_1(a:{ a:int, b:int, c:int }, b:int, c:int, d:int) { // func167
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function strconv_appendQuotedWith(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int) { // func168
+function Write_1(a:{ a:int, b:int, c:int }, b:int_ptr, c:int, d:int) { // func177
+  var e:int_ptr;
+  var f:{ a:int, b:int, c:int, d:int, e:int, f:int }
+  var g:int;
+  var i:int;
+  var j:int;
+  var k:int;
+  var h:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int }
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 36;
+    h = g_c[0]:int;
+    a = h.a;
+    c = h.c;
+    d = h.d;
+    e = h.e;
+    f = h.f;
+    g = h.g;
+    i = h.h;
+    k = h.i;
+    b = h.b;
+  }
+  h = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          j = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) {
+          e = stack_pointer - 144;
+          stack_pointer = e;
+          e[15] = 19;
+          memory_fill(e + 68, 0, 72);
+          e[14] = (k = 89988[0]:int);
+          89988[0]:int = e + 56;
+          f = eqz(b);
+        }
+        if (eqz(g_b)) {
+          if (f) goto B_e;
+          e[16] = (f = b[0]);
+          if (eqz(f)) goto B_e;
+          e[17] = (g = f.a);
+          e[18] = (i = f.b);
+        }
+        if (eqz(g_b)) {
+          if (eqz(g)) {
+            d = 89208;
+            g = 87232;
+            c = 0;
+            goto B_g;
+          }
+          e[27] = f;
+          e[28] = (g = f.a);
+          e[29] = (f = f.b);
+          e[30] = f;
+          i = g != 87352;
+        }
+        c = {
+              if (eqz(g_b)) {
+                if (i) goto B_k;
+                if (eqz(f)) goto B_e;
+                g = e + 8;
+                f = f.a;
+              }
+              if (eqz(g_b) | eqz(j)) {
+                Write(g, f, c, d);
+                0;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) {
+                e[32] = (d = e[4]);
+                e[31] = (g = e[3]);
+                e[2];
+                goto B_j;
+              }
+              label B_k:
+              i = select_if(i, g != 87328, g_b);
+              if (eqz(g_b)) {
+                if (i) goto B_o;
+                g = e + 24;
+              }
+              if (eqz(g_b) | j == 1) {
+                Write_1(g, f, c, d);
+                1;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) {
+                d = e[8];
+                g = e[7];
+                e[6];
+                goto B_j;
+              }
+              label B_o:
+              if (eqz(g_b)) {
+                if (g != 87036) goto B_e;
+                g = e + 40;
+              }
+              if (eqz(g_b) | j == 2) {
+                Write(g, f, c, d);
+                2;
+                if (g_b == 1) goto B_b;
+              }
+              if (g_b) {
+                c
+              } else {
+                d = e[12];
+                g = e[11];
+                e[10];
+              }
+              label B_j:
+            }
+        if (eqz(g_b)) {
+          e[33] = g;
+          e[34] = d;
+        }
+        label B_g:
+        if (eqz(g_b)) {
+          e[19] = g;
+          e[20] = d;
+        }
+        if (eqz(g_b | g)) {
+          f = d;
+          goto B_x;
+        }
+        if (eqz(g_b) | j == 3) {
+          runtime_alloc(24);
+          let t0 = 3;
+          if (g_b == 1) goto B_b;
+          f = t0;
+        }
+        if (eqz(g_b)) {
+          e[21] = f;
+          e[24] = f;
+          e[22] = (b = b[0]);
+          if (eqz(b)) goto B_e;
+          e[23] = (i = b[2]);
+          b = b[3];
+          f.f = d;
+          f.e = g;
+          f.d = b;
+          f.c = i;
+          f.b = 5;
+          f.a = 69328;
+          g = 87320;
+        }
+        label B_x:
+        if (eqz(g_b)) {
+          89988[0]:int = k;
+          a.c = f;
+          a.b = g;
+          a.a = c;
+          stack_pointer = e + 144;
+          return ;
+        }
+        label B_e:
+        if (eqz(g_b) | j == 4) {
+          runtime_nilPanic();
+          4;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { unreachable }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = h;
+  g_c[0]:int = g_c[0]:int + 4;
+  h = g_c[0]:int;
+  h.a = a;
+  h.b = b;
+  h.c = c;
+  h.d = d;
+  h.e = e;
+  h.f = f;
+  h.g = g;
+  h.h = i;
+  h.i = k;
+  g_c[0]:int = g_c[0]:int + 36;
+}
+
+function strconv_appendQuotedWith(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int) { // func178
   var f:int;
   var h:int;
   var i:int;
@@ -18837,8 +19035,8 @@ function strconv_appendQuotedWith(a:{ a:int, b:int, c:int }, b:int, c:int, d:int
           stack_pointer = f;
           f[29]:int = 10;
           memory_fill(f + 120, 0, 40);
-          f[28]:int = (n = 89708[0]:int);
-          89708[0]:int = f + 112;
+          f[28]:int = (n = 89988[0]:int);
+          89988[0]:int = f + 112;
           i = 68;
           h = d < 69;
         }
@@ -18904,13 +19102,13 @@ function strconv_appendQuotedWith(a:{ a:int, b:int, c:int }, b:int, c:int, d:int
             i = 1;
           }
           if (eqz(g_b) | m == 3) {
-            runtime_sliceAppend(k, b, 82358, j, h, 2, 1);
+            runtime_sliceAppend(k, b, 82574, j, h, 2, 1);
             3;
             if (g_b == 1) goto B_b;
           }
           if (eqz(g_b)) {
             f[35]:int = (b = f[10]:int);
-            f[110]:byte = ((c[0]:ubyte >> 4) + 82364)[0]:ubyte;
+            f[110]:byte = ((c[0]:ubyte >> 4) + 82580)[0]:ubyte;
             j = f + 110;
             k = f[11]:int;
             l = f[12]:int;
@@ -18923,7 +19121,7 @@ function strconv_appendQuotedWith(a:{ a:int, b:int, c:int }, b:int, c:int, d:int
           }
           if (eqz(g_b)) {
             f[36]:int = (b = f[6]:int);
-            f[109]:byte = ((c[0]:ubyte & 15) + 82364)[0]:ubyte;
+            f[109]:byte = ((c[0]:ubyte & 15) + 82580)[0]:ubyte;
             j = f + 109;
             k = f[7]:int;
             l = f[8]:int;
@@ -18965,7 +19163,7 @@ function strconv_appendQuotedWith(a:{ a:int, b:int, c:int }, b:int, c:int, d:int
             if (g_b == 1) goto B_b;
           }
           if (eqz(g_b)) {
-            89708[0]:int = n;
+            89988[0]:int = n;
             b = f[21]:int;
             c = f[20]:int;
             a.c = f[22]:int;
@@ -19013,7 +19211,7 @@ function strconv_appendQuotedWith(a:{ a:int, b:int, c:int }, b:int, c:int, d:int
   g_c[0]:int = g_c[0]:int + 48;
 }
 
-function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int, g:int) { // func169
+function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int, g:int) { // func179
   var h:int;
   var k:int;
   var j:int;
@@ -19043,8 +19241,8 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
           stack_pointer = h;
           h[75]:int = 11;
           memory_fill(h + 304, 0, 44);
-          h[74]:int = (l = 89708[0]:int);
-          89708[0]:int = h + 296;
+          h[74]:int = (l = 89988[0]:int);
+          89988[0]:int = h + 296;
           k = e == 92;
         }
         if (eqz(g_b)) {
@@ -19141,7 +19339,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
           e = h + 160;
         }
         if (eqz(g_b) | j == 6) {
-          runtime_sliceAppend(e, b, 82344, c, d, 2, 1);
+          runtime_sliceAppend(e, b, 82560, c, d, 2, 1);
           6;
           if (g_b == 1) goto B_b;
         }
@@ -19154,7 +19352,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
         label B_da:
         e = select_if(e, h + 176, g_b);
         if (eqz(g_b) | j == 7) {
-          runtime_sliceAppend(e, b, 82346, c, d, 2, 1);
+          runtime_sliceAppend(e, b, 82562, c, d, 2, 1);
           7;
           if (g_b == 1) goto B_b;
         }
@@ -19167,7 +19365,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
         label B_ca:
         e = select_if(e, h + 192, g_b);
         if (eqz(g_b) | j == 8) {
-          runtime_sliceAppend(e, b, 82348, c, d, 2, 1);
+          runtime_sliceAppend(e, b, 82564, c, d, 2, 1);
           8;
           if (g_b == 1) goto B_b;
         }
@@ -19180,7 +19378,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
         label B_ba:
         e = select_if(e, h + 208, g_b);
         if (eqz(g_b) | j == 9) {
-          runtime_sliceAppend(e, b, 82350, c, d, 2, 1);
+          runtime_sliceAppend(e, b, 82566, c, d, 2, 1);
           9;
           if (g_b == 1) goto B_b;
         }
@@ -19193,7 +19391,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
         label B_aa:
         e = select_if(e, h + 224, g_b);
         if (eqz(g_b) | j == 10) {
-          runtime_sliceAppend(e, b, 82352, c, d, 2, 1);
+          runtime_sliceAppend(e, b, 82568, c, d, 2, 1);
           10;
           if (g_b == 1) goto B_b;
         }
@@ -19206,7 +19404,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
         label B_z:
         e = select_if(e, h + 240, g_b);
         if (eqz(g_b) | j == 11) {
-          runtime_sliceAppend(e, b, 82354, c, d, 2, 1);
+          runtime_sliceAppend(e, b, 82570, c, d, 2, 1);
           11;
           if (g_b == 1) goto B_b;
         }
@@ -19219,7 +19417,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
         label B_y:
         e = select_if(e, h + 256, g_b);
         if (eqz(g_b) | j == 12) {
-          runtime_sliceAppend(e, b, 82356, c, d, 2, 1);
+          runtime_sliceAppend(e, b, 82572, c, d, 2, 1);
           12;
           if (g_b == 1) goto B_b;
         }
@@ -19239,13 +19437,13 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
           f = h + 80;
         }
         if (eqz(g_b) | j == 13) {
-          runtime_sliceAppend(f, b, 82358, c, d, 2, 1);
+          runtime_sliceAppend(f, b, 82574, c, d, 2, 1);
           13;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
           h[79]:int = (d = h[20]:int);
-          h[292]:byte = ((e >> 4 & 15) + 82364)[0]:ubyte;
+          h[292]:byte = ((e >> 4 & 15) + 82580)[0]:ubyte;
           c = h + 292;
           f = h[21]:int;
           g = h[22]:int;
@@ -19257,7 +19455,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          h[291]:byte = ((e & 15) + 82364)[0]:ubyte;
+          h[291]:byte = ((e & 15) + 82580)[0]:ubyte;
           h[80]:int = (e = h[16]:int);
           c = h + 291;
           d = h[17]:int;
@@ -19290,7 +19488,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
           f = h + 144;
         }
         if (eqz(g_b) | j == 16) {
-          runtime_sliceAppend(f, b, 82362, c, d, 2, 1);
+          runtime_sliceAppend(f, b, 82578, c, d, 2, 1);
           16;
           if (g_b == 1) goto B_b;
         }
@@ -19305,7 +19503,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
             h[85]:int = d;
             if (f < 0) goto B_e;
             h[289]:byte =
-              ((e >> select_if(31, f, f >= 31) & 15) + 82364)[0]:ubyte;
+              ((e >> select_if(31, f, f >= 31) & 15) + 82580)[0]:ubyte;
             k = h + 289;
             g = h + 128;
           }
@@ -19325,7 +19523,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
         label B_db:
         e = select_if(e, h + 112, g_b);
         if (eqz(g_b) | j == 18) {
-          runtime_sliceAppend(e, b, 82360, c, d, 2, 1);
+          runtime_sliceAppend(e, b, 82576, c, d, 2, 1);
           18;
           if (g_b == 1) goto B_b;
         }
@@ -19340,7 +19538,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
             h[82]:int = d;
             if (e < 0) goto B_e;
             h[290]:byte =
-              ((f >> select_if(31, e, e >= 31) & 15) + 82364)[0]:ubyte;
+              ((f >> select_if(31, e, e >= 31) & 15) + 82580)[0]:ubyte;
             k = h + 290;
             g = h + 96;
           }
@@ -19359,7 +19557,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
         }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = l;
+          89988[0]:int = l;
           a.c = c;
           a.b = b;
           a.a = d;
@@ -19384,7 +19582,7 @@ function strconv_appendEscapedRune(a:{ a:int, b:int, c:int }, b:int, c:int, d:in
   g_c[0]:int = g_c[0]:int + 40;
 }
 
-function strconv_IsPrint(a:int):int { // func170
+function strconv_IsPrint(a:int):int { // func180
   var c:int;
   var b:int;
   var d:int;
@@ -19426,7 +19624,7 @@ function strconv_IsPrint(a:int):int { // func170
             if (b >= d) goto B_j;
             e = (d - b >> 1) + b;
             if (e > 507) goto B_i;
-            b = select_if(e + 1, b, g = ((e << 2) + 83112)[0]:int < a);
+            b = select_if(e + 1, b, g = ((e << 2) + 83328)[0]:int < a);
             d = select_if(d, e, g);
             continue L_m;
           }
@@ -19435,7 +19633,7 @@ function strconv_IsPrint(a:int):int { // func170
         b = c + 16;
       }
       if (eqz(g_b) | eqz(f)) {
-        strconv_bsearch_uint16_uint16(b, 87524, 424, a);
+        strconv_bsearch_uint16_uint16(b, 87804, 424, a);
         0;
         if (g_b == 1) goto B_b;
       }
@@ -19445,12 +19643,12 @@ function strconv_IsPrint(a:int):int { // func170
         if (b > 423) goto B_e;
         if (b > 423) goto B_i;
         e = a & 65535;
-        if (e < (((b & 510) << 1) + 87524)[0]:ushort) goto B_e;
-        if (e > ((b << 1 | 2) + 87524)[0]:ushort) goto B_e;
+        if (e < (((b & 510) << 1) + 87804)[0]:ushort) goto B_e;
+        if (e > ((b << 1 | 2) + 87804)[0]:ushort) goto B_e;
         b = c + 8;
       }
       if (eqz(g_b) | f == 1) {
-        strconv_bsearch_uint16_uint16(b, 88372, 133, a);
+        strconv_bsearch_uint16_uint16(b, 88652, 133, a);
         1;
         if (g_b == 1) goto B_b;
       }
@@ -19462,13 +19660,13 @@ function strconv_IsPrint(a:int):int { // func170
       if (eqz(g_b)) {
         d = 0;
         if (b >= 508) goto B_e;
-        if ((((b & 510) << 2) + 83112)[0]:int > a) goto B_e;
-        if (((b << 2 | 4) + 83112)[0]:int < a) goto B_e;
+        if ((((b & 510) << 2) + 83328)[0]:int > a) goto B_e;
+        if (((b << 2 | 4) + 83328)[0]:int < a) goto B_e;
         if (a > 131071) goto B_f;
         b = c + 24;
       }
       if (eqz(g_b) | f == 2) {
-        strconv_bsearch_uint16_uint16(b, 88638, 112, a);
+        strconv_bsearch_uint16_uint16(b, 88918, 112, a);
         2;
         if (g_b == 1) goto B_b;
       }
@@ -19504,7 +19702,7 @@ function strconv_IsPrint(a:int):int { // func170
   return 0;
 }
 
-function strconv_bsearch_uint16_uint16(a:{ a:int, b:byte }, b:int, c:int, d:int) { // func171
+function strconv_bsearch_uint16_uint16(a:{ a:int, b:byte }, b:int, c:int, d:int) { // func181
   var e:int;
   var j:int;
   var h:int;
@@ -19550,7 +19748,7 @@ function strconv_bsearch_uint16_uint16(a:{ a:int, b:byte }, b:int, c:int, d:int)
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function strconv_leftShift(a:int, b:int) { // func172
+function strconv_leftShift(a:int, b:int) { // func182
   var d:int;
   var c:int;
   var f:ubyte_ptr;
@@ -19580,11 +19778,11 @@ function strconv_leftShift(a:int, b:int) { // func172
         if (eqz(g_b)) {
           if (d) goto B_e;
           c = b * 12;
-          d = (c + 82388)[0]:int;
+          d = (c + 82604)[0]:int;
           f = d > 0;
           g = select_if(d, 0, f);
-          var j:int = (c + 82384)[0]:int;
-          var k:int = (c + 82380)[0]:int;
+          var j:int = (c + 82600)[0]:int;
+          var k:int = (c + 82596)[0]:int;
           c = 0;
           loop L_h {
             if (c == g) goto B_g;
@@ -19683,7 +19881,7 @@ function strconv_leftShift(a:int, b:int) { // func172
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function strconv_trim(a:int_ptr) { // func173
+function strconv_trim(a:int_ptr) { // func183
   var c:int;
   a = {
         if (g_b == 2) {
@@ -19722,7 +19920,7 @@ function strconv_trim(a:int_ptr) { // func173
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function strconv_rightShift(a:int, b:int) { // func174
+function strconv_rightShift(a:int, b:int) { // func184
   var d:int;
   var c:int;
   var i:int;
@@ -19846,7 +20044,7 @@ function strconv_rightShift(a:int, b:int) { // func174
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function strconv_formatBits(a:{ a:int, b:int, c:int, d:int, e:int }, b:int, c:int, d:int, e:long, f:int) { // func175
+function strconv_formatBits(a:{ a:int, b:int, c:int, d:int, e:int }, b:int, c:int, d:int, e:long, f:int) { // func185
   var i:int;
   var m:int;
   var h:int;
@@ -19878,8 +20076,8 @@ function strconv_formatBits(a:{ a:int, b:int, c:int, d:int, e:int }, b:int, c:in
         i = stack_pointer - 96;
         stack_pointer = i;
         i[21]:long@4 = 1L;
-        m = 89708[0]:int;
-        89708[0]:int = i + 80;
+        m = 89988[0]:int;
+        89988[0]:int = i + 80;
         i[20]:int = m;
         j = 65;
         memory_fill(i + 15, 0, 65);
@@ -19899,9 +20097,9 @@ function strconv_formatBits(a:{ a:int, b:int, c:int, d:int, e:int }, b:int, c:in
                 l = g + j;
                 if (l - 1 > 64) goto B_e;
                 var q:byte_ptr = g + o;
-                (q + 1)[0]:byte = ((h = h - k * 100 << 1) + 82145)[0]:ubyte;
+                (q + 1)[0]:byte = ((h = h - k * 100 << 1) + 82361)[0]:ubyte;
                 if (l - 2 > 64) goto B_e;
-                q[0] = (h + 82144)[0]:ubyte;
+                q[0] = (h + 82360)[0]:ubyte;
                 g = g - 2;
                 h = k;
                 continue L_i;
@@ -19911,7 +20109,7 @@ function strconv_formatBits(a:{ a:int, b:int, c:int, d:int, e:int }, b:int, c:in
             if (h > 199) goto B_e;
             j = g + j - 1;
             if (j > 64) goto B_e;
-            (g + o + 1)[0]:byte = (h + 82145)[0]:ubyte;
+            (g + o + 1)[0]:byte = (h + 82361)[0]:ubyte;
             continue L_g;
           }
         }
@@ -19921,10 +20119,10 @@ function strconv_formatBits(a:{ a:int, b:int, c:int, d:int, e:int }, b:int, c:in
             h = g / 100;
             if (j - 1 > 64) goto B_e;
             k = j + i + 15;
-            (k - 1)[0]:byte = ((g = g - h * 100 << 1) + 82145)[0]:ubyte;
+            (k - 1)[0]:byte = ((g = g - h * 100 << 1) + 82361)[0]:ubyte;
             l = j - 2;
             if (l > 64) goto B_e;
-            (k - 2)[0]:byte = (g + 82144)[0]:ubyte;
+            (k - 2)[0]:byte = (g + 82360)[0]:ubyte;
             j = l;
             g = h;
             continue L_k;
@@ -19933,11 +20131,11 @@ function strconv_formatBits(a:{ a:int, b:int, c:int, d:int, e:int }, b:int, c:in
         h = j - 1;
         if (h > 64) goto B_e;
         k = j + i + 15;
-        (k - 1)[0]:byte = ((l = g << 1) + 82145)[0]:ubyte;
+        (k - 1)[0]:byte = ((l = g << 1) + 82361)[0]:ubyte;
         if (g >= 10) {
           h = j - 2;
           if (h > 64) goto B_e;
-          (k - 2)[0]:byte = (l + 82144)[0]:ubyte;
+          (k - 2)[0]:byte = (l + 82360)[0]:ubyte;
         }
         if (f & 1) {
           h = h - 1;
@@ -19953,7 +20151,7 @@ function strconv_formatBits(a:{ a:int, b:int, c:int, d:int, e:int }, b:int, c:in
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) {
-        89708[0]:int = m;
+        89988[0]:int = m;
         g = i[1]:int;
         h = i[0]:int;
         k = i[2]:int;
@@ -19989,7 +20187,7 @@ function strconv_formatBits(a:{ a:int, b:int, c:int, d:int, e:int }, b:int, c:in
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function strconv_formatDigits(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int) { // func176
+function strconv_formatDigits(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int) { // func186
   var l:int;
   var n:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int, o:int }
   var p:int;
@@ -20028,8 +20226,8 @@ function strconv_formatDigits(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:
         l[21]:int = e;
         l[20]:int = e;
         l[19]:int = e;
-        n = 89708[0]:int;
-        89708[0]:int = l - -64;
+        n = 89988[0]:int;
+        89988[0]:int = l - -64;
         l[16]:int = n;
         p = k & 255;
         o = p - 101;
@@ -20123,7 +20321,7 @@ function strconv_formatDigits(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:
           label B_e:
         }
       if (eqz(g_b)) {
-        89708[0]:int = n;
+        89988[0]:int = n;
         a.c = e;
         a.b = h;
         a.a = b;
@@ -20153,7 +20351,7 @@ function strconv_formatDigits(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:
   g_c[0]:int = g_c[0]:int + 60;
 }
 
-function strconv_fmtE(a:{ a:int, b:int, c:int }, b:int, c:int, d:ubyte_ptr, e:int, f:int, g:int, h:int, i:int, j:int) { // func177
+function strconv_fmtE(a:{ a:int, b:int, c:int }, b:int, c:int, d:ubyte_ptr, e:int, f:int, g:int, h:int, i:int, j:int) { // func187
   var k:int;
   var m:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int }
   var l:int;
@@ -20189,14 +20387,14 @@ function strconv_fmtE(a:{ a:int, b:int, c:int }, b:int, c:int, d:ubyte_ptr, e:in
         k[41]:int = 14;
         memory_fill(k + 168, 0, 56);
         k[44]:int = d;
-        k[40]:int = (n = 89708[0]:int);
-        89708[0]:int = k + 160;
+        k[40]:int = (n = 89988[0]:int);
+        89988[0]:int = k + 160;
         l = 1;
         c = eqz(c & 1);
         if (eqz(c)) {
           k[42]:int = b;
           (b + 1)[0]:byte = 45;
-          89708[0]:int = (c = k + 160);
+          89988[0]:int = (c = k + 160);
           l = 2;
         }
         k[43]:int = b;
@@ -20393,7 +20591,7 @@ function strconv_fmtE(a:{ a:int, b:int, c:int }, b:int, c:int, d:ubyte_ptr, e:in
       if (eqz(g_b)) { unreachable }
       label B_f:
       if (eqz(g_b)) {
-        89708[0]:int = n;
+        89988[0]:int = n;
         a.c = b;
         a.b = l;
         a.a = c;
@@ -20422,7 +20620,7 @@ function strconv_fmtE(a:{ a:int, b:int, c:int }, b:int, c:int, d:ubyte_ptr, e:in
   g_c[0]:int = g_c[0]:int + 56;
 }
 
-function strconv_fmtF(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int) { // func178
+function strconv_fmtF(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int) { // func188
   var j:int;
   var k:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int }
   var m:int;
@@ -20458,13 +20656,13 @@ function strconv_fmtF(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:i
           j[21]:int = 13;
           memory_fill(j + 88, 0, 52);
           j[24]:int = d;
-          j[20]:int = (o = 89708[0]:int);
-          89708[0]:int = j + 80;
+          j[20]:int = (o = 89988[0]:int);
+          89988[0]:int = j + 80;
           m = 1;
           if (c & 1) {
             j[22]:int = b;
             (b + 1)[0]:byte = 45;
-            89708[0]:int = j + 80;
+            89988[0]:int = j + 80;
             m = 2;
           }
           j[23]:int = b;
@@ -20574,7 +20772,7 @@ function strconv_fmtF(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:i
         }
         label B_u:
         if (eqz(g_b)) {
-          89708[0]:int = o;
+          89988[0]:int = o;
           a.c = m;
           a.b = c;
           a.a = b;
@@ -20618,7 +20816,7 @@ function strconv_fmtF(a:{ a:int, b:int, c:int }, b:int, c:int, d:int, e:int, f:i
   g_c[0]:int = g_c[0]:int + 56;
 }
 
-function strconv_mult128bitPow10(a:{ a:long, b:int, c:byte }, b:long, c:int, d:int) { // func179
+function strconv_mult128bitPow10(a:{ a:long, b:int, c:byte }, b:long, c:int, d:int) { // func189
   var f:int;
   var g:long;
   var h:long;
@@ -20642,8 +20840,8 @@ function strconv_mult128bitPow10(a:{ a:long, b:int, c:byte }, b:long, c:int, d:i
               math_bits_Mul64(
                 e + 16,
                 b,
-                ((f = d << 4) + 76000)[0]:long + i64_extend_i32_u(d >> 31));
-              math_bits_Mul64(e, b, (f + 76008)[0]:long);
+                ((f = d << 4) + 76216)[0]:long + i64_extend_i32_u(d >> 31));
+              math_bits_Mul64(e, b, (f + 76224)[0]:long);
               b = e.b;
               var i:long = (b | (g = e.c)) & ((h = b + g) ^ -1L);
               d = (d * 108853 >> 15) + c - 8;
@@ -20659,7 +20857,7 @@ function strconv_mult128bitPow10(a:{ a:long, b:int, c:byte }, b:long, c:int, d:i
         label B_d:
       }
       if (eqz(g_b) | eqz(f)) {
-        runtime_panic(86592, 82136);
+        runtime_panic(86240, 82352);
         0;
         if (g_b == 1) goto B_a;
       }
@@ -20671,7 +20869,7 @@ function strconv_mult128bitPow10(a:{ a:long, b:int, c:byte }, b:long, c:int, d:i
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function strconv_divisibleByPower5(a:long, b:int):int { // func180
+function strconv_divisibleByPower5(a:long, b:int):int { // func190
   var d:long;
   var c:int;
   if (eqz(a)) {
@@ -20691,7 +20889,7 @@ function strconv_divisibleByPower5(a:long, b:int):int { // func180
   return c;
 }
 
-function strconv_formatDecimal(a:int_ptr, b:long, c:int, d:int, e:int) { // func181
+function strconv_formatDecimal(a:int_ptr, b:long, c:int, d:int, e:int) { // func191
   var g:int;
   var k:int;
   var i:long;
@@ -20719,7 +20917,7 @@ function strconv_formatDecimal(a:int_ptr, b:long, c:int, d:int, e:int) { // func
       g = select_if(g, e > 19, g_b);
       if (eqz(g_b)) {
         if (g) goto B_d;
-        i = ((e << 3) + 81568)[0]:long;
+        i = ((e << 3) + 81784)[0]:long;
         g = 0;
       }
       loop L_f {
@@ -20763,10 +20961,10 @@ function strconv_formatDecimal(a:int_ptr, b:long, c:int, d:int, e:int) { // func
               }
               if (eqz(b)) goto B_r;
               if (a[1] <= c) goto B_d;
-              (a[0] + c)[0]:byte = ((d = i32_wrap_i64(b) << 1) + 82145)[0]:ubyte;
+              (a[0] + c)[0]:byte = ((d = i32_wrap_i64(b) << 1) + 82361)[0]:ubyte;
               if (b < 10L) goto B_r;
               if (a[1] <= c - 1) goto B_d;
-              (a[0] + c - 1)[0]:byte = (d + 82144)[0]:ubyte;
+              (a[0] + c - 1)[0]:byte = (d + 82360)[0]:ubyte;
               label B_r:
               c = a[3] - 1;
               d = a[1];
@@ -20783,9 +20981,9 @@ function strconv_formatDecimal(a:int_ptr, b:long, c:int, d:int, e:int) { // func
               return ;
               label B_o:
               if (a[1] <= c) goto B_d;
-              (a[0] + c)[0]:byte = ((d = i32_wrap_i64(h) << 1) + 82145)[0]:ubyte;
+              (a[0] + c)[0]:byte = ((d = i32_wrap_i64(h) << 1) + 82361)[0]:ubyte;
               if (a[1] <= c - 1) goto B_d;
-              (a[0] + c - 1)[0]:byte = (d + 82144)[0]:ubyte;
+              (a[0] + c - 1)[0]:byte = (d + 82360)[0]:ubyte;
               c = c - 2;
               continue L_n;
             }
@@ -20831,7 +21029,7 @@ function strconv_formatDecimal(a:int_ptr, b:long, c:int, d:int, e:int) { // func
   g_c[0]:int = g_c[0]:int + 44;
 }
 
-function strconv_mult64bitPow10(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int) { // func182
+function strconv_mult64bitPow10(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int) { // func192
   var g:long;
   var f:int;
   a = 
@@ -20855,7 +21053,7 @@ function strconv_mult64bitPow10(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int)
             math_bits_Mul64(
               e,
               i64_extend_i32_u(b),
-              ((d << 4) + 76008)[0]:long + i64_extend_i32_u(d >> 31));
+              ((d << 4) + 76224)[0]:long + i64_extend_i32_u(d >> 31));
             b = i32_wrap_i64(e.a << 7L | (g = e.b) >> 57L);
             d = (d * 108853 >> 15) + c - 6;
             eqz(g & 144115188075855871L);
@@ -20868,7 +21066,7 @@ function strconv_mult64bitPow10(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int)
         label B_d:
       }
       if (eqz(g_b) | eqz(f)) {
-        runtime_panic(86592, 82080);
+        runtime_panic(86240, 82296);
         0;
         if (g_b == 1) goto B_a;
       }
@@ -20880,7 +21078,7 @@ function strconv_mult64bitPow10(a:{ a:int, b:int, c:byte }, b:int, c:int, d:int)
   g_c[0]:int = g_c[0]:int + 4;
 }
 
-function strconv_ryuDigits(a:{ a:int, b:int, c:int, d:int, e:int }, b:long, c:long, d:long, e:int, f:int) { // func183
+function strconv_ryuDigits(a:{ a:int, b:int, c:int, d:int, e:int }, b:long, c:long, d:long, e:int, f:int) { // func193
   var k:int_ptr;
   var j:int;
   var n:int;
@@ -21060,7 +21258,7 @@ function strconv_ryuDigits(a:{ a:int, b:int, c:int, d:int, e:int }, b:long, c:lo
   g_c[0]:int = g_c[0]:int + 44;
 }
 
-function strconv_divmod1e9(a:{ a:int, b:int }, b:long) { // func184
+function strconv_divmod1e9(a:{ a:int, b:int }, b:long) { // func194
   var d:long;
   var c:long_ptr = stack_pointer - 16;
   stack_pointer = c;
@@ -21070,7 +21268,7 @@ function strconv_divmod1e9(a:{ a:int, b:int }, b:long) { // func184
   stack_pointer = c + 16;
 }
 
-function strconv_ryuDigits32(a:int_ptr, b:{ a:int, b:int }, c:int, d:int, e:int, f:int, g:{ a:int, b:int }) { // func185
+function strconv_ryuDigits32(a:int_ptr, b:{ a:int, b:int }, c:int, d:int, e:int, f:int, g:{ a:int, b:int }) { // func195
   var i:int;
   var h:int;
   var j:int;
@@ -21122,9 +21320,9 @@ function strconv_ryuDigits32(a:int_ptr, b:{ a:int, b:int }, c:int, d:int, e:int,
           if (b > (c = a[3])) {
             c = d / 100;
             if (a[1] <= b) goto B_e;
-            (a[0] + b)[0]:byte = ((d = d - c * 100 << 1) + 82145)[0]:ubyte;
+            (a[0] + b)[0]:byte = ((d = d - c * 100 << 1) + 82361)[0]:ubyte;
             if (a[1] <= b - 1) goto B_e;
-            (a[0] + b - 1)[0]:byte = (d + 82144)[0]:ubyte;
+            (a[0] + b - 1)[0]:byte = (d + 82360)[0]:ubyte;
             b = b - 2;
             d = c;
             continue L_l;
@@ -21164,7 +21362,7 @@ function strconv_ryuDigits32(a:int_ptr, b:{ a:int, b:int }, c:int, d:int, e:int,
   g_c[0]:int = g_c[0]:int + 8;
 }
 
-function strconv_appendQuotedRuneWith(a:{ a:int, b:int, c:int }, b:byte_ptr, c:int, d:int) { // func186
+function strconv_appendQuotedRuneWith(a:{ a:int, b:int, c:int }, b:byte_ptr, c:int, d:int) { // func196
   var e:int;
   var i:int;
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
@@ -21191,13 +21389,13 @@ function strconv_appendQuotedRuneWith(a:{ a:int, b:int, c:int }, b:byte_ptr, c:i
       if (eqz(g_b)) {
         e = stack_pointer + -64;
         stack_pointer = e;
-        i = 89708[0]:int;
+        i = 89988[0]:int;
         b[0] = 39;
         e[13]:long@4 = 0L;
         e[11]:int = 3;
         e[12]:int = b;
         e[10]:int = i;
-        89708[0]:int = e + 40;
+        89988[0]:int = e + 40;
         h = e + 24;
         c = 
           select_if(c, f = select_if(65533, c, c - 57344 >= 1056768), c < 55296);
@@ -21221,7 +21419,7 @@ function strconv_appendQuotedRuneWith(a:{ a:int, b:int, c:int }, b:byte_ptr, c:i
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) {
-        89708[0]:int = i;
+        89988[0]:int = i;
         c = e[3]:int;
         b = e[2]:int;
         a.c = e[4]:int;
@@ -21246,7 +21444,7 @@ function strconv_appendQuotedRuneWith(a:{ a:int, b:int, c:int }, b:byte_ptr, c:i
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function write_1(a:int, b:int, c:int) { // func187
+function write_1(a:int, b:int, c:int) { // func197
   var f:int;
   var g:int;
   var h:int;
@@ -21275,8 +21473,8 @@ function write_1(a:int, b:int, c:int) { // func187
           stack_pointer = f;
           f[7]:int = 0;
           f[5]:int = 2;
-          g = 89708[0]:int;
-          89708[0]:int = f + 16;
+          g = 89988[0]:int;
+          89988[0]:int = f + 16;
           f[4]:int = g;
           h = eqz(a);
         }
@@ -21292,7 +21490,7 @@ function write_1(a:int, b:int, c:int) { // func187
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          89708[0]:int = g;
+          89988[0]:int = g;
           g = f[2]:int;
           a[0]:long@4 = f[0]:long;
           a[2]:int = g;
@@ -21323,7 +21521,84 @@ function write_1(a:int, b:int, c:int) { // func187
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function writeRune(a:int, b:int) { // func188
+function writeByte(a:int, b:int) { // func198
+  var c:int;
+  var g:int;
+  var f:int;
+  var e:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
+  var h:int;
+  var d:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 28;
+    d = g_c[0]:int;
+    a = d.a;
+    b = d.b;
+    c = d.c;
+    f = d.d;
+    g = d.e;
+    h = d.f;
+    d = d.g;
+  }
+  e = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          e = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) {
+          c = stack_pointer - 32;
+          stack_pointer = c;
+          c[7]:int = 0;
+          c[5]:int = 2;
+          g = 89988[0]:int;
+          89988[0]:int = c + 16;
+          c[4]:int = g;
+          f = eqz(a);
+        }
+        if (eqz(g_b)) {
+          if (f) goto B_e;
+          c[15]:byte = b;
+          c[6]:int = (b = a[0]:int);
+          h = a[1]:int;
+          f = c + 15;
+          d = a[2]:int;
+        }
+        if (eqz(g_b) | eqz(e)) {
+          runtime_sliceAppend(c, b, f, h, d, 1, 1);
+          0;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          89988[0]:int = g;
+          g = c[2]:int;
+          a[0]:long@4 = c[0]:long;
+          a[2]:int = g;
+          stack_pointer = c + 32;
+          return ;
+        }
+        label B_e:
+        if (eqz(g_b) | e == 1) {
+          runtime_nilPanic();
+          1;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { unreachable }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = e;
+  g_c[0]:int = g_c[0]:int + 4;
+  e = g_c[0]:int;
+  e.a = a;
+  e.b = b;
+  e.c = c;
+  e.d = f;
+  e.e = g;
+  e.f = h;
+  e.g = d;
+  g_c[0]:int = g_c[0]:int + 28;
+}
+
+function writeRune(a:int, b:int) { // func199
   var d:int;
   var f:int;
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
@@ -21351,8 +21626,8 @@ function writeRune(a:int, b:int) { // func188
           stack_pointer = d;
           d[7]:int = 0;
           d[5]:int = 2;
-          f = 89708[0]:int;
-          89708[0]:int = d + 16;
+          f = 89988[0]:int;
+          89988[0]:int = d + 16;
           d[4]:int = f;
           d[6]:int = (h = a[0]:int);
           g = a[1]:int;
@@ -21364,7 +21639,7 @@ function writeRune(a:int, b:int) { // func188
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          89708[0]:int = f;
+          89988[0]:int = f;
           f = d[2]:int;
           a[0]:long@4 = d[0]:long;
           a[2]:int = f;
@@ -21386,7 +21661,7 @@ function writeRune(a:int, b:int) { // func188
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function writeString(a:int, b:int, c:int) { // func189
+function writeString(a:int, b:int, c:int) { // func200
   var f:int;
   var g:int;
   var h:int;
@@ -21415,8 +21690,8 @@ function writeString(a:int, b:int, c:int) { // func189
           stack_pointer = f;
           f[7]:int = 0;
           f[5]:int = 2;
-          g = 89708[0]:int;
-          89708[0]:int = f + 16;
+          g = 89988[0]:int;
+          89988[0]:int = f + 16;
           f[4]:int = g;
           h = eqz(a);
         }
@@ -21432,7 +21707,7 @@ function writeString(a:int, b:int, c:int) { // func189
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          89708[0]:int = g;
+          89988[0]:int = g;
           g = f[2]:int;
           a[0]:long@4 = f[0]:long;
           a[2]:int = g;
@@ -21463,7 +21738,7 @@ function writeString(a:int, b:int, c:int) { // func189
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function fmtBx(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func190
+function fmtBx(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func201
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 16;
     d = g_c[0]:int;
@@ -21498,7 +21773,7 @@ function fmtBx(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func1
   g_c[0]:int = g_c[0]:int + 16;
 }
 
-function fmtSbx(a:int, b:int, c:int, d:int, e:int, f:ubyte_ptr) { // func191
+function fmtSbx(a:int, b:int, c:int, d:int, e:int, f:ubyte_ptr) { // func202
   var g:int;
   var i:int;
   var h:{ a:int, b:int, c:int }
@@ -21540,8 +21815,8 @@ function fmtSbx(a:int, b:int, c:int, d:int, e:int, f:ubyte_ptr) { // func191
           stack_pointer = g;
           g[21]:int = 10;
           memory_fill(g + 92, 0, 36);
-          g[20]:int = (l = 89708[0]:int);
-          89708[0]:int = g + 80;
+          g[20]:int = (l = 89988[0]:int);
+          89988[0]:int = g + 80;
           i = eqz(a);
         }
         if (eqz(g_b)) {
@@ -21732,7 +22007,7 @@ function fmtSbx(a:int, b:int, c:int, d:int, e:int, f:ubyte_ptr) { // func191
         if (eqz(g_b)) { unreachable }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = l;
+          89988[0]:int = l;
           stack_pointer = g + 128;
         }
         return ;
@@ -21760,7 +22035,7 @@ function fmtSbx(a:int, b:int, c:int, d:int, e:int, f:ubyte_ptr) { // func191
   g_c[0]:int = g_c[0]:int - -64;
 }
 
-function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func192
+function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func203
   var f:int;
   var j:ubyte_ptr;
   var m:int;
@@ -21824,8 +22099,8 @@ function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func192
         stack_pointer = f;
         f[139]:int = 51;
         memory_fill(f + 560, 0, 204);
-        f[138]:int = (ba = 89708[0]:int);
-        89708[0]:int = f + 552;
+        f[138]:int = (ba = 89988[0]:int);
+        89988[0]:int = f + 552;
         j = eqz(a);
       }
       if (eqz(g_b)) {
@@ -21837,18 +22112,18 @@ function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func192
           if (j) goto B_i;
           j = i32_reinterpret_f32(f32_demote_f64(b));
           l = i64_extend_i32_u(j);
-          g = 87500;
+          g = 87780;
           r = 1;
           goto B_e;
         }
         l = i64_reinterpret_f64(b);
-        g = 87512;
+        g = 87792;
         r = 0;
         goto B_e;
         label B_i:
       }
       if (eqz(g_b) | eqz(m)) {
-        runtime_panic(86592, 81776);
+        runtime_panic(86240, 81992);
         0;
         if (g_b == 1) goto B_b;
       }
@@ -21878,7 +22153,7 @@ function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func192
       if (eqz(g_b)) {
         if (j) goto B_v;
         f[141]:int =
-          (h = select_if(select_if(81787, 81791, t), 81784, g = eqz(s)));
+          (h = select_if(select_if(82003, 82007, t), 82000, g = eqz(s)));
         j = f + 88;
         c = select_if(4, 3, g);
       }
@@ -21910,7 +22185,7 @@ function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func192
         h = 1;
         if (t) {
           (a + 25)[0]:byte = 45;
-          89708[0]:int = f + 552;
+          89988[0]:int = f + 552;
           f[142]:int = p;
           h = 2;
         }
@@ -22001,11 +22276,11 @@ function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func192
         h = h + 1;
         l = l >> 1L;
         label B_ta:
-        f[151]:int = (k = select_if(81795, 82364, (d & 255) == 88));
+        f[151]:int = (k = select_if(82011, 82580, (d & 255) == 88));
         g = 1;
         if (t) {
           (a + 25)[0]:byte = 45;
-          89708[0]:int = f + 552;
+          89988[0]:int = f + 552;
           f[152]:int = p;
           g = 2;
         }
@@ -22407,21 +22682,21 @@ function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func192
               }
               label B_jd:
               if (eqz(g_b) | m == 24) {
-                runtime_panic(86592, 81856);
+                runtime_panic(86240, 82072);
                 24;
                 if (g_b == 1) goto B_b;
               }
               if (eqz(g_b)) { unreachable }
               label B_id:
               if (eqz(g_b) | m == 25) {
-                runtime_panic(86592, 81904);
+                runtime_panic(86240, 82120);
                 25;
                 if (g_b == 1) goto B_b;
               }
               if (eqz(g_b)) { unreachable }
               label B_hd:
               if (eqz(g_b) | m == 26) {
-                runtime_panic(86592, 81960);
+                runtime_panic(86240, 82176);
                 26;
                 if (g_b == 1) goto B_b;
               }
@@ -22434,7 +22709,7 @@ function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func192
               }
               label B_fd:
               if (eqz(g_b) | m == 27) {
-                runtime_panic(86592, 82024);
+                runtime_panic(86240, 82240);
                 27;
                 if (g_b == 1) goto B_b;
               }
@@ -22724,7 +22999,7 @@ function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func192
         goto B_hg;
       }
       if (eqz(g_b) | m == 38) {
-        runtime_panic(86592, 82024);
+        runtime_panic(86240, 82240);
         38;
         if (g_b == 1) goto B_b;
       }
@@ -23179,7 +23454,7 @@ function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func192
       if (eqz(g_b)) { a[10]:byte = c & 1 }
       label B_p:
       if (eqz(g_b)) {
-        89708[0]:int = ba;
+        89988[0]:int = ba;
         stack_pointer = f + 768;
       }
       return ;
@@ -23216,7 +23491,7 @@ function fmtFloat(a:int, b:double, c:int, d:int, e:int) { // func192
   g_c[0]:int = g_c[0]:int + 128;
 }
 
-function pad(a:int, b:int, c:int, d:int) { // func193
+function pad(a:int, b:int, c:int, d:int) { // func204
   var g:int;
   var k:int;
   var e:int;
@@ -23250,8 +23525,8 @@ function pad(a:int, b:int, c:int, d:int) { // func193
           (g + 24)[0]:long = 0L;
           g[2]:long = 0L;
           g[3]:int = 4;
-          k = 89708[0]:int;
-          89708[0]:int = g + 8;
+          k = 89988[0]:int;
+          89988[0]:int = g + 8;
           g[2]:int = k;
           e = eqz(a);
         }
@@ -23361,7 +23636,7 @@ function pad(a:int, b:int, c:int, d:int) { // func193
         if (eqz(g_b)) { unreachable }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = k;
+          89988[0]:int = k;
           stack_pointer = g + 32;
         }
         return ;
@@ -23383,7 +23658,7 @@ function pad(a:int, b:int, c:int, d:int) { // func193
   g_c[0]:int = g_c[0]:int + 40;
 }
 
-function writePadding(a:int, b:{ a:int, b:int, c:int }) { // func194
+function writePadding(a:int, b:{ a:int, b:int, c:int }) { // func205
   var d:int;
   var j:int;
   var c:int;
@@ -23417,8 +23692,8 @@ function writePadding(a:int, b:{ a:int, b:int, c:int }) { // func194
           (d + 36)[0]:long@4 = 0L;
           d[5]:long@4 = 0L;
           d[3]:int = 7;
-          j = 89708[0]:int;
-          89708[0]:int = d + 8;
+          j = 89988[0]:int;
+          89988[0]:int = d + 8;
           d[2]:int = j;
           c = b <= 0;
         }
@@ -23471,7 +23746,7 @@ function writePadding(a:int, b:{ a:int, b:int, c:int }) { // func194
         }
         label B_g:
         if (eqz(g_b)) {
-          89708[0]:int = j;
+          89988[0]:int = j;
           stack_pointer = d + 48;
           return ;
         }
@@ -23506,7 +23781,7 @@ function writePadding(a:int, b:{ a:int, b:int, c:int }) { // func194
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function fmtInteger(a:int, b:long, c:int, d:int, e:int, f:ubyte_ptr) { // func195
+function fmtInteger(a:int, b:long, c:int, d:int, e:int, f:ubyte_ptr) { // func206
   var l:int;
   var p:int;
   var h:int;
@@ -23546,8 +23821,8 @@ function fmtInteger(a:int, b:long, c:int, d:int, e:int, f:ubyte_ptr) { // func19
         l = stack_pointer - 16;
         stack_pointer = l;
         l[1]:long@4 = 2L;
-        p = 89708[0]:int;
-        89708[0]:int = l;
+        p = 89988[0]:int;
+        89988[0]:int = l;
         l[0]:int = p;
         h = eqz(a);
       }
@@ -23639,7 +23914,7 @@ function fmtInteger(a:int, b:long, c:int, d:int, e:int, f:ubyte_ptr) { // func19
         label B_fa:
       }
       if (eqz(g_b) | m == 3) {
-        runtime_panic(86592, 86112);
+        runtime_panic(86240, 86344);
         3;
         if (g_b == 1) goto B_b;
       }
@@ -23796,7 +24071,7 @@ function fmtInteger(a:int, b:long, c:int, d:int, e:int, f:ubyte_ptr) { // func19
       if (eqz(g_b)) { unreachable }
       label B_q:
       if (eqz(g_b)) {
-        89708[0]:int = p;
+        89988[0]:int = p;
         stack_pointer = l + 16;
       }
       return ;
@@ -23822,7 +24097,7 @@ function fmtInteger(a:int, b:long, c:int, d:int, e:int, f:ubyte_ptr) { // func19
   g_c[0]:int = g_c[0]:int - -64;
 }
 
-function fmtQ(a:ubyte_ptr, b:int, c:int) { // func196
+function fmtQ(a:ubyte_ptr, b:int, c:int) { // func207
   var d:int;
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
@@ -23854,8 +24129,8 @@ function fmtQ(a:ubyte_ptr, b:int, c:int) { // func196
           (d + 108)[0]:int = 0;
           d[21]:long@4 = 0L;
           d[19]:int = 8;
-          g = 89708[0]:int;
-          89708[0]:int = d + 72;
+          g = 89988[0]:int;
+          89988[0]:int = d + 72;
           d[18]:int = g;
           f = d - -64;
         }
@@ -23939,7 +24214,7 @@ function fmtQ(a:ubyte_ptr, b:int, c:int) { // func196
         label B_k:
         b = select_if(b, d + 16, g_b);
         if (eqz(g_b) | e == 5) {
-          runtime_stringConcat(b, 86120, 1, f, i);
+          runtime_stringConcat(b, 86352, 1, f, i);
           5;
           if (g_b == 1) goto B_b;
         }
@@ -23949,7 +24224,7 @@ function fmtQ(a:ubyte_ptr, b:int, c:int) { // func196
           b = d + 8;
         }
         if (eqz(g_b) | e == 6) {
-          runtime_stringConcat(b, c, f, 86120, 1);
+          runtime_stringConcat(b, c, f, 86352, 1);
           6;
           if (g_b == 1) goto B_b;
         }
@@ -23983,7 +24258,7 @@ function fmtQ(a:ubyte_ptr, b:int, c:int) { // func196
         }
         label B_i:
         if (eqz(g_b)) {
-          89708[0]:int = g;
+          89988[0]:int = g;
           stack_pointer = d + 112;
           return ;
         }
@@ -24011,7 +24286,7 @@ function fmtQ(a:ubyte_ptr, b:int, c:int) { // func196
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function truncateString(a:{ a:int, b:int }, b:int, c:int, d:int) { // func197
+function truncateString(a:{ a:int, b:int }, b:int, c:int, d:int) { // func208
   var h:int;
   var g:int;
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
@@ -24104,7 +24379,7 @@ function truncateString(a:{ a:int, b:int }, b:int, c:int, d:int) { // func197
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function padString(a:int, b:int, c:int) { // func198
+function padString(a:int, b:int, c:int) { // func209
   var f:int;
   var i:int;
   var e:int;
@@ -24132,8 +24407,8 @@ function padString(a:int, b:int, c:int) { // func198
           stack_pointer = f;
           f[5]:long@4 = 0L;
           f[3]:long@4 = 3L;
-          i = 89708[0]:int;
-          89708[0]:int = f + 8;
+          i = 89988[0]:int;
+          89988[0]:int = f + 8;
           f[2]:int = i;
           e = eqz(a);
         }
@@ -24202,7 +24477,7 @@ function padString(a:int, b:int, c:int) { // func198
         if (eqz(g_b)) { unreachable }
         label B_e:
         if (eqz(g_b)) {
-          89708[0]:int = i;
+          89988[0]:int = i;
           stack_pointer = f + 32;
         }
         return ;
@@ -24221,7 +24496,7 @@ function padString(a:int, b:int, c:int) { // func198
   g_c[0]:int = g_c[0]:int + 28;
 }
 
-function fmtS(a:int, b:int, c:int) { // func199
+function fmtS(a:int, b:int, c:int) { // func210
   var f:int_ptr;
   var g:int;
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int }
@@ -24245,8 +24520,8 @@ function fmtS(a:int, b:int, c:int) { // func199
           f = stack_pointer - 32;
           stack_pointer = f;
           f[5] = 1;
-          g = 89708[0]:int;
-          89708[0]:int = f + 16;
+          g = 89988[0]:int;
+          89988[0]:int = f + 16;
           f[4] = g;
           d = f + 8;
         }
@@ -24265,7 +24540,7 @@ function fmtS(a:int, b:int, c:int) { // func199
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
-          89708[0]:int = g;
+          89988[0]:int = g;
           stack_pointer = f + 32;
         }
         return ;
@@ -24283,7 +24558,7 @@ function fmtS(a:int, b:int, c:int) { // func199
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function fmtSx(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func200
+function fmtSx(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func211
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 16;
     d = g_c[0]:int;
@@ -24318,142 +24593,147 @@ function fmtSx(a:int, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func2
   g_c[0]:int = g_c[0]:int + 16;
 }
 
-function argNumber(a:{ a:int, b:int, c:byte }, b:byte_ptr, c:int, d:ubyte_ptr, e:int, f:int) { // func201
-  var j:{ a:int, b:ubyte, c:int }
-  var g:int;
-  var h:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int }
-  var i:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int }
-  var l:int;
+function argNumber(a:{ a:int, b:int, c:byte }, b:byte_ptr, c:int, d:int) { // func212
+  var i:{ a:int, b:ubyte, c:int }
+  var e:int;
+  var l:ubyte_ptr;
+  var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int }
+  var j:int;
+  var f:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int }
+  var m:int;
+  var h:int;
   var k:int;
   if (g_b == 2) {
-    g_c[0]:int = g_c[0]:int - 44;
-    h = g_c[0]:int;
-    a = h.a;
-    b = h.b;
-    c = h.c;
-    d = h.d;
-    e = h.e;
-    f = h.f;
-    g = h.g;
-    j = h.h;
-    k = h.i;
-    l = h.j;
-    h = h.k;
+    g_c[0]:int = g_c[0]:int - 48;
+    g = g_c[0]:int;
+    a = g.a;
+    b = g.b;
+    c = g.c;
+    d = g.d;
+    e = g.e;
+    h = g.f;
+    i = g.g;
+    j = g.h;
+    k = g.i;
+    l = g.j;
+    m = g.k;
+    g = g.l;
   }
-  i = {
+  f = {
         if (g_b == 2) {
           g_c[0]:int = g_c[0]:int - 4;
-          i = (g_c[0]:int)[0]:int;
+          f = (g_c[0]:int)[0]:int;
         }
         if (eqz(g_b)) {
-          j = stack_pointer - 16;
-          stack_pointer = j;
-          g = e <= f;
+          i = stack_pointer - 16;
+          stack_pointer = i;
+          e = d >= 8;
         }
         if (eqz(g_b)) {
-          if (g) goto B_f;
-          g = e <= f;
+          if (e) goto B_f;
+          e = d > 7;
         }
-        g = {
+        e = {
               if (eqz(g_b)) {
-                if (g) goto B_j;
-                d = d + f;
-                g = d[0] != 91;
-                if (g) goto B_f;
+                if (e) goto B_j;
+                l = d + 86828;
+                e = l[0] != 91;
+                if (e) goto B_f;
                 b[124] = 1;
-                l = 0;
-                k = 1;
-                g = 0;
-                g;
-                if ((h = e - f) < 3) goto B_h;
-                e = 1;
+                k = 0;
+                h = 1;
+                0;
+                if (j = d > 5) goto B_h;
+                m = 8 - d;
+                g = d + 1;
+                e = 0;
               }
               loop L_l {
                 if (eqz(g_b)) {
-                  g = e == h;
-                  if (g) goto B_i;
-                  g = (d + e)[0]:ubyte != 93;
+                  j = e + g;
+                  if (j == 8) goto B_i;
+                  j = (j + 86828)[0]:ubyte != 93;
                 }
-                if (select_if(g_b, 1, g)) {
-                  if (eqz(g_b) | eqz(i)) {
-                    fmt_parsenum(j, d, h, 1, e);
-                    0;
-                    if (g_b == 1) goto B_b;
-                  }
-                  if (eqz(g_b)) {
-                    if (eqz(j.b)) goto B_q;
-                    if (e != j.c) goto B_q;
-                    k = e + 1;
-                    l = j.a - 1;
-                    1;
-                    goto B_h;
-                    label B_q:
-                    k = e + 1;
-                    goto B_i;
-                  }
+                if (eqz(g_b)) {
+                  if (j) goto B_n;
+                  h = e + 1;
                 }
+                if (eqz(g_b) | eqz(f)) {
+                  fmt_parsenum(i, l, m, 1, h);
+                  0;
+                  if (g_b == 1) goto B_b;
+                }
+                if (eqz(g_b)) {
+                  if (eqz(i.b)) goto B_r;
+                  if (i.c - 1 != e) goto B_r;
+                  h = e + 2;
+                  k = i.a - 1;
+                  1;
+                  goto B_h;
+                  label B_r:
+                  h = e + 2;
+                  k = 0;
+                  goto B_i;
+                }
+                label B_n:
                 if (eqz(g_b)) {
                   e = e + 1;
                   continue L_l;
                 }
               }
               label B_j:
-              if (eqz(g_b) | i == 1) {
+              if (eqz(g_b) | f == 1) {
                 runtime_lookupPanic();
                 1;
                 if (g_b == 1) goto B_b;
               }
               if (eqz(g_b)) { unreachable }
               label B_i:
-              if (g_b) {
-                g
-              } else {
-                l = 0;
-                0;
-              }
+              select_if(e, 0, g_b);
               label B_h:
             }
         if (eqz(g_b)) {
-          if (eqz(eqz(g & 1) | l)) {
-            f = f + k;
+          if (eqz(eqz(e & 1) | k)) {
+            d = d + h;
             c = 0;
-            g = 1;
+            e = 1;
             goto B_e;
           }
           b[125] = 0;
-          f = f + k;
+          d = d + h;
           goto B_e;
         }
         label B_f:
-        g = select_if(g, 0, g_b);
+        e = select_if(e, 0, g_b);
         label B_e:
         if (eqz(g_b)) {
-          a.b = f;
+          a.b = d;
           a.a = c;
-          a.c = g & 1;
-          stack_pointer = j + 16;
+          a.c = e & 1;
+          stack_pointer = i + 16;
         }
         return ;
         label B_b:
       }
-  (g_c[0]:int)[0]:int = i;
+  (g_c[0]:int)[0]:int = f;
   g_c[0]:int = g_c[0]:int + 4;
-  i = g_c[0]:int;
-  i.a = a;
-  i.b = b;
-  i.c = c;
-  i.d = d;
-  i.e = e;
-  i.f = f;
-  i.g = g;
-  i.h = j;
-  i.i = k;
-  i.j = l;
-  i.k = h;
-  g_c[0]:int = g_c[0]:int + 44;
+  f = g_c[0]:int;
+  f.a = a;
+  f.b = b;
+  f.c = c;
+  f.d = d;
+  f.e = e;
+  f.f = h;
+  f.g = i;
+  f.h = j;
+  f.i = k;
+  f.j = l;
+  f.k = m;
+  f.l = g;
+  g_c[0]:int = g_c[0]:int + 48;
 }
 
-function fmt_parsenum(a:{ a:int, b:byte, c:int }, b:{ a:int, b:int, c:int, d:int }, c:int, d:int, e:int) { // func202
+function fmt_parsenum(a:{ a:int, b:byte, c:int }, b:{ a:int, b:int, c:int, d:int }, c:int, d:int, e:int) { // func213
   var g:int;
   var f:{ a:int, b:int, c:int, d:int }
   var h:int;
@@ -24526,7 +24806,7 @@ function fmt_parsenum(a:{ a:int, b:byte, c:int }, b:{ a:int, b:int, c:int, d:int
   g_c[0]:int = g_c[0]:int + 16;
 }
 
-function badVerb(a:int, b:int) { // func203
+function badVerb(a:int, b:int) { // func214
   var c:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int, i:int, j:int, k:int, l:int, m:int, n:int, o:int, p:int, q:int, r:int, s:int, t:int, u:int, v:int, w:int, x:int, y:int, z:int, aa:int, ba:int }
   var e:{ a:int, b:int, c:int, d:int, e:int, f:int }
   var f:int;
@@ -24554,11 +24834,11 @@ function badVerb(a:int, b:int) { // func203
         c.j = 18;
         memory_fill(c + 48, 0, 64);
         a[127]:byte = 1;
-        c.i = (g = 89708[0]:int);
-        89708[0]:int = (d = c + 32);
+        c.i = (g = 89988[0]:int);
+        89988[0]:int = (d = c + 32);
       }
       if (eqz(g_b) | eqz(e)) {
-        writeString(a, 86233, 2);
+        writeString(a, 86465, 2);
         0;
         if (g_b == 1) goto B_b;
       }
@@ -24638,7 +24918,7 @@ function badVerb(a:int, b:int) { // func203
         d = c + 8;
       }
       if (eqz(g_b) | e == 8) {
-        reflect_toType(d, 87044, b);
+        reflect_toType(d, 87272, b);
         8;
         if (g_b == 1) goto B_b;
       }
@@ -24681,7 +24961,7 @@ function badVerb(a:int, b:int) { // func203
       if (eqz(g_b)) goto B_i;
       label B_u:
       if (eqz(g_b) | e == 13) {
-        writeString(a, 86277, 5);
+        writeString(a, 86509, 5);
         13;
         if (g_b == 1) goto B_b;
       }
@@ -24692,7 +24972,7 @@ function badVerb(a:int, b:int) { // func203
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) {
-        89708[0]:int = g;
+        89988[0]:int = g;
         a[127]:byte = 0;
         stack_pointer = c + 112;
       }
@@ -24711,7 +24991,355 @@ function badVerb(a:int, b:int) { // func203
   g_c[0]:int = g_c[0]:int + 24;
 }
 
-function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int) { // func204
+function printArg(a:int, b:int, c:int, d:int) { // func215
+  var i:int_ptr;
+  var g:int;
+  var e:int;
+  var f:long;
+  var j:int;
+  var h:int;
+  var k:int;
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 40;
+    h = g_c[0]:int;
+    a = h[0]:int;
+    c = h[2]:int;
+    d = h[3]:int;
+    e = h[4]:int;
+    f = h[5]:long@4;
+    i = h[7]:int;
+    j = h[8]:int;
+    k = h[9]:int;
+    b = h[1]:int;
+  }
+  h = 
+    {
+      if (g_b == 2) {
+        g_c[0]:int = g_c[0]:int - 4;
+        g = (g_c[0]:int)[0]:int;
+      }
+      if (eqz(g_b)) {
+        i = stack_pointer - 80;
+        stack_pointer = i;
+        i[9] = 9;
+        memory_fill(i + 40, 0, 36);
+        a[5]:long@4 = 0L;
+        a[4]:int = c;
+        a[3]:int = b;
+        (a + 28)[0]:int = 0;
+        i[8] = (k = 89988[0]:int);
+        89988[0]:int = (e = i + 32);
+      }
+      if (eqz(g_b)) {
+        if (b) goto B_f;
+        b = d == 118;
+      }
+      if (eqz(g_b)) {
+        if (eqz(b)) {
+          b = d != 84;
+          if (b) goto B_h;
+        }
+        a = a + 32;
+      }
+      if (eqz(g_b) | eqz(g)) {
+        padString(a, 86509, 5);
+        0;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_h:
+      if (eqz(g_b) | g == 1) {
+        badVerb(a, d);
+        1;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_f:
+      e = select_if(e, d == 112, g_b);
+      if (eqz(g_b)) {
+        if (e) goto B_n;
+        e = d != 84;
+        if (e) goto B_m;
+        c = i + 24;
+      }
+      if (eqz(g_b) | g == 2) {
+        reflect_toType(c, 87272, b);
+        2;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) {
+        i[11] = (b = i[7]);
+        i[10] = (d = i[6]);
+        c = i + 16;
+      }
+      if (eqz(g_b) | g == 3) {
+        interface_Align_func_AssignableTo_func_named_reflect_Type_bool_Bits_func_CanSeq_func_bool_CanSeq2_fu_1(
+          c,
+          b,
+          d);
+        3;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) {
+        i[12] = (b = i[4]);
+        c = i[5];
+        a = a + 32;
+      }
+      if (eqz(g_b) | g == 4) {
+        fmtS(a, b, c);
+        4;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_n:
+      if (eqz(g_b)) {
+        i[14] = c;
+        i[13] = b;
+      }
+      if (eqz(g_b) | g == 5) {
+        fmtPointer(a, b, c, 2, 112);
+        5;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_m:
+      if (select_if(g_b, 1, e = select_if(e, b != 85992, g_b))) {
+        if (eqz(g_b) | g == 6) {
+          fmtBool(a, c, d);
+          6;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) goto B_e;
+      }
+      e = select_if(e, b != 86084, g_b);
+      if (eqz(g_b)) {
+        if (e) goto B_y;
+        f = i64_extend_i32_s(c);
+      }
+      if (eqz(g_b) | g == 7) {
+        fmtInteger_1(a, f, 1, d);
+        7;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_y:
+      if (eqz(g_b)) {
+        f = i64_extend_i32_u(c);
+        e = b != 67664;
+      }
+      if (eqz(g_b)) {
+        if (e) goto B_ca;
+        f = i64_extend8_s(f);
+      }
+      if (eqz(g_b) | g == 8) {
+        fmtInteger_1(a, f, 1, d);
+        8;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_ca:
+      e = select_if(e, b != 67680, g_b);
+      if (eqz(g_b)) {
+        if (e) goto B_fa;
+        f = i64_extend16_s(f);
+      }
+      if (eqz(g_b) | g == 9) {
+        fmtInteger_1(a, f, 1, d);
+        9;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_fa:
+      e = select_if(e, b != 86728, g_b);
+      if (eqz(g_b)) {
+        if (e) goto B_ia;
+        f = i64_extend_i32_s(c);
+      }
+      if (eqz(g_b) | g == 10) {
+        fmtInteger_1(a, f, 1, d);
+        10;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_ia:
+      e = select_if(e, b != 68900, g_b);
+      if (eqz(g_b)) {
+        if (e) goto B_la;
+        f = c[0]:long;
+      }
+      if (eqz(g_b) | g == 11) {
+        fmtInteger_1(a, f, 1, d);
+        11;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_la:
+      if (select_if(g_b, 1, e = select_if(e, b != 67696, g_b))) {
+        if (eqz(g_b) | g == 12) {
+          fmtInteger_1(a, f, 0, d);
+          12;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) goto B_e;
+      }
+      e = select_if(e, b != 85540, g_b);
+      if (eqz(g_b)) {
+        if (e) goto B_qa;
+        f = f & 255L;
+      }
+      if (eqz(g_b) | g == 13) {
+        fmtInteger_1(a, f, 0, d);
+        13;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_qa:
+      e = select_if(e, b != 67712, g_b);
+      if (eqz(g_b)) {
+        if (e) goto B_ta;
+        f = f & 65535L;
+      }
+      if (eqz(g_b) | g == 14) {
+        fmtInteger_1(a, f, 0, d);
+        14;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_ta:
+      if (select_if(g_b, 1, e = select_if(e, b != 86812, g_b))) {
+        if (eqz(g_b) | g == 15) {
+          fmtInteger_1(a, f, 0, d);
+          15;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) goto B_e;
+      }
+      e = select_if(e, b != 68968, g_b);
+      if (eqz(g_b)) {
+        if (e) goto B_ya;
+        f = c[0]:long;
+      }
+      if (eqz(g_b) | g == 16) {
+        fmtInteger_1(a, f, 0, d);
+        16;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_ya:
+      if (select_if(g_b, 1, e = select_if(e, b != 68748, g_b))) {
+        if (eqz(g_b) | g == 17) {
+          fmtInteger_1(a, f, 0, d);
+          17;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) goto B_e;
+      }
+      e = select_if(e, b != 86240, g_b);
+      if (eqz(g_b)) {
+        if (e) goto B_db;
+        b = c[0]:int;
+        c = c[1]:int;
+      }
+      if (eqz(g_b) | g == 18) {
+        fmtString(a, b, c, d);
+        18;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_db:
+      e = select_if(e, b != 85520, g_b);
+      if (eqz(g_b)) {
+        if (e) goto B_gb;
+        b = c[0]:int;
+        e = c[1]:int;
+        c = c[2]:int;
+      }
+      if (eqz(g_b) | g == 19) {
+        fmtBytes(a, b, e, c, d, 86476, 6);
+        19;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_gb:
+      e = select_if(e, b != 87108, g_b);
+      if (eqz(g_b)) {
+        if (e) goto B_jb;
+        b = c[8]:ubyte;
+        e = c[1]:int;
+        c = c[0]:int;
+        j = eqz(c);
+      }
+      if (eqz(g_b)) {
+        if (j | (b & 14) != 2) goto B_lb;
+        j = i + 8;
+      }
+      if (eqz(g_b) | g == 20) {
+        Interface(j, c, e, b);
+        20;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) {
+        j = i[2];
+        a[4]:int = (h = i[3]);
+        a[3]:int = j;
+        i[16] = h;
+        i[15] = j;
+      }
+      if (eqz(g_b) | g == 21) {
+        handleMethods(a, d);
+        let t0 = 21;
+        if (g_b == 1) goto B_b;
+        j = t0;
+      }
+      if (eqz(g_b) & (j & 1)) goto B_e;
+      label B_lb:
+      if (eqz(g_b) | g == 22) {
+        printValue(a, c, e, b, d, 0);
+        22;
+        if (g_b == 1) goto B_b;
+      }
+      if (eqz(g_b)) goto B_e;
+      label B_jb:
+      if (eqz(g_b) | g == 23) {
+        handleMethods(a, d);
+        let t1 = 23;
+        if (g_b == 1) goto B_b;
+        e = t1;
+      }
+      if (eqz(g_b)) {
+        if (e & 1) goto B_e;
+        i[18] = c;
+        i[17] = b;
+      }
+      if (eqz(g_b) | g == 24) {
+        printValue(a, b, c, 2, d, 0);
+        24;
+        if (g_b == 1) goto B_b;
+      }
+      label B_e:
+      if (eqz(g_b)) {
+        89988[0]:int = k;
+        stack_pointer = i + 80;
+      }
+      return ;
+      label B_b:
+    }
+  (g_c[0]:int)[0]:int = h;
+  g_c[0]:int = g_c[0]:int + 4;
+  h = g_c[0]:int;
+  h[0]:int = a;
+  h[1]:int = b;
+  h[2]:int = c;
+  h[3]:int = d;
+  h[4]:int = e;
+  h[5]:long@4 = f;
+  h[7]:int = i;
+  h[8]:int = j;
+  h[9]:int = k;
+  g_c[0]:int = g_c[0]:int + 40;
+}
+
+function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int) { // func216
   var g:int;
   var h:ubyte_ptr;
   var i:int;
@@ -24765,8 +25393,8 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         stack_pointer = g;
         g[107]:int = 171;
         memory_fill(g + 432, 0, 684);
-        g[106]:int = (x = 89708[0]:int);
-        89708[0]:int = g + 424;
+        g[106]:int = (x = 89988[0]:int);
+        89988[0]:int = g + 424;
         h = eqz(b);
       }
       if (eqz(g_b)) {
@@ -24818,7 +25446,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
       }
       if (select_if(g_b, 1, f)) {
         if (eqz(g_b) | i == 2) {
-          writeString(a, 86250, 23);
+          writeString(a, 86482, 23);
           2;
           if (g_b == 1) goto B_b;
         }
@@ -24829,7 +25457,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         if (b) goto B_z;
       }
       if (eqz(g_b) | i == 3) {
-        writeString(a, 86277, 5);
+        writeString(a, 86509, 5);
         3;
         if (g_b == 1) goto B_b;
       }
@@ -24957,7 +25585,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         h = g + 144;
       }
       if (eqz(g_b) | i == 20) {
-        reflect_toType(h, 87044, b);
+        reflect_toType(h, 87272, b);
         20;
         if (g_b == 1) goto B_b;
       }
@@ -24991,7 +25619,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
       }
       if (select_if(g_b, 1, h = select_if(h, eqz(h & 1), g_b))) {
         if (eqz(g_b) | i == 24) {
-          writeString(a, 86282, 5);
+          writeString(a, 86514, 5);
           24;
           if (g_b == 1) goto B_b;
         }
@@ -25005,7 +25633,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
       if (eqz(g_b)) goto B_t;
       label B_kb:
       if (eqz(g_b) | i == 26) {
-        writeString(a, 86273, 4);
+        writeString(a, 86505, 4);
         26;
         if (g_b == 1) goto B_b;
       }
@@ -25017,7 +25645,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         h = g + 248;
       }
       if (eqz(g_b) | i == 27) {
-        reflect_toType(h, 87044, b);
+        reflect_toType(h, 87272, b);
         27;
         if (g_b == 1) goto B_b;
       }
@@ -25071,7 +25699,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         }
         if (select_if(g_b, 1, f)) {
           if (eqz(g_b) | i == 32) {
-            writeString(a, 86287, 2);
+            writeString(a, 86519, 2);
             32;
             if (g_b == 1) goto B_b;
           }
@@ -25100,14 +25728,14 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         label B_jc:
         f = select_if(f, g + 232, g_b);
         if (eqz(g_b) | i == 35) {
-          reflect_toType(f, 87044, b);
+          reflect_toType(f, 87272, b);
           35;
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b)) {
           g[185]:int = (m = g[59]:int);
           g[184]:int = (l = g[58]:int);
-          f = l != 87148;
+          f = l != 87376;
           if (f) goto B_q;
           f = eqz(m);
           if (f) goto B_q;
@@ -25161,7 +25789,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
           n = g + 184;
         }
         if (eqz(g_b) | i == 38) {
-          reflect_toType(n, 87044, f);
+          reflect_toType(n, 87272, f);
           38;
           if (g_b == 1) goto B_b;
         }
@@ -25270,7 +25898,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
       }
       c = select_if(c, g + 16, g_b);
       if (eqz(g_b) | i == 47) {
-        reflect_toType(c, 87044, b);
+        reflect_toType(c, 87272, b);
         47;
         if (g_b == 1) goto B_b;
       }
@@ -25365,14 +25993,14 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         h = g + 368;
       }
       if (eqz(g_b) | i == 56) {
-        reflect_toType(h, 87044, b);
+        reflect_toType(h, 87272, b);
         56;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) {
         g[245]:int = (o = g[93]:int);
         g[244]:int = (j = g[92]:int);
-        h = j != 87148;
+        h = j != 87376;
         if (h) goto B_q;
         h = eqz(o);
         if (h) goto B_q;
@@ -25388,7 +26016,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         h = g + 360;
       }
       if (eqz(g_b) | i == 58) {
-        reflect_toType(h, 87044, j);
+        reflect_toType(h, 87272, j);
         58;
         if (g_b == 1) goto B_b;
       }
@@ -25542,7 +26170,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         h = g + 312;
       }
       if (eqz(g_b) | i == 67) {
-        reflect_toType(h, 87044, b);
+        reflect_toType(h, 87272, b);
         67;
         if (g_b == 1) goto B_b;
       }
@@ -25581,7 +26209,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         if (h) goto B_fg;
       }
       if (eqz(g_b) | i == 71) {
-        writeString(a, 86282, 5);
+        writeString(a, 86514, 5);
         71;
         if (g_b == 1) goto B_b;
       }
@@ -25609,7 +26237,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
           f = eqz(j);
         }
         if (select_if(select_if(g_b, 1, f), 0, eqz(g_b) | i == 74)) {
-          writeString(a, 86287, 2);
+          writeString(a, 86519, 2);
           74;
           if (g_b == 1) goto B_b;
         }
@@ -25711,14 +26339,14 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         a[0]:int = 66586;
       }
       if (eqz(g_b) | i == 85) {
-        runtime_panic(87068, a);
+        runtime_panic(87296, a);
         85;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) { unreachable }
       label B_ie:
       if (eqz(g_b) | i == 86) {
-        runtime_panic(86592, 66832);
+        runtime_panic(86240, 66832);
         86;
         if (g_b == 1) goto B_b;
       }
@@ -25738,7 +26366,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         a[0]:int = 66586;
       }
       if (eqz(g_b) | i == 88) {
-        runtime_panic(87068, a);
+        runtime_panic(87296, a);
         88;
         if (g_b == 1) goto B_b;
       }
@@ -25758,7 +26386,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         a[0]:int = 66586;
       }
       if (eqz(g_b) | i == 90) {
-        runtime_panic(87068, a);
+        runtime_panic(87296, a);
         90;
         if (g_b == 1) goto B_b;
       }
@@ -25820,7 +26448,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         c = g + 264;
       }
       if (eqz(g_b) | i == 96) {
-        reflect_toType(c, 87044, b);
+        reflect_toType(c, 87272, b);
         96;
         if (g_b == 1) goto B_b;
       }
@@ -25847,14 +26475,14 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b) | i == 99) {
-        writeString(a, 86282, 5);
+        writeString(a, 86514, 5);
         99;
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b)) goto B_f;
       label B_hi:
       if (eqz(g_b) | i == 100) {
-        writeString(a, 86277, 5);
+        writeString(a, 86509, 5);
         100;
         if (g_b == 1) goto B_b;
       }
@@ -25862,7 +26490,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
       label B_t:
       h = select_if(h, g + 128, g_b);
       if (eqz(g_b) | i == 101) {
-        reflect_toType(h, 87044, b);
+        reflect_toType(h, 87272, b);
         101;
         if (g_b == 1) goto B_b;
       }
@@ -25999,7 +26627,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         a[0]:int = 66840;
       }
       if (eqz(g_b) | i == 110) {
-        runtime_panic(87068, a);
+        runtime_panic(87296, a);
         110;
         if (g_b == 1) goto B_b;
       }
@@ -26287,7 +26915,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
         }
         if (select_if(g_b, 1, q)) {
           if (eqz(g_b) | i == 125) {
-            writeString(a, 86287, 2);
+            writeString(a, 86519, 2);
             125;
             if (g_b == 1) goto B_b;
           }
@@ -26348,13 +26976,13 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
       if (eqz(g_b)) { unreachable }
       label B_f:
       if (eqz(g_b)) {
-        89708[0]:int = x;
+        89988[0]:int = x;
         stack_pointer = g + 1120;
         return ;
       }
       label B_e:
       if (eqz(g_b) | i == 133) {
-        runtime_panic(86592, 66896);
+        runtime_panic(86240, 66896);
         133;
         if (g_b == 1) goto B_b;
       }
@@ -26389,7 +27017,7 @@ function printValue(a:int, b:int, c:{ a:int, b:int, c:int }, d:int, e:int, f:int
   g_c[0]:int = g_c[0]:int + 96;
 }
 
-function fmt0x64(a:int, b:long, c:int) { // func205
+function fmt0x64(a:int, b:long, c:int) { // func217
   var e:int;
   var d:int;
   if (g_b == 2) {
@@ -26411,7 +27039,7 @@ function fmt0x64(a:int, b:long, c:int) { // func205
           c = a + 32;
         }
         if (eqz(g_b) | eqz(e)) {
-          fmtInteger(c, b, 16, 0, 118, 86180);
+          fmtInteger(c, b, 16, 0, 118, 86412);
           0;
           if (g_b == 1) goto B_b;
         }
@@ -26429,7 +27057,7 @@ function fmt0x64(a:int, b:long, c:int) { // func205
   g_c[0]:int = g_c[0]:int + 20;
 }
 
-function fmtBool(a:int, b:{ a:int, b:int }, c:{ a:int, b:int }) { // func206
+function fmtBool(a:int, b:{ a:int, b:int }, c:{ a:int, b:int }) { // func218
   var d:int;
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 8;
@@ -26451,14 +27079,14 @@ function fmtBool(a:int, b:{ a:int, b:int }, c:{ a:int, b:int }) { // func206
         }
         if (select_if(g_b, 1, a)) {
           if (eqz(g_b) | eqz(d)) {
-            padString(c, 86072, 4);
+            padString(c, 86304, 4);
             0;
             if (g_b == 1) goto B_b;
           }
           if (eqz(g_b)) { return  }
         }
         if (eqz(g_b) | d == 1) {
-          padString(c, 86076, 5);
+          padString(c, 86308, 5);
           1;
           if (g_b == 1) goto B_b;
         }
@@ -26480,7 +27108,7 @@ function fmtBool(a:int, b:{ a:int, b:int }, c:{ a:int, b:int }) { // func206
   g_c[0]:int = g_c[0]:int + 8;
 }
 
-function fmtBytes(a:int, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:int }) { // func207
+function fmtBytes(a:int, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:int }) { // func219
   var j:int;
   var m:int;
   var k:int;
@@ -26515,8 +27143,8 @@ function fmtBytes(a:int, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:
         (j + 40)[0]:int = 0;
         j[3]:long = 0L;
         j[5]:int = 5;
-        m = 89708[0]:int;
-        89708[0]:int = j + 16;
+        m = 89988[0]:int;
+        89988[0]:int = j + 16;
         j[4]:int = m;
         k = e - 113;
       }
@@ -26537,7 +27165,7 @@ function fmtBytes(a:int, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:
         }
         if (select_if(g_b, 1, b)) {
           if (eqz(g_b) | i == 1) {
-            writeString(a, 86282, 5);
+            writeString(a, 86514, 5);
             1;
             if (g_b == 1) goto B_b;
           }
@@ -26562,7 +27190,7 @@ function fmtBytes(a:int, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:
             d = g - 1 > 2147483646;
           }
           if (select_if(select_if(g_b, 1, d), 0, eqz(g_b) | i == 3)) {
-            writeString(a, 86287, 2);
+            writeString(a, 86519, 2);
             3;
             if (g_b == 1) goto B_b;
           }
@@ -26607,7 +27235,7 @@ function fmtBytes(a:int, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b) | i == 8) {
-          fmtInteger(d, l, 10, 0, e, 86180);
+          fmtInteger(d, l, 10, 0, e, 86412);
           8;
           if (g_b == 1) goto B_b;
         }
@@ -26676,7 +27304,7 @@ function fmtBytes(a:int, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:
       label B_m:
       a = select_if(a, a + 32, g_b);
       if (eqz(g_b) | i == 10) {
-        fmtBx(a, b, c, 86180);
+        fmtBx(a, b, c, 86412);
         10;
         if (g_b == 1) goto B_b;
       }
@@ -26684,7 +27312,7 @@ function fmtBytes(a:int, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:
       label B_l:
       a = select_if(a, a + 32, g_b);
       if (eqz(g_b) | i == 11) {
-        fmtBx(a, b, c, 86197);
+        fmtBx(a, b, c, 86429);
         11;
         if (g_b == 1) goto B_b;
       }
@@ -26721,10 +27349,10 @@ function fmtBytes(a:int, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:
         j[7]:int = g;
         j[8]:int = g;
         j[10]:int = g;
-        j[9]:int = 85304;
+        j[9]:int = 85520;
       }
       if (eqz(g_b) | i == 15) {
-        printValue(a, 85304, g, 2, e, 0);
+        printValue(a, 85520, g, 2, e, 0);
         15;
         if (g_b == 1) goto B_b;
       }
@@ -26754,7 +27382,7 @@ function fmtBytes(a:int, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:
       }
       label B_e:
       if (eqz(g_b)) {
-        89708[0]:int = m;
+        89988[0]:int = m;
         stack_pointer = j + 48;
       }
       return ;
@@ -26777,7 +27405,7 @@ function fmtBytes(a:int, b:int, c:int, d:int, e:int, f:int, g:{ a:int, b:int, c:
   g_c[0]:int = g_c[0]:int + 48;
 }
 
-function fmtComplex(a:int, b:double, c:double, d:int, e:int) { // func208
+function fmtComplex(a:int, b:double, c:double, d:int, e:int) { // func220
   var g:int;
   var h:int;
   var f:int;
@@ -26825,7 +27453,7 @@ function fmtComplex(a:int, b:double, c:double, d:int, e:int) { // func208
         if (g_b == 1) goto B_b;
       }
       if (eqz(g_b) | f == 3) {
-        writeString(a, 86173, 2);
+        writeString(a, 86405, 2);
         3;
         if (g_b == 1) goto B_b;
       }
@@ -26854,7 +27482,7 @@ function fmtComplex(a:int, b:double, c:double, d:int, e:int) { // func208
   g_c[0]:int = g_c[0]:int + 32;
 }
 
-function fmtFloat_1(a:int, b:double, c:int, d:int) { // func209
+function fmtFloat_1(a:int, b:double, c:int, d:int) { // func221
   var e:int;
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 20;
@@ -26930,7 +27558,7 @@ function fmtFloat_1(a:int, b:double, c:int, d:int) { // func209
   g_c[0]:int = g_c[0]:int + 20;
 }
 
-function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func210
+function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func222
   var g:int;
   var m:int;
   var f:int;
@@ -26970,8 +27598,8 @@ function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func210
         (g + 56)[0]:long = 0L;
         g[5]:long = 0L;
         g[9]:int = 6;
-        m = 89708[0]:int;
-        89708[0]:int = g + 32;
+        m = 89988[0]:int;
+        89988[0]:int = g + 32;
         g[8]:int = m;
         f = d - 111;
       }
@@ -27000,7 +27628,7 @@ function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func210
       label B_v:
       a = select_if(a, a + 32, g_b);
       if (eqz(g_b) | i == 1) {
-        fmtInteger(a, b, 10, c, 118, 86180);
+        fmtInteger(a, b, 10, c, 118, 86412);
         1;
         if (g_b == 1) goto B_b;
       }
@@ -27008,7 +27636,7 @@ function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func210
       label B_q:
       a = select_if(a, a + 32, g_b);
       if (eqz(g_b) | i == 2) {
-        fmtInteger(a, b, 10, c, 100, 86180);
+        fmtInteger(a, b, 10, c, 100, 86412);
         2;
         if (g_b == 1) goto B_b;
       }
@@ -27016,7 +27644,7 @@ function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func210
       label B_p:
       a = select_if(a, a + 32, g_b);
       if (eqz(g_b) | i == 3) {
-        fmtInteger(a, b, 2, c, 98, 86180);
+        fmtInteger(a, b, 2, c, 98, 86412);
         3;
         if (g_b == 1) goto B_b;
       }
@@ -27024,7 +27652,7 @@ function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func210
       label B_o:
       a = select_if(a, a + 32, g_b);
       if (eqz(g_b) | i == 4) {
-        fmtInteger(a, b, 16, c, 120, 86180);
+        fmtInteger(a, b, 16, c, 120, 86412);
         4;
         if (g_b == 1) goto B_b;
       }
@@ -27032,7 +27660,7 @@ function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func210
       label B_n:
       a = select_if(a, a + 32, g_b);
       if (eqz(g_b) | i == 5) {
-        fmtInteger(a, b, 16, c, 88, 86197);
+        fmtInteger(a, b, 16, c, 88, 86429);
         5;
         if (g_b == 1) goto B_b;
       }
@@ -27189,7 +27817,7 @@ function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func210
           h = d + k;
           if (b < 16L) goto B_eb;
           if (c <= h) goto B_ta;
-          (d + e)[0]:byte = ((i32_wrap_i64(b) & 15) + 86197)[0]:ubyte;
+          (d + e)[0]:byte = ((i32_wrap_i64(b) & 15) + 86429)[0]:ubyte;
           d = d - 1;
           b = b >> 4L;
           continue L_db;
@@ -27199,7 +27827,7 @@ function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func210
         k = l - 1;
         l = f + j;
         e = l - 3;
-        h = (i32_wrap_i64(b) + 86197)[0]:ubyte;
+        h = (i32_wrap_i64(b) + 86429)[0]:ubyte;
         loop L_gb {
           (d + e + 2)[0]:byte = h;
           if (d + k <= 0) goto B_fb;
@@ -27245,13 +27873,13 @@ function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func210
       label B_f:
       a = select_if(a, a + 32, g_b);
       if (eqz(g_b) | i == 17) {
-        fmtInteger(a, b, 8, c, d, 86180);
+        fmtInteger(a, b, 8, c, d, 86412);
         17;
         if (g_b == 1) goto B_b;
       }
       label B_e:
       if (eqz(g_b)) {
-        89708[0]:int = m;
+        89988[0]:int = m;
         stack_pointer = g - -64;
       }
       return ;
@@ -27275,7 +27903,7 @@ function fmtInteger_1(a:int, b:long, c:int, d:byte_ptr) { // func210
   g_c[0]:int = g_c[0]:int + 52;
 }
 
-function fmtPointer(a:ubyte_ptr, b:ubyte_ptr, c:int, d:int, e:int) { // func211
+function fmtPointer(a:ubyte_ptr, b:ubyte_ptr, c:int, d:int, e:int) { // func223
   var f:int;
   var i:int;
   var g:int;
@@ -27305,8 +27933,8 @@ function fmtPointer(a:ubyte_ptr, b:ubyte_ptr, c:int, d:int, e:int) { // func211
         (f + 44)[0]:int = 0;
         f[9]:long@4 = 0L;
         f[7]:int = 4;
-        i = 89708[0]:int;
-        89708[0]:int = f + 24;
+        i = 89988[0]:int;
+        89988[0]:int = f + 24;
         f[6]:int = i;
         g = eqz(b);
       }
@@ -27342,7 +27970,7 @@ function fmtPointer(a:ubyte_ptr, b:ubyte_ptr, c:int, d:int, e:int) { // func211
         }
         c = select_if(c, f + 16, g_b);
         if (eqz(g_b) | h == 2) {
-          reflect_toType(c, 87044, b);
+          reflect_toType(c, 87272, b);
           2;
           if (g_b == 1) goto B_b;
         }
@@ -27369,13 +27997,13 @@ function fmtPointer(a:ubyte_ptr, b:ubyte_ptr, c:int, d:int, e:int) { // func211
           if (g_b == 1) goto B_b;
         }
         if (eqz(g_b) | h == 5) {
-          writeString(a, 86175, 2);
+          writeString(a, 86407, 2);
           5;
           if (g_b == 1) goto B_b;
         }
         if (select_if(g_b, 1, d)) {
           if (eqz(g_b) | h == 6) {
-            writeString(a, 86177, 3);
+            writeString(a, 86409, 3);
             6;
             if (g_b == 1) goto B_b;
           }
@@ -27394,7 +28022,7 @@ function fmtPointer(a:ubyte_ptr, b:ubyte_ptr, c:int, d:int, e:int) { // func211
         a = a + 32;
       }
       if (eqz(g_b) | h == 8) {
-        padString(a, 86277, 5);
+        padString(a, 86509, 5);
         8;
         if (g_b == 1) goto B_b;
       }
@@ -27446,7 +28074,7 @@ function fmtPointer(a:ubyte_ptr, b:ubyte_ptr, c:int, d:int, e:int) { // func211
       }
       label B_e:
       if (eqz(g_b)) {
-        89708[0]:int = i;
+        89988[0]:int = i;
         stack_pointer = f + 48;
       }
       return ;
@@ -27466,7 +28094,7 @@ function fmtPointer(a:ubyte_ptr, b:ubyte_ptr, c:int, d:int, e:int) { // func211
   g_c[0]:int = g_c[0]:int + 36;
 }
 
-function fmtString(a:ubyte_ptr, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func212
+function fmtString(a:ubyte_ptr, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) { // func224
   var e:{ a:int, b:int, c:int, d:int }
   if (g_b == 2) {
     g_c[0]:int = g_c[0]:int - 16;
@@ -27513,7 +28141,7 @@ function fmtString(a:ubyte_ptr, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) 
         label B_h:
         a = select_if(a, a + 32, g_b);
         if (eqz(g_b) | e == 3) {
-          fmtSx(a, b, c, 86180);
+          fmtSx(a, b, c, 86412);
           3;
           if (g_b == 1) goto B_b;
         }
@@ -27538,7 +28166,7 @@ function fmtString(a:ubyte_ptr, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) 
         label B_d:
         a = select_if(a, a + 32, g_b);
         if (eqz(g_b) | e == 6) {
-          fmtSx(a, b, c, 86197);
+          fmtSx(a, b, c, 86429);
           6;
           if (g_b == 1) goto B_b;
         }
@@ -27555,7 +28183,97 @@ function fmtString(a:ubyte_ptr, b:int, c:int, d:{ a:int, b:int, c:int, d:int }) 
   g_c[0]:int = g_c[0]:int + 16;
 }
 
-function handleMethods(a:int, b:int):int { // func213
+function free_1(a:int) { // func225
+  var b:int;
+  var h:int;
+  var g:int;
+  var d:int;
+  var e:int;
+  var f:int;
+  var i:int;
+  var c:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int }
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 28;
+    c = g_c[0]:int;
+    a = c.a;
+    d = c.d;
+    e = c.e;
+    g = c.f;
+    h = c.g;
+    f = c.c;
+    b = c.b;
+  }
+  c = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          i = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) {
+          b = stack_pointer + -64;
+          stack_pointer = b;
+          b[7]:long = 0L;
+          b[9]:int = 6;
+          h = 89988[0]:int;
+          89988[0]:int = b + 32;
+          b[8]:int = h;
+          b[10]:int = (d = a[0]:int);
+          f = 0;
+          e = 0;
+          g = a[2]:int;
+          if (g < 65537) {
+            b[15]:int = d;
+            f = d;
+            e = g;
+          }
+          a[2]:int = e;
+          a[1]:int = 0;
+          a[0]:int = f;
+          a[3]:long@4 = 0L;
+          a[34]:int = 0;
+          (a + 20)[0]:long@4 = 0L;
+          (a + 28)[0]:int = 0;
+          a[33]:int =
+            (g = select_if(0, f = a[33]:int, d = (e = a[35]:int) > 8));
+          a[35]:int = select_if(0, e, d);
+          b[11]:int = f;
+          b[12]:int = g;
+          b[13]:int = (f = 91244[0]:int);
+          b[7]:int = a;
+          b[6]:int = 87256;
+          d = b + 24;
+          e = 91248[0]:int;
+          g = 91252[0]:int;
+          a = b + 8;
+        }
+        if (eqz(g_b) | eqz(i)) {
+          runtime_sliceAppend(a, f, d, e, g, 1, 8);
+          0;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          91244[0]:int = b[2]:int;
+          91248[0]:int = b[3]:int;
+          91252[0]:int = b[4]:int;
+          89988[0]:int = h;
+          stack_pointer = b - -64;
+        }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = c;
+  g_c[0]:int = g_c[0]:int + 4;
+  c = g_c[0]:int;
+  c.a = a;
+  c.b = b;
+  c.c = f;
+  c.d = d;
+  c.e = e;
+  c.f = g;
+  c.g = h;
+  g_c[0]:int = g_c[0]:int + 28;
+}
+
+function handleMethods(a:int, b:int):int { // func226
   var c:int;
   var e:int;
   var d:int;
@@ -27588,8 +28306,8 @@ function handleMethods(a:int, b:int):int { // func213
         stack_pointer = c;
         c[35]:int = 20;
         memory_fill(c + 144, 0, 80);
-        c[34]:int = (h = 89708[0]:int);
-        89708[0]:int = c + 136;
+        c[34]:int = (h = 89988[0]:int);
+        89988[0]:int = c + 136;
         e = a[127]:ubyte;
         d = 0;
       }
@@ -27629,21 +28347,21 @@ function handleMethods(a:int, b:int):int { // func213
         c[44]:int = f;
         c[41]:int = f;
         c[40]:int = e;
-        d = e == 87180;
+        d = e == 87408;
         if (eqz(d)) {
           d = 0;
-          if (e != 86976) goto B_e;
+          if (e != 87204) goto B_e;
         }
         c[43]:int = f;
         c[42]:int = e;
         c[17]:int = 8;
-        c[16]:int = 86214;
+        c[16]:int = 86446;
         c[15]:int = b;
         c[14]:int = f;
         c[13]:int = e;
         c[5]:long = 0L;
         c[12]:int = a;
-        b = e != 87180;
+        b = e != 87408;
       }
       if (eqz(g_b)) {
         if (b) goto B_u;
@@ -27666,7 +28384,7 @@ function handleMethods(a:int, b:int):int { // func213
       }
       label B_u:
       if (eqz(g_b)) {
-        b = e != 86976;
+        b = e != 87204;
         if (b) goto B_p;
         i = f.a;
         j = f.b;
@@ -27732,7 +28450,7 @@ function handleMethods(a:int, b:int):int { // func213
         c[51]:int = f;
         c[50]:int = e;
         c[25]:int = 5;
-        c[24]:int = 86222;
+        c[24]:int = 86454;
         c[23]:int = b;
         c[22]:int = f;
         c[21]:int = e;
@@ -27770,7 +28488,7 @@ function handleMethods(a:int, b:int):int { // func213
         c[54]:int = f;
         c[53]:int = e;
         c[33]:int = 6;
-        c[32]:int = 86227;
+        c[32]:int = 86459;
         c[31]:int = b;
         c[30]:int = f;
         c[29]:int = e;
@@ -27805,7 +28523,7 @@ function handleMethods(a:int, b:int):int { // func213
       d = select_if(d, 1, g_b);
       label B_e:
       if (eqz(g_b)) {
-        89708[0]:int = h;
+        89988[0]:int = h;
         stack_pointer = c + 224;
         return d;
       }
@@ -27828,7 +28546,7 @@ function handleMethods(a:int, b:int):int { // func213
   return 0;
 }
 
-function fmt_intFromArg(a:{ a:int, b:byte }, b:{ a:int, b:int }, c:int) { // func214
+function fmt_intFromArg(a:{ a:int, b:byte }, b:{ a:int, b:int }, c:int) { // func227
   var g:{ a:int, b:int, c:int, d:int, e:int, f:int, g:int, h:int }
   var d:int;
   var e:ubyte_ptr;
@@ -27858,8 +28576,8 @@ function fmt_intFromArg(a:{ a:int, b:byte }, b:{ a:int, b:int }, c:int) { // fun
         g = stack_pointer - 32;
         stack_pointer = g;
         g.b = 6;
-        d = 89708[0]:int;
-        89708[0]:int = g;
+        d = 89988[0]:int;
+        89988[0]:int = g;
         g.a = d;
         e = 0;
         f = 0;
@@ -27869,7 +28587,7 @@ function fmt_intFromArg(a:{ a:int, b:byte }, b:{ a:int, b:int }, c:int) { // fun
         if (c) goto B_e;
         g.c = (e = b.a);
         g.d = (c = b.b);
-        b = e != 85868;
+        b = e != 86084;
       }
       if (eqz(g_b)) {
         if (eqz(b)) {
@@ -27920,7 +28638,7 @@ function fmt_intFromArg(a:{ a:int, b:byte }, b:{ a:int, b:int }, c:int) { // fun
       }
       label B_e:
       if (eqz(g_b)) {
-        89708[0]:int = d;
+        89988[0]:int = d;
         a.b = f;
         a.a = e;
         stack_pointer = g + 32;
@@ -27942,29 +28660,646 @@ function fmt_intFromArg(a:{ a:int, b:byte }, b:{ a:int, b:int }, c:int) { // fun
   g_c[0]:int = g_c[0]:int + 36;
 }
 
-export function asyncify_start_unwind(a:int) { // func215
+function fmt_newPrinter():int { // func228
+  var b:int_ptr;
+  var a:int;
+  var c:int;
+  var d:{ a:int, b:int, c:int, d:int, e:int }
+  var g:int;
+  var f:int;
+  var e:{ a:int, b:int, c:int, d:int, e:int }
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 20;
+    e = g_c[0]:int;
+    a = e.a;
+    b = e.b;
+    c = e.c;
+    f = e.d;
+    e = e.e;
+  }
+  d = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          g = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) {
+          b = stack_pointer - 80;
+          stack_pointer = b;
+          b[3] = 11;
+          memory_fill(b + 20, 0, 40);
+          b[2] = (e = 89988[0]:int);
+          89988[0]:int = b + 8;
+          b[4] = (c = 91244[0]:int);
+          d = 91248[0]:int;
+          a = d <= 0;
+        }
+        if (eqz(g_b)) {
+          if (a) goto B_f;
+          b[6] = c;
+          b[5] = c;
+          b[7] = (f = ((a = c + (d << 3)) - 8)[0]:int);
+          a = (a - 4)[0]:int;
+          b[9] = c;
+          b[8] = a;
+          b[10] = c;
+          c = d - 1;
+          if (c <= 91252[0]:int) {
+            91248[0]:int = c;
+            goto B_e;
+          }
+        }
+        if (eqz(g_b) | eqz(g)) {
+          runtime_slicePanic();
+          0;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { unreachable }
+        label B_f:
+        if (eqz(g_b)) { 89988[0]:int = (a = b - -64) }
+        if (eqz(g_b) | g == 1) {
+          runtime_alloc(144);
+          let t0 = 1;
+          if (g_b == 1) goto B_b;
+          a = t0;
+        }
+        if (eqz(g_b)) {
+          89988[0]:int = (c = b + 8);
+          b[12] = a;
+          b[11] = 87256;
+          f = 87256;
+        }
+        label B_e:
+        if (eqz(g_b)) {
+          b[14] = a;
+          b[13] = f;
+          c = f == 87256;
+        }
+        if (eqz(g_b) | g == 2) {
+          runtime_interfaceTypeAssert(c);
+          2;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b | (eqz(a) | f != 87256))) {
+          a[128]:byte = 0;
+          a[126]:short@1 = 0;
+          a[12]:long@4 = 0L;
+          a[36]:long@1 = 0L;
+          89988[0]:int = e;
+          (a + 44)[0]:byte = 0;
+          a[8]:int = a;
+          stack_pointer = b + 80;
+          return a;
+        }
+        if (eqz(g_b) | g == 3) {
+          runtime_nilPanic();
+          3;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) { unreachable }
+        unreachable;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = d;
+  g_c[0]:int = g_c[0]:int + 4;
+  d = g_c[0]:int;
+  d.a = a;
+  d.b = b;
+  d.c = c;
+  d.d = f;
+  d.e = e;
+  g_c[0]:int = g_c[0]:int + 20;
+  return 0;
+}
+
+function main_incrementRawPointerValue(a:int_ptr) { // func229
+  var d:int;
+  var c:{ a:int, b:int, c:int }
+  var b:{ a:int, b:int, c:int }
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 12;
+    b = g_c[0]:int;
+    a = b.a;
+    d = b.b;
+    b = b.c;
+  }
+  c = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          c = (g_c[0]:int)[0]:int;
+        }
+        d = select_if(d, 2000, g_b);
+        loop L_d {
+          if (eqz(g_b)) {
+            if (eqz(d)) goto B_e;
+            b = a[0];
+          }
+          if (eqz(g_b) | eqz(c)) {
+            runtime_Gosched();
+            0;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            a[0] = (b = b + 1);
+            d = d - 1;
+            continue L_d;
+          }
+          label B_e:
+        }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = c;
+  g_c[0]:int = g_c[0]:int + 4;
+  c = g_c[0]:int;
+  c.a = a;
+  c.b = d;
+  c.c = b;
+  g_c[0]:int = g_c[0]:int + 12;
+}
+
+function main_incrementRawPointerValueSafe(a:int_ptr) { // func230
+  var b:int;
+  var e:int;
+  var c:int_ptr;
+  var d:{ a:int, b:int, c:int, d:int, e:int, f:int }
+  var f:int_ptr;
+  var h:int;
+  var g:int_ptr;
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 24;
+    d = g_c[0]:int;
+    a = d.a;
+    c = d.b;
+    e = d.d;
+    f = d.e;
+    g = d.f;
+    b = d.c;
+  }
+  d = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          h = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) {
+          e = 0;
+          c = 90312;
+        }
+        loop L_e {
+          b = select_if(b, e != 64, g_b);
+          if (eqz(g_b)) {
+            if (eqz(b)) {
+              e = 0;
+              goto B_h;
+            }
+            b = c[0];
+            if (b) goto B_f;
+            c[0] = 1;
+            label B_h:
+            b = 0;
+            c = -256;
+            loop L_j {
+              if (c) {
+                d = (c + 90312)[0]:int;
+                f = d > b;
+                b = select_if(d, b, f);
+                c = c + 4;
+                continue L_j;
+              }
+            }
+            (e + 89992)[0]:byte = 0;
+            f = (e << 2) + 90056;
+            f[0] = (b = b + 1);
+            c = 0;
+          }
+          loop L_l {
+            b = select_if(b, c != 64, g_b);
+            if (eqz(g_b)) {
+              if (b) goto B_o;
+              c = 2000;
+            }
+            loop L_q {
+              if (eqz(g_b)) {
+                b = eqz(c);
+                if (b) goto B_n;
+                b = a[0];
+              }
+              if (eqz(g_b) | eqz(h)) {
+                runtime_Gosched();
+                0;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) {
+                a[0] = (b = b + 1);
+                c = c - 1;
+                continue L_q;
+              }
+            }
+            label B_o:
+            if (eqz(g_b)) {
+              b = c == e;
+              if (b) goto B_m;
+            }
+            loop L_v {
+              if (eqz(g_b)) {
+                b = eqz((c + 89992)[0]:ubyte);
+                if (b) goto B_w;
+              }
+              if (eqz(g_b) | h == 1) {
+                runtime_Gosched();
+                1;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) continue L_v;
+              label B_w:
+            }
+            if (eqz(g_b)) {
+              b = c << 2;
+              g = b + 90056;
+            }
+            loop L_aa {
+              if (eqz(g_b)) {
+                b = g[0];
+                if (eqz(b)) goto B_m;
+                d = f[0];
+                if (d < b) goto B_m;
+                b = b == d & c > e;
+                if (b) goto B_m;
+              }
+              if (eqz(g_b) | h == 2) {
+                runtime_Gosched();
+                2;
+                if (g_b == 1) goto B_b;
+              }
+              if (eqz(g_b)) continue L_aa;
+            }
+            label B_n:
+            if (eqz(g_b)) {
+              f[0] = 0;
+              return ;
+            }
+            label B_m:
+            if (eqz(g_b)) {
+              c = c + 1;
+              continue L_l;
+            }
+          }
+          label B_f:
+          if (eqz(g_b)) {
+            c = c + 4;
+            e = e + 1;
+            continue L_e;
+          }
+        }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = d;
+  g_c[0]:int = g_c[0]:int + 4;
+  d = g_c[0]:int;
+  d.a = a;
+  d.b = c;
+  d.c = b;
+  d.d = e;
+  d.e = f;
+  d.f = g;
+  g_c[0]:int = g_c[0]:int + 24;
+}
+
+function main_main_1(a:{ a:int, b:int, c:int }) { // func231
+  var b:int;
+  var d:{ a:int, b:int, c:int, d:int }
+  var c:{ a:int, b:int, c:int, d:int }
+  var e:int_ptr;
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 16;
+    d = g_c[0]:int;
+    a = d.a;
+    b = d.b;
+    e = d.c;
+    d = d.d;
+  }
+  c = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          c = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) {
+          b = stack_pointer - 32;
+          stack_pointer = b;
+          d = 89988[0]:int;
+          89988[0]:int = b + 16;
+          b[5]:long@4 = 1L;
+          b[4]:int = d;
+          e = a.b;
+          a = a.a;
+        }
+        if (eqz(g_b) | eqz(c)) {
+          runtime_RegisterTask(86786, 7);
+          0;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          b[2]:int = a;
+          b[0]:long = 0L;
+          b[6]:int = (a = e[0]);
+        }
+        if (eqz(g_b) | c == 1) {
+          main_incrementRawPointerValue(a);
+          1;
+          if (g_b == 1) goto B_b;
+        }
+        a = select_if(a, b, g_b);
+        loop L_h {
+          if (eqz(g_b)) {
+            if (eqz(a)) goto B_i;
+            e = a.b;
+            a = a.c;
+          }
+          if (eqz(g_b) | c == 2) {
+            Done(a);
+            2;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            a = e;
+            continue L_h;
+          }
+          label B_i:
+        }
+        if (eqz(g_b)) {
+          89988[0]:int = d;
+          stack_pointer = b + 32;
+        }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = c;
+  g_c[0]:int = g_c[0]:int + 4;
+  c = g_c[0]:int;
+  c.a = a;
+  c.b = b;
+  c.c = e;
+  c.d = d;
+  g_c[0]:int = g_c[0]:int + 16;
+}
+
+function main_main(a:{ a:int, b:int, c:int }) { // func232
+  var b:int;
+  var d:{ a:int, b:int, c:int, d:int }
+  var c:{ a:int, b:int, c:int, d:int }
+  var e:int_ptr;
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 16;
+    d = g_c[0]:int;
+    a = d.a;
+    b = d.b;
+    e = d.c;
+    d = d.d;
+  }
+  c = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          c = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) {
+          b = stack_pointer - 32;
+          stack_pointer = b;
+          d = 89988[0]:int;
+          89988[0]:int = b + 16;
+          b[5]:long@4 = 1L;
+          b[4]:int = d;
+          e = a.b;
+          a = a.a;
+        }
+        if (eqz(g_b) | eqz(c)) {
+          runtime_RegisterTask(86793, 7);
+          0;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          b[2]:int = a;
+          b[0]:long = 0L;
+          b[6]:int = (a = e[0]);
+        }
+        if (eqz(g_b) | c == 1) {
+          main_incrementRawPointerValue(a);
+          1;
+          if (g_b == 1) goto B_b;
+        }
+        a = select_if(a, b, g_b);
+        loop L_h {
+          if (eqz(g_b)) {
+            if (eqz(a)) goto B_i;
+            e = a.b;
+            a = a.c;
+          }
+          if (eqz(g_b) | c == 2) {
+            Done(a);
+            2;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            a = e;
+            continue L_h;
+          }
+          label B_i:
+        }
+        if (eqz(g_b)) {
+          89988[0]:int = d;
+          stack_pointer = b + 32;
+        }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = c;
+  g_c[0]:int = g_c[0]:int + 4;
+  c = g_c[0]:int;
+  c.a = a;
+  c.b = b;
+  c.c = e;
+  c.d = d;
+  g_c[0]:int = g_c[0]:int + 16;
+}
+
+function main_main_3(a:{ a:int, b:int, c:int }) { // func233
+  var b:int;
+  var d:{ a:int, b:int, c:int, d:int }
+  var c:{ a:int, b:int, c:int, d:int }
+  var e:int_ptr;
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 16;
+    d = g_c[0]:int;
+    a = d.a;
+    b = d.b;
+    e = d.c;
+    d = d.d;
+  }
+  c = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          c = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) {
+          b = stack_pointer - 32;
+          stack_pointer = b;
+          d = 89988[0]:int;
+          89988[0]:int = b + 16;
+          b[5]:long@4 = 1L;
+          b[4]:int = d;
+          e = a.b;
+          a = a.a;
+        }
+        if (eqz(g_b) | eqz(c)) {
+          runtime_RegisterTask(86800, 5);
+          0;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          b[2]:int = a;
+          b[0]:long = 0L;
+          b[6]:int = (a = e[0]);
+        }
+        if (eqz(g_b) | c == 1) {
+          main_incrementRawPointerValueSafe(a);
+          1;
+          if (g_b == 1) goto B_b;
+        }
+        a = select_if(a, b, g_b);
+        loop L_h {
+          if (eqz(g_b)) {
+            if (eqz(a)) goto B_i;
+            e = a.b;
+            a = a.c;
+          }
+          if (eqz(g_b) | c == 2) {
+            Done(a);
+            2;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            a = e;
+            continue L_h;
+          }
+          label B_i:
+        }
+        if (eqz(g_b)) {
+          89988[0]:int = d;
+          stack_pointer = b + 32;
+        }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = c;
+  g_c[0]:int = g_c[0]:int + 4;
+  c = g_c[0]:int;
+  c.a = a;
+  c.b = b;
+  c.c = e;
+  c.d = d;
+  g_c[0]:int = g_c[0]:int + 16;
+}
+
+function main_main_4(a:{ a:int, b:int, c:int }) { // func234
+  var b:int;
+  var d:{ a:int, b:int, c:int, d:int }
+  var c:{ a:int, b:int, c:int, d:int }
+  var e:int_ptr;
+  if (g_b == 2) {
+    g_c[0]:int = g_c[0]:int - 16;
+    d = g_c[0]:int;
+    a = d.a;
+    b = d.b;
+    e = d.c;
+    d = d.d;
+  }
+  c = {
+        if (g_b == 2) {
+          g_c[0]:int = g_c[0]:int - 4;
+          c = (g_c[0]:int)[0]:int;
+        }
+        if (eqz(g_b)) {
+          b = stack_pointer - 32;
+          stack_pointer = b;
+          d = 89988[0]:int;
+          89988[0]:int = b + 16;
+          b[5]:long@4 = 1L;
+          b[4]:int = d;
+          e = a.b;
+          a = a.a;
+        }
+        if (eqz(g_b) | eqz(c)) {
+          runtime_RegisterTask(86805, 5);
+          0;
+          if (g_b == 1) goto B_b;
+        }
+        if (eqz(g_b)) {
+          b[2]:int = a;
+          b[0]:long = 0L;
+          b[6]:int = (a = e[0]);
+        }
+        if (eqz(g_b) | c == 1) {
+          main_incrementRawPointerValueSafe(a);
+          1;
+          if (g_b == 1) goto B_b;
+        }
+        a = select_if(a, b, g_b);
+        loop L_h {
+          if (eqz(g_b)) {
+            if (eqz(a)) goto B_i;
+            e = a.b;
+            a = a.c;
+          }
+          if (eqz(g_b) | c == 2) {
+            Done(a);
+            2;
+            if (g_b == 1) goto B_b;
+          }
+          if (eqz(g_b)) {
+            a = e;
+            continue L_h;
+          }
+          label B_i:
+        }
+        if (eqz(g_b)) {
+          89988[0]:int = d;
+          stack_pointer = b + 32;
+        }
+        return ;
+        label B_b:
+      }
+  (g_c[0]:int)[0]:int = c;
+  g_c[0]:int = g_c[0]:int + 4;
+  c = g_c[0]:int;
+  c.a = a;
+  c.b = b;
+  c.c = e;
+  c.d = d;
+  g_c[0]:int = g_c[0]:int + 16;
+}
+
+export function asyncify_start_unwind(a:int) { // func235
   g_b = 1;
   g_c = a;
   if (g_c[0]:int > g_c[1]:int) { unreachable }
 }
 
-export function asyncify_stop_unwind() { // func216
+export function asyncify_stop_unwind() { // func236
   g_b = 0;
   if (g_c[0]:int > g_c[1]:int) { unreachable }
 }
 
-export function asyncify_start_rewind(a:int) { // func217
+export function asyncify_start_rewind(a:int) { // func237
   g_b = 2;
   g_c = a;
   if (g_c[0]:int > g_c[1]:int) { unreachable }
 }
 
-export function asyncify_stop_rewind() { // func218
+export function asyncify_stop_rewind() { // func238
   g_b = 0;
   if (g_c[0]:int > g_c[1]:int) { unreachable }
 }
 
-export function asyncify_get_state():int { // func219
+export function asyncify_get_state():int { // func239
   return g_b
 }
 

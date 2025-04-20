@@ -18,9 +18,6 @@ func printMemStats() {
 }
 
 func main() {
-	// Uncomment this line to disable garbage collection
-	// debug.SetGCPercent(-1)
-
 	fmt.Println("Begin")
 	for i := 0; i <= 500; i++ {
 		print(i)

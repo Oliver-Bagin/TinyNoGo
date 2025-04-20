@@ -430,9 +430,9 @@ func GC() {
 //
 //go:interleave
 func runGC() (freeBytes uintptr) {
-	println("Start ---->")
+	//println("Start ---->")
 	//if gcDebug {
-	println("running collection cycle...")
+	//println("running collection cycle...")
 	//}
 
 	// Mark phase: mark all reachable objects, recursively.
@@ -480,7 +480,7 @@ func runGC() (freeBytes uintptr) {
 		dumpHeap()
 	}
 
-	println("<---- End")
+	//println("<---- End")
 	return
 }
 
