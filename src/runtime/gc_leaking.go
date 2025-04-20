@@ -34,6 +34,16 @@ func registerGC() {
 	// NOOP
 }
 
+var gcDebug = false
+
+// SetGCDebug allows user programs to enable/disable GC debug mode.
+//
+//go:export RegisterTask  //
+//go:used               //
+func SetGCDebug(val bool) {
+	gcDebug = val
+}
+
 // Inlining alloc() speeds things up slightly but bloats the executable by 50%,
 // see https://github.com/tinygo-org/tinygo/issues/2674.  So don't.
 //

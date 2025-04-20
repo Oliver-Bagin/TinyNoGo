@@ -6,7 +6,7 @@ import (
 	_ "unsafe"
 )
 
-var retained [][]byte // only used if GC is off, to force heap growth
+var retained [][]byte
 
 //go:linkname SetGCDebug runtime.SetGCDebug
 func SetGCDebug(val bool)

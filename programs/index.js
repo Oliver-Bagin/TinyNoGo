@@ -39,8 +39,8 @@ async function runWasmFile(filePath, schedFd) {
     args: [],
     env: {},
     preopens: { '/': './' },
-    //stdout: tmpFd,
-    //stderr: tmpFd,
+    stdout: tmpFd,
+    stderr: tmpFd,
   });
 
   let memory;

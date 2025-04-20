@@ -260,6 +260,7 @@ func sleep(duration int64) {
 // run is called by the program entry point to execute the go program.
 // With a scheduler, init and the main function are invoked in a goroutine before starting the scheduler.
 func run() {
+	println("Hello World")
 	initHeap()
 	initRand()
 	RegisterTask("Scheduler")
@@ -271,6 +272,6 @@ func run() {
 	}()
 	// This lets the GC decide if it wants to add a GC loop to the runtime
 	// The GC can also choose to run at allocation time when the heap is full
-	registerGC()
+	//registerGC()
 	scheduler(false)
 }

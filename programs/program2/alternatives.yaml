@@ -3,7 +3,7 @@
 #     description: Program fills memory 
 #     flags:
 #       target: wasip1
-#       gc: conservative
+#       gc: leaking
 #       schedular: asyncify
 # - memclear:
 #     description: Program has interleaved GC

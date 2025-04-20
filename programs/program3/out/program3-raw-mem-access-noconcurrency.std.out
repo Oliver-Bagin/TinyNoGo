@@ -1,0 +1,5 @@
+Hello World
+Allocated memory at: 0x00026590
+Growing the heap!!!
+0x00000BB7  0xDEADBEEF  0xDEADBEEF  0xDEADBEEF  
+0x00000FA0  0xDEADBEEF  0xDEADBEEF  0xDEADBEEF  

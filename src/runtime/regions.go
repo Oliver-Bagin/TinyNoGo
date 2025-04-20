@@ -24,8 +24,15 @@ type bakeryLock struct {
 var (
 	threadCounter int
 	threadIDs     [maxThreads]int
-	lockMap       = make(map[unsafe.Pointer]*bakeryLock)
 )
+
+var lockMap map[unsafe.Pointer]*bakeryLock
+
+func ensureLockMap() {
+	if lockMap == nil {
+		lockMap = make(map[unsafe.Pointer]*bakeryLock)
+	}
+}
 
 // getThreadID assigns a unique slot (assumes fixed # of goroutines for now)
 //
@@ -44,6 +51,7 @@ func getThreadID() int {
 //
 // Stop thw world - this runs atomically
 func getLockForRegion(ptr unsafe.Pointer) *bakeryLock {
+	ensureLockMap()
 	lock, ok := lockMap[ptr]
 	if !ok {
 		lock = &bakeryLock{}
@@ -93,13 +101,5 @@ func McOnPointer(region unsafe.Pointer, f func(ptr unsafe.Pointer)) {
 	lock := getLockForRegion(region)
 	lamportLock(lock, id)
 	f(region)
-	lamportUnlock(lock, id)
-}
-
-func RuntimeMC(f func()) {
-	id := getThreadID()
-	lock := getLockForRegion(nil)
-	lamportLock(lock, id)
-	f()
 	lamportUnlock(lock, id)
 }
