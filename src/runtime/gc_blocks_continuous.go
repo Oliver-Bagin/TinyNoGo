@@ -78,12 +78,11 @@ var zeroSizedAlloc uint8
 type blockState uint8
 
 const (
-	blockStateFree      blockState = 0 // 00
-	blockStateHead      blockState = 1 // 01
-	blockStateTail      blockState = 2 // 10
-	blockStateMarkGrey  blockState = 3 // 11
-	blockStateMarkBlack blockState = 4 // 111
-	blockStateMask      blockState = 2 // 111
+	blockStateFree blockState = 0 // 00
+	blockStateHead blockState = 1 // 01
+	blockStateTail blockState = 2 // 10
+	blockStateMark blockState = 3 // 11
+	blockStateMask blockState = 3 // 11
 )
 
 // The byte value of a block where every block is a 'tail' block.
