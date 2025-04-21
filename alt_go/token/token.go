@@ -67,6 +67,9 @@ const (
 	INC   // ++
 	DEC   // --
 
+  TERNARYIF // ?
+  TERNARYELSE // :
+
 	EQL    // ==
 	LSS    // <
 	GTR    // >
@@ -179,6 +182,9 @@ var tokens = [...]string{
 	DEC:   "--",
 
 	EQL:    "==",
+  TERNARYIF: "?", 
+  TERNARYELSE: ":",
+	
 	LSS:    "<",
 	GTR:    ">",
 	ASSIGN: "=",
@@ -260,8 +266,8 @@ func (tok Token) String() string {
 // indexing, and other operator and delimiter tokens.
 const (
 	LowestPrec  = 0 // non-operators
-	UnaryPrec   = 6
-	HighestPrec = 7
+	UnaryPrec   = 8
+	HighestPrec = 9
 )
 
 // Precedence returns the operator precedence of the binary
@@ -269,16 +275,20 @@ const (
 // is LowestPrecedence.
 func (op Token) Precedence() int {
 	switch op {
-	case LOR:
+	case TERNARYIF:
 		return 1
-	case LAND:
+	case TERNARYELSE:
 		return 2
-	case EQL, NEQ, LSS, LEQ, GTR, GEQ:
+	case LOR:
 		return 3
-	case ADD, SUB, OR, XOR:
+	case LAND:
 		return 4
-	case MUL, QUO, REM, SHL, SHR, AND, AND_NOT:
+	case EQL, NEQ, LSS, LEQ, GTR, GEQ:
 		return 5
+	case ADD, SUB, OR, XOR:
+		return 6
+	case MUL, QUO, REM, SHL, SHR, AND, AND_NOT:
+		return 7
 	}
 	return LowestPrec
 }
