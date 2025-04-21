@@ -1,16 +1,16 @@
-# Alternatives
-# - memfill:
-#     description: Program fills memory 
-#     flags:
-#       target: wasip1
-#       gc: leaking
-#       schedular: asyncify
-# - memclear:
-#     description: Program has interleaved GC
-#     flags:
-#       target: wasip1
-#       gc: conservative
-#       schedular: nc
+#Alternatives
+- memfill:
+    description: Program fills memory 
+    flags:
+      target: wasip1
+      gc: leaking
+      schedular: asyncify
+- memclear:
+    description: Program has interleaved GC
+    flags:
+      target: wasip1
+      gc: conservative
+      schedular: nc
 - memclear-continuous:
     description: Program has interleaved GC with interleaved GC instructions
     flags:

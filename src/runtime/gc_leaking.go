@@ -38,7 +38,7 @@ var gcDebug = false
 
 // SetGCDebug allows user programs to enable/disable GC debug mode.
 //
-//go:export RegisterTask  //
+//go:export SetGCDebug  //
 //go:used               //
 func SetGCDebug(val bool) {
 	gcDebug = val
