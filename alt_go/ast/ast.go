@@ -417,6 +417,14 @@ type (
 		Y     Expr        // right operand
 	}
 
+	// A TernaryExpr node represents a ternary expression.
+	TernaryExpr struct {
+		X     Expr      // cond
+		OpPos token.Pos // position of Op
+		Y     Expr      // if
+		Z     Expr      // else
+	}
+
 	// A KeyValueExpr node represents (key : value) pairs
 	// in composite literals.
 	//
@@ -510,6 +518,7 @@ func (x *CallExpr) Pos() token.Pos       { return x.Fun.Pos() }
 func (x *StarExpr) Pos() token.Pos       { return x.Star }
 func (x *UnaryExpr) Pos() token.Pos      { return x.OpPos }
 func (x *BinaryExpr) Pos() token.Pos     { return x.X.Pos() }
+func (x *TernaryExpr) Pos() token.Pos    { return x.X.Pos() }
 func (x *KeyValueExpr) Pos() token.Pos   { return x.Key.Pos() }
 func (x *ArrayType) Pos() token.Pos      { return x.Lbrack }
 func (x *StructType) Pos() token.Pos     { return x.Struct }
@@ -544,6 +553,7 @@ func (x *CallExpr) End() token.Pos       { return x.Rparen + 1 }
 func (x *StarExpr) End() token.Pos       { return x.X.End() }
 func (x *UnaryExpr) End() token.Pos      { return x.X.End() }
 func (x *BinaryExpr) End() token.Pos     { return x.Y.End() }
+func (x *TernaryExpr) End() token.Pos    { return x.Z.End() }
 func (x *KeyValueExpr) End() token.Pos   { return x.Value.End() }
 func (x *ArrayType) End() token.Pos      { return x.Elt.End() }
 func (x *StructType) End() token.Pos     { return x.Fields.End() }
@@ -575,6 +585,7 @@ func (*CallExpr) exprNode()       {}
 func (*StarExpr) exprNode()       {}
 func (*UnaryExpr) exprNode()      {}
 func (*BinaryExpr) exprNode()     {}
+func (*TernaryExpr) exprNode()    {}
 func (*KeyValueExpr) exprNode()   {}
 
 func (*ArrayType) exprNode()     {}

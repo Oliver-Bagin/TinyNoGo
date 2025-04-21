@@ -130,6 +130,11 @@ func Walk(v Visitor, node Node) {
 		Walk(v, n.X)
 		Walk(v, n.Y)
 
+	case *TernaryExpr:
+		Walk(v, n.X)
+		Walk(v, n.Y)
+		Walk(v, n.Z)
+
 	case *KeyValueExpr:
 		Walk(v, n.Key)
 		Walk(v, n.Value)
