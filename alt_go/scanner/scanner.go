@@ -35,12 +35,13 @@ type Scanner struct {
 	mode Mode         // scanning mode
 
 	// scanning state
-	ch         rune      // current character
-	offset     int       // character offset
-	rdOffset   int       // reading offset (position after current character)
-	lineOffset int       // current line offset
-	insertSemi bool      // insert a semicolon before next newline
-	nlPos      token.Pos // position of newline in preceding comment
+	ch           rune      // current character
+	offset       int       // character offset
+	rdOffset     int       // reading offset (position after current character)
+	lineOffset   int       // current line offset
+	insertSemi   bool      // insert a semicolon before next newline
+	ternaryDepth int       // maintain depth of nested ternary expressions
+	nlPos        token.Pos // position of newline in preceding comment
 
 	// public state - ok to modify
 	ErrorCount int // number of errors encountered
@@ -146,6 +147,7 @@ func (s *Scanner) Init(file *token.File, src []byte, err ErrorHandler, mode Mode
 	s.rdOffset = 0
 	s.lineOffset = 0
 	s.insertSemi = false
+	s.ternaryDepth = 0
 	s.ErrorCount = 0
 
 	s.next()
@@ -859,7 +861,12 @@ scanAgain:
 			tok = token.STRING
 			lit = s.scanRawString()
 		case ':':
-			tok = s.switch2(token.COLON, token.DEFINE)
+			if s.ternaryDepth > 0 {
+				tok = token.TERNARYELSE
+				s.ternaryDepth--
+			} else {
+				tok = s.switch2(token.COLON, token.DEFINE)
+			}
 		case '.':
 			// fractions starting with a '.' are handled by outer switch
 			tok = token.PERIOD
@@ -952,6 +959,9 @@ scanAgain:
 			tok = token.TILDE
 		case '$':
 			tok = token.DOLLAR
+		case '?':
+			tok = token.TERNARYIF
+			s.ternaryDepth++
 		default:
 			// next reports unexpected BOMs - don't repeat
 			if ch != bom {

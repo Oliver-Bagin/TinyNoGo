@@ -1898,8 +1898,22 @@ func (p *parser) parseBinaryExpr(x ast.Expr, prec1 int) ast.Expr {
 			return x
 		}
 		pos := p.expect(op)
-		y := p.parseBinaryExpr(nil, oprec+1)
-		x = &ast.BinaryExpr{X: x, OpPos: pos, Op: op, Y: y}
+		switch op {
+		case token.TERNARYIF:
+			temp := p.parseBinaryExpr(nil, oprec+1)
+			if inner, ok := temp.(*ast.BinaryExpr); ok {
+				if inner.Op == token.TERNARYELSE {
+					x = &ast.TernaryExpr{X: x, Y: inner.X, Z: inner.Y, OpPos: pos}
+				} else {
+					p.error(pos, "unexpected expression, expected else clause of ternary")
+				}
+			} else {
+				p.error(pos, "unexpected expression, expected else clause of ternary")
+			}
+		default:
+			y := p.parseBinaryExpr(nil, oprec+1)
+			x = &ast.BinaryExpr{X: x, OpPos: pos, Op: op, Y: y}
+		}
 	}
 }
 

@@ -10,8 +10,8 @@ import (
 	"fmt"
 	"github.com/tinygo-org/tinygo/alt_go/ast"
 	"github.com/tinygo-org/tinygo/alt_go/constant"
-	"github.com/tinygo-org/tinygo/alt_go/token"
 	. "github.com/tinygo-org/tinygo/alt_go/internal/types/errors"
+	"github.com/tinygo-org/tinygo/alt_go/token"
 )
 
 /*
@@ -63,10 +63,10 @@ var unaryOpPredicates opPredicates
 func init() {
 	// Setting unaryOpPredicates in init avoids declaration cycles.
 	unaryOpPredicates = opPredicates{
-		token.ADD: allNumeric,
-		token.SUB: allNumeric,
-		token.XOR: allInteger,
-		token.NOT: allBoolean,
+		token.ADD:    allNumeric,
+		token.SUB:    allNumeric,
+		token.XOR:    allInteger,
+		token.NOT:    allBoolean,
 		token.DOLLAR: allInteger,
 	}
 }
@@ -91,6 +91,8 @@ func opPos(x ast.Expr) token.Pos {
 	case nil:
 		return nopos // don't crash
 	case *ast.BinaryExpr:
+		return op.OpPos
+	case *ast.TernaryExpr:
 		return op.OpPos
 	default:
 		return x.Pos()
@@ -339,6 +341,15 @@ func (check *Checker) updateExprType(x ast.Expr, typ Type, final bool) {
 			check.updateExprType(x.X, typ, final)
 			check.updateExprType(x.Y, typ, final)
 		}
+
+	case *ast.TernaryExpr:
+		if old.val != nil {
+			break // see comment for unary expressions
+		}
+		// The operand types match the result type.
+		// check.updateExprType(x.X, typ, final)
+		check.updateExprType(x.Y, typ, final)
+		check.updateExprType(x.Z, typ, final)
 
 	default:
 		panic("unreachable")
@@ -787,6 +798,63 @@ func init() {
 
 // If e != nil, it must be the binary expression; it may be nil for non-constant expressions
 // (when invoked for an assignment operation where the binary expression is implicit).
+func (check *Checker) ternary(x *operand, e ast.Expr, cond, lhs, rhs ast.Expr, opPos token.Pos) {
+	var y operand
+	var z operand
+
+	check.expr(nil, x, cond)
+
+	if x.mode == invalid {
+		return
+	}
+
+	if !isBoolean(x.typ) {
+		check.errorf(cond, InvalidCond, "non-boolean condition in ternary expression")
+		x.mode = invalid
+		return
+	}
+
+	check.expr(nil, &y, lhs)
+	check.expr(nil, &z, rhs)
+
+	if y.mode == invalid {
+		x.mode = invalid
+		x.expr = y.expr
+		return
+	}
+	if z.mode == invalid {
+		x.mode = invalid
+		x.expr = z.expr
+		return
+	}
+
+	check.matchTypes(&y, &z)
+	if y.mode == invalid {
+		return
+	}
+
+	if !Identical(y.typ, z.typ) {
+		// only report an error if we have valid types
+		// (otherwise we had an error reported elsewhere already)
+		if isValid(y.typ) && isValid(z.typ) {
+			var posn positioner = &y
+			if e != nil {
+				posn = e
+			}
+			check.errorf(posn, MismatchedTypes, "mismatched types in ternary branches: %s vs %s", y.typ, z.typ)
+		}
+		x.mode = invalid
+		return
+	}
+
+	x.mode = value
+	x.typ = y.typ
+	x.val = nil
+	x.expr = e
+}
+
+// If e != nil, it must be the binary expression; it may be nil for non-constant expressions
+// (when invoked for an assignment operation where the binary expression is implicit).
 func (check *Checker) binary(x *operand, e ast.Expr, lhs, rhs ast.Expr, op token.Token, opPos token.Pos) {
 	var y operand
 
@@ -1164,6 +1232,12 @@ func (check *Checker) exprInternal(T *target, x *operand, e ast.Expr, hint Type)
 
 	case *ast.BinaryExpr:
 		check.binary(x, e, e.X, e.Y, e.Op, e.OpPos)
+		if x.mode == invalid {
+			goto Error
+		}
+
+	case *ast.TernaryExpr:
+		check.ternary(x, e, e.X, e.Y, e.Z, e.OpPos)
 		if x.mode == invalid {
 			goto Error
 		}

@@ -124,6 +124,16 @@ func WriteExpr(buf *bytes.Buffer, x ast.Expr) {
 		buf.WriteByte(' ')
 		WriteExpr(buf, x.Y)
 
+	case *ast.TernaryExpr:
+		WriteExpr(buf, x.X)
+		buf.WriteByte(' ')
+		buf.WriteString("?")
+		buf.WriteByte(' ')
+		WriteExpr(buf, x.Y)
+		buf.WriteString(":")
+		buf.WriteByte(' ')
+		WriteExpr(buf, x.Z)
+
 	case *ast.ArrayType:
 		buf.WriteByte('[')
 		if x.Len != nil {
