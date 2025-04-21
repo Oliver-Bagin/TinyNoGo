@@ -11,7 +11,7 @@ import (
 	"github.com/tinygo-org/tinygo/alt_go/ast"
 	"github.com/tinygo-org/tinygo/alt_go/constant"
 	"github.com/tinygo-org/tinygo/alt_go/token"
-	"internal/godebug"
+	"github.com/tinygo-org/tinygo/alt_go/internal/godebug"
 	. "github.com/tinygo-org/tinygo/alt_go/internal/types/errors"
 	"sync/atomic"
 )

@@ -13,7 +13,7 @@ import (
 	"github.com/tinygo-org/tinygo/alt_go/doc"
 	"github.com/tinygo-org/tinygo/alt_go/token"
 	"github.com/tinygo-org/tinygo/alt_go/internal/buildcfg"
-	"internal/godebug"
+  "github.com/tinygo-org/tinygo/alt_go/internal/godebug"
 	"github.com/tinygo-org/tinygo/alt_go/internal/goroot"
 	"github.com/tinygo-org/tinygo/alt_go/internal/goversion"
 	"github.com/tinygo-org/tinygo/alt_go/internal/platform"

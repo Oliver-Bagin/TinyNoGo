@@ -191,14 +191,14 @@ func lookup(name string) *setting {
 // again each time the environment variable changes
 // (due to use of os.Setenv, for example).
 //
-//go:linkname setUpdate
-func setUpdate(update func(string, string))
+/* R go:linkname setUpdate*/
+func setUpdate(update func(string, string)) {}
 
 // registerMetric is provided by package runtime.
 // It forwards registrations to runtime/metrics.
 //
-//go:linkname registerMetric
-func registerMetric(name string, read func() uint64)
+/* Remove go:linkname registerMetric */
+func registerMetric(name string, read func() uint64) {}
 
 // setNewIncNonDefault is provided by package runtime.
 // The runtime can do
@@ -211,8 +211,8 @@ func registerMetric(name string, read func() uint64)
 //
 // since it cannot import godebug.
 //
-//go:linkname setNewIncNonDefault
-func setNewIncNonDefault(newIncNonDefault func(string) func())
+/* R go:linkname setNewIncNonDefault */
+func setNewIncNonDefault(newIncNonDefault func(string) func()) {}
 
 func init() {
 	setUpdate(update)
